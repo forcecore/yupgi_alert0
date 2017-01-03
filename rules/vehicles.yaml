@@ -201,6 +201,74 @@ V2RL:
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
 
+5TNK:
+	Inherits: ^Tank
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 190
+		Prerequisites: fix, stek, ~vehicles.soviet, ~techlevel.high
+		BuildDuration: 2500
+		BuildDurationModifier: 40
+	Valued:
+		Cost: 10000
+	Tooltip:
+		Name: Demitri Super Tank
+		GenericName: Super Tank
+	Health:
+		HP: 20000
+	Armor:
+		Type: Concrete
+	Mobile:
+		Speed: 42
+		Crushes: wall, mine, crate, infantry
+	RevealsShroud:
+		Range: 6c0
+	Turreted:
+		TurnSpeed: 1
+	Armament@PRIMARY:
+		Weapon: SuperTankPrimary
+		LocalOffset: 900,180,340, 900,-180,340
+		Recoil: 171
+		RecoilRecovery: 30
+		MuzzleSequence: muzzle
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: MammothTusk
+		LocalOffset: -85,384,340, -85,-384,340
+		LocalYaw: -100,100
+		Recoil: 43
+		MuzzleSequence: muzzle
+	AttackTurreted:
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+	AutoTarget:
+	Explodes:
+		Weapon: MiniNuke
+		EmptyWeapon: MiniNuke
+	SpawnActorOnDeath:
+		Actor: 5TNK.Husk
+	SelfHealing:
+		Step: 1
+		Delay: 1
+		HealIfBelow: 100
+		DamageCooldown: 150
+	Selectable:
+		Bounds: 44,38,0,-4
+	-EjectOnDeath:
+	RenderSprites:
+		Image: 4TNK
+
+5TNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Super Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	Health:
+		HP: 2000
+	RenderSprites:
+		Image: 4TNK
+
 ARTY:
 	Inherits: ^Tank
 	Buildable:
