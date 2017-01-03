@@ -283,7 +283,7 @@ IRON:
 		Prerequisites: stek, ~structures.soviet, ~techlevel.unrestricted
 		BuildLimit: 1
 	Valued:
-		Cost: 1500
+		Cost: 2000
 	Tooltip:
 		Name: Iron Curtain
 		Description: Makes a group of units invulnerable\nfor a short time.\nRequires power to operate.\n  Special Ability: Invulnerability\nMaximum 1 can be built.
@@ -319,6 +319,15 @@ IRON:
 		EndChargeSpeechNotification: IronCurtainReady
 		DisplayRadarPing: True
 		Upgrades: invulnerability
+	# Iron curtain generation action haha
+	UpgradeActorsNear:
+		Upgrades: invulnerability
+		Range: 10c0
+		Duration: 25
+	WithRangeCircle:
+		Range: 10c0
+		Type: cloakgenerator
+		Color: FF0000
 	SupportPowerChargeBar:
 	Power:
 		Amount: -200
