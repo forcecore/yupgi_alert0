@@ -296,6 +296,7 @@ SilencedPPK:
 		ValidImpactTypes: Water
 
 VolkovPPK:
+	Burst: 2
 	ReloadDelay: 25
 	Range: 6c0
 	Report: silppk.aud

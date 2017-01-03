@@ -1,3 +1,5 @@
+# vim: noet sw=4 ts=4:
+
 V2RL:
 	Inherits: ^Vehicle
 	Buildable:
@@ -649,12 +651,12 @@ DTRK:
 		Weapon: MiniNuke
 		EmptyWeapon: MiniNuke
 	AttackSuicides:
-	-DamageMultiplier@IRONCURTAIN:
-	KillsSelf:
-		UpgradeTypes: invulnerability
-		UpgradeMinEnabledLevel: 1
-	Chronoshiftable:
-		ExplodeInstead: yes
+	#-DamageMultiplier@IRONCURTAIN:
+	#KillsSelf:
+	#	UpgradeTypes: invulnerability
+	#	UpgradeMinEnabledLevel: 1
+	#Chronoshiftable:
+	#	ExplodeInstead: yes
 
 CTNK:
 	Inherits: ^Vehicle

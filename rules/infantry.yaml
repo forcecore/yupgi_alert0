@@ -1,3 +1,5 @@
+# vim: noet sw=4 ts=4:
+
 DOG:
 	Inherits: ^Soldier
 	Buildable:
@@ -28,6 +30,57 @@ DOG:
 		Range: 5c0
 	Armament:
 		Weapon: DogJaw
+	AttackLeap:
+		Voice: Attack
+	AttackMove:
+		Voice: Move
+	AutoTarget:
+		InitialStance: AttackAnything
+	Targetable:
+		TargetTypes: Ground, Infantry
+	WithInfantryBody:
+		AttackSequence: shoot
+		StandSequences: stand
+	IgnoresDisguise:
+	DetectCloaked:
+		CloakTypes: Cloak, Hijacker
+	Voiced:
+		VoiceSet: DogVoice
+	-TakeCover:
+
+CHITZ:
+	Inherits: ^Soldier
+	-Crushable:
+	RenderSprites:
+		Image: dog
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Dog
+		BuildPaletteOrder: 51
+		Prerequisites: ~kenn, stek, ~techlevel.infonly
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: 치츠코이
+		Description: 대보병 슈퍼유닛.\nCan detect cloaked units and spies.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		GenericName: Dog
+	Selectable:
+		Bounds: 12,17,-1,-4
+	SelectionDecorations:
+		VisualBounds: 12,17,-1,-4
+	Health:
+		HP: 1000
+	Mobile:
+		Speed: 99
+		Voice: Move
+	Guard:
+		Voice: Move
+	Passenger:
+		Voice: Move
+	RevealsShroud:
+		Range: 7c0
+	Armament:
+		Weapon: ChitzkoiJaw
 	AttackLeap:
 		Voice: Attack
 	AttackMove:
@@ -289,12 +342,14 @@ E7:
 	WithInfantryBody:
 		AttackSequence: shoot
 		StandSequences: stand
-	AnnounceOnBuild:
-	AnnounceOnKill:
+	#AnnounceOnBuild:
+	#AnnounceOnKill:
 	Voiced:
 		VoiceSet: TanyaVoice
 	ProducibleWithLevel:
 		Prerequisites: barracks.upgraded
+	PortableChrono:
+		ChargeDelay: 30
 
 MEDI:
 	Inherits: ^Soldier
@@ -517,8 +572,11 @@ SHOK:
 
 VOLKOV:
 	Inherits: ^Soldier
+	-Crushable:
 	RenderSprites:
 		Image: gnrl
+	RevealsShroud:
+		Range: 10c0
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
@@ -526,21 +584,19 @@ VOLKOV:
         Prerequisites: ~barr, stek, ~techlevel.high
         BuildLimit: 1
 	Valued:
-		Cost: 1200
+		Cost: 2500
 	Tooltip:
 		Name: 볼코프
 		Description: 정예 특수 보병. 카운터스트라이크의 그 볼코프.
 	Health:
-		HP: 300
+		HP: 2500
 	Voiced:
         VoiceSet: StavrosVoice
-        #VoiceSet: TanyaVoice
-        #VoiceSet: ShokVoice
 	Mobile:
 		Speed: 71
 		Voice: Move
 	Armor:
-		Type: Concrete
+		Type: Heavy
 	Guard:
 		Voice: Move
 	RevealsShroud:
