@@ -122,9 +122,9 @@ DD:
 		BuildPaletteOrder: 40
 		Prerequisites: ~syrd, dome, ~techlevel.medium
 	Valued:
-		Cost: 1000
+		Cost: 1200
 	Tooltip:
-		Name: Destroyer
+		Name: 크로노 구축함
 		Description: Fast multi-role ship.\nCan detect submarines.\n  Strong vs Naval units, Light armor, Aircraft\n  Weak vs Infantry, Tanks
 	Health:
 		HP: 400
@@ -159,6 +159,8 @@ DD:
 		CloakTypes: Underwater
 		Range: 4c0
 	RenderDetectionCircle:
+	PortableChrono:
+		ChargeDelay: 300
 
 CA:
 	Inherits: ^Ship
