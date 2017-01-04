@@ -309,9 +309,10 @@ WangchangThump:
 	Warhead@1Dam: HealthPercentageDamage
 		Spread: 7c0
 		Damage: 5
+		InvalidTargets: WangChang # these can't affect eachother.
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
 		Size: 7,6
 	Warhead@3Eff: CreateEffect
 		Explosions: med_explosion
-		ImpactSounds: mineblo1.aud
+		ImpactSounds: mineblo1.aud, kaboom1.aud

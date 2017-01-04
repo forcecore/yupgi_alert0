@@ -190,6 +190,8 @@ WANGCHANG:
 		AttackSequence: shoot
 	Armament:
 		Weapon: WangchangThump
+	Targetable:
+		TargetTypes: Ground, WangChang, Repair, Vehicle
 	RenderSprites:
 		Image: HARV
 
