@@ -53,6 +53,10 @@ harv:
 		Length: 7
 	icon: harvicon
 		Start: 0
+	shoot: harvempty
+		Start: 32
+		Length: 8
+		Facings: 8
 
 hhusk:
 	idle:

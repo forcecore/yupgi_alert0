@@ -57,7 +57,7 @@ CHITZ:
 		Queue: Infantry
 		BuildAtProductionType: Dog
 		BuildPaletteOrder: 51
-		Prerequisites: ~kenn, stek, ~techlevel.infonly
+		Prerequisites: ~kenn, stek, ~techlevel.high
 	Valued:
 		Cost: 1000
 	Tooltip:

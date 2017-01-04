@@ -118,7 +118,7 @@ V2RL:
 	Valued:
 		Cost: 1150
 	Tooltip:
-		Name: Heavy Tank
+		Name: 대형 탱크
 		Description: Soviet Main Battle Tank, with dual cannons\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
 	Health:
 		HP: 550
@@ -147,6 +147,51 @@ V2RL:
 		VisualBounds: 28,28
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+	# Must undeploy to uncurtain haha
+	#DeployToUpgrade:
+		#DeployedUpgrades: invulnerability
+		#Duration: 500
+		#CanDeployOnRamps: yes
+		#ChargeDelay: 500
+		#
+
+WANGCHANG:
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 210
+		Prerequisites: atek, ~vehicles.allies, ~techlevel.high
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: 왕창 다부셔
+		Description: 크고 아름다운 충격파를 주는 유닛.\n 비행 유닛에 약합니다.
+	SelectionDecorations:
+		VisualBounds: 42,42
+	Health:
+		HP: 900
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 85
+		Crushes: wall, mine, crate, infantry
+	RevealsShroud:
+		Range: 10c0
+	SpawnActorOnDeath:
+		Actor: WANGCHANG.Husk
+	SelfHealing:
+		Step: 1
+		Delay: 25
+		HealIfBelow: 50
+		DamageCooldown: 500
+	AutoTarget:
+	AttackFrontal:
+	WithAttackAnimation:
+		AttackSequence: shoot
+	Armament:
+		Weapon: WangchangThump
+	RenderSprites:
+		Image: HARV
 
 4TNK:
 	Inherits: ^Tank
@@ -524,6 +569,7 @@ MNLY.AT:
 		Range: 5c0
 	Minelayer:
 		Mine: MINV
+		#Mine: TANKTRAP1 # tree planting yay
 	MineImmune:
 	AmmoPool:
 		Ammo: 5

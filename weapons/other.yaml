@@ -300,3 +300,18 @@ MADTankDetonate:
 	Warhead@3Eff: CreateEffect
 		Explosions: med_explosion
 		ImpactSounds: mineblo1.aud
+
+WangchangThump:
+	ReloadDelay: 25
+	Range: 1c512
+	Projectile: Bullet
+		Speed: 1c682
+	Warhead@1Dam: HealthPercentageDamage
+		Spread: 7c0
+		Damage: 5
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		Size: 7,6
+	Warhead@3Eff: CreateEffect
+		Explosions: med_explosion
+		ImpactSounds: mineblo1.aud
