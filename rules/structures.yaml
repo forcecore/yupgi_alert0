@@ -380,7 +380,7 @@ PDOX:
 		BeginChargeSpeechNotification: ChronosphereCharging
 		EndChargeSpeechNotification: ChronosphereReady
 		Duration: 20
-		KillCargo: yes
+		KillCargo: no
 		DisplayRadarPing: True
 	ChronoshiftPower@advancedchronoshift:
 		OrderName: AdvancedChronoshift
@@ -394,7 +394,7 @@ PDOX:
 		BeginChargeSpeechNotification: ChronosphereCharging
 		EndChargeSpeechNotification: ChronosphereReady
 		Duration: 20
-		KillCargo: yes
+		KillCargo: no
 		DisplayRadarPing: True
 		Range: 2
 	SupportPowerChargeBar:

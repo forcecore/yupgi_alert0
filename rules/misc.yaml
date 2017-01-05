@@ -1,3 +1,5 @@
+# vim: noet sw=4 ts=4:
+#
 MINP:
 	Inherits: ^Mine
 	Explodes:
@@ -7,6 +9,24 @@ MINV:
 	Inherits: ^Mine
 	Explodes:
 		Weapon: ATMine
+	Armament:
+		Weapon: ATMine
+	AutoTarget:
+	#AttackLeap: # kinda like dogs
+	#AttackSuicides:
+	#Either two requires MINV to be able to move.
+	-QuantizeFacingsFromSequence:
+	AttackOmni:
+	BodyOrientation:
+		QuantizedFacings: 8
+	AmmoPool:
+		PipCount: 1
+		Ammo: 1
+		InitialAmmo: 1
+		RearmSound: minelay1.aud
+		SelfReloads: true
+		SelfReloadDelay: 1500
+		ResetOnFire: true
 
 CRATE:
 	Inherits: ^Crate

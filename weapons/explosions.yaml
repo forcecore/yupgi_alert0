@@ -261,7 +261,22 @@ BarrelExplode:
 		ImpactSounds: firebl3.aud
 		Delay: 5
 
+# AT mine is now like widow mines :)
 ATMine:
+	Range: 5c0
+	MinRange: 1c256
+	Report: missile6.aud
+	Burst: 1
+	ValidTargets: Ground
+	Projectile: Missile
+		Speed: 256
+		Arm: 1
+		Blockable: false
+		ContrailLength: 10
+		Inaccuracy: 0c614
+		Image: DRAGON
+		HorizontalRateOfTurn: 10
+		RangeLimit: 8c512
 	Warhead@1Dam: SpreadDamage
 		Spread: 256
 		Damage: 400
