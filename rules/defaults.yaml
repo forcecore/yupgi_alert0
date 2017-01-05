@@ -832,7 +832,7 @@
 	Mine:
 		CrushClasses: mine
 		DetonateClasses: mine
-		AvoidFriendly: false
+		AvoidFriendly: true # no friendly damage yay
 	Health:
 		HP: 100
 		NotifyAppliedDamage: false
