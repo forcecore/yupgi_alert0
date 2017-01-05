@@ -164,14 +164,14 @@ WANGCHANG:
 		BuildPaletteOrder: 210
 		Prerequisites: atek, ~vehicles.allies, ~techlevel.high
 	Valued:
-		Cost: 2000
+		Cost: 1500
 	Tooltip:
 		Name: 왕창 다부셔
 		Description: 크고 아름다운 충격파를 주는 유닛.\n 비행 유닛에 약합니다.
 	SelectionDecorations:
 		VisualBounds: 42,42
 	Health:
-		HP: 2000
+		HP: 1000
 	Armor:
 		Type: Heavy
 	Mobile:
