@@ -187,6 +187,7 @@ WANGCHANG:
 		HealIfBelow: 50
 		DamageCooldown: 500
 	AutoTarget:
+		ScanRadius: 5
 	AttackFrontal:
 	WithAttackAnimation:
 		AttackSequence: shoot
