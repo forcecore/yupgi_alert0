@@ -267,7 +267,7 @@ ATMine:
 	MinRange: 1c256
 	Report: missile6.aud
 	Burst: 1
-	ValidTargets: Ground
+	ValidTargets: Vehicle, Tank, Infantry
 	Projectile: Missile
 		Speed: 256
 		Arm: 1
