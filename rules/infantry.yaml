@@ -51,8 +51,8 @@ DOG:
 CHITZ:
 	Inherits: ^Soldier
 	-Crushable:
-	RenderSprites:
-		Image: dog
+	#RenderSprites:
+		#Image: chitz
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Dog

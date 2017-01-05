@@ -34,6 +34,7 @@ Packages:
 	~hires1.mix
 	~desert.mix
 	ra|bits
+    yupgi_alert|bits
 	ra|bits/desert
 	ra|uibits
 
