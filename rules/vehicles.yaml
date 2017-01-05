@@ -171,7 +171,7 @@ WANGCHANG:
 	SelectionDecorations:
 		VisualBounds: 42,42
 	Health:
-		HP: 900
+		HP: 2000
 	Armor:
 		Type: Heavy
 	Mobile:
