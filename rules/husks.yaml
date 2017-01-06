@@ -69,6 +69,20 @@ WANGCHANG.Husk:
 	RenderSprites:
 		Image: hhusk2
 
+5TNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Super Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	Health:
+		HP: 2000
+	TransformOnCapture:
+		IntoActor: 5tnk
+	RenderSprites:
+		Image: 5TNK
+		PlayerPalette: player-cc1
+
 MCV.Husk:
 	Inherits: ^Husk
 	Tooltip:

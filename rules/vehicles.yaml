@@ -252,6 +252,9 @@ WANGCHANG:
 		Prerequisites: vehicles.upgraded
 
 5TNK:
+	RenderSprites:
+		Image: 5TNK
+		PlayerPalette: player-cc1
 	Inherits: ^Tank
 	Buildable:
 		Queue: Vehicle
@@ -262,7 +265,7 @@ WANGCHANG:
 	Valued:
 		Cost: 10000
 	Tooltip:
-		Name: Demitri Super Tank
+		Name: Super Tank
 		GenericName: Super Tank
 	Health:
 		HP: 20000
@@ -274,7 +277,7 @@ WANGCHANG:
 	RevealsShroud:
 		Range: 6c0
 	Turreted:
-		TurnSpeed: 1
+		TurnSpeed: 2
 	Armament@PRIMARY:
 		Weapon: SuperTankPrimary
 		LocalOffset: 900,180,340, 900,-180,340
@@ -305,19 +308,6 @@ WANGCHANG:
 	Selectable:
 		Bounds: 44,38,0,-4
 	-EjectOnDeath:
-	RenderSprites:
-		Image: 4TNK
-
-5TNK.Husk:
-	Inherits: ^Husk
-	Tooltip:
-		Name: Husk (Super Tank)
-	ThrowsParticle@turret:
-		Anim: turret
-	Health:
-		HP: 2000
-	RenderSprites:
-		Image: 4TNK
 
 ARTY:
 	Inherits: ^Tank

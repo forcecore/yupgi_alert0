@@ -162,6 +162,29 @@ hhusk2:
 		UseClassicFacingFudge: True
 		ZOffset: -512
 
+5tnk:
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret:
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	muzzle: gunfire2
+		Length: 5
+	icon: 5tnkicon
+
+5tnk.destroyed:
+	idle: 5tnk
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+	turret: 5tnk
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+
 v2rl:
 	idle:
 		Facings: 32
