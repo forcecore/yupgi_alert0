@@ -196,7 +196,8 @@ WANGCHANG:
 	Targetable:
 		TargetTypes: Ground, WangChang, Repair, Vehicle
 	RenderSprites:
-		Image: HARV
+		Scale: 1.25
+		Image: WANGCHANG
 
 4TNK:
 	Inherits: ^Tank

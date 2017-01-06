@@ -68,6 +68,7 @@ WANGCHANG.Husk:
 		IntoActor: wangchang
 	RenderSprites:
 		Image: hhusk2
+        Scale: 1.25
 
 5TNK.Husk:
 	Inherits: ^Husk

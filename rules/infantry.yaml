@@ -54,6 +54,7 @@ CHITZ:
 	RenderSprites:
 		Image: doge
 		PlayerPalette: player-ra2
+		Scale: 0.75
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Dog
@@ -582,8 +583,8 @@ VOLKOV:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 120
-        Prerequisites: ~barr, stek, ~techlevel.high
-        BuildLimit: 1
+		Prerequisites: ~barr, stek, ~techlevel.high
+		BuildLimit: 1
 	Valued:
 		Cost: 2500
 	Tooltip:
@@ -592,7 +593,7 @@ VOLKOV:
 	Health:
 		HP: 2500
 	Voiced:
-        VoiceSet: StavrosVoice
+		VoiceSet: StavrosVoice
 	Mobile:
 		Speed: 71
 		Voice: Move
@@ -618,8 +619,8 @@ VOLKOV:
 	WithInfantryBody:
 		AttackSequence: shoot
 		StandSequences: stand
-    #AnnounceOnBuild:
-    #AnnounceOnKill:
+	#AnnounceOnBuild:
+	#AnnounceOnKill:
 	ProducibleWithLevel:
 		Prerequisites: barracks.upgraded
 

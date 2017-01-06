@@ -1,3 +1,5 @@
+# vim: noet sw=4 ts=4:
+
 mcv:
 	idle:
 		Facings: 32
@@ -52,6 +54,17 @@ harv:
 		Start: 104
 		Length: 7
 	icon: harvicon
+		Start: 0
+	shoot: harvempty
+		Start: 32
+		Length: 8
+		Facings: 8
+
+wangchang:
+	idle: harvempty
+		Facings: 32
+		UseClassicFacingFudge: True
+	icon: wangchangicon
 		Start: 0
 	shoot: harvempty
 		Start: 32
