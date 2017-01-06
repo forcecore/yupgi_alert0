@@ -51,8 +51,9 @@ DOG:
 CHITZ:
 	Inherits: ^Soldier
 	-Crushable:
-	#RenderSprites:
-		#Image: chitz
+	RenderSprites:
+		Image: doge
+		PlayerPalette: player-ra2
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Dog

@@ -540,39 +540,40 @@ dog:
 		Facings: 8
 	icon: dogicon
 
-chitz:
-	stand: dog
+doge:
+	stand:
 		Facings: 8
-	run: dog
+	run:
 		Start: 8
 		Length: 6
 		Facings: 8
 		Tick: 80
-	idle1: dog
-		Start: 216
-		Length: 7
+	idle1:
+		Start: 56
+		Length: 15
 		Tick: 120
-	idle2: dog
-		Start: 224
-		Length: 11
+	idle2:
+		Start: 71
+		Length: 15
 		Tick: 120
-	die1: dog
-		Start: 236
-		Length: 6
-	die2: dog
-		Start: 242
-		Length: 9
-	die3: dog
-		Start: 236
-		Length: 6
-	die4: dog
-		Start: 242
-		Length: 9
-	die5: dog
-		Start: 251
-		Length: 14
-	die6: electdog
-		Length: *
+	die1:
+		Start: 86
+		Length: 15
+	die2:
+		Start: 101
+		Length: 15
+	die3:
+		Start: 86
+		Length: 15
+	die4:
+		Start: 86
+		Length: 15
+	die5:
+		Start: 86
+		Length: 15
+	die6:
+		Start: 86
+		Length: 15
 	die-crushed: corpse1
 		Length: 6
 		Tick: 1600
@@ -581,9 +582,9 @@ chitz:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
-	shoot: dogbullt
-		Length: 4
-		Facings: 8
+	shoot: dogep
+		Length: 1
+		Facings: 32
 	icon: dogeicon
 
 spy:
