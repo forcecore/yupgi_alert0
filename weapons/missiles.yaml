@@ -1,5 +1,5 @@
 # vim: noet sw=4 ts=4:
-#
+
 Maverick:
 	ReloadDelay: 30
 	Range: 9c0
@@ -303,7 +303,7 @@ SteelRainCluster:
 		ImpactSounds: kaboom30.aud
 	Warhead@1Dam: SpreadDamage
 		Spread: 1c0
-		Damage: 10
+		Damage: 15
 		Versus:
 			None: 90
 			Wood: 75
@@ -490,10 +490,10 @@ SCUD:
 		Falloff: 1000, 368, 135, 50, 18, 7, 0
 		ValidTargets: Ground, Trees
 		Versus:
-			None: 90
-			Wood: 75
-			Light: 70
-			Heavy: 40
+			none: 90
+			wood: 75
+			light: 70
+			heavy: 40
 		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath, Incendiary
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
