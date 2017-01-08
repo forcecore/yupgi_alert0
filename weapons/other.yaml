@@ -315,4 +315,4 @@ WangchangThump:
 		Size: 7,6
 	Warhead@3Eff: CreateEffect
 		Explosions: med_explosion
-		ImpactSounds: mineblo1.aud, kaboom1.aud
+		ImpactSounds: kaboom1.aud
