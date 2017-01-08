@@ -149,13 +149,18 @@ V2RL:
 		VisualBounds: 28,28
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
-	# Must undeploy to uncurtain haha
+	# Must undeploy to uncurtain haha... too OP.
 	#DeployToUpgrade:
 		#DeployedUpgrades: invulnerability
 		#Duration: 500
 		#CanDeployOnRamps: yes
 		#ChargeDelay: 500
-		#
+	# This one is it. I copied this from AS mod.
+	DeployToTimedUpgrade:
+		DeployedUpgrades: invulnerability
+		CooldownTicks: 1500
+		DeployedTicks: 125
+		DeploySound: ironcur9.aud
 
 WANGCHANG:
 	Inherits: ^Vehicle
