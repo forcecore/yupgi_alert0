@@ -1,3 +1,5 @@
+# vim: noet sw=4 ts=4:
+#
 Maverick:
 	ReloadDelay: 30
 	Range: 9c0
@@ -290,42 +292,64 @@ SubMissileAA:
 		Damage: 15
 		ValidTargets: Air, Ground, Water
 
+SteelRainCluster:
+	Inherits: UnitExplodeSmall
+	Range: 10c0
+	# Must have a projectile otherwise cluster thing won't work.
+	Projectile: Bullet
+		Speed: 1c0
+	Warhead@2Eff: CreateEffect
+		Explosions: artillery_explosion
+		ImpactSounds: kaboom30.aud
+	Warhead@1Dam: SpreadDamage
+		Spread: 1c0
+		Damage: 10
+		Versus:
+			None: 90
+			Wood: 75
+			Light: 60
+			Heavy: 50
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+
 SteelRain:
-    ReloadDelay: 25
+	ReloadDelay: 25
 	Range: 10c0
 	MinRange: 3c0
-    #Burst: 2
+	#Burst: 2
 	Report: missile6.aud
+	#Projectile: Missile
+	#	Speed: 256
+	#	Arm: 2
+	#	Blockable: false
+	#	ContrailLength: 10
+	#	Inaccuracy: 2c512
+	#	Image: DRAGON
+	#	HorizontalRateOfTurn: 5
+	#	CruiseAltitude: 2c0
+	#	RangeLimit: 14c410
+	#   #MinimumLaunchAngle: 100
+	#   #MaximumLaunchAngle: 130
+	#   #AirburstAltitude: 2c0 # Doesn't work with airburst altitude :(
+	#   Ballistic path looks better in this case.
 	Projectile: Bullet
 		Speed: 162
 		Blockable: false
 		Angle: 120
-		Inaccuracy: 3c938
+		Inaccuracy: 2c938
 		Image: MISSILE
 		TrailImage: smokey
 		ContrailLength: 30
-	SpawnActorOnDeath:
-		Actor: 4TNK.Husk
 	Warhead@1Dam: SpreadDamage
-		Spread: 426
-		Damage: 25
-		Falloff: 1000, 368, 135, 50, 18, 7, 0
-		Versus:
-			None: 40
-			Light: 30
-			Heavy: 30
-		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
-	Warhead@2Smu: LeaveSmudge
-		SmudgeType: Crater
-		InvalidTargets: Vehicle, Tank, Structure, Wall, Husk, Trees
-	Warhead@3Eff: CreateEffect
+		Damage: 1
+		ValidTargets: Ground, Water
+	Warhead@2Eff: CreateEffect
 		Explosions: artillery_explosion
 		ImpactSounds: kaboom15.aud
 		InvalidImpactTypes: Water
-	Warhead@4EffWater: CreateEffect
-		Explosions: large_splash
-		ImpactSounds: splash9.aud
-		ValidImpactTypes: Water
+	Warhead@3Cluster: FireCluster
+		Weapon: SteelRainCluster
+		#Weapon: SubMissile
+		Range: 1 # fires this stuff at all cells within the range!
 
 Stinger:
 	ReloadDelay: 60
