@@ -84,6 +84,18 @@ WANGCHANG.Husk:
 		Image: 5TNK
 		PlayerPalette: player-cc1
 
+MSAM.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (다연장로켓)
+		Icon: msamicon
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: msam
+	RenderSprites:
+		Image: msam.destroyed
+
 MCV.Husk:
 	Inherits: ^Husk
 	Tooltip:

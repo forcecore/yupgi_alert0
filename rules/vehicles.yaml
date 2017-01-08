@@ -264,7 +264,7 @@ WANGCHANG:
 	Inherits: ^Tank
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 190
+		BuildPaletteOrder: 220
 		Prerequisites: fix, stek, ~vehicles.soviet, ~techlevel.high
 		BuildDuration: 2500
 		BuildDurationModifier: 40
@@ -314,6 +314,47 @@ WANGCHANG:
 	Selectable:
 		Bounds: 44,38,0,-4
 	-EjectOnDeath:
+
+MSAM:
+	Inherits: ^Tank
+	RenderSprites:
+		PlayerPalette: player-cc1
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: 다연장로켓
+		Description: 강력한 대지 공격으로 넓은 범위에 피해를 줍니다.\n 대공 능력이 없습니다.
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 81
+		Prerequisites: dome, ~vehicles.soviet, ~techlevel.medium
+	Mobile:
+		Speed: 85
+		TurnSpeed: 4
+	Health:
+		HP: 120
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 8c0
+	Turreted:
+		TurnSpeed: 255
+		Offset: -256,0,128
+	Armament@PRIMARY:
+		Weapon: SteelRain
+		LocalOffset: 213,128,0, 213,-128,0
+	AmmoPool:
+		Ammo: 12
+		PipCount: 0
+		SelfReloads: true
+		ReloadCount: 2
+		SelfReloadDelay: 250 # reloads 2 per 10 secs
+	AttackFrontal:
+	WithSpriteTurret:
+		AimSequence: aim
+	AutoTarget:
+	SpawnActorOnDeath:
+		Actor: MSAM.Husk
 
 ARTY:
 	Inherits: ^Tank

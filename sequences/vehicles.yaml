@@ -198,6 +198,35 @@ hhusk2:
 		UseClassicFacingFudge: True
 		ZOffset: -512
 
+msam:
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret:
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	empty-aim:
+		Start: 64
+		Facings: 32
+		UseClassicFacingFudge: True
+	aim:
+		Start: 64
+		Facings: 32
+		UseClassicFacingFudge: True
+	icon: msamicon
+
+msam.destroyed:
+	idle: msam
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+	turret: msam
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+
 v2rl:
 	idle:
 		Facings: 32
