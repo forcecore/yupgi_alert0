@@ -69,6 +69,8 @@
   <ItemGroup>
     <Compile Include="Traits\DeployToTimedUpgrade.cs" />
     <Compile Include="Traits\SupportPowers\AttackOrderPower.cs" />
+    <Compile Include="Traits\Warheads\FireClusterWarhead.cs" />
+    <Compile Include="Traits\Warheads\WarheadAS.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Activities\" />
