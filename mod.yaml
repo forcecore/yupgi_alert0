@@ -5,7 +5,8 @@ Metadata:
 	Author: Boolbada
 
 RequiresMods:
-	modchooser: release-20161019
+    #modchooser: release-20161019
+	modchooser: {DEV_VERSION}
 
 Packages:
 	~^Content/ra/v2/
@@ -84,6 +85,7 @@ Assemblies:
 	common|OpenRA.Mods.Common.dll
 	ra|OpenRA.Mods.RA.dll
 	cnc|OpenRA.Mods.Cnc.dll
+	yupgi_alert|OpenRA.Mods.yupgi_alert.dll
 
 ChromeLayout:
 	ra|chrome/ingame.yaml
