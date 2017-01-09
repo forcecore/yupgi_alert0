@@ -5,8 +5,8 @@ Metadata:
 	Author: Boolbada
 
 RequiresMods:
-    modchooser: release-20161019
-    #modchooser: {DEV_VERSION}
+    #modchooser: release-20161019
+    modchooser: {DEV_VERSION}
 
 Packages:
 	~^Content/ra/v2/
