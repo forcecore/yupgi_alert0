@@ -5,6 +5,10 @@
  * free software. It is made available to you under the terms of the
  * GNU General Public License as published by the Free Software
  * Foundation. For more information, see COPYING.
+ *
+ * I (Yupgi Alert developer) copied the code from Mods.AS.
+ * Their codes are GPL hence I am required open all the source code and changes I made.
+ * https://github.com/GraionDilach/OpenRA.Mods.AS is their project repository.
  */
 #endregion
 

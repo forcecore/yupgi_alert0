@@ -12,8 +12,8 @@
  */
 #endregion
 
-// If you want the deploy key to work for this trait, you need to override
-// OpenRA.Mods.Common/Widgets/UnitCommandWidget.cs
+// I exploited the fact that is unlikely to have more than one deploy commands.
+// I used "DeployToUpgrade" as order string here.
 
 using System;
 using System.Collections.Generic;
