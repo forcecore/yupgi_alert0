@@ -300,7 +300,7 @@ SteelRainCluster:
 		Speed: 1c0
 	Warhead@2Eff: CreateEffect
 		Explosions: artillery_explosion
-		ImpactSounds: kaboom30.aud
+		ImpactSounds: bomb4-2.wav
 	Warhead@1Dam: SpreadDamage
 		Spread: 1c0
 		Damage: 15
@@ -316,7 +316,7 @@ SteelRain:
 	Range: 10c0
 	MinRange: 3c0
 	#Burst: 2
-	Report: missile6.aud
+	Report: rocket1.aud
 	#Projectile: Missile
 	#	Speed: 256
 	#	Arm: 2
