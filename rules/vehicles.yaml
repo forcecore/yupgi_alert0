@@ -151,10 +151,10 @@ V2RL:
 		Prerequisites: vehicles.upgraded
 	# Must undeploy to uncurtain haha... too OP.
 	#DeployToUpgrade:
-		#DeployedUpgrades: invulnerability
-		#Duration: 500
-		#CanDeployOnRamps: yes
-		#ChargeDelay: 500
+	#	DeployedUpgrades: invulnerability
+	#	Duration: 500
+	#	CanDeployOnRamps: yes
+	#	ChargeDelay: 500
 	# This one is it. I copied this from AS mod.
 	DeployToTimedUpgrade:
 		DeployedUpgrades: invulnerability

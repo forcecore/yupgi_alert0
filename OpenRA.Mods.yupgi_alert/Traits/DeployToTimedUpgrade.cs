@@ -8,6 +8,9 @@
  */
 #endregion
 
+// If you want the deploy key to work for this trait, you need to override
+// OpenRA.Mods.Common/Widgets/UnitCommandWidget.cs
+
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -99,13 +102,13 @@ namespace OpenRA.Mods.AS.Traits
 
 		IEnumerable<IOrderTargeter> IIssueOrder.Orders
 		{
-			get { yield return new DeployOrderTargeter("DeployToTimedUpgrade", 5,
+			get { yield return new DeployOrderTargeter("DeployToUpgrade", 5,
 				() => IsCursorBlocked() ? info.DeployBlockedCursor : info.DeployCursor); }
 		}
 
 		Order IIssueOrder.IssueOrder(Actor self, IOrderTargeter order, Target target, bool queued)
 		{
-			if (order.OrderID == "DeployToTimedUpgrade")
+			if (order.OrderID == "DeployToUpgrade")
 				return new Order(order.OrderID, self, queued);
 
 			return null;
@@ -113,7 +116,7 @@ namespace OpenRA.Mods.AS.Traits
 
 		void IResolveOrder.ResolveOrder(Actor self, Order order)
 		{
-			if (order.OrderString != "DeployToTimedUpgrade" || deployState != TimedDeployState.Ready)
+			if (order.OrderString != "DeployToUpgrade" || deployState != TimedDeployState.Ready)
 				return;
 
 			if (!order.Queued)
@@ -133,7 +136,7 @@ namespace OpenRA.Mods.AS.Traits
 
 		string IOrderVoice.VoicePhraseForOrder(Actor self, Order order)
 		{
-			return order.OrderString == "DeployToTimedUpgrade" && deployState != TimedDeployState.Ready ? info.Voice : null;
+			return order.OrderString == "DeployToUpgrade" && deployState != TimedDeployState.Ready ? info.Voice : null;
 		}
 
 		void Deploy()
