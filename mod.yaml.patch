@@ -1,0 +1,15 @@
+diff --git a/mod.yaml b/mod.yaml
+index 00f94fd..c9ee941 100644
+--- a/mod.yaml
++++ b/mod.yaml
+@@ -5,8 +5,8 @@ Metadata:
+ 	Author: Boolbada
+ 
+ RequiresMods:
+-    #modchooser: release-20161019
+-    modchooser: {DEV_VERSION}
++    modchooser: release-20161019
++    #modchooser: {DEV_VERSION}
+ 
+ Packages:
+ 	~^Content/ra/v2/
