@@ -327,7 +327,7 @@ MSAM:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 81
-		Prerequisites: dome, ~vehicles.soviet, ~techlevel.medium
+		Prerequisites: dome, ~vehicles.allies, ~techlevel.medium
 	Mobile:
 		Speed: 85
 		TurnSpeed: 4
