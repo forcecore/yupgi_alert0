@@ -43,6 +43,8 @@ Player:
 		InsufficientFundsNotification: InsufficientFunds
 	ActorGroupProxy:
 	DeveloperMode:
+        # Related to CHEATS, DEBUG_MODE, DEBUG in the lobby
+        Enabled: true
 	GpsWatcher:
 	Shroud:
 	FrozenActorLayer:
