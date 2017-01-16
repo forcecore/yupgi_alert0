@@ -668,6 +668,8 @@ GUN:
 		Sequences: building, building_napalm, large_explosion, self_destruct
 	BodyOrientation:
 		UseClassicFacingFudge: True
+	StructureChrono:
+		ChargeDelay: 300
 
 FTUR:
 	Inherits: ^Defense
