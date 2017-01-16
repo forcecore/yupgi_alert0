@@ -25,7 +25,7 @@ using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Traits.Render;
 using OpenRA.Traits;
 
-namespace OpenRA.Mods.AS.Traits
+namespace OpenRA.Mods.yupgi_alert.Traits
 {
 	public class DeployToTimedUpgradeInfo : ITraitInfo, Requires<UpgradeManagerInfo>
 	{
