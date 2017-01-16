@@ -1,3 +1,5 @@
+# vim: noet sw=4 ts=4:
+
 ^ExistsInWorld:
 	AppearsOnRadar:
 	CombatDebugOverlay:
@@ -364,7 +366,7 @@
 	Selectable:
 		Bounds: 24,24
 	Aircraft:
-		RepairBuildings: fix
+		RepairBuildings: afld, fix
 		RearmBuildings: afld
 		AirborneUpgrades: airborne
 		CruisingUpgrades: cruising
@@ -410,6 +412,7 @@
 		GenericName: Helicopter
 	Aircraft:
 		RearmBuildings: hpad
+		RepairBuildings: hpad, fix
 		CanHover: True
 	GpsDot:
 		String: Helicopter
