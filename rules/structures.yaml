@@ -50,6 +50,27 @@ MSLO:
 		Amount: -150
 	MustBeDestroyed:
 		RequiredForShortGame: false
+	# Can produce nuke mig!
+	Production:
+		Produces: Aircraft, NukeMig
+	WithDecoration@primary:
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-primary
+		ReferencePoint: Top
+		ZOffset: 256
+		UpgradeTypes: primary
+		UpgradeMinEnabledLevel: 1
+	ProvidesPrerequisite@buildingname:
+	PrimaryBuilding:
+	ProductionBar:
+	RallyPoint:
+	Exit@1:
+		ExitCell: 1,1
+		Facing: 192
+		MoveIntoWorld: false
+	WithRearmAnimation:
+	Reservable:
 
 GAP:
 	Inherits: ^ScienceBuilding
@@ -1134,6 +1155,11 @@ HPAD:
 		UpgradeTypes: primary
 		UpgradeMinEnabledLevel: 1
 	WithRearmAnimation:
+	WithRepairAnimation:
+	RepairsUnits:
+		Interval: 10
+		FinishRepairingNotification: UnitRepaired
+		PlayerExperience: 15
 
 AFLD:
 	Inherits: ^Building
@@ -1253,6 +1279,11 @@ AFLD:
 		UpgradeTypes: primary
 		UpgradeMinEnabledLevel: 1
 	WithRearmAnimation:
+	WithRepairAnimation:
+	RepairsUnits:
+		Interval: 10
+		FinishRepairingNotification: UnitRepaired
+		PlayerExperience: 15
 
 POWR:
 	Inherits: ^Building
