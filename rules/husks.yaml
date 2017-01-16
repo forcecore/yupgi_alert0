@@ -207,20 +207,21 @@ NMIG.Husk:
 	RevealsShroud:
 		Range: 12c0
 		Type: CenterPosition
-	RenderVoxels:
-		Scale: 1.0
-		Image: nmig
-		PlayerPalette: player-ra2
-    #RenderSprites:
-        #Image: nmig
     -WithFacingSpriteBody:
     -QuantizeFacingsFromSequence:
+    -AutoSelectionSize: # only applies to sprite actors
     WithVoxelBody:
 	BodyOrientation:
 		QuantizedFacings: 0
 		CameraPitch: 90
 		UseClassicPerspectiveFudge: false
     -WithShadow: # Disable 2D sprite shadow logic
+	RenderVoxels:
+		Scale: 0.7
+		Image: nmig
+		PlayerPalette: player-ra2
+    RenderSprites:
+        Image: nmig
 
 YAK.Husk:
 	Inherits: ^PlaneHusk

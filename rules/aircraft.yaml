@@ -197,7 +197,7 @@ NMIG:
 		Prerequisites: aircraft.upgraded
 	WithVoxelBody:
 	RenderVoxels:
-		Scale: 1
+		Scale: 0.7
 		#LightYaw: 800
 		#LightPitch: 150
 		#LightAmbientColor: -0.5,-0.5,-0.5
