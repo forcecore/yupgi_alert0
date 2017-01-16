@@ -558,20 +558,21 @@ PBOX:
 		HasMinibib: Yes
 	Turreted:
 		TurnSpeed: 255
+	AttackTurreted:
+	Armament@PRIMARY:
+		Weapon: Vulcan
+		LocalOffset: 512,0,171
+		MuzzleSequence: muzzle
+	WithMuzzleOverlay:
 	-QuantizeFacingsFromSequence:
 	BodyOrientation:
 		QuantizedFacings: 8
-	Cargo:
-		Types: Infantry
-		MaxWeight: 1
-		PipCount: 1
-		InitialUnits: e1
 	-EmitInfantryOnSell:
-	AttackGarrisoned:
-		Armaments: garrisoned
-		PortOffsets: 384,0,128, 224,-341,128, -224,-341,128, -384,0,128, -224,341,128, 224,341,128
-		PortYaws: 0, 176, 341, 512, 682, 853
-		PortCones: 88, 88, 88, 88, 88, 88
+	#AttackGarrisoned:
+		#Armaments: garrisoned
+		#PortOffsets: 384,0,128, 224,-341,128, -224,-341,128, -384,0,128, -224,341,128, 224,341,128
+		#PortYaws: 0, 176, 341, 512, 682, 853
+		#PortCones: 88, 88, 88, 88, 88, 88
 	RenderRangeCircle:
 		FallbackRange: 6c0
 	Power:
@@ -580,6 +581,8 @@ PBOX:
 		Range: 6c0
 	WithBuildingExplosion:
 		Sequences: building, building_napalm, large_explosion, self_destruct
+	StructureChrono:
+		ChargeDelay: 300
 
 HBOX:
 	Inherits: ^Defense
@@ -610,9 +613,10 @@ HBOX:
 		QuantizedFacings: 8
 	Cargo:
 		Types: Infantry
-		MaxWeight: 1
-		PipCount: 1
-		InitialUnits: e1
+		MaxWeight: 5
+		PipCount: 5
+		#InitialUnits: e1
+		# No initial units
 	-EmitInfantryOnSell:
 	DetectCloaked:
 		Range: 6c0
