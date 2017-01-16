@@ -189,6 +189,39 @@ MIG.Husk:
 	RenderSprites:
 		Image: mig
 
+NMIG.Husk:
+	Inherits: ^PlaneHusk
+	Tooltip:
+		Name: Nuclear Mig Attack Plane
+	Contrail@1:
+		Offset: -598,-683,0
+	Contrail@2:
+		Offset: -598,683,0
+	Aircraft:
+		TurnSpeed: 5
+		Speed: 186
+	SmokeTrailWhenDamaged:
+		Offset: -853,0,171
+		Interval: 2
+		MinDamage: Undamaged
+	RevealsShroud:
+		Range: 12c0
+		Type: CenterPosition
+	RenderVoxels:
+		Scale: 1.0
+		Image: nmig
+		PlayerPalette: player-ra2
+    #RenderSprites:
+        #Image: nmig
+    -WithFacingSpriteBody:
+    -QuantizeFacingsFromSequence:
+    WithVoxelBody:
+	BodyOrientation:
+		QuantizedFacings: 0
+		CameraPitch: 90
+		UseClassicPerspectiveFudge: false
+    -WithShadow: # Disable 2D sprite shadow logic
+
 YAK.Husk:
 	Inherits: ^PlaneHusk
 	Tooltip:

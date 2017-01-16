@@ -141,8 +141,6 @@ MIG:
 # Nuclear Mig
 NMIG:
 	Inherits: ^Plane
-	RenderSprites:
-		Image: mig
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: NukeMig
@@ -150,7 +148,7 @@ NMIG:
 		Prerequisites: ~stek, mslo, ~techlevel.high
 		BuildLimit: 1
 	Valued:
-		Cost: 2000
+		Cost: 3000
 	Tooltip:
 		Name: Nuclear Mig Attack Plane
 		Description: Fast Ground-Attack Plane.\n  Strong vs Structures, Ground Units\n  Weak vs Aircraft, Anti-Air
@@ -191,12 +189,28 @@ NMIG:
 	Contrail@2:
 		Offset: -598,683,0
 	SpawnActorOnDeath:
-		Actor: MIG.Husk
+		Actor: NMIG.Husk
 	SmokeTrailWhenDamaged:
 		Offset: -853,0,171
 		Interval: 2
 	ProducibleWithLevel:
 		Prerequisites: aircraft.upgraded
+	WithVoxelBody:
+	RenderVoxels:
+		Scale: 1
+		#LightYaw: 800
+		#LightPitch: 150
+		#LightAmbientColor: -0.5,-0.5,-0.5
+		#LightDiffuseColor: 1.4,1.4,1.4
+		PlayerPalette: player-ra2
+	BodyOrientation:
+		QuantizedFacings: 0
+		CameraPitch: 90
+		UseClassicPerspectiveFudge: false
+	RenderSprites: # For icons
+	-WithFacingSpriteBody:
+	-QuantizeFacingsFromSequence:
+	-WithShadow: # Disable 2D shadow drawing logic for sprite actors
 
 YAK:
 	Inherits: ^Plane

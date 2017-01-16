@@ -1,3 +1,5 @@
+# vim: noet sw=4 ts=4:
+
 Metadata:
 	Title: 엽기얼럿
 	Description: Crazy modifications to Red Alert by Boolbada
@@ -5,8 +7,8 @@ Metadata:
 	Author: Boolbada
 
 RequiresMods:
-    #modchooser: release-20161019
-    modchooser: {DEV_VERSION}
+	#modchooser: release-20161019
+	modchooser: {DEV_VERSION}
 
 Packages:
 	~^Content/ra/v2/
@@ -35,7 +37,7 @@ Packages:
 	~hires1.mix
 	~desert.mix
 	ra|bits
-    yupgi_alert|bits
+	yupgi_alert|bits
 	ra|bits/desert
 	ra|uibits
 
@@ -68,6 +70,9 @@ Sequences:
 	yupgi_alert|sequences/aircraft.yaml
 	yupgi_alert|sequences/misc.yaml
 	yupgi_alert|sequences/decorations.yaml
+
+VoxelSequences:
+	yupgi_alert|sequences/voxels.yaml
 
 TileSets:
 	ra|tilesets/snow.yaml
@@ -141,7 +146,7 @@ Voices:
 	yupgi_alert|audio/voices.yaml
 
 Notifications:
-    ra|audio/notifications.yaml
+	ra|audio/notifications.yaml
 
 Music:
 	ra|audio/music.yaml

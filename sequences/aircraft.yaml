@@ -3,6 +3,9 @@ mig:
 		Facings: 16
 	icon: migicon
 
+nmig:
+	icon: heliicon
+
 yak:
 	idle:
 		Facings: 16
