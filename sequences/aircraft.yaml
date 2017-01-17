@@ -4,7 +4,7 @@ mig:
 	icon: migicon
 
 nmig:
-	icon: heliicon
+	icon: nmigicon
 
 yak:
 	idle:
