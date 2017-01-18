@@ -1,5 +1,7 @@
-# yupgi_alert0
-엽기얼럿 제로
+# Over Powered Mod (엽기얼럿 제로)
+
+See wiki for changes in units :)
+Below are for modders.
 
 # 모딩 환경 갖추는 법
 
