@@ -560,8 +560,8 @@ DOME:
 PBOX:
 	Inherits: ^Defense
 	Tooltip:
-		Name: Pillbox
-		Description: Static defense with a fireport for a\ngarrisoned soldier.\nCan detect cloaked units.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft
+		Name: Chrono Pillbox
+		Description: Anti-infantry defense.\nCan jump forward with chrono technology.\nCan detect cloaked units.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft
 	Building:
 	Buildable:
 		Queue: Defense
@@ -663,8 +663,8 @@ GUN:
 	Valued:
 		Cost: 600
 	Tooltip:
-		Name: Turret
-		Description: Anti-Armor base defense.\nCan detect cloaked units.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
+		Name: Chrono Turret
+		Description: Anti-Armor base defense.\nCan jump forward with chrono technology.\nCan detect cloaked units.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
 	Building:
 	Health:
 		HP: 400

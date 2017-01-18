@@ -124,7 +124,7 @@ DD:
 	Valued:
 		Cost: 1200
 	Tooltip:
-		Name: 크로노 구축함
+		Name: Chrono Destoyer
 		Description: Fast multi-role ship.\nCan detect submarines.\n  Strong vs Naval units, Light armor, Aircraft\n  Weak vs Infantry, Tanks
 	Health:
 		HP: 400

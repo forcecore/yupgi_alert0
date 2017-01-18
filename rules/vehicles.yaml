@@ -120,7 +120,7 @@ V2RL:
 	Valued:
 		Cost: 1150
 	Tooltip:
-		Name: 대형 탱크
+		Name: Heavy Tank
 		Description: Soviet Main Battle Tank, with dual cannons\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
 	Health:
 		HP: 550
@@ -171,8 +171,8 @@ WANGCHANG:
 	Valued:
 		Cost: 1500
 	Tooltip:
-		Name: 왕창 다부셔
-		Description: 크고 아름다운 충격파를 주는 유닛.\n 비행 유닛에 약합니다.
+		Name: Dismantler
+		Description: Emits shockwave that destroys anything on the ground.\nWeak vs Aircraft
 	SelectionDecorations:
 		VisualBounds: 42,42
 	Health:
@@ -322,8 +322,8 @@ MSAM:
 	Valued:
 		Cost: 1200
 	Tooltip:
-		Name: 다연장로켓
-		Description: 강력한 대지 공격으로 넓은 범위에 피해를 줍니다.\n 대공 능력이 없습니다.
+		Name: MLRS
+		Description: It will rain steel on the battle field.\n Weak vs Aircraft
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 81

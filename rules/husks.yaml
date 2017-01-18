@@ -63,7 +63,7 @@ HARV.EmptyHusk:
 WANGCHANG.Husk:
 	Inherits: ^Husk
 	Tooltip:
-		Name: Husk (왕창 다부셔)
+		Name: Husk (Dismantler)
 	TransformOnCapture:
 		IntoActor: wangchang
 	RenderSprites:
@@ -87,7 +87,7 @@ WANGCHANG.Husk:
 MSAM.Husk:
 	Inherits: ^Husk
 	Tooltip:
-		Name: Husk (다연장로켓)
+		Name: Husk (MLRS)
 		Icon: msamicon
 	ThrowsParticle@turret:
 		Anim: turret

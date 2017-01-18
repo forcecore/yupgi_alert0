@@ -63,8 +63,8 @@ CHITZ:
 	Valued:
 		Cost: 1000
 	Tooltip:
-		Name: 치츠코이
-		Description: 대보병 슈퍼유닛.\nCan detect cloaked units and spies.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		Name: Chitzkoi
+		Description: Anti-infantry super unit.\nCan detect cloaked units and spies.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 		GenericName: Dog
 	Selectable:
 		Bounds: 12,17,-1,-4
@@ -226,7 +226,7 @@ E6:
 	Valued:
 		Cost: 500
 	Tooltip:
-		Name: 엔지니어
+		Name: Engineer
 		Description: Infiltrates and captures\nenemy structures.\n  Unarmed
 	Passenger:
 		PipType: Yellow
@@ -588,8 +588,8 @@ VOLKOV:
 	Valued:
 		Cost: 2500
 	Tooltip:
-		Name: 볼코프
-		Description: 정예 특수 보병. 카운터스트라이크의 그 볼코프.
+		Name: Volkov
+		Description: The Elite Super Soldier from Counterstrike
 	Health:
 		HP: 2500
 	Voiced:
