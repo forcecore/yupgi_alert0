@@ -1,7 +1,10 @@
 # Over Powered Mod (엽기얼럿 제로)
 
-See wiki for changes in units :)
-Below are for modders.
+* This mod is currently for OpenRA release-20161019 (latest stable as of 2017-01-19)
+* See wiki for changes in units :)
+* You can report bugs at the issues menu.
+
+The following are for modders.
 
 # 모딩 환경 갖추는 법
 
