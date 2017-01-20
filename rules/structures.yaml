@@ -546,7 +546,7 @@ DOME:
 	Armor:
 		Type: Wood
 	RevealsShroud:
-		Range: 10c0
+		Range: 20c0
 	Bib:
 	ProvidesRadar:
 	InfiltrateForExploration:
@@ -990,6 +990,9 @@ FACT:
 		UseDeathTypeSuffix: false
 	WithBuildingExplosion:
 		Delay: 1
+	ProvidesRadar:
+	# as in C&C3 and RA3!
+	# Now, radar dome provides wide sighted fog of war removal.
 	ProvidesPrerequisite@buildingname:
 
 PROC:
