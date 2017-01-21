@@ -385,27 +385,28 @@ PDOX:
 		HasMinibib: Yes
 	ProvidesPrerequisite@germany:
 		Factions: germany
-		Prerequisite: pdox.germany
-	ProvidesPrerequisite@germanstructure:
+	Prerequisite: pdox.germany
+		ProvidesPrerequisite@germanstructure:
 		RequiresPrerequisites: structures.germany
 		Prerequisite: pdox.germany
-	ChronoshiftPower@chronoshift:
-		OrderName: Chronoshift
-		Prerequisites: !pdox.germany
-		Icon: chrono
-		ChargeTime: 120
-		Description: Chronoshift
-		LongDesc: Teleports a group of units across\nthe map for 20 seconds.
-		SelectTargetSpeechNotification: SelectTarget
-		InsufficientPowerSpeechNotification: InsufficientPower
-		BeginChargeSpeechNotification: ChronosphereCharging
-		EndChargeSpeechNotification: ChronosphereReady
-		Duration: 20
-		KillCargo: no
-		DisplayRadarPing: True
+	#ChronoshiftPower@chronoshift:
+		#OrderName: Chronoshift
+		#Prerequisites: !pdox.germany
+		#Icon: chrono
+		#ChargeTime: 120
+		#Description: Chronoshift
+		#LongDesc: Teleports a group of units across\nthe map for 20 seconds.
+		#SelectTargetSpeechNotification: SelectTarget
+		#InsufficientPowerSpeechNotification: InsufficientPower
+		#BeginChargeSpeechNotification: ChronosphereCharging
+		#EndChargeSpeechNotification: ChronosphereReady
+		#Duration: 20
+		#KillCargo: no
+		#DisplayRadarPing: True
 	ChronoshiftPower@advancedchronoshift:
 		OrderName: AdvancedChronoshift
-		Prerequisites: pdox.germany
+		#Prerequisites: pdox.germany
+		Prerequisites: pdox
 		Icon: chrono
 		ChargeTime: 120
 		Description: Advanced Chronoshift
