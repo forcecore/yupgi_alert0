@@ -1250,7 +1250,7 @@ AFLD:
 		SquadOffset: -400,400,400
 	AirstrikePower@parabombs:
 		OrderName: UkraineParabombs
-		Prerequisites: aircraft.ukraine
+		Prerequisites: aircraft.soviet
 		Icon: parabombs
 		ChargeTime: 360
 		Description: Parabombs
