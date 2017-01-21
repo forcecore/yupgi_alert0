@@ -15,41 +15,46 @@
 		Name: Allies
 		InternalName: allies
 		Side: Allies
-		Selectable: False
+		Selectable: True
 	Faction@1:
 		Name: England
 		InternalName: england
 		Side: Allies
 		Description: England: Espionage\nSpecial Unit: British Spy\nSpecial Unit: Phase Transport
+        Selectable: False
 	Faction@2:
 		Name: France
 		InternalName: france
 		Side: Allies
 		Description: France: Deception\nSpecial Ability: Can build fake structures\nSpecial Unit: Mobile Gap Generator
+        Selectable: False
 	Faction@3:
 		Name: Germany
 		InternalName: germany
 		Side: Allies
 		Description: Germany: Technology\nSpecial Ability: Advanced Chronoshift\nSpecial Unit: Chrono Tank
+        Selectable: False
 	Faction@4:
 		Name: Soviet
 		InternalName: soviet
 		Side: Soviet
-		Selectable: False
+		Selectable: True
 	Faction@5:
 		Name: Russia
 		InternalName: russia
 		Side: Soviet
 		Description: Russia: Tesla Weapons\nSpecial Unit: Tesla Tank\nSpecial Unit: Shock Trooper
+		Selectable: False
 	Faction@6:
 		Name: Ukraine
 		InternalName: ukraine
 		Side: Soviet
 		Description: Ukraine: Demolitions\nSpecial Ability: Parabombs\nSpecial Unit: Demolition Truck
+		Selectable: False
 	Faction@random:
 		Name: Any
 		InternalName: Random
-		RandomFactionMembers: RandomAllies, RandomSoviet
+		RandomFactionMembers: allies, soviet
 		Side: Random
 		Description: A random country.
 	Faction@randomallies:
@@ -58,12 +63,14 @@
 		RandomFactionMembers: england, france, germany
 		Side: Random
 		Description: A random Allied country.
+		Selectable: False
 	Faction@randomsoviet:
 		Name: Soviet
 		InternalName: RandomSoviet
 		RandomFactionMembers: russia, ukraine
 		Side: Random
 		Description: A random Soviet country.
+		Selectable: False
 	ResourceType@ore:
 		ResourceType: 1
 		Palette: player
