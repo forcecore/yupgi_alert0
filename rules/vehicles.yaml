@@ -819,7 +819,7 @@ CTNK:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 210
-		Prerequisites: atek, ~vehicles.germany, ~techlevel.high
+		Prerequisites: atek, ~vehicles.allies, ~techlevel.high
 	Valued:
 		Cost: 1350
 	Tooltip:
