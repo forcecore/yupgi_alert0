@@ -883,7 +883,7 @@ STNK:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 140
-		Prerequisites: atek, ~vehicles.england, ~techlevel.high
+		Prerequisites: atek, ~vehicles.allies, ~techlevel.high
 	Valued:
 		Cost: 1350
 	Tooltip:
