@@ -4,7 +4,7 @@ FPWR:
 	Buildable:
 		BuildPaletteOrder: 870
 		Queue: Defense
-		Prerequisites: ~structures.france, ~techlevel.infonly
+		Prerequisites: ~structures.allies, ~techlevel.infonly
 	Tooltip:
 		Icon: fake-icon
 		Name: Fake Power Plant
@@ -31,7 +31,7 @@ SYRF:
 	Buildable:
 		BuildPaletteOrder: 890
 		Queue: Defense
-		Prerequisites: ~structures.france, ~techlevel.medium
+		Prerequisites: ~structures.allies, ~techlevel.medium
 	Tooltip:
 		Icon: fake-icon
 		Name: Fake Shipyard
@@ -94,7 +94,7 @@ WEAF:
 	Inherits@infiltrate: ^InfiltratableFake
 	Buildable:
 		BuildPaletteOrder: 920
-		Prerequisites: ~structures.france, ~techlevel.medium
+		Prerequisites: ~structures.allies, ~techlevel.medium
 		Queue: Defense
 	Tooltip:
 		Icon: fake-icon
@@ -131,7 +131,7 @@ DOMF:
 	Buildable:
 		BuildPaletteOrder: 930
 		Queue: Defense
-		Prerequisites: ~structures.france, ~techlevel.medium
+		Prerequisites: ~structures.allies, ~techlevel.medium
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -152,7 +152,7 @@ FIXF:
 	Buildable:
 		BuildPaletteOrder: 940
 		Queue: Defense
-		Prerequisites: ~structures.france, ~techlevel.medium
+		Prerequisites: ~structures.allies, ~techlevel.medium
 	Tooltip:
 		Icon: fake-icon
 		Name: Fake Service Depot
@@ -180,7 +180,7 @@ FAPW:
 	Buildable:
 		BuildPaletteOrder: 950
 		Queue: Defense
-		Prerequisites: ~structures.france, ~techlevel.medium
+		Prerequisites: ~structures.allies, ~techlevel.medium
 	Tooltip:
 		Icon: fake-icon
 		Name: Fake Advanced Power Plant
@@ -217,7 +217,7 @@ ATEF:
 	Buildable:
 		BuildPaletteOrder: 970
 		Queue: Defense
-		Prerequisites: ~structures.france, ~techlevel.high
+		Prerequisites: ~structures.allies, ~techlevel.high
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -245,7 +245,7 @@ PDOF:
 	Buildable:
 		BuildPaletteOrder: 980
 		Queue: Defense
-		Prerequisites: ~structures.france, ~techlevel.unrestricted
+		Prerequisites: ~structures.allies, ~techlevel.unrestricted
 		BuildLimit: 1
 	Building:
 		Footprint: xx xx
@@ -277,7 +277,7 @@ MSLF:
 	Buildable:
 		BuildPaletteOrder: 990
 		Queue: Defense
-		Prerequisites: ~structures.france, ~techlevel.unrestricted
+		Prerequisites: ~structures.allies, ~techlevel.unrestricted
 		BuildLimit: 1
 	Building:
 		Footprint: xx
@@ -300,7 +300,7 @@ FACF:
 	Buildable:
 		BuildPaletteOrder: 1000
 		Queue: Defense
-		Prerequisites: ~structures.france, ~techlevel.medium
+		Prerequisites: ~structures.allies, ~techlevel.medium
 	Tooltip:
 		Icon: fake-icon
 		Name: Fake Construction Yard
