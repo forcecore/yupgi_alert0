@@ -655,7 +655,7 @@ MGG:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 160
-		Prerequisites: atek, ~vehicles.france, ~techlevel.high
+		Prerequisites: atek, ~vehicles.allies, ~techlevel.high
 	Valued:
 		Cost: 1200
 	Tooltip:
