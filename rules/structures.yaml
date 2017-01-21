@@ -383,12 +383,12 @@ PDOX:
 		Range: 10c0
 	Bib:
 		HasMinibib: Yes
-	ProvidesPrerequisite@germany:
-		Factions: germany
-	Prerequisite: pdox.germany
-		ProvidesPrerequisite@germanstructure:
-		RequiresPrerequisites: structures.germany
-		Prerequisite: pdox.germany
+	#ProvidesPrerequisite@germany:
+		#Factions: germany
+	#Prerequisite: pdox.germany
+		#ProvidesPrerequisite@germanstructure:
+		#RequiresPrerequisites: structures.germany
+		#Prerequisite: pdox.germany
 	#ChronoshiftPower@chronoshift:
 		#OrderName: Chronoshift
 		#Prerequisites: !pdox.germany
