@@ -789,7 +789,7 @@ DTRK:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 170
-		Prerequisites: stek, ~vehicles.ukraine, ~techlevel.high
+		Prerequisites: stek, ~vehicles.soviet, ~techlevel.high
 	Valued:
 		Cost: 2500
 	Tooltip:
