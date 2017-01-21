@@ -571,7 +571,7 @@ VOLKOV:
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
-		BuildPaletteOrder: 120
+		BuildPaletteOrder: 140
 		Prerequisites: ~barr, stek, ~techlevel.high
 		BuildLimit: 1
 	Valued:
