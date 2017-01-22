@@ -47,6 +47,7 @@ Player:
         Enabled: true
 	GpsWatcher:
 	Shroud:
+        ExploredMapEnabled: true
 	FrozenActorLayer:
 	BaseAttackNotifier:
 	PlayerStatistics:
