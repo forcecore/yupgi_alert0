@@ -926,3 +926,48 @@ STNK:
 	-MustBeDestroyed:
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+
+QANT:
+	Inherits: ^Infantry
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 90
+		Prerequisites: ~techlevel.medium
+		BuildDuration: 2000
+		BuildDurationModifier: 40
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Queen Ant
+		Description: Deploys into Queen Ant Lair.\n  Unarmed
+	Selectable:
+		Priority: 4
+	SelectionDecorations:
+		VisualBounds: 42,42
+	Health:
+		#HP: 600
+		HP: 2000 # tougher than regular MCVs haha
+	Armor:
+		Type: Light
+	Mobile:
+		Speed: 85
+		Crushes: wall, mine, crate, infantry
+	RevealsShroud:
+		Range: 4c0
+	Transforms:
+		IntoActor: quee
+		Offset: -1,-1
+		Facing: 96
+		TransformSounds: placbldg.aud, build5.aud
+		NoTransformNotification: BuildingCannotPlaceAudio
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	BaseBuilding:
+	#SpawnActorOnDeath:
+		#Actor: MCV.Husk
+	WithDeathAnimation:
+		UseDeathTypeSuffix: false
+	#WithInfantryBody:
+	#-WithFacingSpriteBody:
+	Voiced:
+		VoiceSet: AntVoice

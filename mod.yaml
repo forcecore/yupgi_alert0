@@ -84,7 +84,7 @@ Cursors:
 	ra|cursors.yaml
 
 Chrome:
-	ra|chrome.yaml
+	yupgi_alert|chrome.yaml
 
 Assemblies:
 	common|OpenRA.Mods.Common.dll
@@ -166,7 +166,7 @@ ServerTraits:
 
 ChromeMetrics:
 	common|metrics.yaml
-	ra|metrics.yaml
+	yupgi_alert|metrics.yaml
 
 Fonts:
 	Regular:

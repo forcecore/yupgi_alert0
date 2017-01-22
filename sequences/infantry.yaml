@@ -1398,3 +1398,24 @@ ant:
 		Tick: 400
 		ZOffset: -511
 	icon: anticon
+
+qant:
+	stand: qant
+		Facings: 8
+	stand2: qant
+		Start: 8
+		Length: 8
+	run: qant
+		Start: 8
+		Length: 8
+		Facings: 8
+	die: ant1
+		Start: 72
+		Length: 8
+		Tick: 300
+	die-crushed: ant1
+		Start: 72
+		Length: 8
+		Tick: 400
+		ZOffset: -511
+	icon: anticon

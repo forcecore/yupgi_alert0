@@ -51,10 +51,15 @@
 		Side: Soviet
 		Description: Ukraine: Demolitions\nSpecial Ability: Parabombs\nSpecial Unit: Demolition Truck
 		Selectable: False
+	Faction@7:
+		Name: Creepy Crawlies
+		InternalName: creepies
+		Side: Creepies
+		Selectable: True
 	Faction@random:
 		Name: Any
 		InternalName: Random
-		RandomFactionMembers: allies, soviet
+		RandomFactionMembers: allies, soviet, creepies
 		Side: Random
 		Description: A random country.
 	Faction@randomallies:
@@ -135,6 +140,11 @@ World:
 		ClassName: MCV Only
 		Factions: allies, england, france, germany, soviet, russia, ukraine
 		BaseActor: mcv
+	MPStartUnits@mcvonlycreepies:
+		Class: none
+		ClassName: MCV Only
+		Factions: creepies
+		BaseActor: qant
 	MPStartUnits@lightallies:
 		Class: light
 		ClassName: Light Support
@@ -151,6 +161,14 @@ World:
 		SupportActors: e1,e1,e1,e3,e3,apc,ftrk
 		InnerSupportRadius: 3
 		OuterSupportRadius: 5
+	MPStartUnits@lightcreepies:
+		Class: light
+		ClassName: Light Support
+		Factions: creepies
+		BaseActor: qant
+		SupportActors: e1,e1,e1,e3,e3,apc,ftrk
+		InnerSupportRadius: 3
+		OuterSupportRadius: 5
 	MPStartUnits@heavyallies:
 		Class: heavy
 		ClassName: Heavy Support
@@ -163,6 +181,14 @@ World:
 		Class: heavy
 		ClassName: Heavy Support
 		Factions: soviet, russia, ukraine
+		BaseActor: mcv
+		SupportActors: e1,e1,e1,e3,e3,apc,ftrk,3tnk,3tnk
+		InnerSupportRadius: 3
+		OuterSupportRadius: 5
+	MPStartUnits@heavycreepies:
+		Class: heavy
+		ClassName: Heavy Support
+		Factions: creepies
 		BaseActor: mcv
 		SupportActors: e1,e1,e1,e3,e3,apc,ftrk,3tnk,3tnk
 		InnerSupportRadius: 3
