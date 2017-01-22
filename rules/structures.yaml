@@ -526,7 +526,7 @@ DOME:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 90
-		Prerequisites: proc, ~techlevel.medium
+		Prerequisites: ~fact, proc, ~techlevel.medium
 	Valued:
 		Cost: 1800
 	Tooltip:
@@ -823,7 +823,7 @@ WEAP:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 80
-		Prerequisites: proc, ~techlevel.low
+		Prerequisites: ~fact, proc, ~techlevel.low
 	Valued:
 		Cost: 2000
 	Tooltip:
@@ -1001,7 +1001,7 @@ PROC:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 60
-		Prerequisites: anypower, ~techlevel.infonly
+		Prerequisites: ~fact, anypower, ~techlevel.infonly
 	Valued:
 		Cost: 1400
 	Tooltip:
@@ -1294,7 +1294,7 @@ POWR:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 10
-		Prerequisites: ~techlevel.infonly
+		Prerequisites: ~fact, ~techlevel.infonly
 	Valued:
 		Cost: 300
 	Tooltip:
@@ -1331,7 +1331,7 @@ APWR:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 110
-		Prerequisites: dome, ~techlevel.medium
+		Prerequisites: ~fact, dome, ~techlevel.medium
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -1601,7 +1601,7 @@ FIX:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 100
-		Prerequisites: weap, ~techlevel.medium
+		Prerequisites: ~fact, weap, ~techlevel.medium
 	Valued:
 		Cost: 1200
 	Tooltip:
@@ -1826,7 +1826,7 @@ QNEST:
 		Range: 5c0
 	#Bib:
 	Production:
-		Produces: Building,Defense
+		Produces: Building,Defense,Vehicle
 	Valued:
 		Cost: 2500
 	Tooltip:
@@ -1849,6 +1849,10 @@ QNEST:
 	WithBuildingPlacedAnimation:
 	Power:
 		Amount: 0
+	Exit@1:
+		SpawnOffset: 213,-128,0
+		ExitCell: 1,2
+	RallyPoint:
 	WithDeathAnimation:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
@@ -1860,3 +1864,12 @@ QNEST:
 	ProvidesPrerequisite@buildingname:
 	-EmitInfantryOnSell: # would be stupid
 	-Sellable: # not sellable. It's a biological nest!
+	PrimaryBuilding:
+	WithDecoration@primary:
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-primary
+		ReferencePoint: Top
+		ZOffset: 256
+		UpgradeTypes: primary
+		UpgradeMinEnabledLevel: 1

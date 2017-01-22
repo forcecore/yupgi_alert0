@@ -930,9 +930,9 @@ STNK:
 QANT:
 	Inherits: ^Infantry
 	Buildable:
-		Queue: Vehicle
+		Queue: Building
 		BuildPaletteOrder: 90
-		Prerequisites: ~techlevel.medium
+		Prerequisites: ~qnest
 		BuildDuration: 2000
 		BuildDurationModifier: 40
 	Valued:
