@@ -656,3 +656,17 @@ cycl:
 	damaged-idle:
 		Start: 16
 		Length: 16
+
+qnest:
+	idle:
+		Length: 1
+    make: qnestbld
+		Start: 0
+		Length: 24
+    build:
+		Start: 0
+		Length: 1
+	damaged-idle:
+		Start: 0
+		Length: 1
+    icon: qnesticon

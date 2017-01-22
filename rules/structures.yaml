@@ -1805,3 +1805,58 @@ ANYPOWER:
 	Tooltip:
 		Name: Power Plant
 		Description: Power Plant
+
+QNEST:
+	Inherits: ^Building
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
+	ProvidesPrerequisite@creepies:
+		Factions: creepies
+		Prerequisite: structures.creepies
+	Health:
+		HP: 1500
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 5c0
+	#Bib:
+	Production:
+		Produces: Building,Defense
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Queen's Nest
+		Description: Produces other ants.
+	CustomSellValue:
+		Value: 2500
+	BaseBuilding:
+	#Transforms:
+	#	IntoActor: mcv
+	#	Offset: 1,1
+	#	Facing: 96
+	ProductionBar@Building:
+		ProductionType: Building
+	ProductionBar@Defense:
+		ProductionType: Defense
+		Color: 8A8A8A
+	BaseProvider:
+		Range: 16c0
+	WithBuildingPlacedAnimation:
+	Power:
+		Amount: 0
+	WithDeathAnimation:
+		DeathSequence: dead
+		UseDeathTypeSuffix: false
+	WithBuildingExplosion:
+		Delay: 1
+	ProvidesRadar:
+	# as in C&C3 and RA3!
+	# Now, radar dome provides wide sighted fog of war removal.
+	ProvidesPrerequisite@buildingname:
+	-EmitInfantryOnSell: # would be stupid
+	-Sellable: # not sellable. It's a biological nest!

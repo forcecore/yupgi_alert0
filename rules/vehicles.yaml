@@ -939,7 +939,7 @@ QANT:
 		Cost: 2000
 	Tooltip:
 		Name: Queen Ant
-		Description: Deploys into Queen Ant Lair.\n  Unarmed
+		Description: Deploys into Queen's Nest.\n  Unarmed
 	Selectable:
 		Priority: 4
 	SelectionDecorations:
@@ -955,7 +955,7 @@ QANT:
 	RevealsShroud:
 		Range: 4c0
 	Transforms:
-		IntoActor: quee
+		IntoActor: qnest
 		Offset: -1,-1
 		Facing: 96
 		TransformSounds: placbldg.aud, build5.aud
