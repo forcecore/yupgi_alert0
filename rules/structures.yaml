@@ -1081,6 +1081,44 @@ SILO:
 	WithBuildingExplosion:
 		Sequences: building, building_napalm, large_explosion, self_destruct
 
+ANTHILL:
+	Inherits: ^Building
+	RenderSprites:
+		Scale: 0.33
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 35
+		Prerequisites: ~qnest, ~techlevel.infonly
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: Ant Hill
+		Description: Stores excess refined\nOre and Gems.\nAllows scout ants to deposit ore.
+	Building:
+		Adjacent: 8
+		Footprint: =
+	-GivesBuildableArea:
+	Health:
+		HP: 300
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	#Bib:
+		#HasMinibib: 
+	#WithSiloAnimation:
+	StoresResources:
+		PipCount: 5
+		Capacity: 1500
+	-EmitInfantryOnSell:
+	#Power:
+		#Amount: -10
+	Refinery:
+		DockAngle: 64
+		DockOffset: 0,0
+	WithBuildingExplosion:
+		Sequences: building, building_napalm, large_explosion, self_destruct
+
 HPAD:
 	Inherits: ^Building
 	Buildable:
@@ -1826,12 +1864,12 @@ QNEST:
 		Range: 5c0
 	#Bib:
 	Production:
-		Produces: Building,Defense,Vehicle
+		Produces: Building,Defense,Infantry,Soldier
 	Valued:
 		Cost: 2500
 	Tooltip:
 		Name: Queen's Nest
-		Description: Produces other ants.
+		Description: Produces other ants and creepies.
 	CustomSellValue:
 		Value: 2500
 	BaseBuilding:
@@ -1844,6 +1882,9 @@ QNEST:
 	ProductionBar@Defense:
 		ProductionType: Defense
 		Color: 8A8A8A
+	ProductionBar@Infantry:
+		ProductionType: Infantry
+		Color: 8A8A8A
 	BaseProvider:
 		Range: 16c0
 	WithBuildingPlacedAnimation:
@@ -1852,10 +1893,19 @@ QNEST:
 	Exit@1:
 		SpawnOffset: 213,-128,0
 		ExitCell: 1,2
+	Exit@2:
+		SpawnOffset: 213,-128,0
+		ExitCell: 1,2
+	Exit@3:
+		SpawnOffset: 213,-128,0
+		ExitCell: 1,2
+	Exit@4:
+		SpawnOffset: 213,-128,0
+		ExitCell: 1,2
 	RallyPoint:
-	WithDeathAnimation:
-		DeathSequence: dead
-		UseDeathTypeSuffix: false
+	#WithDeathAnimation:
+		#DeathSequence: dead
+		#UseDeathTypeSuffix: false
 	WithBuildingExplosion:
 		Delay: 1
 	ProvidesRadar:
@@ -1873,3 +1923,9 @@ QNEST:
 		ZOffset: 256
 		UpgradeTypes: primary
 		UpgradeMinEnabledLevel: 1
+	Refinery:
+		DockAngle: 64
+		DockOffset: 1,-1
+	StoresResources:
+		PipCount: 17
+		Capacity: 2000

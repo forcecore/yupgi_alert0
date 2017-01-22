@@ -687,40 +687,52 @@ Zombie:
 
 Ant:
 	Inherits: ^Infantry
+	RenderSprites:
+		Scale: 0.5
 	Valued:
-		Cost: 300
+		Cost: 100
 	Tooltip:
-		Name: Giant Ant
-		Description: Irradiated insect that grew oversize.
+		Name: Scout Ant
+		Description: Irradiated insect that grew oversize.\nCollects ore.
 		GenericName: Ant
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
-		BuildPaletteOrder: 1954
-		Prerequisites: ~barracks, ~bio
+		BuildPaletteOrder: 100
+		Prerequisites: ~qnest
+		BuildDuration: 250
 	Selectable:
-		Bounds: 24,24,0,-5
+		Bounds: 12,12,0,-5
 	SelectionDecorations:
 		VisualBounds: 30,30,0,-2
 	Health:
-		HP: 750
+		HP: 50
 		Shape: Circle
 			Radius: 469
 	Mobile:
 		Speed: 99
 		TurnSpeed: 12
 		SharesCell: no
-	-Crushable:
+	#Crushable:
+	# Yes, scouts are small and crushable.
 	AutoTarget:
 		ScanRadius: 5
 	AttackFrontal:
 	WithInfantryBody:
 		AttackSequence: bite
+	WithSpriteBody:
 	Armament:
-		Weapon: mandible
+		Weapon: ScoutMandible
 	Targetable:
 		TargetTypes: Ground, Infantry, Ant
 	WithDeathAnimation:
 		UseDeathTypeSuffix: false
 	Voiced:
 		VoiceSet: AntVoice
+	Harvester:
+		Capacity: 1
+		Resources: Ore,Gems
+		BaleUnloadDelay: 1
+		SearchFromProcRadius: 30
+		SearchFromOrderRadius: 15
+	WithDockingAnimation:

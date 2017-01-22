@@ -670,3 +670,17 @@ qnest:
 		Start: 0
 		Length: 1
     icon: qnesticon
+
+anthill:
+	idle: qnest
+		Length: 1
+    make: qnestbld
+		Start: 0
+		Length: 24
+    build: qnest
+		Start: 0
+		Length: 1
+	damaged-idle: qnest
+		Start: 0
+		Length: 1
+    icon: qnesticon

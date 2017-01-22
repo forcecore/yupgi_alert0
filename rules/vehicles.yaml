@@ -971,3 +971,5 @@ QANT:
 	#-WithFacingSpriteBody:
 	Voiced:
 		VoiceSet: AntVoice
+	Targetable:
+		TargetTypes: Ground, Infantry, Ant

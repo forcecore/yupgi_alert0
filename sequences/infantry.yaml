@@ -1375,6 +1375,8 @@ zombie:
 	icon: zombicon
 
 ant:
+	idle: invis
+		Facings: 1
 	stand: ant1
 		Facings: 8
 	stand2: ant1
@@ -1397,6 +1399,12 @@ ant:
 		Length: 8
 		Tick: 400
 		ZOffset: -511
+	dock: invis
+		Start: 0
+		Length: 1
+	dock-loop: invis
+		Start: 0
+		Length: 1
 	icon: anticon
 
 qant:
