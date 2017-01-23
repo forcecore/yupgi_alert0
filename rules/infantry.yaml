@@ -690,7 +690,7 @@ Ant:
 	RenderSprites:
 		Scale: 0.5
 	Valued:
-		Cost: 100
+		Cost: 500
 	Tooltip:
 		Name: Drone Ant
 		Description: Irradiated insect that grew oversize.\nCollects ore.
@@ -704,9 +704,9 @@ Ant:
 	Selectable:
 		Bounds: 12,12,0,-5
 	SelectionDecorations:
-		VisualBounds: 30,30,0,-2
+		VisualBounds: 15,15,0,-2
 	Health:
-		HP: 50
+		HP: 250
 		Shape: Circle
 			Radius: 469
 	Mobile:
@@ -730,7 +730,7 @@ Ant:
 	Voiced:
 		VoiceSet: AntVoice
 	Harvester:
-		Capacity: 1
+		Capacity: 5
 		Resources: Ore,Gems,Tiberium
 		BaleUnloadDelay: 1
 		SearchFromProcRadius: 30

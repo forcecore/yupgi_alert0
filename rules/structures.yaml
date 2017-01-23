@@ -1849,7 +1849,7 @@ ANYPOWER:
 QNEST:
 	Inherits: ^Building
 	Building:
-		Footprint: xxx xxx xxx
+		Footprint: === =x= ===
 		Dimensions: 3,3
 	Buildable:
 		Queue: Building
@@ -1965,3 +1965,7 @@ TIBTREE:
         Interval: 15
 		MaxRange: 10
     WithIdleAnimation:
+	Selectable:
+		Bounds: 24,24
+	SelectionDecorations:
+		VisualBounds: 24,40,0,-8
