@@ -549,6 +549,18 @@ resources:
 	gem02: gem02
 	gem03: gem03
 	gem04: gem04
+	ti1: ti1
+	ti2: ti2
+	ti3: ti3
+	ti4: ti4
+	ti5: ti5
+	ti6: ti6
+	ti7: ti7
+	ti8: ti8
+	ti9: ti9
+	ti10: ti10
+	ti11: ti11
+	ti12: ti12
 
 shroud:
 	shroud: shadow

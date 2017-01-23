@@ -75,10 +75,10 @@ VoxelSequences:
 	yupgi_alert|sequences/voxels.yaml
 
 TileSets:
-	ra|tilesets/snow.yaml
-	ra|tilesets/interior.yaml
-	ra|tilesets/temperat.yaml
-	ra|tilesets/desert.yaml
+	yupgi_alert|tilesets/snow.yaml
+	yupgi_alert|tilesets/interior.yaml
+	yupgi_alert|tilesets/temperat.yaml
+	yupgi_alert|tilesets/desert.yaml
 
 Cursors:
 	ra|cursors.yaml
