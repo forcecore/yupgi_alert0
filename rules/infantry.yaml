@@ -692,7 +692,7 @@ Ant:
 	Valued:
 		Cost: 100
 	Tooltip:
-		Name: Scout Ant
+		Name: Drone Ant
 		Description: Irradiated insect that grew oversize.\nCollects ore.
 		GenericName: Ant
 	Buildable:
