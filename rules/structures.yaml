@@ -1090,7 +1090,7 @@ ANTHILL:
 		BuildPaletteOrder: 35
 		Prerequisites: ~qnest, ~techlevel.infonly
 	Valued:
-		Cost: 150
+		Cost: 500
 	Tooltip:
 		Name: Ant Hill
 		Description: Stores excess refined\nOre and Gems.\nAllows scout ants to deposit ore.
@@ -1861,7 +1861,8 @@ QNEST:
 	Armor:
 		Type: Wood
 	RevealsShroud:
-		Range: 5c0
+		Range: 10c0
+		# Enough to reveal all the placed hills
 	#Bib:
 	Production:
 		Produces: Building,Defense,Infantry,Soldier
