@@ -731,8 +731,9 @@ Ant:
 		VoiceSet: AntVoice
 	Harvester:
 		Capacity: 1
-		Resources: Ore,Gems
+		Resources: Ore,Gems,Tiberium
 		BaleUnloadDelay: 1
 		SearchFromProcRadius: 30
 		SearchFromOrderRadius: 15
 	WithDockingAnimation:
+	-DamagedByTerrain@tib:

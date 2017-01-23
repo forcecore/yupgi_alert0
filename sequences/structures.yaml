@@ -1,3 +1,5 @@
+# vim: noet sw=4 ts=4:
+
 fcom:
 	idle:
 	damaged-idle:
@@ -684,3 +686,20 @@ anthill:
 		Start: 0
 		Length: 1
     icon: qnesticon
+
+split3:
+	Defaults:
+		Offset: 7, -13
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: cc1temperat
+	make:
+		Length: 30
+	active:
+		Start: 30
+		Length: 24
+	idle:
+		Start: 54
+	icon: split3icon
+		UseTilesetExtension: false
+		Offset: 0, 0

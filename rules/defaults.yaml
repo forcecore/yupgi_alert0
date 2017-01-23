@@ -81,6 +81,7 @@
 			Bridge: 100
 			Ore: 70
 			Gems: 70
+			Tiberium: 70
 			Beach: 40
 		TurnSpeed: 5
 	SelectionDecorations:
@@ -145,6 +146,11 @@
 		Offset: 0,0,200
 	BodyOrientation:
 		UseClassicFacingFudge: True
+	DamagedByTerrain@tib:
+		Terrain: Tiberium
+		Damage: 2
+		DamageInterval: 16
+		DamageTypes: FireDeath
 
 ^Tank:
 	Inherits: ^Vehicle
@@ -157,6 +163,7 @@
 			Bridge: 100
 			Ore: 70
 			Gems: 70
+			Tiberium: 70
 			Beach: 70
 	Targetable:
 		TargetTypes: Ground, C4, Repair, Tank
@@ -190,6 +197,7 @@
 			Bridge: 100
 			Ore: 80
 			Gems: 80
+			Tiberium: 80
 			Beach: 80
 	SelectionDecorations:
 	WithSpriteControlGroupDecoration:
@@ -262,6 +270,11 @@
 		Sequence: idle
 		OpeningSequence: open
 		Offset: 0,0,427
+	DamagedByTerrain@tib:
+		Terrain: Tiberium
+		Damage: 2
+		DamageInterval: 16
+		DamageTypes: FireDeath
 
 ^Soldier:
 	Inherits: ^Infantry

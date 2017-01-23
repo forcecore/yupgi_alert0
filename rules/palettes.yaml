@@ -10,11 +10,6 @@
 		BasePalette: player
 		RemapIndex: 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95
 	
-	# TD staticterrain
-	PaletteFromCurrentTileset@static:
-		Name: staticterrain
-		ShadowIndex: 4
-
 	# RA2 unittem palette
 	PaletteFromFile@unittem:
 		Name: unittem
@@ -29,6 +24,15 @@
 	PaletteFromFile@cc1temperat:
 		Name: cc1temperat
 		Filename: cc1temperat.pal
+		ShadowIndex: 4
+	PaletteFromFile@cc1snow:
+		Name: cc1snow
+		Filename: cc1snow.pal
+		ShadowIndex: 4
+	PaletteFromFile@cc1desert:
+		# Actually, this is ported to RA1 desert palette.
+		Name: cc1desert
+		Filename: cc1desert.pal
 		ShadowIndex: 4
 	PlayerColorPalette@cc1temperat:
 		BasePalette: cc1temperat

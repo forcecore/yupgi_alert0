@@ -1098,6 +1098,7 @@ ANTHILL:
 		Adjacent: 8
 		Footprint: =
 	-GivesBuildableArea:
+	-Sellable: # bio
 	Health:
 		HP: 300
 	Armor:
@@ -1118,6 +1119,7 @@ ANTHILL:
 		DockOffset: 0,0
 	WithBuildingExplosion:
 		Sequences: building, building_napalm, large_explosion, self_destruct
+	ProvidesPrerequisite@buildingname:
 
 HPAD:
 	Inherits: ^Building
@@ -1930,3 +1932,36 @@ QNEST:
 	StoresResources:
 		PipCount: 17
 		Capacity: 2000
+
+TIBTREE:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 50
+		Prerequisites: ~qnest, anthill, ~techlevel.infonly
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Blossom Tree
+		Description: Generates green tiberium nearby.
+	Building:
+		Adjacent: 8
+		Footprint: x
+	-GivesBuildableArea:
+	Health:
+		HP: 1500
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	-EmitInfantryOnSell:
+	-Sellable: # bio
+	WithBuildingExplosion:
+		Sequences: building, building_napalm, large_explosion, self_destruct
+    RenderSprites:
+        Image: split3
+    SeedsResource:
+        ResourceType: Tiberium
+        Interval: 15
+		MaxRange: 10
+    WithIdleAnimation:
