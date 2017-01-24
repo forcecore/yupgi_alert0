@@ -977,3 +977,4 @@ QANT:
 	Targetable:
 		TargetTypes: Ground, Infantry, Ant
 	-DamagedByTerrain@tib:
+	-DamagedByRadioactivity:

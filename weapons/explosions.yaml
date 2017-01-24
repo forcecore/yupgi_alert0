@@ -318,3 +318,13 @@ OreExplosion:
 	Warhead@3Eff: CreateEffect
 		Explosions: med_explosion
 		ImpactSounds: kaboom25.aud
+
+BlossomTreeExplosion:
+    #Burst: 1
+    #BurstDelay: 30
+    ReloadDelay: 150
+	Warhead@1Radio: CreateRadioactivity
+		Range: 5, 6, 7, 8
+		Level: 32
+		Falloff: 100, 50, 25, 0
+		HalfLife: 150

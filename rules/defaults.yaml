@@ -151,6 +151,11 @@
 		Damage: 2
 		DamageInterval: 16
 		DamageTypes: FireDeath
+	DamagedByRadioactivity:
+		DamageCoeff: 0.02
+		DamageInterval: 16
+		DamageTypes: FireDeath
+
 
 ^Tank:
 	Inherits: ^Vehicle
@@ -273,6 +278,10 @@
 	DamagedByTerrain@tib:
 		Terrain: Tiberium
 		Damage: 2
+		DamageInterval: 16
+		DamageTypes: FireDeath
+	DamagedByRadioactivity:
+		DamageCoeff: 0.02
 		DamageInterval: 16
 		DamageTypes: FireDeath
 

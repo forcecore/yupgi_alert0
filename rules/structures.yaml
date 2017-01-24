@@ -1962,10 +1962,13 @@ TIBTREE:
         Image: split3
     SeedsResource:
         ResourceType: Tiberium
-        Interval: 15
+        Interval: 75
 		MaxRange: 10
     WithIdleAnimation:
 	Selectable:
 		Bounds: 24,24
 	SelectionDecorations:
 		VisualBounds: 24,40,0,-8
+	ExplodeWeapon: # radioactivity
+		Weapon: BlossomTreeExplosion
+		ResetReloadWhenEnabled: false

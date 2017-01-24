@@ -737,3 +737,4 @@ Ant:
 		SearchFromOrderRadius: 15
 	WithDockingAnimation:
 	-DamagedByTerrain@tib:
+	-DamagedByRadioactivity:
