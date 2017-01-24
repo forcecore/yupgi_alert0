@@ -21,7 +21,7 @@ using OpenRA.Mods.Common.Traits;
 using OpenRA.Primitives;
 using OpenRA.Mods.Common;
 
-namespace OpenRA.Mods.RA.Traits
+namespace OpenRA.Mods.yupgi_alert.Traits
 {
 	class StructureChronoInfo : ITraitInfo
 	{

@@ -71,11 +71,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Traits\DamagedByRadioactivity.cs" />
     <Compile Include="Traits\DeployToTimedUpgrade.cs" />
+    <Compile Include="Traits\ExplodeWeapon.cs" />
     <Compile Include="Traits\StructureChrono.cs" />
     <Compile Include="Traits\SupportPowers\AttackOrderPower.cs" />
+    <Compile Include="Traits\Warheads\CreateRadioactivityWarhead.cs" />
     <Compile Include="Traits\Warheads\FireClusterWarhead.cs" />
     <Compile Include="Traits\Warheads\WarheadAS.cs" />
+    <Compile Include="Traits\World\RadioactivityLayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Activities\" />
@@ -86,7 +90,6 @@
     <Folder Include="Traits\Conditions\" />
     <Folder Include="Traits\Render\" />
     <Folder Include="Traits\Widgets\" />
-    <Folder Include="Traits\World\" />
     <Folder Include="UtilityCommands\" />
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
