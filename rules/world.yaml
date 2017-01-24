@@ -54,7 +54,7 @@
 		Description: Ukraine: Demolitions\nSpecial Ability: Parabombs\nSpecial Unit: Demolition Truck
 		Selectable: False
 	Faction@7:
-		Name: Creepy Crawlies
+		Name: Mutants
 		InternalName: creepies
 		Side: Creepies
 		Selectable: True
@@ -144,6 +144,8 @@ World:
 	ResourceLayer:
 	ResourceClaimLayer:
 	WarheadDebugOverlay:
+	RadioactivityLayer:
+		Color: 00FF00
 	SpawnMapActors:
 	MapBuildRadius:
 	MapOptions:
