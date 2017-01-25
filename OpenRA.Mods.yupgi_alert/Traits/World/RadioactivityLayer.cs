@@ -28,7 +28,7 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 	public class RadioactivityLayerInfo : ITraitInfo
 	{
 		[Desc("Color of radio activity")]
-		public readonly Color Color = Color.FromArgb(128, 255, 128); // tint factor sucks modify tint here statically.
+		public readonly Color Color = Color.FromArgb(32, 255, 32); // tint factor sucks modify tint here statically.
 
 		[Desc("Maximum radiation allowable in a cell.The cell can actually have more radiation but it will only damage as if it had the maximum level.")]
 		public readonly int MaxLevel = 500;
@@ -36,12 +36,16 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 		//[Desc("Delay in ticks between radiation level decrements. The level updates this often, but the rate is still as specified in Halflife.")]
 		public readonly int UpdateDelay = 15;
 
-		[Desc("Scales the factor brightness plays in the radiation display.")]
-		public readonly float Darkest = 0.25f; // level == 1 will get Color * Darkest (cos human eyes suck at seeing very dark colors)
+		[Desc("the factor plays in the radiation display.")]
+		public readonly float Darkest = 0.5f; // level == 1 will get Color * Darkest (cos human eyes suck at seeing very dark colors)
+		[Desc("the factor plays in the radiation display.")]
 		public readonly float Brightest = 1.0f; // level == MaxLevel will get Color * Brightest
+		[Desc("factor plays in the radiation display.")]
+		public readonly float WhiteThreshold = 0.75f; // if factor (computed by darkest and brightest) goes beyond this threshold,
+		// we mix in white so that the color looks really wicked.
 
-		[Desc("Scales the factor alpha plays in the radiation display.")]
-		public readonly float AlphaFactor = 0.25f;
+		//[Desc("Scales the factor alpha plays in the radiation display.")]
+		//public readonly float AlphaFactor = 0.25f;
 
 		[Desc("Delay of half life, in ticks")]
 		public readonly int Halflife = 150; // in ticks.
@@ -128,6 +132,11 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 
 				Color color = Color.FromArgb(alpha, r, g, b);
 				Game.Renderer.WorldRgbaColorRenderer.FillRect(tl, br, color);
+
+				// mix in white so that the radion shines brightly, after certain threshold.
+				// It is different than tinting the info.color itself and provides nicer look.
+				if (factor > info.WhiteThreshold)
+					Game.Renderer.WorldRgbaColorRenderer.FillRect(tl, br, Color.FromArgb(8, Color.White));
 			}
 		}
 
