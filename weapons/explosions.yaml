@@ -327,6 +327,6 @@ BlossomTreeExplosion:
     # expected accumulated rad level is 2*level.
 	Warhead@1Radio: CreateRadioactivity
 		Range: 4, 6, 8, 9
-		Level: 256
+		Level: 32
 		Falloff: 100, 90, 50, 0
         MaxLevel: 500
