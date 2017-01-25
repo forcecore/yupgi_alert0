@@ -38,10 +38,7 @@ namespace OpenRA.Mods.yupgi_alert.Warheads
 		[Desc("Radio activity saturates at this level, by this weapon.")]
 		// this means if the cell is affected by other stronger radioactive weapon, the level can go past this value.
 		// For details, have a look at RadioactivityLayers.cs:IncreaseLevel()
-		public int MaxLevel = 128;
-
-		[Desc("Half-life of the RA level, from this weapon, in ticks.")]
-		public int HalfLife = 15;
+		public int MaxLevel = 500; // in RA2, they used 500 for most weapons
 
 		public void RulesetLoaded(Ruleset rules, WeaponInfo info)
 		{
@@ -105,7 +102,7 @@ namespace OpenRA.Mods.yupgi_alert.Warheads
 		{
 			// increase RA level of the cell by this amount.
 			int level = this.Level * foff / 100;
-			ra_layer.IncreaseLevel(pos, level, HalfLife, MaxLevel);
+			ra_layer.IncreaseLevel(pos, level, MaxLevel);
 		}
 	}
 }

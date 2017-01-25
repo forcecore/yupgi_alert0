@@ -21,10 +21,10 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 	class DamagedByRadioactivityInfo : UpgradableTraitInfo, Requires<HealthInfo>
 	{
 		[Desc("Related to amount of damage received per DamageInterval ticks. (Damage = DamageCoeff * RadioactivityLevel")]
-		[FieldLoader.Require] public readonly float DamageCoeff = 0;
+		[FieldLoader.Require] public readonly float DamageCoeff = 0.0f;
 
 		[Desc("Delay between receiving damage.")]
-		public readonly int DamageInterval = 0;
+		public readonly int DamageInterval = 16;
 
 		[Desc("Apply the damage using these damagetypes.")]
 		public readonly HashSet<string> DamageTypes = new HashSet<string>();
