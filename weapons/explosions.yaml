@@ -324,10 +324,9 @@ BlossomTreeExplosion:
     #BurstDelay: 30
     ReloadDelay: 150
     # reload delay same as half life.
-    # expected accumulated rad level is 2*level, as
-    # 500 + 250 + 125 +... =~ 1000.
+    # expected accumulated rad level is 2*level.
 	Warhead@1Radio: CreateRadioactivity
 		Range: 4, 6, 8, 10
-		Level: 250
+		Level: 25
 		Falloff: 100, 50, 25, 0
         MaxLevel: 500
