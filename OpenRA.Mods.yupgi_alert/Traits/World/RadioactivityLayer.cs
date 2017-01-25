@@ -31,13 +31,14 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 		public readonly Color Color = Color.FromArgb(128, 255, 128); // tint factor sucks modify tint here statically.
 
 		[Desc("Maximum radiation allowable in a cell.The cell can actually have more radiation but it will only damage as if it had the maximum level.")]
-		public readonly int LevelMax = 500;
+		public readonly int MaxLevel = 500;
 
 		//[Desc("Delay in ticks between radiation level decrements. The level updates this often, but the rate is still as specified in Halflife.")]
 		public readonly int UpdateDelay = 15;
 
 		[Desc("Scales the factor brightness plays in the radiation display.")]
-		public readonly float LightFactor = 1.0f;
+		public readonly float Darkest = 0.25f; // level == 1 will get Color * Darkest (cos human eyes suck at seeing very dark colors)
+		public readonly float Brightest = 1.0f; // level == MaxLevel will get Color * Brightest
 
 		[Desc("Scales the factor alpha plays in the radiation display.")]
 		public readonly float AlphaFactor = 0.25f;
@@ -101,15 +102,23 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 				var tl = wr.Screen3DPosition(center - new WVec(512, 512, 0)); // cos 512 is half a cell.
 				var br = wr.Screen3DPosition(center + new WVec(512, 512, 0));
 
-				int level = Math.Min(info.LevelMax, ra.level);
+				int level = ra.level > info.MaxLevel ? info.MaxLevel : ra.level;
 
 				//int r = (int)(info.Color.R * ra.level * info.LightFactor);
 				//int g = (int)(info.Color.G * ra.level * info.LightFactor);
 				//int b = (int)(info.Color.B * ra.level * info.LightFactor);
-				int r = (int)(level * info.Color.R * info.LightFactor/info.LevelMax);
-				int g = (int)(level * info.Color.G * info.LightFactor/info.LevelMax);
-				int b = (int)(level * info.Color.B * info.LightFactor/info.LevelMax);
-				int alpha = (int)(level * 255 * info.AlphaFactor/info.LevelMax);
+
+				// linear interpolation...
+				// a line that passes two points (1, darkest) and (maxlevel, brightest)
+				float factor = info.Brightest + (info.Brightest - info.Darkest) / (info.MaxLevel - 1) * (level - info.MaxLevel);
+
+				int r = (int)(info.Color.R * factor);
+				int g = (int)(info.Color.G * factor);
+				int b = (int)(info.Color.B * factor);
+
+				//int alpha = (int)(level * 255 * info.AlphaFactor/info.MaxLevel);
+				//int alpha = (int) factor * 128;
+				int alpha = 64;
 
 				// make colors sane.
 				//r = Math.Min(r, 255);
@@ -186,15 +195,15 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 		}
 
 		// Gets level, for damage calculation!!
-		// That is, the level is constrained by LevelMax!!!!
+		// That is, the level is constrained by MaxLevel!!!!
 		public int GetLevel(CPos cell)
 		{
 			if (!tiles.ContainsKey(cell))
 				return 0;
 
 			var level = tiles[cell].level;
-			if (level > info.LevelMax)
-				return info.LevelMax;
+			if (level > info.MaxLevel)
+				return info.MaxLevel;
 			else
 				return level;
 		}
