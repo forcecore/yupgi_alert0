@@ -1,5 +1,7 @@
 #region Copyright & License Information
 /*
+ * Modified by Boolbada of OP Mod from OpenRA laser projectiles.
+ * Original laser projectile source is by:
  * Copyright 2007-2016 The OpenRA Developers (see AUTHORS)
  * This file is part of OpenRA, which is free software. It is made
  * available to you under the terms of the GNU General Public License
@@ -12,7 +14,7 @@
 using System.Drawing;
 using OpenRA.Graphics;
 
-namespace OpenRA.Mods.Common.Graphics
+namespace OpenRA.Mods.yupgi_alert.Graphics
 {
 	public struct RadBeamRenderable : IRenderable, IFinalizedRenderable
 	{
