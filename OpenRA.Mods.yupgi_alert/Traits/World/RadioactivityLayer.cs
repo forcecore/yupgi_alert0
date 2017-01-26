@@ -110,6 +110,8 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 				var br = wr.Screen3DPosition(center + new WVec(512, 512, 0));
 
 				int level = ra.level > info.MaxLevel ? info.MaxLevel : ra.level;
+				if (level == 0)
+					continue; // don't visualize 0 cells. They might show up before cells getting removed.
 
 				//int r = (int)(info.Color.R * ra.level * info.LightFactor);
 				//int g = (int)(info.Color.G * ra.level * info.LightFactor);

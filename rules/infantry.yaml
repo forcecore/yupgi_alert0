@@ -760,28 +760,43 @@ DESO:
 		HP: 150
 	Mobile:
 		Speed: 71
-		UpgradeTypes: deploy_fire
+		UpgradeTypes: deployed
 		UpgradeMaxEnabledLevel: 0 # can't move when deployed
 	RevealsShroud:
 		Range: 6c0
 	Passenger:
 		PipType: Red
 		GrantUpgrades: ifv-deso
+	# Since we don't have conditions, we can only have one proper armament,
+	# which can work with deployed condition.
 	Armament@primary:
 		Weapon: RadBeamWeapon
-		UpgradeTypes: eliteweapon
+		UpgradeTypes: deployed
 		UpgradeMaxEnabledLevel: 0
 		UpgradeMaxAcceptedLevel: 1
 		LocalOffset: 400,40,444
-	Armament@elite:
-		Weapon: RadBeamWeaponE
-		UpgradeTypes: eliteweapon
-		UpgradeMinEnabledLevel: 1
-		LocalOffset: 400,40,444
+	#Armament@elite:
+		#Weapon: RadBeamWeaponE
+		#UpgradeTypes: eliteweapon, deployed
+		#UpgradeMinEnabledLevel: 1
+		#UpgradeMaxAcceptedLevel: 1
+		#LocalOffset: 400,40,444
 	AttackFrontal:
 		Voice: Attack
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
+		UpgradeTypes: undeployed
+		UpgradeMinEnabledLevel: 1
+	WithSpriteBody:
+		# Need this for deploy animation.
+	#WithSpriteBody@DEPLOYED:
+		#Sequence: deploy
+		#UpgradeTypes: deployed
+		#UpgradeMinEnabledLevel: 1
+	WithIdleOverlay@DEPLOYED:
+		Sequence: deploy-shoot
+		UpgradeTypes: deployed
+		UpgradeMinEnabledLevel: 1
 	Voiced:
 		VoiceSet: DesolatorVoice
 	ProducibleWithLevel:
@@ -791,13 +806,16 @@ DESO:
 	AttackMove:
 		Voice: Move
 	DeployToUpgrade:
-		DeployedUpgrades: deploy_fire
+		DeployedUpgrades: deployed
+		UndeployedUpgrades: undeployed
 		CanDeployOnRamps: true
 		DeployAnimation: deploy
-	-Crushable:
+	#-Crushable:
 	-DamagedByRadioactivity:
 	ExplodeWeapon: # radioactivity
 		Weapon: RadEruptionWeapon
 		ResetReloadWhenEnabled: false
-		UpgradeTypes: deploy_fire
+		UpgradeTypes: deployed
 		UpgradeMinEnabledLevel: 1
+	Targetable:
+		TargetTypes: Ground, Infantry

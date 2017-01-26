@@ -334,7 +334,7 @@ WangchangThump:
 		ImpactSounds: kaboom1.aud
 
 RadBeamWeapon:
-	ValidTargets: Vehicle, Infantry, Ship, AmmoBox, BasicHusk, Mine
+	InvalidTargets: Structure, Wall
 	Range: 6c0
 	ReloadDelay: 100
 	Report: idesat1a.wav
@@ -367,5 +367,5 @@ RadEruptionWeapon:
 	Warhead@1Radio: CreateRadioactivity
 		Range: 4, 6, 8, 10
 		Level: 100
-		Falloff: 100, 90, 50, 10
+		Falloff: 100, 90, 50, 0
         MaxLevel: 500

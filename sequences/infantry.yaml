@@ -1430,6 +1430,9 @@ qant:
 
 deso:
     #Defaults:
+    # I tested this on vehicle
+    idle: invis
+    	Facings: 1
 	stand:
 		Facings: 8
 	run:
@@ -1483,11 +1486,12 @@ deso:
 		Facings: 8
 		Tick: 80
     deploy:
-        Start: 300
+        Start: 299
         Length: 15
         Facings: 1
     deploy-shoot:
-        Start: 293
+        Start: 292
         Length: 7
         Facings: 1
+        Tick: 240
 	icon: desoicon

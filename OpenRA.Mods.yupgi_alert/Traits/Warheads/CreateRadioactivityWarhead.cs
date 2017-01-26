@@ -85,7 +85,8 @@ namespace OpenRA.Mods.yupgi_alert.Warheads
 
 			// Accumulate radiation
 			var targetTile = world.Map.CellContaining(pos);
-			for (var i = Range.Length-1; i >=0; i--)
+			//for (var i = Range.Length-1; i >=0; i--)
+			for (var i = 0; i < Range.Length; i++)
 			{
 				// Find affected cells, from outer Range down to inner range.
 				var affectedCells = world.Map.FindTilesInAnnulus(targetTile, 0, Range[i]);
