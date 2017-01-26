@@ -332,3 +332,40 @@ WangchangThump:
 	Warhead@3Eff: CreateEffect
 		Explosions: med_explosion
 		ImpactSounds: kaboom1.aud
+
+RadBeamWeapon:
+	ValidTargets: Vehicle, Infantry, Ship, AmmoBox, BasicHusk, Mine
+	Range: 6c0
+	ReloadDelay: 100
+	Report: idesat1a.wav
+	Projectile: RadBeam
+		ZOffset: 1024 # draws on top of the layer (?)
+		# what ever it is, it is the same as laser zap.
+	Warhead@1Dam: SpreadDamage
+		Spread: 42
+		Damage: 125
+		Versus:
+			None: 100
+			Light: 20
+			Heavy: 10
+			Wood: 0
+			Concrete: 0
+		DamageTypes: FireDeath
+
+RadBeamWeaponE:
+	Inherits: RadBeamWeapon
+	Range: 8c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 200
+
+RadEruptionWeapon:
+    #Burst: 1
+    #BurstDelay: 30
+    ReloadDelay: 60
+    # expected accumulated rad level is 2*level.
+	Report: idesat2a.wav
+	Warhead@1Radio: CreateRadioactivity
+		Range: 4, 6, 8, 10
+		Level: 100
+		Falloff: 100, 90, 50, 10
+        MaxLevel: 500

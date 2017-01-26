@@ -738,3 +738,66 @@ Ant:
 	WithDockingAnimation:
 	-DamagedByTerrain@tib:
 	-DamagedByRadioactivity:
+
+DESO:
+	Inherits: ^Soldier
+	RenderSprites:
+		PlayerPalette: player-ra2
+		Scale: 0.50
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Infantry
+		BuildPaletteOrder: 120
+		Prerequisites: ~barr, dome, ~infantry.soviet
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Desolator
+		Description: Carries a radiation-emitting weapon.\nCan deploy for area-of-effect damage.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft
+	Selectable:
+		Bounds: 10, 15, 0, -6
+	Health:
+		HP: 150
+	Mobile:
+		Speed: 71
+		UpgradeTypes: deploy_fire
+		UpgradeMaxEnabledLevel: 0 # can't move when deployed
+	RevealsShroud:
+		Range: 6c0
+	Passenger:
+		PipType: Red
+		GrantUpgrades: ifv-deso
+	Armament@primary:
+		Weapon: RadBeamWeapon
+		UpgradeTypes: eliteweapon
+		UpgradeMaxEnabledLevel: 0
+		UpgradeMaxAcceptedLevel: 1
+		LocalOffset: 400,40,444
+	Armament@elite:
+		Weapon: RadBeamWeaponE
+		UpgradeTypes: eliteweapon
+		UpgradeMinEnabledLevel: 1
+		LocalOffset: 400,40,444
+	AttackFrontal:
+		Voice: Attack
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	Voiced:
+		VoiceSet: DesolatorVoice
+	ProducibleWithLevel:
+		Prerequisites: barracks.infiltrated
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	AttackMove:
+		Voice: Move
+	DeployToUpgrade:
+		DeployedUpgrades: deploy_fire
+		CanDeployOnRamps: true
+		DeployAnimation: deploy
+	-Crushable:
+	-DamagedByRadioactivity:
+	ExplodeWeapon: # radioactivity
+		Weapon: RadEruptionWeapon
+		ResetReloadWhenEnabled: false
+		UpgradeTypes: deploy_fire
+		UpgradeMinEnabledLevel: 1

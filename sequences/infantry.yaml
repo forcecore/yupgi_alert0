@@ -1427,3 +1427,67 @@ qant:
 		Tick: 400
 		ZOffset: -511
 	icon: anticon
+
+deso:
+    #Defaults:
+	stand:
+		Facings: 8
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 120
+	idle1:
+		Start: 56
+		Length: 15
+		Tick: 100
+	idle2:
+		Start: 71
+		Length: 15
+		Tick: 120
+	prone-run:
+		Start: 86
+		Length: 6
+		Facings: 8
+		Tick: 100
+	die1:
+		Start: 134
+		Length: 14
+	die2:
+		Start: 149
+		Length: 14
+	die3:
+		Start: 149
+		Length: 14
+    die4:
+		Start: 134
+		Length: 14
+    die5:
+		Start: 134
+		Length: 14
+	die6: electro
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+    # and they aren't crushable (no crushed death)
+	shoot:
+		Start: 164
+		Length: 6
+		Facings: 8
+		Tick: 80
+	prone-shoot:
+		Start: 212
+		Length: 6
+		Facings: 8
+		Tick: 80
+    deploy:
+        Start: 300
+        Length: 15
+        Facings: 1
+    deploy-shoot:
+        Start: 293
+        Length: 7
+        Facings: 1
+	icon: desoicon

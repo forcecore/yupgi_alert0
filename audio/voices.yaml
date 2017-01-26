@@ -144,3 +144,14 @@ StavrosVoice:
 		Build: stavcmdr
 		Kill: dogw5,dogw7
 		Demolish: stavcrse, stavyes
+
+DesolatorVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: idessea, idesseb, idessec, idessed, idessee
+		Move: idesmoa, idesmob, idesmoc, idesmod, idesmoe
+		Attack: idesata, idesatb, idesatc, idesatd, idesate, idesatf
+		Action: idesata, idesatb, idesatc, idesatd, idesate, idesatf
+		Die: idesdia, idesdib, idesdic
+		Zapped: dedman6
+		Burned: dedman10
