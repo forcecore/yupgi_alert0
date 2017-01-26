@@ -71,6 +71,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Graphics\RadBeamRenderable.cs" />
+    <Compile Include="Projectiles\RadBeam.cs" />
     <Compile Include="Traits\DamagedByRadioactivity.cs" />
     <Compile Include="Traits\DeployToTimedUpgrade.cs" />
     <Compile Include="Traits\ExplodeWeapon.cs" />

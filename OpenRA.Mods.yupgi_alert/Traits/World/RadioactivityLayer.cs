@@ -11,9 +11,9 @@
 
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Diagnostics;
+//using System.IO;
+//using System.Linq;
+//using System.Diagnostics; // assert thingy for temporary debugging
 using OpenRA.Graphics;
 using System.Drawing;
 using OpenRA.Traits;
