@@ -810,7 +810,8 @@ DESO:
 		UndeployedUpgrades: undeployed
 		CanDeployOnRamps: true
 		DeployAnimation: deploy
-	#-Crushable:
+	-Crushable: # doesn't get crushed
+	-TakeCover: # no prone
 	-DamagedByRadioactivity:
 	ExplodeWeapon: # radioactivity
 		Weapon: RadEruptionWeapon
