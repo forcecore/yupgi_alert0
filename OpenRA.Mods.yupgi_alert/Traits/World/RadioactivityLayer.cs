@@ -31,7 +31,7 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 	public class RadioactivityLayerInfo : ITraitInfo
 	{
 		[Desc("Color of radio activity")]
-		public readonly Color Color = Color.FromArgb(32, 255, 32); // tint factor sucks modify tint here statically.
+		public readonly Color Color = Color.FromArgb(0, 255, 0); // tint factor sucks modify tint here statically.
 
 		[Desc("Maximum radiation allowable in a cell.The cell can actually have more radiation but it will only damage as if it had the maximum level.")]
 		public readonly int MaxLevel = 500;
@@ -40,11 +40,11 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 		public readonly int UpdateDelay = 15;
 
 		[Desc("the factor plays in the radiation display.")]
-		public readonly float Darkest = 0.5f; // level == 1 will get Color * Darkest (cos human eyes suck at seeing very dark colors)
+		public readonly float Darkest = 4f; // level == 1 will get this as alpha.
 		[Desc("the factor plays in the radiation display.")]
-		public readonly float Brightest = 1.0f; // level == MaxLevel will get Color * Brightest
+		public readonly float Brightest = 64f; // level == MaxLevel will get this as alpha
 		[Desc("factor plays in the radiation display.")]
-		public readonly float WhiteThreshold = 0.75f; // if factor (computed by darkest and brightest) goes beyond this threshold,
+		public readonly int WhiteThreshold = 36; // if alpha goes beyond this threshold,
 		// we mix in white so that the color looks really wicked.
 
 		//[Desc("Scales the factor alpha plays in the radiation display.")]
@@ -86,7 +86,9 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 
 		readonly HashSet<CPos> dirty = new HashSet<CPos>(); // dirty, as in cache dirty bits.
 
-		readonly float k;
+		readonly float k; // half life constant, to be computed at init.
+		public float slope;
+		public float y_intercept;
 
 		public RadioactivityLayer(Actor self, RadioactivityLayerInfo info)
 		{
@@ -96,6 +98,10 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 			//Debug.Assert(k > 0);
 			// half life decay follows differential equation d/dt m(t) = -k m(t).
 			// d/dt will be in ticks, ofcourse.
+
+			// rad level visualization constants...
+			slope = (info.Brightest - info.Darkest) / (info.MaxLevel - 1);
+			y_intercept = info.Brightest - info.MaxLevel * slope;
 		}
 
 		public void Render(WorldRenderer wr)
@@ -113,35 +119,16 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 				if (level == 0)
 					continue; // don't visualize 0 cells. They might show up before cells getting removed.
 
-				//int r = (int)(info.Color.R * ra.level * info.LightFactor);
-				//int g = (int)(info.Color.G * ra.level * info.LightFactor);
-				//int b = (int)(info.Color.B * ra.level * info.LightFactor);
+				int alpha = (int)(y_intercept + slope * level); // Linear interpolation
+				alpha = alpha > 255 ? 255 : alpha; // just to be safe.
 
-				// linear interpolation...
-				// a line that passes two points (1, darkest) and (maxlevel, brightest)
-				float factor = info.Brightest + (info.Brightest - info.Darkest) / (info.MaxLevel - 1) * (level - info.MaxLevel);
-
-				int r = (int)(info.Color.R * factor);
-				int g = (int)(info.Color.G * factor);
-				int b = (int)(info.Color.B * factor);
-
-				//int alpha = (int)(level * 255 * info.AlphaFactor/info.MaxLevel);
-				//int alpha = (int) factor * 128;
-				int alpha = 64;
-
-				// make colors sane.
-				//r = Math.Min(r, 255);
-				//g = Math.Min(g, 255);
-				//b = Math.Min(b, 255);
-				//alpha = Math.Min(alpha, 255);
-
-				Color color = Color.FromArgb(alpha, r, g, b);
+				Color color = Color.FromArgb(alpha, info.Color);
 				Game.Renderer.WorldRgbaColorRenderer.FillRect(tl, br, color);
 
 				// mix in white so that the radion shines brightly, after certain threshold.
 				// It is different than tinting the info.color itself and provides nicer look.
-				if (factor > info.WhiteThreshold)
-					Game.Renderer.WorldRgbaColorRenderer.FillRect(tl, br, Color.FromArgb(8, Color.White));
+				if (alpha > info.WhiteThreshold)
+					Game.Renderer.WorldRgbaColorRenderer.FillRect(tl, br, Color.FromArgb(16, Color.Yellow));
 			}
 		}
 
