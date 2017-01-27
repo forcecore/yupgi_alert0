@@ -548,7 +548,7 @@ DOME:
 		Type: Wood
 	RevealsShroud:
 		Range: 20c0
-	Bib:
+	#Bib:
 	ProvidesRadar:
 	InfiltrateForExploration:
 	DetectCloaked:
@@ -801,7 +801,7 @@ ATEK:
 		Type: Wood
 	RevealsShroud:
 		Range: 10c0
-	Bib:
+	#Bib:
 	GpsPower:
 		Icon: gps
 		OneShot: yes
@@ -838,7 +838,7 @@ WEAP:
 		Type: Wood
 	RevealsShroud:
 		Range: 4c0
-	Bib:
+	#Bib:
 	WithProductionDoorOverlay:
 		Sequence: build-top
 	RallyPoint:
@@ -961,7 +961,7 @@ FACT:
 		Type: Wood
 	RevealsShroud:
 		Range: 5c0
-	Bib:
+	#Bib:
 	Production:
 		Produces: Building,Defense
 	Valued:
@@ -1022,7 +1022,7 @@ PROC:
 		Type: Wood
 	RevealsShroud:
 		Range: 6c0
-	Bib:
+	#Bib:
 	Refinery:
 		DockAngle: 64
 		DockOffset: 1,2
@@ -1141,7 +1141,7 @@ HPAD:
 		Type: Wood
 	RevealsShroud:
 		Range: 5c0
-	Bib:
+	#Bib:
 	Exit@1:
 		SpawnOffset: 0,-256,0
 		ExitCell: 0,0
@@ -1351,7 +1351,7 @@ POWR:
 		Type: Wood
 	RevealsShroud:
 		Range: 4c0
-	Bib:
+	#Bib:
 	Power:
 		Amount: 100
 	InfiltrateForPowerOutage:
@@ -1392,7 +1392,7 @@ APWR:
 		Type: Wood
 	RevealsShroud:
 		Range: 4c0
-	Bib:
+	#Bib:
 	Power:
 		Amount: 200
 	InfiltrateForPowerOutage:
@@ -1429,7 +1429,7 @@ STEK:
 		Type: Wood
 	RevealsShroud:
 		Range: 4c0
-	Bib:
+	#Bib:
 	Power:
 		Amount: -100
 	ProvidesPrerequisite@buildingname:
@@ -1454,7 +1454,7 @@ BARR:
 		Type: Wood
 	RevealsShroud:
 		Range: 5c0
-	Bib:
+	#Bib:
 	RallyPoint:
 	Exit@1:
 		SpawnOffset: -170,810,0
@@ -1576,7 +1576,7 @@ TENT:
 		Type: Wood
 	RevealsShroud:
 		Range: 5c0
-	Bib:
+	#Bib:
 	RallyPoint:
 	Exit@1:
 		SpawnOffset: -42,810,0
