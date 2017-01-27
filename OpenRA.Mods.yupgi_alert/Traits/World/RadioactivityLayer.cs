@@ -44,8 +44,8 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 		[Desc("the factor plays in the radiation display.")]
 		public readonly float Brightest = 64f; // level == MaxLevel will get this as alpha
 		[Desc("factor plays in the radiation display.")]
-		public readonly int WhiteThreshold = 36; // if alpha goes beyond this threshold,
-		// we mix in white so that the color looks really wicked.
+		public readonly int MixThreshold = 36; // if alpha goes beyond this threshold,
+		// we mix in some other color (currently yellow) so that the color looks really wicked.
 
 		//[Desc("Scales the factor alpha plays in the radiation display.")]
 		//public readonly float AlphaFactor = 0.25f;
@@ -125,9 +125,9 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 				Color color = Color.FromArgb(alpha, info.Color);
 				Game.Renderer.WorldRgbaColorRenderer.FillRect(tl, br, color);
 
-				// mix in white so that the radion shines brightly, after certain threshold.
+				// mix in yellow so that the radion shines brightly, after certain threshold.
 				// It is different than tinting the info.color itself and provides nicer look.
-				if (alpha > info.WhiteThreshold)
+				if (alpha > info.MixThreshold)
 					Game.Renderer.WorldRgbaColorRenderer.FillRect(tl, br, Color.FromArgb(16, Color.Yellow));
 			}
 		}
