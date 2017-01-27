@@ -438,9 +438,8 @@ HARV:
 		DamageCooldown: 500
 	Explodes:
 		Weapon: OreExplosion
-	DamagedByTerrain:
-		Terrain: Tiberium
-		Damage: 0
+	-DamagedByTerrain@tib:
+	-DamagedByRadioactivity:
 
 MCV:
 	Inherits: ^Vehicle
