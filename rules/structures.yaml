@@ -1972,3 +1972,46 @@ TIBTREE:
 	ExplodeWeapon: # radioactivity
 		Weapon: BlossomTreeExplosion
 		ResetReloadWhenEnabled: false
+
+TUNNELNETWORK:
+	Inherits: ^Building
+	RenderSprites:
+		Scale: 0.5
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 175
+		Prerequisites: ~qnest, anthill, ~techlevel.infonly
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Tunnel Network
+		Description: Allows units to move through underground tunnels.
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	-GivesBuildableArea:
+	Health:
+		HP: 300
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	RallyPoint:
+		Offset: 0,2
+	Exit:
+		SpawnOffset: 0,0,0
+		ExitCell: 1,1
+	-EmitInfantryOnSell:
+	#ProvidesPrerequisite@buildingname:
+	WithBuildingExplosion:
+		Sequences: building, building_napalm, large_explosion, self_destruct
+	WithDecoration@primary:
+		RequiresSelection: true
+		Image: pips
+		Sequence: tag-primary
+		ReferencePoint: Top
+		ZOffset: 256
+		UpgradeTypes: primary
+		UpgradeMinEnabledLevel: 1
+	NydusPrimaryExit: # must be used with Nydus, for designating NydusExit.
+	Nydus: # Is nydus canal. Needs primary designation though.

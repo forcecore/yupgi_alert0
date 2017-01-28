@@ -155,6 +155,7 @@
 		DamageCoeff: 0.02
 		DamageInterval: 16
 		DamageTypes: FireDeath
+	NydusTransportable:
 
 
 ^Tank:
@@ -284,6 +285,7 @@
 		DamageCoeff: 0.02
 		DamageInterval: 16
 		DamageTypes: FireDeath
+	NydusTransportable:
 
 ^Soldier:
 	Inherits: ^Infantry

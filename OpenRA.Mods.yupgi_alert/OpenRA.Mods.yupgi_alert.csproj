@@ -71,11 +71,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activities\EnterNydus.cs" />
     <Compile Include="Graphics\RadBeamRenderable.cs" />
     <Compile Include="Projectiles\RadBeam.cs" />
     <Compile Include="Traits\DamagedByRadioactivity.cs" />
     <Compile Include="Traits\DeployToTimedUpgrade.cs" />
     <Compile Include="Traits\ExplodeWeapon.cs" />
+    <Compile Include="Traits\Nydus.cs" />
+    <Compile Include="Traits\NydusPrimaryExit.cs" />
     <Compile Include="Traits\StructureChrono.cs" />
     <Compile Include="Traits\SupportPowers\AttackOrderPower.cs" />
     <Compile Include="Traits\Warheads\CreateRadioactivityWarhead.cs" />
@@ -84,7 +87,6 @@
     <Compile Include="Traits\World\RadioactivityLayer.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Activities\" />
     <Folder Include="Effects\" />
     <Folder Include="Player\" />
     <Folder Include="SpriteLoaders\" />

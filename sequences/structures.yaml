@@ -687,6 +687,20 @@ anthill:
 		Length: 1
     icon: qnesticon
 
+tunnelnetwork:
+	idle: qnest
+		Length: 1
+    make: qnestbld
+		Start: 0
+		Length: 24
+    build: qnest
+		Start: 0
+		Length: 1
+	damaged-idle: qnest
+		Start: 0
+		Length: 1
+    icon: qnesticon
+
 split3:
 	Defaults:
 		Offset: 7, -13
