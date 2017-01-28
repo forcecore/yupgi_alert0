@@ -395,7 +395,7 @@ HARV:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 10
-		Prerequisites: proc, ~techlevel.infonly
+		Prerequisites: proc, ~weap, ~techlevel.infonly
 	Valued:
 		Cost: 1100
 	Tooltip:
@@ -446,7 +446,7 @@ MCV:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 90
-		Prerequisites: fix, ~techlevel.medium
+		Prerequisites: fix, ~weap, ~techlevel.medium
 		BuildDuration: 2000
 		BuildDurationModifier: 40
 	Valued:
@@ -632,7 +632,7 @@ TRUK:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 20
-		Prerequisites: ~techlevel.low
+		Prerequisites: ~techlevel.low, ~weap
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -977,3 +977,48 @@ QANT:
 		TargetTypes: Ground, Infantry, Ant
 	-DamagedByTerrain@tib:
 	-DamagedByRadioactivity:
+
+warrior_ant:
+	Inherits: ^Vehicle
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Warrior Ant
+		Description: Irradiated insect that grew oversize.\nCombatant.
+		GenericName: Ant
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 100
+		Prerequisites: ~qnest, tibtree
+	Selectable:
+		Bounds: 24,24,0,-10
+	SelectionDecorations:
+		VisualBounds: 30,30,0,-4
+	Health:
+		HP: 550
+		Shape: Circle
+			Radius: 469
+	Mobile:
+		Speed: 99
+		TurnSpeed: 12
+		Crushes: wall, mine, crate
+	AutoTarget:
+		ScanRadius: 5
+	AttackFrontal:
+	WithInfantryBody:
+		AttackSequence: bite
+	WithAttackAnimation:
+		AimSequence: idle
+	-WithDamageOverlay:
+	Armament:
+		Weapon: Mandible
+	Targetable:
+		TargetTypes: Ground, Vehicle, Ant
+	WithDeathAnimation:
+		UseDeathTypeSuffix: false
+	Voiced:
+		VoiceSet: AntVoice
+	-DamagedByTerrain@tib:
+	-DamagedByRadioactivity:
+	-EjectOnDeath:
+	-Capturable:

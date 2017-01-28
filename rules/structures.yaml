@@ -1867,7 +1867,7 @@ QNEST:
 		# Enough to reveal all the placed hills
 	#Bib:
 	Production:
-		Produces: Building,Defense,Infantry,Soldier
+		Produces: Building,Defense,Infantry,Soldier,Vehicle
 	Valued:
 		Cost: 2500
 	Tooltip:
@@ -1888,6 +1888,9 @@ QNEST:
 	ProductionBar@Infantry:
 		ProductionType: Infantry
 		Color: 8A8A8A
+	ProductionBar@Vehicle:
+		ProductionType: Infantry
+		Color: 8A8A8A
 	BaseProvider:
 		Range: 16c0
 	WithBuildingPlacedAnimation:
@@ -1903,6 +1906,9 @@ QNEST:
 		SpawnOffset: 213,-128,0
 		ExitCell: 1,2
 	Exit@4:
+		SpawnOffset: 213,-128,0
+		ExitCell: 1,2
+	Exit@5:
 		SpawnOffset: 213,-128,0
 		ExitCell: 1,2
 	RallyPoint:
@@ -1988,6 +1994,7 @@ TUNNELNETWORK:
 		Description: Allows units to move through underground tunnels.
 	Building:
 		Footprint: xx xx
+		Adjacent: 8
 		Dimensions: 2,2
 	-GivesBuildableArea:
 	Health:
