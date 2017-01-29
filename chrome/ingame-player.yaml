@@ -192,7 +192,7 @@ Container@PLAYER_WIDGETS:
 							ImageCollection: power-icons
 							ImageName: power-normal
 		Container@SIDEBAR_PRODUCTION:
-            #Logic: ClassicProductionLogic
+			Logic: ClassicProductionLogic
 			X: WINDOW_RIGHT - 250
 			Y: 300
 			Width: 238
