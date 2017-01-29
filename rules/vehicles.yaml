@@ -982,7 +982,7 @@ QANT:
 warrior_ant:
 	Inherits: ^Vehicle
 	Valued:
-		Cost: 1150
+		Cost: 2000
 	Tooltip:
 		Name: Warrior Ant
 		Description: Irradiated insect that grew oversize.\nCombatant.

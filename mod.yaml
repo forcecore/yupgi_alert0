@@ -104,7 +104,7 @@ ChromeLayout:
 	ra|chrome/ingame-menu.yaml
 	ra|chrome/ingame-observer.yaml
 	ra|chrome/ingame-observerstats.yaml
-	ra|chrome/ingame-player.yaml
+	yupgi_alert|chrome/ingame-player.yaml
 	ra|chrome/ingame-perf.yaml
 	ra|chrome/ingame-debug.yaml
 	ra|chrome/mainmenu.yaml

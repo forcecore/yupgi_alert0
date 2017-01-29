@@ -10,7 +10,7 @@ MSLO:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 140
-		Prerequisites: techcenter, ~techlevel.unrestricted
+		Prerequisites: ~fact, techcenter, ~techlevel.unrestricted
 		BuildLimit: 1
 	Building:
 		Footprint: xx
@@ -53,6 +53,12 @@ MSLO:
 	# Can produce nuke mig!
 	Production:
 		Produces: Aircraft, NukeMig
+	ProductionQueue@Aircraft:
+		Type: Aircraft
+		Group: Aircraft
+	ProductionQueue@NukeMig:
+		Type: NukeMig
+		Group: Aircraft
 	WithDecoration@primary:
 		RequiresSelection: true
 		Image: pips
@@ -155,6 +161,12 @@ SPEN:
 		ExitCell: 2,0
 	Production:
 		Produces: Ship, Submarine
+	ProductionQueue@Ship:
+		Type: Ship
+		Group: Ship
+	ProductionQueue@Submarine:
+		Type: Submarine
+		Group: Ship
 	PrimaryBuilding:
 	-EmitInfantryOnSell:
 	RepairsUnits:
@@ -245,6 +257,12 @@ SYRD:
 		ExitCell: 2,0
 	Production:
 		Produces: Ship, Boat
+	ProductionQueue@Ship:
+		Type: Ship
+		Group: Ship
+	ProductionQueue@Boat:
+		Type: Boat
+		Group: Ship
 	PrimaryBuilding:
 	-EmitInfantryOnSell:
 	RepairsUnits:
@@ -847,6 +865,9 @@ WEAP:
 		ExitCell: 1,2
 	Production:
 		Produces: Vehicle
+	ProductionQueue:
+		Type: Vehicle
+		Group: Vehicle
 	ProvidesPrerequisite@allies:
 		Factions: allies, england, france, germany
 		Prerequisite: vehicles.allies
@@ -964,6 +985,12 @@ FACT:
 	#Bib:
 	Production:
 		Produces: Building,Defense
+	ProductionQueue@Building:
+		Type: Building
+		Group: Building
+	ProductionQueue@Defense:
+		Type: Defense
+		Group: Defense
 	Valued:
 		Cost: 2500
 	Tooltip:
@@ -1055,7 +1082,7 @@ SILO:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 35
-		Prerequisites: proc, ~techlevel.infonly
+		Prerequisites: ~fact, proc, ~techlevel.infonly
 	Valued:
 		Cost: 150
 	Tooltip:
@@ -1150,6 +1177,12 @@ HPAD:
 	RallyPoint:
 	Production:
 		Produces: Aircraft, Helicopter
+	ProductionQueue@Aircraft:
+		Type: Aircraft
+		Group: Aircraft
+	ProductionQueue@Helicopter:
+		Type: Helicopter
+		Group: Aircraft
 	Reservable:
 	ProductionBar:
 	PrimaryBuilding:
@@ -1232,6 +1265,12 @@ AFLD:
 	RallyPoint:
 	Production:
 		Produces: Aircraft, Plane
+	ProductionQueue@Aircraft:
+		Type: Aircraft
+		Group: Aircraft
+	ProductionQueue@Plane:
+		Type: Plane
+		Group: Aircraft
 	Reservable:
 	ProvidesPrerequisite@soviet:
 		Factions: soviet, russia, ukraine
@@ -1464,6 +1503,12 @@ BARR:
 		ExitCell: 0,2
 	Production:
 		Produces: Infantry, Soldier
+	ProductionQueue@Infantry:
+		Type: Infantry
+		Group: Infantry
+	ProductionQueue@Soldier:
+		Type: Soldier
+		Group: Infantry
 	PrimaryBuilding:
 	ProductionBar:
 	ProvidesPrerequisite:
@@ -1539,6 +1584,12 @@ KENN:
 		ExitCell: -1,0
 	Production:
 		Produces: Infantry, Dog
+	ProductionQueue@Infantry:
+		Type: Infantry
+		Group: Infantry
+	ProductionQueue@Dog:
+		Type: Dog
+		Group: Infantry
 	PrimaryBuilding:
 	ProductionBar:
 	-EmitInfantryOnSell:
@@ -1586,6 +1637,12 @@ TENT:
 		ExitCell: 0,2
 	Production:
 		Produces: Infantry, Soldier
+	ProductionQueue@Infantry:
+		Type: Infantry
+		Group: Infantry
+	ProductionQueue@Soldier:
+		Type: Soldier
+		Group: Infantry
 	PrimaryBuilding:
 	ProductionBar:
 	ProvidesPrerequisite@barracks:
@@ -1729,7 +1786,7 @@ BRIK:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 30
-		Prerequisites: fact, ~techlevel.medium
+		Prerequisites: ~fact, ~techlevel.medium
 	Valued:
 		Cost: 100
 	CustomSellValue:
@@ -1868,6 +1925,21 @@ QNEST:
 	#Bib:
 	Production:
 		Produces: Building,Defense,Infantry,Soldier,Vehicle
+	ProductionQueue@Building:
+		Type: Building
+		Group: Building
+	ProductionQueue@Defense:
+		Type: Defense
+		Group: Defense
+	ProductionQueue@Infantry:
+		Type: Infantry
+		Group: Infantry
+	ProductionQueue@Soldier:
+		Type: Soldier
+		Group: Infantry
+	ProductionQueue@Vehicle:
+		Type: Vehicle
+		Group: Vehicle
 	Valued:
 		Cost: 2500
 	Tooltip:
@@ -1985,7 +2057,7 @@ TUNNELNETWORK:
 	RenderSprites:
 		Scale: 0.5
 	Buildable:
-		Queue: Building
+		Queue: Defense
 		BuildPaletteOrder: 175
 		Prerequisites: ~qnest, anthill, ~techlevel.infonly
 	Valued:
