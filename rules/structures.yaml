@@ -1962,6 +1962,7 @@ TIBTREE:
 		Range: 4c0
 	-EmitInfantryOnSell:
 	-Sellable: # bio
+	ProvidesPrerequisite@buildingname:
 	WithBuildingExplosion:
 		Sequences: building, building_napalm, large_explosion, self_destruct
     RenderSprites:
@@ -1998,7 +1999,7 @@ TUNNELNETWORK:
 		Dimensions: 2,2
 	-GivesBuildableArea:
 	Health:
-		HP: 300
+		HP: 1500
 	Armor:
 		Type: Wood
 	RevealsShroud:

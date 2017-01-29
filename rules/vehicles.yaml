@@ -954,6 +954,7 @@ QANT:
 	Mobile:
 		Speed: 85
 		Crushes: wall, mine, crate, infantry
+		SharesCell: false
 	RevealsShroud:
 		Range: 4c0
 	Transforms:
@@ -981,7 +982,7 @@ QANT:
 warrior_ant:
 	Inherits: ^Vehicle
 	Valued:
-		Cost: 1000
+		Cost: 1150
 	Tooltip:
 		Name: Warrior Ant
 		Description: Irradiated insect that grew oversize.\nCombatant.
@@ -995,13 +996,17 @@ warrior_ant:
 	SelectionDecorations:
 		VisualBounds: 30,30,0,-4
 	Health:
-		HP: 550
+		HP: 300
 		Shape: Circle
 			Radius: 469
+	Armor:
+		Type: Light
 	Mobile:
 		Speed: 99
 		TurnSpeed: 12
 		Crushes: wall, mine, crate
+	RevealsShroud:
+		Range: 5c0
 	AutoTarget:
 		ScanRadius: 5
 	AttackFrontal:

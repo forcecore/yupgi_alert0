@@ -712,8 +712,8 @@ Ant:
 	Mobile:
 		Speed: 99
 		TurnSpeed: 12
-		SharesCell: no
-	#Crushable:
+		SharesCell: yes
+	Crushable:
 	# Yes, scouts are small and crushable.
 	AutoTarget:
 		ScanRadius: 5
