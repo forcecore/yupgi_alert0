@@ -191,8 +191,14 @@ Container@PLAYER_WIDGETS:
 							Y: 5
 							ImageCollection: power-icons
 							ImageName: power-normal
-		Container@SIDEBAR_PRODUCTION:
-			Logic: ClassicProductionLogic
+        #Container@SIDEBAR_PRODUCTION:
+		ProductionTabs@PRODUCTION_TABS:
+            #Logic: ClassicProductionLogic
+            Logic: ProductionTabsLogic
+			PaletteWidget: PRODUCTION_PALETTE
+			TypesContainer: PRODUCTION_TYPES
+            #BackgroundContainer: PRODUCTION_BACKGROUND
+			BackgroundContainer: PALETTE_BACKGROUND
 			X: WINDOW_RIGHT - 250
 			Y: 300
 			Width: 238
@@ -214,6 +220,11 @@ Container@PLAYER_WIDGETS:
 							ClickThrough: false
 							ImageCollection: sidebar
 							ImageName: background-bottom
+                        Background@ICON_TEMPLATE:
+                            Width: 66
+                            Height: 50
+                            #Background: panel-black
+							Background: sidebar-button
 				LogicTicker@PRODUCTION_TICKER:
 				ProductionPalette@PRODUCTION_PALETTE:
 					X: 42
