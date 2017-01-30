@@ -152,7 +152,7 @@
 		DamageInterval: 16
 		DamageTypes: FireDeath
 	DamagedByRadioactivity:
-		DamageCoeff: 0.02
+		DamageCoeff: 20
 		DamageInterval: 16
 		DamageTypes: FireDeath
 	NydusTransportable:
@@ -282,7 +282,7 @@
 		DamageInterval: 16
 		DamageTypes: FireDeath
 	DamagedByRadioactivity:
-		DamageCoeff: 0.02
+		DamageCoeff: 20
 		DamageInterval: 16
 		DamageTypes: FireDeath
 	NydusTransportable:
