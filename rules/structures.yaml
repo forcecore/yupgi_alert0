@@ -65,7 +65,7 @@ MSLO:
 		UpgradeTypes: primary
 		UpgradeMinEnabledLevel: 1
 	ProvidesPrerequisite@buildingname:
-	PrimaryBuilding:
+	#PrimaryBuilding:
 	ProductionBar:
 	RallyPoint:
 	Exit@1:
@@ -164,7 +164,7 @@ SPEN:
 	#ProductionQueue@Submarine:
 		#Type: Submarine
 		#Group: Ship
-	PrimaryBuilding:
+	#PrimaryBuilding:
 	-EmitInfantryOnSell:
 	RepairsUnits:
 		FinishRepairingNotification: UnitRepaired
@@ -236,7 +236,7 @@ SYRD:
 	#ProductionQueue@Boat:
 		#Type: Boat
 		#Group: Ship
-	PrimaryBuilding:
+	#PrimaryBuilding:
 	-EmitInfantryOnSell:
 	RepairsUnits:
 		FinishRepairingNotification: UnitRepaired
@@ -811,7 +811,7 @@ WEAP:
 	ProductionQueue:
 		Type: Vehicle
 		Group: Vehicle
-	PrimaryBuilding:
+	#PrimaryBuilding:
 	ProductionBar:
 	Power:
 		Amount: -30
@@ -1100,7 +1100,7 @@ HPAD:
 	Reservable:
 	ProductionBar:
 		Type: Helicopter
-	PrimaryBuilding:
+	#PrimaryBuilding:
 	Power:
 		Amount: -10
 	ProvidesPrerequisite@allies:
@@ -1258,7 +1258,7 @@ AFLD:
 	ProductionBar:
 		Type: Plane
 	SupportPowerChargeBar:
-	PrimaryBuilding:
+	#PrimaryBuilding:
 	Power:
 		Amount: -20
 	ProvidesPrerequisite@buildingname:
@@ -1423,7 +1423,7 @@ BARR:
 	#ProductionQueue@Soldier:
 		#Type: Soldier
 		#Group: Infantry
-	PrimaryBuilding:
+	#PrimaryBuilding:
 	ProductionBar:
 	ProvidesPrerequisite:
 		Prerequisite: barracks
@@ -1533,7 +1533,7 @@ TENT:
 	#ProductionQueue@Soldier:
 		#Type: Soldier
 		#Group: Infantry
-	PrimaryBuilding:
+	#PrimaryBuilding:
 	ProductionBar:
 	ProvidesPrerequisite@barracks:
 		Prerequisite: barracks
@@ -1882,7 +1882,7 @@ QNEST:
 	ProvidesPrerequisite@buildingname:
 	-EmitInfantryOnSell: # would be stupid
 	-Sellable: # not sellable. It's a biological nest!
-	PrimaryBuilding:
+	#PrimaryBuilding:
 	WithDecoration@primary:
 		RequiresSelection: true
 		Image: pips
@@ -1981,4 +1981,4 @@ TUNNELNETWORK:
 		UpgradeTypes: primary
 		UpgradeMinEnabledLevel: 1
 	NydusPrimaryExit: # must be used with Nydus, for designating NydusExit.
-	Nydus: # Is nydus canal. Needs primary designation though.
+	Nydus: # Is nydus canal entrance. Needs primary designation though.
