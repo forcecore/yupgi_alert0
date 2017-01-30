@@ -247,9 +247,9 @@ SPY:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 90
-		Prerequisites: ~infantry.allies, dome, ~tent, ~techlevel.medium
+		Prerequisites: dome, ~tent, ~techlevel.medium
 	Valued:
-		Cost: 250
+		Cost: 250 # Cheap as British spy
 	GivesExperience:
 		Experience: 500
 	-Tooltip:
