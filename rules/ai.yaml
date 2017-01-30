@@ -3,15 +3,15 @@ Player:
 		Name: Rush AI
 		MinimumExcessPower: 40
 		BuildingCommonNames:
-			ConstructionYard: fact
+			ConstructionYard: gafact, nafact, qnest
 			Refinery: proc
 			Power: powr,apwr
 			Barracks: barr,tent
-			VehiclesFactory: weap
-			Production: barr,tent,weap,afld,hpad
+			VehiclesFactory: gaweap,naweap
+			Production: barr,tent,gaweap,naweap,afld,hpad
 			Silo: silo
 		UnitsCommonNames:
-			Mcv: mcv
+			Mcv: gamcv, namcv, qant
 		BuildingLimits:
 			proc: 4
 			barr: 1
@@ -117,16 +117,16 @@ Player:
 		Name: Normal AI
 		MinimumExcessPower: 60
 		BuildingCommonNames:
-			ConstructionYard: fact
+			ConstructionYard: gafact, nafact, qnest
 			Refinery: proc
 			Power: powr,apwr
 			Barracks: barr,tent
-			VehiclesFactory: weap
-			Production: barr,tent,weap,afld,hpad
+			VehiclesFactory: gaweap,naweap
+			Production: barr,tent,gaweap,naweap,afld,hpad
 			NavalProduction: spen,syrd
 			Silo: silo
 		UnitsCommonNames:
-			Mcv: mcv
+			Mcv: gamcv, namcv, qant
 		BuildingLimits:
 			proc: 4
 			barr: 1
@@ -247,16 +247,16 @@ Player:
 		Name: Turtle AI
 		MinimumExcessPower: 100
 		BuildingCommonNames:
-			ConstructionYard: fact
+			ConstructionYard: gafact, nafact, qnest
 			Refinery: proc
 			Power: powr,apwr
 			Barracks: barr,tent
-			VehiclesFactory: weap
-			Production: barr,tent,weap,afld,hpad
+			VehiclesFactory: gaweap,naweap
+			Production: barr,tent,gaweap,naweap,afld,hpad
 			NavalProduction: spen,syrd
 			Silo: silo
 		UnitsCommonNames:
-			Mcv: mcv
+			Mcv: gamcv, namcv, qant
 		BuildingLimits:
 			proc: 4
 			barr: 1
@@ -376,16 +376,16 @@ Player:
 	HackyAI@NavalAI:
 		Name: Naval AI
 		BuildingCommonNames:
-			ConstructionYard: fact
+			ConstructionYard: gafact, nafact, qnest
 			Refinery: proc
 			Power: powr,apwr
 			Barracks: barr,tent
-			VehiclesFactory: weap
-			Production: barr,tent,weap,afld,hpad
+			VehiclesFactory: gaweap,naweap
+			Production: barr,tent,gaweap,naweap,afld,hpad
 			NavalProduction: spen,syrd
 			Silo: silo
 		UnitsCommonNames:
-			Mcv: mcv
+			Mcv: gamcv, namcv, qant
 		BuildingLimits:
 			proc: 4
 			dome: 1

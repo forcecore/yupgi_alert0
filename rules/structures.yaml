@@ -10,7 +10,7 @@ MSLO:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 140
-		Prerequisites: ~fact, techcenter, ~techlevel.unrestricted
+		Prerequisites: ~anyfact, techcenter, ~techlevel.unrestricted
 		BuildLimit: 1
 	Building:
 		Footprint: xx
@@ -52,10 +52,7 @@ MSLO:
 		RequiredForShortGame: false
 	# Can produce nuke mig!
 	Production:
-		Produces: Aircraft, NukeMig
-	ProductionQueue@Aircraft:
-		Type: Aircraft
-		Group: Aircraft
+		Produces: NukeMig
 	ProductionQueue@NukeMig:
 		Type: NukeMig
 		Group: Aircraft
@@ -88,7 +85,7 @@ GAP:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 110
-		Prerequisites: atek, ~structures.allies, ~techlevel.high
+		Prerequisites: atek, ~gafact, ~techlevel.high
 	Selectable:
 		Bounds: 24,24
 	SelectionDecorations:
@@ -128,7 +125,7 @@ SPEN:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 50
-		Prerequisites: anypower, ~structures.soviet, ~techlevel.low
+		Prerequisites: anypower, ~nafact, ~techlevel.low
 	Targetable:
 		TargetTypes: Ground, Water, Structure, C4, DetonateAttack, SpyInfiltrate
 	Building:
@@ -164,9 +161,9 @@ SPEN:
 	ProductionQueue@Ship:
 		Type: Ship
 		Group: Ship
-	ProductionQueue@Submarine:
-		Type: Submarine
-		Group: Ship
+	#ProductionQueue@Submarine:
+		#Type: Submarine
+		#Group: Ship
 	PrimaryBuilding:
 	-EmitInfantryOnSell:
 	RepairsUnits:
@@ -176,30 +173,6 @@ SPEN:
 	ProductionBar:
 	Power:
 		Amount: -30
-	ProvidesPrerequisite@soviet:
-		Factions: soviet, russia, ukraine
-		Prerequisite: ships.soviet
-	ProvidesPrerequisite@sovietvanilla:
-		Factions: soviet
-		Prerequisite: ships.sovietvanilla
-	ProvidesPrerequisite@russia:
-		Factions: russia
-		Prerequisite: ships.russia
-	ProvidesPrerequisite@ukraine:
-		Factions: ukraine
-		Prerequisite: ships.ukraine
-	ProvidesPrerequisite@sovietstructure:
-		RequiresPrerequisites: structures.soviet
-		Prerequisite: ships.soviet
-	ProvidesPrerequisite@sovietvanillastructure:
-		RequiresPrerequisites: structures.sovietvanilla
-		Prerequisite: ships.sovietvanilla
-	ProvidesPrerequisite@russianstructure:
-		RequiresPrerequisites: structures.russia
-		Prerequisite: ships.russia
-	ProvidesPrerequisite@ukrainianstructure:
-		RequiresPrerequisites: structures.ukraine
-		Prerequisite: ships.ukraine
 	ProvidesPrerequisite@buildingname:
 	EditorTilesetFilter:
 		ExcludeTilesets: INTERIOR
@@ -219,7 +192,7 @@ SYRD:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 40
-		Prerequisites: anypower, ~structures.allies, ~techlevel.low
+		Prerequisites: anypower, ~gafact, ~techlevel.low
 	Valued:
 		Cost: 1000
 	Tooltip:
@@ -260,9 +233,9 @@ SYRD:
 	ProductionQueue@Ship:
 		Type: Ship
 		Group: Ship
-	ProductionQueue@Boat:
-		Type: Boat
-		Group: Ship
+	#ProductionQueue@Boat:
+		#Type: Boat
+		#Group: Ship
 	PrimaryBuilding:
 	-EmitInfantryOnSell:
 	RepairsUnits:
@@ -272,36 +245,6 @@ SYRD:
 	ProductionBar:
 	Power:
 		Amount: -30
-	ProvidesPrerequisite@allies:
-		Factions: allies, england, france, germany
-		Prerequisite: ships.allies
-	ProvidesPrerequisite@alliesvanilla:
-		Factions: allies
-		Prerequisite: ships.alliesvanilla
-	ProvidesPrerequisite@england:
-		Factions: england
-		Prerequisite: ships.england
-	ProvidesPrerequisite@france:
-		Factions: france
-		Prerequisite: ships.france
-	ProvidesPrerequisite@germany:
-		Factions: germany
-		Prerequisite: ships.germany
-	ProvidesPrerequisite@alliedstructure:
-		RequiresPrerequisites: structures.allies
-		Prerequisite: ships.allies
-	ProvidesPrerequisite@alliedvanillastructure:
-		RequiresPrerequisites: structures.alliesvanilla
-		Prerequisite: ships.alliesvanilla
-	ProvidesPrerequisite@englishstructure:
-		RequiresPrerequisites: structures.england
-		Prerequisite: ships.england
-	ProvidesPrerequisite@frenchstructure:
-		RequiresPrerequisites: structures.france
-		Prerequisite: ships.france
-	ProvidesPrerequisite@germanstructure:
-		RequiresPrerequisites: structures.germany
-		Prerequisite: ships.germany
 	ProvidesPrerequisite@buildingname:
 	EditorTilesetFilter:
 		ExcludeTilesets: INTERIOR
@@ -319,7 +262,7 @@ IRON:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 130
-		Prerequisites: stek, ~structures.soviet, ~techlevel.unrestricted
+		Prerequisites: stek, ~nafact, ~techlevel.unrestricted
 		BuildLimit: 1
 	Valued:
 		Cost: 2000
@@ -378,7 +321,7 @@ PDOX:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 120
-		Prerequisites: atek, ~structures.allies, ~techlevel.unrestricted
+		Prerequisites: atek, ~gafact, ~techlevel.unrestricted
 		BuildLimit: 1
 	Valued:
 		Cost: 1500
@@ -403,8 +346,8 @@ PDOX:
 		HasMinibib: Yes
 	#ProvidesPrerequisite@germany:
 		#Factions: germany
-	#Prerequisite: pdox.germany
-		#ProvidesPrerequisite@germanstructure:
+		#Prerequisite: pdox.germany
+	#ProvidesPrerequisite@germanstructure:
 		#RequiresPrerequisites: structures.germany
 		#Prerequisite: pdox.germany
 	#ChronoshiftPower@chronoshift:
@@ -450,7 +393,7 @@ TSLA:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 80
-		Prerequisites: weap, ~structures.soviet, ~techlevel.medium
+		Prerequisites: naweap, ~nafact, ~techlevel.medium
 	Valued:
 		Cost: 1200
 	Tooltip:
@@ -494,7 +437,7 @@ AGUN:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 90
-		Prerequisites: dome, ~structures.allies, ~techlevel.medium
+		Prerequisites: dome, ~gafact, ~techlevel.medium
 	Valued:
 		Cost: 800
 	Tooltip:
@@ -544,7 +487,7 @@ DOME:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 90
-		Prerequisites: ~fact, proc, ~techlevel.medium
+		Prerequisites: ~anyfact, proc, ~techlevel.medium
 	Valued:
 		Cost: 1800
 	Tooltip:
@@ -585,7 +528,7 @@ PBOX:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 40
-		Prerequisites: tent, ~structures.allies, ~techlevel.low
+		Prerequisites: tent, ~gafact, ~techlevel.low
 	Valued:
 		Cost: 400
 	Health:
@@ -633,7 +576,7 @@ HBOX:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 50
-		Prerequisites: tent, ~structures.allies, ~techlevel.medium
+		Prerequisites: tent, ~gafact, ~techlevel.medium
 	Valued:
 		Cost: 600
 	Health:
@@ -678,7 +621,7 @@ GUN:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 70
-		Prerequisites: tent, ~structures.allies, ~techlevel.medium
+		Prerequisites: tent, ~gafact, ~techlevel.medium
 	Valued:
 		Cost: 600
 	Tooltip:
@@ -720,7 +663,7 @@ FTUR:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 60
-		Prerequisites: barr, ~structures.soviet, ~techlevel.low
+		Prerequisites: barr, ~nafact, ~techlevel.low
 	Valued:
 		Cost: 600
 	Tooltip:
@@ -758,7 +701,7 @@ SAM:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 100
-		Prerequisites: dome, ~structures.soviet, ~techlevel.medium
+		Prerequisites: dome, ~nafact, ~techlevel.medium
 	Valued:
 		Cost: 750
 	Tooltip:
@@ -802,7 +745,7 @@ ATEK:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 140
-		Prerequisites: weap, dome, ~structures.allies, ~techlevel.high
+		Prerequisites: gaweap, dome, ~gafact, ~techlevel.high
 	Valued:
 		Cost: 1500
 	Tooltip:
@@ -838,14 +781,14 @@ ATEK:
 
 WEAP:
 	Inherits: ^Building
-	Buildable:
-		Queue: Building
-		BuildPaletteOrder: 80
-		Prerequisites: ~fact, proc, ~techlevel.low
+	#Buildable:
+		#Queue: Building
+		#BuildPaletteOrder: 80
+		#Prerequisites: fact, proc, ~techlevel.low
 	Valued:
 		Cost: 2000
 	Tooltip:
-		Name: War Factory
+		Name: War Factory (Allies)
 		Description: Produces vehicles.
 	Building:
 		Footprint: xxx xxx
@@ -868,60 +811,6 @@ WEAP:
 	ProductionQueue:
 		Type: Vehicle
 		Group: Vehicle
-	ProvidesPrerequisite@allies:
-		Factions: allies, england, france, germany
-		Prerequisite: vehicles.allies
-	ProvidesPrerequisite@alliesvanilla:
-		Factions: allies
-		Prerequisite: vehicles.alliesvanilla
-	ProvidesPrerequisite@england:
-		Factions: england
-		Prerequisite: vehicles.england
-	ProvidesPrerequisite@france:
-		Factions: france
-		Prerequisite: vehicles.france
-	ProvidesPrerequisite@germany:
-		Factions: germany
-		Prerequisite: vehicles.germany
-	ProvidesPrerequisite@soviet:
-		Factions: soviet, russia, ukraine
-		Prerequisite: vehicles.soviet
-	ProvidesPrerequisite@sovietvanilla:
-		Factions: soviet
-		Prerequisite: vehicles.sovietvanilla
-	ProvidesPrerequisite@russia:
-		Factions: russia
-		Prerequisite: vehicles.russia
-	ProvidesPrerequisite@ukraine:
-		Factions: ukraine
-		Prerequisite: vehicles.ukraine
-	ProvidesPrerequisite@alliedstructure:
-		RequiresPrerequisites: structures.allies
-		Prerequisite: vehicles.allies
-	ProvidesPrerequisite@alliedvanillastructure:
-		RequiresPrerequisites: structures.alliesvanilla
-		Prerequisite: vehicles.alliesvanilla
-	ProvidesPrerequisite@englishstructure:
-		RequiresPrerequisites: structures.england
-		Prerequisite: vehicles.england
-	ProvidesPrerequisite@frenchstructure:
-		RequiresPrerequisites: structures.france
-		Prerequisite: vehicles.france
-	ProvidesPrerequisite@germanstructure:
-		RequiresPrerequisites: structures.germany
-		Prerequisite: vehicles.germany
-	ProvidesPrerequisite@sovietstructure:
-		RequiresPrerequisites: structures.soviet
-		Prerequisite: vehicles.soviet
-	ProvidesPrerequisite@sovietvanillastructure:
-		RequiresPrerequisites: structures.sovietvanilla
-		Prerequisite: vehicles.sovietvanilla
-	ProvidesPrerequisite@russianstructure:
-		RequiresPrerequisites: structures.russia
-		Prerequisite: vehicles.russia
-	ProvidesPrerequisite@ukrainianstructure:
-		RequiresPrerequisites: structures.ukraine
-		Prerequisite: vehicles.ukraine
 	PrimaryBuilding:
 	ProductionBar:
 	Power:
@@ -939,43 +828,42 @@ WEAP:
 		ZOffset: 256
 		UpgradeTypes: primary
 		UpgradeMinEnabledLevel: 1
+	ProvidesPrerequisite:
+		Prerequisite: anyweap
+
+NAWEAP:
+	Inherits: WEAP
+	RenderSprites:
+		Image: weap
+	Tooltip:
+		Name: War Factory (Soviet)
+		Description: Produces vehicles.
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 80
+		Prerequisites: ~nafact, proc, ~techlevel.low
+
+GAWEAP:
+	Inherits: WEAP
+	RenderSprites:
+		Image: weap
+	Tooltip:
+		Name: War Factory (Allies)
+		Description: Produces vehicles.
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 80
+		Prerequisites: ~gafact, proc, ~techlevel.low
 
 FACT:
 	Inherits: ^Building
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3,3
-	Buildable:
-		Queue: Building
-		BuildPaletteOrder: 1000
-		Prerequisites: ~disabled
-	ProvidesPrerequisite@allies:
-		Factions: allies, england, france, germany
-		Prerequisite: structures.allies
-	ProvidesPrerequisite@alliesvanilla:
-		Factions: allies
-		Prerequisite: structures.alliesvanilla
-	ProvidesPrerequisite@england:
-		Factions: england
-		Prerequisite: structures.england
-	ProvidesPrerequisite@france:
-		Factions: france
-		Prerequisite: structures.france
-	ProvidesPrerequisite@germany:
-		Factions: germany
-		Prerequisite: structures.germany
-	ProvidesPrerequisite@soviet:
-		Factions: soviet, russia, ukraine
-		Prerequisite: structures.soviet
-	ProvidesPrerequisite@sovietvanilla:
-		Factions: soviet
-		Prerequisite: structures.sovietvanilla
-	ProvidesPrerequisite@russia:
-		Factions: russia
-		Prerequisite: structures.russia
-	ProvidesPrerequisite@ukraine:
-		Factions: ukraine
-		Prerequisite: structures.ukraine
+	#Buildable:
+	#	Queue: Building
+	#	BuildPaletteOrder: 1000
+	#	Prerequisites: ~disabled
 	Health:
 		HP: 1500
 	Armor:
@@ -994,7 +882,7 @@ FACT:
 	Valued:
 		Cost: 2500
 	Tooltip:
-		Name: Construction Yard
+		Name: Construction Yard (Allies)
 		Description: Produces structures.
 	CustomSellValue:
 		Value: 2500
@@ -1022,13 +910,39 @@ FACT:
 	# as in C&C3 and RA3!
 	# Now, radar dome provides wide sighted fog of war removal.
 	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite:
+		Prerequisite: anyfact
+
+NAFACT:
+	Inherits: FACT
+	Transforms:
+		IntoActor: namcv
+		Offset: 1,1
+		Facing: 96
+	RenderSprites:
+		Image: fact
+	Tooltip:
+		Name: Construction Yard (Soviet)
+		Description: Produces structures.
+
+GAFACT:
+	Inherits: FACT
+	Transforms:
+		IntoActor: gamcv
+		Offset: 1,1
+		Facing: 96
+	RenderSprites:
+		Image: fact
+	Tooltip:
+		Name: Construction Yard (Allies)
+		Description: Produces structures.
 
 PROC:
 	Inherits: ^Building
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 60
-		Prerequisites: ~fact, anypower, ~techlevel.infonly
+		Prerequisites: ~anyfact, anypower, ~techlevel.infonly
 	Valued:
 		Cost: 1400
 	Tooltip:
@@ -1082,7 +996,7 @@ SILO:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 35
-		Prerequisites: ~fact, proc, ~techlevel.infonly
+		Prerequisites: ~anyfact, proc, ~techlevel.infonly
 	Valued:
 		Cost: 150
 	Tooltip:
@@ -1153,7 +1067,7 @@ HPAD:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 120
-		Prerequisites: dome, ~structures.allies, ~techlevel.medium
+		Prerequisites: dome, ~gafact, ~techlevel.medium
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -1176,15 +1090,16 @@ HPAD:
 		Facing: 224
 	RallyPoint:
 	Production:
-		Produces: Aircraft, Helicopter
-	ProductionQueue@Aircraft:
-		Type: Aircraft
-		Group: Aircraft
+		Produces: Helicopter
 	ProductionQueue@Helicopter:
 		Type: Helicopter
 		Group: Aircraft
+	#ProductionQueue@Helicopter:
+		#Type: Helicopter
+		#Group: Aircraft
 	Reservable:
 	ProductionBar:
+		Type: Helicopter
 	PrimaryBuilding:
 	Power:
 		Amount: -10
@@ -1243,7 +1158,7 @@ AFLD:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 130
-		Prerequisites: dome, ~structures.soviet, ~techlevel.medium
+		Prerequisites: dome, ~nafact, ~techlevel.medium
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -1264,10 +1179,7 @@ AFLD:
 		MoveIntoWorld: false
 	RallyPoint:
 	Production:
-		Produces: Aircraft, Plane
-	ProductionQueue@Aircraft:
-		Type: Aircraft
-		Group: Aircraft
+		Produces: Plane
 	ProductionQueue@Plane:
 		Type: Plane
 		Group: Aircraft
@@ -1344,6 +1256,7 @@ AFLD:
 		SquadSize: 3
 		SquadOffset: 1792,1792,0
 	ProductionBar:
+		Type: Plane
 	SupportPowerChargeBar:
 	PrimaryBuilding:
 	Power:
@@ -1373,12 +1286,13 @@ POWR:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 10
-		Prerequisites: ~fact, ~techlevel.infonly
+		Prerequisites: ~anyfact, ~techlevel.infonly
 	Valued:
 		Cost: 300
 	Tooltip:
 		Name: Power Plant
 		Description: Provides power for other structures.
+	#ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite:
 		Prerequisite: anypower
 	Building:
@@ -1410,7 +1324,7 @@ APWR:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 110
-		Prerequisites: ~fact, dome, ~techlevel.medium
+		Prerequisites: ~anyfact, dome, ~techlevel.medium
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -1451,7 +1365,7 @@ STEK:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 150
-		Prerequisites: weap, dome, ~structures.soviet, ~techlevel.high
+		Prerequisites: naweap, dome, ~nafact, ~techlevel.high
 	Valued:
 		Cost: 1500
 	Tooltip:
@@ -1478,7 +1392,7 @@ BARR:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 30
-		Prerequisites: anypower, ~structures.soviet, ~techlevel.infonly
+		Prerequisites: anypower, ~nafact, ~techlevel.infonly
 	Valued:
 		Cost: 400
 	Tooltip:
@@ -1506,37 +1420,13 @@ BARR:
 	ProductionQueue@Infantry:
 		Type: Infantry
 		Group: Infantry
-	ProductionQueue@Soldier:
-		Type: Soldier
-		Group: Infantry
+	#ProductionQueue@Soldier:
+		#Type: Soldier
+		#Group: Infantry
 	PrimaryBuilding:
 	ProductionBar:
 	ProvidesPrerequisite:
 		Prerequisite: barracks
-	ProvidesPrerequisite@soviet:
-		Factions: soviet, russia, ukraine
-		Prerequisite: infantry.soviet
-	ProvidesPrerequisite@sovietvanilla:
-		Factions: soviet
-		Prerequisite: infantry.sovietvanilla
-	ProvidesPrerequisite@russia:
-		Factions: russia
-		Prerequisite: infantry.russia
-	ProvidesPrerequisite@ukraine:
-		Factions: ukraine
-		Prerequisite: infantry.ukraine
-	ProvidesPrerequisite@sovietstructure:
-		RequiresPrerequisites: structures.soviet
-		Prerequisite: infantry.soviet
-	ProvidesPrerequisite@sovietvanillastructure:
-		RequiresPrerequisites: structures.sovietvanilla
-		Prerequisite: infantry.sovietvanilla
-	ProvidesPrerequisite@russianstructure:
-		RequiresPrerequisites: structures.russia
-		Prerequisite: infantry.russia
-	ProvidesPrerequisite@ukrainianstructure:
-		RequiresPrerequisites: structures.ukraine
-		Prerequisite: infantry.ukraine
 	Power:
 		Amount: -20
 	ProvidesPrerequisite@buildingname:
@@ -1558,7 +1448,7 @@ KENN:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 175
-		Prerequisites: anypower, ~structures.soviet, ~techlevel.infonly
+		Prerequisites: anypower, ~nafact, ~techlevel.infonly
 	Valued:
 		Cost: 100
 	Tooltip:
@@ -1583,15 +1473,15 @@ KENN:
 		SpawnOffset: -280,400,0
 		ExitCell: -1,0
 	Production:
-		Produces: Infantry, Dog
-	ProductionQueue@Infantry:
-		Type: Infantry
-		Group: Infantry
+		Produces: Dog
+	#ProductionQueue@Infantry:
+		#Type: Infantry
+		#Group: Infantry
 	ProductionQueue@Dog:
 		Type: Dog
 		Group: Infantry
-	PrimaryBuilding:
-	ProductionBar:
+	#PrimaryBuilding:
+	#ProductionBar:
 	-EmitInfantryOnSell:
 	Power:
 		Amount: -10
@@ -1612,7 +1502,7 @@ TENT:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 20
-		Prerequisites: anypower, ~structures.allies, ~techlevel.infonly
+		Prerequisites: anypower, ~gafact, ~techlevel.infonly
 	Valued:
 		Cost: 400
 	Tooltip:
@@ -1640,9 +1530,9 @@ TENT:
 	ProductionQueue@Infantry:
 		Type: Infantry
 		Group: Infantry
-	ProductionQueue@Soldier:
-		Type: Soldier
-		Group: Infantry
+	#ProductionQueue@Soldier:
+		#Type: Soldier
+		#Group: Infantry
 	PrimaryBuilding:
 	ProductionBar:
 	ProvidesPrerequisite@barracks:
@@ -1698,7 +1588,7 @@ FIX:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 100
-		Prerequisites: ~fact, weap, ~techlevel.medium
+		Prerequisites: ~anyfact, anyweap, ~techlevel.medium
 	Valued:
 		Cost: 1200
 	Tooltip:
@@ -1736,7 +1626,7 @@ SBAG:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 10
-		Prerequisites: fact, ~structures.allies, ~techlevel.low
+		Prerequisites: ~gafact, ~techlevel.low
 	Valued:
 		Cost: 25
 	CustomSellValue:
@@ -1761,7 +1651,7 @@ FENC:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 20
-		Prerequisites: fact, ~structures.soviet, ~techlevel.low
+		Prerequisites: ~nafact, ~techlevel.low
 	Valued:
 		Cost: 25
 	CustomSellValue:
@@ -1786,7 +1676,7 @@ BRIK:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 30
-		Prerequisites: ~fact, ~techlevel.medium
+		Prerequisites: ~anyfact, ~techlevel.medium
 	Valued:
 		Cost: 100
 	CustomSellValue:
@@ -1912,9 +1802,6 @@ QNEST:
 		Queue: Building
 		BuildPaletteOrder: 1000
 		Prerequisites: ~disabled
-	ProvidesPrerequisite@creepies:
-		Factions: creepies
-		Prerequisite: structures.creepies
 	Health:
 		HP: 1500
 	Armor:
@@ -1961,7 +1848,7 @@ QNEST:
 		ProductionType: Infantry
 		Color: 8A8A8A
 	ProductionBar@Vehicle:
-		ProductionType: Infantry
+		ProductionType: Vehicle
 		Color: 8A8A8A
 	BaseProvider:
 		Range: 16c0

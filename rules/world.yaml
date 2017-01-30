@@ -152,11 +152,16 @@ World:
 	MapBuildRadius:
 	MapOptions:
 	CreateMPPlayers:
-	MPStartUnits@mcvonly:
+	MPStartUnits@mcvonlyallies:
 		Class: none
 		ClassName: MCV Only
-		Factions: allies, england, france, germany, soviet, russia, ukraine
-		BaseActor: mcv
+		Factions: allies, england, france, germany
+		BaseActor: gamcv
+	MPStartUnits@mcvonlysoviet:
+		Class: none
+		ClassName: MCV Only
+		Factions: soviet, russia, ukraine
+		BaseActor: namcv
 	MPStartUnits@mcvonlycreepies:
 		Class: none
 		ClassName: MCV Only
@@ -166,7 +171,7 @@ World:
 		Class: light
 		ClassName: Light Support
 		Factions: allies, england, france, germany
-		BaseActor: mcv
+		BaseActor: gamcv
 		SupportActors: e1,e1,e1,e3,e3,jeep,1tnk
 		InnerSupportRadius: 3
 		OuterSupportRadius: 5
@@ -174,7 +179,7 @@ World:
 		Class: light
 		ClassName: Light Support
 		Factions: soviet, russia, ukraine
-		BaseActor: mcv
+		BaseActor: namcv
 		SupportActors: e1,e1,e1,e3,e3,apc,ftrk
 		InnerSupportRadius: 3
 		OuterSupportRadius: 5
@@ -190,7 +195,7 @@ World:
 		Class: heavy
 		ClassName: Heavy Support
 		Factions: allies, england, france, germany
-		BaseActor: mcv
+		BaseActor: gamcv
 		SupportActors: e1,e1,e1,e3,e3,jeep,1tnk,2tnk,2tnk,2tnk
 		InnerSupportRadius: 3
 		OuterSupportRadius: 5
@@ -198,7 +203,7 @@ World:
 		Class: heavy
 		ClassName: Heavy Support
 		Factions: soviet, russia, ukraine
-		BaseActor: mcv
+		BaseActor: namcv
 		SupportActors: e1,e1,e1,e3,e3,apc,ftrk,3tnk,3tnk
 		InnerSupportRadius: 3
 		OuterSupportRadius: 5
@@ -206,7 +211,7 @@ World:
 		Class: heavy
 		ClassName: Heavy Support
 		Factions: creepies
-		BaseActor: mcv
+		BaseActor: qant
 		SupportActors: e1,e1,e1,e3,e3,apc,ftrk,3tnk,3tnk
 		InnerSupportRadius: 3
 		OuterSupportRadius: 5

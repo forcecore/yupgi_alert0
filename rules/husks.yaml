@@ -105,6 +105,24 @@ MCV.Husk:
 	RenderSprites:
 		Image: mcvhusk
 
+NAMCV.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Mobile Construction Vehicle)
+	TransformOnCapture:
+		IntoActor: namcv
+	RenderSprites:
+		Image: mcvhusk
+
+GAMCV.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Mobile Construction Vehicle)
+	TransformOnCapture:
+		IntoActor: gamcv
+	RenderSprites:
+		Image: mcvhusk
+
 MGG.Husk:
 	Inherits: ^Husk
 	Tooltip:

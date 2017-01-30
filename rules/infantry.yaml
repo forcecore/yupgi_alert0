@@ -3,7 +3,7 @@
 DOG:
 	Inherits: ^Soldier
 	Buildable:
-		Queue: Infantry
+		Queue: Dog
 		BuildAtProductionType: Dog
 		BuildPaletteOrder: 50
 		Prerequisites: ~kenn, ~techlevel.infonly
@@ -56,9 +56,9 @@ CHITZ:
 		PlayerPalette: player-ra2
 		Scale: 0.75
 	Buildable:
-		Queue: Infantry
+		Queue: Dog
 		BuildAtProductionType: Dog
-		BuildPaletteOrder: 51
+		BuildPaletteOrder: 60
 		Prerequisites: ~kenn, stek, ~techlevel.high
 	Valued:
 		Cost: 1000
