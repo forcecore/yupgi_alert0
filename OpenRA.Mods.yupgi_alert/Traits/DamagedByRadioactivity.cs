@@ -23,10 +23,12 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 	[Desc("This actor receives damage from the given weapon when in radioactive area.")]
 	class DamagedByRadioactivityInfo : UpgradableTraitInfo, Requires<HealthInfo>
 	{
-		[Desc("Related to amount of damage received per DamageInterval ticks. (Damage = DamageCoeff * RadioactivityLevel")]
-		[FieldLoader.Require] public readonly float DamageCoeff = 0.0f;
+		[Desc("Damage received per radioactivity level, in per mille, per DamageInterval. (Damage = DamageCoeff * RadioactivityLevel / 1000")]
+		// Considering that 1% of level 500 is 5, it is quite tough to have percent. We use per mille here.
+		// 5 damage is much larger than Mods.cnc's tiberium damage.
+		[FieldLoader.Require] public readonly int DamageCoeff = 0;
 
-		[Desc("Delay between receiving damage.")]
+		[Desc("Delay (in ticks) between receiving damage.")]
 		public readonly int DamageInterval = 16;
 
 		[Desc("Apply the damage using these damagetypes.")]
@@ -61,11 +63,8 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 			if (level <= 0)
 				return;
 
-			float dmg = Info.DamageCoeff * level;
-			if (dmg < 1.0f)
-				dmg = 1.0f; // cos we will be rounding this as int.
-
-			self.InflictDamage(self.World.WorldActor, new Damage((int) dmg, Info.DamageTypes));
+			int dmg = Info.DamageCoeff * level / 1000;
+			self.InflictDamage(self.World.WorldActor, new Damage(dmg, Info.DamageTypes));
 			damageTicks = Info.DamageInterval;
 		}
 	}

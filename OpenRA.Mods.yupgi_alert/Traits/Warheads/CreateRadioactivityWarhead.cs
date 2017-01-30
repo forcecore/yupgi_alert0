@@ -35,13 +35,12 @@ namespace OpenRA.Mods.yupgi_alert.Warheads
 		[Desc("Ranges at which each Falloff step is defined (in cells). Overrides Spread.")]
 		public int[] Range = null;
 
-		[Desc("Radio activity level per shot (Sievert?)")]
-		public int Level = 32;
+		[Desc("Radio activity level this weapon puts on the ground. Accumulates over previously contaminated area. (Sievert?)")]
+		public int Level = 32; // in RA2, they used 500 for most weapons
 
 		[Desc("Radio activity saturates at this level, by this weapon.")]
-		// this means if the cell is affected by other stronger radioactive weapon, the level can go past this value.
-		// For details, have a look at RadioactivityLayers.cs:IncreaseLevel()
-		public int MaxLevel = 500; // in RA2, they used 500 for most weapons
+		// If you fire a weapon with Level = 500 twice, the level will never go beyond 500 (=MaxLevel).
+		public int MaxLevel = 500;
 
 		public void RulesetLoaded(Ruleset rules, WeaponInfo info)
 		{

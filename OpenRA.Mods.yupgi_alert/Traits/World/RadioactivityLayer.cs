@@ -23,7 +23,7 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.yupgi_alert.Traits
 {
-	[Desc("Attach this to the world actor. Radioactivity layer, as in RA2 desolator radioactivity.", "Order of the layers defines the Z sorting.")]
+	[Desc("Attach this to the world actor. Radioactivity layer, as in RA2 desolator radioactivity. Order of the layers defines the Z sorting.")]
 	// You can attach this layer by editing rules/world.yaml
 	// I (boolbada) made this layer by cloning resources layer, as resource amount is quite similar to
 	// radio activity. I looked at SmudgeLayer too.
@@ -31,24 +31,22 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 	public class RadioactivityLayerInfo : ITraitInfo
 	{
 		[Desc("Color of radio activity")]
-		public readonly Color Color = Color.FromArgb(0, 255, 0); // tint factor sucks modify tint here statically.
+		public readonly Color Color = Color.FromArgb(0, 255, 0); // tint factor (was in RA2) sucks. Modify tint here statically.
+		[Desc("Second color of radio activity, used in conjunction with MixThreshold.")]
+		public readonly Color Color2 = Color.Yellow;
 
 		[Desc("Maximum radiation allowable in a cell.The cell can actually have more radiation but it will only damage as if it had the maximum level.")]
 		public readonly int MaxLevel = 500;
 
-		//[Desc("Delay in ticks between radiation level decrements. The level updates this often, but the rate is still as specified in Halflife.")]
+		[Desc("Delay in ticks between radiation level decrements. The level updates this often, although the whole lifetime will be as defined by half-life.")]
 		public readonly int UpdateDelay = 15;
 
-		[Desc("the factor plays in the radiation display.")]
-		public readonly float Darkest = 4f; // level == 1 will get this as alpha.
-		[Desc("the factor plays in the radiation display.")]
-		public readonly float Brightest = 64f; // level == MaxLevel will get this as alpha
-		[Desc("factor plays in the radiation display.")]
-		public readonly int MixThreshold = 36; // if alpha goes beyond this threshold,
-		// we mix in some other color (currently yellow) so that the color looks really wicked.
-
-		//[Desc("Scales the factor alpha plays in the radiation display.")]
-		//public readonly float AlphaFactor = 0.25f;
+		[Desc("The alpha value for displaying radioactivity level for cells with level == 1")]
+		public readonly int Darkest = 4;
+		[Desc("The alpha value for displaying radioactivity level for cells with level == MaxLevel")]
+		public readonly int Brightest = 64; // level == MaxLevel will get this as alpha
+		[Desc("Color mix threshold. If alpha level goes beyond this threshold, Color2 will be mixed in.")]
+		public readonly int MixThreshold = 36; 
 
 		[Desc("Delay of half life, in ticks")]
 		public readonly int Halflife = 150; // in ticks.
@@ -86,22 +84,23 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 
 		readonly HashSet<CPos> dirty = new HashSet<CPos>(); // dirty, as in cache dirty bits.
 
-		readonly float k; // half life constant, to be computed at init.
-		public float slope;
-		public float y_intercept;
+		readonly int k1000; // half life constant, to be computed at init.
+		public int slope100;
+		public int y_intercept100;
 
 		public RadioactivityLayer(Actor self, RadioactivityLayerInfo info)
 		{
 			world = self.World;
 			this.info = info;
-			k = info.UpdateDelay * ((float) Math.Log(2)) / info.Halflife;
+			//k = info.UpdateDelay * ((float) Math.Log(2)) / info.Halflife;
+			k1000 = info.UpdateDelay * 301 / info.Halflife; // (301 is 1000*log(2) so we must divide by 1000 later on.)
 			//Debug.Assert(k > 0);
 			// half life decay follows differential equation d/dt m(t) = -k m(t).
 			// d/dt will be in ticks, ofcourse.
 
 			// rad level visualization constants...
-			slope = (info.Brightest - info.Darkest) / (info.MaxLevel - 1);
-			y_intercept = info.Brightest - info.MaxLevel * slope;
+			slope100 = 100 * (info.Brightest - info.Darkest) / (info.MaxLevel - 1);
+			y_intercept100 = 100*info.Brightest - (info.MaxLevel * slope100);
 		}
 
 		public void Render(WorldRenderer wr)
@@ -119,7 +118,7 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 				if (level == 0)
 					continue; // don't visualize 0 cells. They might show up before cells getting removed.
 
-				int alpha = (int)(y_intercept + slope * level); // Linear interpolation
+				int alpha = (y_intercept100 + slope100 * level)/100; // Linear interpolation
 				alpha = alpha > 255 ? 255 : alpha; // just to be safe.
 
 				Color color = Color.FromArgb(alpha, info.Color);
@@ -128,7 +127,7 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 				// mix in yellow so that the radion shines brightly, after certain threshold.
 				// It is different than tinting the info.color itself and provides nicer look.
 				if (alpha > info.MixThreshold)
-					Game.Renderer.WorldRgbaColorRenderer.FillRect(tl, br, Color.FromArgb(16, Color.Yellow));
+					Game.Renderer.WorldRgbaColorRenderer.FillRect(tl, br, Color.FromArgb(16, info.Color2));
 			}
 		}
 
@@ -150,9 +149,9 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 				// Looks unnatural and induces "flickers"
 
 				ra.ticks = info.UpdateDelay; // reset ticks
-				int dlevel = (int)(k * ra.level);
+				int dlevel = k1000 * ra.level / 1000;
 				if (dlevel < 1)
-					dlevel = 1; // must decrease by at least 1.
+					dlevel = 1; // must decrease by at least 1 so that the contamination disappears eventually.
 				ra.level -= dlevel;
 
 				if (ra.level <= 0)
