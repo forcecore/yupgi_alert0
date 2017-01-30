@@ -696,8 +696,8 @@ Ant:
 		Description: Irradiated insect that grew oversize.\nCollects ore.
 		GenericName: Ant
 	Buildable:
-		Queue: Infantry
-		BuildAtProductionType: Soldier
+		Queue: SmallAnt
+		BuildAtProductionType: SmallAnt
 		BuildPaletteOrder: 100
 		Prerequisites: ~qnest
 		BuildDuration: 250

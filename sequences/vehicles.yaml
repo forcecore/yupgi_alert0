@@ -371,7 +371,7 @@ stnk:
 		Facings: 32
 	icon: stnkicon
 
-warrior_ant:
+want:
 	idle: invis
 		Facings: 1
 	stand: ant1

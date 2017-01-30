@@ -1024,7 +1024,8 @@ QANT:
 	-DamagedByTerrain@tib:
 	-DamagedByRadioactivity:
 
-warrior_ant:
+# Warrior ant, not "want"
+WANT:
 	Inherits: ^Vehicle
 	Valued:
 		Cost: 1000
@@ -1033,7 +1034,7 @@ warrior_ant:
 		Description: Irradiated insect that grew oversize.\nCombatant.
 		GenericName: Ant
 	Buildable:
-		Queue: Vehicle
+		Queue: BigAnt
 		BuildPaletteOrder: 100
 		Prerequisites: ~qnest, tibtree
 	Selectable:

@@ -67,6 +67,7 @@ MSLO:
 	ProvidesPrerequisite@buildingname:
 	#PrimaryBuilding:
 	ProductionBar:
+		ProductionType: NukeMig
 	RallyPoint:
 	Exit@1:
 		ExitCell: 1,1
@@ -159,7 +160,7 @@ SPEN:
 	Production:
 		Produces: Ship, Submarine
 	ProductionQueue@Ship:
-		Type: Ship
+		Type: Submarine
 		Group: Ship
 	#ProductionQueue@Submarine:
 		#Type: Submarine
@@ -171,6 +172,7 @@ SPEN:
 		PlayerExperience: 15
 	RallyPoint:
 	ProductionBar:
+		ProductionType: Submarine
 	Power:
 		Amount: -30
 	ProvidesPrerequisite@buildingname:
@@ -231,7 +233,7 @@ SYRD:
 	Production:
 		Produces: Ship, Boat
 	ProductionQueue@Ship:
-		Type: Ship
+		Type: Boat
 		Group: Ship
 	#ProductionQueue@Boat:
 		#Type: Boat
@@ -243,6 +245,7 @@ SYRD:
 		PlayerExperience: 15
 	RallyPoint:
 	ProductionBar:
+		ProductionType: Boat
 	Power:
 		Amount: -30
 	ProvidesPrerequisite@buildingname:
@@ -813,6 +816,7 @@ WEAP:
 		Group: Vehicle
 	#PrimaryBuilding:
 	ProductionBar:
+		ProductionType: Vehicle
 	Power:
 		Amount: -30
 	ProvidesPrerequisite@buildingname:
@@ -1425,6 +1429,7 @@ BARR:
 		#Group: Infantry
 	#PrimaryBuilding:
 	ProductionBar:
+		ProductionType: Infantry
 	ProvidesPrerequisite:
 		Prerequisite: barracks
 	Power:
@@ -1535,6 +1540,7 @@ TENT:
 		#Group: Infantry
 	#PrimaryBuilding:
 	ProductionBar:
+		ProductionType: Infantry
 	ProvidesPrerequisite@barracks:
 		Prerequisite: barracks
 	ProvidesPrerequisite@allies:
@@ -1811,7 +1817,7 @@ QNEST:
 		# Enough to reveal all the placed hills
 	#Bib:
 	Production:
-		Produces: Building,Defense,Infantry,Soldier,Vehicle
+		Produces: Building,Defense,SmallAnt,BigAnt
 	ProductionQueue@Building:
 		Type: Building
 		Group: Building
@@ -1819,13 +1825,10 @@ QNEST:
 		Type: Defense
 		Group: Defense
 	ProductionQueue@Infantry:
-		Type: Infantry
-		Group: Infantry
-	ProductionQueue@Soldier:
-		Type: Soldier
+		Type: SmallAnt
 		Group: Infantry
 	ProductionQueue@Vehicle:
-		Type: Vehicle
+		Type: BigAnt
 		Group: Vehicle
 	Valued:
 		Cost: 2500
@@ -1844,11 +1847,11 @@ QNEST:
 	ProductionBar@Defense:
 		ProductionType: Defense
 		Color: 8A8A8A
-	ProductionBar@Infantry:
-		ProductionType: Infantry
+	ProductionBar@BigAnt:
+		ProductionType: BigAnt
 		Color: 8A8A8A
-	ProductionBar@Vehicle:
-		ProductionType: Vehicle
+	ProductionBar@SmallAnt:
+		ProductionType: SmallAnt
 		Color: 8A8A8A
 	BaseProvider:
 		Range: 16c0
