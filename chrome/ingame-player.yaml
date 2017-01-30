@@ -202,7 +202,8 @@ Container@PLAYER_WIDGETS:
 			X: WINDOW_RIGHT - 250
 			Y: 300
 			Width: 238
-			Height: 250
+            #Height: 250
+            Height: 25
 			Children:
 				Container@PALETTE_BACKGROUND:
 					Children:
@@ -228,7 +229,7 @@ Container@PLAYER_WIDGETS:
 				LogicTicker@PRODUCTION_TICKER:
 				ProductionPalette@PRODUCTION_PALETTE:
 					X: 42
-					Y: 1
+					Y: 31
 					TooltipContainer: TOOLTIP_CONTAINER
 					ReadyText: READY
 					HoldText: ON HOLD
@@ -237,7 +238,7 @@ Container@PLAYER_WIDGETS:
 					IconSpriteOffset: -1, -1
 				Container@PALETTE_FOREGROUND:
 					X: 40
-					Y: 0-1
+					Y: 30-1
 					Children:
 						Image@ROW_TEMPLATE:
 							Width: 238
@@ -247,7 +248,7 @@ Container@PLAYER_WIDGETS:
 							ImageName: production-iconoverlay
 				Container@PRODUCTION_TYPES:
 					X: 7
-					Y: 2
+					Y: 32
 					Width: 29
 					Height: 240
 					Children:
