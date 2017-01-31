@@ -1034,7 +1034,8 @@ WANT:
 		Description: Irradiated insect that grew oversize.\nCombatant.
 		GenericName: Ant
 	Buildable:
-		Queue: BigAnt
+		Queue: Vehicle
+		BuildAtProductionType: BigAnt
 		BuildPaletteOrder: 100
 		Prerequisites: ~qnest, tibtree
 	Selectable:
