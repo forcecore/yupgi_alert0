@@ -104,7 +104,7 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 	class NydusTransportableInfo : ITraitInfo
 	{
 		[VoiceReference]
-		public readonly string Voice = "Action";
+		public readonly string Voice = "Move";
 		public readonly string EnterCursor = "enter";
 		public readonly string EnterBlockedCursor = "enter-blocked";
 		public object Create(ActorInitializer init) { return new NydusTransportable(init, this); }
