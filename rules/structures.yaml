@@ -53,9 +53,6 @@ MSLO:
 	# Can produce nuke mig!
 	Production:
 		Produces: NukeMig
-	ProductionQueue@NukeMig:
-		Type: NukeMig
-		Group: Aircraft
 	WithDecoration@primary:
 		RequiresSelection: true
 		Image: pips
@@ -65,9 +62,8 @@ MSLO:
 		UpgradeTypes: primary
 		UpgradeMinEnabledLevel: 1
 	ProvidesPrerequisite@buildingname:
-	#PrimaryBuilding:
+	PrimaryBuilding:
 	ProductionBar:
-		ProductionType: NukeMig
 	RallyPoint:
 	Exit@1:
 		ExitCell: 1,1
@@ -159,20 +155,13 @@ SPEN:
 		ExitCell: 2,0
 	Production:
 		Produces: Ship, Submarine
-	ProductionQueue@Ship:
-		Type: Submarine
-		Group: Ship
-	#ProductionQueue@Submarine:
-		#Type: Submarine
-		#Group: Ship
-	#PrimaryBuilding:
+	PrimaryBuilding:
 	-EmitInfantryOnSell:
 	RepairsUnits:
 		FinishRepairingNotification: UnitRepaired
 		PlayerExperience: 15
 	RallyPoint:
 	ProductionBar:
-		ProductionType: Submarine
 	Power:
 		Amount: -30
 	ProvidesPrerequisite@buildingname:
@@ -232,20 +221,13 @@ SYRD:
 		ExitCell: 2,0
 	Production:
 		Produces: Ship, Boat
-	ProductionQueue@Ship:
-		Type: Boat
-		Group: Ship
-	#ProductionQueue@Boat:
-		#Type: Boat
-		#Group: Ship
-	#PrimaryBuilding:
+	PrimaryBuilding:
 	-EmitInfantryOnSell:
 	RepairsUnits:
 		FinishRepairingNotification: UnitRepaired
 		PlayerExperience: 15
 	RallyPoint:
 	ProductionBar:
-		ProductionType: Boat
 	Power:
 		Amount: -30
 	ProvidesPrerequisite@buildingname:
@@ -791,7 +773,7 @@ WEAP:
 	Valued:
 		Cost: 2000
 	Tooltip:
-		Name: War Factory (Allies)
+		Name: War Factory
 		Description: Produces vehicles.
 	Building:
 		Footprint: xxx xxx
@@ -811,12 +793,8 @@ WEAP:
 		ExitCell: 1,2
 	Production:
 		Produces: Vehicle
-	ProductionQueue:
-		Type: Vehicle
-		Group: Vehicle
-	#PrimaryBuilding:
+	PrimaryBuilding:
 	ProductionBar:
-		ProductionType: Vehicle
 	Power:
 		Amount: -30
 	ProvidesPrerequisite@buildingname:
@@ -886,7 +864,7 @@ FACT:
 	Valued:
 		Cost: 2500
 	Tooltip:
-		Name: Construction Yard (Allies)
+		Name: Construction Yard
 		Description: Produces structures.
 	CustomSellValue:
 		Value: 2500
@@ -923,6 +901,10 @@ NAFACT:
 		IntoActor: namcv
 		Offset: 1,1
 		Facing: 96
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
 	RenderSprites:
 		Image: fact
 	Tooltip:
@@ -935,6 +917,10 @@ GAFACT:
 		IntoActor: gamcv
 		Offset: 1,1
 		Facing: 96
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 1000
+		Prerequisites: ~disabled
 	RenderSprites:
 		Image: fact
 	Tooltip:
@@ -1094,17 +1080,10 @@ HPAD:
 		Facing: 224
 	RallyPoint:
 	Production:
-		Produces: Helicopter
-	ProductionQueue@Helicopter:
-		Type: Helicopter
-		Group: Aircraft
-	#ProductionQueue@Helicopter:
-		#Type: Helicopter
-		#Group: Aircraft
+		Produces: Aircraft, Helicopter
 	Reservable:
 	ProductionBar:
-		Type: Helicopter
-	#PrimaryBuilding:
+	PrimaryBuilding:
 	Power:
 		Amount: -10
 	ProvidesPrerequisite@allies:
@@ -1183,10 +1162,7 @@ AFLD:
 		MoveIntoWorld: false
 	RallyPoint:
 	Production:
-		Produces: Plane
-	ProductionQueue@Plane:
-		Type: Plane
-		Group: Aircraft
+		Produces: Aircraft, Plane
 	Reservable:
 	ProvidesPrerequisite@soviet:
 		Factions: soviet, russia, ukraine
@@ -1260,9 +1236,8 @@ AFLD:
 		SquadSize: 3
 		SquadOffset: 1792,1792,0
 	ProductionBar:
-		Type: Plane
 	SupportPowerChargeBar:
-	#PrimaryBuilding:
+	PrimaryBuilding:
 	Power:
 		Amount: -20
 	ProvidesPrerequisite@buildingname:
@@ -1421,15 +1396,8 @@ BARR:
 		ExitCell: 0,2
 	Production:
 		Produces: Infantry, Soldier
-	ProductionQueue@Infantry:
-		Type: Infantry
-		Group: Infantry
-	#ProductionQueue@Soldier:
-		#Type: Soldier
-		#Group: Infantry
-	#PrimaryBuilding:
+	PrimaryBuilding:
 	ProductionBar:
-		ProductionType: Infantry
 	ProvidesPrerequisite:
 		Prerequisite: barracks
 	Power:
@@ -1478,15 +1446,9 @@ KENN:
 		SpawnOffset: -280,400,0
 		ExitCell: -1,0
 	Production:
-		Produces: Dog
-	#ProductionQueue@Infantry:
-		#Type: Infantry
-		#Group: Infantry
-	ProductionQueue@Dog:
-		Type: Dog
-		Group: Infantry
-	#PrimaryBuilding:
-	#ProductionBar:
+		Produces: Infantry, Dog
+	PrimaryBuilding:
+	ProductionBar:
 	-EmitInfantryOnSell:
 	Power:
 		Amount: -10
@@ -1532,15 +1494,8 @@ TENT:
 		ExitCell: 0,2
 	Production:
 		Produces: Infantry, Soldier
-	ProductionQueue@Infantry:
-		Type: Infantry
-		Group: Infantry
-	#ProductionQueue@Soldier:
-		#Type: Soldier
-		#Group: Infantry
-	#PrimaryBuilding:
+	PrimaryBuilding:
 	ProductionBar:
-		ProductionType: Infantry
 	ProvidesPrerequisite@barracks:
 		Prerequisite: barracks
 	ProvidesPrerequisite@allies:
@@ -1818,18 +1773,6 @@ QNEST:
 	#Bib:
 	Production:
 		Produces: Building,Defense,SmallAnt,BigAnt
-	ProductionQueue@Building:
-		Type: Building
-		Group: Building
-	ProductionQueue@Defense:
-		Type: Defense
-		Group: Defense
-	ProductionQueue@Infantry:
-		Type: SmallAnt
-		Group: Infantry
-	ProductionQueue@Vehicle:
-		Type: BigAnt
-		Group: Vehicle
 	Valued:
 		Cost: 2500
 	Tooltip:
@@ -1870,9 +1813,6 @@ QNEST:
 	Exit@4:
 		SpawnOffset: 213,-128,0
 		ExitCell: 1,2
-	Exit@5:
-		SpawnOffset: 213,-128,0
-		ExitCell: 1,2
 	RallyPoint:
 	#WithDeathAnimation:
 		#DeathSequence: dead
@@ -1885,7 +1825,7 @@ QNEST:
 	ProvidesPrerequisite@buildingname:
 	-EmitInfantryOnSell: # would be stupid
 	-Sellable: # not sellable. It's a biological nest!
-	#PrimaryBuilding:
+	PrimaryBuilding:
 	WithDecoration@primary:
 		RequiresSelection: true
 		Image: pips

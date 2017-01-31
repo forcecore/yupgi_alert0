@@ -1,7 +1,7 @@
 SS:
 	Inherits: ^Ship
 	Buildable:
-		Queue: Submarine
+		Queue: Ship
 		BuildAtProductionType: Submarine
 		BuildPaletteOrder: 30
 		Prerequisites: ~spen, ~techlevel.medium
@@ -57,7 +57,7 @@ SS:
 MSUB:
 	Inherits: ^Ship
 	Buildable:
-		Queue: Submarine
+		Queue: Ship
 		BuildAtProductionType: Submarine
 		BuildPaletteOrder: 60
 		Prerequisites: ~spen, stek, ~techlevel.high
@@ -117,7 +117,7 @@ MSUB:
 DD:
 	Inherits: ^Ship
 	Buildable:
-		Queue: Boat
+		Queue: Ship
 		BuildAtProductionType: Boat
 		BuildPaletteOrder: 40
 		Prerequisites: ~syrd, dome, ~techlevel.medium
@@ -165,7 +165,7 @@ DD:
 CA:
 	Inherits: ^Ship
 	Buildable:
-		Queue: Boat
+		Queue: Ship
 		BuildAtProductionType: Boat
 		BuildPaletteOrder: 50
 		Prerequisites: ~syrd, atek, ~techlevel.high
@@ -219,7 +219,7 @@ CA:
 LST:
 	Inherits: ^Ship
 	Buildable:
-		Queue: Boat, Submarine
+		Queue: Ship
 		BuildPaletteOrder: 10
 		Prerequisites: ~techlevel.low
 	Valued:
@@ -255,7 +255,7 @@ LST:
 PT:
 	Inherits: ^Ship
 	Buildable:
-		Queue: Boat
+		Queue: Ship
 		BuildAtProductionType: Boat
 		BuildPaletteOrder: 20
 		Prerequisites: ~syrd, ~techlevel.medium

@@ -85,7 +85,7 @@ Cursors:
 	ra|cursors.yaml
 
 Chrome:
-	yupgi_alert|chrome.yaml
+	ra|chrome.yaml
 
 Assemblies:
 	common|OpenRA.Mods.Common.dll

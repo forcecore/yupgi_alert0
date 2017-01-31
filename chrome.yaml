@@ -505,10 +505,14 @@ scrollbar: buttons.png
 	down_pressed: 116,140,16,16
 	up_arrow: 132,140,16,16
 	up_pressed: 132,140,16,16
-	right_arrow: 320,48,16,16
-	right_pressed: 336,48,16,16
-	left_arrow: 352,48,16,16
-	left_pressed: 368,48,16,16
+	right_arrow: 116,140,16,16
+	right_pressed: 116,140,16,16
+	left_arrow: 132,140,16,16
+	left_pressed: 132,140,16,16
+    #right_arrow: 320,48,16,16
+    #right_pressed: 336,48,16,16
+    #left_arrow: 352,48,16,16
+    #left_pressed: 368,48,16,16
 
 # A copy of dialog3 (pressed button)
 progressbar-bg: dialog.png
