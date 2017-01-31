@@ -18,10 +18,25 @@ Player:
         LowPowerSlowdown: 3
         QueuedAudio: Building
         SpeedUp: True
+        Factions: allies, soviet
+    ClassicProductionQueue@AntVehicle:
+        Type: Vehicle
+        LowPowerSlowdown: 3
+        QueuedAudio: Building
+        SpeedUp: True
+        Factions: creepies
+        BuildTimeSpeedReduction: 100, 50, 33, 25
     ClassicProductionQueue@Infantry:
         Type: Infantry
         LowPowerSlowdown: 3
         SpeedUp: True
+        Factions: allies, soviet
+    ClassicProductionQueue@AntInfantry:
+        Type: Infantry
+        LowPowerSlowdown: 3
+        SpeedUp: True
+        Factions: creepies
+        BuildTimeSpeedReduction: 100, 50, 33, 25
     ClassicProductionQueue@Ship:
         Type: Ship
         LowPowerSlowdown: 3
