@@ -7,6 +7,7 @@ GenericVoice:
 		soviet: .r01,.r03
 		russia: .r01,.r03
 		ukraine: .r01,.r03
+		creepies: .r01,.r03
 	Voices:
 		Select: await1,ready,report1,yessir1
 		Action: ackno,affirm1,noprob,overout,ritaway,roger,ugotit
@@ -69,6 +70,7 @@ DogVoice:
 	Voices:
 		Select: dogw3px
 		Move: dogy1
+		Action: dogy1
 		Attack: dogg5p
 		Die: dogw5,dogw7
 		Burned: dogw6
@@ -119,6 +121,7 @@ ShokVoice:
 	Voices:
 		Select: jchrge1,jjuice1,jjump1,jpower1
 		Move: jdance1,jyes1
+		Action: jdance1,jyes1
 		Attack: jburn1,jcrisp1,jshock1,jlight1
 		Die: dedman1,dedman2,dedman3,dedman4,dedman5,dedman7,dedman8
 		Burned: dedman10
@@ -127,6 +130,7 @@ ShokVoice:
 AntVoice:
 	Voices:
 		Select: antbite
+		Move: antbite
 		Action: antbite
 		Die: antdie
 		Burned: antdie
