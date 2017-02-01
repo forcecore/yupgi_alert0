@@ -3,4 +3,5 @@
 *.shp binary
 *.wav binary
 *.png binary
+*.aud binary
 

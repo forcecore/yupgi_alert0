@@ -369,3 +369,56 @@ RadEruptionWeapon:
 		Level: 100
 		Falloff: 100, 90, 50, 0
         MaxLevel: 500
+
+FiendShard-AA:
+	ReloadDelay: 30
+	Burst: 3
+	Range: 8c0
+	Report: fiend2.aud
+	ValidTargets: Air
+	Projectile: Bullet
+		Speed: 1c682
+		Blockable: false
+		Image: BOMB
+		Shadow: true
+	Warhead@1Dam: SpreadDamage
+		Damage: 20
+		Spread: 213
+		Versus:
+			Light: 60
+			Heavy: 40
+			Concrete: 20
+		DamageTypes: Prone100Percent, TriggerProne, BulletDeath
+		ValidTargets: Air, Ground, Water
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_splash
+		ImpactSounds: splash9.aud
+		ValidImpactTypes: Water
+
+FiendShard-AG:
+	ReloadDelay: 30
+	Burst: 3
+	Range: 8c0
+	Report: fiend2.aud
+	ValidTargets: Ground, Water
+	Projectile: Bullet
+		Speed: 213
+		Image: BOMB
+		Inaccuracy: 512
+		Shadow: true
+		Angle: 60
+	Warhead@1Dam: SpreadDamage
+		# Same as m1 cargbine.
+		# AG is not very good, considering fiend costs 1000
+		Damage: 15
+		Versus:
+			Wood: 25
+			Light: 30
+			Heavy: 10
+			Concrete: 10
+		DamageTypes: Prone100Percent, TriggerProne, BulletDeath
+		ValidTargets: Air, Ground, Water
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_splash
+		ImpactSounds: splash9.aud
+		ValidImpactTypes: Water

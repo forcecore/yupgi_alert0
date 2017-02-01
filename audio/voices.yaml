@@ -159,3 +159,14 @@ DesolatorVoice:
 		Die: idesdia, idesdib, idesdic
 		Zapped: dedman6
 		Burned: dedman10
+
+Fiend:
+	Voices:
+		Select: fiend1
+		Attack: fiend1
+		Move: fiend1
+		Action: fiend1
+		Die: fiend1
+		Burned: fiend1
+		Zapped: fiend1
+		Explode: expnew10

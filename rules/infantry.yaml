@@ -703,6 +703,7 @@ Ant:
 		BuildDuration: 250
 	Selectable:
 		Bounds: 12,12,0,-5
+		Priority: 5
 	SelectionDecorations:
 		VisualBounds: 15,15,0,-2
 	Health:
@@ -820,3 +821,72 @@ DESO:
 		UpgradeMinEnabledLevel: 1
 	Targetable:
 		TargetTypes: Ground, Infantry
+
+# From TS mod. Actually not needed now.
+FLAMEGUY:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^SpriteActor
+	Mobile:
+		Speed: 71
+		SharesCell: true
+		TerrainSpeeds:
+			Clear: 45
+			Rough: 40
+			Road: 50
+			Bridge: 50
+			Ore: 40
+			Gems: 40
+			Tiberium: 40
+			Beach: 80
+	HiddenUnderFog:
+	WithInfantryBody:
+		IdleSequences: run
+	Health:
+		HP: 160
+	SelfHealing:
+		Step: -10
+		HealIfBelow: 101
+	ScaredyCat:
+	WithDeathAnimation:
+		FallbackSequence: die
+		UseDeathTypeSuffix: false
+
+DOGGIE:
+	Inherits@1: ^Soldier
+	RenderSprites:
+		PlayerPalette: player-cc2
+		Scale: 0.75
+	Tooltip:
+		Name: Tiberian Fiend
+	Health:
+		HP: 250
+		Shape: Circle
+			Radius: 213
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: SmallAnt
+		BuildPaletteOrder: 200
+		Prerequisites: ~qnest, tibtree
+	Valued:
+		Cost: 1000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 8c0
+	Mobile:
+		Speed: 113
+	Voiced:
+		VoiceSet: Fiend
+	Targetable:
+		TargetTypes: Ground, Infantry, Ant
+	Armament@AG:
+		Weapon: FiendShard-AG
+	Armament@AA:
+		Weapon: FiendShard-AA
+	AttackFrontal:
+		Voice: Attack
+	DamagedByTerrain@tib:
+		Damage: -2
+		DamageInterval: 16
+		Terrain: Tiberium
+	-DamagedByRadioactivity:

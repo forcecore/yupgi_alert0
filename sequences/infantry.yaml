@@ -45,22 +45,22 @@ e1:
 		Start: 272
 		Length: 16
 		Tick: 120
-	die1:
+	die1: # instant
 		Start: 288
 		Length: 8
-	die2:
+	die2: # twirl
 		Start: 296
 		Length: 8
-	die3:
+	die3: # explode (small explosion)
 		Start: 304
 		Length: 8
-	die4:
+	die4: # flying (large explosion)
 		Start: 312
 		Length: 12
-	die5:
+	die5: #  burn
 		Start: 324
 		Length: 18
-	die6: electro
+	die6: electro # electro (obviously)
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
@@ -1495,3 +1495,62 @@ deso:
         Facings: 1
         Tick: 240
 	icon: desoicon
+
+doggie:
+	Defaults:
+		Tick: 80
+	stand:
+		Facings: 8
+		ShadowStart: 119
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		ShadowStart: 127
+	attack:
+		Start: 56
+		Length: 4
+		Facings: 8
+		ShadowStart: 175
+	laydown: # TODO: Implement hiding when on a tiberium patch
+		Start: 88
+		Length: 2
+		ShadowStart: 207
+	hide: # TODO: Implement hiding when on a tiberium patch
+		Start: 90
+		ShadowStart: 209
+	idle1:
+		Start: 91
+		Length: 8
+		ShadowStart: 210
+	die1:
+		Start: 99
+		Length: 10
+		ShadowStart: 218
+	die2:
+		Start: 99
+		Length: 10
+		ShadowStart: 218
+	die3: frag1 # == large_explosion
+		Length: *
+	die4:
+		Start: 99
+		Length: 10
+		ShadowStart: 218
+	die5:
+		Start: 109
+		Length: 10
+		ShadowStart: 228
+	die6: frag1 # explode, for electro death.
+		Length: *
+	die-crushed:
+		Start: 105
+		Length: 4
+		ShadowStart: 224
+		Tick: 800
+		ZOffset: -511
+	die-melting:
+		Start: 109
+		Length: 10
+		ShadowStart: 228
+    icon: doggieicon
