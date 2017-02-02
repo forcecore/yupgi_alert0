@@ -890,3 +890,4 @@ DOGGIE:
 		DamageInterval: 16
 		Terrain: Tiberium
 	-DamagedByRadioactivity:
+	-TakeCover: # no prone
