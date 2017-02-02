@@ -52,7 +52,7 @@ MSLO:
 		RequiredForShortGame: false
 	# Can produce nuke mig!
 	Production:
-		Produces: NukeMig
+		Produces: Aircraft
 	WithDecoration@primary:
 		RequiresSelection: true
 		Image: pips
