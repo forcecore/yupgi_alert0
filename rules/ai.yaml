@@ -4,34 +4,41 @@ Player:
 		MinimumExcessPower: 40
 		BuildingCommonNames:
 			ConstructionYard: gafact, nafact, qnest
-			Refinery: proc
-			Power: powr,apwr
-			Barracks: barr,tent
-			VehiclesFactory: gaweap,naweap
-			Production: barr,tent,gaweap,naweap,afld,hpad
-			Silo: silo
+			Refinery: proc, qnest, anthill, qant
+			Power: powr,apwr, tibtree
+			Barracks: barr,tent,qant,qnest
+			VehiclesFactory: gaweap,naweap,qant,qnest
+			Production: barr,tent,gaweap,naweap,afld,hpad,qant,qnest
+			Silo: silo, anthill
 		UnitsCommonNames:
 			Mcv: gamcv, namcv, qant
 		BuildingLimits:
 			proc: 4
+            qnest: 6
 			barr: 1
 			tent: 1
 			kenn: 1
 			dome: 1
-			weap: 1
+			gaweap: 1
+			naweap: 1
 			hpad: 4
 			afld: 4
 			atek: 1
 			stek: 1
 			fix: 1
+            tibtree: 10
 		BuildingFractions:
+            qnest: 40%
+            tibtree: 30%
+            anthill: 30%
 			proc: 30%
 			powr: 15%
 			apwr: 20%
 			barr: 1%
 			kenn: 0.5%
 			tent: 1%
-			weap: 1%
+			gaweap: 1%
+			naweap: 1%
 			pbox: 7%
 			gun: 7%
 			tsla: 5%
@@ -61,9 +68,14 @@ Player:
 			4tnk: 10%
 			ttnk: 10%
 			stnk: 5%
+            ant: 30%
+            want: 40%
+            doggie: 30%
+            qant: 5%
 		UnitLimits:
 			dog: 4
 			harv: 8
+            ant: 40
 		SquadSize: 20
 		SupportPowerDecision@spyplane:
 			OrderName: SovietSpyPlane
@@ -118,21 +130,23 @@ Player:
 		MinimumExcessPower: 60
 		BuildingCommonNames:
 			ConstructionYard: gafact, nafact, qnest
-			Refinery: proc
-			Power: powr,apwr
-			Barracks: barr,tent
-			VehiclesFactory: gaweap,naweap
-			Production: barr,tent,gaweap,naweap,afld,hpad
+			Refinery: proc, qnest, qant
+			Power: powr,apwr,tibtree
+			Barracks: barr,tent,qant,qnest
+			VehiclesFactory: gaweap,naweap,qant,qnest
+			Production: barr,tent,gaweap,naweap,afld,hpad,qant,qnest
 			NavalProduction: spen,syrd
-			Silo: silo
+			Silo: silo, anthill
 		UnitsCommonNames:
 			Mcv: gamcv, namcv, qant
 		BuildingLimits:
 			proc: 4
+            qnest: 6
 			barr: 1
 			tent: 1
 			dome: 1
-			weap: 1
+			naweap: 1
+			gaweap: 1
 			spen: 1
 			syrd: 1
 			hpad: 4
@@ -140,7 +154,11 @@ Player:
 			atek: 1
 			stek: 1
 			fix: 1
+            tibtree: 10
 		BuildingFractions:
+            qnest: 40%
+            tibtree: 30%
+            anthill: 30%
 			proc: 10%
 			powr: 1%
 			apwr: 30%
@@ -148,7 +166,8 @@ Player:
 			barr: 1%
 			kenn: 0.5%
 			dome: 1%
-			weap: 6%
+			gaweap: 6%
+			naweap: 6%
 			hpad: 4%
 			spen: 1%
 			syrd: 1%
@@ -191,9 +210,14 @@ Player:
 			dd: 10%
 			ca: 10%
 			pt: 10%
+            ant: 30%
+            want: 40%
+            doggie: 30%
+            qant: 5%
 		UnitLimits:
 			dog: 4
 			harv: 8
+            ant: 40
 		SquadSize: 40
 		SupportPowerDecision@spyplane:
 			OrderName: SovietSpyPlane
@@ -248,22 +272,24 @@ Player:
 		MinimumExcessPower: 100
 		BuildingCommonNames:
 			ConstructionYard: gafact, nafact, qnest
-			Refinery: proc
-			Power: powr,apwr
-			Barracks: barr,tent
-			VehiclesFactory: gaweap,naweap
-			Production: barr,tent,gaweap,naweap,afld,hpad
+			Refinery: proc, qant, qnest
+			Power: powr,apwr, tibtree
+			Barracks: barr,tent,qant,qnest
+			VehiclesFactory: gaweap,naweap,qant,qnest
+			Production: barr,tent,gaweap,naweap,afld,hpad,qant,qnest
 			NavalProduction: spen,syrd
-			Silo: silo
+			Silo: silo, anthill
 		UnitsCommonNames:
 			Mcv: gamcv, namcv, qant
 		BuildingLimits:
 			proc: 4
+            qnest: 6
 			barr: 1
 			tent: 1
 			kenn: 1
 			dome: 1
-			weap: 1
+			gaweap: 1
+			naweap: 1
 			spen: 1
 			syrd: 1
 			hpad: 4
@@ -271,14 +297,19 @@ Player:
 			atek: 1
 			stek: 1
 			fix: 1
+            tibtree: 10
 		BuildingFractions:
+            qnest: 40%
+            tibtree: 30%
+            anthill: 30%
 			proc: 30%
 			powr: 1%
 			apwr: 20%
 			tent: 1%
 			barr: 1%
 			kenn: 0.5%
-			weap: 3%
+			gaweap: 3%
+			naweap: 3%
 			hpad: 2%
 			spen: 1%
 			syrd: 1%
@@ -321,9 +352,14 @@ Player:
 			dd: 10%
 			ca: 10%
 			pt: 10%
+            ant: 30%
+            want: 40%
+            doggie: 30%
+            qant: 5%
 		UnitLimits:
 			dog: 4
 			harv: 8
+            ant: 40
 		SquadSize: 10
 		SupportPowerDecision@spyplane:
 			OrderName: SovietSpyPlane
@@ -377,31 +413,38 @@ Player:
 		Name: Naval AI
 		BuildingCommonNames:
 			ConstructionYard: gafact, nafact, qnest
-			Refinery: proc
-			Power: powr,apwr
-			Barracks: barr,tent
-			VehiclesFactory: gaweap,naweap
-			Production: barr,tent,gaweap,naweap,afld,hpad
+			Refinery: proc, qant, qnest
+			Power: powr,apwr, tibtree
+			Barracks: barr,tent,qant,qnest
+			VehiclesFactory: gaweap,naweap,qant,qnest
+			Production: barr,tent,gaweap,naweap,afld,hpad,qant,qnest
 			NavalProduction: spen,syrd
-			Silo: silo
+			Silo: silo, anthill
 		UnitsCommonNames:
 			Mcv: gamcv, namcv, qant
 		BuildingLimits:
 			proc: 4
+			qnest: 6
 			dome: 1
 			spen: 1
 			syrd: 1
 			hpad: 8
 			afld: 8
-			weap: 1
+			gaweap: 1
+			naweap: 1
 			atek: 1
 			stek: 1
+            tibtree: 10
 		BuildingFractions:
+            qnest: 40%
+            tibtree: 30%
+            anthill: 30%
 			proc: 29%
 			powr: 1%
 			apwr: 24%
 			dome: 1%
-			weap: 1%
+			gaweap: 1%
+			naweap: 1%
 			hpad: 20%
 			afld: 20%
 			atek: 1%
@@ -426,6 +469,10 @@ Player:
 			dd: 30%
 			ca: 20%
 			pt: 10%
+            ant: 30%
+            want: 40%
+            doggie: 30%
+            qant: 5%
 		UnitLimits:
 			harv: 8
 		SquadSize: 1
