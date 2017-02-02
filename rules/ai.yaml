@@ -4,11 +4,11 @@ Player:
 		MinimumExcessPower: 40
 		BuildingCommonNames:
 			ConstructionYard: gafact, nafact, qnest
-			Refinery: proc, qnest, anthill, qant
+			Refinery: proc, qnest, anthill
 			Power: powr,apwr, tibtree
-			Barracks: barr,tent,qant,qnest
-			VehiclesFactory: gaweap,naweap,qant,qnest
-			Production: barr,tent,gaweap,naweap,afld,hpad,qant,qnest
+			Barracks: barr,tent,qnest
+			VehiclesFactory: gaweap,naweap,qnest
+			Production: barr,tent,gaweap,naweap,afld,hpad,qnest
 			Silo: silo, anthill
 		UnitsCommonNames:
 			Mcv: gamcv, namcv, qant
@@ -130,11 +130,11 @@ Player:
 		MinimumExcessPower: 60
 		BuildingCommonNames:
 			ConstructionYard: gafact, nafact, qnest
-			Refinery: proc, qnest, qant
+			Refinery: proc, qnest
 			Power: powr,apwr,tibtree
-			Barracks: barr,tent,qant,qnest
-			VehiclesFactory: gaweap,naweap,qant,qnest
-			Production: barr,tent,gaweap,naweap,afld,hpad,qant,qnest
+			Barracks: barr,tent,qnest
+			VehiclesFactory: gaweap,naweap,qnest
+			Production: barr,tent,gaweap,naweap,afld,hpad,qnest
 			NavalProduction: spen,syrd
 			Silo: silo, anthill
 		UnitsCommonNames:
@@ -272,11 +272,11 @@ Player:
 		MinimumExcessPower: 100
 		BuildingCommonNames:
 			ConstructionYard: gafact, nafact, qnest
-			Refinery: proc, qant, qnest
+			Refinery: proc, qnest
 			Power: powr,apwr, tibtree
-			Barracks: barr,tent,qant,qnest
-			VehiclesFactory: gaweap,naweap,qant,qnest
-			Production: barr,tent,gaweap,naweap,afld,hpad,qant,qnest
+			Barracks: barr,tent,qnest
+			VehiclesFactory: gaweap,naweap,qnest
+			Production: barr,tent,gaweap,naweap,afld,hpad,qnest
 			NavalProduction: spen,syrd
 			Silo: silo, anthill
 		UnitsCommonNames:
@@ -413,11 +413,11 @@ Player:
 		Name: Naval AI
 		BuildingCommonNames:
 			ConstructionYard: gafact, nafact, qnest
-			Refinery: proc, qant, qnest
+			Refinery: proc, qnest
 			Power: powr,apwr, tibtree
-			Barracks: barr,tent,qant,qnest
-			VehiclesFactory: gaweap,naweap,qant,qnest
-			Production: barr,tent,gaweap,naweap,afld,hpad,qant,qnest
+			Barracks: barr,tent,qnest
+			VehiclesFactory: gaweap,naweap,qnest
+			Production: barr,tent,gaweap,naweap,afld,hpad,qnest
 			NavalProduction: spen,syrd
 			Silo: silo, anthill
 		UnitsCommonNames:
@@ -475,6 +475,7 @@ Player:
             qant: 5%
 		UnitLimits:
 			harv: 8
+            ant: 40
 		SquadSize: 1
 		SupportPowerDecision@spyplane:
 			OrderName: SovietSpyPlane
