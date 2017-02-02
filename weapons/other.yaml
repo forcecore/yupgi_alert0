@@ -398,7 +398,7 @@ FiendShard-AA:
 FiendShard-AG:
 	ReloadDelay: 30
 	Burst: 3
-	Range: 8c0
+	Range: 5c0
 	Report: fiend2.aud
 	ValidTargets: Ground, Water
 	Projectile: Bullet
