@@ -1036,8 +1036,6 @@ ANTHILL:
 		Type: Wood
 	RevealsShroud:
 		Range: 4c0
-	Bib:
-		#HasMinibib: 
 	#WithSiloAnimation:
 	StoresResources:
 		PipCount: 5
