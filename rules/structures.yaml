@@ -855,12 +855,6 @@ FACT:
 	Bib:
 	Production:
 		Produces: Building,Defense
-	ProductionQueue@Building:
-		Type: Building
-		Group: Building
-	ProductionQueue@Defense:
-		Type: Defense
-		Group: Defense
 	Valued:
 		Cost: 2500
 	Tooltip:
