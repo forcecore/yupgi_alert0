@@ -320,13 +320,18 @@ OreExplosion:
 		ImpactSounds: kaboom25.aud
 
 BlossomTreeExplosion:
-    #Burst: 1
-    #BurstDelay: 30
-    ReloadDelay: 150
+    #ReloadDelay: 150
     # reload delay same as half life.
     # expected accumulated rad level is 2*level.
+    
+    # 3.3 * half life, max level should be around 1.1 * level, if not limited by MaxLevel.
+    #ReloadDelay: 500
+    
+    ReloadDelay: 400 # 500 sucked. reduced to 400 and limit with MaxLevel.
+
 	Warhead@1Radio: CreateRadioactivity
 		Range: 4, 6, 8, 9
-		Level: 32
+		Level: 128
 		Falloff: 100, 90, 50, 0
-        MaxLevel: 500
+        #MaxLevel: 500 # Too OP
+        MaxLevel: 140
