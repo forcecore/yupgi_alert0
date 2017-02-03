@@ -93,7 +93,7 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 			world = self.World;
 			this.info = info;
 			//k = info.UpdateDelay * ((float) Math.Log(2)) / info.Halflife;
-			k1000 = info.UpdateDelay * 301 / info.Halflife; // (301 is 1000*log(2) so we must divide by 1000 later on.)
+			k1000 = info.UpdateDelay * 693 / info.Halflife; // (693 is 1000*ln(2) so we must divide by 1000 later on.)
 			//Debug.Assert(k > 0);
 			// half life decay follows differential equation d/dt m(t) = -k m(t).
 			// d/dt will be in ticks, ofcourse.
