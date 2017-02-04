@@ -4,7 +4,7 @@ Player:
 		MinimumExcessPower: 40
 		BuildingCommonNames:
 			ConstructionYard: gafact, nafact, qnest
-			Refinery: proc, qnest, anthill
+			Refinery: proc, anthill, qnest
 			Power: powr,apwr, tibtree
 			Barracks: barr,tent,qnest
 			VehiclesFactory: gaweap,naweap,qnest

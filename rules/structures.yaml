@@ -1833,7 +1833,7 @@ QNEST:
 		UpgradeMinEnabledLevel: 1
 	Refinery:
 		DockAngle: 64
-		DockOffset: 1,-1
+		DockOffset: 1,0 # now a bib.
 	StoresResources:
 		PipCount: 17
 		Capacity: 2000
