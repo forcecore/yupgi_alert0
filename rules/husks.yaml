@@ -60,6 +60,15 @@ HARV.EmptyHusk:
 	RenderSprites:
 		Image: hhusk2
 
+MARV.EmptyHusk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Chrono Miner)
+	TransformOnCapture:
+		IntoActor: marv
+	RenderSprites:
+		Image: hhusk2
+
 WANGCHANG.Husk:
 	Inherits: ^Husk
 	Tooltip:
