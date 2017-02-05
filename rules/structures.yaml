@@ -52,7 +52,7 @@ MSLO:
 		RequiredForShortGame: false
 	# Can produce nuke mig!
 	Production:
-		Produces: Aircraft
+		Produces: Aircraft, NukeMig
 	WithDecoration@primary:
 		RequiresSelection: true
 		Image: pips
@@ -66,6 +66,10 @@ MSLO:
 	ProductionBar:
 	RallyPoint:
 	Exit@1:
+		ExitCell: 1,1
+		Facing: 192
+		MoveIntoWorld: false
+	Exit@2:
 		ExitCell: 1,1
 		Facing: 192
 		MoveIntoWorld: false
@@ -1878,6 +1882,8 @@ TIBTREE:
 	ExplodeWeapon: # radioactivity
 		Weapon: BlossomTreeExplosion
 		ResetReloadWhenEnabled: false
+	Power:
+		Amount: 6 # so that AI will build ceil(40/6) = 7 tibtree
 
 TUNNELNETWORK:
 	Inherits: ^Building
