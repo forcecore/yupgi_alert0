@@ -1,5 +1,5 @@
 Player:
-	HackyAI@RushAI:
+    HackyAI@RushAI:
 		Name: Rush AI
 		MinimumExcessPower: 40
 		BuildingCommonNames:
@@ -10,6 +10,8 @@ Player:
 			VehiclesFactory: gaweap,naweap,qnest
 			Production: barr,tent,gaweap,naweap,afld,hpad,qnest
 			Silo: silo, anthill
+        CoreDefinitions: # Core, as in RA3 Empire's dojo core.
+            qnest: qant
 		UnitsCommonNames:
 			Mcv: gamcv, namcv, qant
 		BuildingLimits:
@@ -137,6 +139,8 @@ Player:
 			Production: barr,tent,gaweap,naweap,afld,hpad,qnest
 			NavalProduction: spen,syrd
 			Silo: silo, anthill
+        CoreDefinitions:
+            qnest: qant
 		UnitsCommonNames:
 			Mcv: gamcv, namcv, qant
 		BuildingLimits:
@@ -279,6 +283,8 @@ Player:
 			Production: barr,tent,gaweap,naweap,afld,hpad,qnest
 			NavalProduction: spen,syrd
 			Silo: silo, anthill
+        CoreDefinitions:
+            qnest: qant
 		UnitsCommonNames:
 			Mcv: gamcv, namcv, qant
 		BuildingLimits:
@@ -420,6 +426,8 @@ Player:
 			Production: barr,tent,gaweap,naweap,afld,hpad,qnest
 			NavalProduction: spen,syrd
 			Silo: silo, anthill
+        CoreDefinitions:
+            qnest: qant
 		UnitsCommonNames:
 			Mcv: gamcv, namcv, qant
 		BuildingLimits:
