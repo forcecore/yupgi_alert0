@@ -448,14 +448,16 @@ MARV:
 	Tooltip:
 		Name: Chrono Miner
 		GenericName: Harvester
-		Description: Collects Ore and Gems for processing.\n  Unarmed
-	-Harvester:
-	OreTeleportHarvester:
-		Resources: Ore,Gems,Tiberium
-		SearchFromOrderRadius: 15
-		ValueEfficiency: 100 # 60 means 40% of the ore is lost during processing.
+		Description: Chronoshifts Ore and Gems for processing.\n  Unarmed
 	SpawnActorOnDeath:
 		Actor: MARV.EmptyHusk
+	Harvester:
+		OreTeleporter: true
+		Capacity: 20
+		Resources: Ore,Gems,Tiberium
+		BaleUnloadDelay: 1
+		SearchFromProcRadius: 30
+		SearchFromOrderRadius: 15
 	-HarvesterHuskModifier: # always "empty'
 	-Explodes: # always "empty"
 
