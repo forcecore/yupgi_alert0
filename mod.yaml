@@ -40,7 +40,6 @@ Packages:
 	yupgi_alert|bits
 	ra|bits/desert
 	ra|uibits
-	yupgi_alert|uibits
 
 MapFolders:
 	ra|maps: System
