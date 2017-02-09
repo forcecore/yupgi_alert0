@@ -403,3 +403,36 @@ want:
 		Start: 0
 		Length: 1
 	icon: anticon
+
+fant:
+	idle: invis
+		Facings: 1
+	stand:
+		Facings: 8
+	stand2:
+		Start: 8
+		Length: 8
+	run:
+		Start: 8
+		Length: 8
+		Facings: 8
+	bite:
+		Start: 72
+		Length: 4
+		Facings: 8
+	die: ant1
+		Start: 104
+		Length: 8
+		Tick: 300
+	die-crushed: ant1
+		Start: 104
+		Length: 8
+		Tick: 400
+		ZOffset: -511
+	dock: invis
+		Start: 0
+		Length: 1
+	dock-loop: invis
+		Start: 0
+		Length: 1
+	icon: anticon

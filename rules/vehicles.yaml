@@ -1094,3 +1094,56 @@ WANT:
 	-DamagedByRadioactivity:
 	-EjectOnDeath:
 	-Capturable:
+
+# Fire ant
+FANT:
+	Inherits: ^Vehicle
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Fire Ant
+		Description: Giant ant that breath out flames.\n Strong vs Infantry, Light armor, Buildings\n  Weak vs Tanks, Aircraft
+		GenericName: Ant
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: BigAnt
+		BuildPaletteOrder: 100
+		Prerequisites: ~qnest, tibtree
+	Selectable:
+		Bounds: 24,24,0,-10
+	SelectionDecorations:
+		VisualBounds: 30,30,0,-4
+	Health:
+		HP: 300
+		Shape: Circle
+			Radius: 469
+	Armor:
+		Type: Light
+	Mobile:
+		Speed: 99
+		TurnSpeed: 12
+		Crushes: wall, mine, crate
+	RevealsShroud:
+		Range: 5c0
+	AutoTarget:
+		ScanRadius: 5
+	AttackFrontal:
+	WithInfantryBody:
+		AttackSequence: bite
+	WithAttackAnimation:
+		AimSequence: idle
+	-WithDamageOverlay:
+	Armament@PRIMARY:
+		Weapon: Flamer
+		LocalOffset: 427,0,341
+		FireDelay: 8
+	Targetable:
+		TargetTypes: Ground, Vehicle, Ant
+	WithDeathAnimation:
+		UseDeathTypeSuffix: false
+	Voiced:
+		VoiceSet: AntVoice
+	-DamagedByTerrain@tib:
+	-DamagedByRadioactivity:
+	-EjectOnDeath:
+	-Capturable:
