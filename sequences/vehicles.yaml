@@ -405,8 +405,8 @@ want:
 	icon: anticon
 
 fant:
-	idle: invis
-		Facings: 1
+	#idle: invis
+	#	Facings: 8
 	stand:
 		Facings: 8
 	stand2:

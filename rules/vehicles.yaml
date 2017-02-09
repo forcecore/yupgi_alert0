@@ -1126,16 +1126,16 @@ FANT:
 	RevealsShroud:
 		Range: 5c0
 	AutoTarget:
-		ScanRadius: 5
 	AttackFrontal:
 	WithInfantryBody:
 		AttackSequence: bite
-	WithAttackAnimation:
-		AimSequence: idle
 	-WithDamageOverlay:
+	-WithFacingSpriteBody:
+	QuantizeFacingsFromSequence:
+		Sequence: stand
 	Armament@PRIMARY:
 		Weapon: Flamer
-		LocalOffset: 427,0,341
+		LocalOffset: 1024,0,256
 		FireDelay: 8
 	Targetable:
 		TargetTypes: Ground, Vehicle, Ant
