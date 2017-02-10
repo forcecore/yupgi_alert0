@@ -1,5 +1,5 @@
 diff --git a/mod.yaml b/mod.yaml
-index 021ea81..df3c283 100644
+index 583a0a6..ef20629 100644
 --- a/mod.yaml
 +++ b/mod.yaml
 @@ -7,8 +7,8 @@ Metadata:
@@ -13,3 +13,12 @@ index 021ea81..df3c283 100644
  
  Packages:
  	~^Content/ra/v2/
+@@ -87,7 +87,7 @@ Chrome:
+ 	yupgi_alert|chrome.yaml
+ 
+ Assemblies:
+-	common|OpenRA.Mods.Common.dll
++	yupgi_alert|OpenRA.Mods.Uncommon.dll
+ 	ra|OpenRA.Mods.RA.dll
+ 	cnc|OpenRA.Mods.Cnc.dll
+ 	yupgi_alert|OpenRA.Mods.yupgi_alert.dll

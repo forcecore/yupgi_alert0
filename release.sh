@@ -12,6 +12,7 @@ rm -f tmp/yupgi_alert/{.gitignore,release.sh}
 # copy the DLL file and the license.
 echo "Copying DLL files and license info"
 cp OpenRA.Mods.yupgi_alert.dll tmp/yupgi_alert
+cp ../common/OpenRA.Mods.Common.dll tmp/yupgi_alert/OpenRA.Mods.Uncommon.dll
 cp OpenRA.Mods.yupgi_alert/{LICENSE.AS,AUTHORS.AS} tmp/yupgi_alert
 
 # patch mod.yaml
