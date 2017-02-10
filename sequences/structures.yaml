@@ -699,7 +699,7 @@ tunnelnetwork:
 	damaged-idle: qnest
 		Start: 0
 		Length: 1
-    icon: qnesticon
+    icon: tnnicon
 
 split3:
 	Defaults:

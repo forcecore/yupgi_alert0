@@ -402,7 +402,7 @@ want:
 	dock-loop: invis
 		Start: 0
 		Length: 1
-	icon: anticon
+	icon: wanticon
 
 fant:
 	#idle: invis
@@ -435,4 +435,4 @@ fant:
 	dock-loop: invis
 		Start: 0
 		Length: 1
-	icon: anticon
+	icon: fanticon

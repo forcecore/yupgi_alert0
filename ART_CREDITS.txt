@@ -3,9 +3,30 @@ See
 https://help.naver.com/support/contents/contents.nhn?serviceNo=1074&categoryNo=3497
 for full license info.
 
-Mig voxel asset by Mig Eater:
+Fire ant unit shp is by me, made from Westwood's ant.
+    In that case I don't know how the license goes but I think you can use it
+
+Mig voxel by Mig Eater:
     https://forums.revora.net/topic/75476-mig-144/
 
 Ant nest (for icon):
     https://pixabay.com/en/ants-anthill-nature-colony-insects-633298/
     https://pixabay.com/en/ant-macro-insect-red-nature-564617/
+
+Queen ant icon
+    https://pixabay.com/en/queen-ant-ant-ant-head-insect-1193472/
+
+Drone ant icon:
+    https://pixabay.com/en/ant-priroda-macro-947402/
+
+Fire ant icon:
+    https://pixabay.com/en/fire-ant-worker-macro-insect-bug-1091301/
+
+Warrior ant icon:
+    https://www.flickr.com/photos/testlab/21705773349
+    I made adaptations so that it looks better as an icon in 64x48 pixels XD
+    The license is:
+    https://creativecommons.org/licenses/by/2.0/
+
+Tunnel network icon:
+    http://www.publicdomainpictures.net/view-image.php?image=34714&picture=ant-nest
