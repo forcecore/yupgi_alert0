@@ -426,33 +426,7 @@ FiendShard-AG:
 		ValidImpactTypes: Water
 
 AntFlamer:
-	ValidTargets: Ground, Water, Trees
-	ReloadDelay: 50
-	Range: 5c0
-	Burst: 15
-	BurstDelay: 1
-	Projectile: Bullet
-		Speed: 170
-		TrailImage: fb4
-		Image: fb3
-		Angle: 62
-		Inaccuracy: 853
-	Warhead@1Dam: SpreadDamage
-		Spread: 341
-		Damage: 8
-		ValidTargets: Ground, Water, Trees
-		Versus:
-			None: 90
-			Wood: 100
-			Light: 60
-			Heavy: 25
-			Concrete: 20
-		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
-	Warhead@2Smu: LeaveSmudge
-		SmudgeType: Scorch
-		InvalidTargets: Structure, Wall
-	Warhead@3Eff: CreateEffect
-		Explosions: small_napalm
-		ImpactSounds: firebl3.aud
+	Inherits: Flamer
 
-
+AntFireballLauncher:
+	Inherits: FireballLauncher

@@ -1074,6 +1074,8 @@ WANT:
 		Crushes: wall, mine, crate
 	RevealsShroud:
 		Range: 5c0
+	DetectCloaked:
+		Range: 5c0
 	AutoTarget:
 		ScanRadius: 5
 	AttackFrontal:
@@ -1099,7 +1101,7 @@ WANT:
 FANT:
 	Inherits: ^Vehicle
 	Valued:
-		Cost: 2000
+		Cost: 1500
 	Tooltip:
 		Name: Fire Ant
 		Description: Giant ant that breath out flames.\n Strong vs Infantry, Light armor, Buildings\n  Weak vs Tanks, Aircraft
@@ -1117,26 +1119,59 @@ FANT:
 		HP: 300
 		Shape: Circle
 			Radius: 469
-	Armor:
+	Armor@undeployed:
 		Type: Light
+		UpgradeTypes: undeployed
+		UpgradeMinEnabledLevel: 1
+	Armor@deployed:
+		Type: Concrete
+		UpgradeTypes: deployed
+		UpgradeMinEnabledLevel: 1
 	Mobile:
 		Speed: 99
 		TurnSpeed: 12
 		Crushes: wall, mine, crate
+		UpgradeTypes: undeployed
+		UpgradeMinEnabledLevel: 1 # can't move when deployed
 	RevealsShroud:
 		Range: 5c0
 	AutoTarget:
-	AttackFrontal:
 	WithInfantryBody:
 		AttackSequence: bite
+		UpgradeTypes: undeployed
+		UpgradeMinEnabledLevel: 1 # show only "turret" when deployed.
 	-WithDamageOverlay:
 	-WithFacingSpriteBody:
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	Armament@PRIMARY:
-		Weapon: Flamer
+		Weapon: AntFlamer
 		LocalOffset: 1024,0,256
 		FireDelay: 8
+		UpgradeTypes: undeployed
+		UpgradeMinEnabledLevel: 1
+	Armament@deployed:
+		Weapon: AntFireballLauncher
+		LocalOffset: 1024,0,256
+		UpgradeTypes: deployed
+		UpgradeMinEnabledLevel: 1
+		Turret: deployed
+	Cloak:
+		InitialDelay: 1
+		CloakDelay: 5
+		UncloakOn: Dock # which, we don't dock so... always cloaked unless detected.
+		CloakTypes: Cloak
+		IsPlayerPalette: true
+		UpgradeTypes: deployed
+		UpgradeMinEnabledLevel: 1
+	WithSpriteBody: # for deploy animation
+	DeployToUpgrade:
+		DeployedUpgrades: deployed
+		UndeployedUpgrades: undeployed
+		CanDeployOnRamps: true
+		DeployAnimation: dig
+		DeploySound: subdril1.aud
+		UndeploySound: subdril1.aud
 	Targetable:
 		TargetTypes: Ground, Vehicle, Ant
 	WithDeathAnimation:
@@ -1147,3 +1182,22 @@ FANT:
 	-DamagedByRadioactivity:
 	-EjectOnDeath:
 	-Capturable:
+	WithSpriteTurret:
+		Sequence: stand
+		Recoils: False
+		UpgradeTypes: deployed
+		UpgradeMinEnabledLevel: 1
+		Turret: deployed
+	Turreted:
+		Turret: deployed
+		TurnSpeed: 12 # same as in mobile trait.
+	AttackTurreted@deployed:
+		Voice: Attack
+		#Armaments: deployed
+		UpgradeTypes: deployed
+		UpgradeMinEnabledLevel: 1
+	AttackFrontal:
+		Voice: Attack
+		UpgradeTypes: undeployed
+		UpgradeMinEnabledLevel: 1
+		UpgradeMaxAcceptedLevel: 1

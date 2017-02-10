@@ -405,8 +405,11 @@ want:
 	icon: wanticon
 
 fant:
-	#idle: invis
-	#	Facings: 8
+	idle: invis
+		Facings: 8
+	dig: dig
+		Facings: 1
+		Length: *
 	stand:
 		Facings: 8
 	stand2:

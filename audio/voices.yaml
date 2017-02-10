@@ -132,6 +132,7 @@ AntVoice:
 		Select: antbite
 		Move: antbite
 		Action: antbite
+		Attack: antbite
 		Die: antdie
 		Burned: antdie
 		Zapped: antdie
