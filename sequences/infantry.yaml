@@ -1426,7 +1426,7 @@ qant:
 		Length: 8
 		Tick: 400
 		ZOffset: -511
-	icon: anticon
+	icon: qanticon
 
 deso:
     #Defaults:

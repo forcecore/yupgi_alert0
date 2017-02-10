@@ -671,7 +671,7 @@ qnest:
 	damaged-idle:
 		Start: 0
 		Length: 1
-    icon: qnesticon
+    icon: qanticon
 
 anthill:
 	idle: qnest
@@ -685,7 +685,7 @@ anthill:
 	damaged-idle: qnest
 		Start: 0
 		Length: 1
-    icon: qnesticon
+    icon: anthillicon
 
 tunnelnetwork:
 	idle: qnest
@@ -714,6 +714,6 @@ split3:
 		Length: 24
 	idle:
 		Start: 54
-	icon: split3icon
+	icon: tibtreeicon
 		UseTilesetExtension: false
 		Offset: 0, 0
