@@ -1915,6 +1915,7 @@ TUNNELNETWORK:
 		SpawnOffset: 0,0,0
 		ExitCell: 1,1
 	-EmitInfantryOnSell:
+	-Sellable: # bio
 	#ProvidesPrerequisite@buildingname:
 	WithBuildingExplosion:
 		Sequences: building, building_napalm, large_explosion, self_destruct
