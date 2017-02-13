@@ -1929,3 +1929,28 @@ TUNNELNETWORK:
 		UpgradeMinEnabledLevel: 1
 	NydusPrimaryExit: # must be used with Nydus, for designating NydusExit.
 	Nydus: # Is nydus canal entrance. Needs primary designation though.
+
+EVO:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 90
+		Prerequisites: ~qnest, tibtree, ~techlevel.medium
+	Valued:
+		Cost: 1800
+	Tooltip:
+		Name: Evolution Chamber
+		Description: Provides genetic matrials for ants\nCan combine units
+	Building:
+		Footprint: ___ xxx
+		Dimensions: 3,2
+	Targetable:
+		TargetTypes: Ground, Structure, C4, DetonateAttack
+	Health:
+		HP: 1000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 5c0
+	ProvidesPrerequisite@buildingname:
+	-Sellable: # bio

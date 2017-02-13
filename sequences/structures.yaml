@@ -721,3 +721,11 @@ split3:
 	icon: tibtreeicon
 		UseTilesetExtension: false
 		Offset: 0, 0
+
+evo:
+	idle:
+	damaged-idle:
+		Start: 1
+	make: evomake
+		Length: *
+	icon: evoicon
