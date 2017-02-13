@@ -445,6 +445,10 @@ MARV:
 	Inherits: HARV
 	RenderSprites:
 		Image: HARV
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 10
+		Prerequisites: proc, atek, ~anyweap, ~techlevel.high
 	Tooltip:
 		Name: Chrono Miner
 		GenericName: Harvester
