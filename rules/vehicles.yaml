@@ -1114,7 +1114,7 @@ FANT:
 		Queue: Vehicle
 		BuildAtProductionType: BigAnt
 		BuildPaletteOrder: 100
-		Prerequisites: ~qnest, tibtree
+		Prerequisites: ~qnest, evo
 	Selectable:
 		Bounds: 24,24,0,-10
 	SelectionDecorations:
