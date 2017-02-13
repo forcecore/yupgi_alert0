@@ -21,6 +21,7 @@ Player:
 			tent: 1
 			kenn: 1
 			dome: 1
+			evo: 1
 			gaweap: 1
 			naweap: 1
 			hpad: 4
@@ -51,6 +52,7 @@ Player:
 			stek: 1%
 			fix: 0.1%
 			dome: 10%
+			evo: 10%
 		UnitsToBuild:
 			e1: 65%
 			e2: 25%
@@ -149,6 +151,7 @@ Player:
 			barr: 1
 			tent: 1
 			dome: 1
+			evo: 1
 			naweap: 1
 			gaweap: 1
 			spen: 1
@@ -170,6 +173,7 @@ Player:
 			barr: 1%
 			kenn: 0.5%
 			dome: 1%
+			evo: 1%
 			gaweap: 6%
 			naweap: 6%
 			hpad: 4%
@@ -294,6 +298,7 @@ Player:
 			tent: 1
 			kenn: 1
 			dome: 1
+			evo: 1
 			gaweap: 1
 			naweap: 1
 			spen: 1
@@ -325,6 +330,7 @@ Player:
 			tsla: 7%
 			fix: 0.1%
 			dome: 10%
+			evo: 10%
 			agun: 5%
 			sam: 5%
 			atek: 1%
@@ -434,6 +440,7 @@ Player:
 			proc: 4
 			qnest: 6
 			dome: 1
+			evo: 1
 			spen: 1
 			syrd: 1
 			hpad: 8
@@ -451,6 +458,7 @@ Player:
 			powr: 1%
 			apwr: 24%
 			dome: 1%
+			evo: 1%
 			gaweap: 1%
 			naweap: 1%
 			hpad: 20%
