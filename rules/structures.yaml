@@ -1959,9 +1959,17 @@ EVO:
 		MaxWeight: 5
 		PipCount: 5
 		PassengerFacing: 0
-	#CargoTransformer: # OnPassengerEntered trait implementer.
-	#	# make sure info here is alphabetically sorted!
-	#	Combinations:
-	#		sant: want, want, want, want, want
-	#		#hant: sant, sant, sant, sant, sant
-	#		#hexapod: hant, hant, hant, hant, hant
+	CargoTransformer: # OnPassengerEntered trait implementer.
+		Combinations:
+			# Make sure these are in alphabetical order!
+			sant: want, want, want, want, want
+			#hant: sant, sant, sant, sant, sant
+			#hexapod: hant, hant, hant, hant, hant
+	Exit@1:
+		ExitCell: 1,2
+		#Facing: 192
+		MoveIntoWorld: true
+	RallyPoint:
+	Production:
+		# Unit spawning uses production logic.
+		Produces: transformed
