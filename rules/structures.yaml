@@ -1959,3 +1959,9 @@ EVO:
 		MaxWeight: 5
 		PipCount: 5
 		PassengerFacing: 0
+	#CargoTransformer: # OnPassengerEntered trait implementer.
+	#	# make sure info here is alphabetically sorted!
+	#	Combinations:
+	#		sant: want, want, want, want, want
+	#		#hant: sant, sant, sant, sant, sant
+	#		#hexapod: hant, hant, hant, hant, hant

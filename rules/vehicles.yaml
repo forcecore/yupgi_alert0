@@ -1205,3 +1205,54 @@ FANT:
 		UpgradeTypes: undeployed
 		UpgradeMinEnabledLevel: 1
 		UpgradeMaxAcceptedLevel: 1
+
+SANT:
+	Inherits: ^Vehicle
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Super Ant
+		Description: Evolved combat ant.
+		GenericName: Ant
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: BigAnt
+		BuildPaletteOrder: 100
+		Prerequisites: ~qnest, tibtree, evo, ~disabled
+	Selectable:
+		Bounds: 24,24,0,-10
+	SelectionDecorations:
+		VisualBounds: 30,30,0,-4
+	Health:
+		HP: 1500
+		Shape: Circle
+			Radius: 469
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 99
+		TurnSpeed: 12
+		Crushes: wall, mine, crate
+	RevealsShroud:
+		Range: 5c0
+	AutoTarget:
+		ScanRadius: 5
+	AttackFrontal:
+	WithInfantryBody:
+		AttackSequence: bite
+	WithAttackAnimation:
+		AimSequence: idle
+	-WithDamageOverlay:
+	Armament:
+		Weapon: SuperMandible
+	Targetable:
+		TargetTypes: Ground, Vehicle, Ant
+	WithDeathAnimation:
+		UseDeathTypeSuffix: false
+	Voiced:
+		VoiceSet: AntVoice
+	-DamagedByTerrain@tib:
+	-DamagedByRadioactivity:
+	-EjectOnDeath:
+	-Capturable:
+

@@ -299,6 +299,23 @@ ScoutMandible:
 			Concrete: 10
 		DamageTypes: Prone50Percent, TriggerProne, DefaultDeath
 
+SuperMandible:
+	ReloadDelay: 15
+	Range: 1c512
+	Report: antbite.aud
+	Projectile: Bullet
+		Speed: 1c682
+	Warhead@1Dam: SpreadDamage
+		Spread: 213
+		Damage: 60
+		Versus:
+			None: 90
+			Wood: 50
+			Light: 90
+			Heavy: 50
+			Concrete: 50
+		DamageTypes: Prone50Percent, TriggerProne, DefaultDeath
+
 MADTankThump:
 	InvalidTargets: MADTank, Infantry
 	Warhead@1Dam: HealthPercentageDamage
