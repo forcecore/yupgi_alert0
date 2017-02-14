@@ -1796,24 +1796,24 @@ QNEST:
 	WithBuildingPlacedAnimation:
 	Power:
 		Amount: 0
-	Exit@1:
-		SpawnOffset: 213,-128,0
-		ExitCell: 1,2
+	Exit@1: # building (qant)
+		SpawnOffset: 0,0,0 # from center
+		ExitCell: 1,3 # from top left.
 	Exit@2:
-		SpawnOffset: 213,-128,0
-		ExitCell: 1,2
-	Exit@3:
-		SpawnOffset: 213,-128,0
-		ExitCell: 1,2
-	Exit@4:
-		SpawnOffset: 213,-128,0
-		ExitCell: 1,2
-	Exit@5:
-		SpawnOffset: 213,-128,0
-		ExitCell: 1,2
-	Exit@6:
-		SpawnOffset: 213,-128,0
-		ExitCell: 1,2
+		SpawnOffset: 0,-1024,0
+		ExitCell: 1,-1
+	Exit@3: # infantry
+		SpawnOffset: -1024,0,0
+		ExitCell: -1,1
+	Exit@4: # vehicle
+		SpawnOffset: 1024,0,0
+		ExitCell: 3,1
+	Exit@5: # smallant
+		SpawnOffset: -1024,0,0
+		ExitCell: -1,1
+	Exit@6: # bigant
+		SpawnOffset: 1024,0,0
+		ExitCell: 3,1
 	RallyPoint:
 	#WithDeathAnimation:
 		#DeathSequence: dead
@@ -1954,3 +1954,8 @@ EVO:
 		Range: 5c0
 	ProvidesPrerequisite@buildingname:
 	-Sellable: # bio
+	Cargo:
+		Types: Infantry, Vehicle
+		MaxWeight: 5
+		PipCount: 5
+		PassengerFacing: 0
