@@ -185,6 +185,9 @@ TTankZap:
 			None: 1000
 		DamageTypes: Prone50Percent, TriggerProne, ElectricityDeath
 
+HantZap:
+	Inherits: TTankZap
+
 DogJaw:
 	ValidTargets: Infantry
 	ReloadDelay: 10

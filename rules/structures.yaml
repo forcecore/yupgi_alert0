@@ -1964,6 +1964,6 @@ EVO:
 		Combinations:
 			# Make sure these are in alphabetical order!
 			sant: want, want, want, want, want
-			#hant: sant, sant
+			hant: sant, sant
 			#hexapod: hant, hant, hant, hant, hant
 	RallyPoint:

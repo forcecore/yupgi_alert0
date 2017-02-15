@@ -1212,7 +1212,7 @@ SANT:
 		Cost: 5000
 	Tooltip:
 		Name: Super Ant
-		Description: Evolved combat ant.\n Sacrifice 5 Warrior Ants to\n Evolution Chamber to\n build one super ant.
+		Description: Evolved combat ant.\n Sacrifice 5 Warrior Ants to\n Evolution Chamber to\n build one Super Ant.
 		GenericName: Ant
 	Buildable:
 		Queue: Vehicle
@@ -1256,3 +1256,55 @@ SANT:
 	-EjectOnDeath:
 	-Capturable:
 
+HANT:
+	Inherits: ^Vehicle
+	Valued:
+		Cost: 10000
+	Tooltip:
+		Name: Hyper Ant
+		Description: Fires electric bolts.\n STrong vs All, Weak vs Aircraft\n Sacrifice 2 Super Ants to Evolution Chamber\nto build one Hyper Ant.
+		GenericName: Ant
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: BigAnt
+		BuildPaletteOrder: 300
+		Prerequisites: ~qnest, evo, disabled
+	Selectable:
+		Bounds: 24,24,0,-10
+	SelectionDecorations:
+		VisualBounds: 30,30,0,-4
+	Health:
+		HP: 1500
+		Shape: Circle
+			Radius: 469
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 99
+		TurnSpeed: 12
+		Crushes: wall, mine, crate
+	RevealsShroud:
+		Range: 7c0
+	AutoTarget:
+	WithInfantryBody:
+		AttackSequence: bite
+	-WithDamageOverlay:
+	-WithFacingSpriteBody:
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	Armament:
+		Weapon: HantZap
+		LocalOffset: 1024,0,256
+	WithSpriteBody: # attacking in 8 directions (armament thingy)
+	Targetable:
+		TargetTypes: Ground, Vehicle, Ant
+	WithDeathAnimation:
+		UseDeathTypeSuffix: false
+	Voiced:
+		VoiceSet: AntVoice
+	-DamagedByTerrain@tib:
+	-DamagedByRadioactivity:
+	-EjectOnDeath:
+	-Capturable:
+	AttackFrontal:
+		Voice: Attack
