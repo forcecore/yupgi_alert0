@@ -57,19 +57,16 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 				pri.SetPrimary(self);
 			}
 			counter.cnt++;
-			Game.Debug(owner + " now has nydus cnt " + counter.cnt);
 		}
 
 		void DecreaseNydusCnt(Actor self, Player owner)
 		{
 			var counter = owner.PlayerActor.Trait<NydusCounter>();
 			counter.cnt--;
-			Game.Debug(owner + " now has nydus cnt " + counter.cnt);
 
 			// what if primary was killed?
 			if (self.IsPrimaryNydusExit())
 			{
-				Game.Debug("was primary");
 				var actors = self.World.ActorsWithTrait<NydusPrimaryExit>()
 					.Where(a => a.Actor.Owner == self.Owner && a.Actor != self);
 				if (!actors.Any())

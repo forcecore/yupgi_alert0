@@ -108,8 +108,6 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 					var move = passenger.Trait<IMove>();
 					var pos = passenger.Trait<IPositionable>();
 
-					Game.Debug("Rally point follow");
-					//passenger.CancelActivity();
 					passenger.QueueActivity(new AttackMoveActivity(
 						passenger, move.MoveTo(rp.Location, 1)));
 					passenger.SetTargetLine(Target.FromCell(w2, rp.Location), Color.Green, false);
