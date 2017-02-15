@@ -1964,11 +1964,6 @@ EVO:
 		Combinations:
 			# Make sure these are in alphabetical order!
 			sant: want, want, want, want, want
-			#hant: sant, sant, sant, sant, sant
+			#hant: sant, sant
 			#hexapod: hant, hant, hant, hant, hant
-	Exit@1:
-		ExitCell: 1,2
-		Facing: 128 # face south
-		SpawnOffset: 0,384,0
-		MoveIntoWorld: true
 	RallyPoint:

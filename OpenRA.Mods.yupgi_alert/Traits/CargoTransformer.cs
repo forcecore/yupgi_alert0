@@ -86,6 +86,7 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 			};
 			var newUnit = self.World.CreateActor(false, unit.ToLowerInvariant(), td);
 			Cargo.Load(self, newUnit);
+			self.QueueActivity(new Wait(15)); // slight pause
 			self.QueueActivity(new UnloadCargo(self, true)); // queue unload so that the unit will come out automatically.
 		}
 
