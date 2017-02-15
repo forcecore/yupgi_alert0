@@ -3,7 +3,7 @@
 * This mod is currently for OpenRA release-20161019 (latest stable as of 2017-01-19)
 * See wiki for changes in units :)
 * You can report bugs at the issues menu.
-* If you are looking for the source code of OpenRA.Mocs.Uncommon.dll, visit https://github.com/forcecore/OpenRA
+* If you are looking for the source code of OpenRA.Mods.Uncommon.dll, visit https://github.com/forcecore/OpenRA
 
 The following are for modders.
 
