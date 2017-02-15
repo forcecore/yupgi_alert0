@@ -729,3 +729,8 @@ evo:
 	make: evomake
 		Length: *
 	icon: evoicon
+	active: evoglow
+		Length: 20
+	damaged-active: evoglow
+		Start: 20
+		Length: 20

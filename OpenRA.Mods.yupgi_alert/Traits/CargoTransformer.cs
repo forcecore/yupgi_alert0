@@ -19,6 +19,7 @@ using System.Linq;
 using OpenRA.Traits;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Activities;
+using OpenRA.Mods.Common.Traits.Render;
 using OpenRA.Primitives;
 
 namespace OpenRA.Mods.yupgi_alert.Traits
@@ -32,6 +33,9 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 
 		[Desc("The sound played when the transform stars.")]
 		public readonly string[] TransformSound = null;
+
+		[Desc("The animation sequence to play when transforming.")]
+		[SequenceReference] public readonly string ActiveSequence = "active";
 
 		public object Create(ActorInitializer init) { return new CargoTransformer(init.Self, this); }
 	}
@@ -71,6 +75,10 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 			// Production wasn't a good idea.
 			// When the exit is blocked, the unit disappears.
 			// Blocking is better handled by unload.
+
+			var wsb = self.TraitOrDefault<WithSpriteBody>();
+			if (wsb != null && wsb.DefaultAnimation.HasSequence(Info.ActiveSequence))
+				wsb.PlayCustomAnimation(self, Info.ActiveSequence);
 
 			var td = new TypeDictionary
 			{
