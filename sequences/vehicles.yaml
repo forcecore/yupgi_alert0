@@ -435,7 +435,7 @@ sant:
 	dock-loop: invis
 		Start: 0
 		Length: 1
-	icon: wanticon
+	icon: santicon
 
 fant:
 	idle: invis

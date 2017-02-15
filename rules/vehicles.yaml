@@ -1209,16 +1209,16 @@ FANT:
 SANT:
 	Inherits: ^Vehicle
 	Valued:
-		Cost: 1000
+		Cost: 5000
 	Tooltip:
 		Name: Super Ant
-		Description: Evolved combat ant.
+		Description: Evolved combat ant.\n Sacrifice 5 Warrior Ants to\n Evolution Chamber to\n build one super ant.
 		GenericName: Ant
 	Buildable:
 		Queue: Vehicle
 		BuildAtProductionType: BigAnt
-		BuildPaletteOrder: 100
-		Prerequisites: ~qnest, tibtree, evo, ~disabled
+		BuildPaletteOrder: 200
+		Prerequisites: ~qnest, tibtree, evo, disabled
 	Selectable:
 		Bounds: 24,24,0,-10
 	SelectionDecorations:

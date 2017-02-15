@@ -9,6 +9,9 @@ Fire ant unit shp is by me, made from Westwood's ant.
 Mig voxel by Mig Eater:
     https://forums.revora.net/topic/75476-mig-144/
 
+Many icons are adapted from public domain or CC licensed images.
+My modified icons follow their respective licenses.
+
 Ant nest (for icon):
     https://pixabay.com/en/ants-anthill-nature-colony-insects-633298/
     https://pixabay.com/en/ant-macro-insect-red-nature-564617/
@@ -33,3 +36,11 @@ Tunnel network icon:
 
 Evolution chamber icon:
     http://www.publicdomainpictures.net/view-image.php?image=31530&picture=structure-of-dna
+
+Hyper ant icon:
+    https://www.flickr.com/photos/ansk/25694669841
+    Adapted for icon.
+
+Super ant icon:
+    https://commons.wikimedia.org/wiki/File:Carpenter_Ant_(Camponotus_ligniperdus)_(13563515215).jpg
+    Adapted for icon.
