@@ -13,24 +13,30 @@
  */
 #endregion
 
+using System.Drawing;
 using System.Collections.Generic;
 using System.Linq;
 using OpenRA.Traits;
 using OpenRA.Mods.Common.Traits;
+using OpenRA.Mods.Common.Activities;
+using OpenRA.Primitives;
 
 namespace OpenRA.Mods.yupgi_alert.Traits
 {
 	[Desc("Transforms cargo inside when some predefined combination is met.")]
-	public class CargoTransformerInfo : ITraitInfo, Requires<CargoInfo>, Requires<ProductionInfo>
+	public class CargoTransformerInfo : ITraitInfo, Requires<CargoInfo>
 	{
 		//[FieldLoader.LoadUsing("LoadSpeeds", true)]
 		[Desc("Unit type to emit when the combination is met")]
 		public readonly Dictionary<string, string[]> Combinations;
 
+		[Desc("The sound played when the transform stars.")]
+		public readonly string[] TransformSound = null;
+
 		public object Create(ActorInitializer init) { return new CargoTransformer(init.Self, this); }
 	}
 
-	public class CargoTransformer : INotifyPassengerEntered
+	public class CargoTransformer : INotifyPassengerEntered, INotifyPassengerExited
 	{
 		public readonly CargoTransformerInfo Info;
 		Cargo Cargo;
@@ -43,25 +49,65 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 
 		void SpawnUnit(Actor self, string unit)
 		{
+			// Play transformation sound
+			Game.Sound.Play(Info.TransformSound.Random(self.World.SharedRandom), self.CenterPosition);
+
 			// Kill cargo and spawn new unit
 
 			// For dramatic cargo, lets have those ejected and killed!
-			// From chrono kill cargo haha.
+			// Actually not a good idea. I get unit lost sound. :(
+			// Just dispose silently.
 			while (!Cargo.IsEmpty(self))
 			{
-				var a = Cargo.Unload(self);
-				// Kill all the units that are unloaded into the void
-				// Kill() handles kill and death statistics
-				a.Kill(self);
+				var c = Cargo.Unload(self);
+				c.Dispose();
 			}
 
 			// Now lets "produce" new unit given by name.
-			var pd = self.Trait<Production>();
-			var ai = self.World.Map.Rules.Actors[unit];
-			var faction = self.Owner.Faction.InternalName;
-			pd.Produce(self, ai, faction);
+			//var pd = self.Trait<Production>();
+			//var ai = self.World.Map.Rules.Actors[unit];
+			//var faction = self.Owner.Faction.InternalName;
+			//pd.Produce(self, ai, faction);
+			// Production wasn't a good idea.
+			// When the exit is blocked, the unit disappears.
+			// Blocking is better handled by unload.
+
+			var td = new TypeDictionary
+			{
+				new OwnerInit(self.Owner),
+			};
+			var newUnit = self.World.CreateActor(false, unit.ToLowerInvariant(), td);
+			Cargo.Load(self, newUnit);
+			self.QueueActivity(new UnloadCargo(self, true)); // queue unload so that the unit will come out automatically.
 		}
 
+		void INotifyPassengerExited.OnPassengerExited(Actor self, Actor passenger)
+		{
+			var rp = self.TraitOrDefault<RallyPoint>();
+			if (rp == null)
+				return;
+
+			// Make the unloaded passenger follow the passenger.
+			// Yes, you see this correct. We queue the move activity after two end frames.
+			// If you do this in just one frame end task, it collides with the AddFrameEndTask defined in UnloadCargo.cs
+			// Just like a LaTeX trick AfterPage'ing twice.
+			self.World.AddFrameEndTask(w1 =>
+				self.World.AddFrameEndTask(w2 =>
+				{
+					if (passenger.Disposed)
+						return;
+
+					var move = passenger.Trait<IMove>();
+					var pos = passenger.Trait<IPositionable>();
+
+					Game.Debug("Rally point follow");
+					//passenger.CancelActivity();
+					passenger.QueueActivity(new AttackMoveActivity(
+						passenger, move.MoveTo(rp.Location, 1)));
+					passenger.SetTargetLine(Target.FromCell(w2, rp.Location), Color.Green, false);
+				}));
+		}
+		
 		void INotifyPassengerEntered.OnPassengerEntered(Actor self, Actor passenger)
 		{
 			// get rules entry name for each passenger.

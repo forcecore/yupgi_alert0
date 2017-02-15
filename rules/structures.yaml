@@ -1960,6 +1960,7 @@ EVO:
 		PipCount: 5
 		PassengerFacing: 0
 	CargoTransformer: # OnPassengerEntered trait implementer.
+		TransformSound: cargotransform.wav
 		Combinations:
 			# Make sure these are in alphabetical order!
 			sant: want, want, want, want, want
@@ -1967,9 +1968,7 @@ EVO:
 			#hexapod: hant, hant, hant, hant, hant
 	Exit@1:
 		ExitCell: 1,2
-		#Facing: 192
+		Facing: 128 # face south
+		SpawnOffset: 0,384,0
 		MoveIntoWorld: true
 	RallyPoint:
-	Production:
-		# Unit spawning uses production logic.
-		Produces: transformed
