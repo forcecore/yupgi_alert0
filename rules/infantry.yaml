@@ -688,7 +688,7 @@ Zombie:
 Ant:
 	Inherits: ^Infantry
 	RenderSprites:
-		Scale: 0.5
+		Image: tinyant
 	Valued:
 		Cost: 500
 	Tooltip:
