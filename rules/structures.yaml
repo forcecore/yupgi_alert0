@@ -1967,3 +1967,40 @@ EVO:
 			hant: sant, sant
 			#hexapod: hant, hant, hant, hant, hant
 	RallyPoint:
+
+GULAG:
+	Inherits: ^ScienceBuilding
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Labor Capp
+		Description: Provides fund by making people work.
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 200
+		Prerequisites: stek, ~nafact, ~techlevel.high
+	Valued:
+		Cost: 1000
+	ProvidesPrerequisite@buildingname:
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Health:
+		HP: 600
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	Bib:
+	Power:
+		Amount: -20
+	Cargo:
+		Types: Infantry
+		MaxWeight: 5
+		PipCount: 5
+		PassengerFacing: 0
+		EjectOnDeath: true
+	-EmitInfantryOnSell:
+	# Not really usef for any other stuff
+	#ProvidesPrerequisite@buildingname:
+

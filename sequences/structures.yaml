@@ -604,6 +604,22 @@ miss:
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
 
+gulag:
+	idle: miss
+	damaged-idle: miss
+		Start: 1
+	dead: miss
+		Start: 2
+		Tick: 800
+	make: missmake
+		Length: *
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	icon: missicon
+
 brik:
 	idle:
 		Length: 16
