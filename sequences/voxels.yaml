@@ -2,3 +2,7 @@
 
 nmig:
 	idle:
+
+marv:
+	idle: cmin
+	unload: cmon

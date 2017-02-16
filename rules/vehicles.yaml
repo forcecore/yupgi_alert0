@@ -443,8 +443,23 @@ HARV:
 
 MARV:
 	Inherits: HARV
-	RenderSprites:
-		Image: HARV
+	WithVoxelBody:
+	# Cant use WithVoxelUnloadBody, as it has its own refinery logic of its own.
+	# Too complex for this mod.
+	RenderVoxels:
+		Scale: 8
+		PlayerPalette: player-ra2
+	BodyOrientation:
+		QuantizedFacings: 0
+		CameraPitch: 90
+		UseClassicPerspectiveFudge: false
+	RenderSprites: # for icons
+	WithSpriteBody: # dummy (invis)
+		Palette: ra2anim
+	-WithFacingSpriteBody:
+	-WithHarvestAnimation:
+	WithDockingAnimation:
+	-QuantizeFacingsFromSequence:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 10

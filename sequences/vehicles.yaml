@@ -18,6 +18,16 @@ truk:
 		UseClassicFacingFudge: True
 	icon: trukicon
 
+marv:
+	icon: marvicon
+	idle: invis
+		Facings: 1
+	dock: invis
+		Facings: 1
+	dock-loop: warpout
+		Facings: 1
+		Length: *
+
 harv:
 	idle: harvempty
 		Facings: 32
