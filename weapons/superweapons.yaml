@@ -126,6 +126,12 @@ NukeParaBomb:
 		InvalidTargets: Vehicle, Tank, Structure, Wall, Husk, Trees
 		Size: 5
 		Delay: 20
+	Warhead@18Radio: CreateRadioactivity
+		Range: 3, 6, 9, 12, 15
+		Level: 500
+		Falloff: 100, 37, 14, 5, 2
+        MaxLevel: 500
+
 
 Atomic:
 	ValidTargets: Ground, Trees, Water, Underwater, Air
@@ -217,3 +223,8 @@ Atomic:
 		InvalidTargets: Vehicle, Tank, Structure, Wall, Husk, Trees
 		Size: 5
 		Delay: 20
+	Warhead@18Radio: CreateRadioactivity
+		Range: 5, 10, 15, 20, 25
+		Level: 1000
+		Falloff: 100, 37, 14, 5, 2
+        MaxLevel: 1000

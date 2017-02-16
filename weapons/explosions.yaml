@@ -74,6 +74,11 @@ CrateNuke:
 	Warhead@7Eff_areanuke: CreateEffect
 		ImpactSounds: kaboom22.aud
 		Delay: 4
+	Warhead@8Radio: CreateRadioactivity
+		Range: 1, 2, 3, 4, 5
+		Level: 500
+		Falloff: 100, 60, 40, 25, 15
+        MaxLevel: 500
 
 MiniNuke:
 	ValidTargets: Ground, Trees, Water, Underwater, Air
@@ -138,6 +143,11 @@ MiniNuke:
 		InvalidTargets: Vehicle, Tank, Structure, Wall, Trees
 		Size: 4
 		Delay: 15
+	Warhead@12Radio: CreateRadioactivity
+		Range: 4, 8, 12, 16
+		Level: 500
+		Falloff: 100, 37, 14, 5
+        MaxLevel: 500
 
 UnitExplode:
 	Warhead@1Dam: SpreadDamage
