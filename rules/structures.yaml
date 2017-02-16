@@ -1973,7 +1973,7 @@ GULAG:
 	Valued:
 		Cost: 1000
 	Tooltip:
-		Name: Labor Capp
+		Name: Labor Camp
 		Description: Provides fund by making people work.
 	Buildable:
 		Queue: Building
@@ -2000,6 +2000,9 @@ GULAG:
 		PipCount: 5
 		PassengerFacing: 0
 		EjectOnDeath: true
+	CargoCashTrickler:
+		Period: 375
+		AmountPerLoad: 50
 	-EmitInfantryOnSell:
 	# Not really usef for any other stuff
 	#ProvidesPrerequisite@buildingname:
