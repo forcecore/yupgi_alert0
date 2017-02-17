@@ -56,7 +56,7 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 				{
 					// Well, I guess amount can be negative number, if it costs upkeep.
 					self.Owner.PlayerActor.Trait<PlayerResources>().GiveCash(amount);
-					MaybeAddCashTick(self, amount);
+					MaybeAddCashTick(self, info.AmountPerLoad, cargo.PassengerCount);
 				}
 			}
 		}
@@ -76,10 +76,19 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 			amount = info.AmountPerLoad * cargo.PassengerCount;
 		}
 
-		void MaybeAddCashTick(Actor self, int amount)
+		void MaybeAddCashTick(Actor self, int amount, int cnt)
 		{
-			if (info.ShowTicks)
-				self.World.AddFrameEndTask(w => w.Add(new FloatingText(self.CenterPosition, self.Owner.Color.RGB, FloatingText.FormatCashTick(amount), 30)));
+			if (!info.ShowTicks)
+				return;
+
+			for( int i = 0; i < cnt; i++)
+			{
+				var offset = new WVec((i<<8), -(i<<8), 0);
+				var pos = self.CenterPosition + offset;
+				self.World.AddFrameEndTask(
+					w => w.Add(
+						new FloatingText(pos, self.Owner.Color.RGB, FloatingText.FormatCashTick(amount), 30)));
+			}
 		}
 	}
 }
