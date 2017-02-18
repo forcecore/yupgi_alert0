@@ -70,7 +70,7 @@ namespace OpenRA.Mods.AS.Traits
 
 	public enum TimedDeployState { Charging, Ready, Active, Deploying, Undeploying }
 
-	public class DeployToTimedUpgrade : IResolveOrder, IIssueOrder, INotifyCreated, ISelectionBar, IOrderVoice, ISync, ITick
+	public class DeployToTimedUpgrade : IResolveOrder, IIssueOrder, INotifyCreated, ISelectionBar, IOrderVoice, ISync, ITick, INotifyDamageStateChanged
 	{
 		readonly Actor self;
 		readonly DeployToTimedUpgradeInfo info;
@@ -210,6 +210,21 @@ namespace OpenRA.Mods.AS.Traits
 				{
 					RevokeDeploy();
 				}
+			}
+		}
+
+		void INotifyDamageStateChanged.DamageStateChanged(Actor self, AttackInfo e)
+		{
+			// Auto iron curtain for AIs.
+			if (!self.Owner.IsBot)
+				return;
+
+			if (self.Info.Name != "3tnk")
+				return;
+
+			if (e.DamageState >= DamageState.Heavy && deployState == TimedDeployState.Ready)
+			{
+				Deploy();
 			}
 		}
 
