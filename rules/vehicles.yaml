@@ -1224,6 +1224,8 @@ FANT:
 		UpgradeTypes: undeployed
 		UpgradeMinEnabledLevel: 1
 		UpgradeMaxAcceptedLevel: 1
+	AIDeployHelper:
+		DeployOn: Attacked, Damage
 
 SANT:
 	Inherits: ^Vehicle

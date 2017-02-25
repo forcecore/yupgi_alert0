@@ -34,14 +34,16 @@ namespace OpenRA.Mods.Common.Traits
 	{
 		[Desc("Events leading to the actor getting uncloaked. Possible values are: None, Attacked, Attack, Damage.")]
 		public readonly DeployType DeployOn = DeployType.None;
+		public readonly int UndeployTicks = 450;
 
 		public override object Create(ActorInitializer init) { return new AIDeployHelper(this); }
 	}
 
-	public class AIDeployHelper : UpgradableTrait<AIDeployHelperInfo>, INotifyDamageStateChanged, INotifyAttack, INotifyCreated
+	public class AIDeployHelper : UpgradableTrait<AIDeployHelperInfo>, INotifyDamageStateChanged, INotifyAttack, INotifyCreated, ITick
 	{
 		UpgradeManager upgradeManager;
 		new AIDeployHelperInfo Info;
+		[Sync] int undeploy_ticks;
 
 		public AIDeployHelper(AIDeployHelperInfo info) : base(info)
 		{
@@ -50,6 +52,8 @@ namespace OpenRA.Mods.Common.Traits
 
 		void Deploy(Actor self)
 		{
+			undeploy_ticks = Info.UndeployTicks;
+
 			if (!self.Owner.IsBot)
 				return;
 
@@ -70,9 +74,9 @@ namespace OpenRA.Mods.Common.Traits
 			if (!self.Owner.IsBot)
 				return;
 
-			// Issue deploy order to self.
 			self.CancelActivity();
 
+			// Issue undeploy order to self.
 			var dtu = self.TraitOrDefault<DeployToUpgrade>();
 			if (dtu != null)
 			{
@@ -90,8 +94,17 @@ namespace OpenRA.Mods.Common.Traits
 			if (Info.DeployOn.HasFlag(DeployType.Attack))
 				Deploy(self);
 		}
-
+		
 		void INotifyAttack.PreparingAttack(Actor self, Target target, Armament a, Barrel barrel) { }
+
+		void ITick.Tick(Actor self)
+		{
+			if (--undeploy_ticks < 0)
+			{
+				undeploy_ticks = Info.UndeployTicks;
+				Undeploy(self);
+			}
+		}
 
 		void INotifyDamageStateChanged.DamageStateChanged(Actor self, AttackInfo e)
 		{

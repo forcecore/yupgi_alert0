@@ -231,6 +231,10 @@ GameSpeeds:
 		Name: Fastest
 		Timestep: 20
 		OrderLatency: 6
+	ludicrous:
+		Name: Ludicrous
+		Timestep: 1
+		OrderLatency: 6
 
 ColorValidator:
 
