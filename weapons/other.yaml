@@ -223,6 +223,7 @@ Heal:
 		Spread: 213
 		Damage: -50
 		ValidTargets: Infantry
+		InvalidTargets: Ant
 		DebugOverlayColor: 00FF00
 
 Repair:

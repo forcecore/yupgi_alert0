@@ -1115,6 +1115,7 @@ WANT:
 	-DamagedByRadioactivity:
 	-EjectOnDeath:
 	-Capturable:
+	-Repairable: # disable this unit from going to FIX.
 
 # Fire ant
 FANT:
@@ -1201,6 +1202,7 @@ FANT:
 	-DamagedByRadioactivity:
 	-EjectOnDeath:
 	-Capturable:
+	-Repairable: # disable this unit from going to FIX.
 	WithSpriteTurret:
 		Sequence: stand
 		Recoils: False
@@ -1270,6 +1272,7 @@ SANT:
 	-DamagedByRadioactivity:
 	-EjectOnDeath:
 	-Capturable:
+	-Repairable: # disable this unit from going to FIX.
 
 HANT:
 	Inherits: ^Vehicle
@@ -1321,5 +1324,6 @@ HANT:
 	-DamagedByRadioactivity:
 	-EjectOnDeath:
 	-Capturable:
+	-Repairable: # disable this unit from going to FIX.
 	AttackFrontal:
 		Voice: Attack
