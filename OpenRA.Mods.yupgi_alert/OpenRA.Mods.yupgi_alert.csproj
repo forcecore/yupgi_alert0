@@ -74,6 +74,7 @@
     <Compile Include="Activities\EnterNydus.cs" />
     <Compile Include="Graphics\RadBeamRenderable.cs" />
     <Compile Include="Projectiles\RadBeam.cs" />
+    <Compile Include="Traits\AIDeployHelper.cs" />
     <Compile Include="Traits\CargoCashTrickler.cs" />
     <Compile Include="Traits\CargoTransformer.cs" />
     <Compile Include="Traits\DamagedByRadioactivity.cs" />

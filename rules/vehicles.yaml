@@ -161,6 +161,8 @@ V2RL:
 		CooldownTicks: 1500
 		DeployedTicks: 125
 		DeploySound: ironcur9.aud
+	AIDeployHelper:
+		DeployOn: Attacked, Damage
 
 WANGCHANG:
 	Inherits: ^Vehicle
