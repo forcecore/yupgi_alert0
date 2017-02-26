@@ -71,6 +71,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activities\Air\BlimpFallToEarth.cs" />
     <Compile Include="Activities\Air\SpawnedFlyAttack.cs" />
     <Compile Include="Activities\Air\SpawnedTakeOff.cs" />
     <Compile Include="Activities\EnterNydus.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Graphics\RadBeamRenderable.cs" />
     <Compile Include="Projectiles\RadBeam.cs" />
     <Compile Include="Traits\AIDeployHelper.cs" />
+    <Compile Include="Traits\Air\BlimpFallsToEarth.cs" />
     <Compile Include="Traits\CargoCashTrickler.cs" />
     <Compile Include="Traits\CargoTransformer.cs" />
     <Compile Include="Traits\DamagedByRadioactivity.cs" />
