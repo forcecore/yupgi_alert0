@@ -1,6 +1,9 @@
 #region Copyright & License Information
 /*
- * Copyright 2007-2016 The OpenRA Developers (see AUTHORS)
+ * Modded by Boolbada of OP Mod.
+ * Modded from cargo.cs but a lot changed.
+ * 
+ * Copyright 2007-2017 The OpenRA Developers (see AUTHORS)
  * This file is part of OpenRA, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -192,11 +195,7 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 			// Tell launched slaves to come back and enter me.
 			foreach (var s in launched)
 			{
-				s.CancelActivity();
-				var tgt = Target.FromActor(self);
-				if (s.TraitOrDefault<AttackPlane>() != null) // Let attack planes approach me first, before landing.
-					s.QueueActivity(new Fly(s, tgt, new WDist(1024 * 3), new WDist(1024 * 5)));
-				s.QueueActivity(new EnterSpawner(s, self, EnterBehaviour.Exit));
+				s.Trait<Spawned>().EnterSpawner(s);
 			}
 		}
 
@@ -388,7 +387,7 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 		public object Create(ActorInitializer init) { return new Spawned(init, this); }
 	}
 
-	class Spawned : IIssueOrder, IResolveOrder, INotifyKilled
+	class Spawned : IIssueOrder, IResolveOrder, INotifyKilled, INotifyBecomingIdle
 	{
 		readonly SpawnedInfo info;
 		public Actor Master = null;
@@ -447,7 +446,28 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 				self.CancelActivity();
 
 			self.SetTargetLine(target, Color.Green);
-			self.QueueActivity(new EnterSpawner(self, target.Actor, EnterBehaviour.Exit));
+			EnterSpawner(self);
+		}
+
+		public void EnterSpawner(Actor self)
+		{
+			if (Master == null)
+				self.Kill(self); // No master == death.
+			else
+			{
+				var tgt = Target.FromActor(Master);
+				self.CancelActivity();
+				if (self.TraitOrDefault<AttackPlane>() != null) // Let attack planes approach me first, before landing.
+					self.QueueActivity(new Fly(self, tgt, new WDist(1024 * 3), new WDist(1024 * 5)));
+				self.QueueActivity(new EnterSpawner(self, Master, EnterBehaviour.Exit));
+			}
+		}
+
+		public virtual void OnBecomingIdle(Actor self)
+		{
+			// Return when nothing to attack.
+			// Don't let myself to circle around the player's construction yard.
+			EnterSpawner(self);
 		}
 
 		class SpawnedReturnOrderTargeter : UnitOrderTargeter

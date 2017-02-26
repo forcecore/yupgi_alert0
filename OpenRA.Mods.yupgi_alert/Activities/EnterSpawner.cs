@@ -12,13 +12,14 @@
 #endregion
 
 using OpenRA.Mods.Common.Traits;
+using OpenRA.Mods.yupgi_alert.Traits;
 using OpenRA.Traits;
 using System.Linq;
 using System.Collections.Generic;
 using System.Drawing;
 using OpenRA.Mods.Common.Activities;
 
-namespace OpenRA.Mods.Common.Activities
+namespace OpenRA.Mods.yupgi_alert.Activities
 {
 	class EnterSpawner : Enter
 	{
