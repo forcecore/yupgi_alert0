@@ -475,16 +475,11 @@ U2:
 
 MIG2:
 	Inherits: ^Plane
-	Buildable:
-		Queue: Aircraft
-		BuildAtProductionType: Plane
-		BuildPaletteOrder: 50
-		Prerequisites: ~afld, stek, ~techlevel.high
 	RenderSprites:
 		Image: mig
 		Scale: 0.5
 	Valued:
-		Cost: 2000
+		Cost: 500
 	Tooltip:
 		Name: Mig Attack Plane
 		Description: Fast Ground-Attack Plane.\n  Strong vs Buildings, Tanks\n  Weak vs Infantry, Light armor, Aircraft
@@ -493,10 +488,10 @@ MIG2:
 	Armor:
 		Type: Light
 	RevealsShroud:
-		Range: 12c0
+		Range: 6c0
 		Type: CenterPosition
 	Armament:
-		Weapon: Maverick
+		Weapon: Maverick2
 		LocalOffset: 0,-640,0, 0,640,0
 		LocalYaw: -40, 24
 	AttackPlane:
@@ -509,10 +504,11 @@ MIG2:
 		RepulsionSpeed: 40
 		MaximumPitch: 56
 		RearmBuildings: carrier
-	#-AutoTarget:
 	AmmoPool:
 		Ammo: 8
-	ReturnOnIdle:
+	SpawnActorOnDeath:
+		Actor: MIG2.Husk
+	#ReturnOnIdle: Spawned has Idle handler.
 	-Selectable:
 	#Contrail@1:
 		#Offset: -598,-683,0
@@ -520,9 +516,77 @@ MIG2:
 		#Offset: -598,683,0
 	-ActorLostNotification:
 		# These always die. No notification needed.
+	-EjectOnDeath:
+		# No pilot
 	SmokeTrailWhenDamaged:
 		Offset: -853,0,171
 		Interval: 2
 	ProducibleWithLevel:
 		Prerequisites: aircraft.upgraded
 	Spawned:
+		LandingDistance: 0c512 # less than a cell so that it lands "in air".
+
+ZEP:
+	Inherits: ^Helicopter
+	Buildable:
+		Queue: Aircraft
+		BuildAtProductionType: Plane
+		BuildPaletteOrder: 40
+		Prerequisites: ~afld, stek, ~techlevel.high
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Kirov Carrier
+		Description: Airborne aircraft carrier..\n  Strong vs Tanks, Structures\n  Weak vs Infantry
+	Health:
+		HP: 550 # same as heavy tanks
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 15c0
+		Type: CenterPosition
+	AttackHeli:
+		FacingTolerance: 20
+	Aircraft:
+		LandWhenIdle: false
+		InitialFacing: 224
+		TurnSpeed: 4
+		Speed: 30
+		CruiseAltitude: 2c256
+	#SelectionDecorations:
+		#VisualBounds: 36,28
+	SpawnActorOnDeath:
+		Actor: ZEP.Husk
+	-EjectOnDeath:
+		# Falls with the zep, doesn't look good.
+	#SmokeTrailWhenDamaged:
+		# Looks bad since this unit is very slow.
+		#Offset: -427,0,0
+	WithDamageOverlay:
+	ProducibleWithLevel:
+		Prerequisites: aircraft.upgraded
+	Spawner:
+		Count: 5
+		SlaveUnit: mig2
+		SlaveRespawnTicks: 300
+		InstaRepair: true
+	Armament:
+		Weapon: CarrierSpawnTargeter
+	AttackFrontal:
+	AutoTarget:
+	WithVoxelBody:
+	RenderVoxels:
+		Scale: 8
+		#LightYaw: 800
+		#LightPitch: 150
+		#LightAmbientColor: -0.5,-0.5,-0.5
+		#LightDiffuseColor: 1.4,1.4,1.4
+		PlayerPalette: player-ra2
+	BodyOrientation:
+		QuantizedFacings: 0
+		CameraPitch: 90
+		UseClassicPerspectiveFudge: false
+	RenderSprites: # For icons
+	-WithFacingSpriteBody:
+	-QuantizeFacingsFromSequence:
+	-WithShadow: # Disable 2D shadow drawing logic for sprite actors

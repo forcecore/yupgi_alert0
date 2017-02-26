@@ -73,3 +73,6 @@ u2:
 badr:
 	idle:
 		Facings: 16
+
+zep:
+	icon: zepicon

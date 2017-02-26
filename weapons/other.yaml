@@ -453,10 +453,12 @@ AntFireballLauncher:
 	Inherits: FireballLauncher
 
 CarrierSpawnTargeter:
-	ReloadDelay: 30
-	Range: 20c0
+	ReloadDelay: 30 # "Interceptors" get launched with this delay.
+	Range: 10c0
+	ValidTargets: Ground, Water, Air
 	Projectile: Bullet
 		Speed: 10c0
 	Warhead@1Dam: SpreadDamage
 		Spread: 1
 		Damage: 0
+		ValidTargets: Air, Ground, Water

@@ -1,3 +1,5 @@
+# vim: noet sw=4 ts=4:
+
 1TNK.Husk:
 	Inherits: ^Husk
 	Tooltip:
@@ -71,13 +73,13 @@ MARV.EmptyHusk:
 		Scale: 8
 		PlayerPalette: player-ra2
 	WithVoxelBody:
-    RenderSprites:
+	RenderSprites:
 	BodyOrientation:
 		QuantizedFacings: 0
 		CameraPitch: 90
 		UseClassicPerspectiveFudge: false
-    -QuantizeFacingsFromSequence:
-    -WithFacingSpriteBody:
+	-QuantizeFacingsFromSequence:
+	-WithFacingSpriteBody:
 
 WANGCHANG.Husk:
 	Inherits: ^Husk
@@ -87,7 +89,7 @@ WANGCHANG.Husk:
 		IntoActor: wangchang
 	RenderSprites:
 		Image: hhusk2
-        Scale: 1.25
+		Scale: 1.25
 
 5TNK.Husk:
 	Inherits: ^Husk
@@ -226,6 +228,24 @@ MIG.Husk:
 	RenderSprites:
 		Image: mig
 
+MIG2.Husk:
+	Inherits: ^PlaneHusk
+	Tooltip:
+		Name: Mig Attack Plane
+	Aircraft:
+		TurnSpeed: 5
+		Speed: 186
+	SmokeTrailWhenDamaged:
+		Offset: -853,0,171
+		Interval: 2
+		MinDamage: Undamaged
+	RevealsShroud:
+		Range: 12c0
+		Type: CenterPosition
+	RenderSprites:
+		Image: mig
+		Scale: 0.5
+
 NMIG.Husk:
 	Inherits: ^PlaneHusk
 	Tooltip:
@@ -244,21 +264,21 @@ NMIG.Husk:
 	RevealsShroud:
 		Range: 12c0
 		Type: CenterPosition
-    -WithFacingSpriteBody:
-    -QuantizeFacingsFromSequence:
-    -AutoSelectionSize: # only applies to sprite actors
-    WithVoxelBody:
+	-WithFacingSpriteBody:
+	-QuantizeFacingsFromSequence:
+	-AutoSelectionSize: # only applies to sprite actors
+	WithVoxelBody:
 	BodyOrientation:
 		QuantizedFacings: 0
 		CameraPitch: 90
 		UseClassicPerspectiveFudge: false
-    -WithShadow: # Disable 2D sprite shadow logic
+	-WithShadow: # Disable 2D sprite shadow logic
 	RenderVoxels:
 		Scale: 0.7
 		Image: nmig
 		PlayerPalette: player-ra2
-    RenderSprites:
-        Image: nmig
+	RenderSprites:
+		Image: nmig
 
 YAK.Husk:
 	Inherits: ^PlaneHusk
@@ -297,6 +317,35 @@ HELI.Husk:
 		Type: CenterPosition
 	RenderSprites:
 		Image: heli
+
+ZEP.Husk:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+		Name: Kirov Carrier
+	Aircraft:
+		TurnSpeed: 4
+		Speed: 149
+	RevealsShroud:
+		Range: 15c0
+		Type: CenterPosition
+	-WithFacingSpriteBody:
+	-AutoSelectionSize: # only applies to sprite actors
+	WithVoxelBody:
+	BodyOrientation:
+		QuantizedFacings: 0
+		CameraPitch: 90
+		UseClassicPerspectiveFudge: false
+	-WithShadow: # Disable 2D sprite shadow logic
+	RenderVoxels:
+		Scale: 8
+		Image: zep
+		PlayerPalette: player-ra2
+	RenderSprites:
+		Image: zep
+	-FallsToEarth:
+	BlimpFallsToEarth:
+		SpinInitial: 10
+		SpinAcceleration: 0
 
 HIND.Husk:
 	Inherits: ^HelicopterHusk

@@ -39,6 +39,20 @@ Maverick:
 		ImpactSounds: splash9.aud
 		ValidImpactTypes: Water
 
+# Interceptors can attack air, I don't want to miss Carrier vs Carrier fight!
+Maverick2:
+	Inherits: Maverick
+	ValidTargets: Air, Ground, Water
+	Warhead@5Dam: SpreadDamage # AA damage with default maverick was too OP.
+		Spread: 128
+		Damage: 50
+		ValidTargets: Air
+		Versus:
+			None: 90
+			Light: 90
+			Heavy: 50
+		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
+
 Dragon:
 	ReloadDelay: 50
 	Range: 5c0
