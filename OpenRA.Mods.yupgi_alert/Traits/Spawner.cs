@@ -384,6 +384,10 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 	class SpawnedInfo : ITraitInfo
 	{
 		public readonly string EnterCursor = "enter";
+
+		[Desc("Move this close to the spawner, before entering it.")]
+		public readonly WDist LandingDistance = new WDist(5*1024);
+
 		public object Create(ActorInitializer init) { return new Spawned(init, this); }
 	}
 
@@ -458,7 +462,7 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 				var tgt = Target.FromActor(Master);
 				self.CancelActivity();
 				if (self.TraitOrDefault<AttackPlane>() != null) // Let attack planes approach me first, before landing.
-					self.QueueActivity(new Fly(self, tgt, new WDist(1024 * 3), new WDist(1024 * 5)));
+					self.QueueActivity(new Fly(self, tgt, WDist.Zero, info.LandingDistance));
 				self.QueueActivity(new EnterSpawner(self, Master, EnterBehaviour.Exit));
 			}
 		}
