@@ -518,6 +518,8 @@ MIG2:
 		#Offset: -598,-683,0
 	#Contrail@2:
 		#Offset: -598,683,0
+	-ActorLostNotification:
+		# These always die. No notification needed.
 	SmokeTrailWhenDamaged:
 		Offset: -853,0,171
 		Interval: 2
