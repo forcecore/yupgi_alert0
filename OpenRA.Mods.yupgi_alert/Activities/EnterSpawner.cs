@@ -23,7 +23,7 @@ namespace OpenRA.Mods.yupgi_alert.Activities
 {
 	class EnterSpawner : Enter
 	{
-		readonly Actor target; // remember spawner.
+		readonly Actor master; // remember spawner.
 		readonly Spawner spawner;
 		readonly AmmoPool[] ammoPools;
 		//readonly Dictionary<AmmoPool, int> ammoPoolsReloadTimes;
@@ -31,7 +31,7 @@ namespace OpenRA.Mods.yupgi_alert.Activities
 		public EnterSpawner(Actor self, Actor target, EnterBehaviour enterBehaviour)
 			: base(self, target, enterBehaviour)
 		{
-			this.target = target;
+			this.master = target;
 			spawner = target.Trait<Spawner>();
 
 			ammoPools = self.TraitsImplementing<AmmoPool>().Where(p => !p.Info.SelfReloads).ToArray();
@@ -47,9 +47,86 @@ namespace OpenRA.Mods.yupgi_alert.Activities
 			return true;
 		}
 
+		protected override State FindAndTransitionToNextState(Actor self)
+		{
+			switch (nextState)
+			{
+				case State.ApproachingOrEntering:
+
+					// Reserve to enter or approach
+					isEnteringOrInside = false;
+					switch (TryReserveElseTryAlternateReserve(self))
+					{
+						case ReserveStatus.None:
+							return State.Done; // No available target -> abort to next activity
+						case ReserveStatus.TooFar:
+							inner = move.MoveToTarget(self, targetCenter ? Target.FromPos(target.CenterPosition) : target); // Approach
+							return State.ApproachingOrEntering;
+						case ReserveStatus.Pending:
+							return State.ApproachingOrEntering; // Retry next tick
+						case ReserveStatus.Ready:
+							break; // Reserved target -> start entering target
+					}
+
+					// Entering
+					isEnteringOrInside = true;
+					savedPos = self.CenterPosition; // Save position of self, before entering, for returning on exit
+
+					inner = move.MoveIntoTarget(self, target); // Enter
+
+					if (inner != null)
+					{
+						nextState = State.Inside; // Should be inside once inner activity is null
+						return State.ApproachingOrEntering;
+					}
+
+					// Can enter but there is no activity for it, so go inside without one
+					goto case State.Inside;
+
+				case State.Inside:
+					// Might as well teleport into target if there is no MoveIntoTarget activity
+					if (nextState == State.ApproachingOrEntering)
+						nextState = State.Inside;
+
+					// Boolbada: removed moving target recovery.
+					// I'm assuming Carrier is not too fast!
+
+					OnInside(self);
+
+					if (enterBehaviour == EnterBehaviour.Suicide)
+						self.Kill(self);
+					else if (enterBehaviour == EnterBehaviour.Dispose)
+						self.Dispose();
+
+					// Return if Abort(Actor) or Done(self) was called from OnInside.
+					if (nextState >= State.Exiting)
+						return State.Inside;
+
+					inner = this; // Start inside activity
+					nextState = State.Exiting; // Exit once inner activity is null (unless Done(self) is called)
+					return State.Inside;
+
+				// TODO: Handle target moved while inside or always call done for movable targets and use a separate exit activity
+				case State.Exiting:
+					inner = move.MoveIntoWorld(self, self.World.Map.CellContaining(savedPos));
+
+					// If not successfully exiting, retry on next tick
+					if (inner == null)
+						return State.Exiting;
+					isEnteringOrInside = false;
+					nextState = State.Done;
+					return State.Exiting;
+
+				case State.Done:
+					return State.Done;
+			}
+
+			return State.Done; // dummy to quiet dumb compiler
+		}
+
 		protected override void OnInside(Actor self)
 		{
-			if (target.IsDead)
+			if (master.IsDead)
 				// entered the nydus canal but the entrance is dead immediately. haha;;
 				return;
 
@@ -59,14 +136,14 @@ namespace OpenRA.Mods.yupgi_alert.Activities
 			// Issue attack move to the rally point.
 			self.World.AddFrameEndTask(w =>
 			{
-				if (self.IsDead || target.IsDead || !spawner.CanLoad(target, self))
+				if (self.IsDead || master.IsDead || !spawner.CanLoad(master, self))
 					return;
 
-				spawner.Load(target, self);
+				spawner.Load(master, self);
 				w.Remove(self);
 
 				// Insta repair.
-				var info = target.Info.TraitInfo<SpawnerInfo>();
+				var info = master.Info.TraitInfo<SpawnerInfo>();
 				if (info.InstaRepair)
 				{
 					var health = self.Trait<Health>();

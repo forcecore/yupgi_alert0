@@ -144,8 +144,8 @@ NMIG:
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: NukeMig
-		BuildPaletteOrder: 50
-		Prerequisites: ~stek, mslo, ~techlevel.high
+		BuildPaletteOrder: 100
+		Prerequisites: ~afld, stek, mslo, ~techlevel.high
 		BuildLimit: 1
 	Valued:
 		Cost: 3000
@@ -524,14 +524,14 @@ MIG2:
 	ProducibleWithLevel:
 		Prerequisites: aircraft.upgraded
 	Spawned:
-		LandingDistance: 0c512 # less than a cell so that it lands "in air".
+		LandingDistance: 1c0 # Small distance so that it lands "in air".
 
 ZEP:
 	Inherits: ^Helicopter
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
-		BuildPaletteOrder: 40
+		BuildPaletteOrder: 60
 		Prerequisites: ~afld, stek, ~techlevel.high
 	Valued:
 		Cost: 2000
