@@ -472,3 +472,55 @@ U2:
 		Offset: -1c43,0,0
 		Interval: 2
 	RejectsOrders:
+
+MIG2:
+	Inherits: ^Plane
+	Buildable:
+		Queue: Aircraft
+		BuildAtProductionType: Plane
+		BuildPaletteOrder: 50
+		Prerequisites: ~afld, stek, ~techlevel.high
+	RenderSprites:
+		Image: mig
+		Scale: 0.5
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Mig Attack Plane
+		Description: Fast Ground-Attack Plane.\n  Strong vs Buildings, Tanks\n  Weak vs Infantry, Light armor, Aircraft
+	Health:
+		HP: 70
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 12c0
+		Type: CenterPosition
+	Armament:
+		Weapon: Maverick
+		LocalOffset: 0,-640,0, 0,640,0
+		LocalYaw: -40, 24
+	AttackPlane:
+		FacingTolerance: 20
+	Aircraft:
+		CruiseAltitude: 2560
+		InitialFacing: 192
+		TurnSpeed: 16
+		Speed: 223
+		RepulsionSpeed: 40
+		MaximumPitch: 56
+		RearmBuildings: carrier
+	#-AutoTarget:
+	AmmoPool:
+		Ammo: 8
+	ReturnOnIdle:
+	-Selectable:
+	#Contrail@1:
+		#Offset: -598,-683,0
+	#Contrail@2:
+		#Offset: -598,683,0
+	SmokeTrailWhenDamaged:
+		Offset: -853,0,171
+		Interval: 2
+	ProducibleWithLevel:
+		Prerequisites: aircraft.upgraded
+	Spawned:

@@ -1331,3 +1331,41 @@ HANT:
 	-Repairable: # disable this unit from going to FIX.
 	AttackFrontal:
 		Voice: Attack
+
+CARRIER:
+	Inherits: ^Tank
+	RenderSprites:
+		Scale: 1.25
+		Image: QTNK
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 200
+		Prerequisites: fix, stek, ~naweap, ~techlevel.high
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Carrier
+		Description: Experimental Soviet Carrier
+	Health:
+		HP: 5000
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 56
+		Crushes: wall, mine, crate, infantry
+	RevealsShroud:
+		Range: 10c0
+	SelectionDecorations:
+		VisualBounds: 44,38,0,-4
+	-EjectOnDeath:
+	Targetable:
+		TargetTypes: Ground, Repair, Vehicle
+	Spawner:
+		Count: 5
+		SlaveUnit: mig2
+		SlaveRespawnTicks: 300
+		InstaRepair: true
+	Armament:
+		Weapon: CarrierSpawnTargeter
+	AttackFrontal:
+	AutoTarget:
