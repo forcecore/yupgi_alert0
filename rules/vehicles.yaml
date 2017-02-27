@@ -1239,7 +1239,7 @@ SANT:
 		Queue: Vehicle
 		BuildAtProductionType: BigAnt
 		BuildPaletteOrder: 200
-		Prerequisites: ~qnest, tibtree, evo, disabled
+		Prerequisites: ~qnest, tibtree, evo, aibuild
 	Selectable:
 		Bounds: 24,24,0,-10
 	SelectionDecorations:
@@ -1281,16 +1281,16 @@ SANT:
 HANT:
 	Inherits: ^Vehicle
 	Valued:
-		Cost: 10000
+		Cost: 6000
 	Tooltip:
 		Name: Hyper Ant
-		Description: Fires electric bolts.\n STrong vs All, Weak vs Aircraft\n Sacrifice 2 Super Ants to Evolution Chamber\nto build one Hyper Ant.
+		Description: Fires electric bolts.\n STrong vs All, Weak vs Aircraft\n Sacrifice 4 Fire Ants to Evolution Chamber\nto build one Hyper Ant.
 		GenericName: Ant
 	Buildable:
 		Queue: Vehicle
 		BuildAtProductionType: BigAnt
 		BuildPaletteOrder: 300
-		Prerequisites: ~qnest, evo, disabled
+		Prerequisites: ~qnest, evo, aibuild
 	Selectable:
 		Bounds: 24,24,0,-10
 	SelectionDecorations:

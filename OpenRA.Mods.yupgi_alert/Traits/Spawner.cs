@@ -161,6 +161,9 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 
 			self.World.AddFrameEndTask(w =>
 			{
+				if (self.IsDead)
+					return;
+
 				if (s.Disposed)
 					return;
 

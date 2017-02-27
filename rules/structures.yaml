@@ -1824,6 +1824,9 @@ QNEST:
 	# as in C&C3 and RA3!
 	# Now, radar dome provides wide sighted fog of war removal.
 	ProvidesPrerequisite@buildingname:
+	BotProvidesPrerequisite@bot:
+		# Provide this, only when bot :)
+		Prerequisite: aibuild
 	-EmitInfantryOnSell: # would be stupid
 	-Sellable: # not sellable. It's a biological nest!
 	PrimaryBuilding:
@@ -1964,7 +1967,7 @@ EVO:
 		Combinations:
 			# Make sure these are in alphabetical order!
 			sant: want, want, want, want, want
-			hant: sant, sant
+			hant: fant, fant, fant, fant
 			#hexapod: hant, hant, hant, hant, hant
 	RallyPoint:
 

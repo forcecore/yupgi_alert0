@@ -46,6 +46,7 @@ Player:
 			gun: 7%
 			tsla: 5%
 			ftur: 10%
+			minihive: 10%
 			agun: 5%
 			sam: 5%
 			atek: 1%
@@ -72,10 +73,12 @@ Player:
 			4tnk: 10%
 			ttnk: 10%
 			stnk: 5%
-            ant: 10%
-            want: 30%
-            doggie: 30%
-            fant: 30%
+            ant: 50%
+            want: 25% # Need a lot of these, need ed for super ants.
+            doggie: 5%
+            fant: 5%
+            sant: 5%
+            hant: 5%
 		UnitLimits:
 			dog: 4
 			harv: 8
@@ -183,6 +186,7 @@ Player:
 			pbox: 7%
 			gun: 7%
 			ftur: 10%
+			minihive: 10%
 			tsla: 5%
 			fix: 1%
 			agun: 5%
@@ -218,10 +222,12 @@ Player:
 			dd: 10%
 			ca: 10%
 			pt: 10%
-            ant: 10%
-            want: 30%
-            doggie: 30%
-            fant: 30%
+            ant: 50%
+            want: 25% # Need a lot of these, need ed for super ants.
+            doggie: 5%
+            fant: 5%
+            sant: 5%
+            hant: 5%
 		UnitLimits:
 			dog: 4
 			harv: 8
@@ -327,6 +333,7 @@ Player:
 			pbox: 10%
 			gun: 10%
 			ftur: 10%
+			minihive: 10%
 			tsla: 7%
 			fix: 0.1%
 			dome: 10%
@@ -364,10 +371,12 @@ Player:
 			dd: 10%
 			ca: 10%
 			pt: 10%
-            ant: 10%
-            want: 30%
-            doggie: 30%
-            fant: 30%
+            ant: 50%
+            want: 25% # Need a lot of these, need ed for super ants.
+            doggie: 5%
+            fant: 5%
+            sant: 5%
+            hant: 5%
 		UnitLimits:
 			dog: 4
 			harv: 8
@@ -470,6 +479,7 @@ Player:
 			pbox: 12%
 			gun: 12%
 			ftur: 12%
+			minihive: 12%
 			tsla: 12%
 			agun: 5%
 			sam: 5%
@@ -485,10 +495,12 @@ Player:
 			dd: 30%
 			ca: 20%
 			pt: 10%
-            ant: 10%
-            want: 30%
-            doggie: 30%
-            fant: 30%
+            ant: 50%
+            want: 25% # Need a lot of these, need ed for super ants.
+            doggie: 5%
+            fant: 5%
+            sant: 5%
+            hant: 5%
 		UnitLimits:
 			harv: 8
             ant: 40
