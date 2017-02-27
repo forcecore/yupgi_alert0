@@ -138,7 +138,15 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 			else
 			{
 				foreach (var atb in self.TraitsImplementing<AttackBase>())
-					atb.AttackTarget(target, true, true, false);
+				{
+					if (target.Actor == null)
+						atb.AttackTarget(target, true, true, true); // force fire on the ground.
+					else
+						// Well, target deprives me of force fire information.
+						// This is a glitch if force fire weapon and normal fire are different, as in
+						// RA mod spies but won't matter too much for carriers.
+						atb.AttackTarget(target, true, true, target.RequiresForceFire);
+				}
 			}	
 		}
 

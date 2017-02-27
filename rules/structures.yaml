@@ -2046,7 +2046,7 @@ MINIHIVE:
 	WithBuildingExplosion:
 		Sequences: building, building_napalm, large_explosion, self_destruct
 	Spawner:
-		Count: 1
+		Count: 4
 		SlaveUnit: buzzer
 		RegenTicks: 5
 		RearmTicks: 5 # even without ammo limit, this applies.

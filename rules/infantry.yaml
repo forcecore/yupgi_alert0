@@ -745,7 +745,7 @@ BUZZER:
 	RenderSprites:
 		Image: tinyant
 	Valued:
-		Cost: 500
+		Cost: 10
 	Tooltip:
 		Name: Drone Ant
 		Description: Irradiated insect that grew oversize.\nCollects ore.
@@ -776,11 +776,8 @@ BUZZER:
 	Spawned:
 	Armament:
 		Weapon: BuzzerMandible
-		#Weapon: Maverick
-	#-Selectable:
-	Selectable: # for debug
-		Bounds: 12,12,0,-5
-		Priority: 5
+	-Selectable:
+	-GainsExperience:
 
 DESO:
 	Inherits: ^Soldier
