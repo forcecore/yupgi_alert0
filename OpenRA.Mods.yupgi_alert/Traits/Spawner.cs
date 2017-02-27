@@ -151,7 +151,10 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 				s.QueueActivity(new HeliAttack(s, t)); // not ready for helis...
 			}
 			else
-				s.QueueActivity(new Attack(s, t, false, false));
+			{
+				Game.Debug("Ground Spawn");
+				s.QueueActivity(new Attack(s, t, true, false));
+			}
 		}
 
 		// Tell my slaves to attack what I'm attacking.
@@ -201,7 +204,9 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 
 		public void SlaveKilled(Actor self, Actor slave)
 		{
-			if (self.IsDead)
+			if (self.IsDead || self.Disposed || sold)
+				// Well, complicated. Killed() invokes slave.kill(), whichi invokes this logic.
+				// That's a bad loop. Don't let it be a loop.
 				return;
 
 			if (launched.Contains(slave))
@@ -299,8 +304,8 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 
 		public void Disposing(Actor self)
 		{
-			foreach (var c in slaves)
-				c.s.Dispose();
+			foreach (var se in slaves)
+				se.s.Dispose();
 			foreach (var c in launched)
 				c.Dispose();
 
@@ -309,16 +314,21 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 		}
 
 		public void Selling(Actor self) { }
+
+		bool sold = false;
 		public void Sold(Actor self)
 		{
+			sold = true;
+
 			// Dispose slaved.
-			foreach (var c in slaves)
-				c.s.Dispose();
+			foreach (var se in slaves)
+				se.s.Dispose();
 			slaves.Clear();
 
 			// Kill launched.
 			foreach (var c in launched)
-				c.Kill(self);
+				if (!c.IsDead)
+					c.Kill(self);
 			launched.Clear();
 		}
 
