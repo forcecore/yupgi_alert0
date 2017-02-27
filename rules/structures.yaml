@@ -2007,3 +2007,48 @@ GULAG:
 	# Not really usef for any other stuff
 	#ProvidesPrerequisite@buildingname:
 
+MINIHIVE:
+	Inherits: ^Defense
+	Tooltip:
+		Name: Buzzer Hive
+		Description: Anti-infantry defense.\nCan detect cloaked units.\n  Strong vs Infantry,\n  Weak vs Vehicles, Aircraft
+	Building:
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 40
+		Prerequisites: anthill, ~qnest, ~techlevel.low
+	Valued:
+		Cost: 400
+	Health:
+		HP: 400
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 6c0
+	Turreted:
+		TurnSpeed: 255
+	WithDeathAnimation:
+		DeathSequence: dead
+		UseDeathTypeSuffix: false
+	AttackTurreted:
+	Armament@PRIMARY:
+		Weapon: MiniHiveSpawnTargeter
+		LocalOffset: 512,0,171
+		#MuzzleSequence: muzzle
+	-QuantizeFacingsFromSequence:
+	BodyOrientation:
+		QuantizedFacings: 8
+	-EmitInfantryOnSell:
+	RenderRangeCircle:
+		FallbackRange: 6c0
+	DetectCloaked:
+		Range: 6c0
+	WithBuildingExplosion:
+		Sequences: building, building_napalm, large_explosion, self_destruct
+	Spawner:
+		Count: 1
+		SlaveUnit: buzzer
+		RegenTicks: 5
+		RearmTicks: 5 # even without ammo limit, this applies.
+		InstaRepair: true
+		SlaveIsGroundUnit: true

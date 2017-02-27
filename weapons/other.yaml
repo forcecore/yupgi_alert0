@@ -303,6 +303,19 @@ ScoutMandible:
 			Concrete: 10
 		DamageTypes: Prone50Percent, TriggerProne, DefaultDeath
 
+BuzzerMandible:
+	Inherits: ScoutMandible
+	Warhead@1Dam: SpreadDamage
+		Spread: 213
+		Damage: 100
+		Versus:
+			None: 100
+			Wood: 1
+			Light: 1
+			Heavy: 1
+			Concrete: 1
+		DamageTypes: Prone50Percent, TriggerProne, DefaultDeath
+
 SuperMandible:
 	ReloadDelay: 15
 	Range: 1c512
@@ -462,3 +475,12 @@ CarrierSpawnTargeter:
 		Spread: 1
 		Damage: 0
 		ValidTargets: Air, Ground, Water
+
+MiniHiveSpawnTargeter:
+	ReloadDelay: 30 # "Interceptors" get launched with this delay.
+	Range: 10c0
+	Projectile: Bullet
+		Speed: 10c0
+	Warhead@1Dam: SpreadDamage
+		Spread: 1
+		Damage: 0

@@ -750,3 +750,14 @@ evo:
 	damaged-active: evoglow
 		Start: 20
 		Length: 20
+
+minihive:
+	idle:
+	damaged-idle:
+		Start: 1
+	dead:
+		Start: 2
+		Tick: 800
+	make: pboxmake
+		Length: *
+	icon: pboxicon

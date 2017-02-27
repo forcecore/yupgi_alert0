@@ -740,6 +740,48 @@ Ant:
 	-DamagedByTerrain@tib:
 	-DamagedByRadioactivity:
 
+BUZZER:
+	Inherits: ^Infantry
+	RenderSprites:
+		Image: tinyant
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Drone Ant
+		Description: Irradiated insect that grew oversize.\nCollects ore.
+		GenericName: Ant
+	SelectionDecorations:
+		VisualBounds: 15,15,0,-2
+	Health:
+		HP: 50
+		Shape: Circle
+			Radius: 469
+	Mobile:
+		Speed: 99
+		TurnSpeed: 12
+		SharesCell: yes
+	Crushable: # Yes, scouts are small and crushable.
+	AttackFrontal:
+	WithInfantryBody:
+		AttackSequence: bite
+	Targetable:
+		TargetTypes: Ground, Infantry, Ant
+	WithDeathAnimation:
+		UseDeathTypeSuffix: false
+	Voiced:
+		VoiceSet: AntVoice
+	-DamagedByTerrain@tib:
+	-DamagedByRadioactivity:
+	-ActorLostNotification:
+	Spawned:
+	Armament:
+		Weapon: BuzzerMandible
+		#Weapon: Maverick
+	#-Selectable:
+	Selectable: # for debug
+		Bounds: 12,12,0,-5
+		Priority: 5
+
 DESO:
 	Inherits: ^Soldier
 	RenderSprites:

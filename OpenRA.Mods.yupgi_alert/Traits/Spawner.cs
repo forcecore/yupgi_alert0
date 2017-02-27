@@ -41,6 +41,10 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 		[Desc("Slave rearm delay, in ticks")]
 		public readonly int RearmTicks = 150;
 
+		[Desc("Air units and ground units have different mobile trait so...")]
+		// This can be computed but that requires a few cycles of cpu time XD
+		public readonly bool SlaveIsGroundUnit = false;
+
 		[Desc("Pip color of the slaved unit.")]
 		public readonly PipType PipType = PipType.Yellow;
 
@@ -139,27 +143,14 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 
 		void INotifyAttack.PreparingAttack(Actor self, Target target, Armament a, Barrel barrel) { }
 
-		void MakeSlaveAttack(Actor self, Actor s, Target t)
-		{
-			s.CancelActivity();
-			// Make the spawned actor attack my target.
-			if (s.TraitOrDefault<AttackPlane>() != null)
-				s.QueueActivity(new SpawnedFlyAttack(s, t));
-			else if (s.TraitOrDefault<AttackHeli>() != null)
-			{
-				Game.Debug("Warning: AttackHeli's are not ready for spawned slave.");
-				s.QueueActivity(new HeliAttack(s, t)); // not ready for helis...
-			}
-			else
-			{
-				Game.Debug("Ground Spawn");
-				s.QueueActivity(new Attack(s, t, true, false));
-			}
-		}
-
-		// Tell my slaves to attack what I'm attacking.
 		void INotifyAttack.Attacking(Actor self, Target target, Armament a, Barrel barrel)
 		{
+			// The freshly launched one is in the launched list, too.
+			foreach(var launched in launched)
+			{
+				launched.Trait<Spawned>().AttackTarget(launched, target);
+			}
+
 			// The rate of fire of the dummy weapon determines the launch cycle.
 			if (slaves.Count == 0)
 				return;
@@ -167,25 +158,33 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 			var s = Launch(self);
 			if (s == null)
 				return;
-			if (s.Disposed)
-				return;
 
 			self.World.AddFrameEndTask(w =>
 			{
-				var move = s.Trait<IMove>();
+				if (s.Disposed)
+					return;
+
 				var pos = s.Trait<IPositionable>();
 				var spawn = self.CenterPosition;
-
 				pos.SetVisualPosition(s, spawn);
-				MakeSlaveAttack(self, s, target);
+				s.CancelActivity(); // Reset any activity. May had an activity before entering the spawner.
+				// Or might had been added by above foreach launched loop.
+				if (Info.SlaveIsGroundUnit)
+				{
+					// Air unit doesn't require this for some reason :)
+					// Without this, ground unit is immobile.
+					//CPos exit = Target.FromActor(self).Positions.Select(p => w.Map.CellContaining(p)).Distinct().First();
+					CPos exit = Util.AdjacentCells(s.World, Target.FromActor(self)).First();
+					//CPos exit = target.Positions.Select(p => w.Map.CellContaining(p)).Distinct().First();
+					var move = s.Trait<IMove>();
+					var mv = move.MoveIntoWorld(s, exit);
+					if (mv != null)
+						s.QueueActivity(mv);
+				}
+				s.Trait<Spawned>().AttackTarget(s, target);
+	
 				w.Add(s);
 			});
-
-			// Also, make launched ones attack, too.
-			foreach(var launched in launched)
-			{
-				MakeSlaveAttack(self, launched, target);
-			}
 		}
 
 		public virtual void OnBecomingIdle(Actor self)
@@ -386,135 +385,6 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 			{
 				if (se.RearmTicks > 0)
 					se.RearmTicks--;
-			}
-		}
-	}
-
-	[Desc("Can be slaved to a spawner.")]
-	class SpawnedInfo : ITraitInfo
-	{
-		public readonly string EnterCursor = "enter";
-
-		[Desc("Move this close to the spawner, before entering it.")]
-		public readonly WDist LandingDistance = new WDist(5*1024);
-
-		public object Create(ActorInitializer init) { return new Spawned(init, this); }
-	}
-
-	class Spawned : IIssueOrder, IResolveOrder, INotifyKilled, INotifyBecomingIdle
-	{
-		readonly SpawnedInfo info;
-		public Actor Master = null;
-
-		public Spawned(ActorInitializer init, SpawnedInfo info)
-		{
-			this.info = info;
-		}
-
-		public IEnumerable<IOrderTargeter> Orders
-		{
-			get { yield return new SpawnedReturnOrderTargeter(info); }
-		}
-
-		void INotifyKilled.Killed(Actor self, AttackInfo e)
-		{
-			// If killed, I tell my master that I'm gone.
-			var spawner = Master.Trait<Spawner>();
-			spawner.SlaveKilled(Master, self);
-		}
-
-		public Order IssueOrder(Actor self, IOrderTargeter order, Target target, bool queued)
-		{
-			// don't mind too much about this part.
-			// Everything is (or, should be.) automatically ordered properly by the master.
-
-			if (order.OrderID != "SpawnedReturn")
-				return null;
-
-			if (target.Type == TargetType.FrozenActor)
-				return null;
-
-			return new Order(order.OrderID, self, queued) { TargetActor = target.Actor };
-		}
-
-		static bool IsValidOrder(Actor self, Order order)
-		{
-			// Not targeting a frozen actor
-			if (order.ExtraData == 0 && order.TargetActor == null)
-				return false;
-
-			var spawned = self.Trait<Spawned>();
-			return order.TargetActor == spawned.Master;
-		}
-
-		public void ResolveOrder(Actor self, Order order)
-		{
-			if (order.OrderString != "SpawnedReturn" || !IsValidOrder(self, order))
-				return;
-
-			var target = self.ResolveFrozenActorOrder(order, Color.Green);
-			if (target.Type != TargetType.Actor)
-				return;
-
-			if (!order.Queued)
-				self.CancelActivity();
-
-			self.SetTargetLine(target, Color.Green);
-			EnterSpawner(self);
-		}
-
-		public void EnterSpawner(Actor self)
-		{
-			if (Master == null)
-				self.Kill(self); // No master == death.
-			else
-			{
-				var tgt = Target.FromActor(Master);
-				self.CancelActivity();
-				if (self.TraitOrDefault<AttackPlane>() != null) // Let attack planes approach me first, before landing.
-					self.QueueActivity(new Fly(self, tgt, WDist.Zero, info.LandingDistance));
-				self.QueueActivity(new EnterSpawner(self, Master, EnterBehaviour.Exit));
-			}
-		}
-
-		public virtual void OnBecomingIdle(Actor self)
-		{
-			// Return when nothing to attack.
-			// Don't let myself to circle around the player's construction yard.
-			EnterSpawner(self);
-		}
-
-		class SpawnedReturnOrderTargeter : UnitOrderTargeter
-		{
-			SpawnedInfo info;
-
-			public SpawnedReturnOrderTargeter(SpawnedInfo info)
-				: base("SpawnedReturn", 6, info.EnterCursor, false, true)
-			{
-				this.info = info;
-			}
-
-			public override bool CanTargetActor(Actor self, Actor target, TargetModifiers modifiers, ref string cursor)
-			{
-				if (!target.Info.HasTraitInfo<SpawnerInfo>())
-					return false;
-
-				if (self.Owner != target.Owner)
-					// can only enter player owned one.
-					return false;
-
-				var spawned = self.Trait<Spawned>();
-
-				if (target != spawned.Master)
-					return false;
-
-				return true;
-			}
-
-			public override bool CanTargetFrozenActor(Actor self, FrozenActor target, TargetModifiers modifiers, ref string cursor)
-			{
-				// You can't enter frozen actor.
-				return false;
 			}
 		}
 	}
