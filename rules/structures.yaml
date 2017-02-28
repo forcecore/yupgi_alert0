@@ -2055,3 +2055,4 @@ MINIHIVE:
 		RearmTicks: 5 # even without ammo limit, this applies.
 		InstaRepair: true
 		SlaveIsGroundUnit: true
+	-Sellable: # bio

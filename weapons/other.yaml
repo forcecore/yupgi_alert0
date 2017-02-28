@@ -484,3 +484,4 @@ MiniHiveSpawnTargeter:
 	Warhead@1Dam: SpreadDamage
 		Spread: 1
 		Damage: 0
+		InvalidTargets: Structure, Wall
