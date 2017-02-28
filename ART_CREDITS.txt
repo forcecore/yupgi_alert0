@@ -44,3 +44,7 @@ Hyper ant icon:
 Super ant icon:
     https://commons.wikimedia.org/wiki/File:Carpenter_Ant_(Camponotus_ligniperdus)_(13563515215).jpg
     Adapted for icon.
+
+Buzzer hive icon:
+    https://commons.wikimedia.org/wiki/File:Formica_lugubris.jpg
+    Adapted for icon

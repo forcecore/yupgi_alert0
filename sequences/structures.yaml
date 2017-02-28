@@ -758,6 +758,6 @@ minihive:
 	dead:
 		Start: 2
 		Tick: 800
-	make: pboxmake
+	make: minihivemake
 		Length: *
-	icon: pboxicon
+	icon: minihiveicon
