@@ -141,6 +141,8 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 				{
 					if (target.Actor == null)
 						atb.AttackTarget(target, true, true, true); // force fire on the ground.
+					else if (target.Actor.Owner.Stances[self.Owner] == Stance.Ally)
+						atb.AttackTarget(target, true, true, true); // force fire on ally.
 					else
 						// Well, target deprives me of force fire information.
 						// This is a glitch if force fire weapon and normal fire are different, as in
