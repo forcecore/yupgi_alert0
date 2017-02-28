@@ -465,7 +465,7 @@ MARV:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 10
-		Prerequisites: proc, atek, ~anyweap, ~techlevel.high
+		Prerequisites: proc, atek, ~gaweap, ~techlevel.high
 	Tooltip:
 		Name: Chrono Miner
 		GenericName: Harvester
