@@ -6,7 +6,7 @@ mkdir tmp
 
 echo "Copying mod files"
 git clone . tmp/yupgi_alert
-rm -rf tmp/yupgi_alert/{.git,assets,OpenRA.Mods.yupgi_alert}
+rm -rf tmp/yupgi_alert/{.git,assets,OpenRA.Mods.yupgi_alert,.gitattributes}
 rm -f tmp/yupgi_alert/{.gitignore,release.sh}
 
 # copy the DLL file and the license.
