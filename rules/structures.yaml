@@ -1047,6 +1047,8 @@ ANTHILL:
 	WithBuildingExplosion:
 		Sequences: building, building_napalm, large_explosion, self_destruct
 	ProvidesPrerequisite@buildingname:
+	MustBeDestroyed:
+		RequiredForShortGame: false
 
 HPAD:
 	Inherits: ^Building
