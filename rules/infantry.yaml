@@ -928,5 +928,7 @@ DOGGIE:
 		Damage: -2
 		DamageInterval: 16
 		Terrain: Tiberium
+	WithDeathAnimation:
+		DeathSequencePalette: player-cc2
 	-DamagedByRadioactivity:
 	-TakeCover: # no prone
