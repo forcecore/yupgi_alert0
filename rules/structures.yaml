@@ -62,10 +62,10 @@ MSLO:
 		Sequence: tag-primary
 		ReferencePoint: Top
 		ZOffset: 256
-		UpgradeTypes: primary
-		UpgradeMinEnabledLevel: 1
+		RequiresCondition: primary
 	ProvidesPrerequisite@buildingname:
 	PrimaryBuilding:
+		PrimaryCondition: primary
 	ProductionBar:
 	RallyPoint:
 	Exit@1:
@@ -1998,8 +1998,7 @@ QNEST:
 		Sequence: tag-primary
 		ReferencePoint: Top
 		ZOffset: 256
-		UpgradeTypes: primary
-		UpgradeMinEnabledLevel: 1
+		RequiresCondition: primary
 	Refinery:
 		DockAngle: 64
 		DockOffset: 1,0 # now a bib.
