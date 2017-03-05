@@ -5,11 +5,11 @@ SS:
 		BuildAtProductionType: Submarine
 		BuildPaletteOrder: 30
 		Prerequisites: ~spen, ~techlevel.medium
+		Description: Submerged anti-ship unit\narmed with torpedoes.\nCan detect other submarines.\n  Strong vs Naval units\n  Weak vs Ground units, Aircraft\n  Special Ability: Submerge
 	Valued:
 		Cost: 950
 	Tooltip:
 		Name: Submarine
-		Description: Submerged anti-ship unit\narmed with torpedoes.\nCan detect other submarines.\n  Strong vs Naval units\n  Weak vs Ground units, Aircraft\n  Special Ability: Submerge
 	Health:
 		HP: 250
 	Armor:
@@ -19,22 +19,27 @@ SS:
 		Speed: 71
 	RevealsShroud:
 		Range: 6c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 5c0
 	Targetable:
 		TargetTypes: Ground, Water, Repair
-		UpgradeTypes: underwater
-		UpgradeMaxEnabledLevel: 0
+		RequiresCondition: !underwater
 	Targetable@UNDERWATER:
 		TargetTypes: Underwater, Repair
-		UpgradeTypes: underwater
-		UpgradeMinEnabledLevel: 1
+		RequiresCondition: underwater
 	Cloak:
 		CloakTypes: Underwater
 		InitialDelay: 0
 		CloakDelay: 50
 		CloakSound: subshow1.aud
 		UncloakSound: subshow1.aud
-		WhileCloakedUpgrades: underwater
+		CloakedCondition: underwater
 		Palette: submerged
+		RequiresCondition: !cloak-force-disabled
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
 	Armament:
 		Weapon: TorpTube
 		LocalOffset: 0,-171,0, 0,171,0
@@ -61,11 +66,11 @@ MSUB:
 		BuildAtProductionType: Submarine
 		BuildPaletteOrder: 60
 		Prerequisites: ~spen, stek, ~techlevel.high
+		Description: Submerged anti-ground siege unit\nwith anti-air capabilities.\nCan detect other submarines.\n  Strong vs Buildings, Ground units, Aircraft\n  Weak vs Naval units\n  Special Ability: Submerge
 	Valued:
 		Cost: 2000
 	Tooltip:
 		Name: Missile Submarine
-		Description: Submerged anti-ground siege unit\nwith anti-air capabilities.\nCan detect other submarines.\n  Strong vs Buildings, Ground units, Aircraft\n  Weak vs Naval units\n  Special Ability: Submerge
 	Health:
 		HP: 400
 	Armor:
@@ -75,22 +80,27 @@ MSUB:
 		Speed: 42
 	RevealsShroud:
 		Range: 6c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 5c0
 	Targetable:
 		TargetTypes: Ground, Water, Repair
-		UpgradeTypes: underwater
-		UpgradeMaxEnabledLevel: 0
+		RequiresCondition: !underwater
 	Targetable@UNDERWATER:
 		TargetTypes: Underwater, Repair
-		UpgradeTypes: underwater
-		UpgradeMinEnabledLevel: 1
+		RequiresCondition: underwater
 	Cloak:
 		CloakTypes: Underwater
 		InitialDelay: 0
 		CloakDelay: 100
 		CloakSound: subshow1.aud
 		UncloakSound: subshow1.aud
-		WhileCloakedUpgrades: underwater
+		CloakedCondition: underwater
 		Palette: submerged
+		RequiresCondition: !cloak-force-disabled
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
 	Armament@PRIMARY:
 		Weapon: SubMissile
 		LocalOffset: 0,-171,0, 0,171,0
@@ -121,11 +131,11 @@ DD:
 		BuildAtProductionType: Boat
 		BuildPaletteOrder: 40
 		Prerequisites: ~syrd, dome, ~techlevel.medium
+		Description: Fast multi-role ship.\nCan detect submarines.\n  Strong vs Naval units, Light armor, Aircraft\n  Weak vs Infantry, Tanks
 	Valued:
 		Cost: 1200
 	Tooltip:
-		Name: Chrono Destoyer
-		Description: Fast multi-role ship.\nCan detect submarines.\n  Strong vs Naval units, Light armor, Aircraft\n  Weak vs Infantry, Tanks
+		Name: Chrono Destroyer
 	Health:
 		HP: 400
 	Armor:
@@ -135,6 +145,9 @@ DD:
 		Speed: 85
 	RevealsShroud:
 		Range: 6c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 5c0
 	Turreted:
 		TurnSpeed: 7
 		Offset: 341,0,128
@@ -169,11 +182,11 @@ CA:
 		BuildAtProductionType: Boat
 		BuildPaletteOrder: 50
 		Prerequisites: ~syrd, atek, ~techlevel.high
+		Description: Very slow long-range ship.\n  Strong vs Buildings, Ground units\n  Weak vs Naval units, Aircraft
 	Valued:
 		Cost: 2400
 	Tooltip:
 		Name: Cruiser
-		Description: Very slow long-range ship.\n  Strong vs Buildings, Ground units\n  Weak vs Naval units, Aircraft
 	Health:
 		HP: 800
 	Armor:
@@ -183,6 +196,9 @@ CA:
 		Speed: 42
 	RevealsShroud:
 		Range: 7c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 5c0
 	Turreted@PRIMARY:
 		Turret: primary
 		Offset: -864,0,128
@@ -222,24 +238,26 @@ LST:
 		Queue: Ship
 		BuildPaletteOrder: 10
 		Prerequisites: ~techlevel.low
+		Description: General-purpose naval transport.\nCan carry infantry and tanks.\n  Unarmed
 	Valued:
 		Cost: 700
 	Tooltip:
 		Name: Transport
-		Description: General-purpose naval transport.\nCan carry infantry and tanks.\n  Unarmed
 	Health:
 		HP: 350
 	Armor:
 		Type: Heavy
 	Mobile:
-		UpgradeTypes: notmobile
-		UpgradeMaxEnabledLevel: 0
 		TurnSpeed: 10
 		Speed: 113
 		TerrainSpeeds:
 			Beach: 70
+		RequiresCondition: !notmobile
 	RevealsShroud:
 		Range: 6c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 5c0
 	SelectionDecorations:
 		VisualBounds: 36,36
 	WithLandingCraftAnimation:
@@ -249,7 +267,7 @@ LST:
 		MaxWeight: 5
 		PipCount: 5
 		PassengerFacing: 0
-		LoadingUpgrades: notmobile
+		LoadingCondition: notmobile
 	-Chronoshiftable:
 
 PT:
@@ -259,11 +277,11 @@ PT:
 		BuildAtProductionType: Boat
 		BuildPaletteOrder: 20
 		Prerequisites: ~syrd, ~techlevel.medium
+		Description: Light scout & support ship.\nCan detect submarines.\n  Strong vs Naval units\n  Weak vs Ground units, Aircraft
 	Valued:
 		Cost: 500
 	Tooltip:
 		Name: Gunboat
-		Description: Light scout & support ship.\nCan detect submarines.\n  Strong vs Naval units\n  Weak vs Ground units, Aircraft
 	Health:
 		HP: 200
 	Armor:
@@ -273,6 +291,9 @@ PT:
 		Speed: 128
 	RevealsShroud:
 		Range: 7c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 5c0
 	Turreted:
 		TurnSpeed: 7
 		Offset: 512,0,0

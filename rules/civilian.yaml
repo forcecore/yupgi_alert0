@@ -56,6 +56,15 @@ C10:
 	Voiced:
 		VoiceSet: CivilianFemaleVoice
 
+TECN:
+	Inherits@1: ^CivInfantry
+	Inherits@2: ^ArmedCivilian
+	AutoTarget:
+	Tooltip:
+		Name: Technician
+	RenderSprites:
+		Image: C1
+
 FCOM:
 	Inherits: ^TechBuilding
 	Building:
@@ -97,8 +106,6 @@ HOSP:
 	WithDeathAnimation:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
-	WithBuildingExplosion:
-		Delay: 1
 	ProvidesPrerequisite@buildingname:
 	GpsDot:
 		String: Hospital
@@ -321,8 +328,6 @@ MISS:
 	WithDeathAnimation:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
-	WithBuildingExplosion:
-		Delay: 1
 	ProvidesPrerequisite@buildingname:
 
 BIO:
@@ -340,8 +345,6 @@ BIO:
 	WithDeathAnimation:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
-	WithBuildingExplosion:
-		Delay: 1
 	ProvidesPrerequisite@buildingname:
 	GpsDot:
 		String: Biohazard
@@ -361,15 +364,16 @@ OILB:
 	ExternalCapturableBar:
 	EngineerRepairable:
 	CashTrickler:
-		Period: 375
+		Interval: 375
 		Amount: 100
-		CaptureAmount: 100
 	Tooltip:
 		Name: Oil Derrick
 	Explodes:
 		Weapon: BarrelExplode
 	GpsDot:
 		String: Oil
+	GivesCashOnCapture:
+		Amount: 100
 
 BR1:
 	Inherits: ^Bridge
@@ -513,7 +517,7 @@ BRIDGEHUT:
 	Selectable:
 		Bounds: 48,48
 		Priority: 2
-	BridgeHut:
+	LegacyBridgeHut:
 	Targetable:
 		TargetTypes: BridgeHut, C4
 
@@ -525,7 +529,7 @@ BRIDGEHUT.small:
 	Selectable:
 		Bounds: 24,24
 		Priority: 2
-	BridgeHut:
+	LegacyBridgeHut:
 	Targetable:
 		TargetTypes: BridgeHut, C4
 

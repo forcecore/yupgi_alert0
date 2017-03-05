@@ -5,11 +5,7 @@
 	PaletteFromFile@player:
 		Name: player
 		Filename: temperat.pal
-		ShadowIndex: 4
-	PlayerColorPalette:
-		BasePalette: player
-		RemapIndex: 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95
-	
+		ShadowIndex: 4	
 	# RA2 unittem palette
 	PaletteFromFile@unittem:
 		Name: unittem
@@ -116,6 +112,9 @@
 	ShroudPalette@fog:
 		Name: fog
 		Fog: true
+	PlayerColorPalette:
+		BasePalette: player
+		RemapIndex: 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95
 	PaletteFromPlayerPaletteWithAlpha@cloak:
 		BaseName: cloak
 		BasePalette: player

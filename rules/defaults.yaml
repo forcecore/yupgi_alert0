@@ -6,7 +6,7 @@
 	GivesExperience:
 		PlayerExperienceModifier: 1
 	ScriptTriggers:
-	UpgradeManager:
+	ConditionManager:
 	RenderDebugState:
 
 ^SpriteActor:
@@ -17,52 +17,119 @@
 
 ^GainsExperience:
 	GainsExperience:
-		Upgrades:
-			200: firepower, damage, speed, reload, inaccuracy, rank
-			400: firepower, damage, speed, reload, inaccuracy, rank
-			800: firepower, damage, speed, reload, inaccuracy, rank
-			1600: firepower, damage, speed, reload, inaccuracy, rank, eliteweapon, selfheal
-	DamageMultiplier@EXPERIENCE:
-		UpgradeTypes: damage
-		Modifier: 95, 90, 85, 75
-	FirepowerMultiplier@EXPERIENCE:
-		UpgradeTypes: firepower
-		Modifier: 105, 110, 120, 130
-	SpeedMultiplier@EXPERIENCE:
-		UpgradeTypes: speed
-		Modifier: 105, 110, 120, 140
-	ReloadDelayMultiplier@EXPERIENCE:
-		UpgradeTypes: reload
-		Modifier: 95, 90, 85, 75
-	InaccuracyMultiplier@EXPERIENCE:
-		UpgradeTypes: inaccuracy
-		Modifier: 90, 80, 70, 50
+		Conditions:
+			200: rank-veteran
+			400: rank-veteran
+			800: rank-veteran
+			1600: rank-veteran
+	GrantCondition@RANK-ELITE:
+		RequiresCondition: rank-veteran >= 4
+		Condition: rank-elite
+	DamageMultiplier@RANK-1:
+		RequiresCondition: rank-veteran == 1
+		Modifier: 95
+	DamageMultiplier@RANK-2:
+		RequiresCondition: rank-veteran == 2
+		Modifier: 90
+	DamageMultiplier@RANK-3:
+		RequiresCondition: rank-veteran == 3
+		Modifier: 85
+	DamageMultiplier@RANK-ELITE:
+		RequiresCondition: rank-elite
+		Modifier: 75
+	FirepowerMultiplier@RANK-1:
+		RequiresCondition: rank-veteran == 1
+		Modifier: 105
+	FirepowerMultiplier@RANK-2:
+		RequiresCondition: rank-veteran == 2
+		Modifier: 110
+	FirepowerMultiplier@RANK-3:
+		RequiresCondition: rank-veteran == 3
+		Modifier: 120
+	FirepowerMultiplier@RANK-ELITE:
+		RequiresCondition: rank-elite
+		Modifier: 130
+	SpeedMultiplier@RANK-1:
+		RequiresCondition: rank-veteran == 1
+		Modifier: 105
+	SpeedMultiplier@RANK-2:
+		RequiresCondition: rank-veteran == 2
+		Modifier: 110
+	SpeedMultiplier@RANK-3:
+		RequiresCondition: rank-veteran == 3
+		Modifier: 120
+	SpeedMultiplier@RANK-ELITE:
+		RequiresCondition: rank-elite
+		Modifier: 140
+	ReloadDelayMultiplier@RANK-1:
+		RequiresCondition: rank-veteran == 1
+		Modifier: 95
+	ReloadDelayMultiplier@RANK-2:
+		RequiresCondition: rank-veteran == 2
+		Modifier: 90
+	ReloadDelayMultiplier@RANK-3:
+		RequiresCondition: rank-veteran == 3
+		Modifier: 85
+	ReloadDelayMultiplier@RANK-ELITE:
+		RequiresCondition: rank-elite
+		Modifier: 75
+	InaccuracyMultiplier@RANK-1:
+		RequiresCondition: rank-veteran == 1
+		Modifier: 90
+	InaccuracyMultiplier@RANK-2:
+		RequiresCondition: rank-veteran == 2
+		Modifier: 80
+	InaccuracyMultiplier@RANK-3:
+		RequiresCondition: rank-veteran == 3
+		Modifier: 70
+	InaccuracyMultiplier@RANK-ELITE:
+		RequiresCondition: rank-elite
+		Modifier: 50
 	SelfHealing@ELITE:
 		Step: 2
 		Delay: 100
 		HealIfBelow: 100
 		DamageCooldown: 125
-		UpgradeTypes: selfheal
-		UpgradeMinEnabledLevel: 1
-	WithRankDecoration:
+		RequiresCondition: rank-elite
+	WithDecoration@RANK-1:
 		Image: rank
-		Sequence: rank
+		Sequence: rank-veteran-1
 		Palette: effect
 		ReferencePoint: Bottom, Right
-		UpgradeTypes: rank
+		RequiresCondition: rank-veteran == 1
 		ZOffset: 256
-		UpgradeMinEnabledLevel: 1
-		UpgradeMaxAcceptedLevel: 4
+	WithDecoration@RANK-2:
+		Image: rank
+		Sequence: rank-veteran-2
+		Palette: effect
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank-veteran == 2
+		ZOffset: 256
+	WithDecoration@RANK-3:
+		Image: rank
+		Sequence: rank-veteran-3
+		Palette: effect
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank-veteran == 3
+		ZOffset: 256
+	WithDecoration@RANK-ELITE:
+		Image: rank
+		Sequence: rank-elite
+		Palette: effect
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank-elite
+		ZOffset: 256
 
 ^IronCurtainable:
-	UpgradeOverlay@IRONCURTAIN:
-		UpgradeTypes: invulnerability
-		UpgradeMinEnabledLevel: 1
+	WithColoredOverlay@IRONCURTAIN:
+		RequiresCondition: invulnerability
 	DamageMultiplier@IRONCURTAIN:
-		UpgradeTypes: invulnerability
+		RequiresCondition: invulnerability
 		Modifier: 0
-	TimedUpgradeBar:
-		Upgrade: invulnerability
+	TimedConditionBar:
+		Condition: invulnerability
+	ExternalCondition@INVULNERABILITY:
+		Condition: invulnerability
 
 ^Vehicle:
 	Inherits@1: ^ExistsInWorld
@@ -90,8 +157,7 @@
 		Bounds: 24, 24
 	Targetable:
 		TargetTypes: Ground, Repair, Vehicle
-		UpgradeTypes: parachute
-		UpgradeMaxEnabledLevel: 0
+		RequiresCondition: !parachute
 	Repairable:
 	Chronoshiftable:
 	Passenger:
@@ -131,19 +197,19 @@
 		GroundCorpsePalette:
 		WaterCorpseSequence:
 		WaterCorpsePalette:
+		ParachutingCondition: parachute
 	Explodes:
 		Weapon: UnitExplodeSmall
 		EmptyWeapon: UnitExplodeSmall
 	WithFacingSpriteBody:
 	WithParachute:
-		UpgradeTypes: parachute
-		UpgradeMinEnabledLevel: 1
 		ShadowImage: parach-shadow
 		ShadowSequence: idle
 		Image: parach
 		Sequence: idle
 		OpeningSequence: open
 		Offset: 0,0,200
+		RequiresCondition: parachute
 	BodyOrientation:
 		UseClassicFacingFudge: True
 	DamagedByTerrain@tib:
@@ -211,8 +277,7 @@
 		Bounds: 12,18,0,-8
 	Targetable:
 		TargetTypes: Ground, Infantry, Disguise
-		UpgradeTypes: parachute
-		UpgradeMaxEnabledLevel: 0
+		RequiresCondition: !parachute
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	WithInfantryBody:
@@ -244,10 +309,9 @@
 		Delay: 100
 		HealIfBelow: 100
 		DamageCooldown: 125
-		UpgradeTypes: hospitalheal
-		UpgradeMinEnabledLevel: 1
-	GlobalUpgradable:
-		Upgrades: hospitalheal
+		RequiresCondition: hospitalheal
+	GrantConditionOnPrerequisite:
+		Condition: hospitalheal
 		Prerequisites: hosp
 	DeathSounds@NORMAL:
 		DeathTypes: DefaultDeath, BulletDeath, SmallExplosionDeath, ExplosionDeath
@@ -263,19 +327,19 @@
 		GroundImpactSound: squishy2.aud
 		WaterImpactSound: splash9.aud
 		WaterCorpseSequence: small_splash
+		ParachutingCondition: parachute
 	Cloneable:
 		Types: Infantry
 	Voiced:
 		VoiceSet: GenericVoice
 	WithParachute:
-		UpgradeTypes: parachute
-		UpgradeMinEnabledLevel: 1
 		ShadowImage: parach-shadow
 		ShadowSequence: idle
 		Image: parach
 		Sequence: idle
 		OpeningSequence: open
 		Offset: 0,0,427
+		RequiresCondition: parachute
 	DamagedByTerrain@tib:
 		Terrain: Tiberium
 		Damage: 2
@@ -329,7 +393,7 @@
 		Weapon: Pistol
 	AttackFrontal:
 	WithInfantryBody:
-		AttackSequence: shoot
+		DefaultAttackSequence: shoot
 
 ^Ship:
 	Inherits@1: ^ExistsInWorld
@@ -375,9 +439,8 @@
 		VoiceSet: VehicleVoice
 	WithFacingSpriteBody:
 
-^Plane:
+^NeutralPlane:
 	Inherits@1: ^ExistsInWorld
-	Inherits@2: ^GainsExperience
 	Inherits@3: ^IronCurtainable
 	Inherits@4: ^SpriteActor
 	Huntable:
@@ -392,18 +455,15 @@
 	Aircraft:
 		RepairBuildings: afld, fix
 		RearmBuildings: afld
-		AirborneUpgrades: airborne
-		CruisingUpgrades: cruising
+		AirborneCondition: airborne
 	Targetable@GROUND:
 		TargetTypes: Ground, Repair, Vehicle
-		UpgradeTypes: airborne
-		UpgradeMaxEnabledLevel: 0
+		RequiresCondition: !airborne
 	Targetable@AIRBORNE:
 		TargetTypes: Air
-		UpgradeTypes: airborne
-		UpgradeMinEnabledLevel: 1
+		RequiresCondition: airborne
 	HiddenUnderFog:
-		Type: CenterPosition
+		Type: GroundPosition
 	AttackMove:
 	Guard:
 	Guardable:
@@ -430,6 +490,10 @@
 	Voiced:
 		VoiceSet: GenericVoice
 
+^Plane:
+	Inherits: ^NeutralPlane
+	Inherits@2: ^GainsExperience
+
 ^Helicopter:
 	Inherits: ^Plane
 	Tooltip:
@@ -438,11 +502,11 @@
 		RearmBuildings: hpad
 		RepairBuildings: hpad, fix
 		CanHover: True
+		CruisingCondition: cruising
 	GpsDot:
 		String: Helicopter
 	Hovers@CRUISING:
-		UpgradeTypes: cruising
-		UpgradeMinEnabledLevel: 1
+		RequiresCondition: cruising
 	BodyOrientation:
 		UseClassicFacingFudge: True
 
@@ -465,8 +529,10 @@
 		DamagedSounds: kaboom1.aud
 		DestroyedSounds: kaboom22.aud
 	WithSpriteBody:
-	WithBuildingExplosion:
-		Sequences: building, building_napalm, large_explosion, self_destruct, large_napalm
+	Explodes:
+		Type: Footprint
+		Weapon: BuildingExplode
+		EmptyWeapon: BuildingExplode
 	CaptureNotification:
 	ShakeOnDeath:
 	ProximityCaptor:
@@ -493,7 +559,7 @@
 	ExternalCapturable:
 	ExternalCapturableBar:
 	EmitInfantryOnSell:
-		ActorTypes: e1,e1,e1,e1,e1,e1,e1,e1,e1,e1,e1,e1,e1,e1,e1,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,e6,e6,e6,e6,e6
+		ActorTypes: e1,e1,e1,tecn,tecn
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	GpsDot:
@@ -504,7 +570,7 @@
 ^ScienceBuilding:
 	Inherits: ^Building
 	EmitInfantryOnSell:
-		ActorTypes: e1,e1,e1,e1,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,e6,e6,e6,e6,e6,chan,chan,chan,chan
+		ActorTypes: e1,e1,e1,e1,tecn,tecn,tecn,tecn,tecn,tecn,tecn,tecn,tecn,tecn,e6,e6,e6,e6,e6,chan,chan,chan,chan
 
 ^Defense:
 	Inherits: ^Building
@@ -517,6 +583,9 @@
 	-AcceptsSupplies:
 	DrawLineToTarget:
 	RenderRangeCircle:
+	Explodes:
+		Weapon: SmallBuildingExplode
+		EmptyWeapon: SmallBuildingExplode
 
 ^Wall:
 	Inherits@1: ^ExistsInWorld
@@ -569,7 +638,6 @@
 	WithGateSpriteBody:
 	Tooltip:
 		Name: Gate
-		Description: Automated barrier that opens for allied units.
 	Gate:
 		Adjacent: 4
 		BlocksProjectilesHeight: 0
@@ -644,6 +712,17 @@
 		Palette: terrain
 	EditorTilesetFilter:
 		ExcludeTilesets: INTERIOR
+	SpawnActorOnDeath@1:
+		Actor: c1
+		Probability: 40
+	SpawnActorOnDeath@2:
+		Actor: c4
+		Probability: 20
+	SpawnActorOnDeath@3:
+		Actor: c3
+		Probability: 15
+	Explodes:
+		Weapon: CivBuildingExplosion
 
 ^CivField:
 	Inherits: ^CivBuilding
@@ -752,8 +831,6 @@
 	Tooltip:
 		GenericName: Destroyed Plane
 	Aircraft:
-		AirborneUpgrades: airborne
-		CruisingUpgrades: cruising
 	FallsToEarth:
 		Spins: False
 		Moves: True
@@ -767,8 +844,6 @@
 	Tooltip:
 		GenericName: Destroyed Helicopter
 	Aircraft:
-		AirborneUpgrades: airborne
-		CruisingUpgrades: cruising
 		CanHover: True
 	FallsToEarth:
 	BodyOrientation:
@@ -840,26 +915,25 @@
 	Parachutable:
 		FallRate: 26
 		KilledOnImpassableTerrain: false
+		ParachutingCondition: parachute
 	Passenger:
 	WithParachute:
-		UpgradeTypes: parachute
-		UpgradeMinEnabledLevel: 1
 		Image: parach
 		Sequence: idle
 		OpeningSequence: open
 		ShadowImage: parach-shadow
 		ShadowSequence: idle
-	UpgradeManager:
+		RequiresCondition: parachute
+	ConditionManager:
 
 ^Mine:
 	Inherits: ^SpriteActor
 	WithSpriteBody:
-	HiddenUnderShroud:
-		Type: CenterPosition
+	HiddenUnderFog:
 	Mine:
 		CrushClasses: mine
 		DetonateClasses: mine
-		AvoidFriendly: false # no friendly damage yay
+		AvoidFriendly: false
 	Health:
 		HP: 100
 		NotifyAppliedDamage: false
@@ -870,6 +944,7 @@
 		UncloakSound:
 		Palette:
 		CloakTypes: Mine
+		InitialDelay: 0
 	Tooltip:
 		Name: Mine
 	Targetable:

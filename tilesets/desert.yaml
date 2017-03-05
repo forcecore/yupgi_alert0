@@ -38,12 +38,6 @@ Terrain:
 		AcceptsSmudgeType: Crater, Scorch
 		Color: 948060
 		RestrictPlayerColor: true
-	TerrainType@Tiberium:
-		Type: Tiberium
-		TargetTypes: Ground
-		AcceptsSmudgeType: Crater, Scorch
-		Color: A1E21C
-		RestrictPlayerColor: true
 	TerrainType@River:
 		Type: River
 		TargetTypes: Ground

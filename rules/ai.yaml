@@ -75,7 +75,7 @@ Player:
 			4tnk: 10%
 			ttnk: 10%
 			stnk: 5%
-			ant: 50%
+			dant: 50%
 			want: 25% # Need a lot of these, need ed for super ants.
 			doggie: 5%
 			fant: 5%
@@ -224,7 +224,7 @@ Player:
 			dd: 10%
 			ca: 10%
 			pt: 10%
-			ant: 50%
+			dant: 50%
 			want: 25% # Need a lot of these, need ed for super ants.
 			doggie: 5%
 			fant: 5%
@@ -233,7 +233,7 @@ Player:
 		UnitLimits:
 			dog: 4
 			harv: 8
-			ant: 40
+			dant: 40
 		SquadSize: 40
 		SupportPowerDecision@spyplane:
 			OrderName: SovietSpyPlane
@@ -373,7 +373,7 @@ Player:
 			dd: 10%
 			ca: 10%
 			pt: 10%
-			ant: 50%
+			dant: 50%
 			want: 25% # Need a lot of these, need ed for super ants.
 			doggie: 5%
 			fant: 5%
@@ -382,7 +382,7 @@ Player:
 		UnitLimits:
 			dog: 4
 			harv: 8
-			ant: 40
+			dant: 40
 		SquadSize: 10
 		SupportPowerDecision@spyplane:
 			OrderName: SovietSpyPlane
@@ -497,7 +497,7 @@ Player:
 			dd: 30%
 			ca: 20%
 			pt: 10%
-			ant: 50%
+			dant: 50%
 			want: 25% # Need a lot of these, need ed for super ants.
 			doggie: 5%
 			fant: 5%
@@ -505,7 +505,7 @@ Player:
 			hant: 5%
 		UnitLimits:
 			harv: 8
-			ant: 40
+			dant: 40
 		SquadSize: 1
 		SupportPowerDecision@spyplane:
 			OrderName: SovietSpyPlane

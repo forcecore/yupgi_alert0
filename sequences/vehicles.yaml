@@ -18,16 +18,6 @@ truk:
 		UseClassicFacingFudge: True
 	icon: trukicon
 
-marv:
-	icon: marvicon
-	idle: invis
-		Facings: 1
-	dock: invis
-		Facings: 1
-	dock-loop: warpout
-		Facings: 1
-		Length: *
-
 harv:
 	idle: harvempty
 		Facings: 32
@@ -65,21 +55,6 @@ harv:
 		Length: 7
 	icon: harvicon
 		Start: 0
-	shoot: harvempty
-		Start: 32
-		Length: 8
-		Facings: 8
-
-wangchang:
-	idle: harvempty
-		Facings: 32
-		UseClassicFacingFudge: True
-	icon: wangchangicon
-		Start: 0
-	shoot: harvempty
-		Start: 32
-		Length: 8
-		Facings: 8
 
 hhusk:
 	idle:
@@ -180,58 +155,6 @@ hhusk2:
 		UseClassicFacingFudge: True
 		ZOffset: -512
 	turret: 4tnk
-		Start: 32
-		Facings: 32
-		UseClassicFacingFudge: True
-		ZOffset: -512
-
-5tnk:
-	idle:
-		Facings: 32
-		UseClassicFacingFudge: True
-	turret:
-		Start: 32
-		Facings: 32
-		UseClassicFacingFudge: True
-	muzzle: gunfire2
-		Length: 5
-	icon: 5tnkicon
-
-5tnk.destroyed:
-	idle: 5tnk
-		Facings: 32
-		UseClassicFacingFudge: True
-		ZOffset: -512
-	turret: 5tnk
-		Start: 32
-		Facings: 32
-		UseClassicFacingFudge: True
-		ZOffset: -512
-
-msam:
-	idle:
-		Facings: 32
-		UseClassicFacingFudge: True
-	turret:
-		Start: 32
-		Facings: 32
-		UseClassicFacingFudge: True
-	empty-aim:
-		Start: 64
-		Facings: 32
-		UseClassicFacingFudge: True
-	aim:
-		Start: 64
-		Facings: 32
-		UseClassicFacingFudge: True
-	icon: msamicon
-
-msam.destroyed:
-	idle: msam
-		Facings: 32
-		UseClassicFacingFudge: True
-		ZOffset: -512
-	turret: msam
 		Start: 32
 		Facings: 32
 		UseClassicFacingFudge: True
@@ -515,3 +438,76 @@ hant:
 		Start: 0
 		Length: 1
 	icon: hanticon
+
+marv:
+	icon: marvicon
+	idle: invis
+		Facings: 1
+	dock: invis
+		Facings: 1
+	dock-loop: warpout
+		Facings: 1
+		Length: *
+
+wangchang:
+	idle: harvempty
+		Facings: 32
+		UseClassicFacingFudge: True
+	icon: wangchangicon
+		Start: 0
+	shoot: harvempty
+		Start: 32
+		Length: 8
+		Facings: 8
+
+5tnk:
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret:
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	muzzle: gunfire2
+		Length: 5
+	icon: 5tnkicon
+
+5tnk.destroyed:
+	idle: 5tnk
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+	turret: 5tnk
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+
+msam:
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret:
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	empty-aim:
+		Start: 64
+		Facings: 32
+		UseClassicFacingFudge: True
+	aim:
+		Start: 64
+		Facings: 32
+		UseClassicFacingFudge: True
+	icon: msamicon
+
+msam.destroyed:
+	idle: msam
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+	turret: msam
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512

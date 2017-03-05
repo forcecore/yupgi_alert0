@@ -79,36 +79,39 @@
 		Description: A random Soviet country.
 		Selectable: False
 	ResourceType@ore:
+		Type: Ore
+		Name: Valuable Minerals
+		PipColor: Yellow
 		ResourceType: 1
+		TerrainType: Ore
 		Palette: player
-		Variants: gold01,gold02,gold03,gold04
+		Sequences: gold01,gold02,gold03,gold04
 		MaxDensity: 12
 		ValuePerUnit: 25
-		Name: Ore
-		PipColor: Yellow
 		AllowedTerrainTypes: Clear,Road
 		AllowUnderActors: true
-		TerrainType: Ore
 	ResourceType@gem:
+		Type: Gems
+		Name: Valuable Minerals
+		PipColor: Red
 		ResourceType: 2
+		TerrainType: Gems
 		Palette: player
-		Variants: gem01,gem02,gem03,gem04
+		Sequences: gem01,gem02,gem03,gem04
 		MaxDensity: 3
 		ValuePerUnit: 50
-		Name: Gems
-		PipColor: Red
 		AllowedTerrainTypes: Clear,Road
 		AllowUnderActors: true
-		TerrainType: Gems
 	ResourceType@tib:
-		ResourceType: 3
-		Palette: player
-		TerrainType: Tiberium
-		Variants: ti1,ti2,ti3,ti4,ti5,ti6,ti7,ti8,ti9,ti10,ti11,ti12
-		MaxDensity: 12
-		ValuePerUnit: 35
+		Type: Tiberium
 		Name: Tiberium
 		PipColor: Green
+		ResourceType: 3
+		TerrainType: Tiberium
+		Palette: player
+		Sequences: ti1,ti2,ti3,ti4,ti5,ti6,ti7,ti8,ti9,ti10,ti11,ti12
+		MaxDensity: 12
+		ValuePerUnit: 35
 		AllowedTerrainTypes: Clear,Road
 		AllowUnderActors: true
 
@@ -122,7 +125,7 @@ World:
 	BuildingInfluence:
 	ProductionQueueFromSelection:
 		ProductionPaletteWidget: PRODUCTION_PALETTE
-	BridgeLayer:
+	LegacyBridgeLayer:
 		Bridges: bridge1, bridge2, br1, br2, br3, sbridge1, sbridge2, sbridge3, sbridge4
 	CustomTerrainDebugOverlay:
 	CrateSpawner:

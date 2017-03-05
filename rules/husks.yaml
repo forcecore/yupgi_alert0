@@ -62,85 +62,12 @@ HARV.EmptyHusk:
 	RenderSprites:
 		Image: hhusk2
 
-MARV.EmptyHusk:
-	Inherits: ^Husk
-	Tooltip:
-		Name: Husk (Chrono Miner)
-	TransformOnCapture:
-		IntoActor: marv
-	RenderVoxels:
-		Image: marv
-		Scale: 8
-		PlayerPalette: player-ra2
-	WithVoxelBody:
-	RenderSprites:
-	BodyOrientation:
-		QuantizedFacings: 0
-		CameraPitch: 90
-		UseClassicPerspectiveFudge: false
-	-QuantizeFacingsFromSequence:
-	-WithFacingSpriteBody:
-
-WANGCHANG.Husk:
-	Inherits: ^Husk
-	Tooltip:
-		Name: Husk (Dismantler)
-	TransformOnCapture:
-		IntoActor: wangchang
-	RenderSprites:
-		Image: hhusk2
-		Scale: 1.25
-
-5TNK.Husk:
-	Inherits: ^Husk
-	Tooltip:
-		Name: Husk (Super Tank)
-	ThrowsParticle@turret:
-		Anim: turret
-	Health:
-		HP: 2000
-	TransformOnCapture:
-		IntoActor: 5tnk
-	RenderSprites:
-		Image: 5TNK
-		PlayerPalette: player-cc1
-
-MSAM.Husk:
-	Inherits: ^Husk
-	Tooltip:
-		Name: Husk (MLRS)
-		Icon: msamicon
-	ThrowsParticle@turret:
-		Anim: turret
-	TransformOnCapture:
-		IntoActor: msam
-	RenderSprites:
-		Image: msam.destroyed
-
 MCV.Husk:
 	Inherits: ^Husk
 	Tooltip:
 		Name: Husk (Mobile Construction Vehicle)
 	TransformOnCapture:
 		IntoActor: mcv
-	RenderSprites:
-		Image: mcvhusk
-
-NAMCV.Husk:
-	Inherits: ^Husk
-	Tooltip:
-		Name: Husk (Mobile Construction Vehicle)
-	TransformOnCapture:
-		IntoActor: namcv
-	RenderSprites:
-		Image: mcvhusk
-
-GAMCV.Husk:
-	Inherits: ^Husk
-	Tooltip:
-		Name: Husk (Mobile Construction Vehicle)
-	TransformOnCapture:
-		IntoActor: gamcv
 	RenderSprites:
 		Image: mcvhusk
 
@@ -170,8 +97,8 @@ TRAN.Husk:
 		Offset: 597,0,213
 		Sequence: rotor2
 	RevealsShroud:
-		Range: 12c0
-		Type: CenterPosition
+		Range: 10c0
+		Type: GroundPosition
 	RenderSprites:
 		Image: tran
 
@@ -224,61 +151,9 @@ MIG.Husk:
 		MinDamage: Undamaged
 	RevealsShroud:
 		Range: 12c0
-		Type: CenterPosition
+		Type: GroundPosition
 	RenderSprites:
 		Image: mig
-
-MIG2.Husk:
-	Inherits: ^PlaneHusk
-	Tooltip:
-		Name: Mig Attack Plane
-	Aircraft:
-		TurnSpeed: 5
-		Speed: 186
-	SmokeTrailWhenDamaged:
-		Offset: -853,0,171
-		Interval: 2
-		MinDamage: Undamaged
-	RevealsShroud:
-		Range: 12c0
-		Type: CenterPosition
-	RenderSprites:
-		Image: mig
-		Scale: 0.5
-
-NMIG.Husk:
-	Inherits: ^PlaneHusk
-	Tooltip:
-		Name: Nuclear Mig Attack Plane
-	Contrail@1:
-		Offset: -598,-683,0
-	Contrail@2:
-		Offset: -598,683,0
-	Aircraft:
-		TurnSpeed: 5
-		Speed: 186
-	SmokeTrailWhenDamaged:
-		Offset: -853,0,171
-		Interval: 2
-		MinDamage: Undamaged
-	RevealsShroud:
-		Range: 12c0
-		Type: CenterPosition
-	-WithFacingSpriteBody:
-	-QuantizeFacingsFromSequence:
-	-AutoSelectionSize: # only applies to sprite actors
-	WithVoxelBody:
-	BodyOrientation:
-		QuantizedFacings: 0
-		CameraPitch: 90
-		UseClassicPerspectiveFudge: false
-	-WithShadow: # Disable 2D sprite shadow logic
-	RenderVoxels:
-		Scale: 0.7
-		Image: nmig
-		PlayerPalette: player-ra2
-	RenderSprites:
-		Image: nmig
 
 YAK.Husk:
 	Inherits: ^PlaneHusk
@@ -295,7 +170,7 @@ YAK.Husk:
 		MinDamage: Undamaged
 	RevealsShroud:
 		Range: 10c0
-		Type: CenterPosition
+		Type: GroundPosition
 	RenderSprites:
 		Image: yak
 
@@ -314,38 +189,9 @@ HELI.Husk:
 		MinDamage: Undamaged
 	RevealsShroud:
 		Range: 12c0
-		Type: CenterPosition
+		Type: GroundPosition
 	RenderSprites:
 		Image: heli
-
-ZEP.Husk:
-	Inherits: ^HelicopterHusk
-	Tooltip:
-		Name: Kirov Carrier
-	Aircraft:
-		TurnSpeed: 4
-		Speed: 149
-	RevealsShroud:
-		Range: 15c0
-		Type: CenterPosition
-	-WithFacingSpriteBody:
-	-AutoSelectionSize: # only applies to sprite actors
-	WithVoxelBody:
-	BodyOrientation:
-		QuantizedFacings: 0
-		CameraPitch: 90
-		UseClassicPerspectiveFudge: false
-	-WithShadow: # Disable 2D sprite shadow logic
-	RenderVoxels:
-		Scale: 8
-		Image: zep
-		PlayerPalette: player-ra2
-	RenderSprites:
-		Image: zep
-	-FallsToEarth:
-	BlimpFallsToEarth:
-		SpinInitial: 10
-		SpinAcceleration: 0
 
 HIND.Husk:
 	Inherits: ^HelicopterHusk
@@ -361,7 +207,7 @@ HIND.Husk:
 		MinDamage: Undamaged
 	RevealsShroud:
 		Range: 10c0
-		Type: CenterPosition
+		Type: GroundPosition
 	RenderSprites:
 		Image: hind
 
@@ -553,3 +399,157 @@ TC05.Husk:
 		Dimensions: 4,3
 	EditorTilesetFilter:
 		ExcludeTilesets: DESERT, INTERIOR
+
+MARV.EmptyHusk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Chrono Miner)
+	TransformOnCapture:
+		IntoActor: marv
+	RenderVoxels:
+		Image: marv
+		Scale: 8
+		PlayerPalette: player-ra2
+	WithVoxelBody:
+	RenderSprites:
+	BodyOrientation:
+		QuantizedFacings: 0
+		CameraPitch: 90
+		UseClassicPerspectiveFudge: false
+	-QuantizeFacingsFromSequence:
+	-WithFacingSpriteBody:
+
+WANGCHANG.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Dismantler)
+	TransformOnCapture:
+		IntoActor: wangchang
+	RenderSprites:
+		Image: hhusk2
+		Scale: 1.25
+
+5TNK.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Super Tank)
+	ThrowsParticle@turret:
+		Anim: turret
+	Health:
+		HP: 2000
+	TransformOnCapture:
+		IntoActor: 5tnk
+	RenderSprites:
+		Image: 5TNK
+		PlayerPalette: player-cc1
+
+MSAM.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (MLRS)
+		Icon: msamicon
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: msam
+	RenderSprites:
+		Image: msam.destroyed
+
+ZEP.Husk:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+		Name: Kirov Carrier
+	Aircraft:
+		TurnSpeed: 4
+		Speed: 149
+	RevealsShroud:
+		Range: 15c0
+		Type: GroundPosition
+	-WithFacingSpriteBody:
+	-AutoSelectionSize: # only applies to sprite actors
+	WithVoxelBody:
+	BodyOrientation:
+		QuantizedFacings: 0
+		CameraPitch: 90
+		UseClassicPerspectiveFudge: false
+	-WithShadow: # Disable 2D sprite shadow logic
+	RenderVoxels:
+		Scale: 8
+		Image: zep
+		PlayerPalette: player-ra2
+	RenderSprites:
+		Image: zep
+	-FallsToEarth:
+	BlimpFallsToEarth:
+		SpinInitial: 10
+		SpinAcceleration: 0
+
+MIG2.Husk:
+	Inherits: ^PlaneHusk
+	Tooltip:
+		Name: Mig Attack Plane
+	Aircraft:
+		TurnSpeed: 5
+		Speed: 186
+	SmokeTrailWhenDamaged:
+		Offset: -853,0,171
+		Interval: 2
+		MinDamage: Undamaged
+	RevealsShroud:
+		Range: 12c0
+		Type: GroundPosition
+	RenderSprites:
+		Image: mig
+		Scale: 0.5
+
+NMIG.Husk:
+	Inherits: ^PlaneHusk
+	Tooltip:
+		Name: Nuclear Mig Attack Plane
+	Contrail@1:
+		Offset: -598,-683,0
+	Contrail@2:
+		Offset: -598,683,0
+	Aircraft:
+		TurnSpeed: 5
+		Speed: 186
+	SmokeTrailWhenDamaged:
+		Offset: -853,0,171
+		Interval: 2
+		MinDamage: Undamaged
+	RevealsShroud:
+		Range: 12c0
+		Type: GroundPosition
+	-WithFacingSpriteBody:
+	-QuantizeFacingsFromSequence:
+	-AutoSelectionSize: # only applies to sprite actors
+	WithVoxelBody:
+	BodyOrientation:
+		QuantizedFacings: 0
+		CameraPitch: 90
+		UseClassicPerspectiveFudge: false
+	-WithShadow: # Disable 2D sprite shadow logic
+	RenderVoxels:
+		Scale: 0.7
+		Image: nmig
+		PlayerPalette: player-ra2
+	RenderSprites:
+		Image: nmig
+
+NAMCV.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Mobile Construction Vehicle)
+	TransformOnCapture:
+		IntoActor: namcv
+	RenderSprites:
+		Image: mcvhusk
+
+GAMCV.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Mobile Construction Vehicle)
+	TransformOnCapture:
+		IntoActor: gamcv
+	RenderSprites:
+		Image: mcvhusk

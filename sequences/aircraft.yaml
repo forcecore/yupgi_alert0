@@ -3,9 +3,6 @@ mig:
 		Facings: 16
 	icon: migicon
 
-nmig:
-	icon: nmigicon
-
 yak:
 	idle:
 		Facings: 16
@@ -73,6 +70,9 @@ u2:
 badr:
 	idle:
 		Facings: 16
+
+nmig:
+	icon: nmigicon
 
 zep:
 	icon: zepicon
