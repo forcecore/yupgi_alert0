@@ -1,52 +1,54 @@
+# vim: noet sw=4 ts=4:
+
 Player:
 	AlwaysVisible:
 	TechTree:
-    ClassicProductionQueue@Building:
-        Type: Building
-        LowPowerSlowdown: 3
-        QueuedAudio: Building
-        ReadyAudio: ConstructionComplete
-        SpeedUp: True
-    ClassicProductionQueue@Defense:
-        Type: Defense
-        LowPowerSlowdown: 3
-        QueuedAudio: Building
-        ReadyAudio: ConstructionComplete
-        SpeedUp: True
-    ClassicProductionQueue@Vehicle:
-        Type: Vehicle
-        LowPowerSlowdown: 3
-        QueuedAudio: Building
-        SpeedUp: True
-        Factions: allies, soviet
-    ClassicProductionQueue@AntVehicle:
-        Type: Vehicle
-        LowPowerSlowdown: 3
-        QueuedAudio: Building
-        SpeedUp: True
-        Factions: creepies
-        BuildTimeSpeedReduction: 100, 50, 33, 25
-    ClassicProductionQueue@Infantry:
-        Type: Infantry
-        LowPowerSlowdown: 3
-        SpeedUp: True
-        Factions: allies, soviet
-    ClassicProductionQueue@AntInfantry:
-        Type: Infantry
-        LowPowerSlowdown: 3
-        SpeedUp: True
-        Factions: creepies
-        BuildTimeSpeedReduction: 100, 50, 33, 25
-    ClassicProductionQueue@Ship:
-        Type: Ship
-        LowPowerSlowdown: 3
-        QueuedAudio: Building
-        SpeedUp: True
-    ClassicProductionQueue@Aircraft:
-        Type: Aircraft
-        LowPowerSlowdown: 3
-        QueuedAudio: Building
-        SpeedUp: True
+	ClassicProductionQueue@Building:
+		Type: Building
+		LowPowerSlowdown: 3
+		QueuedAudio: Building
+		ReadyAudio: ConstructionComplete
+		SpeedUp: True
+	ClassicProductionQueue@Defense:
+		Type: Defense
+		LowPowerSlowdown: 3
+		QueuedAudio: Building
+		ReadyAudio: ConstructionComplete
+		SpeedUp: True
+	ClassicProductionQueue@Vehicle:
+		Type: Vehicle
+		LowPowerSlowdown: 3
+		QueuedAudio: Building
+		SpeedUp: True
+		Factions: allies, soviet
+	ClassicProductionQueue@AntVehicle:
+		Type: Vehicle
+		LowPowerSlowdown: 3
+		QueuedAudio: Building
+		SpeedUp: True
+		Factions: creepies
+		BuildTimeSpeedReduction: 100, 50, 33, 25
+	ClassicProductionQueue@Infantry:
+		Type: Infantry
+		LowPowerSlowdown: 3
+		SpeedUp: True
+		Factions: allies, soviet
+	ClassicProductionQueue@AntInfantry:
+		Type: Infantry
+		LowPowerSlowdown: 3
+		SpeedUp: True
+		Factions: creepies
+		BuildTimeSpeedReduction: 100, 50, 33, 25
+	ClassicProductionQueue@Ship:
+		Type: Ship
+		LowPowerSlowdown: 3
+		QueuedAudio: Building
+		SpeedUp: True
+	ClassicProductionQueue@Aircraft:
+		Type: Aircraft
+		LowPowerSlowdown: 3
+		QueuedAudio: Building
+		SpeedUp: True
 	PlaceBuilding:
 	SupportPowerManager:
 	ScriptTriggers:
@@ -58,11 +60,11 @@ Player:
 		InsufficientFundsNotification: InsufficientFunds
 	ActorGroupProxy:
 	DeveloperMode:
-        # Related to CHEATS, DEBUG_MODE, DEBUG in the lobby
-        Enabled: true
+		# Related to CHEATS, DEBUG_MODE, DEBUG in the lobby
+		Enabled: true
 	GpsWatcher:
 	Shroud:
-        ExploredMapEnabled: true
+		ExploredMapEnabled: true
 	FrozenActorLayer:
 	BaseAttackNotifier:
 	PlayerStatistics:
@@ -87,11 +89,11 @@ Player:
 		Name: Unrestricted
 		Prerequisites: techlevel.infonly, techlevel.low, techlevel.medium, techlevel.high, techlevel.unrestricted
 		Id: unrestricted
-	GlobalUpgradeManager:
+	GrantConditionOnPrerequisiteManager:
 	EnemyWatcher:
 	VeteranProductionIconOverlay:
 		Image: iconchevrons
 		Sequence: veteran
 	ResourceStorageWarning:
 	PlayerExperience:
-    NydusCounter:
+	NydusCounter:
