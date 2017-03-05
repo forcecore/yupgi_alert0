@@ -54,7 +54,7 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 		void SpawnUnit(Actor self, string unit)
 		{
 			// Play transformation sound
-			Game.Sound.Play(Info.TransformSound.Random(self.World.SharedRandom), self.CenterPosition);
+			Game.Sound.Play(SoundType.World, Info.TransformSound.Random(self.World.SharedRandom), self.CenterPosition);
 
 			// Kill cargo and spawn new unit
 

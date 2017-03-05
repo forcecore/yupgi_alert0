@@ -59,23 +59,23 @@ namespace OpenRA.Mods.yupgi_alert.Activities
 			return true;
 		}
 
-		protected override State FindAndTransitionToNextState(Actor self)
+		protected override EnterState FindAndTransitionToNextState(Actor self)
 		{
 			switch (nextState)
 			{
-				case State.ApproachingOrEntering:
+				case EnterState.ApproachingOrEntering:
 
 					// Reserve to enter or approach
 					isEnteringOrInside = false;
 					switch (TryReserveElseTryAlternateReserve(self))
 					{
 						case ReserveStatus.None:
-							return State.Done; // No available target -> abort to next activity
+							return EnterState.Done; // No available target -> abort to next activity
 						case ReserveStatus.TooFar:
-							inner = move.MoveToTarget(self, targetCenter ? Target.FromPos(target.CenterPosition) : target); // Approach
-							return State.ApproachingOrEntering;
+							inner = move.MoveToTarget(self, targetCenter ? Target.FromPos(Target.CenterPosition) : Target); // Approach
+							return EnterState.ApproachingOrEntering;
 						case ReserveStatus.Pending:
-							return State.ApproachingOrEntering; // Retry next tick
+							return EnterState.ApproachingOrEntering; // Retry next tick
 						case ReserveStatus.Ready:
 							break; // Reserved target -> start entering target
 					}
@@ -84,21 +84,21 @@ namespace OpenRA.Mods.yupgi_alert.Activities
 					isEnteringOrInside = true;
 					savedPos = self.CenterPosition; // Save position of self, before entering, for returning on exit
 
-					inner = move.MoveIntoTarget(self, target); // Enter
+					inner = move.MoveIntoTarget(self, Target); // Enter
 
 					if (inner != null)
 					{
-						nextState = State.Inside; // Should be inside once inner activity is null
-						return State.ApproachingOrEntering;
+						nextState = EnterState.Inside; // Should be inside once inner activity is null
+						return EnterState.ApproachingOrEntering;
 					}
 
 					// Can enter but there is no activity for it, so go inside without one
-					goto case State.Inside;
+					goto case EnterState.Inside;
 
-				case State.Inside:
+				case EnterState.Inside:
 					// Might as well teleport into target if there is no MoveIntoTarget activity
-					if (nextState == State.ApproachingOrEntering)
-						nextState = State.Inside;
+					if (nextState == EnterState.ApproachingOrEntering)
+						nextState = EnterState.Inside;
 
 					// Boolbada: removed moving target recovery.
 					// I'm assuming Carrier is not too fast!
@@ -111,29 +111,29 @@ namespace OpenRA.Mods.yupgi_alert.Activities
 						self.Dispose();
 
 					// Return if Abort(Actor) or Done(self) was called from OnInside.
-					if (nextState >= State.Exiting)
-						return State.Inside;
+					if (nextState >= EnterState.Exiting)
+						return EnterState.Inside;
 
 					inner = this; // Start inside activity
-					nextState = State.Exiting; // Exit once inner activity is null (unless Done(self) is called)
-					return State.Inside;
+					nextState = EnterState.Exiting; // Exit once inner activity is null (unless Done(self) is called)
+					return EnterState.Inside;
 
 				// TODO: Handle target moved while inside or always call done for movable targets and use a separate exit activity
-				case State.Exiting:
+				case EnterState.Exiting:
 					inner = move.MoveIntoWorld(self, self.World.Map.CellContaining(savedPos));
 
 					// If not successfully exiting, retry on next tick
 					if (inner == null)
-						return State.Exiting;
+						return EnterState.Exiting;
 					isEnteringOrInside = false;
-					nextState = State.Done;
-					return State.Exiting;
+					nextState = EnterState.Done;
+					return EnterState.Exiting;
 
-				case State.Done:
-					return State.Done;
+				case EnterState.Done:
+					return EnterState.Done;
 			}
 
-			return State.Done; // dummy to quiet dumb compiler
+			return EnterState.Done; // dummy to quiet dumb compiler
 		}
 
 		protected override void OnInside(Actor self)

@@ -17,7 +17,6 @@ using System.Drawing;
 using OpenRA.Graphics;
 using OpenRA.Mods.Common.Graphics;
 using OpenRA.Mods.Common.Orders;
-using OpenRA.Mods.RA.Activities;
 using OpenRA.Traits;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Primitives;
@@ -134,7 +133,7 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 					self.Dispose();
 
 					// Play chrono sound
-					Game.Sound.PlayToPlayer(order.Player, Info.ChronoshiftSound, building.CenterPosition);
+					Game.Sound.Play(SoundType.World, Info.ChronoshiftSound, building.CenterPosition);
 				});
 			}
 		}

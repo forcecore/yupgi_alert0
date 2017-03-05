@@ -78,16 +78,15 @@
     <Compile Include="Traits\Air\BlimpFallsToEarth.cs" />
     <Compile Include="Traits\CargoCashTrickler.cs" />
     <Compile Include="Traits\CargoTransformer.cs" />
+    <Compile Include="Traits\Conditions\GrantTimedConditionOnDeploy.cs.cs" />
     <Compile Include="Traits\Player\BotProvidesPrerequisite.cs" />
     <Compile Include="Traits\Spawned.cs" />
     <Compile Include="Traits\DamagedByRadioactivity.cs" />
-    <Compile Include="Traits\DeployToTimedUpgrade.cs" />
     <Compile Include="Traits\ExplodeWeapon.cs" />
     <Compile Include="Traits\Nydus.cs" />
     <Compile Include="Traits\NydusPrimaryExit.cs" />
     <Compile Include="Traits\Spawner.cs" />
     <Compile Include="Traits\StructureChrono.cs" />
-    <Compile Include="Traits\SupportPowers\AttackOrderPower.cs" />
     <Compile Include="Traits\Warheads\CreateRadioactivityWarhead.cs" />
     <Compile Include="Traits\Warheads\FireClusterWarhead.cs" />
     <Compile Include="Traits\Warheads\WarheadAS.cs" />
@@ -98,8 +97,8 @@
     <Folder Include="Player\" />
     <Folder Include="SpriteLoaders\" />
     <Folder Include="Traits\Buildings\" />
-    <Folder Include="Traits\Conditions\" />
     <Folder Include="Traits\Render\" />
+    <Folder Include="Traits\SupportPowers\" />
     <Folder Include="Traits\Widgets\" />
     <Folder Include="UtilityCommands\" />
   </ItemGroup>

@@ -21,7 +21,7 @@ using OpenRA.Mods.Common.Traits;
 namespace OpenRA.Mods.yupgi_alert.Traits
 {
 	[Desc("This actor receives damage from the given weapon when in radioactive area.")]
-	class DamagedByRadioactivityInfo : UpgradableTraitInfo, Requires<HealthInfo>
+	class DamagedByRadioactivityInfo : ConditionalTraitInfo, Requires<HealthInfo>
 	{
 		[Desc("Damage received per radioactivity level, in per mille, per DamageInterval. (Damage = DamageCoeff * RadioactivityLevel / 1000")]
 		// Considering that 1% of level 500 is 5, it is quite tough to have percent. We use per mille here.
@@ -37,7 +37,7 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 		public override object Create(ActorInitializer init) { return new DamagedByRadioactivity(init.Self, this); }
 	}
 
-	class DamagedByRadioactivity : UpgradableTrait<DamagedByRadioactivityInfo>, ITick, ISync
+	class DamagedByRadioactivity : ConditionalTrait<DamagedByRadioactivityInfo>, ITick, ISync
 	{
 		readonly Health health;
 		readonly RadioactivityLayer raLayer;

@@ -14,16 +14,11 @@ using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Traits;
 
-
-// Remark:
-// While I'm modding latest stable version,
-// UpgradableTrait is renamed to ConditionalTrait in bleed version of OpenRA.
-
 namespace OpenRA.Mods.AS.Traits
 {
 	[Desc("Explodes a weapon at the actor's position when enabled."
 		+ "Reload/burstdelays are used as explosion intervals.")]
-	public class ExplodeWeaponInfo : UpgradableTraitInfo, IRulesetLoaded
+	public class ExplodeWeaponInfo : ConditionalTraitInfo, IRulesetLoaded
 	{
 		[WeaponReference, FieldLoader.Require]
 		[Desc("Has to be defined in weapons.yaml as well.")]
@@ -50,7 +45,7 @@ namespace OpenRA.Mods.AS.Traits
 		}
 	}
 
-	class ExplodeWeapon : UpgradableTrait<ExplodeWeaponInfo>, ITick
+	class ExplodeWeapon : ConditionalTrait<ExplodeWeaponInfo>, ITick
 	{
 		readonly ExplodeWeaponInfo info;
 		readonly WeaponInfo weapon;
@@ -80,10 +75,11 @@ namespace OpenRA.Mods.AS.Traits
 					? body.LocalToWorld(info.LocalOffset.Rotate(body.QuantizeOrientation(self, self.Orientation)))
 					: info.LocalOffset;
 
-				if (weapon.Report != null && weapon.Report.Any())
-					Game.Sound.Play(weapon.Report.Random(self.World.SharedRandom), self.CenterPosition);
 				weapon.Impact(Target.FromPos(self.CenterPosition + localoffset), self,
 					self.TraitsImplementing<IFirepowerModifier>().Select(a => a.GetFirepowerModifier()).ToArray());
+
+				if (weapon.Report != null && weapon.Report.Any())
+					Game.Sound.Play(SoundType.World, weapon.Report.Random(self.World.SharedRandom), self.CenterPosition);
 
 				if (--burst > 0)
 					fireDelay = weapon.BurstDelay;
@@ -97,7 +93,7 @@ namespace OpenRA.Mods.AS.Traits
 			}
 		}
 
-		protected override void UpgradeEnabled(Actor self)
+		protected override void TraitEnabled(Actor self)
 		{
 			if (info.ResetReloadWhenEnabled)
 			{

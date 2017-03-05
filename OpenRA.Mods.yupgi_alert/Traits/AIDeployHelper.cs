@@ -30,22 +30,21 @@ namespace OpenRA.Mods.Common.Traits
 	}
 
 	[Desc("This unit can deploy automatically, when AI is the owner.")]
-	public class AIDeployHelperInfo: UpgradableTraitInfo
+	public class AIDeployHelperInfo
 	{
 		[Desc("Events leading to the actor getting uncloaked. Possible values are: None, Attacked, Attack, Damage.")]
 		public readonly DeployType DeployOn = DeployType.None;
 		public readonly int UndeployTicks = 450;
 
-		public override object Create(ActorInitializer init) { return new AIDeployHelper(this); }
+		public object Create(ActorInitializer init) { return new AIDeployHelper(this); }
 	}
 
-	public class AIDeployHelper : UpgradableTrait<AIDeployHelperInfo>, INotifyDamageStateChanged, INotifyAttack, INotifyCreated, ITick
+	public class AIDeployHelper : INotifyDamageStateChanged, INotifyAttack, ITick
 	{
-		UpgradeManager upgradeManager;
-		new AIDeployHelperInfo Info;
+		AIDeployHelperInfo Info;
 		[Sync] int undeploy_ticks;
 
-		public AIDeployHelper(AIDeployHelperInfo info) : base(info)
+		public AIDeployHelper(AIDeployHelperInfo info)
 		{
 			Info = info;
 		}
@@ -60,13 +59,13 @@ namespace OpenRA.Mods.Common.Traits
 			// Issue deploy order to self.
 			self.CancelActivity();
 
-			var dtu = self.TraitOrDefault<DeployToUpgrade>();
-			if (dtu != null)
-				dtu.AIDeploy();
+			var gc = self.TraitOrDefault<GrantConditionOnDeploy>();
+			if (gc != null)
+				gc.AIDeploy();
 
-			var dttu = self.TraitOrDefault<DeployToTimedUpgrade>();
-			if (dttu != null)
-				dttu.AIDeploy();
+			var gct = self.TraitOrDefault<GrantTimedConditionOnDeploy>();
+			if (gct != null)
+				gct.AIDeploy();
 		}
 
 		void Undeploy(Actor self)
@@ -77,16 +76,11 @@ namespace OpenRA.Mods.Common.Traits
 			self.CancelActivity();
 
 			// Issue undeploy order to self.
-			var dtu = self.TraitOrDefault<DeployToUpgrade>();
-			if (dtu != null)
+			var gc = self.TraitOrDefault<GrantConditionOnDeploy>();
+			if (gc != null)
 			{
-				dtu.AIUndeploy();
+				gc.AIUndeploy();
 			}
-		}
-
-		void INotifyCreated.Created(Actor self)
-		{
-			upgradeManager = self.TraitOrDefault<UpgradeManager>();
 		}
 
 		void INotifyAttack.Attacking(Actor self, Target target, Armament a, Barrel barrel)

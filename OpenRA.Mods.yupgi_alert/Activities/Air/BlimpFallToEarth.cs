@@ -61,8 +61,5 @@ namespace OpenRA.Mods.yupgi_alert.Activities
 
 			return this;
 		}
-
-		// Cannot be cancelled
-		public override void Cancel(Actor self) { }
 	}
 }

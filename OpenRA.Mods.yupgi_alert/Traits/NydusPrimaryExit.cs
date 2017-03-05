@@ -29,10 +29,11 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 	}
 
 	[Desc("Used with Nydus trait for primary exit designation")]
-	public class NydusPrimaryExitInfo : ITraitInfo, Requires<UpgradeManagerInfo>
+	public class NydusPrimaryExitInfo : ITraitInfo
 	{
-		[UpgradeGrantedReference, Desc("The upgrades to grant while the primary exit.")]
-		public readonly string[] Upgrades = { "primary" };
+		[GrantedConditionReference]
+		[Desc("The condition to grant to self while this is the primary building.")]
+		public readonly string PrimaryCondition = "primary";
 
 		[Desc("The speech notification to play when selecting a primary exit.")]
 		public readonly string SelectionNotification = "PrimaryBuildingSelected";
@@ -43,16 +44,16 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 	public class NydusPrimaryExit : IIssueOrder, IResolveOrder
 	{
 		readonly NydusPrimaryExitInfo info;
-		readonly UpgradeManager manager;
+		ConditionManager conditionManager;
+		int primaryToken = ConditionManager.InvalidConditionToken;
 
 		public bool IsPrimary { get; private set; }
-		//public bool IsPrimary = false; // Better off as a public var. Promoting to primary revokes primaryness of previous one.
 
 		public NydusPrimaryExit(Actor self, NydusPrimaryExitInfo info)
 		{
 			this.info = info;
 			IsPrimary = false;
-			manager = self.Trait<UpgradeManager>();
+			conditionManager = self.Trait<ConditionManager>();
 		}
 
 		public IEnumerable<IOrderTargeter> Orders
@@ -78,11 +79,8 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 		public void RevokePrimary(Actor self)
 		{
 			IsPrimary = false;
-			foreach (var up in info.Upgrades)
-			{
-				var manager = self.Trait<UpgradeManager>();
-				manager.RevokeUpgrade(self, up, this);
-			}
+			if (primaryToken != ConditionManager.InvalidConditionToken)
+				primaryToken = conditionManager.RevokeCondition(self, primaryToken);
 		}
 
 		public void SetPrimary(Actor self)
@@ -96,9 +94,7 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 
 			IsPrimary = true;
 			counter.PrimaryActor = self; // keep track of primary.
-			foreach (var up in info.Upgrades)
-				manager.GrantUpgrade(self, up, this);
-
+			primaryToken = conditionManager.GrantCondition(self, info.PrimaryCondition);
 			Game.Sound.PlayNotification(self.World.Map.Rules, self.Owner, "Speech", info.SelectionNotification, self.Owner.Faction.InternalName);
 		}
 	}
