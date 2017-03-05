@@ -166,6 +166,7 @@ V2RL:
 		CooldownTicks: 1500
 		DeployedTicks: 125
 		DeploySound: ironcur9.aud
+		StartsFullyCharged: true
 	AIDeployHelper:
 		DeployOn: Attacked, Damage
 
