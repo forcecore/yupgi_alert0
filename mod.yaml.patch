@@ -6,9 +6,9 @@ index 583a0a6..ef20629 100644
  	Author: Boolbada
  
  RequiresMods:
--	#modchooser: release-20161019
+-	#modchooser: playtest-20170304
 -	modchooser: {DEV_VERSION}
-+	modchooser: release-20161019
++	modchooser: playtest-20170304
 +	#modchooser: {DEV_VERSION}
  
  Packages:
