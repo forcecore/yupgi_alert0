@@ -938,7 +938,7 @@ WANT:
 		AimSequence: idle
 	-WithDamageOverlay:
 	Armament:
-		Weapon: Mandible
+		Weapon: WantMandible
 	Targetable:
 		TargetTypes: Ground, Vehicle, Ant
 	WithDeathAnimation:

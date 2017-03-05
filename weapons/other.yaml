@@ -316,15 +316,22 @@ MiniHiveSpawnTargeter:
 		Damage: 0
 		InvalidTargets: Structure, Wall
 
-ScoutMandible:
+WantMandible:
 	Inherits: Claw
+	ReloadDelay: 10
+	Report: antbite.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: 60
+
+ScoutMandible:
+	Inherits: WantMandible
 	ReloadDelay: 10
 	Report: antbite.aud
 	Warhead@1Dam: SpreadDamage
 		Damage: 10
 
 BuzzerMandible:
-	Inherits: ScoutMandible
+	Inherits: WantMandible
 	Warhead@1Dam: SpreadDamage
 		Damage: 100
 		Versus:
@@ -335,7 +342,7 @@ BuzzerMandible:
 			Concrete: 1
 
 SuperMandible:
-	Inherits: ScoutMandible
+	Inherits: WantMandible
 	ReloadDelay: 15
 	Warhead@1Dam: SpreadDamage
 		Damage: 60
