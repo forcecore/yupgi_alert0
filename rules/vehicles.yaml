@@ -977,21 +977,21 @@ FANT:
 			Radius: 469
 	Armor@undeployed:
 		Type: Light
-		Conditions: !deployed
+		RequiresCondition: !deployed
 	Armor@deployed:
 		Type: Concrete
-		Conditions: deployed
+		RequiresCondition: deployed
 	Mobile:
 		Speed: 99
 		TurnSpeed: 12
 		Crushes: wall, mine, crate
-		Conditions: !deployed
+		RequiresCondition: !deployed
 	RevealsShroud:
 		Range: 5c0
 	AutoTarget:
 	WithInfantryBody:
 		AttackSequence: bite
-		Conditions: !deployed
+		RequiresCondition: !deployed
 	-WithDamageOverlay:
 	-WithFacingSpriteBody:
 	QuantizeFacingsFromSequence:
@@ -1000,11 +1000,11 @@ FANT:
 		Weapon: AntFlamer
 		LocalOffset: 1024,0,256
 		FireDelay: 8
-		Conditions: !deployed
+		RequiresCondition: !deployed
 	Armament@deployed:
 		Weapon: AntFireballLauncher
 		LocalOffset: 1024,0,256
-		Conditions: deployed
+		RequiresCondition: deployed
 		Turret: deployed
 	Cloak:
 		InitialDelay: 1
@@ -1012,7 +1012,7 @@ FANT:
 		UncloakOn: Dock # which, we don't dock so... always cloaked unless detected.
 		CloakTypes: Cloak
 		IsPlayerPalette: true
-		Conditions: deployed
+		RequiresCondition: deployed
 	WithSpriteBody: # for deploy animation
 	GrantConditionOnDeploy:
 		DeployedCondition: deployed
@@ -1034,7 +1034,7 @@ FANT:
 	WithSpriteTurret:
 		Sequence: stand
 		Recoils: False
-		Conditions: deployed
+		RequiresCondition: deployed
 		Turret: deployed
 	Turreted:
 		Turret: deployed
@@ -1042,10 +1042,10 @@ FANT:
 	AttackTurreted@deployed:
 		Voice: Attack
 		#Armaments: deployed
-		Conditions: deployed
+		RequiresCondition: deployed
 	AttackFrontal:
 		Voice: Attack
-		Conditions: !deployed
+		RequiresCondition: !deployed
 	AIDeployHelper:
 		DeployOn: Attacked, Damage
 
