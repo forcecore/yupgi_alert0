@@ -455,7 +455,7 @@ dialog5: dialog.png
 	corner-bl: 579,446,1,1
 	corner-br: 643,446,1,1
 
-lobby-bits: buttons.png
+lobby-bits: buttons_op.png
 	spawn-unclaimed: 159,5,23,22
 	spawn-claimed: 127,5,23,22
 	admin: 187,5,7,5
@@ -464,13 +464,13 @@ lobby-bits: buttons.png
 	protected: 202,0,10,13
 	protected-disabled: 213,0,10,13
 
-strategic: buttons.png
+strategic: buttons_op.png
 	unowned: 127,5,23,22
 	critical_unowned: 127,27,23,22
 	enemy_owned: 159,27,23,22
 	player_owned: 159,49,23,22
 
-flags: buttons.png
+flags: buttons_op.png
 	soviet: 0,112,30,15
 	allies: 30,112,30,15
 	Random: 60,112,30,15
@@ -489,9 +489,9 @@ flags: buttons.png
 	turkey: 0,157,30,15
 	greece: 30,157,30,15
 
-	creepies: 60,127,30,15
+	creepies: 60,157,30,15
 
-music: buttons.png
+music: buttons_op.png
 	pause: 0,193,25,25
 	stop: 25,193,25,25
 	play: 55,193,25,25
@@ -500,7 +500,7 @@ music: buttons.png
 	fastforward: 131,193,25,25
 	slowmo: 159,193,25,25
 
-scrollbar: buttons.png
+scrollbar: buttons_op.png
 	down_arrow: 116,140,16,16
 	down_pressed: 116,140,16,16
 	up_arrow: 132,140,16,16
@@ -877,7 +877,7 @@ checkbox: dialog.png
 	corner-bl: 640,127,1,1
 	corner-br: 767,127,1,1
 
-checkbox-bits: buttons.png
+checkbox-bits: buttons_op.png
 	checked: 100,157,16,16
 	checked-disabled: 100,173,16,16
 	crossed: 116,157,16,16
