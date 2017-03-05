@@ -1,5 +1,7 @@
+# vim: noet sw=4 ts=4:
+
 Player:
-    HackyAI@RushAI:
+	HackyAI@RushAI:
 		Name: Rush AI
 		MinimumExcessPower: 40
 		BuildingCommonNames:
@@ -10,13 +12,13 @@ Player:
 			VehiclesFactory: gaweap,naweap,qnest
 			Production: barr,tent,gaweap,naweap,afld,hpad,qnest
 			Silo: silo, anthill
-        CoreDefinitions: # Core, as in RA3 Empire's dojo core.
-            qnest: qant
+	CoreDefinitions: # Core, as in RA3 Empire's dojo core.
+			qnest: qant
 		UnitsCommonNames:
 			Mcv: gamcv, namcv, qant
 		BuildingLimits:
 			proc: 4
-            qnest: 6
+			qnest: 6
 			barr: 1
 			tent: 1
 			kenn: 1
@@ -29,11 +31,11 @@ Player:
 			atek: 1
 			stek: 1
 			fix: 1
-            tibtree: 10
+			tibtree: 10
 		BuildingFractions:
-            qnest: 40%
-            tibtree: 30%
-            anthill: 30%
+			qnest: 40%
+			tibtree: 30%
+			anthill: 30%
 			proc: 30%
 			powr: 15%
 			apwr: 20%
@@ -73,16 +75,16 @@ Player:
 			4tnk: 10%
 			ttnk: 10%
 			stnk: 5%
-            ant: 50%
-            want: 25% # Need a lot of these, need ed for super ants.
-            doggie: 5%
-            fant: 5%
-            sant: 5%
-            hant: 5%
+			ant: 50%
+			want: 25% # Need a lot of these, need ed for super ants.
+			doggie: 5%
+			fant: 5%
+			sant: 5%
+			hant: 5%
 		UnitLimits:
 			dog: 4
 			harv: 8
-            ant: 40
+			ant: 40
 		SquadSize: 20
 		SupportPowerDecision@spyplane:
 			OrderName: SovietSpyPlane
@@ -144,13 +146,13 @@ Player:
 			Production: barr,tent,gaweap,naweap,afld,hpad,qnest
 			NavalProduction: spen,syrd
 			Silo: silo, anthill
-        CoreDefinitions:
-            qnest: qant
+		CoreDefinitions:
+			qnest: qant
 		UnitsCommonNames:
 			Mcv: gamcv, namcv, qant
 		BuildingLimits:
 			proc: 4
-            qnest: 6
+			qnest: 6
 			barr: 1
 			tent: 1
 			dome: 1
@@ -164,11 +166,11 @@ Player:
 			atek: 1
 			stek: 1
 			fix: 1
-            tibtree: 10
+			tibtree: 10
 		BuildingFractions:
-            qnest: 40%
-            tibtree: 30%
-            anthill: 30%
+			qnest: 40%
+			tibtree: 30%
+			anthill: 30%
 			proc: 10%
 			powr: 1%
 			apwr: 30%
@@ -222,16 +224,16 @@ Player:
 			dd: 10%
 			ca: 10%
 			pt: 10%
-            ant: 50%
-            want: 25% # Need a lot of these, need ed for super ants.
-            doggie: 5%
-            fant: 5%
-            sant: 5%
-            hant: 5%
+			ant: 50%
+			want: 25% # Need a lot of these, need ed for super ants.
+			doggie: 5%
+			fant: 5%
+			sant: 5%
+			hant: 5%
 		UnitLimits:
 			dog: 4
 			harv: 8
-            ant: 40
+			ant: 40
 		SquadSize: 40
 		SupportPowerDecision@spyplane:
 			OrderName: SovietSpyPlane
@@ -293,13 +295,13 @@ Player:
 			Production: barr,tent,gaweap,naweap,afld,hpad,qnest
 			NavalProduction: spen,syrd
 			Silo: silo, anthill
-        CoreDefinitions:
-            qnest: qant
+		CoreDefinitions:
+			qnest: qant
 		UnitsCommonNames:
 			Mcv: gamcv, namcv, qant
 		BuildingLimits:
 			proc: 4
-            qnest: 6
+			qnest: 6
 			barr: 1
 			tent: 1
 			kenn: 1
@@ -314,11 +316,11 @@ Player:
 			atek: 1
 			stek: 1
 			fix: 1
-            tibtree: 10
+			tibtree: 10
 		BuildingFractions:
-            qnest: 40%
-            tibtree: 30%
-            anthill: 30%
+			qnest: 40%
+			tibtree: 30%
+			anthill: 30%
 			proc: 30%
 			powr: 1%
 			apwr: 20%
@@ -371,16 +373,16 @@ Player:
 			dd: 10%
 			ca: 10%
 			pt: 10%
-            ant: 50%
-            want: 25% # Need a lot of these, need ed for super ants.
-            doggie: 5%
-            fant: 5%
-            sant: 5%
-            hant: 5%
+			ant: 50%
+			want: 25% # Need a lot of these, need ed for super ants.
+			doggie: 5%
+			fant: 5%
+			sant: 5%
+			hant: 5%
 		UnitLimits:
 			dog: 4
 			harv: 8
-            ant: 40
+			ant: 40
 		SquadSize: 10
 		SupportPowerDecision@spyplane:
 			OrderName: SovietSpyPlane
@@ -441,8 +443,8 @@ Player:
 			Production: barr,tent,gaweap,naweap,afld,hpad,qnest
 			NavalProduction: spen,syrd
 			Silo: silo, anthill
-        CoreDefinitions:
-            qnest: qant
+		CoreDefinitions:
+			qnest: qant
 		UnitsCommonNames:
 			Mcv: gamcv, namcv, qant
 		BuildingLimits:
@@ -458,11 +460,11 @@ Player:
 			naweap: 1
 			atek: 1
 			stek: 1
-            tibtree: 10
+			tibtree: 10
 		BuildingFractions:
-            qnest: 40%
-            tibtree: 30%
-            anthill: 30%
+			qnest: 40%
+			tibtree: 30%
+			anthill: 30%
 			proc: 29%
 			powr: 1%
 			apwr: 24%
@@ -495,15 +497,15 @@ Player:
 			dd: 30%
 			ca: 20%
 			pt: 10%
-            ant: 50%
-            want: 25% # Need a lot of these, need ed for super ants.
-            doggie: 5%
-            fant: 5%
-            sant: 5%
-            hant: 5%
+			ant: 50%
+			want: 25% # Need a lot of these, need ed for super ants.
+			doggie: 5%
+			fant: 5%
+			sant: 5%
+			hant: 5%
 		UnitLimits:
 			harv: 8
-            ant: 40
+			ant: 40
 		SquadSize: 1
 		SupportPowerDecision@spyplane:
 			OrderName: SovietSpyPlane
