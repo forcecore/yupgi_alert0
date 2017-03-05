@@ -5,6 +5,11 @@ for full license info.
 
 Fire ant unit shp is by me, made from Westwood's ant.
     In that case I don't know how the license goes but I think you can use it
+    Same for Super ant, Hyper ant, Queen ant.
+
+Ant faction flag by MustaphaTR
+    Thank you for your great pixel art work for this mod!
+    https://github.com/forcecore/yupgi_alert0/issues/53
 
 Mig voxel by Mig Eater:
     https://forums.revora.net/topic/75476-mig-144/
