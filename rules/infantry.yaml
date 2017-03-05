@@ -251,7 +251,7 @@ SPY:
 		ScanRadius: 5
 	-WithInfantryBody:
 	WithDisguisingInfantryBody:
-		AttackSequence: shoot
+		DefaultAttackSequence: shoot
 		IdleSequences: idle1,idle2
 		StandSequences: stand,stand2
 	WithDecoration@disguise:
@@ -711,7 +711,7 @@ DANT:
 		ScanRadius: 5
 	AttackFrontal:
 	WithInfantryBody:
-		AttackSequence: bite
+		DefaultAttackSequence: bite
 	WithSpriteBody:
 	Armament:
 		Weapon: ScoutMandible
@@ -754,7 +754,7 @@ BUZZER:
 	Crushable: # Yes, scouts are small and crushable.
 	AttackFrontal:
 	WithInfantryBody:
-		AttackSequence: bite
+		DefaultAttackSequence: bite
 	Targetable:
 		TargetTypes: Ground, Infantry, Ant
 	WithDeathAnimation:

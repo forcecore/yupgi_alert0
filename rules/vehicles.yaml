@@ -935,7 +935,7 @@ WANT:
 		ScanRadius: 5
 	AttackFrontal:
 	WithInfantryBody:
-		AttackSequence: bite
+		DefaultAttackSequence: bite
 	WithAttackAnimation:
 		AimSequence: idle
 	-WithDamageOverlay:
@@ -990,7 +990,7 @@ FANT:
 		Range: 5c0
 	AutoTarget:
 	WithInfantryBody:
-		AttackSequence: bite
+		DefaultAttackSequence: bite
 		RequiresCondition: !deployed
 	-WithDamageOverlay:
 	-WithFacingSpriteBody:
@@ -1082,7 +1082,7 @@ SANT:
 		ScanRadius: 5
 	AttackFrontal:
 	WithInfantryBody:
-		AttackSequence: bite
+		DefaultAttackSequence: bite
 	WithAttackAnimation:
 		AimSequence: idle
 	-WithDamageOverlay:
@@ -1131,7 +1131,7 @@ HANT:
 		Range: 7c0
 	AutoTarget:
 	WithInfantryBody:
-		AttackSequence: bite
+		DefaultAttackSequence: bite
 	-WithDamageOverlay:
 	-WithFacingSpriteBody:
 	QuantizeFacingsFromSequence:
@@ -1287,7 +1287,7 @@ WANGCHANG:
 		ScanRadius: 5
 	AttackFrontal:
 	WithAttackAnimation:
-		AttackSequence: shoot
+		DefaultAttackSequence: shoot
 	Armament:
 		Weapon: WangchangThump
 	Targetable:
