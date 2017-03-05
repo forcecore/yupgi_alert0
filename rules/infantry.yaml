@@ -791,7 +791,7 @@ DESO:
 		HP: 150
 	Mobile:
 		Speed: 71
-		Conditions: !deployed
+		RequiresCondition: !deployed
 	RevealsShroud:
 		Range: 6c0
 	Passenger:
@@ -800,20 +800,20 @@ DESO:
 	# which can work with deployed condition.
 	Armament@primary:
 		Weapon: RadBeamWeapon
-		Conditions: !deployed
+		RequiresCondition: !deployed
 		LocalOffset: 400,40,444
 	AttackFrontal:
 		Voice: Attack
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-		Conditions: !deployed
+		RequiresCondition: !deployed
 	WithSpriteBody:
 		# Need this for deploy animation.
 	#WithSpriteBody@DEPLOYED:
 		#Conditions: !deployed
 	WithIdleOverlay@DEPLOYED:
 		Sequence: deploy-shoot
-		Conditions: deployed
+		RequiresCondition: deployed
 	Voiced:
 		VoiceSet: DesolatorVoice
 	ProducibleWithLevel:
@@ -832,7 +832,7 @@ DESO:
 	ExplodeWeapon: # radioactivity
 		Weapon: RadEruptionWeapon
 		ResetReloadWhenEnabled: false
-		Conditions: deployed
+		RequiresCondition: deployed
 	Targetable:
 		TargetTypes: Ground, Infantry
 
