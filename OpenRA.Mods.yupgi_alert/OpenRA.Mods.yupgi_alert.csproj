@@ -65,10 +65,6 @@
       <Name>OpenRA.Mods.Common</Name>
       <Private>False</Private>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\OpenRA.Mods.RA\OpenRA.Mods.RA.csproj">
-      <Project>{4a8a43b5-a9ef-4ed0-99dd-4bab10a0db6e}</Project>
-      <Name>OpenRA.Mods.RA</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activities\Air\BlimpFallToEarth.cs" />

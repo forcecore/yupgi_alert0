@@ -27,7 +27,7 @@ using OpenRA.Traits;
 namespace OpenRA.Mods.yupgi_alert.Traits
 {
 	[Desc("This actor can transport slave actors.")]
-	public class SpawnerInfo : ITraitInfo, Requires<IOccupySpaceInfo>, Requires<UpgradeManagerInfo>
+	public class SpawnerInfo : ITraitInfo, Requires<IOccupySpaceInfo>
 	{
 		[Desc("Number of slave units")]
 		public readonly int Count = 0;
@@ -57,9 +57,21 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 		[Desc("Insta-repair spawners when they return?")]
 		public readonly bool InstaRepair = true;
 
-		[UpgradeGrantedReference]
-		[Desc("The upgrades to grant to self while loading slaves.")]
-		public readonly string[] LoadingUpgrades = { };
+		[GrantedConditionReference]
+		[Desc("The condition to grant to self while waiting for cargo to load.")]
+		public readonly string LoadingCondition = null;
+
+		[GrantedConditionReference]
+		[Desc("The condition to grant to self while passengers are loaded.",
+			"Condition can stack with multiple passengers.")]
+		public readonly string LoadedCondition = null;
+
+		[Desc("Conditions to grant when specified actors are loaded inside the transport.",
+			"A dictionary of [actor id]: [condition].")]
+		public readonly Dictionary<string, string> PassengerConditions = new Dictionary<string, string>();
+
+		[GrantedConditionReference]
+		public IEnumerable<string> LinterPassengerConditions { get { return PassengerConditions.Values; } }
 
 		public object Create(ActorInitializer init) { return new Spawner(init, this); }
 	}
@@ -76,16 +88,20 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 	{
 		public readonly SpawnerInfo Info;
 		readonly Actor self;
-		readonly UpgradeManager upgradeManager;
+
 		readonly List<SlaveEntry> slaves = new List<SlaveEntry>(); // contained
-														   // keep track of launched ones so spawner can call them in or designate another target.
+		// keep track of launched ones so spawner can call them in or designate another target.
 		readonly HashSet<Actor> launched = new HashSet<Actor>();
+		readonly Dictionary<string, Stack<int>> passengerTokens = new Dictionary<string, Stack<int>>();
 		readonly Lazy<IFacing> facing;
 		readonly bool checkTerrainType;
 
 		//Aircraft aircraft;
 		// Carriers don't need to land to spawn stuff!
 		// I want to make this like Protoss Carrier.
+		ConditionManager conditionManager;
+		int loadingToken = ConditionManager.InvalidConditionToken;
+		Stack<int> loadedTokens = new Stack<int>();
 
 		CPos currentCell;
 		public IEnumerable<CPos> CurrentAdjacentCells { get; private set; }
@@ -101,7 +117,6 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 			Info = info;
 			Unloading = false;
 			checkTerrainType = info.UnloadTerrainTypes.Count > 0;
-			upgradeManager = self.Trait<UpgradeManager>();
 
 			// Fill slaves.
 			for (var i = 0; i < info.Count; i++)
@@ -129,6 +144,7 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 		{
 			//aircraft = self.TraitOrDefault<Aircraft>();
 			// If I want the airbourne spawner to land, I need to revive this logic (as was in cargo.cs)
+			conditionManager = self.Trait<ConditionManager>();
 		}
 
 		IEnumerable<CPos> GetAdjacentCells()
@@ -280,8 +296,13 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 		{
 			if (launched.Contains(a))
 				launched.Remove(a);
-			foreach (var u in Info.LoadingUpgrades)
-				upgradeManager.RevokeUpgrade(self, u, this);
+
+			string passengerCondition;
+			if (conditionManager != null && Info.PassengerConditions.TryGetValue(a.Info.Name, out passengerCondition))
+				passengerTokens.GetOrAdd(a.Info.Name).Push(conditionManager.GrantCondition(self, passengerCondition));
+
+			if (conditionManager != null && !string.IsNullOrEmpty(Info.LoadedCondition))
+				loadedTokens.Push(conditionManager.GrantCondition(self, Info.LoadedCondition));
 
 			// Set up rearm.
 			var se = new SlaveEntry();
@@ -350,7 +371,7 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 			self.World.AddFrameEndTask(w =>
 			{
 				foreach (var s in slaves)
-					s.s.Owner = newOwner; // Under influence of mind control.
+					s.s.ChangeOwner(newOwner); // Under influence of mind control.
 				foreach (var s in launched) // Kill launched, they are not under influence.
 					s.Kill(self);
 			});

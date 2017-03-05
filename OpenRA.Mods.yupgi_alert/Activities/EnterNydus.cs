@@ -21,23 +21,20 @@ namespace OpenRA.Mods.yupgi_alert.Activities
 {
 	class EnterNydus : Enter
 	{
-		readonly Actor target; // remember nydus canal.
-
 		public EnterNydus(Actor self, Actor target, EnterBehaviour enterBehaviour)
 			: base(self, target, enterBehaviour)
 		{
-			this.target = target;
 		}
 
 		protected override bool CanReserve(Actor self)
 		{
 			// Primary building is where you come out!
-			return !target.IsPrimaryNydusExit();
+			return !Target.Actor.IsPrimaryNydusExit();
 		}
 
 		protected override void OnInside(Actor self)
 		{
-			if (target.IsDead)
+			if (Target.Actor.IsDead)
 				// entered the nydus canal but the entrance is dead immediately. haha;;
 				return;
 
