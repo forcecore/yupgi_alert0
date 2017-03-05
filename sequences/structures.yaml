@@ -571,6 +571,7 @@ mslo:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
+		ZOffset: -1c511
 	idle:
 	damaged-idle:
 		Start: 8
