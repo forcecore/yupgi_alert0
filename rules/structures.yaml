@@ -2088,8 +2088,7 @@ TUNNELNETWORK:
 		Sequence: tag-primary
 		ReferencePoint: Top
 		ZOffset: 256
-		UpgradeTypes: primary
-		UpgradeMinEnabledLevel: 1
+		RequiresCondition: primary
 	NydusPrimaryExit: # must be used with Nydus, for designating NydusExit.
 	Nydus: # Is nydus canal entrance. Needs primary designation though.
 

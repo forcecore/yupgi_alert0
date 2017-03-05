@@ -41,7 +41,7 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 		public object Create(ActorInitializer init) { return new NydusPrimaryExit(init.Self, this); }
 	}
 
-	public class NydusPrimaryExit : IIssueOrder, IResolveOrder
+	public class NydusPrimaryExit : IIssueOrder, IResolveOrder, INotifyCreated
 	{
 		readonly NydusPrimaryExitInfo info;
 		ConditionManager conditionManager;
@@ -53,6 +53,10 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 		{
 			this.info = info;
 			IsPrimary = false;
+		}
+
+		void INotifyCreated.Created(Actor self)
+		{
 			conditionManager = self.Trait<ConditionManager>();
 		}
 
