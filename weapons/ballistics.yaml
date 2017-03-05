@@ -200,4 +200,5 @@ DepthCharge:
 
 SuperTankPrimary:
 	Inherits: 120mm
+	Report: turret1.aud
 	ReloadDelay: 45
