@@ -848,7 +848,7 @@ STNK:
 		Prerequisites: vehicles.upgraded
 
 QANT:
-	Inherits: ^Infantry
+	Inherits: ^Vehicle
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 90
@@ -865,14 +865,12 @@ QANT:
 	SelectionDecorations:
 		VisualBounds: 42,42
 	Health:
-		#HP: 600
-		HP: 2000 # tougher than regular MCVs haha
+		HP: 1200
 	Armor:
 		Type: Light
 	Mobile:
 		Speed: 85
 		Crushes: wall, mine, crate, infantry
-		SharesCell: false
 	RevealsShroud:
 		Range: 4c0
 	Transforms:
@@ -884,18 +882,22 @@ QANT:
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	BaseBuilding:
-	#SpawnActorOnDeath:
-		#Actor: MCV.Husk
+	WithInfantryBody:
+	-WithDamageOverlay:
+	-WithFacingSpriteBody:
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	Targetable:
+		TargetTypes: Ground, Vehicle, Ant
 	WithDeathAnimation:
 		UseDeathTypeSuffix: false
-	#WithInfantryBody:
-	#-WithFacingSpriteBody:
 	Voiced:
 		VoiceSet: AntVoice
-	Targetable:
-		TargetTypes: Ground, Infantry, Ant
 	-DamagedByTerrain@tib:
 	-DamagedByRadioactivity:
+	-EjectOnDeath:
+	-Capturable:
+	-Repairable: # disable this unit from going to FIX.
 
 # Warrior ant, not "want"
 WANT:
