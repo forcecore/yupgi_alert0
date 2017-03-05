@@ -468,11 +468,11 @@ ZEP:
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 60
 		Prerequisites: ~afld, stek, ~techlevel.high
+		Description: Airborne aircraft carrier..\n  Strong vs Tanks, Structures\n  Weak vs Infantry
 	Valued:
 		Cost: 2000
 	Tooltip:
 		Name: Kirov Carrier
-		Description: Airborne aircraft carrier..\n  Strong vs Tanks, Structures\n  Weak vs Infantry
 	Health:
 		HP: 550 # same as heavy tanks
 	Armor:

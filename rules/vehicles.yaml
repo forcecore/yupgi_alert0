@@ -360,9 +360,9 @@ NAMCV:
 		Prerequisites: ~naweap, ~techlevel.medium
 		BuildDuration: 2000
 		BuildDurationModifier: 40
+		Description: Deploys into another Construction Yard.\n  Unarmed
 	Tooltip:
 		Name: Mobile Construction Vehicle (Soviet)
-		Description: Deploys into another Construction Yard.\n  Unarmed
 	Transforms:
 		IntoActor: nafact
 		Offset: -1,-1
@@ -382,9 +382,9 @@ GAMCV:
 		Prerequisites: ~gaweap, ~techlevel.medium
 		BuildDuration: 2000
 		BuildDurationModifier: 40
+		Description: Deploys into another Construction Yard.\n  Unarmed
 	Tooltip:
 		Name: Mobile Construction Vehicle (Allies)
-		Description: Deploys into another Construction Yard.\n  Unarmed
 	Transforms:
 		IntoActor: gafact
 		Offset: -1,-1
@@ -855,11 +855,11 @@ QANT:
 		Prerequisites: ~qnest
 		BuildDuration: 2000
 		BuildDurationModifier: 40
+		Description: Deploys into Queen's Nest.\n  Unarmed
 	Valued:
 		Cost: 2000
 	Tooltip:
 		Name: Queen Ant
-		Description: Deploys into Queen's Nest.\n  Unarmed
 	Selectable:
 		Priority: 4
 	SelectionDecorations:
@@ -904,13 +904,13 @@ WANT:
 		Cost: 1000
 	Tooltip:
 		Name: Warrior Ant
-		Description: Irradiated insect that grew oversize.\nCombatant.
 		GenericName: Ant
 	Buildable:
 		Queue: Vehicle
 		BuildAtProductionType: BigAnt
 		BuildPaletteOrder: 100
 		Prerequisites: ~qnest, tibtree
+		Description: Irradiated insect that grew oversize.\n Strong vs Infantry.\n Weak vs Vehicles, Structures.
 	Selectable:
 		Bounds: 24,24,0,-10
 	SelectionDecorations:
@@ -958,13 +958,13 @@ FANT:
 		Cost: 1500
 	Tooltip:
 		Name: Fire Ant
-		Description: Giant ant that breath out flames.\n Strong vs Infantry, Light armor, Buildings\n  Weak vs Tanks, Aircraft
 		GenericName: Ant
 	Buildable:
 		Queue: Vehicle
 		BuildAtProductionType: BigAnt
 		BuildPaletteOrder: 100
 		Prerequisites: ~qnest, evo
+		Description: Giant ant that breath out flames.\n Can burrow to hide underground.\n Strong vs Infantry, Light armor, Buildings\n  Weak vs Tanks, Aircraft
 	Selectable:
 		Bounds: 24,24,0,-10
 	SelectionDecorations:
@@ -1053,13 +1053,13 @@ SANT:
 		Cost: 5000
 	Tooltip:
 		Name: Super Ant
-		Description: Evolved combat ant.\n Sacrifice 5 Warrior Ants to\n Evolution Chamber to\n build one Super Ant.
 		GenericName: Ant
 	Buildable:
 		Queue: Vehicle
 		BuildAtProductionType: BigAnt
 		BuildPaletteOrder: 200
 		Prerequisites: ~qnest, tibtree, evo, aibuild
+		Description: Evolved combat ant.\n Sacrifice 5 Warrior Ants to\n Evolution Chamber to\n build one Super Ant.\n Strong vs Ground units.
 	Selectable:
 		Bounds: 24,24,0,-10
 	SelectionDecorations:
@@ -1104,13 +1104,13 @@ HANT:
 		Cost: 6000
 	Tooltip:
 		Name: Hyper Ant
-		Description: Fires electric bolts.\n STrong vs All, Weak vs Aircraft\n Sacrifice 4 Fire Ants to Evolution Chamber\nto build one Hyper Ant.
 		GenericName: Ant
 	Buildable:
 		Queue: Vehicle
 		BuildAtProductionType: BigAnt
 		BuildPaletteOrder: 300
 		Prerequisites: ~qnest, evo, aibuild
+		Description: Fires electric bolts.\n Strong vs Ground units, Weak vs Aircraft\n Sacrifice 4 Fire Ants to Evolution Chamber\nto build one Hyper Ant.
 	Selectable:
 		Bounds: 24,24,0,-10
 	SelectionDecorations:
@@ -1219,11 +1219,11 @@ MSAM:
 		Cost: 1200
 	Tooltip:
 		Name: MLRS
-		Description: It will rain steel on the battle field.\n Weak vs Aircraft
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 81
 		Prerequisites: dome, ~gaweap, ~techlevel.medium
+		Description: It will rain steel on the battle field.\n Weak vs Aircraft
 	Mobile:
 		Speed: 85
 		TurnSpeed: 4
@@ -1317,10 +1317,10 @@ MARV:
 		Queue: Vehicle
 		BuildPaletteOrder: 10
 		Prerequisites: proc, atek, ~gaweap, ~techlevel.high
+		Description: Chronoshifts Ore and Gems for processing.\n  Unarmed
 	Tooltip:
 		Name: Chrono Miner
 		GenericName: Harvester
-		Description: Chronoshifts Ore and Gems for processing.\n  Unarmed
 	SpawnActorOnDeath:
 		Actor: MARV.EmptyHusk
 	Harvester:

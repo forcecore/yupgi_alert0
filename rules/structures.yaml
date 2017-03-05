@@ -945,11 +945,11 @@ NAWEAP:
 		Image: weap
 	Tooltip:
 		Name: War Factory (Soviet)
-		Description: Produces vehicles.
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 80
 		Prerequisites: ~nafact, proc, ~techlevel.low
+		Description: Produces vehicles.
 
 GAWEAP:
 	Inherits: WEAP
@@ -957,11 +957,11 @@ GAWEAP:
 		Image: weap
 	Tooltip:
 		Name: War Factory (Allies)
-		Description: Produces vehicles.
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 80
 		Prerequisites: ~gafact, proc, ~techlevel.low
+		Description: Produces vehicles.
 
 FACT:
 	Inherits: ^Building
@@ -2013,11 +2013,11 @@ TIBTREE:
 		Queue: Building
 		BuildPaletteOrder: 50
 		Prerequisites: ~qnest, anthill, ~techlevel.infonly
+		Description: Generates green tiberium nearby.
 	Valued:
 		Cost: 1000
 	Tooltip:
 		Name: Blossom Tree
-		Description: Generates green tiberium nearby.
 	Building:
 		Adjacent: 8
 		Footprint: x
@@ -2056,11 +2056,11 @@ TUNNELNETWORK:
 		Queue: Defense
 		BuildPaletteOrder: 175
 		Prerequisites: ~qnest, anthill, ~techlevel.infonly
+		Description: Allows units to move through underground tunnels.
 	Valued:
 		Cost: 1200
 	Tooltip:
 		Name: Tunnel Network
-		Description: Allows units to move through underground tunnels.
 	Building:
 		Footprint: xx xx
 		Adjacent: 8
@@ -2100,11 +2100,11 @@ EVO:
 		Queue: Building
 		BuildPaletteOrder: 90
 		Prerequisites: ~qnest, tibtree, ~techlevel.medium
+		Description: Provides genetic matrials for ants\nCan combine units
 	Valued:
 		Cost: 1800
 	Tooltip:
 		Name: Evolution Chamber
-		Description: Provides genetic matrials for ants\nCan combine units
 	Building:
 		Footprint: ___ xxx
 		Dimensions: 3,2
@@ -2178,12 +2178,12 @@ MINIHIVE:
 	Inherits: ^Defense
 	Tooltip:
 		Name: Buzzer Hive
-		Description: Anti-infantry defense.\nCan detect cloaked units.\n  Strong vs Infantry,\n  Weak vs Vehicles, Aircraft
 	Building:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 40
 		Prerequisites: anthill, ~qnest, ~techlevel.low
+		Description: Anti-infantry defense.\nCan detect cloaked units.\n  Strong vs Infantry,\n  Weak vs Vehicles, Aircraft
 	Valued:
 		Cost: 400
 	Health:
@@ -2230,11 +2230,11 @@ ANTHILL:
 		Queue: Building
 		BuildPaletteOrder: 35
 		Prerequisites: ~qnest, ~techlevel.infonly
+		Description: Stores excess refined\nOre and Gems.\nAllows scout ants to deposit ore.
 	Valued:
 		Cost: 500
 	Tooltip:
 		Name: Ant Hill
-		Description: Stores excess refined\nOre and Gems.\nAllows scout ants to deposit ore.
 	Building:
 		Adjacent: 8
 		Footprint: =

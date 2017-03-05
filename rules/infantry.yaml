@@ -684,7 +684,6 @@ DANT:
 		Cost: 500
 	Tooltip:
 		Name: Drone Ant
-		Description: Irradiated insect that grew oversize.\nCollects ore.
 		GenericName: Ant
 	Buildable:
 		Queue: Infantry
@@ -692,6 +691,7 @@ DANT:
 		BuildPaletteOrder: 100
 		Prerequisites: ~qnest
 		BuildDuration: 250
+		Description: Irradiated insect that grew oversize.\nCollects ore.
 	Selectable:
 		Bounds: 12,12,0,-5
 		Priority: 5
@@ -780,11 +780,11 @@ DESO:
 		BuildAtProductionType: Infantry
 		BuildPaletteOrder: 120
 		Prerequisites: ~barr, dome
+		Description: Carries a radiation-emitting weapon.\nCan deploy for area-of-effect damage.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft
 	Valued:
 		Cost: 600
 	Tooltip:
 		Name: Desolator
-		Description: Carries a radiation-emitting weapon.\nCan deploy for area-of-effect damage.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft
 	Selectable:
 		Bounds: 10, 15, 0, -6
 	Health:
@@ -881,6 +881,7 @@ DOGGIE:
 		BuildAtProductionType: SmallAnt
 		BuildPaletteOrder: 200
 		Prerequisites: ~qnest, tibtree
+		Description: Anti-air unit.\n Strong vs Infantry, Aircraft.\n  Weak vs Vehicles, Structures.
 	Valued:
 		Cost: 1000
 	Armor:
@@ -920,11 +921,11 @@ CHITZ:
 		BuildAtProductionType: Dog
 		BuildPaletteOrder: 60
 		Prerequisites: ~kenn, stek, ~techlevel.high
+		Description: Anti-infantry super unit.\nCan detect cloaked units and spies.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Valued:
 		Cost: 1000
 	Tooltip:
 		Name: Chitzkoi
-		Description: Anti-infantry super unit.\nCan detect cloaked units and spies.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 		GenericName: Dog
 	Selectable:
 		Bounds: 12,17,-1,-4
