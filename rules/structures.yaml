@@ -334,8 +334,8 @@ IRON:
 		Condition: invulnerability
 		OnFireSound: ironcur9.aud
 	# Iron curtain generation action haha
-	UpgradeActorsNear:
-		Upgrades: invulnerability
+	ProximityExternalCondition:
+		Condition: invulnerability
 		Range: 10c0
 		Duration: 25
 	WithRangeCircle:
@@ -1981,8 +1981,6 @@ QNEST:
 	#WithDeathAnimation:
 		#DeathSequence: dead
 		#UseDeathTypeSuffix: false
-	WithBuildingExplosion:
-		Delay: 1
 	ProvidesRadar:
 	# as in C&C3 and RA3!
 	# Now, radar dome provides wide sighted fog of war removal.

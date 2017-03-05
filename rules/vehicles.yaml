@@ -161,15 +161,8 @@ V2RL:
 		VisualBounds: 28,28
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
-	# Must undeploy to uncurtain haha... too OP.
-	#DeployToUpgrade:
-	#	DeployedUpgrades: invulnerability
-	#	Duration: 500
-	#	CanDeployOnRamps: yes
-	#	ChargeDelay: 500
-	# This one is it. I copied this from AS mod.
-	DeployToTimedUpgrade:
-		DeployedUpgrades: invulnerability
+	GrantTimedConditionOnDeploy:
+		DeployedCondition: invulnerability
 		CooldownTicks: 1500
 		DeployedTicks: 125
 		DeploySound: ironcur9.aud
@@ -982,25 +975,21 @@ FANT:
 			Radius: 469
 	Armor@undeployed:
 		Type: Light
-		UpgradeTypes: undeployed
-		UpgradeMinEnabledLevel: 1
+		Conditions: !deployed
 	Armor@deployed:
 		Type: Concrete
-		UpgradeTypes: deployed
-		UpgradeMinEnabledLevel: 1
+		Conditions: deployed
 	Mobile:
 		Speed: 99
 		TurnSpeed: 12
 		Crushes: wall, mine, crate
-		UpgradeTypes: undeployed
-		UpgradeMinEnabledLevel: 1 # can't move when deployed
+		Conditions: !deployed
 	RevealsShroud:
 		Range: 5c0
 	AutoTarget:
 	WithInfantryBody:
 		AttackSequence: bite
-		UpgradeTypes: undeployed
-		UpgradeMinEnabledLevel: 1 # show only "turret" when deployed.
+		Conditions: !deployed
 	-WithDamageOverlay:
 	-WithFacingSpriteBody:
 	QuantizeFacingsFromSequence:
@@ -1009,13 +998,11 @@ FANT:
 		Weapon: AntFlamer
 		LocalOffset: 1024,0,256
 		FireDelay: 8
-		UpgradeTypes: undeployed
-		UpgradeMinEnabledLevel: 1
+		Conditions: !deployed
 	Armament@deployed:
 		Weapon: AntFireballLauncher
 		LocalOffset: 1024,0,256
-		UpgradeTypes: deployed
-		UpgradeMinEnabledLevel: 1
+		Conditions: deployed
 		Turret: deployed
 	Cloak:
 		InitialDelay: 1
@@ -1023,12 +1010,10 @@ FANT:
 		UncloakOn: Dock # which, we don't dock so... always cloaked unless detected.
 		CloakTypes: Cloak
 		IsPlayerPalette: true
-		UpgradeTypes: deployed
-		UpgradeMinEnabledLevel: 1
+		Conditions: deployed
 	WithSpriteBody: # for deploy animation
-	DeployToUpgrade:
-		DeployedUpgrades: deployed
-		UndeployedUpgrades: undeployed
+	GrantConditionOnDeploy:
+		DeployedCondition: deployed
 		CanDeployOnRamps: true
 		DeployAnimation: dig
 		DeploySound: subdril1.aud
@@ -1047,8 +1032,7 @@ FANT:
 	WithSpriteTurret:
 		Sequence: stand
 		Recoils: False
-		UpgradeTypes: deployed
-		UpgradeMinEnabledLevel: 1
+		Conditions: deployed
 		Turret: deployed
 	Turreted:
 		Turret: deployed
@@ -1056,13 +1040,10 @@ FANT:
 	AttackTurreted@deployed:
 		Voice: Attack
 		#Armaments: deployed
-		UpgradeTypes: deployed
-		UpgradeMinEnabledLevel: 1
+		Conditions: deployed
 	AttackFrontal:
 		Voice: Attack
-		UpgradeTypes: undeployed
-		UpgradeMinEnabledLevel: 1
-		UpgradeMaxAcceptedLevel: 1
+		Conditions: !deployed
 	AIDeployHelper:
 		DeployOn: Attacked, Damage
 

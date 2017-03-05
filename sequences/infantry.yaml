@@ -26,6 +26,11 @@ e1:
 		Length: 4
 		Facings: 8
 		Tick: 100
+	liedown:
+		Start: 128
+		Length: 2
+		Facings: 8
+	standup:
 		Start: 176
 		Length: 2
 		Facings: 8
@@ -103,6 +108,10 @@ sniper:
 		Length: 4
 		Facings: 8
 		Tick: 100
+	liedown:
+		Start: 192
+		Length: 2
+		Facings: 8
 	standup:
 		Start: 240
 		Length: 2

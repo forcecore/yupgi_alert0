@@ -30,7 +30,7 @@ namespace OpenRA.Mods.Common.Traits
 	}
 
 	[Desc("This unit can deploy automatically, when AI is the owner.")]
-	public class AIDeployHelperInfo
+	public class AIDeployHelperInfo: ITraitInfo
 	{
 		[Desc("Events leading to the actor getting uncloaked. Possible values are: None, Attacked, Attack, Damage.")]
 		public readonly DeployType DeployOn = DeployType.None;

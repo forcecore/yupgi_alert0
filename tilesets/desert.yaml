@@ -71,6 +71,12 @@ Terrain:
 		IsWater: True
 		Color: 5DA5CE
 		RestrictPlayerColor: true
+	TerrainType@Tiberium:
+		Type: Tiberium
+		TargetTypes: Ground
+		AcceptsSmudgeType: Crater, Scorch
+		Color: A1E21C
+		RestrictPlayerColor: true
 
 Templates:
 	Template@255:

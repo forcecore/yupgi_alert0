@@ -345,3 +345,10 @@ SuperMandible:
 			Light: 90
 			Heavy: 50
 			Concrete: 50
+
+HantZap:
+	Inherits: TTankZap
+	
+ChitzkoiJaw:
+	Inherits: DogJaw
+	Range: 6c0

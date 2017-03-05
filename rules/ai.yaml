@@ -12,7 +12,7 @@ Player:
 			VehiclesFactory: gaweap,naweap,qnest
 			Production: barr,tent,gaweap,naweap,afld,hpad,qnest
 			Silo: silo, anthill
-	CoreDefinitions: # Core, as in RA3 Empire's dojo core.
+		CoreDefinitions: # Core, as in RA3 Empire's dojo core.
 			qnest: qant
 		UnitsCommonNames:
 			Mcv: gamcv, namcv, qant
