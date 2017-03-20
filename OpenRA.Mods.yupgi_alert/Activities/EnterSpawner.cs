@@ -59,6 +59,16 @@ namespace OpenRA.Mods.yupgi_alert.Activities
 			return true;
 		}
 
+		protected override ReserveStatus Reserve(Actor self)
+		{
+			// TryReserveElseTryAlternateReserve calls Reserve and
+			// the default inplementation of Reserve() returns TooFar when
+			// the aircraft carrier is hovering over a building.
+			// Since spawners don't need reservation (and have no reservation trait) just return Ready
+			// so that spawner can enter no matter where the spawner is.
+			return ReserveStatus.Ready;
+		}
+
 		protected override EnterState FindAndTransitionToNextState(Actor self)
 		{
 			switch (nextState)
