@@ -2097,10 +2097,10 @@ EVO:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 90
-		Prerequisites: ~qnest, tibtree, ~techlevel.medium
-		Description: Provides genetic matrials for ants\nCan combine units
+		Prerequisites: ~qnest, vein, ~techlevel.high
+		Description: Provides advanced mutations for ants.\nCan combine units.
 	Valued:
-		Cost: 1800
+		Cost: 1500
 	Tooltip:
 		Name: Evolution Chamber
 	Building:
@@ -2109,7 +2109,7 @@ EVO:
 	Targetable:
 		TargetTypes: Ground, Structure, C4, DetonateAttack
 	Health:
-		HP: 1000
+		HP: 600
 	Armor:
 		Type: Wood
 	RevealsShroud:
@@ -2257,3 +2257,36 @@ ANTHILL:
 	ProvidesPrerequisite@buildingname:
 	MustBeDestroyed:
 		RequiredForShortGame: false
+
+VEIN:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 90
+		Prerequisites: ~qnest, tibtree, ~techlevel.medium
+		Description: Immobile creature with super sensitivity.\nCan recycle units into resources.
+	RenderSprites:
+		Scale: 0.5
+	Valued:
+		Cost: 1800
+	Tooltip:
+		Name: Vein Pit
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Targetable:
+		TargetTypes: Ground, Structure, C4, DetonateAttack
+	Health:
+		HP: 1000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 15c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 10c0
+	DetectCloaked:
+		Range: 10c0
+	RenderDetectionCircle:
+	ProvidesPrerequisite@buildingname:
+	-Sellable: # bio

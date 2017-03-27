@@ -761,3 +761,15 @@ gulag:
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
 	icon: missicon
+
+vein:
+	Defaults:
+		UseTilesetExtension: true
+	idle:
+        Length: 1
+	active:
+		Length: *
+	make:
+		Length: *
+	icon: ironicon
+		UseTilesetExtension: false
