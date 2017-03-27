@@ -10,3 +10,6 @@
 *.xcf binary
 *.pal binary
 *.ttf binary
+*.des binary
+*.sno binary
+*.tem binary
