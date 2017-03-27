@@ -137,7 +137,27 @@ def remove_house_color( img ) :
 
 
 
-def house_colorize( img ) :
+def house_colorize() :
+    img = gimp.image_list()[0]
+
+    #src = [ x for x in range( 0, 256 ) ] # all colors
+
+    # vein hole coloring
+    src = [ x for x in range( 72, 80 ) ]
+    src.append( 62 )
+    src.append( 63 )
+
+    dest = [ x for x in range( 80, 96 ) ] # house color is 80 -- 95.
+
+    if 0 in src :
+        src.remove( 0 ) # 0 is transparency.
+    if 4 in src :
+        src.remove( 4 ) # 4 is shadow color.
+    replace_colors( img, src, dest )
+
+
+
+def replace_colors( img, src, dest ) :
     pdb.gimp_image_undo_group_start(img)
     drawable = pdb.gimp_image_get_active_drawable(img)
     if not drawable :
@@ -148,22 +168,29 @@ def house_colorize( img ) :
         print( "Nothing selected" )
         return
 
-    src = [ x for x in range( 0, 256 ) ] # all colors
-    dest = [ x for x in range( 80, 96 ) ] # house color is 80 -- 95.
-    src.remove( 0 ) # 0 is transparency.
-    src.remove( 4 ) # 4 is shadow color.
-
     mapper = calc_color_conversion( img, src, dest )
 
     # apply for selected.
-    for j in range( y1, y2 ) :
-        for i in range( x1, x2 ) :
+    for j in range( y1, y2+1 ) : # loop to include y2
+        for i in range( x1, x2+1 ) : # loop to include x2.
+            value = pdb.gimp_selection_value(img, i, j)
+            if value == 0 :
+                continue
             num_channels, pixel = pdb.gimp_drawable_get_pixel( drawable, i, j )
-            assert len( pixel ) == 1
-            px = pixel[ 0 ]
+            # can be 2 due to alpha ch.
+            if len( pixel ) == 1 :
+                px = pixel[ 0 ]
+            elif len( pixel ) == 2 :
+                px, alpha = pixel
+            else :
+                assert len( pixel ) == 1 or len( pixel ) == 2
+
             if px in src :
                 px = mapper[ px ]
-                pdb.gimp_drawable_set_pixel(drawable, i, j, num_channels, (px,))
+                if len( pixel ) == 1 :
+                    pdb.gimp_drawable_set_pixel(drawable, i, j, num_channels, (px,))
+                else :
+                    pdb.gimp_drawable_set_pixel(drawable, i, j, num_channels, (px, alpha,))
 
     # put the result back to gimp
     pdb.gimp_drawable_update(drawable, x1, y1, x2, y2) # update UI.
@@ -216,3 +243,12 @@ def bld_colorize( im ) :
 # Easy way: just double click on the browser. DANG.
 #
 # Well, enough explanation.
+#
+#I've made a script for GIMP. Given selected area, the script will find the closest house colorable color for each pixel in the selection and apply that.
+#use XCC Mixer to convert SHP into PNG.
+#Select an area that you want to make house remappable.
+#Open GIMP python-fu console
+#Import this script. You should place this script and rename it so that gimp can see. In my case, I placed the script in C:\Program Files\GIMP 2\Python\Lib\shp.py and ran "import shp"
+#img = gimp.image_list()[0] (if you have only one image open)
+#shp.house_colorize(img)
+#The parameters are tuned for RA house coloring. The parameters can be modified at line 152.
