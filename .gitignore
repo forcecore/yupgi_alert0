@@ -1,5 +1,7 @@
 *.swp
 *.un~
 *~
+*.dll
+*.mdb
 
 /assets/shp/*/*.png

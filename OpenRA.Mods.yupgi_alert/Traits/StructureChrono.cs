@@ -101,9 +101,7 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 		{
 			if (order.OrderString == "StructureChronoTeleport" && CanTeleport)
 			{
-				var maxDistance = Info.HasDistanceLimit ? Info.MaxDistance : (int?)null;
 				self.CancelActivity();
-				//self.QueueActivity(new Teleport(self, order.TargetLocation, maxDistance, true, false, Info.ChronoshiftSound));
 
 				self.World.AddFrameEndTask(w =>
 				{

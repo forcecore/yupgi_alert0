@@ -9,6 +9,7 @@ Metadata:
 RequiresMods:
 	#modchooser: playtest-20170304
 	modchooser: {DEV_VERSION}
+	as: {DEV_VERSION}
 
 Packages:
 	~^Content/ra/v2/
@@ -19,6 +20,7 @@ Packages:
 	$yupgi_alert: yupgi_alert
 	$ra: ra
 	$cnc: cnc
+	$as: as
 	./mods/common: common
 	~main.mix
 	~conquer.mix
@@ -91,6 +93,7 @@ Assemblies:
 	common|OpenRA.Mods.Common.dll
 	common|OpenRA.Mods.Cnc.dll
 	yupgi_alert|OpenRA.Mods.yupgi_alert.dll
+	as|OpenRA.Mods.AS.dll
 
 ChromeLayout:
 	common|chrome/ingame.yaml

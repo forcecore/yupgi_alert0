@@ -94,13 +94,11 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 		readonly HashSet<Actor> launched = new HashSet<Actor>();
 		readonly Dictionary<string, Stack<int>> passengerTokens = new Dictionary<string, Stack<int>>();
 		readonly Lazy<IFacing> facing;
-		readonly bool checkTerrainType;
 
 		//Aircraft aircraft;
 		// Carriers don't need to land to spawn stuff!
 		// I want to make this like Protoss Carrier.
 		ConditionManager conditionManager;
-		int loadingToken = ConditionManager.InvalidConditionToken;
 		Stack<int> loadedTokens = new Stack<int>();
 
 		CPos currentCell;
@@ -116,7 +114,6 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 			self = init.Self;
 			Info = info;
 			Unloading = false;
-			checkTerrainType = info.UnloadTerrainTypes.Count > 0;
 
 			// Fill slaves.
 			for (var i = 0; i < info.Count; i++)

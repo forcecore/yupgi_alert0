@@ -61,11 +61,11 @@ namespace OpenRA.Mods.Common.Traits
 
 			var gc = self.TraitOrDefault<GrantConditionOnDeploy>();
 			if (gc != null)
-				gc.AIDeploy();
+				gc.Deploy();
 
 			var gct = self.TraitOrDefault<GrantTimedConditionOnDeploy>();
 			if (gct != null)
-				gct.AIDeploy();
+				gct.Deploy();
 		}
 
 		void Undeploy(Actor self)
@@ -79,7 +79,7 @@ namespace OpenRA.Mods.Common.Traits
 			var gc = self.TraitOrDefault<GrantConditionOnDeploy>();
 			if (gc != null)
 			{
-				gc.AIUndeploy();
+				gc.Undeploy();
 			}
 		}
 
