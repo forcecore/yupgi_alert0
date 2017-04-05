@@ -3,11 +3,10 @@
 Metadata:
 	Title: Over Powered Mod
 	Description: Crazy modifications to Red Alert by Boolbada
-	Version: 007-Playtest-20170304
+	Version: {DEV_VERSION}
 	Author: Boolbada
 
 RequiresMods:
-	#modchooser: playtest-20170304
 	modchooser: {DEV_VERSION}
 	as: {DEV_VERSION}
 
