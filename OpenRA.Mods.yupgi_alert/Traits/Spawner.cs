@@ -159,9 +159,9 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 		void INotifyAttack.Attacking(Actor self, Target target, Armament a, Barrel barrel)
 		{
 			// The freshly launched one is in the launched list, too.
-			foreach(var launched in launched)
+			foreach(var launchedOne in launched)
 			{
-				launched.Trait<Spawned>().AttackTarget(launched, target);
+				launchedOne.Trait<Spawned>().AttackTarget(launchedOne, target);
 			}
 
 			// The rate of fire of the dummy weapon determines the launch cycle.
