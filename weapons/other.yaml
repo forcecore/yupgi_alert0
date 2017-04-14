@@ -234,7 +234,7 @@ RadEruptionWeapon:
 		Range: 4, 6, 8, 10
 		Level: 100
 		Falloff: 100, 90, 50, 0
-        MaxLevel: 500
+		MaxLevel: 500
 
 FiendShard-AA:
 	ReloadDelay: 30

@@ -2030,14 +2030,14 @@ TIBTREE:
 	-EmitInfantryOnSell:
 	-Sellable: # bio
 	ProvidesPrerequisite@buildingname:
-    RenderSprites:
-        Image: split3
-    SeedsResource:
-        ResourceType: Tiberium
-        Interval: 75
+	RenderSprites:
+		Image: split3
+	SeedsResource:
+		ResourceType: Tiberium
+		Interval: 75
 		MaxRange: 10
-    WithIdleAnimation:
-	Selectable:
+	WithIdleAnimation:
+		Selectable:
 		Bounds: 24,24
 	SelectionDecorations:
 		VisualBounds: 24,40,0,-8

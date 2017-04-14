@@ -71,7 +71,6 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 
 	public class RadioactivityLayer : IRenderOverlay, IWorldLoaded, ITickRender, INotifyActorDisposing, ITick
 	{
-		readonly World world;
 		readonly RadioactivityLayerInfo info;
 
 		// In the following, I think dictionary is better than array, as radioactivity has similar affecting area as smudges.
@@ -90,7 +89,6 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 
 		public RadioactivityLayer(Actor self, RadioactivityLayerInfo info)
 		{
-			world = self.World;
 			this.info = info;
 			//k = info.UpdateDelay * ((float) Math.Log(2)) / info.Halflife;
 			k1000 = info.UpdateDelay * 693 / info.Halflife; // (693 is 1000*ln(2) so we must divide by 1000 later on.)

@@ -1418,10 +1418,10 @@ qant:
 	icon: qanticon
 
 deso:
-    #Defaults:
-    # I tested this on vehicle
-    idle: invis
-    	Facings: 1
+	#Defaults: 
+	# I tested this on vehicle
+	idle: invis
+	Facings: 1
 	stand:
 		Facings: 8
 	run:
@@ -1451,10 +1451,10 @@ deso:
 	die3:
 		Start: 149
 		Length: 14
-    die4:
+	die4:
 		Start: 134
 		Length: 14
-    die5:
+	die5:
 		Start: 134
 		Length: 14
 	die6: electro
@@ -1463,7 +1463,7 @@ deso:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
-    # and they aren't crushable (no crushed death)
+	# and they aren't crushable (no crushed death)
 	shoot:
 		Start: 164
 		Length: 6
@@ -1474,15 +1474,15 @@ deso:
 		Length: 6
 		Facings: 8
 		Tick: 80
-    deploy:
-        Start: 299
-        Length: 15
-        Facings: 1
-    deploy-shoot:
-        Start: 292
-        Length: 7
-        Facings: 1
-        Tick: 240
+	deploy:
+		Start: 299
+		Length: 15
+		Facings: 1
+	deploy-shoot:
+		Start: 292
+		Length: 7
+		Facings: 1
+		Tick: 240
 	icon: desoicon
 
 doggie:
@@ -1542,7 +1542,7 @@ doggie:
 		Start: 109
 		Length: 10
 		ShadowStart: 228
-    icon: doggieicon
+	icon: doggieicon
 
 doge:
 	stand:

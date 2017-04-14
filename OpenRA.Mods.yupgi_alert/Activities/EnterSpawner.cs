@@ -82,7 +82,7 @@ namespace OpenRA.Mods.yupgi_alert.Activities
 						case ReserveStatus.None:
 							return EnterState.Done; // No available target -> abort to next activity
 						case ReserveStatus.TooFar:
-							inner = move.MoveToTarget(self, targetCenter ? Target.FromPos(Target.CenterPosition) : Target); // Approach
+							inner = Move.MoveToTarget(self, TargetCenter ? Target.FromPos(Target.CenterPosition) : Target); // Approach
 							return EnterState.ApproachingOrEntering;
 						case ReserveStatus.Pending:
 							return EnterState.ApproachingOrEntering; // Retry next tick
@@ -94,7 +94,7 @@ namespace OpenRA.Mods.yupgi_alert.Activities
 					isEnteringOrInside = true;
 					savedPos = self.CenterPosition; // Save position of self, before entering, for returning on exit
 
-					inner = move.MoveIntoTarget(self, Target); // Enter
+					inner = Move.MoveIntoTarget(self, Target); // Enter
 
 					if (inner != null)
 					{
@@ -115,9 +115,9 @@ namespace OpenRA.Mods.yupgi_alert.Activities
 
 					OnInside(self);
 
-					if (enterBehaviour == EnterBehaviour.Suicide)
+					if (EnterBehaviour == EnterBehaviour.Suicide)
 						self.Kill(self);
-					else if (enterBehaviour == EnterBehaviour.Dispose)
+					else if (EnterBehaviour == EnterBehaviour.Dispose)
 						self.Dispose();
 
 					// Return if Abort(Actor) or Done(self) was called from OnInside.
@@ -130,7 +130,7 @@ namespace OpenRA.Mods.yupgi_alert.Activities
 
 				// TODO: Handle target moved while inside or always call done for movable targets and use a separate exit activity
 				case EnterState.Exiting:
-					inner = move.MoveIntoWorld(self, self.World.Map.CellContaining(savedPos));
+					inner = Move.MoveIntoWorld(self, self.World.Map.CellContaining(savedPos));
 
 					// If not successfully exiting, retry on next tick
 					if (inner == null)

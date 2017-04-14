@@ -94,13 +94,11 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 		readonly HashSet<Actor> launched = new HashSet<Actor>();
 		readonly Dictionary<string, Stack<int>> passengerTokens = new Dictionary<string, Stack<int>>();
 		readonly Lazy<IFacing> facing;
-		readonly bool checkTerrainType;
 
 		//Aircraft aircraft;
 		// Carriers don't need to land to spawn stuff!
 		// I want to make this like Protoss Carrier.
 		ConditionManager conditionManager;
-		int loadingToken = ConditionManager.InvalidConditionToken;
 		Stack<int> loadedTokens = new Stack<int>();
 
 		CPos currentCell;
@@ -116,7 +114,6 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 			self = init.Self;
 			Info = info;
 			Unloading = false;
-			checkTerrainType = info.UnloadTerrainTypes.Count > 0;
 
 			// Fill slaves.
 			for (var i = 0; i < info.Count; i++)
@@ -162,9 +159,9 @@ namespace OpenRA.Mods.yupgi_alert.Traits
 		void INotifyAttack.Attacking(Actor self, Target target, Armament a, Barrel barrel)
 		{
 			// The freshly launched one is in the launched list, too.
-			foreach(var launched in launched)
+			foreach(var launchedOne in launched)
 			{
-				launched.Trait<Spawned>().AttackTarget(launched, target);
+				launchedOne.Trait<Spawned>().AttackTarget(launchedOne, target);
 			}
 
 			// The rate of fire of the dummy weapon determines the launch cycle.
