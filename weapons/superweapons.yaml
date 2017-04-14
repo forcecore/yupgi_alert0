@@ -143,10 +143,10 @@ Atomic:
 		Range: 5, 10, 15, 20, 25
 		Level: 1000
 		Falloff: 100, 37, 14, 5, 2
-        MaxLevel: 1000
+		MaxLevel: 1000
 
 NukeParaBomb: # SAME as atomic bomb!!!
-    Inherits: Atomic
+	Inherits: Atomic
 	ReloadDelay: 10
 	Range: 3c0
 	Report: chute1.aud

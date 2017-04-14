@@ -526,14 +526,14 @@ gap:
 
 iron:
 	idle:
-        Length: 11
+		Length: 11
 		Offset: 0,-12
 	active:
 		Length: 11
 		Offset: 0,-12
 	damaged-idle:
 		Start: 11
-        Length: 11
+		Length: 11
 		Offset: 0,-12
 	damaged-active:
 		Start: 11
@@ -663,47 +663,47 @@ qnest:
 	idle:
 		Length: 1
 		ZOffset: -1c511
-    make: qnestbld
+	make: qnestbld
 		Start: 0
 		Length: 24
-    build:
+	build:
 		Start: 0
 		Length: 1
 	damaged-idle:
 		Start: 0
 		Length: 1
 		ZOffset: -1c511
-    icon: qanticon
+	icon: qanticon
 
 anthill:
 	idle: qnest
 		Length: 1
 		ZOffset: -1c511
-    make: qnestbld
+	make: qnestbld
 		Start: 0
 		Length: 24
-    build: qnest
+	build: qnest
 		Start: 0
 		Length: 1
 	damaged-idle: qnest
 		Start: 0
 		Length: 1
 		ZOffset: -1c511
-    icon: anthillicon
+	icon: anthillicon
 
 tunnelnetwork:
 	idle: qnest
 		Length: 1
-    make: qnestbld
+	make: qnestbld
 		Start: 0
 		Length: 24
-    build: qnest
+	build: qnest
 		Start: 0
 		Length: 1
 	damaged-idle: qnest
 		Start: 0
 		Length: 1
-    icon: tnnicon
+	icon: tnnicon
 
 split3:
 	Defaults:

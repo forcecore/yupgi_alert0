@@ -23,19 +23,19 @@
 		InternalName: england
 		Side: Allies
 		Description: England: Espionage\nSpecial Unit: British Spy\nSpecial Unit: Phase Transport
-        Selectable: False
+		Selectable: False
 	Faction@2:
 		Name: France
 		InternalName: france
 		Side: Allies
 		Description: France: Deception\nSpecial Ability: Can build fake structures\nSpecial Unit: Mobile Gap Generator
-        Selectable: False
+		Selectable: False
 	Faction@3:
 		Name: Germany
 		InternalName: germany
 		Side: Allies
 		Description: Germany: Technology\nSpecial Ability: Advanced Chronoshift\nSpecial Unit: Chrono Tank
-        Selectable: False
+		Selectable: False
 	Faction@4:
 		Name: Soviet
 		InternalName: soviet
