@@ -187,7 +187,7 @@ World:
 		ClassName: Light Support
 		Factions: creepies
 		BaseActor: qant
-		SupportActors: e1,e1,e1,e3,e3,apc,ftrk
+		SupportActors: want, want
 		InnerSupportRadius: 3
 		OuterSupportRadius: 5
 	MPStartUnits@heavyallies:
@@ -211,7 +211,7 @@ World:
 		ClassName: Heavy Support
 		Factions: creepies
 		BaseActor: qant
-		SupportActors: e1,e1,e1,e3,e3,apc,ftrk,3tnk,3tnk
+		SupportActors: want, want, want, fant, fant
 		InnerSupportRadius: 3
 		OuterSupportRadius: 5
 	MPStartLocations:
