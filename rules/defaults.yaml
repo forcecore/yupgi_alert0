@@ -1,5 +1,3 @@
-# vim: noet sw=4 ts=4:
-
 ^ExistsInWorld:
 	AppearsOnRadar:
 	CombatDebugOverlay:
@@ -222,7 +220,6 @@
 		DamageInterval: 16
 		DamageTypes: FireDeath
 	NydusTransportable:
-
 
 ^Tank:
 	Inherits: ^Vehicle
@@ -934,6 +931,7 @@
 		CrushClasses: mine
 		DetonateClasses: mine
 		AvoidFriendly: false
+		BlockFriendly: false
 	Health:
 		HP: 100
 		NotifyAppliedDamage: false

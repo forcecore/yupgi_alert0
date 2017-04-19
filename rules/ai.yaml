@@ -1,5 +1,3 @@
-# vim: noet sw=4 ts=4:
-
 Player:
 	HackyAI@RushAI:
 		Name: Rush AI
@@ -12,7 +10,7 @@ Player:
 			VehiclesFactory: gaweap,naweap,qnest
 			Production: barr,tent,gaweap,naweap,afld,hpad,qnest
 			Silo: silo, anthill
-		CoreDefinitions: # Core, as in RA3 Empire's dojo core.
+		CoreDefinitions:
 			qnest: qant
 		UnitsCommonNames:
 			Mcv: gamcv, namcv, qant
@@ -76,7 +74,7 @@ Player:
 			ttnk: 10%
 			stnk: 5%
 			dant: 50%
-			want: 25% # Need a lot of these, need ed for super ants.
+			want: 25%
 			doggie: 5%
 			fant: 5%
 			sant: 5%
@@ -225,7 +223,7 @@ Player:
 			ca: 10%
 			pt: 10%
 			dant: 50%
-			want: 25% # Need a lot of these, need ed for super ants.
+			want: 25%
 			doggie: 5%
 			fant: 5%
 			sant: 5%
@@ -374,7 +372,7 @@ Player:
 			ca: 10%
 			pt: 10%
 			dant: 50%
-			want: 25% # Need a lot of these, need ed for super ants.
+			want: 25%
 			doggie: 5%
 			fant: 5%
 			sant: 5%
@@ -498,7 +496,7 @@ Player:
 			ca: 20%
 			pt: 10%
 			dant: 50%
-			want: 25% # Need a lot of these, need ed for super ants.
+			want: 25%
 			doggie: 5%
 			fant: 5%
 			sant: 5%

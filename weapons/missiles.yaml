@@ -1,5 +1,3 @@
-# vim: noet sw=4 ts=4:
-
 ^AntiGroundMissile:
 	ReloadDelay: 50
 	Range: 5c0
@@ -347,11 +345,10 @@ SCUD:
 	Warhead@4EffWater: CreateEffect
 		Explosions: large_splash
 
-# Interceptors can attack air, I don't want to miss Carrier vs Carrier fight!
 Maverick2:
 	Inherits: Maverick
 	ValidTargets: Air, Ground, Water
-	Warhead@5Dam: SpreadDamage # AA damage with default maverick was too OP.
+	Warhead@5Dam: SpreadDamage
 		Spread: 128
 		Damage: 50
 		ValidTargets: Air
@@ -364,7 +361,6 @@ Maverick2:
 SteelRainCluster:
 	Inherits: UnitExplodeSmall
 	Range: 10c0
-	# Must have a projectile otherwise cluster thing won't work.
 	Projectile: Bullet
 		Speed: 1c0
 	Warhead@2Eff: CreateEffect
@@ -391,4 +387,4 @@ SteelRain:
 		ValidTargets: Ground, Water
 	Warhead@5Cluster: FireCluster
 		Weapon: SteelRainCluster
-		Range: 1 # fires this stuff at all cells within the range!
+		Range: 1

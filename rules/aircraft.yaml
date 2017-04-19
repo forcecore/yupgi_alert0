@@ -1,5 +1,3 @@
-# vim: noet sw=4 ts=4:
-
 BADR:
 	Inherits: ^NeutralPlane
 	ParaDrop:
@@ -102,7 +100,7 @@ MIG:
 		Type: GroundPosition
 		RevealGeneratedShroud: False
 	RevealsShroud@GAPGEN:
-		Range: 10c0
+		Range: 11c0
 		Type: GroundPosition
 	Armament:
 		Weapon: Maverick
@@ -161,7 +159,7 @@ YAK:
 		Type: GroundPosition
 		RevealGeneratedShroud: False
 	RevealsShroud@GAPGEN:
-		Range: 8c0
+		Range: 9c0
 		Type: GroundPosition
 	Armament@PRIMARY:
 		Weapon: ChainGun.Yak
@@ -423,8 +421,12 @@ MIG2:
 	Armor:
 		Type: Light
 	RevealsShroud:
-		Range: 6c0
-		Type: CenterPosition
+		Range: 13c0
+		Type: GroundPosition
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 11c0
+		Type: GroundPosition
 	Armament:
 		Weapon: Maverick2
 		LocalOffset: 0,-640,0, 0,640,0
@@ -443,23 +445,16 @@ MIG2:
 		Ammo: 8
 	SpawnActorOnDeath:
 		Actor: MIG2.Husk
-	#ReturnOnIdle: Spawned has Idle handler.
 	-Selectable:
-	#Contrail@1:
-		#Offset: -598,-683,0
-	#Contrail@2:
-		#Offset: -598,683,0
 	-ActorLostNotification:
-		# These always die. No notification needed.
 	-EjectOnDeath:
-		# No pilot
 	SmokeTrailWhenDamaged:
 		Offset: -853,0,171
 		Interval: 2
 	ProducibleWithLevel:
 		Prerequisites: aircraft.upgraded
 	Spawned:
-		LandingDistance: 1c0 # Small distance so that it lands "in air".
+		LandingDistance: 1c0
 
 ZEP:
 	Inherits: ^Helicopter
@@ -474,7 +469,7 @@ ZEP:
 	Tooltip:
 		Name: Kirov Carrier
 	Health:
-		HP: 550 # same as heavy tanks
+		HP: 550
 	Armor:
 		Type: Heavy
 	RevealsShroud:
@@ -488,15 +483,9 @@ ZEP:
 		TurnSpeed: 4
 		Speed: 30
 		CruiseAltitude: 2c256
-	#SelectionDecorations:
-		#VisualBounds: 36,28
 	SpawnActorOnDeath:
 		Actor: ZEP.Husk
 	-EjectOnDeath:
-		# Falls with the zep, doesn't look good.
-	#SmokeTrailWhenDamaged:
-		# Looks bad since this unit is very slow.
-		#Offset: -427,0,0
 	WithDamageOverlay:
 	ProducibleWithLevel:
 		Prerequisites: aircraft.upgraded
@@ -512,21 +501,16 @@ ZEP:
 	WithVoxelBody:
 	RenderVoxels:
 		Scale: 8
-		#LightYaw: 800
-		#LightPitch: 150
-		#LightAmbientColor: -0.5,-0.5,-0.5
-		#LightDiffuseColor: 1.4,1.4,1.4
 		PlayerPalette: player-ra2
 	BodyOrientation:
 		QuantizedFacings: 0
 		CameraPitch: 90
 		UseClassicPerspectiveFudge: false
-	RenderSprites: # For icons
+	RenderSprites:
 	-WithFacingSpriteBody:
 	-QuantizeFacingsFromSequence:
-	-WithShadow: # Disable 2D shadow drawing logic for sprite actors
+	-WithShadow:
 
-# Nuclear Mig
 NMIG:
 	Inherits: ^Plane
 	Buildable:
@@ -586,16 +570,12 @@ NMIG:
 	WithVoxelBody:
 	RenderVoxels:
 		Scale: 0.7
-		#LightYaw: 800
-		#LightPitch: 150
-		#LightAmbientColor: -0.5,-0.5,-0.5
-		#LightDiffuseColor: 1.4,1.4,1.4
 		PlayerPalette: player-ra2
 	BodyOrientation:
 		QuantizedFacings: 0
 		CameraPitch: 90
 		UseClassicPerspectiveFudge: false
-	RenderSprites: # For icons
+	RenderSprites:
 	-WithFacingSpriteBody:
 	-QuantizeFacingsFromSequence:
-	-WithShadow: # Disable 2D shadow drawing logic for sprite actors
+	-WithShadow:

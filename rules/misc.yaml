@@ -1,5 +1,3 @@
-# vim: noet sw=4 ts=4:
-
 MINV:
 	Inherits: ^Mine
 	RenderSprites:
@@ -10,26 +8,7 @@ MINV:
 			ukraine: minp
 	Explodes:
 		Weapon: ATMine
-	Armament:
-		Weapon: ATMine
-	AutoTarget:
-	#AttackLeap: # kinda like dogs
-	#AttackSuicides:
-	#Either two requires MINV to be able to move.
-	-QuantizeFacingsFromSequence:
-	AttackOmni:
-	BodyOrientation:
-		QuantizedFacings: 8
-	AmmoPool:
-		PipCount: 1
-		Ammo: 1
-		InitialAmmo: 1
-		RearmSound: minelay1.aud
-		SelfReloads: true
-		SelfReloadDelay: 1500
-		ResetOnFire: true
 
-# Only kept for backwards-compatibility with existing and imported maps, use MINV instead
 MINP:
 	Inherits: MINV
 	Explodes:
@@ -310,6 +289,9 @@ powerproxy.parabombs:
 		DisplayBeacon: True
 		BeaconPoster: pbmbicon
 		CameraActor: camera
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
 
 powerproxy.sonarpulse:
 	AlwaysVisible:
@@ -339,6 +321,9 @@ powerproxy.paratroopers:
 		CameraActor: camera.paradrop
 		DisplayBeacon: true
 		BeaconPoster: pinficon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
 
 barracks.upgraded:
 	AlwaysVisible:

@@ -1,5 +1,3 @@
-# vim: noet sw=4 ts=4:
-
 ^Explosion:
 	Warhead@1Dam: SpreadDamage
 		Spread: 426
@@ -108,7 +106,7 @@ SmallBuildingExplode:
 
 CivBuildingExplosion:
 	Inherits: SmallBuildingExplode
-	Warhead@1Dam: SpreadDamage # Used to panic civilians which are emitted from a killed CivBuilding
+	Warhead@1Dam: SpreadDamage
 		Spread: 64
 		Damage: 1
 		Delay: 1
@@ -309,18 +307,9 @@ MiniNuke:
 		MaxLevel: 50
 
 BlossomTreeExplosion:
-	#ReloadDelay: 150
-	# reload delay same as half life.
-	# expected accumulated rad level is 2*level.
-	
-	# 3.3 * half life, max level should be around 1.1 * level, if not limited by MaxLevel.
-	#ReloadDelay: 500
-	
-	ReloadDelay: 400 # 500 sucked. reduced to 400 and limit with MaxLevel.
-
+	ReloadDelay: 400
 	Warhead@1Radio: CreateRadioactivity
 		Range: 4, 6, 8, 9
 		Level: 128
 		Falloff: 100, 90, 50, 0
-		#MaxLevel: 500 # Too OP
 		MaxLevel: 140

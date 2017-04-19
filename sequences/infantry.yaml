@@ -46,22 +46,22 @@ e1:
 		Start: 272
 		Length: 16
 		Tick: 120
-	die1: # instant
+	die1:
 		Start: 288
 		Length: 8
-	die2: # twirl
+	die2:
 		Start: 296
 		Length: 8
-	die3: # explode (small explosion)
+	die3:
 		Start: 304
 		Length: 8
-	die4: # flying (large explosion)
+	die4:
 		Start: 312
 		Length: 12
-	die5: #  burn
+	die5:
 		Start: 324
 		Length: 18
-	die6: electro # electro (obviously)
+	die6: electro
 		Length: *
 		UseTilesetExtension: true
 		TilesetOverrides:
@@ -1418,10 +1418,8 @@ qant:
 	icon: qanticon
 
 deso:
-    #Defaults:
-    # I tested this on vehicle
-    idle: invis
-    	Facings: 1
+	idle: invis
+		Facings: 1
 	stand:
 		Facings: 8
 	run:
@@ -1451,10 +1449,10 @@ deso:
 	die3:
 		Start: 149
 		Length: 14
-    die4:
+	die4:
 		Start: 134
 		Length: 14
-    die5:
+	die5:
 		Start: 134
 		Length: 14
 	die6: electro
@@ -1463,7 +1461,6 @@ deso:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
-    # and they aren't crushable (no crushed death)
 	shoot:
 		Start: 164
 		Length: 6
@@ -1474,15 +1471,15 @@ deso:
 		Length: 6
 		Facings: 8
 		Tick: 80
-    deploy:
-        Start: 299
-        Length: 15
-        Facings: 1
-    deploy-shoot:
-        Start: 292
-        Length: 7
-        Facings: 1
-        Tick: 240
+	deploy:
+		Start: 299
+		Length: 15
+		Facings: 1
+	deploy-shoot:
+		Start: 292
+		Length: 7
+		Facings: 1
+		Tick: 240
 	icon: desoicon
 
 doggie:
@@ -1501,11 +1498,11 @@ doggie:
 		Length: 4
 		Facings: 8
 		ShadowStart: 175
-	laydown: # TODO: Implement hiding when on a tiberium patch
+	laydown:
 		Start: 88
 		Length: 2
 		ShadowStart: 207
-	hide: # TODO: Implement hiding when on a tiberium patch
+	hide:
 		Start: 90
 		ShadowStart: 209
 	idle1:
@@ -1520,7 +1517,7 @@ doggie:
 		Start: 99
 		Length: 10
 		ShadowStart: 218
-	die3: frag1 # == large_explosion
+	die3: frag1
 		Length: *
 	die4:
 		Start: 99
@@ -1530,7 +1527,7 @@ doggie:
 		Start: 109
 		Length: 10
 		ShadowStart: 228
-	die6: frag1 # explode, for electro death.
+	die6: frag1
 		Length: *
 	die-crushed:
 		Start: 105
@@ -1542,7 +1539,7 @@ doggie:
 		Start: 109
 		Length: 10
 		ShadowStart: 228
-    icon: doggieicon
+	icon: doggieicon
 
 doge:
 	stand:

@@ -1,5 +1,3 @@
-# vim: noet sw=4 ts=4:
-
 V2RL:
 	Inherits: ^Vehicle
 	Buildable:
@@ -67,8 +65,8 @@ V2RL:
 		RecoilRecovery: 25
 		LocalOffset: 768,0,90
 		MuzzleSequence: muzzle
-	RepairableBuilding: # repairable by repair UI tool haha
-	-Repairable: # disable this unit from going to FIX.
+	RepairableBuilding:
+	-Repairable:
 	AttackTurreted:
 	WithMuzzleOverlay:
 	WithSpriteTurret:
@@ -316,13 +314,6 @@ HARV:
 
 MCV:
 	Inherits: ^Vehicle
-	#Buildable:
-	#	Queue: Vehicle
-	#	BuildPaletteOrder: 90
-	#	Prerequisites: fix, ~weap, ~techlevel.medium
-	#	BuildDuration: 2500
-	#	BuildDurationModifier: 40
-	#	Description: Deploys into another Construction Yard.\n  Unarmed
 	Valued:
 		Cost: 3000
 	Tooltip:
@@ -352,7 +343,6 @@ MCV:
 	SpawnActorOnDeath:
 		Actor: MCV.Husk
 
-# Soviet MCV
 NAMCV:
 	Inherits: MCV
 	Buildable:
@@ -699,7 +689,7 @@ DTRK:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 160
-		Prerequisites: stek, ~naweap, ~techlevel.high 
+		Prerequisites: stek, ~naweap, ~techlevel.high
 		Description: Demolition Truck, actively armed with\nnuclear explosives. Has very weak armor.
 	Valued:
 		Cost: 2500
@@ -717,11 +707,6 @@ DTRK:
 		Weapon: MiniNuke
 		EmptyWeapon: MiniNuke
 	AttackSuicides:
-	#-DamageMultiplier@IRONCURTAIN:
-	#KillsSelf:
-	#	RequiresCondition: invulnerability
-	#Chronoshiftable:
-	#	ExplodeInstead: yes
 
 CTNK:
 	Inherits: ^Vehicle
@@ -898,9 +883,8 @@ QANT:
 	-DamagedByRadioactivity:
 	-EjectOnDeath:
 	-Capturable:
-	-Repairable: # disable this unit from going to FIX.
+	-Repairable:
 
-# Warrior ant, not "want"
 WANT:
 	Inherits: ^Vehicle
 	Valued:
@@ -952,9 +936,8 @@ WANT:
 	-DamagedByRadioactivity:
 	-EjectOnDeath:
 	-Capturable:
-	-Repairable: # disable this unit from going to FIX.
+	-Repairable:
 
-# Fire ant
 FANT:
 	Inherits: ^Vehicle
 	Valued:
@@ -1010,11 +993,11 @@ FANT:
 	Cloak:
 		InitialDelay: 1
 		CloakDelay: 5
-		UncloakOn: Dock # which, we don't dock so... always cloaked unless detected.
+		UncloakOn: Dock
 		CloakTypes: Cloak
 		IsPlayerPalette: true
 		RequiresCondition: deployed
-	WithSpriteBody: # for deploy animation
+	WithSpriteBody:
 	GrantConditionOnDeploy:
 		DeployedCondition: deployed
 		CanDeployOnRamps: true
@@ -1031,7 +1014,7 @@ FANT:
 	-DamagedByRadioactivity:
 	-EjectOnDeath:
 	-Capturable:
-	-Repairable: # disable this unit from going to FIX.
+	-Repairable:
 	WithSpriteTurret:
 		Sequence: stand
 		Recoils: False
@@ -1039,10 +1022,9 @@ FANT:
 		Turret: deployed
 	Turreted:
 		Turret: deployed
-		TurnSpeed: 12 # same as in mobile trait.
+		TurnSpeed: 12
 	AttackTurreted@deployed:
 		Voice: Attack
-		#Armaments: deployed
 		RequiresCondition: deployed
 	AttackFrontal:
 		Voice: Attack
@@ -1099,7 +1081,7 @@ SANT:
 	-DamagedByRadioactivity:
 	-EjectOnDeath:
 	-Capturable:
-	-Repairable: # disable this unit from going to FIX.
+	-Repairable:
 
 HANT:
 	Inherits: ^Vehicle
@@ -1140,7 +1122,7 @@ HANT:
 	Armament:
 		Weapon: HantZap
 		LocalOffset: 1024,0,256
-	WithSpriteBody: # attacking in 8 directions (armament thingy)
+	WithSpriteBody:
 	Targetable:
 		TargetTypes: Ground, Vehicle, Ant
 	WithDeathAnimation:
@@ -1151,7 +1133,7 @@ HANT:
 	-DamagedByRadioactivity:
 	-EjectOnDeath:
 	-Capturable:
-	-Repairable: # disable this unit from going to FIX.
+	-Repairable:
 	AttackFrontal:
 		Voice: Attack
 
@@ -1247,7 +1229,7 @@ MSAM:
 		PipCount: 0
 		SelfReloads: true
 		ReloadCount: 2
-		SelfReloadDelay: 250 # reloads 2 per 10 secs
+		SelfReloadDelay: 250
 	AttackFrontal:
 	WithSpriteTurret:
 		AimSequence: aim
@@ -1300,8 +1282,6 @@ WANGCHANG:
 MARV:
 	Inherits: HARV
 	WithVoxelBody:
-	# Cant use WithVoxelUnloadBody, as it has its own refinery logic of its own.
-	# Too complex for this mod.
 	RenderVoxels:
 		Scale: 8
 		PlayerPalette: player-ra2
@@ -1309,8 +1289,8 @@ MARV:
 		QuantizedFacings: 0
 		CameraPitch: 90
 		UseClassicPerspectiveFudge: false
-	RenderSprites: # for icons
-	WithSpriteBody: # dummy (invis)
+	RenderSprites:
+	WithSpriteBody:
 		Palette: ra2anim
 	-WithFacingSpriteBody:
 	-WithHarvestAnimation:
@@ -1333,5 +1313,5 @@ MARV:
 		BaleUnloadDelay: 1
 		SearchFromProcRadius: 30
 		SearchFromOrderRadius: 15
-	-HarvesterHuskModifier: # always "empty'
-	-Explodes: # always "empty"
+	-HarvesterHuskModifier:
+	-Explodes:

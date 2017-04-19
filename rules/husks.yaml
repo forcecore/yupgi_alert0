@@ -1,5 +1,3 @@
-# vim: noet sw=4 ts=4:
-
 1TNK.Husk:
 	Inherits: ^Husk
 	Tooltip:
@@ -99,6 +97,10 @@ TRAN.Husk:
 	RevealsShroud:
 		Range: 10c0
 		Type: GroundPosition
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 8c0
+		Type: GroundPosition
 	RenderSprites:
 		Image: tran
 
@@ -150,7 +152,11 @@ MIG.Husk:
 		Interval: 2
 		MinDamage: Undamaged
 	RevealsShroud:
-		Range: 12c0
+		Range: 13c0
+		Type: GroundPosition
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 11c0
 		Type: GroundPosition
 	RenderSprites:
 		Image: mig
@@ -169,7 +175,11 @@ YAK.Husk:
 		Interval: 2
 		MinDamage: Undamaged
 	RevealsShroud:
-		Range: 10c0
+		Range: 11c0
+		Type: GroundPosition
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 9c0
 		Type: GroundPosition
 	RenderSprites:
 		Image: yak
@@ -190,6 +200,10 @@ HELI.Husk:
 	RevealsShroud:
 		Range: 12c0
 		Type: GroundPosition
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 10c0
+		Type: GroundPosition
 	RenderSprites:
 		Image: heli
 
@@ -207,6 +221,10 @@ HIND.Husk:
 		MinDamage: Undamaged
 	RevealsShroud:
 		Range: 10c0
+		Type: GroundPosition
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 8c0
 		Type: GroundPosition
 	RenderSprites:
 		Image: hind
@@ -466,13 +484,13 @@ ZEP.Husk:
 		Range: 15c0
 		Type: GroundPosition
 	-WithFacingSpriteBody:
-	-AutoSelectionSize: # only applies to sprite actors
+	-AutoSelectionSize:
 	WithVoxelBody:
 	BodyOrientation:
 		QuantizedFacings: 0
 		CameraPitch: 90
 		UseClassicPerspectiveFudge: false
-	-WithShadow: # Disable 2D sprite shadow logic
+	-WithShadow:
 	RenderVoxels:
 		Scale: 8
 		Image: zep
@@ -518,17 +536,21 @@ NMIG.Husk:
 		Interval: 2
 		MinDamage: Undamaged
 	RevealsShroud:
-		Range: 12c0
+		Range: 13c0
+		Type: GroundPosition
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 11c0
 		Type: GroundPosition
 	-WithFacingSpriteBody:
 	-QuantizeFacingsFromSequence:
-	-AutoSelectionSize: # only applies to sprite actors
+	-AutoSelectionSize:
 	WithVoxelBody:
 	BodyOrientation:
 		QuantizedFacings: 0
 		CameraPitch: 90
 		UseClassicPerspectiveFudge: false
-	-WithShadow: # Disable 2D sprite shadow logic
+	-WithShadow:
 	RenderVoxels:
 		Scale: 0.7
 		Image: nmig

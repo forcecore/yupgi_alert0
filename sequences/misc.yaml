@@ -96,10 +96,6 @@ pips:
 		Offset: 9, 5
 	medic:
 		Start: 20
-#	ready:
-#		Start: 3
-#	hold:
-#		Start: 4
 	tag-fake:
 		Start: 18
 		Offset: 0, 2
@@ -571,8 +567,6 @@ shroud:
 	shroud: shadow
 		Length: *
 
-# Note: The order of smudges and craters determines
-# the index that is mapped to them in maps
 scorches:
 	Defaults:
 		Length: *

@@ -1,5 +1,3 @@
-# vim: noet sw=4 ts=4:
-
 Player:
 	AlwaysVisible:
 	TechTree:
@@ -60,7 +58,6 @@ Player:
 		InsufficientFundsNotification: InsufficientFunds
 	ActorGroupProxy:
 	DeveloperMode:
-		# Related to CHEATS, DEBUG_MODE, DEBUG in the lobby
 		Enabled: true
 	GpsWatcher:
 	Shroud:

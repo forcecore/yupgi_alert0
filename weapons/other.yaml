@@ -1,5 +1,3 @@
-# vim: noet sw=4 ts=4:
-
 ^FireWeapon:
 	ValidTargets: Ground, Water, Trees
 	ReloadDelay: 65
@@ -193,7 +191,7 @@ WangchangThump:
 	Warhead@1Dam: HealthPercentageDamage
 		Spread: 7c0
 		Damage: 5
-		InvalidTargets: WangChang # these can't affect eachother.
+		InvalidTargets: WangChang
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
 		Size: 7,6
@@ -207,8 +205,7 @@ RadBeamWeapon:
 	ReloadDelay: 100
 	Report: idesat1a.wav
 	Projectile: RadBeam
-		ZOffset: 1024 # draws on top of the layer (?)
-		# what ever it is, it is the same as laser zap.
+		ZOffset: 1024
 	Warhead@1Dam: SpreadDamage
 		Spread: 42
 		Damage: 125
@@ -227,14 +224,13 @@ RadBeamWeaponE:
 		Damage: 200
 
 RadEruptionWeapon:
-    ReloadDelay: 60
-    # expected accumulated rad level is 2*level.
+	ReloadDelay: 60
 	Report: idesat2a.wav
 	Warhead@1Radio: CreateRadioactivity
 		Range: 4, 6, 8, 10
 		Level: 100
 		Falloff: 100, 90, 50, 0
-        MaxLevel: 500
+		MaxLevel: 500
 
 FiendShard-AA:
 	ReloadDelay: 30
@@ -274,8 +270,6 @@ FiendShard-AG:
 		Shadow: true
 		Angle: 60
 	Warhead@1Dam: SpreadDamage
-		# Same as m1 cargbine.
-		# AG is not very good, considering fiend costs 1000
 		Damage: 15
 		Versus:
 			Wood: 25
@@ -296,7 +290,7 @@ AntFireballLauncher:
 	Inherits: FireballLauncher
 
 CarrierSpawnTargeter:
-	ReloadDelay: 30 # "Interceptors" get launched with this delay.
+	ReloadDelay: 30
 	Range: 10c0
 	ValidTargets: Ground, Water, Air
 	Projectile: Bullet
@@ -307,7 +301,7 @@ CarrierSpawnTargeter:
 		ValidTargets: Air, Ground, Water
 
 MiniHiveSpawnTargeter:
-	ReloadDelay: 30 # "Interceptors" get launched with this delay.
+	ReloadDelay: 30
 	Range: 10c0
 	Projectile: Bullet
 		Speed: 10c0
@@ -355,7 +349,7 @@ SuperMandible:
 
 HantZap:
 	Inherits: TTankZap
-	
+
 ChitzkoiJaw:
 	Inherits: DogJaw
 	Range: 6c0

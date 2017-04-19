@@ -1,5 +1,3 @@
-# vim: noet sw=4 ts=4:
-
 MSLO:
 	Inherits: ^ScienceBuilding
 	Valued:
@@ -53,7 +51,6 @@ MSLO:
 		Amount: -150
 	MustBeDestroyed:
 		RequiredForShortGame: false
-	# Can produce nuke mig!
 	Production:
 		Produces: Aircraft, NukeMig
 	WithDecoration@primary:
@@ -333,7 +330,6 @@ IRON:
 		DisplayRadarPing: True
 		Condition: invulnerability
 		OnFireSound: ironcur9.aud
-	# Iron curtain generation action haha
 	ProximityExternalCondition:
 		Condition: invulnerability
 		Range: 10c0
@@ -379,26 +375,6 @@ PDOX:
 		Range: 6c0
 	Bib:
 		HasMinibib: Yes
-	#ProvidesPrerequisite@germany:
-		#Factions: germany
-		#Prerequisite: pdox.germany
-	#ProvidesPrerequisite@germanstructure:
-		#RequiresPrerequisites: structures.germany
-		#Prerequisite: pdox.germany
-	#ChronoshiftPower@chronoshift:
-		#OrderName: Chronoshift
-		#Prerequisites: !pdox.germany
-		#Icon: chrono
-		#ChargeTime: 120
-		#Description: Chronoshift
-		#LongDesc: Teleports a group of units across\nthe map for 20 seconds.
-		#SelectTargetSpeechNotification: SelectTarget
-		#InsufficientPowerSpeechNotification: InsufficientPower
-		#BeginChargeSpeechNotification: ChronosphereCharging
-		#EndChargeSpeechNotification: ChronosphereReady
-		#Duration: 20
-		#KillCargo: no
-		#DisplayRadarPing: True
 	ChronoshiftPower@advancedchronoshift:
 		OrderName: AdvancedChronoshift
 		Icon: chrono
@@ -648,7 +624,6 @@ HBOX:
 		Types: Infantry
 		MaxWeight: 5
 		PipCount: 5
-		#InitialUnits: e1 # No initial units
 	-EmitInfantryOnSell:
 	DetectCloaked:
 		Range: 6c0
@@ -838,11 +813,6 @@ ATEK:
 
 WEAP:
 	Inherits: ^Building
-	#Buildable:
-		#Queue: Building
-		#BuildPaletteOrder: 80
-		#Prerequisites: fact, proc, ~techlevel.low
-		#Description: Produces vehicles.
 	Valued:
 		Cost: 2000
 	Tooltip:
@@ -968,11 +938,6 @@ FACT:
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3,3
-	#Buildable:
-	#	Queue: Building
-	#	BuildPaletteOrder: 1000
-	#	Prerequisites: ~disabled
-	#	Description: Produces structures.
 	ProvidesPrerequisite@allies:
 		Factions: allies, england, france, germany
 		Prerequisite: structures.allies
@@ -1042,8 +1007,6 @@ FACT:
 	ProvidesPrerequisite:
 		Prerequisite: anyfact
 	ProvidesRadar:
-	# as in C&C3 and RA3!
-	# Now, radar dome provides wide sighted fog of war removal.
 
 NAFACT:
 	Inherits: FACT
@@ -1743,7 +1706,7 @@ SBAG:
 		Prerequisites: ~gafact, ~techlevel.low
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
 	Valued:
-		Cost: 25
+		Cost: 50
 	CustomSellValue:
 		Value: 0
 	Tooltip:
@@ -1768,7 +1731,7 @@ FENC:
 		Prerequisites: ~nafact, ~techlevel.low
 		Description: Stops infantry and light vehicles.\nCan be crushed by tanks.
 	Valued:
-		Cost: 25
+		Cost: 50
 	CustomSellValue:
 		Value: 0
 	Tooltip:
@@ -1793,7 +1756,7 @@ BRIK:
 		Prerequisites: ~anyfact, ~techlevel.medium
 		Description: Stop units and blocks enemy fire.
 	Valued:
-		Cost: 100
+		Cost: 200
 	CustomSellValue:
 		Value: 0
 	Tooltip:
@@ -1926,7 +1889,6 @@ QNEST:
 		Type: Wood
 	RevealsShroud:
 		Range: 10c0
-		# Enough to reveal all the placed hills
 		RevealGeneratedShroud: False
 	RevealsShroud@GAPGEN:
 		Range: 8c0
@@ -1939,10 +1901,6 @@ QNEST:
 	CustomSellValue:
 		Value: 2500
 	BaseBuilding:
-	#Transforms:
-	#	IntoActor: mcv
-	#	Offset: 1,1
-	#	Facing: 96
 	ProductionBar@Building:
 		ProductionType: Building
 	ProductionBar@Defense:
@@ -1959,37 +1917,31 @@ QNEST:
 	WithBuildingPlacedAnimation:
 	Power:
 		Amount: 0
-	Exit@1: # building (qant)
-		SpawnOffset: 0,0,0 # from center
-		ExitCell: 1,3 # from top left.
+	Exit@1:
+		SpawnOffset: 0,0,0
+		ExitCell: 1,3
 	Exit@2:
 		SpawnOffset: 0,-1024,0
 		ExitCell: 1,-1
-	Exit@3: # infantry
+	Exit@3:
 		SpawnOffset: -1024,0,0
 		ExitCell: -1,1
-	Exit@4: # vehicle
+	Exit@4:
 		SpawnOffset: 1024,0,0
 		ExitCell: 3,1
-	Exit@5: # smallant
+	Exit@5:
 		SpawnOffset: -1024,0,0
 		ExitCell: -1,1
-	Exit@6: # bigant
+	Exit@6:
 		SpawnOffset: 1024,0,0
 		ExitCell: 3,1
 	RallyPoint:
-	#WithDeathAnimation:
-		#DeathSequence: dead
-		#UseDeathTypeSuffix: false
 	ProvidesRadar:
-	# as in C&C3 and RA3!
-	# Now, radar dome provides wide sighted fog of war removal.
 	ProvidesPrerequisite@buildingname:
 	BotProvidesPrerequisite@bot:
-		# Provide this, only when bot :)
 		Prerequisite: aibuild
-	-EmitInfantryOnSell: # would be stupid
-	-Sellable: # not sellable. It's a biological nest!
+	-EmitInfantryOnSell:
+	-Sellable:
 	PrimaryBuilding:
 		PrimaryCondition: primary
 	WithDecoration@primary:
@@ -2001,7 +1953,7 @@ QNEST:
 		RequiresCondition: primary
 	Refinery:
 		DockAngle: 64
-		DockOffset: 1,0 # now a bib.
+		DockOffset: 1,0
 	StoresResources:
 		PipCount: 17
 		Capacity: 2000
@@ -2028,24 +1980,24 @@ TIBTREE:
 	RevealsShroud:
 		Range: 4c0
 	-EmitInfantryOnSell:
-	-Sellable: # bio
+	-Sellable:
 	ProvidesPrerequisite@buildingname:
-    RenderSprites:
-        Image: split3
-    SeedsResource:
-        ResourceType: Tiberium
-        Interval: 75
+	RenderSprites:
+		Image: split3
+	SeedsResource:
+		ResourceType: Tiberium
+		Interval: 75
 		MaxRange: 10
-    WithIdleAnimation:
+	WithIdleAnimation:
 	Selectable:
 		Bounds: 24,24
 	SelectionDecorations:
 		VisualBounds: 24,40,0,-8
-	ExplodeWeapon: # radioactivity
+	ExplodeWeapon:
 		Weapon: BlossomTreeExplosion
 		ResetReloadWhenEnabled: false
 	Power:
-		Amount: 6 # so that AI will build ceil(40/6) = 7 tibtree
+		Amount: 6
 
 TUNNELNETWORK:
 	Inherits: ^Building
@@ -2080,8 +2032,7 @@ TUNNELNETWORK:
 		SpawnOffset: 0,0,0
 		ExitCell: 1,1
 	-EmitInfantryOnSell:
-	-Sellable: # bio
-	#ProvidesPrerequisite@buildingname:
+	-Sellable:
 	WithDecoration@primary:
 		RequiresSelection: true
 		Image: pips
@@ -2089,8 +2040,8 @@ TUNNELNETWORK:
 		ReferencePoint: Top
 		ZOffset: 256
 		RequiresCondition: primary
-	NydusPrimaryExit: # must be used with Nydus, for designating NydusExit.
-	Nydus: # Is nydus canal entrance. Needs primary designation though.
+	NydusPrimaryExit:
+	Nydus:
 
 EVO:
 	Inherits: ^Building
@@ -2118,19 +2069,17 @@ EVO:
 	RevealsShroud@GAPGEN:
 		Range: 4c0
 	ProvidesPrerequisite@buildingname:
-	-Sellable: # bio
+	-Sellable:
 	Cargo:
 		Types: Infantry, Vehicle
 		MaxWeight: 5
 		PipCount: 5
 		PassengerFacing: 0
-	CargoTransformer: # OnPassengerEntered trait implementer.
+	CargoTransformer:
 		TransformSound: cargotransform.wav
 		Combinations:
-			# Make sure these are in alphabetical order!
 			sant: want, want, want, want, want
 			hant: fant, fant, fant, fant
-			#hexapod: hant, hant, hant, hant, hant
 	RallyPoint:
 
 GULAG:
@@ -2169,8 +2118,6 @@ GULAG:
 		Period: 375
 		AmountPerLoad: 50
 	-EmitInfantryOnSell:
-	# Not really usef for any other stuff
-	#ProvidesPrerequisite@buildingname:
 
 MINIHIVE:
 	Inherits: ^Defense
@@ -2199,7 +2146,6 @@ MINIHIVE:
 	Armament@PRIMARY:
 		Weapon: MiniHiveSpawnTargeter
 		LocalOffset: 512,0,171
-		#MuzzleSequence: muzzle
 	-QuantizeFacingsFromSequence:
 	BodyOrientation:
 		QuantizedFacings: 8
@@ -2215,10 +2161,10 @@ MINIHIVE:
 		Count: 4
 		SlaveUnit: buzzer
 		RegenTicks: 5
-		RearmTicks: 5 # even without ammo limit, this applies.
+		RearmTicks: 5
 		InstaRepair: true
 		SlaveIsGroundUnit: true
-	-Sellable: # bio
+	-Sellable:
 
 ANTHILL:
 	Inherits: ^Building
@@ -2237,20 +2183,17 @@ ANTHILL:
 		Adjacent: 8
 		Footprint: =
 	-GivesBuildableArea:
-	-Sellable: # bio
+	-Sellable:
 	Health:
 		HP: 300
 	Armor:
 		Type: Wood
 	RevealsShroud:
 		Range: 4c0
-	#WithSiloAnimation:
 	StoresResources:
 		PipCount: 5
 		Capacity: 1500
 	-EmitInfantryOnSell:
-	#Power:
-		#Amount: -10
 	Refinery:
 		DockAngle: 64
 		DockOffset: 0,0
@@ -2289,4 +2232,4 @@ VEIN:
 		Range: 10c0
 	RenderDetectionCircle:
 	ProvidesPrerequisite@buildingname:
-	-Sellable: # bio
+	-Sellable:
