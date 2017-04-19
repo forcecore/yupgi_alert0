@@ -24,8 +24,12 @@ rm mod.yaml.patch
 # now in tmp dir.
 cd ..
 echo "Archiving into zip"
-zip yupgi_alert.zip -r yupgi_alert
-mv yupgi_alert.zip ..
+cd yupgi_alert
+zip ../yupgi_alert.oramod -r *
+cd ..
+rm -rf yupgi_alert
+cp ../LICENSE ../README.md ../ART_CREDITS.txt ../OpenRA.Mods.yupgi_alert/{LICENSE.AS,AUTHORS.AS} .
+zip ../yupgi_alert.zip -r *
 cd ..
 
 echo "Done"
