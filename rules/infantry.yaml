@@ -1022,3 +1022,6 @@ SAIYAN:
 		Range: 6c0
 	AttackFrontal:
 	-TakeCover:
+	WithIdleOverlay:
+		Sequence: qi
+		Offset: 0,0,512

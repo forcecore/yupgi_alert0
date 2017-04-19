@@ -1589,6 +1589,8 @@ doge:
 	icon: dogeicon
 
 saiyan:
+	default:
+		ZOffset: 0
 	stand:
 		Facings: 8
 	panic-run:
@@ -1637,3 +1639,6 @@ saiyan:
 		Start: 56
 		Length: 6
 		Facings: 8
+	qi: qi
+		Length: *
+		ZOffset: -511
