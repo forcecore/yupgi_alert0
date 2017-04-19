@@ -353,3 +353,21 @@ HantZap:
 ChitzkoiJaw:
 	Inherits: DogJaw
 	Range: 6c0
+
+Laser:
+	ReloadDelay: 40
+	Range: 7c512
+	Report: obelray1.aud
+	Projectile: LaserZap
+		Width: 85
+		ZOffset: 2047
+		Color: FFFF00
+	Warhead@1Dam: SpreadDamage
+		Spread: 42
+		Damage: 360
+		Versus:
+			Wood: 50
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees, Creep

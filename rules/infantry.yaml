@@ -1002,3 +1002,23 @@ VOLKOV:
 		StandSequences: stand
 	ProducibleWithLevel:
 		Prerequisites: barracks.upgraded
+
+SAIYAN:
+	Inherits: ^Soldier
+	Tooltip:
+		Name: Super Saiyan Technician
+	Mobile:
+		Speed: 71
+	Voiced:
+		VoiceSet: EinsteinVoice
+	Armament@PRIMARY:
+		Weapon: Laser
+		LocalOffset: 400,40,444
+	Health:
+		HP: 100
+	Valued:
+		Cost: 1200
+	RevealsShroud:
+		Range: 6c0
+	AttackFrontal:
+	-TakeCover:

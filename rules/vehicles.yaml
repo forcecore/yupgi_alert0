@@ -774,6 +774,7 @@ QTNK:
 	SelectionDecorations:
 		VisualBounds: 44,38,0,-4
 	MadTank:
+		DriverActor: saiyan
 	-EjectOnDeath:
 	Targetable:
 		TargetTypes: Ground, MADTank, Repair, Vehicle

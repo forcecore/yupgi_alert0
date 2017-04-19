@@ -1587,3 +1587,53 @@ doge:
 		Length: 1
 		Facings: 32
 	icon: dogeicon
+
+saiyan:
+	stand:
+		Facings: 8
+	panic-run:
+		Start: 8
+		Length: 6
+		Facings: 8
+	panic-stand:
+		Start: 8
+		Stride: 6
+		Facings: 8
+	run:
+		Start: 56
+		Length: 6
+		Facings: 8
+		Tick: 80
+	die1:
+		Start: 115
+		Length: 8
+	die2:
+		Start: 123
+		Length: 8
+	die3:
+		Start: 135
+		Length: 12
+	die4:
+		Start: 147
+		Length: 17
+	die5:
+		Start: 123
+		Length: 8
+	die6: electro
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	die-crushed: corpse1
+		Length: 6
+		Tick: 1600
+		ZOffset: -511
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
+	shoot:
+		Start: 56
+		Length: 6
+		Facings: 8
