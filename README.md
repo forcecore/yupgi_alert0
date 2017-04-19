@@ -1,9 +1,14 @@
 # Over Powered Mod (엽기얼럿 제로)
 
-* This mod is currently for OpenRA release-20161019 (latest stable as of 2017-01-19)
-* See wiki for changes in units :)
-* You can report bugs at the issues menu.
-* If you are looking for the source code of OpenRA.Mods.Uncommon.dll, visit https://github.com/forcecore/OpenRA
+* This mod is currently for OpenRA playtest-20170408
+* To run the mod...
+  * If you are running Windows OS, install playtest-20170408 and double click on yupgi_alert.oramod
+  * Alternatively, on any OS, you can place yupgi_alert.oramod it in mods directory.
+    * On Windows, put yupgi_alert.mod in My Documents/OpenRA/mods.
+    * On Linux, I think it is ~/.openra/mods
+* See wiki for changes in units : https://github.com/forcecore/yupgi_alert0/wiki
+* You can report bugs at the issues menu : https://github.com/forcecore/yupgi_alert0/issues
+* If you are looking for the source code of OpenRA.Mods.Uncommon.dll, visit https://github.com/forcecore/OpenRA, it is renamed OpenRA.Mods.Common.dll with my modifications.
 
 The following are for modders.
 
