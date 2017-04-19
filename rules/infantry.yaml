@@ -1010,7 +1010,7 @@ SAIYAN:
 	Mobile:
 		Speed: 71
 	Voiced:
-		VoiceSet: EinsteinVoice
+		VoiceSet: CivilianMaleVoice
 	Armament@PRIMARY:
 		Weapon: Laser
 		LocalOffset: 400,40,444
