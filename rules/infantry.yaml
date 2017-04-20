@@ -1025,3 +1025,7 @@ SAIYAN:
 	WithIdleOverlay:
 		Sequence: qi
 		Offset: 0,0,512
+		Palette: cloak
+		IsPlayerPalette: true
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
