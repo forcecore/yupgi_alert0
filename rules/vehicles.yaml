@@ -754,7 +754,7 @@ QTNK:
 		Queue: Vehicle
 		BuildPaletteOrder: 190
 		Prerequisites: fix, stek, ~naweap, ~techlevel.high
-		Description: Deals seismic damage to nearby vehicles\nand structures.\n  Strong vs Vehicles, Buildings\n  Weak vs Infantry, Aircraft
+		Description: Deals seismic damage to nearby vehicles\nand structures.\nEjects Super Saiyan Technicion\non deploy.\n  Strong vs Vehicles, Buildings\n  Weak vs Infantry, Aircraft
 	Valued:
 		Cost: 2000
 	Tooltip:
