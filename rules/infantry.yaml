@@ -272,8 +272,7 @@ SPY:
 
 SPY.England:
 	Inherits: SPY
-	Buildable:
-		Prerequisites: ~disabled
+	-Buildable:
 	Valued:
 		Cost: 250
 	GivesExperience:
