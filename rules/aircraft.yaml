@@ -521,7 +521,7 @@ NMIG:
 		BuildLimit: 1
 		Description: Fast strategic bomber.\n  Strong vs Structures, Ground Units\n  Weak vs Aircraft, Anti-Air
 	Valued:
-		Cost: 3000
+		Cost: 2000
 	Tooltip:
 		Name: Nuclear Mig Attack Plane
 	Health:
