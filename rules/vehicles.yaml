@@ -950,7 +950,7 @@ FANT:
 		Queue: Vehicle
 		BuildAtProductionType: BigAnt
 		BuildPaletteOrder: 100
-		Prerequisites: ~qnest, evo
+		Prerequisites: ~qnest, vein
 		Description: Giant ant that breath out flames.\n Can burrow to hide underground.\n Strong vs Infantry, Light armor, Buildings\n  Weak vs Tanks, Aircraft
 	Selectable:
 		Bounds: 24,24,0,-10
