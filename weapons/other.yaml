@@ -371,3 +371,23 @@ Laser:
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Scorch
 		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees, Creep
+
+PDLaser:
+	# Giving armament name something not primary or secondary will
+	# prevent this from automatically (or manually forced) fired.
+	ReloadDelay: 15
+	Range: 4c0
+	Report: vpalwe2d.wav
+	Projectile: LaserZap
+		Width: 85
+		ZOffset: 2047
+		Color: FF0000
+	Warhead@1Dam: SpreadDamage
+		Spread: 42
+		Damage: 100
+		Versus:
+			Wood: 50
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees, Creep

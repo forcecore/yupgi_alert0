@@ -254,6 +254,14 @@ TRAN:
 		Actor: TRAN.Husk
 	SelectionDecorations:
 		VisualBounds: 40,36
+	Armament@PDLASER:
+		Weapon: PDLaser
+		LocalOffset: 0,213,-85
+		Name: pdlaser
+	AttackOmni:
+	ShootsMissiles:
+		ShootStances: Neutral, Enemy
+		Armament: pdlaser
 
 HELI:
 	Inherits: ^Helicopter
