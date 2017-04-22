@@ -208,11 +208,11 @@ TRAN:
 		BuildAtProductionType: Helicopter
 		BuildPaletteOrder: 10
 		Prerequisites: ~hpad, ~techlevel.medium
-		Description: Fast Infantry Transport Helicopter.\n  Unarmed
+		Description: Fast Infantry Transport Helicopter.\n  Infantries can fire their weapons from inside.\n  Has point defense laser that can\n  shoot down missiles.
 	Valued:
-		Cost: 900
+		Cost: 1500
 	Tooltip:
-		Name: Chinook
+		Name: Combat Chinook
 	Health:
 		HP: 120
 	Armor:
@@ -258,10 +258,15 @@ TRAN:
 		Weapon: PDLaser
 		LocalOffset: 0,213,-85
 		Name: pdlaser
-	AttackOmni:
 	ShootsMissiles:
 		ShootStances: Neutral, Enemy
 		Armament: pdlaser
+	AttackGarrisoned:
+		Armaments: garrisoned
+		PortOffsets: 384,0,128, 224,-341,128, -224,-341,128, -384,0,128, -224,341,128, 224,341,128
+		PortYaws: 0, 176, 341, 512, 682, 853
+		PortCones: 88, 88, 88, 88, 88, 88
+	AutoTarget:
 
 HELI:
 	Inherits: ^Helicopter
