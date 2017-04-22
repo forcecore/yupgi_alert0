@@ -519,10 +519,10 @@ DOME:
 	Armor:
 		Type: Wood
 	RevealsShroud:
-		Range: 20c0
+		Range: 10c0
 		RevealGeneratedShroud: False
 	RevealsShroud@GAPGEN:
-		Range: 15c0
+		Range: 6c0
 	Bib:
 	ProvidesRadar:
 		RequiresCondition: !jammed && !disabled
@@ -532,11 +532,23 @@ DOME:
 	RenderDetectionCircle:
 	Power:
 		Amount: -40
+		RequiresCondition: !deployed
 	ProvidesPrerequisite@buildingname:
 	GrantConditionOnDisabled@IDISABLE:
 		Condition: disabled
 	ExternalCondition@JAMMED:
 		Condition: jammed
+	GrantConditionOnDeploy:
+		DeployedCondition: deployed
+		DeploySound: bleep9.aud
+		UndeploySound: bleep5.aud
+	RevealsShroud@HIGHPOWER:
+		Range: 20c0
+		RequiresCondition: deployed && !disabled
+	# requires two more APWRs
+	Power@HIGHPOWER:
+		Amount: -440
+		RequiresCondition: deployed
 
 PBOX:
 	Inherits: ^Defense
