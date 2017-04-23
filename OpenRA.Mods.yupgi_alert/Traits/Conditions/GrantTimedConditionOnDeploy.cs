@@ -1,4 +1,4 @@
-﻿#region Copyright & License Information
+#region Copyright & License Information
 /*
  * Copyright 2015- OpenRA.Mods.AS Developers (see AUTHORS)
  * This file is a part of a third-party plugin for OpenRA, which is
@@ -169,12 +169,6 @@ namespace OpenRA.Mods.AS.Traits
 					deployingToken = manager.GrantCondition(self, info.DeployingCondition);
 				body.Value.PlayCustomAnimation(self, info.DeployAnimation, OnDeployCompleted);
 			}
-		}
-
-		public void AIDeploy()
-		{
-			// Just an interface for my AI Deploy Helper.
-			Deploy();
 		}
 
 		void OnDeployCompleted()
