@@ -507,6 +507,21 @@ ZEP:
 		SlaveUnit: mig2
 		SlaveRespawnTicks: 300
 		InstaRepair: true
+	Exit@0:
+		SpawnOffset: 0,0,0
+		Facing: 0
+	Exit@1:
+		SpawnOffset: 0,0,0
+		Facing: -32
+	Exit@2:
+		SpawnOffset: 0,0,0
+		Facing: 32
+	Exit@3:
+		SpawnOffset: 0,0,0
+		Facing: -64
+	Exit@4:
+		SpawnOffset: 0,0,0
+		Facing: 64
 	Armament:
 		Weapon: CarrierSpawnTargeter
 	AttackFrontal:
