@@ -34,11 +34,11 @@ V2RL:
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
 	Spawner:
-		Count: 1
+		Count: 2
 		SpawnUnit: SCUD_UNIT
 		SpawnIsMissile: true
 		# Make it shorter than any RoF buffs!
-		RespawnTicks: 15
+		RespawnTicks: 120
 
 1TNK:
 	Inherits: ^Tank

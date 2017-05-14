@@ -394,7 +394,9 @@ PDLaser:
 
 ScudSpawnTargeter:
 	ReloadDelay: 240
-	Range: 10c0
+	Burst: 2
+	BurstDelay: 20
+	Range: 12c0
 	MinRange: 3c0
 	Report: missile1.aud
 	Projectile: Bullet

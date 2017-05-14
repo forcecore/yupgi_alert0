@@ -617,7 +617,7 @@ SCUD_UNIT:
 	Tooltip:
 		Name: Scud
 	Health:
-		HP: 40
+		HP: 75
 	Armor:
 		Type: Light
 	ShootableBallisticMissile:
@@ -626,6 +626,7 @@ SCUD_UNIT:
 	Contrail:
 		Offset: -598,0,0
 	Spawned:
-	Explodes:
+	SpawnedExplodes:
+		# Same as explodes but the kill XP goes to the spawner.
 		Weapon: SCUD
 		EmptyWeapon: SCUD
