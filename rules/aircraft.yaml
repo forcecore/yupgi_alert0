@@ -468,6 +468,8 @@ MIG2:
 		Prerequisites: aircraft.upgraded
 	Spawned:
 		LandingDistance: 1c0
+	Contrail@1:
+		Offset: -432,0,0
 
 ZEP:
 	Inherits: ^Helicopter
