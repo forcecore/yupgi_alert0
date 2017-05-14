@@ -172,7 +172,9 @@ V2RL:
 		DeploySound: ironcur9.aud
 		StartsFullyCharged: true
 	AIDeployHelper:
-		DeployOn: Attacked, Damage
+		DeployOn: Damage
+		DeployChance: 100
+		DeployTicks: 150
 
 4TNK:
 	Inherits: ^Tank
@@ -1037,7 +1039,9 @@ FANT:
 		Voice: Attack
 		RequiresCondition: !deployed
 	AIDeployHelper:
-		DeployOn: Attacked, Damage
+		DeployOn: Attack, Damage
+		DeployChance: 100
+		DeployTicks: 150
 
 SANT:
 	Inherits: ^Vehicle
