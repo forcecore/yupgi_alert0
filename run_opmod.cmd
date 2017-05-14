@@ -1,1 +1,1 @@
-..\OpenRA.Game.exe Game.Mod=yupgi_alert
+start ..\OpenRA.Game.exe Game.Mod=yupgi_alert
