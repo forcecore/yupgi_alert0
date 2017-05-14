@@ -30,6 +30,7 @@ Player:
 			stek: 1
 			fix: 1
 			tibtree: 10
+			vein: 1
 		BuildingFractions:
 			qnest: 40%
 			tibtree: 30%
@@ -53,7 +54,8 @@ Player:
 			stek: 1%
 			fix: 0.1%
 			dome: 10%
-			evo: 10%
+			evo: 1%
+			vein: 10%
 		UnitsToBuild:
 			e1: 65%
 			e2: 25%
@@ -155,6 +157,7 @@ Player:
 			tent: 1
 			dome: 1
 			evo: 1
+			vein: 1
 			naweap: 1
 			gaweap: 1
 			spen: 1
@@ -177,6 +180,7 @@ Player:
 			kenn: 0.5%
 			dome: 1%
 			evo: 1%
+			vein: 1%
 			gaweap: 6%
 			naweap: 6%
 			hpad: 4%
@@ -305,6 +309,7 @@ Player:
 			kenn: 1
 			dome: 1
 			evo: 1
+			vein: 1
 			gaweap: 1
 			naweap: 1
 			spen: 1
@@ -337,7 +342,8 @@ Player:
 			tsla: 7%
 			fix: 0.1%
 			dome: 10%
-			evo: 10%
+			evo: 1%
+			vein: 10%
 			agun: 5%
 			sam: 5%
 			atek: 1%
@@ -450,6 +456,7 @@ Player:
 			qnest: 6
 			dome: 1
 			evo: 1
+			vein: 1
 			spen: 1
 			syrd: 1
 			hpad: 8
@@ -468,6 +475,7 @@ Player:
 			apwr: 24%
 			dome: 1%
 			evo: 1%
+			vein: 1%
 			gaweap: 1%
 			naweap: 1%
 			hpad: 20%
