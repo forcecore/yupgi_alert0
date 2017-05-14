@@ -317,7 +317,7 @@ SCUD:
 	ReloadDelay: 240
 	Range: 10c0
 	MinRange: 3c0
-	Report: missile1.aud
+	#Report: missile1.aud
 	-Projectile:
 	Projectile: Bullet
 		Speed: 170

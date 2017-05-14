@@ -504,8 +504,8 @@ ZEP:
 		Prerequisites: aircraft.upgraded
 	Spawner:
 		Count: 5
-		SlaveUnit: mig2
-		SlaveRespawnTicks: 300
+		SpawnUnit: mig2
+		RespawnTicks: 300
 		InstaRepair: true
 	Exit@0:
 		SpawnOffset: 0,0,0
@@ -607,3 +607,23 @@ NMIG:
 	-WithFacingSpriteBody:
 	-QuantizeFacingsFromSequence:
 	-WithShadow:
+
+SCUD_UNIT:
+	Inherits: ^ShootableMissile
+	Valued:
+		Cost: 10
+	Tooltip:
+		Name: Scud
+	Health:
+		HP: 40
+	Armor:
+		Type: Light
+	ShootableBallisticMissile:
+		LaunchAngle: 128
+		Speed: 170
+	Contrail:
+		Offset: -598,0,0
+	Spawned:
+	Explodes:
+		Weapon: SCUD
+		EmptyWeapon: SCUD

@@ -76,3 +76,7 @@ nmig:
 
 zep:
 	icon: zepicon
+
+scud_unit:
+	idle: v2
+		Facings: 32

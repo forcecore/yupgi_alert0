@@ -2171,8 +2171,8 @@ MINIHIVE:
 		Range: 5c0
 	Spawner:
 		Count: 4
-		SlaveUnit: buzzer
-		RegenTicks: 5
+		SpawnUnit: buzzer
+		RespawnTicks: 5
 		RearmTicks: 5
 		InstaRepair: true
 		SlaveIsGroundUnit: true

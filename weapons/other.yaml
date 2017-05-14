@@ -391,3 +391,15 @@ PDLaser:
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Scorch
 		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees, Creep
+
+ScudSpawnTargeter:
+	ReloadDelay: 240
+	Range: 10c0
+	MinRange: 3c0
+	Report: missile1.aud
+	Projectile: Bullet
+		Speed: 10c0
+	Warhead@1Dam: SpreadDamage
+		Spread: 1
+		Damage: 0
+		ValidTargets: Air, Ground, Trees
