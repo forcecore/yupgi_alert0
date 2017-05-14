@@ -2175,7 +2175,7 @@ MINIHIVE:
 		RespawnTicks: 5
 		RearmTicks: 5
 		InstaRepair: true
-		SlaveIsGroundUnit: true
+		SpawnIsGroundUnit: true
 	-Sellable:
 
 ANTHILL:

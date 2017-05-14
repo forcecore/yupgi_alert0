@@ -314,19 +314,20 @@ WantMandible:
 	Inherits: Claw
 	ReloadDelay: 10
 	Report: antbite.aud
-	Warhead@1Dam: SpreadDamage
+	Projectile: InstantHit
+	Warhead@1Dam: TargetDamage
 		Damage: 60
 
 ScoutMandible:
 	Inherits: WantMandible
 	ReloadDelay: 10
 	Report: antbite.aud
-	Warhead@1Dam: SpreadDamage
+	Warhead@1Dam: TargetDamage
 		Damage: 10
 
 BuzzerMandible:
 	Inherits: WantMandible
-	Warhead@1Dam: SpreadDamage
+	Warhead@1Dam: TargetDamage
 		Damage: 100
 		Versus:
 			None: 100
