@@ -2,12 +2,15 @@
 
 * This mod is currently for OpenRA release-20170421
 * To run the mod...
-  * If you are running Windows OS, install release-20170421 and double click on yupgi_alert.oramod
-  * Alternatively, on any OS, you can place yupgi_alert.oramod it in mods directory.
-    * On Windows, put yupgi_alert.mod in My Documents/OpenRA/mods.
+  * If you are running Windows OS, install release-20170421 and double click on yupgi\_alert.oramod
+  * During test, I installed the mod by placing run\_opmod.cmd and yupgi\_alert.oramod in
+    D:\\Program Files (x86)\\OpenRA-20170421\\mods then ran the game with
+    run\_opmod.cmd
+  * Alternatively, on any OS, you can place yupgi\_alert.oramod it in mods directory.
+    * On Windows, put yupgi\_alert.mod in My Documents/OpenRA/mods.
     * On Linux, I think it is ~/.openra/mods
-* See wiki for changes in units : https://github.com/forcecore/yupgi_alert0/wiki
-* You can report bugs at the issues menu : https://github.com/forcecore/yupgi_alert0/issues
+* See wiki for changes in units : https://github.com/forcecore/yupgi\_alert0/wiki
+* You can report bugs at the issues menu : https://github.com/forcecore/yupgi\_alert0/issues
 * If you are looking for the source code of OpenRA.Mods.Uncommon.dll, visit https://github.com/forcecore/OpenRA, it is renamed OpenRA.Mods.Common.dll with my modifications.
 
 The following are for modders.
