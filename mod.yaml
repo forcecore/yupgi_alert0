@@ -3,7 +3,7 @@
 Metadata:
 	Title: Over Powered Mod
 	Description: Crazy modifications to Red Alert by Boolbada
-	Version: 008-Playtest-20170408
+	Version: 009-Release-20170421
 	Author: BoolBada
 
 RequiresMods:
@@ -44,7 +44,7 @@ Packages:
 
 MapFolders:
 	ra|maps: System
-	~^maps/ra/release-20161019: User
+	~^maps/ra/release-20170421: User
 
 Rules:
 	yupgi_alert|rules/misc.yaml
