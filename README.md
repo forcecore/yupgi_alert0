@@ -1,8 +1,8 @@
 # Over Powered Mod (엽기얼럿 제로)
 
-* This mod is currently for OpenRA playtest-20170408
+* This mod is currently for OpenRA release-20170421
 * To run the mod...
-  * If you are running Windows OS, install playtest-20170408 and double click on yupgi_alert.oramod
+  * If you are running Windows OS, install release-20170421 and double click on yupgi_alert.oramod
   * Alternatively, on any OS, you can place yupgi_alert.oramod it in mods directory.
     * On Windows, put yupgi_alert.mod in My Documents/OpenRA/mods.
     * On Linux, I think it is ~/.openra/mods
@@ -17,10 +17,10 @@ The following are for modders.
 어렵다...
 우선은 OpenRA를 git 으로 받아야 한다.
 
-현재는 release-20161019 tag 를 기준으로 한다:
+현재는 release-20170421 tag 를 기준으로 한다:
 
 $ git clone https://github.com/OpenRA/OpenRA.git
-$ git checkout release-20161019
+$ git checkout release-20170421
 
 게임 본판 엔진과 모드의 버전이 맞지 않으면 고통스러우니까 ㅋ
 대부분 rules 수정으로만 했지만 일부 기능의 경우 엔진의 기능이 못 받쳐줘서 직접

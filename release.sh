@@ -1,35 +1,32 @@
 # Script to release the mod into a zip file.
 # Assumes BABUN on windows or something like that on Linux (duh)
 
+PREFIX=`pwd`/tmp/yupgi_alert
 rm -rf tmp
-mkdir tmp
+mkdir -p $PREFIX
 
 echo "Copying mod files"
-git clone . tmp/yupgi_alert
-rm -rf tmp/yupgi_alert/{.git,assets,OpenRA.Mods.yupgi_alert,.gitattributes}
-rm -f tmp/yupgi_alert/{.gitignore,release.sh}
+git clone . $PREFIX/oramod
+rm -rf $PREFIX/oramod/{.git,assets,.gitattributes}
+rm -f $PREFIX/oramod/{.gitignore,release.sh}
 
 # copy the DLL file and the license.
 echo "Copying DLL files and license info"
-cp OpenRA.Mods.yupgi_alert.dll tmp/yupgi_alert
-cp ../common/OpenRA.Mods.Common.dll tmp/yupgi_alert/OpenRA.Mods.Uncommon.dll
-cp OpenRA.Mods.yupgi_alert/{LICENSE.AS,AUTHORS.AS} tmp/yupgi_alert
+cp OpenRA.Mods.yupgi_alert.dll $PREFIX/oramod
+cp ../common/OpenRA.Mods.Common.dll $PREFIX/oramod/OpenRA.Mods.Uncommon.dll
+cp LICENSE README.md ART_CREDITS.txt $PREFIX
+cp run_opmod.cmd $PREFIX
+cp ../../OpenRA.Mods.yupgi_alert/{LICENSE.AS,AUTHORS.AS} $PREFIX
 
 # patch mod.yaml
-echo "Patching mod.yaml"
-cd tmp/yupgi_alert
-patch < mod.yaml.patch
-rm mod.yaml.patch
+mv $PREFIX/oramod/mod.yaml.release $PREFIX/oramod/mod.yaml
 
-# now in tmp dir.
-cd ..
+# now in tmp dir,
 echo "Archiving into zip"
-cd yupgi_alert
-zip ../yupgi_alert.oramod -r *
-cd ..
-rm -rf yupgi_alert
-cp ../LICENSE ../README.md ../ART_CREDITS.txt ../OpenRA.Mods.yupgi_alert/{LICENSE.AS,AUTHORS.AS} .
-zip ../yupgi_alert.zip -r *
-cd ..
+cd $PREFIX/oramod
+zip ../yupgi_alert.oramod -m -r *
+cd $PREFIX/..
+rmdir $PREFIX/oramod
+zip ../yupgi_alert.zip -r yupgi_alert/
 
 echo "Done"
