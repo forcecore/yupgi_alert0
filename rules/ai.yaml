@@ -448,6 +448,7 @@ Player:
 			Production: barr,tent,gaweap,naweap,afld,hpad,qnest
 			NavalProduction: spen,syrd
 			Silo: silo, anthill
+			ExcludeFromSquads: mig2,scud_unit
 		CoreDefinitions:
 			qnest: qant
 		UnitsCommonNames:
@@ -534,9 +535,9 @@ Player:
 			heli: 30%
 			hind: 30%
 			tran_ai: 30%
-			mig: 30%
+			#mig: 30%
 			nmig: 30%
-			yak: 30%
+			#yak: 30%
 			zep: 30%
 			ss: 10%
 			msub: 10%
