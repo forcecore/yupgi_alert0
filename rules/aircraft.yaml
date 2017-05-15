@@ -630,3 +630,19 @@ SCUD_UNIT:
 		# Same as explodes but the kill XP goes to the spawner.
 		Weapon: SCUD
 		EmptyWeapon: SCUD
+
+TRAN_AI:
+	Inherits: TRAN
+	RenderSprites:
+		Image: tran
+	Cargo:
+		Types: Infantry
+		MaxWeight: 8
+		PipCount: 8
+		InitialUnits: e1,e1,e1,e3,e3
+	Buildable:
+		Queue: Aircraft
+		BuildAtProductionType: Helicopter
+		BuildPaletteOrder: 10
+		Prerequisites: ~hpad, ~techlevel.medium, ~aibuild
+		Description: Fast Infantry Transport Helicopter.\n  Infantries can fire their weapons from inside.\n  Has point defense laser that can\n  shoot down missiles.

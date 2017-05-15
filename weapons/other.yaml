@@ -192,10 +192,21 @@ WangchangThump:
 		Spread: 7c0
 		Damage: 5
 		InvalidTargets: WangChang
-	Warhead@2Smu: LeaveSmudge
+	# With only percent damage, it is weak against weak units,
+	# making this unit look weak.
+	Warhead@2Dam: SpreadDamage
+		Spread: 256
+		Damage: 50
+		Versus:
+			None: 100
+			Light: 60
+			Heavy: 25
+			Concrete: 50
+		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
+	Warhead@3Smu: LeaveSmudge
 		SmudgeType: Crater
 		Size: 7,6
-	Warhead@3Eff: CreateEffect
+	Warhead@4Eff: CreateEffect
 		Explosions: med_explosion
 		ImpactSounds: kaboom1.aud
 

@@ -1177,6 +1177,8 @@ HPAD:
 		PrimaryCondition: primary
 	Power:
 		Amount: -10
+	BotProvidesPrerequisite@bot:
+		Prerequisite: aibuild
 	ProvidesPrerequisite@allies:
 		Factions: allies, england, france, germany
 		Prerequisite: aircraft.allies
@@ -1257,6 +1259,8 @@ AFLD:
 	Production:
 		Produces: Aircraft, Plane
 	Reservable:
+	BotProvidesPrerequisite@bot:
+		Prerequisite: aibuild
 	ProvidesPrerequisite@soviet:
 		Factions: soviet, russia, ukraine
 		Prerequisite: aircraft.soviet
@@ -2130,6 +2134,22 @@ GULAG:
 		Period: 375
 		AmountPerLoad: 50
 	-EmitInfantryOnSell:
+
+GULAG_AI:
+	Inherits: GULAG
+	RenderSprites:
+		Image: gulag
+	Cargo:
+		Types: Infantry
+		MaxWeight: 5
+		PipCount: 5
+		PassengerFacing: 0
+		EjectOnDeath: true
+		InitialUnits: e1,e1,e1,e1,e1
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 200
+		Prerequisites: stek, ~nafact, ~techlevel.high, ~aibuild
 
 MINIHIVE:
 	Inherits: ^Defense
