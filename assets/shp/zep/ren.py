@@ -23,6 +23,8 @@ since current implementation of voxel is slow on OpenRA.
    Extract the frames. I use Image Magick to do that:
    convert zep_000.gif zep.png
    You get zep-0.png, zep-1.png, ...
+8. You still need to apply RA2 palette, XCC mixer doesn't seem to work well.
+   Use gimp and BIMP plugin to do that in mass.
 '''
 
 
