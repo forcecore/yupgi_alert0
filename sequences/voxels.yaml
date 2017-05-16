@@ -6,6 +6,3 @@ nmig:
 marv:
 	idle: cmin
 	unload: cmon
-
-zep:
-	idle:

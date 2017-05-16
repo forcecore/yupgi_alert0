@@ -502,6 +502,8 @@ ZEP:
 	SpawnActorOnDeath:
 		Actor: ZEP.Husk
 	-EjectOnDeath:
+	Selectable:
+		Bounds: 50,50,0,0
 	WithDamageOverlay:
 	ProducibleWithLevel:
 		Prerequisites: aircraft.upgraded
@@ -529,18 +531,9 @@ ZEP:
 		Weapon: CarrierSpawnTargeter
 	AttackFrontal:
 	AutoTarget:
-	WithVoxelBody:
-	RenderVoxels:
-		Scale: 8
-		PlayerPalette: player-ra2
-	BodyOrientation:
-		QuantizedFacings: 0
-		CameraPitch: 90
-		UseClassicPerspectiveFudge: false
 	RenderSprites:
-	-WithFacingSpriteBody:
-	-QuantizeFacingsFromSequence:
-	-WithShadow:
+		PlayerPalette: player-ra2
+		Scale: 0.50
 
 NMIG:
 	Inherits: ^Plane

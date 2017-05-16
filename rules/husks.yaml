@@ -480,23 +480,20 @@ ZEP.Husk:
 	Aircraft:
 		TurnSpeed: 4
 		Speed: 149
+	SmokeTrailWhenDamaged:
+		Offset: -427,0,0
+		MinDamage: Undamaged
 	RevealsShroud:
 		Range: 15c0
 		Type: GroundPosition
-	-WithFacingSpriteBody:
-	-AutoSelectionSize:
-	WithVoxelBody:
-	BodyOrientation:
-		QuantizedFacings: 0
-		CameraPitch: 90
-		UseClassicPerspectiveFudge: false
-	-WithShadow:
-	RenderVoxels:
-		Scale: 8
-		Image: zep
-		PlayerPalette: player-ra2
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 10c0
+		Type: GroundPosition
 	RenderSprites:
 		Image: zep
+		PlayerPalette: player-ra2
+		Scale: 0.50
 	-FallsToEarth:
 	BlimpFallsToEarth:
 		SpinInitial: 10
