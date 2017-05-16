@@ -1326,3 +1326,19 @@ MARV:
 		SearchFromOrderRadius: 15
 	-HarvesterHuskModifier:
 	-Explodes:
+
+QTNK_AI:
+	Inherits: QTNK
+	RenderSprites:
+		Image: qtnk
+	Buildable:
+		Queue: Vehicle
+		Prerequisites: fix, stek, ~naweap, ~techlevel.high, ~aibuild
+	AttackOmni:
+	AutoTarget:
+	Armament:
+		Weapon: CarrierSpawnTargeter
+	AIDeployHelper:
+		DeployOn: Attack, Damage
+		DeployChance: 100
+		DeployOnEnemy: true

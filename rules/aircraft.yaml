@@ -456,6 +456,7 @@ MIG2:
 		RearmBuildings: carrier
 	AmmoPool:
 		Ammo: 8
+	RejectsOrders:
 	SpawnActorOnDeath:
 		Actor: MIG2.Husk
 	-Selectable:
@@ -630,6 +631,7 @@ SCUD_UNIT:
 		# Same as explodes but the kill XP goes to the spawner.
 		Weapon: SCUD
 		EmptyWeapon: SCUD
+	RejectsOrders:
 
 TRAN_AI:
 	Inherits: TRAN
@@ -640,6 +642,8 @@ TRAN_AI:
 		MaxWeight: 8
 		PipCount: 8
 		InitialUnits: e1,e1,e1,e3,e3
+	Valued:
+		Cost: 2400
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Helicopter

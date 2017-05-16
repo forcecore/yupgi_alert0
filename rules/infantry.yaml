@@ -826,6 +826,12 @@ DESO:
 		RequiresCondition: deployed
 	Targetable:
 		TargetTypes: Ground, Infantry
+	AIDeployHelper:
+		DeployOn: Attack, Damage
+		DeployChance: 100
+		DeployOnEnemy: true
+		UndeployTicks: 30 # undeploy quickly
+		DeployTicks: 300 # once in 20 secs
 
 FLAMEGUY:
 	Inherits@1: ^ExistsInWorld

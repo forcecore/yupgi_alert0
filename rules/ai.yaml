@@ -529,6 +529,7 @@ Player:
 			3tnk: 50%
 			4tnk: 20%
 			5tnk: 20%
+			qtnk_ai: 5%
 			ttnk: 20%
 			stnk: 15%
 			wangchang: 15%

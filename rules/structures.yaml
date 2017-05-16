@@ -2150,6 +2150,8 @@ GULAG_AI:
 		Queue: Building
 		BuildPaletteOrder: 200
 		Prerequisites: stek, ~nafact, ~techlevel.high, ~aibuild
+	Valued:
+		Cost: 1500
 
 MINIHIVE:
 	Inherits: ^Defense
