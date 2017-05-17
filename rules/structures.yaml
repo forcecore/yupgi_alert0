@@ -1310,7 +1310,7 @@ AFLD:
 		ChargeTime: 360
 		Description: Paratroopers
 		LongDesc: A Badger drops a squad of infantry\nanywhere on the map.
-		DropItems: E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3
+		DropItems: E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3
 		SelectTargetSpeechNotification: SelectTarget
 		AllowImpassableCells: false
 		QuantizedFacings: 8
@@ -1320,8 +1320,8 @@ AFLD:
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
-		SquadSize: 20
-		SquadOffset: -400,400,400
+		SquadSize: 10
+		SquadOffset: -800,800,800
 	AirstrikePower@parabombs:
 		OrderName: UkraineParabombs
 		Prerequisites: aircraft.soviet
