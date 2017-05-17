@@ -894,6 +894,8 @@ DOGGIE:
 		Weapon: FiendShard-AG
 	Armament@AA:
 		Weapon: FiendShard-AA
+	Armament@AAFX:
+		Weapon: FiendShard-AA-FX
 	AttackFrontal:
 		Voice: Attack
 	DamagedByTerrain@tib:

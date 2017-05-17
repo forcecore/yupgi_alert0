@@ -243,17 +243,35 @@ RadEruptionWeapon:
 		Falloff: 100, 90, 50, 0
 		MaxLevel: 500
 
-FiendShard-AA:
+FiendShard-AA-FX:
 	ReloadDelay: 30
 	Burst: 3
 	Range: 8c0
 	Report: fiend2.aud
 	ValidTargets: Air
 	Projectile: Bullet
-		Speed: 1c682
+		Speed: 256 # same as AA gun
 		Blockable: false
 		Image: BOMB
 		Shadow: true
+		ContrailLength: 10
+		ContrailColor: 00FF00
+		ContrailUsePlayerColor: false
+		ContrailDelay: 1
+		ContrailWidth: 20
+	Warhead@1Dam: SpreadDamage
+		Damage: 0
+		Spread: 213
+		DamageTypes: Prone100Percent, TriggerProne, BulletDeath
+		ValidTargets: Air, Ground, Water
+
+FiendShard-AA:
+	ReloadDelay: 30
+	Burst: 3
+	Range: 8c0
+	ValidTargets: Air
+	Projectile: InstantHit
+		Blockable: false
 	Warhead@1Dam: SpreadDamage
 		Damage: 20
 		Spread: 213
@@ -279,7 +297,12 @@ FiendShard-AG:
 		Image: BOMB
 		Inaccuracy: 512
 		Shadow: true
-		Angle: 60
+		LaunchAngle: 60
+		ContrailLength: 10
+		ContrailColor: 00FF00
+		ContrailUsePlayerColor: false
+		ContrailDelay: 1
+		ContrailWidth: 20
 	Warhead@1Dam: SpreadDamage
 		Damage: 15
 		Versus:
