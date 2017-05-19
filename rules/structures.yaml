@@ -2270,3 +2270,4 @@ VEIN:
 	AcceptsDeliveredCash:
 		ValidTypes: Grindable
 		#Sounds: bgrinda.wav
+	WithAcceptDeliveredCashAnimation:
