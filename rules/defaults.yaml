@@ -222,6 +222,7 @@
 	NydusTransportable:
 	DeliversCash@GRINDABLE:
 		Type: Grindable
+		Sounds: kaboom15.aud, kaboom22.aud
 
 ^Tank:
 	Inherits: ^Vehicle
@@ -351,6 +352,7 @@
 	NydusTransportable:
 	DeliversCash@GRINDABLE:
 		Type: Grindable
+		Sounds: dedman1.aud,dedman2.aud,dedman3.aud,dedman4.aud,dedman5.aud,dedman7.aud,dedman8.aud
 
 ^Soldier:
 	Inherits: ^Infantry
@@ -390,6 +392,7 @@
 		MaxMoveDelay: 750
 	DeliversCash@GRINDABLE:
 		Type: Grindable
+		Sounds: dedman1.aud,dedman2.aud,dedman3.aud,dedman4.aud,dedman5.aud,dedman7.aud,dedman8.aud
 
 ^ArmedCivilian:
 	Armament:

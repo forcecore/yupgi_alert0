@@ -895,6 +895,7 @@ QANT:
 		Cost: 2000
 	DeliversCash@GRINDABLE:
 		Payload: 1000
+		Sounds: antdie.aud
 	Tooltip:
 		Name: Queen Ant
 	Selectable:
@@ -942,6 +943,7 @@ WANT:
 		Cost: 1000
 	DeliversCash@GRINDABLE:
 		Payload: 500
+		Sounds: antdie.aud
 	Tooltip:
 		Name: Warrior Ant
 		GenericName: Ant
@@ -997,6 +999,7 @@ FANT:
 		Cost: 1500
 	DeliversCash@GRINDABLE:
 		Payload: 750
+		Sounds: antdie.aud
 	Tooltip:
 		Name: Fire Ant
 		GenericName: Ant
@@ -1095,6 +1098,7 @@ SANT:
 		Cost: 5000
 	DeliversCash@GRINDABLE:
 		Payload: 2500
+		Sounds: antdie.aud
 	Tooltip:
 		Name: Super Ant
 		GenericName: Ant
@@ -1148,6 +1152,7 @@ HANT:
 		Cost: 6000
 	DeliversCash@GRINDABLE:
 		Payload: 3000
+		Sounds: antdie.aud
 	Tooltip:
 		Name: Hyper Ant
 		GenericName: Ant

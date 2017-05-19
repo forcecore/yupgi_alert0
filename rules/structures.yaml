@@ -2269,3 +2269,4 @@ VEIN:
 	-Sellable:
 	AcceptsDeliveredCash:
 		ValidTypes: Grindable
+		#Sounds: bgrinda.wav
