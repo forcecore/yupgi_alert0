@@ -7,6 +7,8 @@ V2RL:
 		Description: Long-range rocket artillery.\n  Strong vs Infantry, Light armor, Buildings\n  Weak vs Tanks, Aircraft
 	Valued:
 		Cost: 900
+	DeliversCash@GRINDABLE:
+		Payload: 450
 	Tooltip:
 		Name: V2 Rocket
 	Health:
@@ -49,6 +51,8 @@ V2RL:
 		Description: Light Tank, good for scouting.\n  Strong vs Light armor\n  Weak vs Infantry, Tanks, Aircraft
 	Valued:
 		Cost: 700
+	DeliversCash@GRINDABLE:
+		Payload: 450
 	Tooltip:
 		Name: Light Tank
 	Health:
@@ -91,6 +95,8 @@ V2RL:
 		Description: Allied Main Battle Tank.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
 	Valued:
 		Cost: 850
+	DeliversCash@GRINDABLE:
+		Payload: 425
 	Tooltip:
 		Name: Medium Tank
 	Health:
@@ -133,6 +139,8 @@ V2RL:
 		Description: Soviet Main Battle Tank, with dual cannons\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
 	Valued:
 		Cost: 1150
+	DeliversCash@GRINDABLE:
+		Payload: 575
 	Tooltip:
 		Name: Heavy Tank
 	Health:
@@ -187,6 +195,8 @@ V2RL:
 		Description: Big and slow tank, with anti-air capability.\n  Strong vs Vehicles, Infantry, Aircraft\n  Weak vs Nothing
 	Valued:
 		Cost: 2000
+	DeliversCash@GRINDABLE:
+		Payload: 1000
 	Tooltip:
 		Name: Mammoth Tank
 	Health:
@@ -241,6 +251,8 @@ ARTY:
 		Description: Long-range artillery.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
 	Valued:
 		Cost: 800
+	DeliversCash@GRINDABLE:
+		Payload: 400
 	Tooltip:
 		Name: Artillery
 	Health:
@@ -278,6 +290,8 @@ HARV:
 		Description: Collects Ore and Gems for processing.\n  Unarmed
 	Valued:
 		Cost: 1100
+	DeliversCash@GRINDABLE:
+		Payload: 550
 	Tooltip:
 		Name: Ore Truck
 		GenericName: Harvester
@@ -324,6 +338,8 @@ MCV:
 	Inherits: ^Vehicle
 	Valued:
 		Cost: 3000
+	DeliversCash@GRINDABLE:
+		Payload: 1500
 	Tooltip:
 		Name: Mobile Construction Vehicle
 	Selectable:
@@ -404,6 +420,8 @@ JEEP:
 		Description: Fast scout & anti-infantry vehicle.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Valued:
 		Cost: 500
+	DeliversCash@GRINDABLE:
+		Payload: 250
 	Tooltip:
 		Name: Ranger
 	Health:
@@ -446,6 +464,8 @@ APC:
 		Description: Tough infantry transport.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft
 	Valued:
 		Cost: 850
+	DeliversCash@GRINDABLE:
+		Payload: 425
 	Tooltip:
 		Name: Armored Personnel Carrier
 	Health:
@@ -485,6 +505,8 @@ MNLY:
 		Description: Lays mines to destroy\nunwary enemy units.\nCan detect mines.\n  Unarmed
 	Valued:
 		Cost: 800
+	DeliversCash@GRINDABLE:
+		Payload: 400
 	Tooltip:
 		Name: Minelayer
 	Health:
@@ -523,6 +545,8 @@ TRUK:
 		Description: Transports cash to other players.\n  Unarmed
 	Valued:
 		Cost: 500
+	DeliversCash@GRINDABLE:
+		Payload: 250
 	Tooltip:
 		Name: Supply Truck
 	Health:
@@ -550,6 +574,8 @@ MGG:
 		Description: Regenerates the shroud nearby, \nobscuring the area.\n  Unarmed
 	Valued:
 		Cost: 1200
+	DeliversCash@GRINDABLE:
+		Payload: 600
 	Tooltip:
 		Name: Mobile Gap Generator
 	Health:
@@ -576,6 +602,8 @@ MRJ:
 	Inherits: ^Vehicle
 	Valued:
 		Cost: 1100
+	DeliversCash@GRINDABLE:
+		Payload: 550
 	Tooltip:
 		Name: Mobile Radar Jammer
 	Buildable:
@@ -620,6 +648,8 @@ TTNK:
 		Description: Tank with mounted tesla coil.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft
 	Valued:
 		Cost: 1350
+	DeliversCash@GRINDABLE:
+		Payload: 675
 	Tooltip:
 		Name: Tesla Tank
 	Health:
@@ -656,6 +686,8 @@ FTRK:
 		Description: Mobile unit with mounted Flak Cannon.\n  Strong vs Infantry, Light armor, Aircraft\n  Weak vs Tanks
 	Valued:
 		Cost: 600
+	DeliversCash@GRINDABLE:
+		Payload: 300
 	Tooltip:
 		Name: Mobile Flak
 	Health:
@@ -701,6 +733,8 @@ DTRK:
 		Description: Demolition Truck, actively armed with\nnuclear explosives. Has very weak armor.
 	Valued:
 		Cost: 2500
+	DeliversCash@GRINDABLE:
+		Payload: 1250
 	Tooltip:
 		Name: Demolition Truck
 	Health:
@@ -725,6 +759,8 @@ CTNK:
 		Description: Chrono Tank, teleports to areas within range.\n  Strong vs Vehicles, Buildings\n  Weak vs Infantry, Aircraft\n  Special ability: Can teleport
 	Valued:
 		Cost: 1350
+	DeliversCash@GRINDABLE:
+		Payload: 675
 	Tooltip:
 		Name: Chrono Tank
 	SelectionDecorations:
@@ -765,6 +801,8 @@ QTNK:
 		Description: Deals seismic damage to nearby vehicles\nand structures.\nEjects Super Saiyan Technicion\non deploy.\n  Strong vs Vehicles, Buildings\n  Weak vs Infantry, Aircraft
 	Valued:
 		Cost: 2000
+	DeliversCash@GRINDABLE:
+		Payload: 1000
 	Tooltip:
 		Name: MAD Tank
 	Health:
@@ -796,6 +834,8 @@ STNK:
 		Description: Lightly armored infantry transport\nwhich can cloak. Can detect cloaked units.\n  Strong vs Light armor\n  Weak vs Infantry, Tanks, Aircraft
 	Valued:
 		Cost: 1350
+	DeliversCash@GRINDABLE:
+		Payload: 675
 	Tooltip:
 		Name: Phase Transport
 	Health:
@@ -853,6 +893,8 @@ QANT:
 		Description: Deploys into Queen's Nest.\n  Unarmed
 	Valued:
 		Cost: 2000
+	DeliversCash@GRINDABLE:
+		Payload: 1000
 	Tooltip:
 		Name: Queen Ant
 	Selectable:
@@ -898,6 +940,8 @@ WANT:
 	Inherits: ^Vehicle
 	Valued:
 		Cost: 1000
+	DeliversCash@GRINDABLE:
+		Payload: 500
 	Tooltip:
 		Name: Warrior Ant
 		GenericName: Ant
@@ -951,6 +995,8 @@ FANT:
 	Inherits: ^Vehicle
 	Valued:
 		Cost: 1500
+	DeliversCash@GRINDABLE:
+		Payload: 750
 	Tooltip:
 		Name: Fire Ant
 		GenericName: Ant
@@ -1047,6 +1093,8 @@ SANT:
 	Inherits: ^Vehicle
 	Valued:
 		Cost: 5000
+	DeliversCash@GRINDABLE:
+		Payload: 2500
 	Tooltip:
 		Name: Super Ant
 		GenericName: Ant
@@ -1098,6 +1146,8 @@ HANT:
 	Inherits: ^Vehicle
 	Valued:
 		Cost: 6000
+	DeliversCash@GRINDABLE:
+		Payload: 3000
 	Tooltip:
 		Name: Hyper Ant
 		GenericName: Ant
@@ -1162,6 +1212,8 @@ HANT:
 		Description: Super tank with\n extremely heavy armor.\n Strong vs Everything
 	Valued:
 		Cost: 10000
+	DeliversCash@GRINDABLE:
+		Payload: 5000
 	Tooltip:
 		Name: Super Tank
 		GenericName: Super Tank
@@ -1213,6 +1265,8 @@ MSAM:
 		PlayerPalette: player-cc1
 	Valued:
 		Cost: 1200
+	DeliversCash@GRINDABLE:
+		Payload: 600
 	Tooltip:
 		Name: MLRS
 	Buildable:
@@ -1257,6 +1311,8 @@ WANGCHANG:
 		Description: Emits shockwave that destroys anything on the ground.\nWeak vs Aircraft
 	Valued:
 		Cost: 1500
+	DeliversCash@GRINDABLE:
+		Payload: 750
 	Tooltip:
 		Name: Dismantler
 	SelectionDecorations:

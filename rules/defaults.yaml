@@ -220,6 +220,8 @@
 		DamageInterval: 16
 		DamageTypes: FireDeath
 	NydusTransportable:
+	DeliversCash@GRINDABLE:
+		Type: Grindable
 
 ^Tank:
 	Inherits: ^Vehicle
@@ -347,6 +349,8 @@
 		DamageInterval: 16
 		DamageTypes: FireDeath
 	NydusTransportable:
+	DeliversCash@GRINDABLE:
+		Type: Grindable
 
 ^Soldier:
 	Inherits: ^Infantry
@@ -384,6 +388,8 @@
 	Wanders:
 		MinMoveDelay: 150
 		MaxMoveDelay: 750
+	DeliversCash@GRINDABLE:
+		Type: Grindable
 
 ^ArmedCivilian:
 	Armament:
