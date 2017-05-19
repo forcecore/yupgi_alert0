@@ -232,8 +232,8 @@ GameSpeeds:
 		Timestep: 20
 		OrderLatency: 6
 	double:
-		Name: 2x
-		Timestep: 10
+		Name: 4x
+		Timestep: 5
 		OrderLatency: 6
 	ludicrous:
 		Name: Ludicrous
