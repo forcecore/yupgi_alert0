@@ -763,6 +763,7 @@ gulag:
 vein:
 	Defaults:
 		UseTilesetExtension: true
+		ZOffset: -1c511
 	idle:
 		Length: 1
 	active:
