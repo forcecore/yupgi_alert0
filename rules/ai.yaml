@@ -63,7 +63,7 @@ Player:
 			e4: 15%
 			dog: 15%
 			shok: 15%
-			harv: 10%
+			harv: 50%
 			apc: 30%
 			jeep: 40%
 			arty: 15%
@@ -205,7 +205,7 @@ Player:
 			e4: 15%
 			dog: 15%
 			shok: 15%
-			harv: 10%
+			harv: 50%
 			apc: 30%
 			jeep: 40%
 			arty: 15%
@@ -356,7 +356,7 @@ Player:
 			e4: 15%
 			dog: 15%
 			shok: 15%
-			harv: 10%
+			harv: 50%
 			apc: 30%
 			jeep: 40%
 			arty: 15%
@@ -516,7 +516,7 @@ Player:
 			chitz: 15%
 			dog: 15%
 			shok: 15%
-			harv: 10%
+			harv: 50%
 			marv: 10%
 			apc: 30%
 			jeep: 40%
@@ -664,7 +664,7 @@ Player:
 			sam: 5%
 			mslo: 1%
 		UnitsToBuild:
-			harv: 1%
+			harv: 50%
 			heli: 30%
 			hind: 30%
 			mig: 30%
