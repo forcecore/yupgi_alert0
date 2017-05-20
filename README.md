@@ -15,6 +15,12 @@
 
 The following are for modders.
 
+# Some commit codes for me to remember
+I want to share engine modifications but it is difficult to track, as bug fixes occur fairly later than the original development commits. I'd tag these in the commit message
+
+* [SPAWN]: code modifications for spawners or spawned ones.
+* [GRINDER]: Yuri grinder logic related commits
+
 # 모딩 환경 갖추는 법
 
 어렵다...
