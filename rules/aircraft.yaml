@@ -533,7 +533,6 @@ ZEP:
 	AutoTarget:
 	RenderSprites:
 		PlayerPalette: player-ra2
-		Scale: 0.50
 
 NMIG:
 	Inherits: ^Plane
