@@ -25,6 +25,9 @@ since current implementation of voxel is slow on OpenRA.
    You get zep-0.png, zep-1.png, ...
 8. You still need to apply RA2 palette, XCC mixer doesn't seem to work well.
    Use gimp and BIMP plugin to do that in mass.
+   gimp-convert-rgb filter then gimp-image-convert-indexed.
+   You need to make custom ra2 palette for gimp prior to this task though.
+   Don't check "Remove unused or duplicate color..." option.
 '''
 
 
@@ -61,7 +64,7 @@ if __name__ == "__main__":
     odir = "out"
     cnt = 32
     offset = 8
-    wh = (200, 200) # crop centered, with output area of this size
+    wh = (100, 100) # crop centered, with output area of this size
 
     # copying part
     for i in range(cnt):
