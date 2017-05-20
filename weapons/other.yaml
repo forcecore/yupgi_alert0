@@ -239,7 +239,7 @@ RadEruptionWeapon:
 	Report: idesat2a.wav
 	Warhead@1Radio: CreateRadioactivity
 		Range: 4, 6, 8, 10
-		Level: 500
+		Level: 250
 		Falloff: 100, 90, 50, 0
 		MaxLevel: 500
 
