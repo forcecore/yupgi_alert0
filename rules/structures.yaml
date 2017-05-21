@@ -2063,7 +2063,7 @@ EVO:
 	Inherits: ^Building
 	Buildable:
 		Queue: Building
-		BuildPaletteOrder: 90
+		BuildPaletteOrder: 150
 		Prerequisites: ~qnest, vein, ~techlevel.high
 		Description: Provides advanced mutations for ants.\nCan combine units.
 	Valued:
