@@ -9,8 +9,8 @@
   * Alternatively, on any OS, you can place yupgi\_alert.oramod it in mods directory.
     * On Windows, put yupgi\_alert.mod in My Documents/OpenRA/mods.
     * On Linux, I think it is ~/.openra/mods
-* See wiki for changes in units : https://github.com/forcecore/yupgi\_alert0/wiki
-* You can report bugs at the issues menu : https://github.com/forcecore/yupgi\_alert0/issues
+* See wiki for changes in units : https://github.com/forcecore/yupgi_alert0/wiki
+* You can report bugs at the issues menu : https://github.com/forcecore/yupgi_alert0/issues
 * If you are looking for the source code of OpenRA.Mods.Uncommon.dll, visit https://github.com/forcecore/OpenRA, it is renamed OpenRA.Mods.Common.dll with my modifications.
 
 The following are for modders.
