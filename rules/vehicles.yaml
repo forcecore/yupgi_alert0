@@ -1387,6 +1387,8 @@ MARV:
 		SearchFromOrderRadius: 15
 	-HarvesterHuskModifier:
 	-Explodes:
+	PortableChrono:
+		ChargeDelay: 300
 
 QTNK_AI:
 	Inherits: QTNK
