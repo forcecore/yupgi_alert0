@@ -44,6 +44,7 @@ Packages:
 
 MapFolders:
 	ra|maps: System
+	yupgi_alert|maps: System
 	~^maps/ra/release-20170421: User
 
 Rules:
@@ -80,6 +81,7 @@ TileSets:
 	yupgi_alert|tilesets/interior.yaml
 	yupgi_alert|tilesets/temperat.yaml
 	yupgi_alert|tilesets/desert.yaml
+	yupgi_alert|tilesets/debugterrain.yaml
 
 Cursors:
 	ra|cursors.yaml
@@ -213,6 +215,7 @@ SpriteSequenceFormat: TilesetSpecificSpriteSequence
 		SNOW: .sno
 		INTERIOR: .int
 		DESERT: .des
+		DEBUGTERRAIN: .tem
 
 GameSpeeds:
 	slower:
