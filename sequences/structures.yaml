@@ -770,5 +770,5 @@ vein:
 		Length: *
 	make:
 		Length: *
-	icon: ironicon
+	icon: veinicon
 		UseTilesetExtension: false
