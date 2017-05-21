@@ -88,6 +88,14 @@
 		G: 0
 		B: 0
 		A: 128
+	PaletteFromRGBA@invuln_black:
+		Name: invuln_black
+		R: 0
+		G: 0
+		B: 0
+		A: 128
+	IronCurtainPaletteEffect:
+		PaletteName: invuln
 	PaletteFromRGBA@disabled:
 		Name: disabled
 		R: 0

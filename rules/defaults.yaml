@@ -119,8 +119,12 @@
 		ZOffset: 256
 
 ^IronCurtainable:
-	WithColoredOverlay@IRONCURTAIN:
+	WithColoredOverlay@IRONCURTAIN1:
 		RequiresCondition: invulnerability
+		Palette: invuln
+	WithColoredOverlay@IRONCURTAIN2:
+		RequiresCondition: invulnerability
+		Palette: invuln_black
 	DamageMultiplier@IRONCURTAIN:
 		RequiresCondition: invulnerability
 		Modifier: 0
