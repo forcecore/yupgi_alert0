@@ -545,8 +545,6 @@ TRUK:
 		Description: Transports cash to other players.\n  Unarmed
 	Valued:
 		Cost: 500
-	DeliversCash@GRINDABLE:
-		Payload: 250
 	Tooltip:
 		Name: Supply Truck
 	Health:
@@ -557,9 +555,11 @@ TRUK:
 		Speed: 128
 	RevealsShroud:
 		Range: 4c0
+	-DeliversCash@GRINDABLE:
 	DeliversCash:
 		Payload: 500
 		PlayerExperience: 50
+		Type: Supply
 	SpawnActorOnDeath:
 		Actor: moneycrate
 

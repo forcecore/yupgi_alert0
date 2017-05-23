@@ -227,6 +227,7 @@
 	DeliversCash@GRINDABLE:
 		Type: Grindable
 		Sounds: kaboom15.aud, kaboom22.aud
+		Payload: 50
 
 ^Tank:
 	Inherits: ^Vehicle
@@ -357,6 +358,7 @@
 	DeliversCash@GRINDABLE:
 		Type: Grindable
 		Sounds: dedman1.aud,dedman2.aud,dedman3.aud,dedman4.aud,dedman5.aud,dedman7.aud,dedman8.aud
+		Payload: 50
 
 ^Soldier:
 	Inherits: ^Infantry
@@ -397,6 +399,7 @@
 	DeliversCash@GRINDABLE:
 		Type: Grindable
 		Sounds: dedman1.aud,dedman2.aud,dedman3.aud,dedman4.aud,dedman5.aud,dedman7.aud,dedman8.aud
+		Payload: 10
 
 ^ArmedCivilian:
 	Armament:
@@ -565,6 +568,7 @@
 		PlayerExperience: 25
 	EngineerRepairable:
 	AcceptsDeliveredCash:
+		ValidTypes: Supply
 	WithMakeAnimation:
 	ExternalCapturable:
 	ExternalCapturableBar:

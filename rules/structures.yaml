@@ -2268,6 +2268,6 @@ VEIN:
 	ProvidesPrerequisite@buildingname:
 	-Sellable:
 	AcceptsDeliveredCash:
-		ValidTypes: Grindable
+		ValidTypes: Grindable, Supply
 		#Sounds: bgrinda.wav
 	WithAcceptDeliveredCashAnimation:
