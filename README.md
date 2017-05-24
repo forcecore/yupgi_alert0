@@ -21,6 +21,7 @@ I want to share engine modifications but it is difficult to track, as bug fixes 
 * [SPAWN]: code modifications for spawners or spawned ones.
 * [GRINDER]: Yuri grinder logic related commits
 * [IRON_EFF]: iron curtain flashing effect
+* [RADIO_ACTIVITY]: radio activity layer stuff (desolator rad eruption, nuke radiation...)
 
 # 모딩 환경 갖추는 법
 
