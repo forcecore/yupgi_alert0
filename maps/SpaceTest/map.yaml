@@ -1,0 +1,52 @@
+MapFormat: 11
+
+RequiresMod: yupgi_alert
+
+Title: SpaceTest
+
+Author: BoolBada
+
+Tileset: SPACE
+
+SkyboxImage: gargan.png
+
+MapSize: 130,130
+
+Bounds: 1,1,128,128
+
+Visibility: Lobby
+
+Categories: Conquest
+
+Players:
+	PlayerReference@Neutral:
+		Name: Neutral
+		OwnsWorld: True
+		NonCombatant: True
+		Faction: allies
+	PlayerReference@Creeps:
+		Name: Creeps
+		NonCombatant: True
+		Faction: allies
+
+Actors:
+	Actor0: msam
+		Owner: Neutral
+		Location: 64,67
+		Facing: 92
+		TurretFacing: 92
+	Actor1: msam
+		Owner: Neutral
+		Facing: 92
+		TurretFacing: 92
+		Location: 77,67
+	Actor2: msam
+		Owner: Neutral
+		Facing: 92
+		TurretFacing: 92
+		Location: 64,50
+	Actor3: msam
+		Owner: Neutral
+		Facing: 92
+		TurretFacing: 92
+		Location: 78,50

@@ -80,6 +80,7 @@ TileSets:
 	yupgi_alert|tilesets/interior.yaml
 	yupgi_alert|tilesets/temperat.yaml
 	yupgi_alert|tilesets/desert.yaml
+	yupgi_alert|tilesets/space.yaml
 	yupgi_alert|tilesets/debugterrain.yaml
 
 Cursors:

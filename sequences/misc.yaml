@@ -542,6 +542,7 @@ resources:
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
 			DESERT: TEMPERAT
+			SPACE: TEMPERAT
 	gold01: gold01
 	gold02: gold02
 	gold03: gold03
@@ -573,6 +574,7 @@ scorches:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
+			SPACE: TEMPERAT
 	sc1: sc1
 	sc2: sc2
 	sc3: sc3
@@ -586,6 +588,7 @@ craters:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
+			SPACE: TEMPERAT
 	cr1: cr1
 	cr2: cr2
 	cr3: cr3
@@ -604,6 +607,7 @@ gmine:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
+			SPACE: TEMPERAT
 
 railmine:
 	idle:
@@ -611,6 +615,7 @@ railmine:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
+			SPACE: TEMPERAT
 
 ctflag:
 	idle:
