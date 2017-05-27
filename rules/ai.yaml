@@ -46,6 +46,7 @@ Player:
 			pbox: 7%
 			gun: 7%
 			tsla: 5%
+			gap: 2%
 			ftur: 10%
 			minihive: 10%
 			agun: 5%
@@ -192,6 +193,7 @@ Player:
 			ftur: 10%
 			minihive: 10%
 			tsla: 5%
+			gap: 2%
 			fix: 1%
 			agun: 5%
 			sam: 1%
@@ -340,6 +342,7 @@ Player:
 			ftur: 10%
 			minihive: 10%
 			tsla: 7%
+			gap: 3%
 			fix: 0.1%
 			dome: 10%
 			evo: 1%
@@ -626,6 +629,8 @@ Player:
 			proc: 4
 			qnest: 6
 			dome: 1
+			barr: 1
+			tent: 1
 			evo: 1
 			vein: 1
 			spen: 1
@@ -655,6 +660,7 @@ Player:
 			stek: 1%
 			spen: 1%
 			syrd: 1%
+			fix: 0.1%
 			pbox: 12%
 			gun: 12%
 			ftur: 12%
