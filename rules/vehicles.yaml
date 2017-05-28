@@ -1342,7 +1342,7 @@ WANGCHANG:
 		ScanRadius: 5
 	AttackFrontal:
 	WithAttackAnimation:
-		DefaultAttackSequence: shoot
+		AttackSequence: shoot
 	Armament:
 		Weapon: WangchangThump
 	Targetable:

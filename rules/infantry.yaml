@@ -958,6 +958,9 @@ DOGGIE:
 		DeathSequencePalette: player-cc2
 	-DamagedByRadioactivity:
 	-TakeCover:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		StandSequences: stand
 
 CHITZ:
 	Inherits: ^Soldier
