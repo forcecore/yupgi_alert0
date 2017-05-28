@@ -25,6 +25,7 @@ VehicleVoice:
 		soviet: .r00,.r02
 		russia: .r00,.r02
 		ukraine: .r00,.r02
+		creepies: .r01,.r02
 	Voices:
 		Select: vehic1,yessir1,report1,await1
 		Action: ackno,affirm1
