@@ -289,7 +289,7 @@ IRON:
 		BuildPaletteOrder: 130
 		Prerequisites: stek, ~nafact, ~techlevel.unrestricted
 		BuildLimit: 1
-		Description: Makes a group of units invulnerable\nfor a short time.\nRequires power to operate.\n  Special Ability: Invulnerability\nMaximum 1 can be built.
+		Description: Makes units around it\ninvulnerable, except self.\nMakes a group of remote units invulnerable\nfor a short time.\nRequires power to operate.\n  Special Ability: Invulnerability\nMaximum 1 can be built.
 	Valued:
 		Cost: 1500
 	Tooltip:
@@ -343,6 +343,17 @@ IRON:
 		Amount: -200
 	MustBeDestroyed:
 		RequiredForShortGame: false
+	GrantConditionOnDisabled@IDISABLE:
+		Condition: disabled
+	GrantConditionOnDamageState@heavy:
+		Condition: damage-heavy
+		ValidDamageStates: Heavy
+	WithIdleOverlay@top:
+		Sequence: active
+		RequiresCondition: !damage-heavy && !disabled
+	WithIdleOverlay@topdmg:
+		Sequence: damaged-active
+		RequiresCondition: damage-heavy && !disabled
 
 PDOX:
 	Inherits: ^ScienceBuilding

@@ -524,14 +524,12 @@ gap:
 
 iron:
 	idle:
-		Length: 11
 		Offset: 0,-12
 	active:
 		Length: 11
 		Offset: 0,-12
 	damaged-idle:
 		Start: 11
-		Length: 11
 		Offset: 0,-12
 	damaged-active:
 		Start: 11
