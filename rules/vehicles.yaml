@@ -1432,6 +1432,7 @@ SMIN:
 	Mobile:
 		Speed: 85
 		Crushes: wall, mine, crate, infantry
+		RequiresCondition: !deployed
 	RevealsShroud:
 		# sight same as PROC
 		Range: 6c0
@@ -1459,3 +1460,11 @@ SMIN:
 	AutoTarget:
 	WithMuzzleOverlay:
 	WithSpriteTurret:
+	WithIdleOverlay@deployed:
+		Sequence: dock-loop
+		RequiresCondition: deployed
+	GrantConditionOnDeploy:
+		DeployedCondition: deployed
+		AllowedTerrainTypes: Clear, Road, DirtRoad, Rough
+		DeployAnimation: dock
+		Facing: 64
