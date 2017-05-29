@@ -1468,3 +1468,10 @@ SMIN:
 		AllowedTerrainTypes: Clear, Road, DirtRoad, Rough
 		DeployAnimation: dock
 		Facing: 64
+	StoresResources:
+		PipCount: 10
+		Capacity: 2000
+	InfiltrateForCash:
+		Percentage: 50
+		Notification: CreditsStolen
+		RequiresCondition: deployed
