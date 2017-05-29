@@ -2116,10 +2116,10 @@ GULAG:
 	Tooltip:
 		Name: Labor Camp
 		Description: Provides fund by making people work.
-	Buildable:
-		Queue: Building
-		BuildPaletteOrder: 200
-		Prerequisites: stek, ~nafact, ~techlevel.high
+	#Buildable:
+		#Queue: Building
+		#BuildPaletteOrder: 200
+		#Prerequisites: stek, ~nafact, ~techlevel.high
 	Valued:
 		Cost: 1000
 	ProvidesPrerequisite@buildingname:
@@ -2157,10 +2157,10 @@ GULAG_AI:
 		PassengerFacing: 0
 		EjectOnDeath: true
 		InitialUnits: e1,e1,e1,e1,e1
-	Buildable:
-		Queue: Building
-		BuildPaletteOrder: 200
-		Prerequisites: stek, ~nafact, ~techlevel.high, ~aibuild
+	#Buildable:
+		#Queue: Building
+		#BuildPaletteOrder: 200
+		#Prerequisites: stek, ~nafact, ~techlevel.high, ~aibuild
 	Valued:
 		Cost: 1500
 

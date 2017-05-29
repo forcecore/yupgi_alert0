@@ -476,7 +476,6 @@ Player:
 			stek: 1
 			fix: 1
 			tibtree: 10
-			gulag_ai: 5
 		BuildingFractions:
 			# unleashed
 			qnest: 40%
@@ -508,7 +507,6 @@ Player:
 			atek: 1%
 			stek: 1%
 			mslo: 1%
-			gulag_ai: 50%
 		UnitsToBuild: # unleashed difficulty (the list is too long)...
 			e1: 65%
 			e2: 25%
