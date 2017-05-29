@@ -572,3 +572,14 @@ GAMCV.Husk:
 		IntoActor: gamcv
 	RenderSprites:
 		Image: mcvhusk
+
+SMIN.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Gulag Miner)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: smin
+	RenderSprites:
+		Image: smin.destroyed

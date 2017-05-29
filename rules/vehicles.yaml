@@ -1405,3 +1405,57 @@ QTNK_AI:
 		DeployOn: Attack, Damage
 		DeployChance: 100
 		DeployOnEnemy: true
+
+SMIN:
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 10
+		Prerequisites: stek, ~naweap, ~techlevel.infonly
+		Description: Collects Ore and Gems from remote places.\n  Unarmed
+	Valued:
+		Cost: 2000
+	DeliversCash@GRINDABLE:
+		Payload: 1000
+	Tooltip:
+		Name: Gulag Miner
+		GenericName: Harvester
+	Selectable:
+		Priority: 7
+	SelectionDecorations:
+		VisualBounds: 42,42
+	Health:
+		# same as PROC but with Heavy armor
+		HP: 900
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 85
+		Crushes: wall, mine, crate, infantry
+	RevealsShroud:
+		# sight same as PROC
+		Range: 6c0
+	GpsDot:
+		String: Harvester
+	SpawnActorOnDeath:
+		Actor: SMIN.Husk
+	SelfHealing:
+		Step: 1
+		Delay: 25
+		HealIfBelow: 50
+		DamageCooldown: 500
+	-DamagedByTerrain@tib:
+	-DamagedByRadioactivity:
+	Armament:
+		Weapon: M60mg_smin
+		Recoil: 85
+		RecoilRecovery: 25
+		LocalOffset: 768,0,90
+		MuzzleSequence: muzzle
+	Turreted:
+		TurnSpeed: 7
+		Offset: 384,0,128
+	AttackTurreted:
+	AutoTarget:
+	WithMuzzleOverlay:
+	WithSpriteTurret:

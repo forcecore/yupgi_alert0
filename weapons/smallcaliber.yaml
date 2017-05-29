@@ -312,3 +312,6 @@ VolkovPPK:
 		Explosions: med_splash
 		ImpactSounds: splash9.aud
 		ValidImpactTypes: Water
+
+M60mg_smin:
+	Inherits: M60mg

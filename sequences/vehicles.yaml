@@ -509,3 +509,33 @@ msam.destroyed:
 		Facings: 32
 		UseClassicFacingFudge: True
 		ZOffset: -512
+
+smin:
+	idle: harvempty
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret: 1tnk
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	muzzle: gunfire2
+		Length: 2
+	dock: harv
+		Start: 96
+		Length: 8
+	dock-loop: harv
+		Start: 104
+		Length: 7
+	icon: harvicon
+
+smin.destroyed:
+	idle: harv
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+	turret: 1tnk
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+
