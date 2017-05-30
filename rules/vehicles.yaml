@@ -1471,7 +1471,19 @@ SMIN:
 	StoresResources:
 		PipCount: 10
 		Capacity: 2000
+	Targetable:
+		TargetTypes: Ground, SpyInfiltrate
 	InfiltrateForCash:
 		Percentage: 50
 		Notification: CreditsStolen
 		RequiresCondition: deployed
+	Refinery:
+		DockAngle: 64
+		DockOffset: 0,-1
+		IsDragRequired: true
+		DragOffset: 0,-768,0
+		DragLength: 4
+	SpawnerHarvester:
+		SpawnUnit: slave
+		RequiredDockingCondition: deployed
+		RequiredLaunchCondition: deployed

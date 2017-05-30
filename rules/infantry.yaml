@@ -1098,3 +1098,55 @@ SAIYAN:
 		IsPlayerPalette: true
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
+
+SLAVE:
+	Inherits: ^Infantry
+	Valued:
+		Cost: 10
+	DeliversCash@GRINDABLE:
+		Payload: 10
+	Tooltip:
+		Name: Gulag Prisoner
+	Selectable:
+		Bounds: 12,12,0,-5
+		Priority: 5
+	SelectionDecorations:
+		VisualBounds: 15,15,0,-2
+	Health:
+		HP: 250
+		Shape: Circle
+			Radius: 469
+	Mobile:
+		Speed: 99
+		TurnSpeed: 12
+		SharesCell: yes
+	Crushable:
+	AutoTarget:
+		ScanRadius: 5
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: bite
+	WithSpriteBody:
+	Armament:
+		Weapon: ScoutMandible
+	Targetable:
+		TargetTypes: Ground, Infantry, Ant
+	WithDeathAnimation:
+		UseDeathTypeSuffix: false
+	Voiced:
+		VoiceSet: AntVoice
+	Harvester:
+		Capacity: 5
+		Resources: Ore,Gems,Tiberium
+		BaleUnloadDelay: 1
+		SearchFromProcRadius: 30
+		SearchFromOrderRadius: 15
+	WithDockingAnimation:
+	-DamagedByTerrain@tib:
+	-DamagedByRadioactivity:
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 30
+		Prerequisites: ~barracks, ~techlevel.infonly
+		Description: Anti-tank/Anti-aircraft infantry.\n  Strong vs Vehicles, Aircraft\n  Weak vs Infantry
