@@ -305,6 +305,7 @@ HARV:
 		BaleUnloadDelay: 1
 		SearchFromProcRadius: 30
 		SearchFromOrderRadius: 15
+		DeliveryBuildings: proc, qnest, anthill
 	Health:
 		HP: 600
 	Armor:
@@ -1470,9 +1471,10 @@ SMIN:
 		Facing: 64
 	StoresResources:
 		PipCount: 10
-		Capacity: 2000
+		#Capacity: 2000
+		Capacity: 200000
 	Targetable:
-		TargetTypes: Ground, SpyInfiltrate
+		TargetTypes: Ground, Repair, Vehicle
 	InfiltrateForCash:
 		Percentage: 50
 		Notification: CreditsStolen
@@ -1485,5 +1487,6 @@ SMIN:
 		DragLength: 4
 	SpawnerHarvester:
 		SpawnUnit: slave
+		Resources: Ore,Gems,Tiberium
 		RequiredDockingCondition: deployed
 		RequiredLaunchCondition: deployed

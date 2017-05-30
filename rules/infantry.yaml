@@ -766,6 +766,7 @@ DANT:
 		BaleUnloadDelay: 1
 		SearchFromProcRadius: 30
 		SearchFromOrderRadius: 15
+		DeliveryBuildings: proc, qnest, anthill
 	WithDockingAnimation:
 	-DamagedByTerrain@tib:
 	-DamagedByRadioactivity:
@@ -1113,9 +1114,7 @@ SLAVE:
 	SelectionDecorations:
 		VisualBounds: 15,15,0,-2
 	Health:
-		HP: 250
-		Shape: Circle
-			Radius: 469
+		HP: 25
 	Mobile:
 		Speed: 99
 		TurnSpeed: 12
@@ -1125,25 +1124,25 @@ SLAVE:
 		ScanRadius: 5
 	AttackFrontal:
 	WithInfantryBody:
-		DefaultAttackSequence: bite
 	WithSpriteBody:
-	Armament:
-		Weapon: ScoutMandible
-	Targetable:
-		TargetTypes: Ground, Infantry, Ant
-	WithDeathAnimation:
-		UseDeathTypeSuffix: false
 	Voiced:
-		VoiceSet: AntVoice
+		VoiceSet: CivilianMaleVoice
+	SpawnedHarvester:
 	Harvester:
 		Capacity: 5
 		Resources: Ore,Gems,Tiberium
 		BaleUnloadDelay: 1
-		SearchFromProcRadius: 30
-		SearchFromOrderRadius: 15
+		# Have these search ranges larger than Master's Kick scan range but
+		# don't have it too large..
+		SearchFromProcRadius: 10
+		SearchFromOrderRadius: 10
+		MaxUnloadQueue: 5 # make sure to make this >= than slave counter of SpawnerHarvester
+		DeliveryBuildings: smin
+		Slaved: true
 	WithDockingAnimation:
-	-DamagedByTerrain@tib:
-	-DamagedByRadioactivity:
+	-Selectable:
+	#-DamagedByTerrain@tib:
+	#-DamagedByRadioactivity:
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
