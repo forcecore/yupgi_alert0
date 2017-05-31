@@ -1488,5 +1488,3 @@ SMIN:
 	SpawnerHarvester:
 		SpawnUnit: slave
 		Resources: Ore,Gems,Tiberium
-		RequiredDockingCondition: deployed
-		RequiredLaunchCondition: deployed

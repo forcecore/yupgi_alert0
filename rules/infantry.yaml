@@ -1143,9 +1143,3 @@ SLAVE:
 	-Selectable:
 	#-DamagedByTerrain@tib:
 	#-DamagedByRadioactivity:
-	Buildable:
-		Queue: Infantry
-		BuildAtProductionType: Soldier
-		BuildPaletteOrder: 30
-		Prerequisites: ~barracks, ~techlevel.infonly
-		Description: Anti-tank/Anti-aircraft infantry.\n  Strong vs Vehicles, Aircraft\n  Weak vs Infantry
