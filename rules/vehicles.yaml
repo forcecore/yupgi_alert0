@@ -299,6 +299,7 @@ HARV:
 		Priority: 7
 	SelectionDecorations:
 		VisualBounds: 42,42
+	DockClient:
 	Harvester:
 		Capacity: 20
 		Resources: Ore,Gems,Tiberium
@@ -306,6 +307,7 @@ HARV:
 		SearchFromProcRadius: 30
 		SearchFromOrderRadius: 15
 		DeliveryBuildings: proc, qnest, anthill
+		MaxUnloadQueue: 5
 	Health:
 		HP: 600
 	Armor:
@@ -1379,6 +1381,7 @@ MARV:
 		GenericName: Harvester
 	SpawnActorOnDeath:
 		Actor: MARV.EmptyHusk
+	DockClient:
 	Harvester:
 		OreTeleporter: true
 		Capacity: 20
@@ -1471,8 +1474,7 @@ SMIN:
 		Facing: 64
 	StoresResources:
 		PipCount: 10
-		#Capacity: 2000
-		Capacity: 200000
+		Capacity: 2000
 	Targetable:
 		TargetTypes: Ground, Repair, Vehicle
 	InfiltrateForCash:
@@ -1480,11 +1482,31 @@ SMIN:
 		Notification: CreditsStolen
 		RequiresCondition: deployed
 	Refinery:
-		DockAngle: 64
-		DockOffset: 0,-1
+	DockManager:
+	Dock@1:
+		Offset: 1,0,0
 		IsDragRequired: true
-		DragOffset: 0,-768,0
-		DragLength: 4
+		DragOffset: 512,0,0
+		DragLength: 8
+		External: true
+	Dock@2:
+		Offset: 0,1,0
+		IsDragRequired: true
+		DragOffset: 0,512,0
+		DragLength: 8
+		External: true
+	Dock@3:
+		Offset: -1,0,0
+		IsDragRequired: true
+		DragOffset: -512,0,0
+		DragLength: 8
+		External: true
+	Dock@4:
+		Offset: 0,-1,0
+		IsDragRequired: true
+		DragOffset: 0,-512,0
+		DragLength: 8
+		External: true
 	SpawnerHarvester:
 		SpawnUnit: slave
 		Resources: Ore,Gems,Tiberium

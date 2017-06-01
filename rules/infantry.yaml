@@ -760,6 +760,7 @@ DANT:
 		UseDeathTypeSuffix: false
 	Voiced:
 		VoiceSet: AntVoice
+	DockClient:
 	Harvester:
 		Capacity: 5
 		Resources: Ore,Gems,Tiberium
@@ -1127,6 +1128,7 @@ SLAVE:
 	WithSpriteBody:
 	Voiced:
 		VoiceSet: CivilianMaleVoice
+	DockClient:
 	SpawnedHarvester:
 	Harvester:
 		Capacity: 5

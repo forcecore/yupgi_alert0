@@ -1094,11 +1094,37 @@ PROC:
 		Range: 4c0
 	Bib:
 	Refinery:
-		DockAngle: 64
-		DockOffset: 1,2
+    DockManager:
+        ExternalDocks: true
+    Dock@0:
+		Angle: 64
+		Offset: 1,2,0
+		ExitOffset: 0,1
+        Order: 0
+	Dock@1:
+		Angle: 64
+		Offset: 2,2,0
+		ExitOffset: 0,1
+		Order: 1
+    Dock@2:
+		Angle: 64
+		Offset: 3,2,0
+        Order: 2
+        WaitingPlace: true
+    Dock@3:
+		Angle: 64
+		Offset: 3,1,0
+        Order: 3
+        WaitingPlace: true
+    Dock@4:
+		Angle: 64
+		Offset: 3,0,0
+        Order: 4
+        WaitingPlace: true
 	StoresResources:
 		PipCount: 17
-		Capacity: 2000
+		#Capacity: 2000
+		Capacity: 200000
 	DrawLineToTarget:
 	CustomSellValue:
 		Value: 600
@@ -1376,6 +1402,14 @@ AFLD:
 		Interval: 10
 		FinishRepairingNotification: UnitRepaired
 		PlayerExperience: 15
+    Dock@1:
+        Center: true
+        #Dock@2:
+        #Offset: 0, 1024
+        #Dock@3:
+        #Offset: 1024, 0
+        #Dock@4:
+        #Offset: 1024, 1024
 
 POWR:
 	Inherits: ^Building
@@ -1979,8 +2013,10 @@ QNEST:
 		ZOffset: 256
 		RequiresCondition: primary
 	Refinery:
-		DockAngle: 64
-		DockOffset: 1,0
+    DockManager:
+	Dock:
+		Angle: 64
+		Offset: 1,0,0
 	StoresResources:
 		PipCount: 17
 		Capacity: 2000
@@ -2240,8 +2276,10 @@ ANTHILL:
 		Capacity: 1500
 	-EmitInfantryOnSell:
 	Refinery:
-		DockAngle: 64
-		DockOffset: 0,0
+    DockManager:
+	Dock:
+		Angle: 64
+		Offset: 0,0,0
 	ProvidesPrerequisite@buildingname:
 	MustBeDestroyed:
 		RequiredForShortGame: false
