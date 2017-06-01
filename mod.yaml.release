@@ -44,7 +44,8 @@ Packages:
 
 MapFolders:
 	ra|maps: System
-	~^maps/ra/release-20170421: User
+	yupgi_alert|maps: System
+	~^maps/ra/release-20170527: User
 
 Rules:
 	yupgi_alert|rules/misc.yaml
@@ -80,6 +81,8 @@ TileSets:
 	yupgi_alert|tilesets/interior.yaml
 	yupgi_alert|tilesets/temperat.yaml
 	yupgi_alert|tilesets/desert.yaml
+	yupgi_alert|tilesets/space.yaml
+	yupgi_alert|tilesets/debugterrain.yaml
 
 Cursors:
 	ra|cursors.yaml
@@ -213,6 +216,7 @@ SpriteSequenceFormat: TilesetSpecificSpriteSequence
 		SNOW: .sno
 		INTERIOR: .int
 		DESERT: .des
+		DEBUGTERRAIN: .tem
 
 GameSpeeds:
 	slower:
@@ -230,6 +234,10 @@ GameSpeeds:
 	default:
 		Name: Fastest
 		Timestep: 20
+		OrderLatency: 6
+	double:
+		Name: 4x
+		Timestep: 5
 		OrderLatency: 6
 	ludicrous:
 		Name: Ludicrous
