@@ -44,7 +44,7 @@ Packages:
 MapFolders:
 	ra|maps: System
 	yupgi_alert|maps: System
-	~^maps/ra/release-20170421: User
+	~^maps/ra/release-20170527: User
 
 Rules:
 	yupgi_alert|rules/misc.yaml
