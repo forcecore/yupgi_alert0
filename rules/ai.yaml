@@ -518,6 +518,7 @@ Player:
 			dog: 15%
 			shok: 15%
 			harv: 50%
+			smin: 10%
 			marv: 10%
 			apc: 30%
 			jeep: 40%
@@ -558,6 +559,7 @@ Player:
 			marv: 4
 			5tnk: 1
 			dant: 40
+			smin: 4
 			tran_ai: 6
 		SquadSize: 40
 		SupportPowerDecision@spyplane:
