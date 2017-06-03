@@ -1483,30 +1483,32 @@ SMIN:
 		RequiresCondition: deployed
 	Refinery:
 	DockManager:
+		ExternalDocks: true
+		DeadlockDetectionEnabled: false
 	Dock@1:
-		Offset: 1,0,0
+		DockOffset: 1,0,0
+		DockAngle: 64
 		IsDragRequired: true
 		DragOffset: 512,0,0
 		DragLength: 8
-		External: true
 	Dock@2:
-		Offset: 0,1,0
+		DockOffset: 0,1,0
+		DockAngle: 0
 		IsDragRequired: true
 		DragOffset: 0,512,0
 		DragLength: 8
-		External: true
 	Dock@3:
-		Offset: -1,0,0
+		DockOffset: -1,0,0
+		DockAngle: 192
 		IsDragRequired: true
 		DragOffset: -512,0,0
 		DragLength: 8
-		External: true
 	Dock@4:
-		Offset: 0,-1,0
+		DockOffset: 0,-1,0
+		DockAngle: 128
 		IsDragRequired: true
 		DragOffset: 0,-512,0
 		DragLength: 8
-		External: true
 	SpawnerHarvester:
 		SpawnUnit: slave
 		Resources: Ore,Gems,Tiberium
