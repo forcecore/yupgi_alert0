@@ -202,3 +202,10 @@ SuperTankPrimary:
 	Inherits: 120mm
 	Report: turret1.aud
 	ReloadDelay: 45
+
+90mmRail:
+	Inherits: ^Cannon
+	Projectile: Railgun
+		ZOffset: 1024
+	Warhead@1Dam: SpreadDamage
+		Damage: 60
