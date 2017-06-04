@@ -1123,8 +1123,7 @@ PROC:
         WaitingPlace: true
 	StoresResources:
 		PipCount: 17
-		#Capacity: 2000
-		Capacity: 200000
+		Capacity: 2000
 	DrawLineToTarget:
 	CustomSellValue:
 		Value: 600
