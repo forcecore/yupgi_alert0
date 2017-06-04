@@ -9,6 +9,7 @@ echo "Copying mod files"
 git clone . $PREFIX/oramod
 rm -rf $PREFIX/oramod/{.git,assets,.gitattributes}
 rm -f $PREFIX/oramod/{.gitignore,release.sh}
+rm -f $PREFIX/oramod/rules/buildpal_order.py
 
 # copy the DLL file and the license.
 echo "Copying DLL files and license info"
