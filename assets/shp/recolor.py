@@ -78,7 +78,7 @@ def replace_color(im, src, dest):
 
 
 
-def test_house_color(im, dest):
+def test_house_color(im):
     '''
     Test house color by modifying house color part of the palette.
     '''
@@ -88,20 +88,23 @@ def test_house_color(im, dest):
         for i in range(16, 31+1):
             r, g, b = get_rgb(pal, i)
             set_rgb(pal, i, (0, r, 0))
+        set_rgb(pal, 1, (255, 0, 255)) # Shadow to magenta
         im.putpalette(pal)
 
     replace_palette(im)
+    replace_color(im, [204], [0])
+    replace_color(im, [197], [1])
 
 
 
 if __name__ == "__main__" :
-    dest = "phase3"
-    for fname in glob.glob("out/zep*.png"):
+    dest = "."
+    for fname in glob.glob("cmin/2/cmin*.png"):
         im = Image.open(fname)
 
         replace_color(im, range(200, 203+1), range(16, 31+1))
         replace_color(im, [8, 250], range(16, 31+1))
-        #test_house_color(im, "phase3")
+        test_house_color(im)
 
         _, ofname = os.path.split(fname)
         ofname = os.path.join(dest, ofname)

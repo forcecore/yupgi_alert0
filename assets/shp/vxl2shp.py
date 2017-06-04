@@ -4,50 +4,60 @@ import os
 import glob
 from PIL import Image
 '''
-Converts 360 animation from OS voxel viewer (PPM site) to SHP,
-since current implementation of voxel is slow on OpenRA.
+Convert voxel to shp, using Garion's VXL2SHP map.
+(In-game map!!!)
+I modded it to automatically set focus to each unit so that
+you can take screenshots periodically.
 
-1. Open voxel on OS shp editor.
-2. Uncheck draw ground, draw sky
-3. Tools -> background color -> blue
-4. View -> views -> game TS/RA2
-5. View -> camera manager -> Yrot = 0.
-   In my case the first frame faces left and this script is made for that.
-6. Tools -> make 360 degree animation.
-   Set size to 600? (as big as you want)
-   Frames: 32 (number of facings to export)
-   The direction of rotation doesn't really matter too much, as you can
-   make OpenRA to have negative values as Facing parameter in your sequences YAML
-7. The gif file will be at C:\Program Files (x86)\CnC_Tools\ScreenShots or
-   wherever you installed OS voxel viewer.
-   Extract the frames. I use Image Magick to do that:
-   convert zep_000.gif zep.png
-   You get zep-0.png, zep-1.png, ...
-8. You still need to apply RA2 palette, XCC mixer doesn't seem to work well.
-   Use gimp and BIMP plugin to do that in mass.
-   gimp-convert-rgb filter then gimp-image-convert-indexed.
-   You need to make custom ra2 palette for gimp prior to this task though.
-   Don't check "Remove unused or duplicate color..." option.
+Disable pixel doubling!
+
+With vxl2shp map...
+Take screenshots of the color settings x unit setting
+
+(without shadow)
+1. bg = b, house color = FFFF00
+2. bg = g, house color = FF00FF
+3. bg = r, house color = 00FFFF
+
+Then make another set, rendering shadow only, with blue BG.
+
+To render shadow/unit only, go to Mods.Common\Graphics\VoxelRenderable.cs:125
+Game.Renderer.WorldRgbaSpriteRenderer.DrawSprite(renderProxy.ShadowSprite...)
+Game.Renderer.WorldRgbaSpriteRenderer.DrawSprite(renderProxy.Sprite...)
+Comment them out as you wish.
+
+You'll get 4 settings x 32 rotating images.
+
+1. Make screenshots of units
+2. Use gimp to mass apply palette to ra2-unittem.pal
+   If you use BIMP, then gimp-image-convert-indexed is what you are looking for.
+   You have to create RA2 palette for gimp to use prior to this though.
 '''
 
 
 
-def calc_rect(img, wh):
-    W, H = img.size
+def calc_rect(rect, wh):
+    x1, y1, x2, y2 = rect
+
+    W = x2 - x1
+    H = y2 - y1
+
     w, h = wh
     assert W > w
     assert H > h
     x = int((W - w) / 2)
     y = int((H - h) / 2)
+
+    x += x1
+    y += y1
     return (x, y, x + w, y + h)
 
 
 
-def crop_center(fname, wh):
-    img = Image.open(fname)
-    rect = calc_rect(img, wh)
+def crop_center(ifname, ofname, rect):
+    img = Image.open(ifname)
     img2 = img.crop(rect)
-    img2.save(fname)
+    img2.save(ofname)
 
 
 
@@ -59,22 +69,22 @@ def crop_centers(wildcard, wh):
 
 if __name__ == "__main__":
     # setup
-    name = "zep"
-    idir = "in"
-    odir = "out"
+    name = "cmin"
+    idir = "cmin"
+    odir = "cmin"
     cnt = 32
     offset = 8
-    wh = (100, 100) # crop centered, with output area of this size
+
+    # For me, window decoration is captured ant it is in this rect:
+    client_rect = (10, 39, 1610, 939)
+    wh = (70, 70) # crop centered, with output area of this size
+    rect = calc_rect(client_rect, wh)
 
     # copying part
     for i in range(cnt):
-        ifname = "{}-{}.png".format(name, i)
-        j = (offset + i) % cnt
-        ofname = "{} {:04d}.png".format(name, j)
+        ifname = "K-{:03d}.png".format(i + 1)
+        ofname = "{} {:04d}.png".format(name, i)
         ifname = os.path.join(idir, ifname)
         ofname = os.path.join(odir, ofname)
         print(ifname, "\t", ofname)
-        shutil.copyfile(ifname, ofname)
-
-    wildcard = os.path.join(odir, "*.png")
-    crop_centers(wildcard, wh)
+        crop_center(ifname, ofname, rect)
