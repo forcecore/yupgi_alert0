@@ -728,7 +728,7 @@ DANT:
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: SmallAnt
-		BuildPaletteOrder: 100
+		BuildPaletteOrder: 5
 		Prerequisites: ~qnest
 		BuildDuration: 250
 		Description: Irradiated insect that grew oversize.\nCollects ore.

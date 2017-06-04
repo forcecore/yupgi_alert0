@@ -374,7 +374,7 @@ NAMCV:
 	Inherits: MCV
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 90
+		BuildPaletteOrder: 66
 		Prerequisites: ~naweap, ~techlevel.medium
 		BuildDuration: 2000
 		BuildDurationModifier: 40
@@ -396,7 +396,7 @@ GAMCV:
 	Inherits: MCV
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 90
+		BuildPaletteOrder: 65
 		Prerequisites: ~gaweap, ~techlevel.medium
 		BuildDuration: 2000
 		BuildDurationModifier: 40
@@ -889,7 +889,7 @@ QANT:
 	Inherits: ^Vehicle
 	Buildable:
 		Queue: Building
-		BuildPaletteOrder: 90
+		BuildPaletteOrder: 67
 		Prerequisites: ~qnest
 		BuildDuration: 2000
 		BuildDurationModifier: 40
@@ -953,7 +953,7 @@ WANT:
 	Buildable:
 		Queue: Vehicle
 		BuildAtProductionType: BigAnt
-		BuildPaletteOrder: 100
+		BuildPaletteOrder: 30
 		Prerequisites: ~qnest, tibtree
 		Description: Irradiated insect that grew oversize.\n Strong vs Infantry.\n Weak vs Vehicles, Structures.
 	Selectable:
@@ -1009,7 +1009,7 @@ FANT:
 	Buildable:
 		Queue: Vehicle
 		BuildAtProductionType: BigAnt
-		BuildPaletteOrder: 100
+		BuildPaletteOrder: 80
 		Prerequisites: ~qnest, vein
 		Description: Giant ant that breath out flames.\n Can burrow to hide underground.\n Strong vs Infantry, Light armor, Buildings\n  Weak vs Tanks, Aircraft
 	Selectable:
@@ -1108,7 +1108,7 @@ SANT:
 	Buildable:
 		Queue: Vehicle
 		BuildAtProductionType: BigAnt
-		BuildPaletteOrder: 200
+		BuildPaletteOrder: 299
 		Prerequisites: ~qnest, tibtree, evo, aibuild
 		Description: Evolved combat ant.\n Sacrifice 5 Warrior Ants to\n Evolution Chamber to\n build one Super Ant.\n Strong vs Ground units.
 	Selectable:
@@ -1373,7 +1373,7 @@ MARV:
 	-QuantizeFacingsFromSequence:
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 10
+		BuildPaletteOrder: 11
 		Prerequisites: proc, atek, ~gaweap, ~techlevel.high
 		Description: Chronoshifts Ore and Gems for processing.\n  Unarmed
 	Tooltip:
@@ -1414,7 +1414,7 @@ SMIN:
 	Inherits: ^Vehicle
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 10
+		BuildPaletteOrder: 12
 		Prerequisites: stek, ~naweap, ~techlevel.infonly
 		Description: Collects Ore and Gems from remote places.\n  Unarmed
 	Valued:

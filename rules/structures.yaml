@@ -932,18 +932,6 @@ WEAP:
 	ProvidesPrerequisite:
 		Prerequisite: anyweap
 
-NAWEAP:
-	Inherits: WEAP
-	RenderSprites:
-		Image: weap
-	Tooltip:
-		Name: War Factory (Soviet)
-	Buildable:
-		Queue: Building
-		BuildPaletteOrder: 80
-		Prerequisites: ~nafact, proc, ~techlevel.low
-		Description: Produces vehicles.
-
 GAWEAP:
 	Inherits: WEAP
 	RenderSprites:
@@ -954,6 +942,18 @@ GAWEAP:
 		Queue: Building
 		BuildPaletteOrder: 80
 		Prerequisites: ~gafact, proc, ~techlevel.low
+		Description: Produces vehicles.
+
+NAWEAP:
+	Inherits: WEAP
+	RenderSprites:
+		Image: weap
+	Tooltip:
+		Name: War Factory (Soviet)
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 80
+		Prerequisites: ~nafact, proc, ~techlevel.low
 		Description: Produces vehicles.
 
 FACT:
@@ -2069,7 +2069,7 @@ TUNNELNETWORK:
 		Scale: 0.5
 	Buildable:
 		Queue: Defense
-		BuildPaletteOrder: 175
+		BuildPaletteOrder: 70
 		Prerequisites: ~qnest, anthill, ~techlevel.infonly
 		Description: Allows units to move through underground tunnels.
 	Valued:
@@ -2182,24 +2182,6 @@ GULAG:
 		Period: 375
 		AmountPerLoad: 50
 	-EmitInfantryOnSell:
-
-GULAG_AI:
-	Inherits: GULAG
-	RenderSprites:
-		Image: gulag
-	Cargo:
-		Types: Infantry
-		MaxWeight: 5
-		PipCount: 5
-		PassengerFacing: 0
-		EjectOnDeath: true
-		InitialUnits: e1,e1,e1,e1,e1
-	#Buildable:
-		#Queue: Building
-		#BuildPaletteOrder: 200
-		#Prerequisites: stek, ~nafact, ~techlevel.high, ~aibuild
-	Valued:
-		Cost: 1500
 
 MINIHIVE:
 	Inherits: ^Defense
