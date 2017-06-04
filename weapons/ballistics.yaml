@@ -207,5 +207,6 @@ SuperTankPrimary:
 	Inherits: ^Cannon
 	Projectile: Railgun
 		ZOffset: 1024
+	Report: bigggun1.aud
 	Warhead@1Dam: SpreadDamage
 		Damage: 60
