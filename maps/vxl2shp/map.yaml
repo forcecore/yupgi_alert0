@@ -6,15 +6,17 @@ Title: VXL to SHP Testmap
 
 Author: Graion Dilach
 
-Tileset: DEBUGTERRAIN
+Tileset: SPACE
+
+SkyboxImage: blue.png
 
 MapSize: 66,66
 
 Bounds: 1,1,64,64
 
-Visibility: MissionSelector
+Visibility: Lobby
 
-Categories: Conquest
+Categories: Minigame
 
 Players:
 	PlayerReference@Neutral:
@@ -26,140 +28,144 @@ Players:
 		Name: Creeps
 		NonCombatant: True
 		Faction: allies
+		Enemies: Multi0
+	PlayerReference@Multi0:
+		Name: Multi0
+		Playable: True
+		Color: FF0000
 
 Actors:
 	Actor0: debugvxl
-		Owner: Neutral
+		Owner: Multi0
 		Location: 10,14
 		Facing: 0
 	Actor1: debugvxl
-		Owner: Neutral
+		Owner: Multi0
 		Location: 14,14
 		Facing: 8
 	Actor2: debugvxl
-		Owner: Neutral
+		Owner: Multi0
 		Location: 18,14
 		Facing: 16
 	Actor3: debugvxl
-		Owner: Neutral
+		Owner: Multi0
 		Location: 22,14
 		Facing: 24
 	Actor4: debugvxl
-		Owner: Neutral
+		Owner: Multi0
 		Location: 26,14
 		Facing: 32
 	Actor5: debugvxl
-		Owner: Neutral
+		Owner: Multi0
 		Location: 30,14
 		Facing: 40
 	Actor6: debugvxl
-		Owner: Neutral
+		Owner: Multi0
 		Location: 34,14
 		Facing: 48
 	Actor7: debugvxl
-		Owner: Neutral
+		Owner: Multi0
 		Location: 38,14
 		Facing: 56
 	Actor8: debugvxl
-		Owner: Neutral
+		Owner: Multi0
 		Location: 10,18
 		Facing: 64
 	Actor9: debugvxl
-		Owner: Neutral
+		Owner: Multi0
 		Location: 14,18
 		Facing: 72
 	Actor10: debugvxl
-		Owner: Neutral
+		Owner: Multi0
 		Location: 18,18
 		Facing: 80
 	Actor11: debugvxl
-		Owner: Neutral
+		Owner: Multi0
 		Location: 22,18
 		Facing: 88
 	Actor12: debugvxl
-		Owner: Neutral
+		Owner: Multi0
 		Location: 26,18
 		Facing: 96
 	Actor13: debugvxl
-		Owner: Neutral
+		Owner: Multi0
 		Location: 30,18
 		Facing: 104
 	Actor14: debugvxl
-		Owner: Neutral
+		Owner: Multi0
 		Location: 34,18
 		Facing: 112
 	Actor15: debugvxl
-		Owner: Neutral
+		Owner: Multi0
 		Location: 38,18
 		Facing: 120
 	Actor16: debugvxl
-		Owner: Neutral
+		Owner: Multi0
 		Location: 10,22
 		Facing: 128
 	Actor17: debugvxl
-		Owner: Neutral
+		Owner: Multi0
 		Location: 14,22
 		Facing: 136
 	Actor18: debugvxl
-		Owner: Neutral
+		Owner: Multi0
 		Location: 18,22
 		Facing: 144
 	Actor19: debugvxl
-		Owner: Neutral
+		Owner: Multi0
 		Location: 22,22
 		Facing: 152
 	Actor20: debugvxl
-		Owner: Neutral
+		Owner: Multi0
 		Location: 26,22
 		Facing: 160
 	Actor21: debugvxl
-		Owner: Neutral
+		Owner: Multi0
 		Location: 30,22
 		Facing: 168
 	Actor22: debugvxl
-		Owner: Neutral
+		Owner: Multi0
 		Location: 34,22
 		Facing: 176
 	Actor23: debugvxl
-		Owner: Neutral
+		Owner: Multi0
 		Location: 38,22
 		Facing: 184
 	Actor24: debugvxl
-		Owner: Neutral
+		Owner: Multi0
 		Location: 10,26
 		Facing: 192
 	Actor25: debugvxl
-		Owner: Neutral
+		Owner: Multi0
 		Location: 14,26
 		Facing: 200
 	Actor26: debugvxl
-		Owner: Neutral
+		Owner: Multi0
 		Location: 18,26
 		Facing: 208
 	Actor27: debugvxl
-		Owner: Neutral
+		Owner: Multi0
 		Location: 22,26
 		Facing: 216
 	Actor28: debugvxl
-		Owner: Neutral
+		Owner: Multi0
 		Location: 26,26
 		Facing: 224
 	Actor29: debugvxl
-		Owner: Neutral
+		Owner: Multi0
 		Location: 30,26
 		Facing: 232
 	Actor30: debugvxl
-		Owner: Neutral
+		Owner: Multi0
 		Location: 34,26
 		Facing: 240
 	Actor31: debugvxl
-		Owner: Neutral
+		Owner: Multi0
 		Location: 38,26
 		Facing: 248
-
-VoxelSequences:
-	debugvxl:
-		idle: zep
+	Actor32: mpspawn
+		Owner: Multi0
+		Location: 1,1
 
 Rules:
 	debugvxl:
@@ -173,7 +179,19 @@ Rules:
 			UseClassicPerspectiveFudge: false
 		-WithFacingSpriteBody:
 		-QuantizeFacingsFromSequence:
+		Valued:
+			Cost: 10
+		Health:
+			HP: 10
 		Tooltip:
 			Name: Debug Voxel
 			GenericName: Dummy Unit
+		RevealsShroud:
+			Range: 10c0
+	World:
+		LuaScript:
+			Scripts: focus.lua
 
+VoxelSequences:
+	debugvxl:
+		idle: cmon
