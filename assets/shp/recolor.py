@@ -20,54 +20,57 @@ def set_rgb( pal, color_index, rgb ) :
 
 
 
-def calc_color_conversion( im, src, dest ) :
+def mse3( v1, v2 ) :
+    s = 0
+    for i in range( 3 ) :
+        s += (v1[i] - v2[i])**2
+    return s/3
+
+
+
+def calc_best_match( pal, color, dest ) :
+    rgb = get_rgb( pal, color )
+    #print( "input:", rgb )
+
+    best = -1
+    best_mse = float('inf')
+
+    for d in dest :
+        rgb2 = get_rgb( pal, d )
+        mse = mse3( rgb, rgb2 )
+        #print( "mse with", rgb2, "=", mse )
+        if mse < best_mse :
+            best_mse = mse
+            best = d
+
+    return best
+
+
+
+def calc_color_conversion( pal, src, dest ) :
     '''
     for each color in src, match the closest color in dest.
     src = (u, v) where u and v are color, given in palette index.
     dest = (p, q). Same as src.
     '''
-    pal = im.getpalette()
 
-    # serialized. just pack them in 3.
+    # pal is linearized. just pack them in 3.
     # in RGB, not BGR, fortunately.
     #for i in range( len( pal ) ) :
     #    print( pal[ i ], end=" " )
     #    if i % 3 == 2 :
     #        print()
 
-    def mse3( v1, v2 ) :
-        s = 0
-        for i in range( 3 ) :
-            s += (v1[i] - v2[i])**2
-        return s/3
-
-    def calc_best_match( color, dest ) :
-        rgb = get_rgb( pal, color )
-        #print( "input:", rgb )
-
-        best = -1
-        best_mse = float('inf')
-
-        for d in dest :
-            rgb2 = get_rgb( pal, d )
-            mse = mse3( rgb, rgb2 )
-            #print( "mse with", rgb2, "=", mse )
-            if mse < best_mse :
-                best_mse = mse
-                best = d
-
-        return best
-
     result = dict()
     for color in src :
-        best_match = calc_best_match( color, dest )
+        best_match = calc_best_match( pal, color, dest )
         result[ color ] = best_match
     return result
 
 
 
 def replace_color(im, src, dest):
-    mapper = calc_color_conversion( im, src, dest )
+    mapper = calc_color_conversion( im.getpalette, src, dest )
 
     # apply
     px = im.load() # pixel access
