@@ -1098,27 +1098,27 @@ PROC:
         ExternalDocks: true
     Dock@0:
 		DockAngle: 64
-		DockOffset: 1,2,0
+		DockOffset: 1,2
 		ExitOffset: 0,1
         Order: 0
 	Dock@1:
 		DockAngle: 64
-		DockOffset: 2,2,0
+		DockOffset: 2,2
 		ExitOffset: 0,1
 		Order: 1
     Dock@2:
 		DockAngle: 64
-		DockOffset: 3,2,0
+		DockOffset: 3,2
         Order: 2
         WaitingPlace: true
     Dock@3:
 		DockAngle: 64
-		DockOffset: 3,1,0
+		DockOffset: 3,1
         Order: 3
         WaitingPlace: true
     Dock@4:
 		DockAngle: 64
-		DockOffset: 3,0,0
+		DockOffset: 3,0
         Order: 4
         WaitingPlace: true
 	StoresResources:
@@ -1937,7 +1937,7 @@ ANYPOWER:
 QNEST:
 	Inherits: ^Building
 	Building:
-		Footprint: === =x= ===
+		Footprint: xxx xxx xxx
 		Dimensions: 3,3
 	Buildable:
 		Queue: Building
@@ -2014,10 +2014,11 @@ QNEST:
 		RequiresCondition: primary
 	Refinery:
     DockManager:
-        ExternalDocks: false
+		ExternalDocks: false
+		DeadlockDetectionEnabled: false
+		DockNextToActor: true
 	Dock:
-		DockAngle: 64
-		DockOffset: 1,0,0
+		DockOffset: 0,0
 	StoresResources:
 		PipCount: 17
 		Capacity: 2000
@@ -2263,7 +2264,7 @@ ANTHILL:
 		Name: Ant Hill
 	Building:
 		Adjacent: 8
-		Footprint: =
+		Footprint: x
 	-GivesBuildableArea:
 	-Sellable:
 	Health:
@@ -2279,12 +2280,13 @@ ANTHILL:
 	Refinery:
     DockManager:
         ExternalDocks: false
+		DeadlockDetectionEnabled: false
+		DockNextToActor: true
 	Dock:
-		DockAngle: 64
-		DockOffset: 0,0,0
+		DockOffset: 0,0
 	ProvidesPrerequisite@buildingname:
 	MustBeDestroyed:
-		RequiredForShortGame: false
+		RequiredForShortGame: true
 
 VEIN:
 	Inherits: ^Building

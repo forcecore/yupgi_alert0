@@ -768,6 +768,7 @@ DANT:
 		SearchFromProcRadius: 30
 		SearchFromOrderRadius: 15
 		DeliveryBuildings: proc, qnest, anthill
+		MaxUnloadQueue: 8
 	WithDockingAnimation:
 	-DamagedByTerrain@tib:
 	-DamagedByRadioactivity:
