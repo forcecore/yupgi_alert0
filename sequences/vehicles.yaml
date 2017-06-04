@@ -526,7 +526,7 @@ smin:
 	dock-loop: harv
 		Start: 104
 		Length: 7
-	icon: harvicon
+	icon: sminicon
 
 smin.destroyed:
 	idle: harv
