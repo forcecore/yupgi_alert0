@@ -1356,21 +1356,13 @@ WANGCHANG:
 
 MARV:
 	Inherits: HARV
-	WithVoxelBody:
-	RenderVoxels:
-		Scale: 8
-		PlayerPalette: player-ra2
 	BodyOrientation:
 		QuantizedFacings: 0
 		CameraPitch: 90
 		UseClassicPerspectiveFudge: false
 	RenderSprites:
-	WithSpriteBody:
-		Palette: ra2anim
-	-WithFacingSpriteBody:
-	-WithHarvestAnimation:
+		PlayerPalette: player-ra2
 	WithDockingAnimation:
-	-QuantizeFacingsFromSequence:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 11

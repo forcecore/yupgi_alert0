@@ -424,18 +424,9 @@ MARV.EmptyHusk:
 		Name: Husk (Chrono Miner)
 	TransformOnCapture:
 		IntoActor: marv
-	RenderVoxels:
-		Image: marv
-		Scale: 8
-		PlayerPalette: player-ra2
-	WithVoxelBody:
 	RenderSprites:
-	BodyOrientation:
-		QuantizedFacings: 0
-		CameraPitch: 90
-		UseClassicPerspectiveFudge: false
-	-QuantizeFacingsFromSequence:
-	-WithFacingSpriteBody:
+		Image: marv
+		PlayerPalette: player-ra2
 
 WANGCHANG.Husk:
 	Inherits: ^Husk

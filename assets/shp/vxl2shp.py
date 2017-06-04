@@ -143,13 +143,13 @@ def merge(ofname, b, g, r, shadow, pal):
 if __name__ == "__main__":
     # setup
     cnt = 32
-    name = "cmin"
-    odir = "cmin"
+    name = "cmon"
+    odir = "cmon"
 
-    bdir = "cmin/b"
-    gdir = "cmin/g"
-    rdir = "cmin/r"
-    sdir = "cmin/shadow"
+    bdir = odir + "/b"
+    gdir = odir + "/g"
+    rdir = odir + "/r"
+    sdir = odir + "/shadow"
 
     # For me, window decoration is captured ant it is in this rect:
     client_rect = (10, 39, 1610, 939)

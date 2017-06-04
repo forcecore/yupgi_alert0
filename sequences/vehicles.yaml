@@ -439,13 +439,13 @@ hant:
 
 marv:
 	icon: marvicon
-	idle: invis
-		Facings: 1
-	dock: invis
-		Facings: 1
-	dock-loop: warpout
-		Facings: 1
-		Length: *
+	idle: cmin
+		Facings: 32
+		UseClassicFacingFudge: True
+	dock: cmin
+		Facings: 32
+	dock-loop: cmon
+		Facings: 32
 
 wangchang:
 	idle: harvempty
@@ -538,4 +538,3 @@ smin.destroyed:
 		Facings: 32
 		UseClassicFacingFudge: True
 		ZOffset: -512
-
