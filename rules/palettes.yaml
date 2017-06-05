@@ -96,6 +96,8 @@
 		A: 128
 	IronCurtainPaletteEffect:
 		PaletteName: invuln
+		Amplitude: 24
+		Offset: 24
 	PaletteFromRGBA@disabled:
 		Name: disabled
 		R: 0
