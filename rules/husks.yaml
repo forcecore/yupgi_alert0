@@ -425,8 +425,10 @@ MARV.EmptyHusk:
 	TransformOnCapture:
 		IntoActor: marv
 	RenderSprites:
-		Image: marv
+		Image: marv.husk
 		PlayerPalette: player-ra2
+	Burns:
+		Palette: effect
 
 WANGCHANG.Husk:
 	Inherits: ^Husk
@@ -448,8 +450,10 @@ WANGCHANG.Husk:
 		HP: 2000
 	TransformOnCapture:
 		IntoActor: 5tnk
+	Burns:
+		Palette: effect
 	RenderSprites:
-		Image: 5TNK
+		Image: 5tnk.destroyed
 		PlayerPalette: player-cc1
 
 MSAM.Husk:

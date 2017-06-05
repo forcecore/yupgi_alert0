@@ -447,6 +447,12 @@ marv:
 	dock-loop: cmon
 		Facings: 32
 
+marv.husk:
+	idle: cmin
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -1023
+
 wangchang:
 	idle: harvempty
 		Facings: 32
