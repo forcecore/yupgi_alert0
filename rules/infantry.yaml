@@ -781,7 +781,7 @@ BUZZER:
 		Cost: 10
 	DeliversCash@GRINDABLE:
 		Payload: 5
-		Sounds: antdie.aud
+		Sounds: buzzdie.wav
 	Tooltip:
 		Name: Drone Ant
 		Description: Irradiated insect that grew oversize.\nCollects ore.
@@ -805,7 +805,7 @@ BUZZER:
 	WithDeathAnimation:
 		UseDeathTypeSuffix: false
 	Voiced:
-		VoiceSet: AntVoice
+		VoiceSet: BuzzerVoice
 	-DamagedByTerrain@tib:
 	-DamagedByRadioactivity:
 	-ActorLostNotification:

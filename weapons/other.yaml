@@ -356,12 +356,12 @@ WantMandible:
 ScoutMandible:
 	Inherits: WantMandible
 	ReloadDelay: 10
-	Report: antbite.aud
 	Warhead@1Dam: TargetDamage
 		Damage: 10
 
 BuzzerMandible:
 	Inherits: WantMandible
+	Report: buzzbite.aud
 	Warhead@1Dam: TargetDamage
 		Damage: 100
 		Versus:
@@ -441,3 +441,13 @@ ScudSpawnTargeter:
 		Spread: 1
 		Damage: 0
 		ValidTargets: Air, Ground, Trees
+
+FireballLauncherHighPower:
+	Inherits: ^FireWeapon
+	Burst: 1
+	ReloadDelay: 15
+	Range: 8c512
+	Projectile: Bullet
+		Speed: 450
+		TrailImage: fb2
+		Image: FB1

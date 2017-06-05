@@ -138,6 +138,16 @@ AntVoice:
 		Burned: antdie
 		Zapped: antdie
 
+BuzzerVoice:
+	Voices:
+		Select: buzzbite
+		Move: buzzbite
+		Action: buzzbite
+		Attack: buzzbite
+		Die: buzzdie
+		Burned: buzzdie
+		Zapped: buzzdie
+
 StavrosVoice:
 	Voices:
 		Select: stavcmdr

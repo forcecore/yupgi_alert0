@@ -733,6 +733,11 @@ FTUR:
 	Armament:
 		Weapon: FireballLauncher
 		LocalOffset: 512,0,0
+		RequiresCondition: !primary
+	#Armament@HIGHPOWER:
+		#Weapon: FireballLauncherHighPower
+		#LocalOffset: 512,0,0
+		#RequiresCondition: primary
 	AttackTurreted:
 	-QuantizeFacingsFromSequence:
 	BodyOrientation:
@@ -745,6 +750,25 @@ FTUR:
 	Explodes:
 		Weapon: BuildingExplode
 		EmptyWeapon: BuildingExplode
+	# Primary designation stuff
+	#PrimaryBuilding:
+	#	PrimaryCondition: primary
+	#	SelectionNotification: UnitFirepowerUpgraded
+	#DisabledOverlay:
+	#Production:
+	#	Produces: Dummy
+	#WithDecoration@primary:
+	#	RequiresSelection: true
+	#	Image: pips
+	#	Sequence: tag-primary
+	#	ReferencePoint: Top
+	#	ZOffset: 256
+	#	RequiresCondition: primary
+	#RequiresPower:
+	#	RequiresCondition: primary
+	#Power@HIGHPOWER:
+	#	Amount: -200
+	#	RequiresCondition: primary
 
 SAM:
 	Inherits: ^Defense
