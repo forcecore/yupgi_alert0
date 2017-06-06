@@ -21,8 +21,7 @@ echo "Copying DLL files and license info"
 cp OpenRA.Mods.yupgi_alert.dll $PREFIX/oramod
 cp ../common/OpenRA.Mods.Common.dll $PREFIX/oramod/OpenRA.Mods.Uncommon.dll
 cp LICENSE README.md ART_CREDITS.txt $PREFIX
-cp run_opmod.cmd $PREFIX
-cp ../../OpenRA.Game.exe $PREFIX/OpenRA.YA.exe
+cp ../../OpenRA.Game.exe $PREFIX/OpenRA.yupgi_alert.exe
 cp ../../OpenRA.Mods.yupgi_alert/{LICENSE.AS,AUTHORS.AS} $PREFIX
 
 # patch mod.yaml
