@@ -17,7 +17,6 @@ Packages:
 	.
 	$yupgi_alert: yupgi_alert
 	$ra: ra
-	$cnc: cnc
 	./mods/common: common
 	~main.mix
 	~conquer.mix
