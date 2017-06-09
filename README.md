@@ -12,6 +12,7 @@
 * See wiki for changes in units : https://github.com/forcecore/yupgi_alert0/wiki
 * You can report bugs at the issues menu : https://github.com/forcecore/yupgi_alert0/issues
 * If you are looking for the source code of OpenRA.Mods.Uncommon.dll, visit https://github.com/forcecore/OpenRA, it is renamed OpenRA.Mods.Common.dll with my modifications.
+* If you want to mod the engine, I started to memo important things I cane across during engine modding: https://github.com/forcecore/OpenRA/wiki
 
 The following are for modders.
 

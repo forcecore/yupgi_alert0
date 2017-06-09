@@ -10,6 +10,7 @@ Player:
 			VehiclesFactory: gaweap,naweap,qnest
 			Production: barr,tent,gaweap,naweap,afld,hpad,qnest
 			Silo: silo, anthill
+			StaticAntiAir: sam,agun
 		CoreDefinitions:
 			qnest: qant
 		UnitsCommonNames:
@@ -147,6 +148,7 @@ Player:
 			Production: barr,tent,gaweap,naweap,afld,hpad,qnest
 			NavalProduction: spen,syrd
 			Silo: silo, anthill
+			StaticAntiAir: sam,agun
 		CoreDefinitions:
 			qnest: qant
 		UnitsCommonNames:
@@ -299,6 +301,7 @@ Player:
 			Production: barr,tent,gaweap,naweap,afld,hpad,qnest
 			NavalProduction: spen,syrd
 			Silo: silo, anthill
+			StaticAntiAir: sam,agun
 		CoreDefinitions:
 			qnest: qant
 		UnitsCommonNames:
@@ -451,7 +454,7 @@ Player:
 			Production: barr,tent,gaweap,naweap,afld,hpad,qnest
 			NavalProduction: spen,syrd
 			Silo: silo, anthill
-			ExcludeFromSquads: mig2,scud_unit
+			ExcludeFromSquads: mig2,scud_unit,smin,slave
 		CoreDefinitions:
 			qnest: qant
 		UnitsCommonNames:
@@ -518,7 +521,7 @@ Player:
 			dog: 15%
 			shok: 15%
 			harv: 50%
-			smin: 10%
+			smin: 50%
 			marv: 10%
 			apc: 30%
 			jeep: 40%
@@ -559,7 +562,7 @@ Player:
 			marv: 4
 			5tnk: 1
 			dant: 40
-			smin: 4
+			smin: 6
 			tran_ai: 6
 		SquadSize: 40
 		SupportPowerDecision@spyplane:

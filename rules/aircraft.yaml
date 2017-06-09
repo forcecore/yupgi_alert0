@@ -108,6 +108,7 @@ MIG:
 		LocalYaw: -40, 24
 	AttackPlane:
 		FacingTolerance: 20
+	DockClient:
 	Aircraft:
 		CruiseAltitude: 2560
 		InitialFacing: 192
@@ -172,6 +173,7 @@ YAK:
 		MuzzleSequence: muzzle
 	AttackPlane:
 		FacingTolerance: 20
+	DockClient:
 	Aircraft:
 		CruiseAltitude: 2560
 		InitialFacing: 192
@@ -267,6 +269,7 @@ TRAN:
 		PortYaws: 0, 176, 341, 512, 682, 853
 		PortCones: 88, 88, 88, 88, 88, 88
 	AutoTarget:
+	DockClient:
 
 HELI:
 	Inherits: ^Helicopter
@@ -297,6 +300,7 @@ HELI:
 	Armament@SECONDARY:
 		Weapon: HellfireAG
 		LocalOffset: 0,213,-85
+	DockClient:
 	AttackHeli:
 		FacingTolerance: 20
 	Aircraft:
@@ -304,6 +308,8 @@ HELI:
 		InitialFacing: 224
 		TurnSpeed: 4
 		Speed: 149
+		Repulsable: true
+		RepulsionSpeed: 15
 	AutoTarget:
 		InitialStance: HoldFire
 		InitialStanceAI: HoldFire
@@ -358,6 +364,7 @@ HIND:
 		Weapon: ChainGun
 		LocalOffset: 85,213,-85
 		MuzzleSequence: muzzle
+	DockClient:
 	AttackHeli:
 		FacingTolerance: 20
 	Aircraft:
@@ -365,6 +372,8 @@ HIND:
 		InitialFacing: 224
 		TurnSpeed: 4
 		Speed: 112
+		Repulsable: true
+		RepulsionSpeed: 15
 	AutoTarget:
 		InitialStance: HoldFire
 		InitialStanceAI: HoldFire
@@ -471,6 +480,7 @@ MIG2:
 		LandingDistance: 1c0
 	Contrail@1:
 		Offset: -432,0,0
+	DockClient:
 
 ZEP:
 	Inherits: ^Helicopter
@@ -533,6 +543,7 @@ ZEP:
 	AutoTarget:
 	RenderSprites:
 		PlayerPalette: player-ra2
+	DockClient:
 
 NMIG:
 	Inherits: ^Plane
@@ -602,6 +613,7 @@ NMIG:
 	-WithFacingSpriteBody:
 	-QuantizeFacingsFromSequence:
 	-WithShadow:
+	DockClient:
 
 SCUD_UNIT:
 	Inherits: ^ShootableMissile

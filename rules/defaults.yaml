@@ -160,6 +160,7 @@
 	Targetable:
 		TargetTypes: Ground, Repair, Vehicle
 		RequiresCondition: !parachute
+	DockClient:
 	Repairable:
 	Chronoshiftable:
 	Passenger:
@@ -511,6 +512,7 @@
 	Inherits: ^Plane
 	Tooltip:
 		GenericName: Helicopter
+	DockClient:
 	Aircraft:
 		RearmBuildings: hpad
 		RepairBuildings: hpad, fix

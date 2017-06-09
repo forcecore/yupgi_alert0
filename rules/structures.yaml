@@ -74,7 +74,12 @@ MSLO:
 		Facing: 192
 		MoveIntoWorld: false
 	WithRearmAnimation:
-	Reservable:
+	Airfield:
+	DockManager:
+		DockOnActor: true
+		DeadlockDetectionEnabled: false
+	Dock@0:
+		DockOffset: 0,0
 
 GAP:
 	Inherits: ^ScienceBuilding
@@ -168,6 +173,8 @@ SPEN:
 	PrimaryBuilding:
 		PrimaryCondition: primary
 	-EmitInfantryOnSell:
+	DockManager:
+	Dock:
 	RepairsUnits:
 		FinishRepairingNotification: UnitRepaired
 		PlayerExperience: 15
@@ -234,6 +241,8 @@ SYRD:
 	PrimaryBuilding:
 		PrimaryCondition: primary
 	-EmitInfantryOnSell:
+	DockManager:
+	Dock:
 	RepairsUnits:
 		FinishRepairingNotification: UnitRepaired
 		PlayerExperience: 15
@@ -1231,7 +1240,23 @@ HPAD:
 	RallyPoint:
 	Production:
 		Produces: Aircraft, Helicopter
-	Reservable:
+	Helipad:
+	DockManager:
+		DockOnActor: true
+		DeadlockDetectionEnabled: false
+	Dock@0:
+		DockOffset: 0,0
+		DockAngle: 32
+	Dock@1:
+		DockOffset: 0,1
+		DockAngle: 96
+	Dock@2:
+		DockOffset: 1,0
+		DockAngle: 224
+	Dock@3:
+		DockOffset: 1,1
+		DockAngle: 160
+	#Reservable:
 	ProductionBar:
 	PrimaryBuilding:
 		PrimaryCondition: primary
@@ -1318,7 +1343,6 @@ AFLD:
 	RallyPoint:
 	Production:
 		Produces: Aircraft, Plane
-	Reservable:
 	BotProvidesPrerequisite@bot:
 		Prerequisite: aibuild
 	ProvidesPrerequisite@soviet:
@@ -1425,14 +1449,22 @@ AFLD:
 		Interval: 10
 		FinishRepairingNotification: UnitRepaired
 		PlayerExperience: 15
-    Dock@1:
-        Center: true
-        #Dock@2:
-        #Offset: 0, 1024
-        #Dock@3:
-        #Offset: 1024, 0
-        #Dock@4:
-        #Offset: 1024, 1024
+	Airfield:
+	DockManager:
+		DockOnActor: true
+		DeadlockDetectionEnabled: false
+	Dock@0:
+		DockOffset: 0,0
+	Dock@1:
+		DockOffset: 1,0
+	Dock@2:
+		DockOffset: 2,0
+	Dock@3:
+		DockOffset: 0,1
+	Dock@4:
+		DockOffset: 1,1
+	Dock@5:
+		DockOffset: 2,1
 
 POWR:
 	Inherits: ^Building
@@ -1772,6 +1804,41 @@ FIX:
 		HasMinibib: Yes
 	Reservable:
 	RallyPoint:
+	DockManager:
+		DeadlockDetectionEnabled: false
+		DockOnActor: true
+	Dock@0:
+		DockOffset: 1,0
+		ExitOffset: 0,-2
+		Order: 0
+	Dock@1:
+		DockOffset: 0,1
+		ExitOffset: -2,0
+		Order: 1
+	Dock@2:
+		DockOffset: 2,1
+		ExitOffset: 2,0
+		Order: 2
+	Dock@3:
+		DockOffset: 1,2
+		ExitOffset: 0,2
+		Order: 3
+	Dock@4:
+		DockOffset: -1,-1
+		Order: 4
+		WaitingPlace: true
+	Dock@5:
+		DockOffset: 3,-1
+		Order: 5
+		WaitingPlace: true
+	Dock@6:
+		DockOffset: -1,3
+		Order: 6
+		WaitingPlace: true
+	Dock@7:
+		DockOffset: -3,2
+		Order: 7
+		WaitingPlace: true
 	RepairsUnits:
 		Interval: 10
 		FinishRepairingNotification: UnitRepaired
