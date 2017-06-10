@@ -74,7 +74,6 @@ MSLO:
 		Facing: 192
 		MoveIntoWorld: false
 	WithRearmAnimation:
-	Airfield:
 	DockManager:
 		DockOnActor: true
 		DeadlockDetectionEnabled: false
@@ -1240,7 +1239,6 @@ HPAD:
 	RallyPoint:
 	Production:
 		Produces: Aircraft, Helicopter
-	Helipad:
 	DockManager:
 		DockOnActor: true
 		DeadlockDetectionEnabled: false
@@ -1449,7 +1447,6 @@ AFLD:
 		Interval: 10
 		FinishRepairingNotification: UnitRepaired
 		PlayerExperience: 15
-	Airfield:
 	DockManager:
 		DockOnActor: true
 		DeadlockDetectionEnabled: false
