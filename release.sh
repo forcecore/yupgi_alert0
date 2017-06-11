@@ -1,6 +1,8 @@
 # Script to release the mod into a zip file.
 # Assumes BABUN on windows or something like that on Linux (duh)
 
+REL=$1
+
 PREFIX=`pwd`/tmp/yupgi_alert
 rm -rf tmp
 rm -f yupgi_alert.zip
@@ -33,6 +35,6 @@ cd $PREFIX/oramod
 zip ../yupgi_alert.oramod -m -r *
 cd $PREFIX/..
 rmdir $PREFIX/oramod
-zip ../yupgi_alert.zip -r yupgi_alert/
+zip ../yupgi_alert_r${REL}.zip -r yupgi_alert/
 
 echo "Done"
