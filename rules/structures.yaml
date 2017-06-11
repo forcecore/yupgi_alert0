@@ -1455,13 +1455,9 @@ AFLD:
 	Dock@1:
 		DockOffset: 1,0
 	Dock@2:
-		DockOffset: 2,0
-	Dock@3:
 		DockOffset: 0,1
-	Dock@4:
+	Dock@3:
 		DockOffset: 1,1
-	Dock@5:
-		DockOffset: 2,1
 
 POWR:
 	Inherits: ^Building
