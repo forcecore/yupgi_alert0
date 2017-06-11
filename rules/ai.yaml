@@ -30,7 +30,8 @@ Player:
 			atek: 1
 			stek: 1
 			fix: 1
-			tibtree: 10
+			tibtree: 6
+			anthill: 15
 			vein: 1
 			mbk: 1
 		BuildingFractions:
@@ -173,7 +174,8 @@ Player:
 			atek: 1
 			stek: 1
 			fix: 1
-			tibtree: 10
+			tibtree: 6
+			anthill: 15
 			mbk: 1
 		BuildingFractions:
 			# normal
@@ -332,7 +334,8 @@ Player:
 			atek: 1
 			stek: 1
 			fix: 1
-			tibtree: 10
+			tibtree: 6
+			anthill: 15
 			mbk: 1
 		BuildingFractions:
 			qnest: 40%
@@ -488,7 +491,8 @@ Player:
 			atek: 1
 			stek: 1
 			fix: 1
-			tibtree: 10
+			tibtree: 6
+			anthill: 15
 			mbk: 1
 		BuildingFractions:
 			# unleashed
@@ -656,7 +660,8 @@ Player:
 			naweap: 1
 			atek: 1
 			stek: 1
-			tibtree: 10
+			tibtree: 6
+			anthill: 15
 			mbk: 1
 		BuildingFractions:
 			qnest: 40%
