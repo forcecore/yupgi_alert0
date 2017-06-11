@@ -784,4 +784,4 @@ mbk:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
-	icon: missicon
+	icon: mbkicon
