@@ -156,6 +156,7 @@ Player:
 		UnitsCommonNames:
 			Mcv: gamcv, namcv, qant
 		BuildingLimits:
+			# normal
 			proc: 4
 			qnest: 6
 			barr: 1
@@ -167,14 +168,15 @@ Player:
 			gaweap: 1
 			spen: 1
 			syrd: 1
-			hpad: 4
-			afld: 4
+			hpad: 3
+			afld: 3
 			atek: 1
 			stek: 1
 			fix: 1
 			tibtree: 10
 			mbk: 1
 		BuildingFractions:
+			# normal
 			qnest: 40%
 			mbk: 100%
 			tibtree: 30%
@@ -190,10 +192,10 @@ Player:
 			vein: 1%
 			gaweap: 6%
 			naweap: 6%
-			hpad: 4%
+			hpad: 100%
 			spen: 1%
 			syrd: 1%
-			afld: 4%
+			afld: 100%
 			pbox: 7%
 			gun: 7%
 			ftur: 10%
@@ -207,6 +209,7 @@ Player:
 			stek: 1%
 			mslo: 1%
 		UnitsToBuild:
+			# normal
 			e1: 65%
 			e2: 25%
 			e3: 40%
@@ -225,10 +228,10 @@ Player:
 			4tnk: 15%
 			ttnk: 15%
 			stnk: 10%
-			heli: 30%
-			hind: 30%
-			mig: 30%
-			yak: 30%
+			heli: 100%
+			hind: 100%
+			mig: 100%
+			yak: 100%
 			ss: 10%
 			msub: 10%
 			dd: 10%
@@ -241,6 +244,7 @@ Player:
 			sant: 5%
 			hant: 5%
 		UnitLimits:
+			# normal
 			dog: 4
 			harv: 8
 			dant: 40
