@@ -237,6 +237,9 @@ RadBeamWeaponE:
 RadEruptionWeapon:
 	ReloadDelay: 60
 	Report: idesat2a.wav
+	Range: 512
+	Projectile: InstantHit
+		Blockable: false
 	Warhead@1Radio: CreateRadioactivity
 		Range: 4, 6, 8, 10
 		Level: 250
@@ -451,3 +454,26 @@ FireballLauncherHighPower:
 		Speed: 450
 		TrailImage: fb2
 		Image: FB1
+
+JoshPunch:
+	Inherits: Claw
+	ReloadDelay: 25
+	Report: grenade1.aud
+	Projectile: Bullet
+		Speed: 250
+	Warhead@1Dam: SpreadDamage
+		Damage: 100
+		Spread: 512
+		Versus:
+			None: 200
+			Wood: 50
+			Light: 100
+			Heavy: 100
+			Concrete: 50
+	Warhead@2Dam: HealthPercentageDamage
+		Spread: 512
+		Damage: 5
+		InvalidTargets: WangChang
+	Warhead@3Eff: CreateEffect
+		Explosions: med_explosion
+		ImpactSounds: kaboom30.aud

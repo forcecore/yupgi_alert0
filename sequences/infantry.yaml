@@ -1418,8 +1418,6 @@ qant:
 	icon: qanticon
 
 deso:
-	idle: invis
-		Facings: 1
 	stand:
 		Facings: 8
 	run:
@@ -1475,11 +1473,14 @@ deso:
 		Start: 299
 		Length: 15
 		Facings: 1
+	deploy-stand:
+		Start: 313
+		Length: 1
+		Facings: 1
 	deploy-shoot:
 		Start: 292
 		Length: 7
 		Facings: 1
-		Tick: 240
 	icon: desoicon
 
 doggie:

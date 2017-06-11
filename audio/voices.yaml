@@ -182,3 +182,14 @@ Fiend:
 		Burned: fiend1
 		Zapped: fiend1
 		Explode: expnew10
+
+ChimpVoice:
+	Voices:
+		Select: gchiatta, gchiattb, gchiattc
+		Move: gchiatta, gchiattb, gchiattc
+		Action: gchiatta, gchiattb, gchiattc
+		Attack: gchiatta, gchiattb, gchiattc
+		Die: gchidiea, gchidieb
+		Burned: gchidiea, gchidieb
+		Zapped: gchidiea, gchidieb
+

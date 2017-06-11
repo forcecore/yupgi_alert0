@@ -770,3 +770,18 @@ vein:
 		Length: *
 	icon: veinicon
 		UseTilesetExtension: false
+
+mbk:
+	idle:
+		ShadowStart: 2
+	damaged-idle:
+		Start: 1
+		ShadowStart: 3
+	make: mbkbld
+		Length: *
+	bib: bib2
+		Length: *
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	icon: missicon

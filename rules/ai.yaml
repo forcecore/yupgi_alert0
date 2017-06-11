@@ -32,8 +32,10 @@ Player:
 			fix: 1
 			tibtree: 10
 			vein: 1
+			mbk: 1
 		BuildingFractions:
 			qnest: 40%
+			mbk: 100%
 			tibtree: 30%
 			anthill: 30%
 			proc: 30%
@@ -171,8 +173,10 @@ Player:
 			stek: 1
 			fix: 1
 			tibtree: 10
+			mbk: 1
 		BuildingFractions:
 			qnest: 40%
+			mbk: 100%
 			tibtree: 30%
 			anthill: 30%
 			proc: 10%
@@ -325,8 +329,10 @@ Player:
 			stek: 1
 			fix: 1
 			tibtree: 10
+			mbk: 1
 		BuildingFractions:
 			qnest: 40%
+			mbk: 100%
 			tibtree: 30%
 			anthill: 30%
 			proc: 30%
@@ -479,9 +485,11 @@ Player:
 			stek: 1
 			fix: 1
 			tibtree: 10
+			mbk: 1
 		BuildingFractions:
 			# unleashed
 			qnest: 40%
+			mbk: 100%
 			tibtree: 30%
 			anthill: 30%
 			proc: 30%
@@ -645,8 +653,10 @@ Player:
 			atek: 1
 			stek: 1
 			tibtree: 10
+			mbk: 1
 		BuildingFractions:
 			qnest: 40%
+			mbk: 100%
 			tibtree: 30%
 			anthill: 30%
 			proc: 29%

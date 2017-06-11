@@ -1482,3 +1482,56 @@ SMIN:
 	SpawnerHarvester:
 		SpawnUnit: slave
 		Resources: Ore,Gems,Tiberium
+
+JOSH:
+	Inherits: ^Soldier
+	RenderSprites:
+		PlayerPalette: player-ra2
+		Scale: 2.0
+	WithDeathAnimation:
+		DeathSequencePalette: player-ra2
+	Valued:
+		Cost: 1000
+	-DeliversCash@GRINDABLE:
+		# If grinded, it doesn't come back because griding has no death notification.
+	Tooltip:
+		Name: Kong
+	Selectable:
+		Bounds: 24,24,0,-10
+	SelectionDecorations:
+		VisualBounds: 30,30,0,-4
+	Health:
+		HP: 3000
+		Shape: Circle
+			Radius: 469
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 150
+		TurnSpeed: 12
+		Crushes: wall, mine, crate
+		SharesCell: false
+	RevealsShroud:
+		Range: 5c0
+	DetectCloaked:
+		Range: 5c0
+	AutoTarget:
+		ScanRadius: 10
+	WithInfantryBody:
+		IdleSequences: idle1,idle2
+		DefaultAttackSequence: punch
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	AttackFrontal:
+	Armament:
+		Weapon: JoshPunch
+	Targetable:
+		TargetTypes: Ground, Vehicle, Ant
+	WithDeathAnimation:
+		UseDeathTypeSuffix: false
+	Voiced:
+		VoiceSet: ChimpVoice
+	-TakeCover:
+	-DamagedByTerrain@tib:
+	-DamagedByRadioactivity:
+	Spawned:

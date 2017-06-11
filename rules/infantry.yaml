@@ -768,7 +768,7 @@ DANT:
 		SearchFromProcRadius: 30
 		SearchFromOrderRadius: 15
 		DeliveryBuildings: proc, qnest, anthill
-		MaxUnloadQueue: 8
+		MaxUnloadQueue: 10
 	WithDockingAnimation:
 	-DamagedByTerrain@tib:
 	-DamagedByRadioactivity:
@@ -848,14 +848,17 @@ DESO:
 		Weapon: RadBeamWeapon
 		RequiresCondition: !deployed
 		LocalOffset: 400,40,444
+	Armament@eruption:
+		Name: Eruption
+		Weapon: RadEruptionWeapon
 	AttackFrontal:
 		Voice: Attack
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 		RequiresCondition: !deployed
-	WithSpriteBody:
-	WithIdleOverlay@DEPLOYED:
-		Sequence: deploy-shoot
+	WithInfantryBody@deployed:
+		DefaultAttackSequence: deploy-shoot
+		StandSequences: deploy-stand
 		RequiresCondition: deployed
 	Voiced:
 		VoiceSet: DesolatorVoice
@@ -872,9 +875,8 @@ DESO:
 	-Crushable:
 	-TakeCover:
 	-DamagedByRadioactivity:
-	ExplodeWeapon:
-		Weapon: RadEruptionWeapon
-		ResetReloadWhenEnabled: false
+	FireWeaponAtSelf:
+		Name: Eruption
 		RequiresCondition: deployed
 	Targetable:
 		TargetTypes: Ground, Infantry
