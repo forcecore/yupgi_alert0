@@ -2,10 +2,11 @@
 # Assumes BABUN on windows or something like that on Linux (duh)
 
 REL=$1
+OFNAME=yupgi_alert_r${REL}.zip
 
 PREFIX=`pwd`/tmp/yupgi_alert
 rm -rf tmp
-rm -f yupgi_alert.zip
+rm -f $OFNAME.zip
 mkdir -p $PREFIX
 
 echo "Copying mod files"
@@ -30,11 +31,11 @@ cp ../../OpenRA.Mods.yupgi_alert/{LICENSE.AS,AUTHORS.AS} $PREFIX
 mv $PREFIX/oramod/mod.yaml.release $PREFIX/oramod/mod.yaml
 
 # now in tmp dir,
-echo "Archiving into zip"
+echo "Archiving into $OFNAME"
 cd $PREFIX/oramod
 zip ../yupgi_alert.oramod -m -r *
 cd $PREFIX/..
 rmdir $PREFIX/oramod
-zip ../yupgi_alert_r${REL}.zip -r yupgi_alert/
+zip ../$OFNAME -r yupgi_alert/
 
-echo "Done"
+echo "Done: $OFNAME"
