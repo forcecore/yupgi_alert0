@@ -2,13 +2,16 @@
 
 * This mod is currently for OpenRA release-20170421
 * To run the mod...
-  * If you are running Windows OS, install release-20170421 and double click on yupgi\_alert.oramod
-  * During test, I installed the mod by placing run\_opmod.cmd and yupgi\_alert.oramod in
-    D:\\Program Files (x86)\\OpenRA-20170421\\mods then ran the game with
-    run\_opmod.cmd
-  * Alternatively, on any OS, you can place yupgi\_alert.oramod it in mods directory.
-    * On Windows, put yupgi\_alert.mod in My Documents/OpenRA/mods.
-    * On Linux, I think it is ~/.openra/mods
+  * put yupgi\_alert.oramod in mods folder, such as
+  * C:\\Program Files (x86)\\OpenRA-20170527\\mods
+  * On Linux, I think it is ~/.openra/mods
+  * Then put OpenRA.yupgi\_alert.exe to where OpenRA.Game.exe is.
+  * On Windows, C:\\Program Files (x86)\\OpenRA-20170527
+  * Run the mod withe new .exe file. No parameter required.
+    * .exe contains two modifications.
+    * Skyboxed map support: https://www.youtube.com/watch?v=sFV7S5zTavY
+    * OpenRA.{ModName}.exe support: just plug your mod name there and it will run
+      the mod without requiring additional parameters!
 * See wiki for changes in units : https://github.com/forcecore/yupgi_alert0/wiki
 * You can report bugs at the issues menu : https://github.com/forcecore/yupgi_alert0/issues
 * If you are looking for the source code of OpenRA.Mods.Uncommon.dll, visit https://github.com/forcecore/OpenRA, it is renamed OpenRA.Mods.Common.dll with my modifications.
