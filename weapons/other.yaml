@@ -477,3 +477,12 @@ JoshPunch:
 	Warhead@3Eff: CreateEffect
 		Explosions: med_explosion
 		ImpactSounds: kaboom30.aud
+
+MindController:
+	ReloadDelay: 125
+	Range: 6c0
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Spread: 1
+		Damage: 0
+		ValidTargets: Vehicle, Infantry, Air, Tank

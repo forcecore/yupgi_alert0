@@ -1149,3 +1149,51 @@ SLAVE:
 	RejectsOrders:
 	#-DamagedByTerrain@tib:
 	#-DamagedByRadioactivity:
+
+TOXINBUG:
+	Inherits: ^Soldier
+	-Crushable:
+	RenderSprites:
+		Image: gnrl
+	RevealsShroud:
+		Range: 10c0
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 140
+		Prerequisites: ~qnest, evo, ~techlevel.high
+		Description: Uses toxin to manipulate other units
+	Valued:
+		Cost: 2500
+	DeliversCash@GRINDABLE:
+		Payload: 1250
+	Tooltip:
+		Name: Toxin Bug
+	Health:
+		HP: 50
+	Voiced:
+		VoiceSet: StavrosVoice
+	Mobile:
+		Speed: 80
+		Voice: Move
+	Guard:
+		Voice: Move
+	RevealsShroud:
+		Range: 6c0
+	Passenger:
+		PipType: Red
+		Voice: Move
+	Armament@PRIMARY:
+		Weapon: MindController
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		StandSequences: stand
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+	WithMindcontrolArc:
+	-Mindcontrollable:
+	Mindcontroller:
+		Capacity: 3
+		Sound: sonpulse.aud
+		Policy: DiscardOldest
