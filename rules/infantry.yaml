@@ -1106,6 +1106,10 @@ SAIYAN:
 
 SLAVE:
 	Inherits: ^Infantry
+	Inherits@2: ^ArmedCivilian
+	Armament:
+		Weapon: Pistol
+		RequiresCondition: freed
 	Valued:
 		Cost: 10
 	DeliversCash@GRINDABLE:
@@ -1126,13 +1130,12 @@ SLAVE:
 	Crushable:
 	AutoTarget:
 		ScanRadius: 5
-	AttackFrontal:
-	WithInfantryBody:
 	WithSpriteBody:
 	Voiced:
 		VoiceSet: CivilianMaleVoice
 	DockClient:
 	SpawnedHarvester:
+		FreedCondition: freed
 	Harvester:
 		Capacity: 5
 		Resources: Ore,Gems,Tiberium
@@ -1145,10 +1148,17 @@ SLAVE:
 		DeliveryBuildings: smin
 		Slaved: true
 	WithDockingAnimation:
-	-Selectable:
-	RejectsOrders:
-	#-DamagedByTerrain@tib:
-	#-DamagedByRadioactivity:
+	RejectsOrders@slaved:
+		RequiresCondition: !freed
+	RejectsOrders@freed:
+		RequiresCondition: freed
+		Reject: Deliver, Harvest
+	#-Mindcontrollable:
+		# Slaves will die when MCed so
+		# no slave MC then kill master to free slaves problem here.
+	WithDeathAnimation:
+		# Dying with master doesn't have damage type so we specify fallback.
+		FallbackSequence: die3
 
 TOXINBUG:
 	Inherits: ^Soldier
