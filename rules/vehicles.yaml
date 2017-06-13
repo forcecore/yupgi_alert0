@@ -1454,6 +1454,7 @@ SMIN:
 		Offset: 384,0,128
 	AttackTurreted:
 	AutoTarget:
+		AllowMovement: false # more like static Defense
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 	WithIdleOverlay@deployed:
