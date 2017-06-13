@@ -70,7 +70,7 @@ def calc_color_conversion( pal, src, dest ) :
 
 
 def replace_color(im, src, dest):
-    mapper = calc_color_conversion( im.getpalette, src, dest )
+    mapper = calc_color_conversion( im.getpalette(), src, dest )
 
     # apply
     px = im.load() # pixel access
