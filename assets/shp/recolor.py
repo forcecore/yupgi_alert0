@@ -100,7 +100,61 @@ def test_house_color(im):
 
 
 
-if __name__ == "__main__" :
+def process_shadow(im, shadow_color_index):
+    '''
+    im: PIL Image.
+    Replace anything that's not color index 0 to shadow color.
+    '''
+    px = im.load() # pixel access
+    for j in range(im.height) :
+        for i in range(im.width) :
+            if px[i, j] != 0:
+                px[i, j] = shadow_color_index
+    return im
+
+
+
+def draw_onto(dest, src):
+    '''
+    dest, src are PIL images.
+    Draws src's what ever is not BG color onto dest.
+    Modifies dest.
+    '''
+    assert dest.height == src.height
+    assert dest.width == src.width
+
+    px1 = dest.load()
+    px2 = src.load()
+
+    for j in range(dest.height) :
+        for i in range(dest.width) :
+            if px2[i, j] != 0:
+                px1[i, j] = px2[i, j]
+
+    return dest
+
+
+
+def example1():
+    for i in range(250+1):
+        ifname = "stage1/inft {:04d}.png".format(i)
+        sfname = "stage1/inft {:04d}.png".format(i + 251)
+        ofname = "stage2/inft {:04d}.png".format(i)
+        tfname = "test/inft {:04d}.png".format(i)
+
+        sim = Image.open(sfname)
+        sim = process_shadow(sim, 1)
+
+        im = Image.open(ifname)
+        im = draw_onto(sim, im)
+        im.save(ofname)
+
+        test_house_color(im)
+        im.save(tfname)
+
+
+
+def example2():
     dest = "."
     for fname in glob.glob("cmin/2/cmin*.png"):
         im = Image.open(fname)
