@@ -1194,6 +1194,7 @@ INFT:
 		Voice: Move
 	Armament@PRIMARY:
 		Weapon: MindController
+		RequiresCondition: slaving < 3
 	Targetable:
 		TargetTypes: Ground, Infantry, Ant
 	AttackFrontal:
@@ -1210,4 +1211,6 @@ INFT:
 	Mindcontroller:
 		Capacity: 3
 		Sound: sonpulse.aud
+		GiveCondition: mindcontrolled
+		ControllingCondition: slaving
 		Policy: DiscardOldest

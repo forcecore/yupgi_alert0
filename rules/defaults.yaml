@@ -188,6 +188,7 @@
 		Type: vehicle
 		CaptureThreshold: 100
 		CancelActivity: True
+		RequiresCondition: !mindcontrolled
 	CaptureNotification:
 		Notification: UnitStolen
 	MustBeDestroyed:
@@ -585,7 +586,11 @@
 		ValidTypes: Supply
 	WithMakeAnimation:
 	ExternalCapturable:
+		RequiresCondition: !mindcontrolled
 	ExternalCapturableBar:
+	WithMindcontrolArc:
+	Mindcontrollable:
+		UnmindcontrolSound: bleep5.aud
 	EmitInfantryOnSell:
 		ActorTypes: e1,e1,e1,tecn,tecn
 	MustBeDestroyed:

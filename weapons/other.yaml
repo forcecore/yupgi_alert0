@@ -486,3 +486,4 @@ MindController:
 		Spread: 1
 		Damage: 0
 		ValidTargets: Vehicle, Infantry, Air, Tank
+		InvalidTargets: Structure, Wall, Husk, Trees, Creep
