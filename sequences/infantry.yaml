@@ -1697,3 +1697,35 @@ slave:
 		Facings: 8
 		Tick: 80
 	icon: harvicon
+
+inft:
+	stand:
+		Facings: 8
+		ShadowStart: 251
+	shoot:
+		Start: 72
+		Length: 8
+		Facings: 8
+		ShadowStart: 323
+	die:
+		Start: 208
+		Length: 10
+		ShadowStart: 459
+	run:
+		Start: 8
+		Length: 8
+		Facings: 8
+		ShadowStart: 259
+	idle1:
+		Start: 136
+		Length: 44
+		ShadowStart: 387
+	idle2:
+		Start: 180
+		Length: 28
+		ShadowStart: 431
+	infest:
+		Start: 226
+		Length: 25
+		ShadowStart: 477
+	icon: harvicon

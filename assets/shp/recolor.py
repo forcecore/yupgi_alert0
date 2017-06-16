@@ -5,6 +5,10 @@ import os
 
 
 
+RA2_HOUSE_COLORS = list(range(16,31))
+
+
+
 def get_rgb( pal, color_index ) :
     r = pal[ color_index * 3 ]
     g = pal[ color_index * 3 + 1 ]
@@ -78,6 +82,13 @@ def replace_color(im, src, dest):
         for i in range( im.width ) :
             if px[i, j] in src :
                 px[i, j] = mapper[ px[i, j ] ]
+
+
+
+def all_red2house_color(im):
+    src = [8, 200, 201, 202, 203, 249, 250]
+    dest = RA2_HOUSE_COLORS
+    replace_color(im, src, dest)
 
 
 
