@@ -416,6 +416,9 @@ GAMCV:
 
 JEEP:
 	Inherits: ^Vehicle
+	RenderSprites:
+		Image: humm
+		PlayerPalette: player-cc1
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 30
@@ -440,21 +443,26 @@ JEEP:
 		RevealGeneratedShroud: False
 	RevealsShroud@GAPGEN:
 		Range: 4c0
-	Turreted:
-		TurnSpeed: 10
-		Offset: 0,0,85
-	Armament:
-		Weapon: M60mg
-		MuzzleSequence: muzzle
-	AttackTurreted:
-	WithMuzzleOverlay:
-	WithSpriteTurret:
+	#Turreted:
+		#TurnSpeed: 10
+		#Offset: 0,0,85
+	#Armament:
+		#Weapon: M60mg
+		#MuzzleSequence: muzzle
+	#AttackTurreted:
+	#WithMuzzleOverlay:
+	#WithSpriteTurret:
 	AutoTarget:
 	Cargo:
 		Types: Infantry
-		MaxWeight: 1
-		PipCount: 1
+		MaxWeight: 3
+		PipCount: 3
 		LoadingCondition: notmobile
+	AttackGarrisoned:
+		Armaments: garrisoned
+		PortOffsets: 256,128,32, 256,-128,32, -256,128,32, -256,-128,32
+		PortYaws: 0, 0, 512, 512
+		PortCones: 512, 512, 512, 512
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
 
