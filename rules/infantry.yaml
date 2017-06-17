@@ -1135,7 +1135,7 @@ SLAVE:
 	SpawnedHarvester:
 		FreedCondition: freed
 	Harvester:
-		Capacity: 5
+		Capacity: 1
 		Resources: Ore,Gems,Tiberium
 		BaleUnloadDelay: 1
 		# Have these search ranges larger than Master's Kick scan range but
