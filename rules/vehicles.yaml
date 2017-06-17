@@ -1378,7 +1378,7 @@ MARV:
 		OreTeleporter: true
 		Capacity: 20
 		Resources: Ore,Gems,Tiberium
-		BaleUnloadDelay: 1
+		BaleUnloadDelay: 10
 		SearchFromProcRadius: 30
 		SearchFromOrderRadius: 15
 	-HarvesterHuskModifier:
