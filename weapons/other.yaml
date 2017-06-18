@@ -214,7 +214,7 @@ RadBeamWeapon:
 	InvalidTargets: Structure, Wall
 	Range: 6c0
 	ReloadDelay: 100
-	Report: idesat1a.wav
+	Report: idesat1a.aud
 	Projectile: RadBeam
 		ZOffset: 1024
 	Warhead@1Dam: SpreadDamage
@@ -236,7 +236,7 @@ RadBeamWeaponE:
 
 RadEruptionWeapon:
 	ReloadDelay: 60
-	Report: idesat2a.wav
+	Report: idesat2a.aud
 	Range: 512
 	Projectile: InstantHit
 		Blockable: false
@@ -416,7 +416,7 @@ PDLaser:
 	# prevent this from automatically (or manually forced) fired.
 	ReloadDelay: 15
 	Range: 4c0
-	Report: vpalwe2d.wav
+	Report: vpalwe2d.aud
 	Projectile: LaserZap
 		Width: 85
 		ZOffset: 2047

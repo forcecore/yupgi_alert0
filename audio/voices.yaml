@@ -162,7 +162,6 @@ StavrosVoice:
 		Demolish: stavcrse, stavyes
 
 DesolatorVoice:
-	DefaultVariant: .wav
 	Voices:
 		Select: idessea, idesseb, idessec, idessed, idessee
 		Move: idesmoa, idesmob, idesmoc, idesmod, idesmoe

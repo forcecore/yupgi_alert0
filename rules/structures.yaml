@@ -2257,7 +2257,7 @@ EVO:
 		PipCount: 5
 		PassengerFacing: 0
 	CargoTransformer:
-		TransformSound: cargotransform.wav
+		TransformSound: cargotransform.aud
 		Combinations:
 			sant: want, want, want, want, want
 			hant: fant, fant, fant, fant
@@ -2422,7 +2422,7 @@ VEIN:
 	-Sellable:
 	AcceptsDeliveredCash:
 		ValidTypes: Grindable, Supply
-		#Sounds: bgrinda.wav
+		#Sounds: bgrinda.aud
 	WithAcceptDeliveredCashAnimation:
 
 mbk:

@@ -365,7 +365,7 @@ SteelRainCluster:
 		Speed: 1c0
 	Warhead@2Eff: CreateEffect
 		Explosions: artillery_explosion
-		ImpactSounds: bomb4-2.wav
+		ImpactSounds: bomb4-2.aud
 	Warhead@1Dam: SpreadDamage
 		Spread: 1c0
 		Damage: 15
