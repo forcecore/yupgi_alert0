@@ -1166,7 +1166,7 @@ INFT:
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 140
 		Prerequisites: ~qnest, evo, ~techlevel.high
-		Description: Uses toxin to manipulate enemy units
+		Description: Uses toxin to manipulate enemy units\n Can infest neutal/enemy structures
 	Valued:
 		Cost: 1000
 	DeliversCash@GRINDABLE:
@@ -1180,7 +1180,7 @@ INFT:
 	Health:
 		HP: 50
 	Voiced:
-		VoiceSet: StavrosVoice
+		VoiceSet: ReaperVoice
 	Mobile:
 		Speed: 80
 		Voice: Move
