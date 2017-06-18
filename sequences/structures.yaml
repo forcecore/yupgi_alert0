@@ -209,6 +209,7 @@ tent:
 	bib: bib3
 		Length: *
 	infested: infested
+		UseTilesetExtension: false
 		Length: *
 		Tick: 400
 	icon: tenticon
