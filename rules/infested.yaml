@@ -1,312 +1,1269 @@
-OILB_INFESTED:
-	Inherits@1: OILB
+# Emitted by infest.py, don't edit by hand :)
+
+AFLD_INFESTED:
+	Inherits@1: ^Building
 	Inherits@2: ^Infested
 	RenderSprites:
-		Image: oilb
+		Image: AFLD
+	Valued:
+		Cost: 500
+	Selectable:
+		Class: infested_building
 	Tooltip:
-		Name: Infested Oil Derrick
-	-GivesCashOnCapture:
-	-CashTrickler:
+		Name: Infested Airfield
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Health:
+		HP: 1000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		RevealGeneratedShroud: False
+		Range: 7c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
 
-FCOM_INFESTED:
-	Inherits@1: FCOM
+APWR_INFESTED:
+	Inherits@1: ^Building
 	Inherits@2: ^Infested
 	RenderSprites:
-		Image: fcom
+		Image: APWR
+	Valued:
+		Cost: 500
+	Selectable:
+		Class: infested_building
 	Tooltip:
-		Name: Infested Forward Command
+		Name: Infested Advanced Power Plant
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Bib:
+	Health:
+		HP: 700
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
 
-HOSP_INFESTED:
-	Inherits@1: HOSP
+ATEK_INFESTED:
+	Inherits@1: ^Building
 	Inherits@2: ^Infested
 	RenderSprites:
-		Image: hosp
+		Image: ATEK
+	Valued:
+		Cost: 1500
+	Selectable:
+		Class: infested_building
 	Tooltip:
-		Name: Infested Hospital
+		Name: Infested Allied Tech Center
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Bib:
+	Health:
+		HP: 600
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		RevealGeneratedShroud: False
+		Range: 10c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
 
-MISS_INFESTED:
-	Inherits@1: MISS
+BARR_INFESTED:
+	Inherits@1: ^Building
 	Inherits@2: ^Infested
 	RenderSprites:
-		Image: miss
+		Image: BARR
+	Valued:
+		Cost: 400
+	Selectable:
+		Class: infested_building
 	Tooltip:
-		Name: Infested Technology Center
+		Name: Infested Soviet Barracks
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Bib:
+	Health:
+		HP: 600
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		RevealGeneratedShroud: False
+		Range: 5c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
 
-BIO_INFESTED:
-	Inherits@1: BIO
+DOME_INFESTED:
+	Inherits@1: ^Building
 	Inherits@2: ^Infested
 	RenderSprites:
-		Image: bio
+		Image: DOME
+	Valued:
+		Cost: 1800
+	Selectable:
+		Class: infested_building
 	Tooltip:
-		Name: Infested Biological Lab
+		Name: Infested Radar Dome
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Bib:
+	Health:
+		HP: 1000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		RevealGeneratedShroud: False
+		Range: 10c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
 
-V01_INFESTED:
-	Inherits@1: V01
+FACT_INFESTED:
+	Inherits@1: ^Building
 	Inherits@2: ^Infested
 	RenderSprites:
-		PlayerPalette: player
-		Image: v01
+		Image: FACT
+	Valued:
+		Cost: 2500
+	Selectable:
+		Class: infested_building
 	Tooltip:
-		Name: Infested Church
+		Name: Infested Construction Yard
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
+	Bib:
+	Health:
+		HP: 1500
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		RevealGeneratedShroud: False
+		Range: 5c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
 
-V02_INFESTED:
-	Inherits@1: V02
+FIX_INFESTED:
+	Inherits@1: ^Building
 	Inherits@2: ^Infested
 	RenderSprites:
-		Image: v02
+		Image: FIX
+	Valued:
+		Cost: 1200
+	Selectable:
+		Class: infested_building
 	Tooltip:
-		Name: Infested Civilian Building
+		Name: Infested Service Depot
+	Building:
+		Footprint: _x_ xxx _x_
+		Dimensions: 3,3
+	Bib:
+		HasMinibib: Yes
+	Health:
+		HP: 800
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		RevealGeneratedShroud: False
+		Range: 5c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
 
-V03_INFESTED:
-	Inherits@1: V03
+GULAG_INFESTED:
+	Inherits@1: ^Building
 	Inherits@2: ^Infested
 	RenderSprites:
-		Image: v03
+		Image: GULAG
+	Valued:
+		Cost: 1000
+	Selectable:
+		Class: infested_building
 	Tooltip:
-		Name: Infested Civilian Building
+		Name: Infested Labor Camp
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Bib:
+	Health:
+		HP: 600
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
 
-V04_INFESTED:
-	Inherits@1: V04
+HPAD_INFESTED:
+	Inherits@1: ^Building
 	Inherits@2: ^Infested
 	RenderSprites:
-		Image: v04
+		Image: HPAD
+	Valued:
+		Cost: 500
+	Selectable:
+		Class: infested_building
 	Tooltip:
-		Name: Infested Civilian Building
+		Name: Infested Helipad
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Bib:
+	Health:
+		HP: 800
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		RevealGeneratedShroud: False
+		Range: 5c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
 
-V05_INFESTED:
-	Inherits@1: V05
+IRON_INFESTED:
+	Inherits@1: ^Building
 	Inherits@2: ^Infested
 	RenderSprites:
-		Image: v05
+		Image: IRON
+	Valued:
+		Cost: 2500
+	Selectable:
+		Class: infested_building
 	Tooltip:
-		Name: Infested Civilian Building
+		Name: Infested Iron Curtain
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	Bib:
+		HasMinibib: Yes
+	Health:
+		HP: 1000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		RevealGeneratedShroud: False
+		Range: 10c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
 
-V06_INFESTED:
-	Inherits@1: V06
+MSLO_INFESTED:
+	Inherits@1: ^Building
 	Inherits@2: ^Infested
 	RenderSprites:
-		Image: v06
+		Image: MSLO
+	Valued:
+		Cost: 2500
+	Selectable:
+		Class: infested_building
 	Tooltip:
-		Name: Infested Civilian Building
+		Name: Infested Missile Silo
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	Health:
+		HP: 1000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 5c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
 
-V07_INFESTED:
-	Inherits@1: V07
+PDOX_INFESTED:
+	Inherits@1: ^Building
 	Inherits@2: ^Infested
 	RenderSprites:
-		Image: v07
+		Image: PDOX
+	Valued:
+		Cost: 1500
+	Selectable:
+		Class: infested_building
 	Tooltip:
-		Name: Infested Civilian Building
+		Name: Infested Chronosphere
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Bib:
+		HasMinibib: Yes
+	Health:
+		HP: 1000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		RevealGeneratedShroud: False
+		Range: 10c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
 
-V09_INFESTED:
-	Inherits@1: V09
+POWR_INFESTED:
+	Inherits@1: ^Building
 	Inherits@2: ^Infested
 	RenderSprites:
-		Image: v09
+		Image: POWR
+	Valued:
+		Cost: 300
+	Selectable:
+		Class: infested_building
 	Tooltip:
-		Name: Infested Civilian Building
+		Name: Infested Power Plant
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Bib:
+	Health:
+		HP: 400
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
 
-V10_INFESTED:
-	Inherits@1: V10
+PROC_INFESTED:
+	Inherits@1: ^Building
 	Inherits@2: ^Infested
 	RenderSprites:
-		Image: v10
+		Image: PROC
+	Valued:
+		Cost: 1400
+	Selectable:
+		Class: infested_building
 	Tooltip:
-		Name: Infested Civilian Building
+		Name: Infested Ore Refinery
+	Building:
+		Footprint: _x_ xxx x==
+		Dimensions: 3,3
+	Bib:
+	Health:
+		HP: 900
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		RevealGeneratedShroud: False
+		Range: 6c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
 
-V11_INFESTED:
-	Inherits@1: V11
+STEK_INFESTED:
+	Inherits@1: ^Building
 	Inherits@2: ^Infested
 	RenderSprites:
-		Image: v11
+		Image: STEK
+	Valued:
+		Cost: 1500
+	Selectable:
+		Class: infested_building
 	Tooltip:
-		Name: Infested Civilian Building
+		Name: Infested Soviet Tech Center
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Bib:
+	Health:
+		HP: 600
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
 
-V12_INFESTED:
-	Inherits@1: V12
+TENT_INFESTED:
+	Inherits@1: ^Building
 	Inherits@2: ^Infested
 	RenderSprites:
-		Image: v12
+		Image: TENT
+	Valued:
+		Cost: 400
+	Selectable:
+		Class: infested_building
 	Tooltip:
-		Name: Infested Civilian Building
+		Name: Infested Allied Barracks
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Bib:
+	Health:
+		HP: 600
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		RevealGeneratedShroud: False
+		Range: 5c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
 
-V13_INFESTED:
-	Inherits@1: V13
+WEAP_INFESTED:
+	Inherits@1: ^Building
 	Inherits@2: ^Infested
 	RenderSprites:
-		Image: v13
+		Image: WEAP
+	Valued:
+		Cost: 2000
+	Selectable:
+		Class: infested_building
 	Tooltip:
-		Name: Infested Civilian Building
-
-V19_INFESTED:
-	Inherits@1: V19
-	Inherits@2: ^Infested
-	RenderSprites:
-		Image: v19
-	Tooltip:
-		Name: Infested Civilian Building
-
-V20_INFESTED:
-	Inherits@1: V20
-	Inherits@2: ^Infested
-	RenderSprites:
-		Image: v20
-	Tooltip:
-		Name: Infested Civilian Building
-
-V21_INFESTED:
-	Inherits@1: V21
-	Inherits@2: ^Infested
-	RenderSprites:
-		Image: v21
-	Tooltip:
-		Name: Infested Civilian Building
-
-V22_INFESTED:
-	Inherits@1: V22
-	Inherits@2: ^Infested
-	RenderSprites:
-		Image: v22
-	Tooltip:
-		Name: Infested Civilian Building
-
-V24_INFESTED:
-	Inherits@1: V24
-	Inherits@2: ^Infested
-	RenderSprites:
-		Image: v24
-	Tooltip:
-		Name: Infested Civilian Building
-
-V25_INFESTED:
-	Inherits@1: V25
-	Inherits@2: ^Infested
-	RenderSprites:
-		Image: v25
-	Tooltip:
-		Name: Infested Civilian Building
-
-V26_INFESTED:
-	Inherits@1: V26
-	Inherits@2: ^Infested
-	RenderSprites:
-		Image: v26
-	Tooltip:
-		Name: Infested Civilian Building
-
-V30_INFESTED:
-	Inherits@1: V30
-	Inherits@2: ^Infested
-	RenderSprites:
-		Image: v30
-	Tooltip:
-		Name: Infested Civilian Building
-
-V31_INFESTED:
-	Inherits@1: V31
-	Inherits@2: ^Infested
-	RenderSprites:
-		Image: v31
-	Tooltip:
-		Name: Infested Civilian Building
-
-V32_INFESTED:
-	Inherits@1: V32
-	Inherits@2: ^Infested
-	RenderSprites:
-		Image: v32
-	Tooltip:
-		Name: Infested Civilian Building
-
-V33_INFESTED:
-	Inherits@1: V33
-	Inherits@2: ^Infested
-	RenderSprites:
-		Image: v33
-	Tooltip:
-		Name: Infested Civilian Building
-
-V37_INFESTED:
-	Inherits@1: V37
-	Inherits@2: ^Infested
-	RenderSprites:
-		Image: v37
-	Tooltip:
-		Name: Infested Civilian Building
-
-FPWR_INFESTED:
-	Inherits@1: FPWR
-	Inherits@2: ^Infested
-	Tooltip:
-		Name: Infested Fake Power Plant
-		GenericName: Infested Power Plant
-
-SYRF_INFESTED:
-	Inherits@1: SYRF
-	Inherits@2: ^Infested
-	Tooltip:
-		Name: Infested Fake Shipyard
-		GenericName: Infested Shipyard
-
-SPEF_INFESTED:
-	Inherits@1: SPEF
-	Inherits@2: ^Infested
-	Tooltip:
-		Name: Infested Fake Sub Pen
-		GenericName: Infested Sub Pen
-
-WEAF_INFESTED:
-	Inherits@1: WEAF
-	Inherits@2: ^Infested
-	Tooltip:
-		Name: Infested Fake War Factory
-		GenericName: Infested War Factory
-	WithIdleOverlay:
-
-DOMF_INFESTED:
-	Inherits@1: DOMF
-	Inherits@2: ^Infested
-	Tooltip:
-		Name: Infested Fake Radar Dome
-		GenericName: Infested Radar Dome
-
-FIXF_INFESTED:
-	Inherits@1: FIXF
-	Inherits@2: ^Infested
-	Tooltip:
-		Name: Infested Fake Service Depot
-		GenericName: Infested Service Depot
-
-FAPW_INFESTED:
-	Inherits@1: FAPW
-	Inherits@2: ^Infested
-	Tooltip:
-		Name: Infested Fake Advanced Power Plant
-		GenericName: Infested Advanced Power Plant
+		Name: Infested War Factory
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Bib:
+	Health:
+		HP: 1500
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	WithProductionDoorOverlay:
+		Sequence: build-top
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
 
 ATEF_INFESTED:
-	Inherits@1: ATEF
+	Inherits@1: ^Building
 	Inherits@2: ^Infested
+	RenderSprites:
+		Image: ATEK
+	Valued:
+		Cost: 150
+	Selectable:
+		Class: infested_building
 	Tooltip:
 		Name: Infested Fake Allied Tech Center
-		GenericName: Infested Allied Tech Center
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Bib:
+	Health:
+		HP: 400
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
 
-PDOF_INFESTED:
-	Inherits@1: PDOF
+DOMF_INFESTED:
+	Inherits@1: ^Building
 	Inherits@2: ^Infested
+	RenderSprites:
+		Image: DOME
+	Valued:
+		Cost: 180
+	Selectable:
+		Class: infested_building
 	Tooltip:
-		Name: Infested Fake Chronosphere
-		GenericName: Infested Chronosphere
-
-MSLF_INFESTED:
-	Inherits@1: MSLF
-	Inherits@2: ^Infested
-	Tooltip:
-		Name: Infested Fake Missile Silo
-		GenericName: Infested Missile Silo
+		Name: Infested Fake Radar Dome
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Bib:
+	Health:
+		HP: 1000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
 
 FACF_INFESTED:
-	Inherits@1: FACF
+	Inherits@1: ^Building
 	Inherits@2: ^Infested
+	RenderSprites:
+		Image: FACT
+	Valued:
+		Cost: 250
+	Selectable:
+		Class: infested_building
 	Tooltip:
 		Name: Infested Fake Construction Yard
-		GenericName: Infested Construction Yard
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
+	Bib:
+	Health:
+		HP: 1500
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
+
+FAPW_INFESTED:
+	Inherits@1: ^Building
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: APWR
+	Valued:
+		Cost: 60
+	Selectable:
+		Class: infested_building
+	Tooltip:
+		Name: Infested Fake Advanced Power Plant
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Bib:
+	Health:
+		HP: 700
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
+
+FIXF_INFESTED:
+	Inherits@1: ^Building
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: FIX
+	Valued:
+		Cost: 120
+	Selectable:
+		Class: infested_building
+	Tooltip:
+		Name: Infested Fake Service Depot
+	Building:
+		Footprint: _x_ xxx _x_
+		Dimensions: 3,3
+	Bib:
+		HasMinibib: Yes
+	Health:
+		HP: 800
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
+
+FPWR_INFESTED:
+	Inherits@1: ^Building
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: POWR
+	Valued:
+		Cost: 30
+	Selectable:
+		Class: infested_building
+	Tooltip:
+		Name: Infested Fake Power Plant
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Bib:
+	Health:
+		HP: 400
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
+
+MSLF_INFESTED:
+	Inherits@1: ^Building
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: MSLO
+	Valued:
+		Cost: 250
+	Selectable:
+		Class: infested_building
+	Tooltip:
+		Name: Infested Fake Missile Silo
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	Health:
+		HP: 1000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	Explodes:
+		DamageThreshold: 50
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
+
+PDOF_INFESTED:
+	Inherits@1: ^Building
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: PDOX
+	Valued:
+		Cost: 150
+	Selectable:
+		Class: infested_building
+	Tooltip:
+		Name: Infested Fake Chronosphere
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Bib:
+		HasMinibib: Yes
+	Health:
+		HP: 1000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	Explodes:
+		DamageThreshold: 50
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
+
+SPEF_INFESTED:
+	Inherits@1: ^Building
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: SPEN
+	Valued:
+		Cost: 100
+	Selectable:
+		Class: infested_building
+	Tooltip:
+		Name: Infested Fake Sub Pen
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
+		Adjacent: 8
+		TerrainTypes: Water
+	Health:
+		HP: 1000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 4c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
+
+SYRF_INFESTED:
+	Inherits@1: ^Building
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: SYRD
+	Valued:
+		Cost: 100
+	Selectable:
+		Class: infested_building
+	Tooltip:
+		Name: Infested Fake Shipyard
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
+		Adjacent: 8
+		TerrainTypes: Water
+	Health:
+		HP: 1000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 4c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
+
+WEAF_INFESTED:
+	Inherits@1: ^Building
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: WEAP
+	Valued:
+		Cost: 200
+	Selectable:
+		Class: infested_building
+	Tooltip:
+		Name: Infested Fake War Factory
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Bib:
+	Health:
+		HP: 1500
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	WithProductionDoorOverlay:
+		Sequence: build-top
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
+
+BIO_INFESTED:
+	Inherits@1: ^Building
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: BIO
+	Selectable:
+		Class: infested_building
+	Tooltip:
+		Name: Infested Biological Lab
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 400
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 3c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
+
+FCOM_INFESTED:
+	Inherits@1: ^Building
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: FCOM
+	Valued:
+		Cost: 2000
+	Selectable:
+		Class: infested_building
+	Tooltip:
+		Name: Infested Forward Command
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Bib:
+	Health:
+		HP: 400
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 10c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
+
+HOSP_INFESTED:
+	Inherits@1: ^Building
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: HOSP
+	Selectable:
+		Class: infested_building
+	Tooltip:
+		Name: Infested Hospital
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Bib:
+		HasMinibib: Yes
+	Health:
+		HP: 1000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 3c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
+
+MISS_INFESTED:
+	Inherits@1: ^Building
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: MISS
+	Valued:
+		Cost: 2000
+	Selectable:
+		Class: infested_building
+	Tooltip:
+		Name: Infested Technology Center
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Bib:
+	Health:
+		HP: 400
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 3c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
+
+OILB_INFESTED:
+	Inherits@1: ^Building
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: OILB
+	Selectable:
+		Class: infested_building
+	Tooltip:
+		Name: Infested Oil Derrick
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 1000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 3c0
+	Explodes:
+		Weapon: BarrelExplode
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
+
+V01_INFESTED:
+	Inherits@1: ^Building
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: V01
+	Selectable:
+		Class: infested_building
+	Tooltip:
+		Name: Infested Church
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 400
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 10c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
+
+V02_INFESTED:
+	Inherits@1: ^Building
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: V02
+	Selectable:
+		Class: infested_building
+	Tooltip:
+		Name: Infested Civilian Building
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 400
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
+
+V03_INFESTED:
+	Inherits@1: ^Building
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: V03
+	Selectable:
+		Class: infested_building
+	Tooltip:
+		Name: Infested Civilian Building
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 400
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
+
+V04_INFESTED:
+	Inherits@1: ^Building
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: V04
+	Selectable:
+		Class: infested_building
+	Tooltip:
+		Name: Infested Civilian Building
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 400
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
+
+V05_INFESTED:
+	Inherits@1: ^Building
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: V05
+	Selectable:
+		Class: infested_building
+	Tooltip:
+		Name: Infested Civilian Building
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	Health:
+		HP: 400
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
+
+V06_INFESTED:
+	Inherits@1: ^Building
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: V06
+	Selectable:
+		Class: infested_building
+	Tooltip:
+		Name: Infested Civilian Building
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	Health:
+		HP: 400
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
+
+V07_INFESTED:
+	Inherits@1: ^Building
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: V07
+	Selectable:
+		Class: infested_building
+	Tooltip:
+		Name: Infested Civilian Building
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	Health:
+		HP: 400
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
+
+V20_INFESTED:
+	Inherits@1: ^Building
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: V20
+	Selectable:
+		Class: infested_building
+	Tooltip:
+		Name: Infested Civilian Building
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 400
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
+
+V21_INFESTED:
+	Inherits@1: ^Building
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: V21
+	Selectable:
+		Class: infested_building
+	Tooltip:
+		Name: Infested Civilian Building
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 400
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
+
+V22_INFESTED:
+	Inherits@1: ^Building
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: V22
+	Selectable:
+		Class: infested_building
+	Tooltip:
+		Name: Infested Civilian Building
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	Health:
+		HP: 400
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
+
+V25_INFESTED:
+	Inherits@1: ^Building
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: V25
+	Selectable:
+		Class: infested_building
+	Tooltip:
+		Name: Infested Church
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 400
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 10c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
+
+V26_INFESTED:
+	Inherits@1: ^Building
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: V26
+	Selectable:
+		Class: infested_building
+	Tooltip:
+		Name: Infested Civilian Building
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	Health:
+		HP: 400
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
+
+V30_INFESTED:
+	Inherits@1: ^Building
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: V30
+	Selectable:
+		Class: infested_building
+	Tooltip:
+		Name: Infested Civilian Building
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	Health:
+		HP: 400
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
+
+V31_INFESTED:
+	Inherits@1: ^Building
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: V31
+	Selectable:
+		Class: infested_building
+	Tooltip:
+		Name: Infested Civilian Building
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	Health:
+		HP: 400
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
+
+V32_INFESTED:
+	Inherits@1: ^Building
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: V32
+	Selectable:
+		Class: infested_building
+	Tooltip:
+		Name: Infested Civilian Building
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	Health:
+		HP: 400
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
+
+V33_INFESTED:
+	Inherits@1: ^Building
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: V33
+	Selectable:
+		Class: infested_building
+	Tooltip:
+		Name: Infested Civilian Building
+	Building:
+		Footprint: xx
+		Dimensions: 2,1
+	Health:
+		HP: 400
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
+
+V37_INFESTED:
+	Inherits@1: ^Building
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: V37
+	Selectable:
+		Class: infested_building
+	Tooltip:
+		Name: Infested Civilian Building
+	Building:
+		Footprint: __xx_ ___xx
+		Dimensions: 5,2
+	Health:
+		HP: 400
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	-EmitInfantryOnSell:
+	-Sellable:
+

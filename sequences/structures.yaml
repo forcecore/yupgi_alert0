@@ -648,6 +648,7 @@ mslo:
 		Start: 9
 		Length: 7
 	infested: infested
+		UseTilesetExtension: false
 		Length: *
 		Tick: 400
 	icon: msloicon2

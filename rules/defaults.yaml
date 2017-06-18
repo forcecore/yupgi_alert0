@@ -161,6 +161,7 @@
 	ExternalCapturableBar:
 	TransformOnCapture:
 		Type: infestable
+		IntoActor: want # dummy
 		ForceHealthPercentage: 100
 
 ^MindControllable:
