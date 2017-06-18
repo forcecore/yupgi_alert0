@@ -15,7 +15,8 @@ git clone . $PREFIX/oramod
 # Remove development files
 rm -rf $PREFIX/oramod/{.git,assets,.gitattributes}
 rm -f $PREFIX/oramod/{.gitignore,release.sh}
-rm -f $PREFIX/oramod/rules/buildpal_order.py
+rm -f $PREFIX/oramod/rules/_buildpal_order.py
+rm -f $PREFIX/oramod/rules/_infest.py
 # Remove maps to prevent crash haha
 #rm -rf $PREFIX/oramod/maps
 
