@@ -1361,7 +1361,7 @@ ant:
 	dock-loop: invis
 		Start: 0
 		Length: 1
-	icon: danticon
+	icon: anticon
 
 tinyant:
 	idle: invis
