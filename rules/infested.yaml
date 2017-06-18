@@ -44,6 +44,7 @@ V01_INFESTED:
 	Inherits@1: V01
 	Inherits@2: ^Infested
 	RenderSprites:
+		PlayerPalette: player
 		Image: v01
 	Tooltip:
 		Name: Infested Church
@@ -231,3 +232,81 @@ V37_INFESTED:
 		Image: v37
 	Tooltip:
 		Name: Infested Civilian Building
+
+FPWR_INFESTED:
+	Inherits@1: FPWR
+	Inherits@2: ^Infested
+	Tooltip:
+		Name: Infested Fake Power Plant
+		GenericName: Infested Power Plant
+
+SYRF_INFESTED:
+	Inherits@1: SYRF
+	Inherits@2: ^Infested
+	Tooltip:
+		Name: Infested Fake Shipyard
+		GenericName: Infested Shipyard
+
+SPEF_INFESTED:
+	Inherits@1: SPEF
+	Inherits@2: ^Infested
+	Tooltip:
+		Name: Infested Fake Sub Pen
+		GenericName: Infested Sub Pen
+
+WEAF_INFESTED:
+	Inherits@1: WEAF
+	Inherits@2: ^Infested
+	Tooltip:
+		Name: Infested Fake War Factory
+		GenericName: Infested War Factory
+	WithIdleOverlay:
+
+DOMF_INFESTED:
+	Inherits@1: DOMF
+	Inherits@2: ^Infested
+	Tooltip:
+		Name: Infested Fake Radar Dome
+		GenericName: Infested Radar Dome
+
+FIXF_INFESTED:
+	Inherits@1: FIXF
+	Inherits@2: ^Infested
+	Tooltip:
+		Name: Infested Fake Service Depot
+		GenericName: Infested Service Depot
+
+FAPW_INFESTED:
+	Inherits@1: FAPW
+	Inherits@2: ^Infested
+	Tooltip:
+		Name: Infested Fake Advanced Power Plant
+		GenericName: Infested Advanced Power Plant
+
+ATEF_INFESTED:
+	Inherits@1: ATEF
+	Inherits@2: ^Infested
+	Tooltip:
+		Name: Infested Fake Allied Tech Center
+		GenericName: Infested Allied Tech Center
+
+PDOF_INFESTED:
+	Inherits@1: PDOF
+	Inherits@2: ^Infested
+	Tooltip:
+		Name: Infested Fake Chronosphere
+		GenericName: Infested Chronosphere
+
+MSLF_INFESTED:
+	Inherits@1: MSLF
+	Inherits@2: ^Infested
+	Tooltip:
+		Name: Infested Fake Missile Silo
+		GenericName: Infested Missile Silo
+
+FACF_INFESTED:
+	Inherits@1: FACF
+	Inherits@2: ^Infested
+	Tooltip:
+		Name: Infested Fake Construction Yard
+		GenericName: Infested Construction Yard

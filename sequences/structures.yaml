@@ -80,6 +80,9 @@ fact:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
+	infested: infested
+		Length: *
+		Tick: 400
 	icon: facticon
 	fake-icon: facficon
 
@@ -102,6 +105,9 @@ proc:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
+	infested: infested
+		Length: *
+		Tick: 400
 	icon: procicon
 
 silo:
@@ -138,6 +144,9 @@ powr:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
+	infested: infested
+		Length: *
+		Tick: 400
 	icon: powricon
 	fake-icon: fpwricon
 
@@ -158,6 +167,9 @@ apwr:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
+	infested: infested
+		Length: *
+		Tick: 400
 	icon: apwricon
 	fake-icon: fapwicon
 
@@ -177,6 +189,9 @@ barr:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
+	infested: infested
+		Length: *
+		Tick: 400
 	icon: barricon
 
 tent:
@@ -193,6 +208,9 @@ tent:
 		Length: *
 	bib: bib3
 		Length: *
+	infested: infested
+		Length: *
+		Tick: 400
 	icon: tenticon
 		UseTilesetExtension: false
 
@@ -218,6 +236,9 @@ dome:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
+	infested: infested
+		Length: *
+		Tick: 400
 	icon: domeicon
 	fake-icon: domficon
 
@@ -235,6 +256,9 @@ atek:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
+	infested: infested
+		Length: *
+		Tick: 400
 	icon: atekicon
 	fake-icon: ateficon
 
@@ -249,6 +273,9 @@ stek:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
+	infested: infested
+		Length: *
+		Tick: 400
 	icon: stekicon
 
 weap:
@@ -267,6 +294,10 @@ weap:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
+	infested: infested
+		Length: *
+		Tick: 400
+		ZOffset: 1024
 	icon: weapicon
 	fake-icon: weaficon
 
@@ -291,6 +322,9 @@ hpad:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
+	infested: infested
+		Length: *
+		Tick: 400
 	icon: hpadicon
 
 afld:
@@ -319,6 +353,9 @@ afld:
 	make: afldmake
 		Length: *
 		Offset: 0,-4
+	infested: infested
+		Length: *
+		Tick: 400
 	icon: afldicon
 
 spen:
@@ -328,6 +365,9 @@ spen:
 	make: spenmake
 		Length: *
 	icon: spenicon
+	infested: infested
+		Length: *
+		Tick: 400
 	fake-icon: speficon
 
 syrd:
@@ -337,6 +377,9 @@ syrd:
 	make: syrdmake
 		Length: *
 	icon: syrdicon
+	infested: infested
+		Length: *
+		Tick: 400
 	fake-icon: syrficon
 
 fix:
@@ -365,6 +408,9 @@ fix:
 		ZOffset: -1c511
 		Offset: 0,-4
 		UseTilesetExtension: true
+	infested: infested
+		Length: *
+		Tick: 400
 	icon: fixicon
 	fake-icon: fixficon
 
@@ -499,6 +545,9 @@ pbox:
 		Length: *
 		Offset: 0,-2
 		UseTilesetExtension: true
+	infested: infested
+		Length: *
+		Tick: 400
 	icon: pboxicon
 
 hbox:
@@ -554,6 +603,9 @@ iron:
 		Length: *
 		Offset: 0,2
 		UseTilesetExtension: true
+	infested: infested
+		Length: *
+		Tick: 400
 	icon: ironicon
 
 pdox:
@@ -571,6 +623,9 @@ pdox:
 		Length: *
 		Offset: 0,-4
 		UseTilesetExtension: true
+	infested: infested
+		Length: *
+		Tick: 400
 	icon: pdoxicon
 	fake-icon: pdoficon
 
@@ -592,6 +647,9 @@ mslo:
 	damaged-active:
 		Start: 9
 		Length: 7
+	infested: infested
+		Length: *
+		Tick: 400
 	icon: msloicon2
 		UseTilesetExtension: false
 	fake-icon: mslficon
@@ -771,6 +829,9 @@ gulag:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
+	infested: infested
+		Length: *
+		Tick: 400
 	icon: missicon
 
 vein:

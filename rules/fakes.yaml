@@ -24,6 +24,14 @@ FPWR:
 		Image: POWR
 	Valued:
 		Cost: 30
+	TransformOnCapture:
+		Type: infestable
+		IntoActor: FPWR_INFESTED
+		ForceHealthPercentage: 100
+	TransformOnCapture:
+		Type: infestable
+		IntoActor: FPWR_INFESTED
+		ForceHealthPercentage: 100
 
 SYRF:
 	Inherits: ^FakeBuilding
@@ -56,6 +64,10 @@ SYRF:
 		Type: Light
 	EditorTilesetFilter:
 		ExcludeTilesets: INTERIOR
+	TransformOnCapture:
+		Type: infestable
+		IntoActor: SYRF_INFESTED
+		ForceHealthPercentage: 100
 
 SPEF:
 	Inherits: ^FakeBuilding
@@ -88,6 +100,10 @@ SPEF:
 		Type: Light
 	EditorTilesetFilter:
 		ExcludeTilesets: INTERIOR
+	TransformOnCapture:
+		Type: infestable
+		IntoActor: SPEF_INFESTED
+		ForceHealthPercentage: 100
 
 WEAF:
 	Inherits: ^FakeBuilding
@@ -117,6 +133,10 @@ WEAF:
 		HP: 1500
 	Armor:
 		Type: Wood
+	TransformOnCapture:
+		Type: infestable
+		IntoActor: WEAF_INFESTED
+		ForceHealthPercentage: 100
 
 DOMF:
 	Inherits: ^FakeBuilding
@@ -146,6 +166,10 @@ DOMF:
 		Type: Wood
 	RequiresPower:
 	DisabledOverlay:
+	TransformOnCapture:
+		Type: infestable
+		IntoActor: DOMF_INFESTED
+		ForceHealthPercentage: 100
 
 FIXF:
 	Inherits: ^FakeBuilding
@@ -173,6 +197,10 @@ FIXF:
 		Image: FIX
 	Valued:
 		Cost: 120
+	TransformOnCapture:
+		Type: infestable
+		IntoActor: FIXF_INFESTED
+		ForceHealthPercentage: 100
 
 FAPW:
 	Inherits: ^FakeBuilding
@@ -204,6 +232,10 @@ FAPW:
 		VisualBounds: 72,68,0,-10
 	Valued:
 		Cost: 60
+	TransformOnCapture:
+		Type: infestable
+		IntoActor: FAPW_INFESTED
+		ForceHealthPercentage: 100
 
 ATEF:
 	Inherits: ^FakeBuilding
@@ -232,6 +264,10 @@ ATEF:
 		Type: Wood
 	RequiresPower:
 	DisabledOverlay:
+	TransformOnCapture:
+		Type: infestable
+		IntoActor: ATEF_INFESTED
+		ForceHealthPercentage: 100
 
 PDOF:
 	Inherits: ^FakeBuilding
@@ -264,6 +300,10 @@ PDOF:
 		DamageThreshold: 50
 	RequiresPower:
 	DisabledOverlay:
+	TransformOnCapture:
+		Type: infestable
+		IntoActor: PDOF_INFESTED
+		ForceHealthPercentage: 100
 
 MSLF:
 	Inherits: ^FakeBuilding
@@ -294,6 +334,10 @@ MSLF:
 		DamageThreshold: 50
 	RequiresPower:
 	DisabledOverlay:
+	TransformOnCapture:
+		Type: infestable
+		IntoActor: MSLF_INFESTED
+		ForceHealthPercentage: 100
 
 FACF:
 	Inherits: ^FakeBuilding
@@ -320,3 +364,7 @@ FACF:
 		HP: 1500
 	Armor:
 		Type: Wood
+	TransformOnCapture:
+		Type: infestable
+		IntoActor: FACF_INFESTED
+		ForceHealthPercentage: 100
