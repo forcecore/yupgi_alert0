@@ -36,6 +36,9 @@ Packages:
 	~desert.mix
 	ra|bits
 	yupgi_alert|bits
+	yupgi_alert|bits/aud
+	yupgi_alert|bits/cameo
+	yupgi_alert|bits/shp
 	ra|bits/desert
 	ra|uibits
 	yupgi_alert|uibits

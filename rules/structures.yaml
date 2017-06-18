@@ -2424,6 +2424,7 @@ VEIN:
 		ValidTypes: Grindable, Supply
 		#Sounds: bgrinda.aud
 	WithAcceptDeliveredCashAnimation:
+	AcceptCashRallyPointAcceptor:
 
 mbk:
 	Inherits: ^Defense
