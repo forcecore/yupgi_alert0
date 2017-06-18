@@ -1,0 +1,233 @@
+OILB_INFESTED:
+	Inherits@1: OILB
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: oilb
+	Tooltip:
+		Name: Infested Oil Derrick
+	-GivesCashOnCapture:
+	-CashTrickler:
+
+FCOM_INFESTED:
+	Inherits@1: FCOM
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: fcom
+	Tooltip:
+		Name: Infested Forward Command
+
+HOSP_INFESTED:
+	Inherits@1: HOSP
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: hosp
+	Tooltip:
+		Name: Infested Hospital
+
+MISS_INFESTED:
+	Inherits@1: MISS
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: miss
+	Tooltip:
+		Name: Infested Technology Center
+
+BIO_INFESTED:
+	Inherits@1: BIO
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: bio
+	Tooltip:
+		Name: Infested Biological Lab
+
+V01_INFESTED:
+	Inherits@1: V01
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: v01
+	Tooltip:
+		Name: Infested Church
+
+V02_INFESTED:
+	Inherits@1: V02
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: v02
+	Tooltip:
+		Name: Infested Civilian Building
+
+V03_INFESTED:
+	Inherits@1: V03
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: v03
+	Tooltip:
+		Name: Infested Civilian Building
+
+V04_INFESTED:
+	Inherits@1: V04
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: v04
+	Tooltip:
+		Name: Infested Civilian Building
+
+V05_INFESTED:
+	Inherits@1: V05
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: v05
+	Tooltip:
+		Name: Infested Civilian Building
+
+V06_INFESTED:
+	Inherits@1: V06
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: v06
+	Tooltip:
+		Name: Infested Civilian Building
+
+V07_INFESTED:
+	Inherits@1: V07
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: v07
+	Tooltip:
+		Name: Infested Civilian Building
+
+V09_INFESTED:
+	Inherits@1: V09
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: v09
+	Tooltip:
+		Name: Infested Civilian Building
+
+V10_INFESTED:
+	Inherits@1: V10
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: v10
+	Tooltip:
+		Name: Infested Civilian Building
+
+V11_INFESTED:
+	Inherits@1: V11
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: v11
+	Tooltip:
+		Name: Infested Civilian Building
+
+V12_INFESTED:
+	Inherits@1: V12
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: v12
+	Tooltip:
+		Name: Infested Civilian Building
+
+V13_INFESTED:
+	Inherits@1: V13
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: v13
+	Tooltip:
+		Name: Infested Civilian Building
+
+V19_INFESTED:
+	Inherits@1: V19
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: v19
+	Tooltip:
+		Name: Infested Civilian Building
+
+V20_INFESTED:
+	Inherits@1: V20
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: v20
+	Tooltip:
+		Name: Infested Civilian Building
+
+V21_INFESTED:
+	Inherits@1: V21
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: v21
+	Tooltip:
+		Name: Infested Civilian Building
+
+V22_INFESTED:
+	Inherits@1: V22
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: v22
+	Tooltip:
+		Name: Infested Civilian Building
+
+V24_INFESTED:
+	Inherits@1: V24
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: v24
+	Tooltip:
+		Name: Infested Civilian Building
+
+V25_INFESTED:
+	Inherits@1: V25
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: v25
+	Tooltip:
+		Name: Infested Civilian Building
+
+V26_INFESTED:
+	Inherits@1: V26
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: v26
+	Tooltip:
+		Name: Infested Civilian Building
+
+V30_INFESTED:
+	Inherits@1: V30
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: v30
+	Tooltip:
+		Name: Infested Civilian Building
+
+V31_INFESTED:
+	Inherits@1: V31
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: v31
+	Tooltip:
+		Name: Infested Civilian Building
+
+V32_INFESTED:
+	Inherits@1: V32
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: v32
+	Tooltip:
+		Name: Infested Civilian Building
+
+V33_INFESTED:
+	Inherits@1: V33
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: v33
+	Tooltip:
+		Name: Infested Civilian Building
+
+V37_INFESTED:
+	Inherits@1: V37
+	Inherits@2: ^Infested
+	RenderSprites:
+		Image: v37
+	Tooltip:
+		Name: Infested Civilian Building

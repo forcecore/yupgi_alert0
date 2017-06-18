@@ -55,6 +55,7 @@ Rules:
 	yupgi_alert|rules/vehicles.yaml
 	yupgi_alert|rules/husks.yaml
 	yupgi_alert|rules/structures.yaml
+	yupgi_alert|rules/infested.yaml
 	yupgi_alert|rules/infantry.yaml
 	yupgi_alert|rules/civilian.yaml
 	yupgi_alert|rules/decoration.yaml

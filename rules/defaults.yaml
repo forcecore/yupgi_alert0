@@ -133,11 +133,47 @@
 	ExternalCondition@INVULNERABILITY:
 		Condition: invulnerability
 
+^Infestable:
+	ExternalCapturable:
+		Type: infestable
+		RequiresCondition: !mindcontrolled
+	ExternalCapturableBar:
+	TransformOnCapture:
+		Type: infestable
+		IntoActor: want # dummy
+		ForceHealthPercentage: 100
+
+^Infested:
+	WithIdleOverlay:
+		Sequence: infested
+		Palette: player
+		IsPlayerPalette: true
+	RallyPoint:
+	Exit:
+	PeriodicFreeActor:
+		Actor: want
+		Facing: 128
+		Period: 750
+
+^Capturable:
+	ExternalCapturable:
+		RequiresCondition: !mindcontrolled
+	ExternalCapturableBar:
+	TransformOnCapture:
+		Type: infestable
+		ForceHealthPercentage: 100
+
+^MindControllable:
+	WithMindcontrolArc:
+	Mindcontrollable:
+		UnmindcontrolSound: bleep5.aud
+
 ^Vehicle:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^GainsExperience
 	Inherits@3: ^IronCurtainable
 	Inherits@4: ^SpriteActor
+	Inherits@5: ^MindControllable
 	Huntable:
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
@@ -230,9 +266,6 @@
 		Type: Grindable
 		Sounds: kaboom15.aud, kaboom22.aud
 		Payload: 50
-	WithMindcontrolArc:
-	Mindcontrollable:
-		UnmindcontrolSound: bleep5.aud
 
 ^Tank:
 	Inherits: ^Vehicle
@@ -258,6 +291,7 @@
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^GainsExperience
 	Inherits@3: ^SpriteActor
+	Inherits@4: ^MindControllable
 	Huntable:
 	DrawLineToTarget:
 	Health:
@@ -364,9 +398,6 @@
 		Type: Grindable
 		Sounds: dedman1.aud,dedman2.aud,dedman3.aud,dedman4.aud,dedman5.aud,dedman7.aud,dedman8.aud
 		Payload: 50
-	WithMindcontrolArc:
-	Mindcontrollable:
-		UnmindcontrolSound: bleep5.aud
 
 ^Soldier:
 	Inherits: ^Infantry
@@ -421,6 +452,7 @@
 	Inherits@2: ^GainsExperience
 	Inherits@3: ^IronCurtainable
 	Inherits@4: ^SpriteActor
+	Inherits@5: ^MindControllable
 	Huntable:
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
@@ -459,14 +491,12 @@
 	Voiced:
 		VoiceSet: VehicleVoice
 	WithFacingSpriteBody:
-	WithMindcontrolArc:
-	Mindcontrollable:
-		UnmindcontrolSound: bleep5.aud
 
 ^NeutralPlane:
 	Inherits@1: ^ExistsInWorld
 	Inherits@3: ^IronCurtainable
 	Inherits@4: ^SpriteActor
+	Inherits@4: ^MindControllable
 	Huntable:
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
@@ -513,9 +543,6 @@
 	MustBeDestroyed:
 	Voiced:
 		VoiceSet: GenericVoice
-	WithMindcontrolArc:
-	Mindcontrollable:
-		UnmindcontrolSound: bleep5.aud
 
 ^Plane:
 	Inherits: ^NeutralPlane
@@ -575,7 +602,8 @@
 	Demolishable:
 
 ^Building:
-	Inherits: ^BasicBuilding
+	Inherits@1: ^BasicBuilding
+	Inherits@2: ^Capturable
 	Huntable:
 	UpdatesPlayerStatistics:
 	GivesBuildableArea:
@@ -585,12 +613,6 @@
 	AcceptsDeliveredCash:
 		ValidTypes: Supply
 	WithMakeAnimation:
-	ExternalCapturable:
-		RequiresCondition: !mindcontrolled
-	ExternalCapturableBar:
-	WithMindcontrolArc:
-	Mindcontrollable:
-		UnmindcontrolSound: bleep5.aud
 	EmitInfantryOnSell:
 		ActorTypes: e1,e1,e1,tecn,tecn
 	MustBeDestroyed:

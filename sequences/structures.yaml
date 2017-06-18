@@ -9,6 +9,9 @@ fcom:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
+	infested: infested
+		Length: *
+		Tick: 400
 
 hosp:
 	idle:
@@ -25,6 +28,9 @@ hosp:
 		Length: *
 		Offset: 0,1
 		UseTilesetExtension: true
+	infested: infested
+		Length: *
+		Tick: 400
 	icon: hospicon
 
 bio:
@@ -36,6 +42,9 @@ bio:
 		Tick: 800
 	make: biomake
 		Length: *
+	infested: infested
+		Length: *
+		Tick: 400
 
 oilb:
 	idle:
@@ -48,6 +57,9 @@ oilb:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
+	infested: infested
+		Length: *
+		Tick: 400
 
 fact:
 	idle:
@@ -599,6 +611,9 @@ miss:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
+	infested: infested
+		Length: *
+		Tick: 400
 
 brik:
 	idle:

@@ -448,6 +448,10 @@ v01:
 	idle:
 	damaged-idle:
 		Start: 1
+	infested: infested
+		UseTilesetExtension: false
+		Length: *
+		Tick: 400
 
 v02:
 	Defaults:
@@ -458,6 +462,10 @@ v02:
 	idle:
 	damaged-idle:
 		Start: 1
+	infested: infested
+		UseTilesetExtension: false
+		Length: *
+		Tick: 400
 
 v03:
 	Defaults:
@@ -468,6 +476,10 @@ v03:
 	idle:
 	damaged-idle:
 		Start: 1
+	infested: infested
+		UseTilesetExtension: false
+		Length: *
+		Tick: 400
 
 v04:
 	Defaults:
@@ -482,6 +494,10 @@ v04:
 		Start: 1
 	damaged-active:
 		Start: 3
+	infested: infested
+		UseTilesetExtension: false
+		Length: *
+		Tick: 400
 
 v05:
 	Defaults:
@@ -492,6 +508,10 @@ v05:
 	idle:
 	damaged-idle:
 		Start: 2
+	infested: infested
+		UseTilesetExtension: false
+		Length: *
+		Tick: 400
 
 v06:
 	Defaults:
@@ -502,6 +522,10 @@ v06:
 	idle:
 	damaged-idle:
 		Start: 1
+	infested: infested
+		UseTilesetExtension: false
+		Length: *
+		Tick: 400
 
 v07:
 	Defaults:
@@ -512,6 +536,10 @@ v07:
 	idle:
 	damaged-idle:
 		Start: 2
+	infested: infested
+		UseTilesetExtension: false
+		Length: *
+		Tick: 400
 
 v08:
 	Defaults:
@@ -822,6 +850,9 @@ v20:
 		Start: 3
 		Length: 3
 		Tick: 120
+	infested: infested.shp
+		Length: *
+		Tick: 400
 
 v21:
 	Defaults:
@@ -833,6 +864,9 @@ v21:
 		Start: 3
 		Length: 3
 		Tick: 120
+	infested: infested.shp
+		Length: *
+		Tick: 400
 
 v22:
 	Defaults:
@@ -844,6 +878,9 @@ v22:
 		Start: 3
 		Length: 3
 		Tick: 120
+	infested: infested.shp
+		Length: *
+		Tick: 400
 
 v23:
 	Defaults:
@@ -862,6 +899,9 @@ v24:
 	idle: v24.des
 	damaged-idle: v24.des
 		Start: 1
+	infested: infested.shp
+		Length: *
+		Tick: 400
 
 v25:
 	Defaults:
@@ -869,6 +909,9 @@ v25:
 	idle: v25.des
 	damaged-idle: v25.des
 		Start: 1
+	infested: infested.shp
+		Length: *
+		Tick: 400
 
 v26:
 	Defaults:
@@ -876,6 +919,9 @@ v26:
 	idle: v26.des
 	damaged-idle: v26.des
 		Start: 1
+	infested: infested.shp
+		Length: *
+		Tick: 400
 
 v27:
 	Defaults:
@@ -904,6 +950,9 @@ v30:
 	idle: v30.des
 	damaged-idle: v30.des
 		Start: 2
+	infested: infested.shp
+		Length: *
+		Tick: 400
 
 v31:
 	Defaults:
@@ -911,6 +960,9 @@ v31:
 	idle: v31.des
 	damaged-idle: v31.des
 		Start: 1
+	infested: infested.shp
+		Length: *
+		Tick: 400
 
 v32:
 	Defaults:
@@ -918,6 +970,9 @@ v32:
 	idle: v32.des
 	damaged-idle: v32.des
 		Start: 1
+	infested: infested.shp
+		Length: *
+		Tick: 400
 
 v33:
 	Defaults:
@@ -925,6 +980,9 @@ v33:
 	idle: v33.des
 	damaged-idle: v33.des
 		Start: 1
+	infested: infested.shp
+		Length: *
+		Tick: 400
 
 v34:
 	Defaults:
@@ -953,6 +1011,9 @@ v37:
 	idle: v37.des
 	damaged-idle: v37.des
 		Start: 1
+	infested: infested.shp
+		Length: *
+		Tick: 400
 
 snowhut:
 	idle:

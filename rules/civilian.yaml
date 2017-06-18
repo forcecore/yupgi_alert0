@@ -67,6 +67,9 @@ TECN:
 
 FCOM:
 	Inherits: ^TechBuilding
+	Inherits: ^Infestable
+	TransformOnCapture:
+		IntoActor: fcom_infested
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -87,6 +90,9 @@ FCOM:
 
 HOSP:
 	Inherits: ^TechBuilding
+	Inherits: ^Infestable
+	TransformOnCapture:
+		IntoActor: hosp_infested
 	Selectable:
 		Priority: 0
 	Building:
@@ -111,7 +117,10 @@ HOSP:
 		String: Hospital
 
 V01:
-	Inherits: ^CivBuilding
+	Inherits@1: ^CivBuilding
+	Inherits@2: ^Infestable
+	TransformOnCapture:
+		IntoActor: v01_infested
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -123,7 +132,10 @@ V01:
 		ExcludeTilesets: DESERT, INTERIOR
 
 V02:
-	Inherits: ^CivBuilding
+	Inherits@1: ^CivBuilding
+	Inherits@2: ^Infestable
+	TransformOnCapture:
+		IntoActor: v02_infested
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -131,7 +143,10 @@ V02:
 		ExcludeTilesets: DESERT, INTERIOR
 
 V03:
-	Inherits: ^CivBuilding
+	Inherits@1: ^CivBuilding
+	Inherits@2: ^Infestable
+	TransformOnCapture:
+		IntoActor: v03_infested
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -139,7 +154,10 @@ V03:
 		ExcludeTilesets: DESERT, INTERIOR
 
 V04:
-	Inherits: ^CivBuilding
+	Inherits@1: ^CivBuilding
+	Inherits@2: ^Infestable
+	TransformOnCapture:
+		IntoActor: v04_infested
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -147,7 +165,10 @@ V04:
 		ExcludeTilesets: DESERT, INTERIOR
 
 V05:
-	Inherits: ^CivBuilding
+	Inherits@1: ^CivBuilding
+	Inherits@2: ^Infestable
+	TransformOnCapture:
+		IntoActor: v05_infested
 	Building:
 		Footprint: xx
 		Dimensions: 2,1
@@ -155,7 +176,10 @@ V05:
 		ExcludeTilesets: DESERT, INTERIOR
 
 V06:
-	Inherits: ^CivBuilding
+	Inherits@1: ^CivBuilding
+	Inherits@2: ^Infestable
+	TransformOnCapture:
+		IntoActor: v06_infested
 	Building:
 		Footprint: xx
 		Dimensions: 2,1
@@ -163,7 +187,10 @@ V06:
 		ExcludeTilesets: DESERT, INTERIOR
 
 V07:
-	Inherits: ^CivBuilding
+	Inherits@1: ^CivBuilding
+	Inherits@2: ^Infestable
+	TransformOnCapture:
+		IntoActor: v07_infested
 	Building:
 		Footprint: xx
 		Dimensions: 2,1
@@ -311,7 +338,10 @@ AMMOBOX3:
 	Inherits: ^AmmoBox
 
 MISS:
-	Inherits: ^TechBuilding
+	Inherits@1: ^TechBuilding
+	Inherits@2: ^Infestable
+	TransformOnCapture:
+		IntoActor: miss_infested
 	Selectable:
 		Priority: 0
 	Building:
@@ -334,7 +364,10 @@ MISS:
 	ProvidesPrerequisite@buildingname:
 
 BIO:
-	Inherits: ^TechBuilding
+	Inherits@1: ^TechBuilding
+	Inherits@2: ^Infestable
+	TransformOnCapture:
+		IntoActor: bio_infested
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -353,7 +386,10 @@ BIO:
 		String: Biohazard
 
 OILB:
-	Inherits: ^TechBuilding
+	Inherits@1: ^TechBuilding
+	Inherits@2: ^Infestable
+	TransformOnCapture:
+		IntoActor: oilb_infested
 	Selectable:
 		Priority: 0
 	Building:
@@ -364,6 +400,7 @@ OILB:
 	RevealsShroud:
 		Range: 3c0
 	ExternalCapturable:
+		Type: building
 	ExternalCapturableBar:
 	EngineerRepairable:
 	CashTrickler:
@@ -537,19 +574,28 @@ BRIDGEHUT.small:
 		TargetTypes: BridgeHut, C4
 
 V20:
-	Inherits: ^DesertCivBuilding
+	Inherits@1: ^DesertCivBuilding
+	Inherits@2: ^Infestable
+	TransformOnCapture:
+		IntoActor: v20_infested
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
 
 V21:
-	Inherits: ^DesertCivBuilding
+	Inherits@1: ^DesertCivBuilding
+	Inherits@2: ^Infestable
+	TransformOnCapture:
+		IntoActor: v21_infested
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
 
 V22:
-	Inherits: ^DesertCivBuilding
+	Inherits@1: ^DesertCivBuilding
+	Inherits@2: ^Infestable
+	TransformOnCapture:
+		IntoActor: v22_infested
 	Building:
 		Footprint: xx
 		Dimensions: 2,1
@@ -564,7 +610,10 @@ V24:
 		Dimensions: 2,2
 
 V25:
-	Inherits: ^DesertCivBuilding
+	Inherits@1: ^DesertCivBuilding
+	Inherits@2: ^Infestable
+	TransformOnCapture:
+		IntoActor: v25_infested
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -575,6 +624,9 @@ V25:
 
 V26:
 	Inherits: ^DesertCivBuilding
+	Inherits: ^Infestable
+	TransformOnCapture:
+		IntoActor: v26_infested
 	Building:
 		Footprint: xx
 		Dimensions: 2,1
@@ -589,25 +641,37 @@ V29:
 	Inherits: ^DesertCivBuilding
 
 V30:
-	Inherits: ^DesertCivBuilding
+	Inherits@1: ^DesertCivBuilding
+	Inherits@2: ^Infestable
+	TransformOnCapture:
+		IntoActor: v30_infested
 	Building:
 		Footprint: xx
 		Dimensions: 2,1
 
 V31:
-	Inherits: ^DesertCivBuilding
+	Inherits@1: ^DesertCivBuilding
+	Inherits@2: ^Infestable
+	TransformOnCapture:
+		IntoActor: v31_infested
 	Building:
 		Footprint: xx
 		Dimensions: 2,1
 
 V32:
-	Inherits: ^DesertCivBuilding
+	Inherits@1: ^DesertCivBuilding
+	Inherits@2: ^Infestable
+	TransformOnCapture:
+		IntoActor: v32_infested
 	Building:
 		Footprint: xx
 		Dimensions: 2,1
 
 V33:
-	Inherits: ^DesertCivBuilding
+	Inherits@1: ^DesertCivBuilding
+	Inherits@2: ^Infestable
+	TransformOnCapture:
+		IntoActor: v33_infested
 	Building:
 		Footprint: xx
 		Dimensions: 2,1
@@ -622,7 +686,10 @@ V36:
 	Inherits: ^DesertCivBuilding
 
 V37:
-	Inherits: ^DesertCivBuilding
+	Inherits@1: ^DesertCivBuilding
+	Inherits@2: ^Infestable
+	TransformOnCapture:
+		IntoActor: v37_infested
 	Building:
 		Footprint: __xx_ ___xx
 		Dimensions: 5,2
