@@ -929,7 +929,7 @@ DOGGIE:
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: SmallAnt
-		BuildPaletteOrder: 200
+		BuildPaletteOrder: 30
 		Prerequisites: ~qnest, tibtree
 		Description: Anti-air unit.\n Strong vs Infantry, Aircraft.\n  Weak vs Vehicles, Structures.
 	Valued:
@@ -1163,7 +1163,7 @@ INFT:
 	-Crushable:
 	Buildable:
 		Queue: Infantry
-		BuildAtProductionType: Soldier
+		BuildAtProductionType: SmallAnt
 		BuildPaletteOrder: 140
 		Prerequisites: ~qnest, evo, ~techlevel.high
 		Description: Uses toxin to manipulate enemy units\n Can infest neutal/enemy structures

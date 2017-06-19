@@ -6,7 +6,7 @@ import glob
 import io
 import poyo
 
-for fname in glob.glob("structures.yaml"):
+for fname in glob.glob("infantry.yaml"):
     with open(fname) as f:
         print(fname)
 
