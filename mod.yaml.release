@@ -25,6 +25,7 @@ Packages:
 	~hires.mix
 	~local.mix
 	~sounds.mix
+	yupgi_alert|bits/anteva: ant-eva
 	~speech.mix
 	~allies.mix
 	~russian.mix
@@ -36,12 +37,12 @@ Packages:
 	~hires1.mix
 	~desert.mix
 	ra|bits
-	yupgi_alert|bits
-	yupgi_alert|bits/aud
-	yupgi_alert|bits/cameo
-	yupgi_alert|bits/shp
 	ra|bits/desert
 	ra|uibits
+	yupgi_alert|bits/aud
+	yupgi_alert|bits/cameo
+	yupgi_alert|bits/etc
+	yupgi_alert|bits/shp
 	yupgi_alert|uibits
 
 MapFolders:
@@ -152,7 +153,7 @@ Voices:
 	yupgi_alert|audio/voices.yaml
 
 Notifications:
-	ra|audio/notifications.yaml
+	yupgi_alert|audio/notifications.yaml
 
 Music:
 	ra|audio/music.yaml
