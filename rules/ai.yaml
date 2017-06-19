@@ -472,6 +472,8 @@ Player:
 		UnitsCommonNames:
 			Mcv: gamcv, namcv, qant
 			ExcludeFromSquads: mig2,scud_unit,smin,slave
+		CapturingActorTypes: inft
+		CapturableActorTypes: oilb,hosp,bio
 		BuildingLimits:
 			# unleashed
 			proc: 4
@@ -533,6 +535,7 @@ Player:
 			e4: 15%
 			deso: 15%
 			volkov: 15%
+			inft: 5%
 			chitz: 15%
 			dog: 15%
 			shok: 15%
