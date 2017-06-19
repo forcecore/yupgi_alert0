@@ -1217,3 +1217,5 @@ INFT:
 		CaptureTypes: building, infestable
 		TransformTypes: infestable
 		PlayerExperience: 25
+	-DamagedByTerrain@tib:
+	-DamagedByRadioactivity:
