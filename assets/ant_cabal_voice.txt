@@ -1,0 +1,82 @@
+I did this, in batch.
+https://www.youtube.com/watch?v=NT5aG8cO_pA
+
+You need Audacity, SoX.
+
+Follow the video to make yourself familiar with the process.
+Now to do the thing in batch:
+
+1. Audacity, chain is what you want. But chain doesn't support multiple
+   channels so we'll apply the effects channel by channel.
+2. Chains --> Change Pitch --> -15%. --> Export Wav.
+   Audacity creates "cleaned" folder at where the input are.
+   That is "ch1".
+3. Apply chain on ch1 to make ch2.
+   Change Pitch --> -15% --> Phaser.
+   Phaser params:
+     * Stages: 24
+     * Dry/Wet: 255
+     * LFO Freq: 0.001
+     * LFO Start Phase: 40
+     * Depth: 40
+     * Feedback: -70%
+     * Output gain: 0
+4. Apply chain on ch1 to make ch3.
+   Change Pitch --> -20% --> Phaser.
+   Phaser params:
+     * Stages: 24
+     * Dry/Wet: 255
+     * LFO Freq: 0.001
+     * LFO Start Phase: 0
+     * Depth: 40
+     * Feedback: -90%
+     * Output gain: 0
+5. Since Audacity can't handle mixing multiple channels, time for SoX to do
+   the channel mixing.
+
+import glob
+import os
+
+for fname in glob.glob("ch1/*.wav"):
+    ch1 = fname
+    ch2 = fname.replace("ch1", "ch2")
+    ch3 = fname.replace("ch1", "ch3")
+    out = fname.replace("ch1", "out")
+    cmd = "sox -m {} {} {} {}".format(ch1, ch2, ch3, out)
+    print(cmd)
+    os.system(cmd)
+
+Actually, above result was uncomprehensible.
+Lich king thing applied instead.
+https://www.youtube.com/watch?v=ythJI6Bq88Q
+
+1. ch1: -15% change pitch to orig
+2. ch2: -20% change pitch to orig --> echo effect, delay 0.5, decay 0.6 -->
+        fade out at the end.
+3. copy ch1, reverse --> reverb
+   * Room size 100
+   * Pre delay 20
+   * Reverbance 50
+   * Damping 50
+   * Tone low 80
+   * Tone high 60
+   * Wet gain 10
+   * Dry gain 0
+   * Stereo width 80
+4. Channel gains: ch1 0 db ch2 -5db ch3 -10db
+
+So what I can do is to automate as much as possible.
+But do fading and merging, gains manually.
+
+But I HATE manual work so I'd use SoX to do these gain and mixing, fading.
+
+# Fade out the last 0.2 seconds.
+    cmd = "sox {} {} fade 0 0 0.2".format(ch2, out)
+
+# apply gain
+    cmd = "sox {} {} gain -5".format(inf, ouf)
+
+Ugh, fuck this. some files are missing.
+Why dont I do it 100% SoX?
+
+See ant_cabal_voice.py !!!
