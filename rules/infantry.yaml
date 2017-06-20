@@ -1194,7 +1194,7 @@ INFT:
 		Voice: Move
 	Armament@PRIMARY:
 		Weapon: MindController
-		RequiresCondition: slaving < 3
+		#RequiresCondition: slaving < 1
 	Targetable:
 		TargetTypes: Ground, Infantry, Ant
 	AttackFrontal:
@@ -1208,7 +1208,7 @@ INFT:
 		Prerequisites: barracks.upgraded
 	-Mindcontrollable:
 	Mindcontroller:
-		Capacity: 3
+		Capacity: 1
 		Sound: sonpulse.aud
 		GiveCondition: mindcontrolled
 		ControllingCondition: slaving
