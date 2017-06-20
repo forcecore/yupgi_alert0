@@ -542,20 +542,19 @@ Player:
 			harv: 50%
 			smin: 50%
 			marv: 10%
-			apc: 30%
-			jeep: 40%
+			apc: 15%
+			jeep: 15%
 			arty: 15%
-			msam: 15%
+			msam: 40%
 			v2rl: 40%
 			ftrk: 50%
-			1tnk: 70%
-			2tnk: 25%
+			1tnk: 15%
+			2tnk: 50%
 			3tnk: 50%
 			4tnk: 20%
 			5tnk: 20%
 			qtnk_ai: 5%
 			ttnk: 20%
-			stnk: 15%
 			wangchang: 15%
 			heli: 30%
 			hind: 30%
