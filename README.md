@@ -21,10 +21,8 @@ The following are for modders.
 
 # Utils
 
-* assets/put\_ra1.py : GIMP plugin for RA1 cameo text embedding.
+* https://github.com/forcecore/CameoTextEmbedder : GIMP plugin for RA1 cameo text embedding.
   * Demo: https://www.youtube.com/watch?v=IHOe-uCPbh8
-  * You need to modify this script to fit you environment.
-  * Read the comment inside on installation instruction.
 * assets/shp/recolor.py : Script for replacing colors. e.g., testing house colors
 * assets/shp/vxl2shp.py : Script to convert vxl to shp.
 
