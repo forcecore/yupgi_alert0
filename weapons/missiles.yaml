@@ -378,13 +378,30 @@ SteelRainCluster:
 
 SteelRain:
 	Inherits: SubMissile
-	ReloadDelay: 25
+	ReloadDelay: 12
 	Range: 10c0
 	MinRange: 3c0
 	Report: rocket1.aud
+	Burst: 7
+	BurstDelay: 12
+	ValidTargets: Air, Ground, Water
+	Projectile: Missile
+		Speed: 213
+		Arm: 2
+		Inaccuracy: 0
+		Blockable: false
+		ContrailLength: 20
+		Image: DRAGON
+		Shadow: True
+		RangeLimit: 12c0
+		MinimumLaunchAngle: 85
+		MaximumLaunchAngle: 128
+		HomingActivationDelay: 15
+		HorizontalRateOfTurn: 15
+		VerticalRateOfTurn: 15
 	Warhead@1Dam: SpreadDamage
-		Damage: 1
-		ValidTargets: Ground, Water
-	Warhead@5Cluster: FireCluster
-		Weapon: SteelRainCluster
-		Range: 1
+		Damage: 15
+		ValidTargets: Ground, Water, Air
+	#Warhead@5Cluster: FireCluster
+		#Weapon: SteelRainCluster
+		#Range: 1

@@ -1280,15 +1280,15 @@ MSAM:
 	RenderSprites:
 		PlayerPalette: player-cc1
 	Valued:
-		Cost: 1200
+		Cost: 2200
 	DeliversCash@GRINDABLE:
-		Payload: 600
+		Payload: 1100
 	Tooltip:
-		Name: MLRS
+		Name: Aegis Rocket Launcher
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 81
-		Prerequisites: dome, ~gaweap, ~techlevel.medium
+		Prerequisites: atek, ~gaweap, ~techlevel.medium
 		Description: It will rain steel on the battle field.\n Weak vs Aircraft
 	Mobile:
 		Speed: 85
@@ -1304,17 +1304,16 @@ MSAM:
 		Offset: -256,0,128
 	Armament@PRIMARY:
 		Weapon: SteelRain
-		LocalOffset: 213,128,0, 213,-128,0
-	AmmoPool:
-		Ammo: 12
-		PipCount: 0
-		SelfReloads: true
-		ReloadCount: 2
-		SelfReloadDelay: 250
+		#LocalOffset: 213,128,0, 213,-128,0
+		# r = 250
+		# degs = [-45, -30, -15, 0, 15, 30, 45]
+		LocalOffset: 176,-176,0, 216,-125,0, 241,-64,0, 250,0,0, 241,64,0, 216,125,0, 176,176,0
+		LocalYaw: -128, -85, -42, 0, 42, 85, 128
 	AttackFrontal:
+		FacingTolerance: 64
 	WithSpriteTurret:
 		AimSequence: aim
-	AutoTarget:
+	AegisAutoTarget:
 	SpawnActorOnDeath:
 		Actor: MSAM.Husk
 
