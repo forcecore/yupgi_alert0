@@ -88,9 +88,9 @@ MIG:
 		Prerequisites: ~afld, stek, ~techlevel.high
 		Description: Fast Ground-Attack Plane.\n  Strong vs Buildings, Tanks\n  Weak vs Infantry, Light armor, Aircraft
 	Valued:
-		Cost: 2000
+		Cost: 2500
 	Tooltip:
-		Name: Mig Attack Plane
+		Name: Super-sonic Bomber
 	Health:
 		HP: 70
 	Armor:
@@ -103,11 +103,12 @@ MIG:
 		Range: 11c0
 		Type: GroundPosition
 	Armament:
-		Weapon: Maverick
-		LocalOffset: 0,-640,0, 0,640,0
-		LocalYaw: -40, 24
+		Weapon: AuroraBomb
+		#LocalOffset: 0,-640,0, 0,640,0
+		#LocalYaw: -40, 24
 	AttackPlane:
 		FacingTolerance: 20
+		AttackTurnDelay: 15
 	DockClient:
 	Aircraft:
 		CruiseAltitude: 2560
@@ -116,12 +117,20 @@ MIG:
 		Speed: 223
 		RepulsionSpeed: 40
 		MaximumPitch: 56
+	GrantConditionOnAttack:
+		Condition: supersonic
+	SpeedMultiplier:
+		Modifier: 150
+		RequiresCondition: supersonic
+	DamageMultiplier@SUPERSONIC:
+		RequiresCondition: supersonic
+		Modifier: 0
 	AutoTarget:
 		TargetWhenIdle: false
 		TargetWhenDamaged: false
 		EnableStances: false
 	AmmoPool:
-		Ammo: 8
+		Ammo: 1
 	ReturnOnIdle:
 	Selectable:
 		Bounds: 36,28,0,2

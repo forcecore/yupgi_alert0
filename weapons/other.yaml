@@ -487,3 +487,28 @@ MindController:
 		Damage: 0
 		ValidTargets: Vehicle, Infantry, Air, Tank
 		InvalidTargets: Structure, Wall, Husk, Trees, Creep
+
+AuroraBomb:
+	ReloadDelay: 10
+	Range: 3c0
+	Report: chute1.aud
+	Projectile: Bullet
+		Image: PARABOMB
+		Speed: 204
+	ValidTargets: Ground, Trees, Water, Underwater
+	Warhead@1Dam: SpreadDamage
+		Spread: 213
+		# 420 = 70 * 2 * 3
+		Damage: 420
+		Versus:
+			None: 90
+			Wood: 100
+			Light: 70
+			Heavy: 40
+			Concrete: 100
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Structure, Wall
+	Warhead@3Eff: CreateEffect
+		Explosions: mininuke
+		ImpactSounds: firebl3.aud

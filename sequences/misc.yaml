@@ -42,6 +42,7 @@ explosion:
 		Offset: -2,0
 	small_napalm: napalm1
 	large_napalm: napalm3
+	mininuke: mininuke
 	corpse: corpse1
 		ZOffset: -512
 		Tick: 1600

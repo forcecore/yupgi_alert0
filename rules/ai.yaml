@@ -559,7 +559,7 @@ Player:
 			heli: 30%
 			hind: 30%
 			tran_ai: 30%
-			#mig: 30%
+			mig: 30%
 			nmig: 30%
 			#yak: 30%
 			zep: 30%
