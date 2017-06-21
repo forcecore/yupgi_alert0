@@ -26,6 +26,12 @@ The following are for modders.
 * assets/shp/recolor.py : Script for replacing colors. e.g., testing house colors
 * assets/shp/vxl2shp.py : Script to convert vxl to shp.
 
+# Acknowledgements
+
+* I'd like to thank Nolt for his graphics! He crafted new graphics just for this mod, including:
+  * Infester
+  * Super sonic aircraft
+
 # 모딩 환경 갖추는 법
 
 어렵다...
