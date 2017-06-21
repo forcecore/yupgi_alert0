@@ -497,15 +497,15 @@ AuroraBomb:
 		Speed: 204
 	ValidTargets: Ground, Trees, Water, Underwater
 	Warhead@1Dam: SpreadDamage
-		Spread: 213
+		Spread: 1c0
 		# 420 = 70 * 2 * 3
 		Damage: 420
 		Versus:
-			None: 90
+			None: 100
 			Wood: 100
 			Light: 70
-			Heavy: 40
-			Concrete: 100
+			Heavy: 50
+			Concrete: 50
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Scorch
 		InvalidTargets: Structure, Wall

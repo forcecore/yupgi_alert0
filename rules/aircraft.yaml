@@ -131,6 +131,7 @@ MIG:
 		EnableStances: false
 	AmmoPool:
 		Ammo: 1
+		ReloadDelay: 250
 	ReturnOnIdle:
 	Selectable:
 		Bounds: 36,28,0,2
