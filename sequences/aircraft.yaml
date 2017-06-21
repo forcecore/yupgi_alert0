@@ -1,7 +1,7 @@
 mig:
 	idle: aurora
 		Facings: 32
-	icon: migicon
+	icon: auroraicon
 
 yak:
 	idle:
