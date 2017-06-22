@@ -2052,6 +2052,7 @@ ANYPOWER:
 
 QNEST:
 	Inherits: ^Building
+	-TransformOnCapture:
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3,3
@@ -2141,6 +2142,7 @@ QNEST:
 
 TIBTREE:
 	Inherits: ^Building
+	-TransformOnCapture:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 50
@@ -2182,6 +2184,7 @@ TIBTREE:
 
 TUNNELNETWORK:
 	Inherits: ^Building
+	-TransformOnCapture:
 	RenderSprites:
 		Scale: 0.5
 	Buildable:
@@ -2226,6 +2229,7 @@ TUNNELNETWORK:
 
 EVO:
 	Inherits: ^Building
+	-TransformOnCapture:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 150
@@ -2304,6 +2308,7 @@ GULAG:
 
 MINIHIVE:
 	Inherits: ^Defense
+	-TransformOnCapture:
 	Tooltip:
 		Name: Buzzer Hive
 	Building:
@@ -2351,6 +2356,7 @@ MINIHIVE:
 
 ANTHILL:
 	Inherits: ^Building
+	-TransformOnCapture:
 	RenderSprites:
 		Scale: 0.33
 	Buildable:
@@ -2390,6 +2396,7 @@ ANTHILL:
 
 VEIN:
 	Inherits: ^Building
+	-TransformOnCapture:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 90
@@ -2428,6 +2435,7 @@ VEIN:
 
 mbk:
 	Inherits: ^Defense
+	-TransformOnCapture:
 	RenderSprites:
 		PlayerPalette: player-ra2
 		Scale: 0.375

@@ -443,28 +443,28 @@ JEEP:
 		RevealGeneratedShroud: False
 	RevealsShroud@GAPGEN:
 		Range: 4c0
-	#Turreted:
-		#TurnSpeed: 10
-		#Offset: 0,0,85
-	#Armament:
-		#Weapon: M60mg
-		#MuzzleSequence: muzzle
-	#AttackTurreted:
-	#WithMuzzleOverlay:
-	#WithSpriteTurret:
+	Turreted:
+		TurnSpeed: 10
+		Offset: 0,0,85
+	Armament:
+		Weapon: M60mg
+		MuzzleSequence: muzzle
+	AttackTurreted:
+	WithMuzzleOverlay:
+	WithSpriteTurret:
 	AutoTarget:
 	Cargo:
 		Types: Infantry
 		MaxWeight: 3
 		PipCount: 3
 		LoadingCondition: notmobile
+	ProducibleWithLevel:
+		Prerequisites: vehicles.upgraded
 	AttackGarrisoned:
 		Armaments: garrisoned
 		PortOffsets: 256,128,32, 256,-128,32, -256,128,32, -256,-128,32
 		PortYaws: 0, 0, 512, 512
 		PortCones: 512, 512, 512, 512
-	ProducibleWithLevel:
-		Prerequisites: vehicles.upgraded
 
 APC:
 	Inherits: ^Tank
@@ -1304,12 +1304,12 @@ MSAM:
 		Offset: -256,0,128
 	Armament@PRIMARY:
 		Weapon: SteelRain
-		#LocalOffset: 213,128,0, 213,-128,0
 		# r = 250
 		# degs = [-45, -30, -15, 0, 15, 30, 45]
 		LocalOffset: 176,-176,0, 216,-125,0, 241,-64,0, 250,0,0, 241,64,0, 216,125,0, 176,176,0
 		LocalYaw: -128, -85, -42, 0, 42, 85, 128
 	AttackFrontal:
+		# +- 64 = 90 deg so covers 180 deg.
 		FacingTolerance: 64
 	WithSpriteTurret:
 		AimSequence: aim
