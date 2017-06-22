@@ -15,6 +15,7 @@ Player:
 			qnest: qant
 		UnitsCommonNames:
 			Mcv: gamcv, namcv, qant
+			Seige: v2, arty, msam
 		BuildingLimits:
 			proc: 4
 			qnest: 6
@@ -156,6 +157,7 @@ Player:
 			qnest: qant
 		UnitsCommonNames:
 			Mcv: gamcv, namcv, qant
+			Seige: v2, arty, msam
 		BuildingLimits:
 			# normal
 			proc: 4
@@ -316,6 +318,7 @@ Player:
 			qnest: qant
 		UnitsCommonNames:
 			Mcv: gamcv, namcv, qant
+			Seige: v2, arty, msam
 		BuildingLimits:
 			proc: 4
 			qnest: 6
@@ -471,6 +474,7 @@ Player:
 			qnest: qant
 		UnitsCommonNames:
 			Mcv: gamcv, namcv, qant
+			Seige: v2, arty, msam
 			ExcludeFromSquads: mig2,scud_unit,smin,slave
 		CapturingActorTypes: inft
 		CapturableActorTypes: oilb,hosp,bio
@@ -646,6 +650,7 @@ Player:
 			qnest: qant
 		UnitsCommonNames:
 			Mcv: gamcv, namcv, qant
+			Seige: v2, arty, msam
 		BuildingLimits:
 			proc: 4
 			qnest: 6
