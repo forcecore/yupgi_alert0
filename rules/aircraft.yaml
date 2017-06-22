@@ -81,6 +81,8 @@ BADR.Bomber:
 
 MIG:
 	Inherits: ^Plane
+	RenderSprites:
+		Image: aurora
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Plane

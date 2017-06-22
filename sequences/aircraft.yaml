@@ -1,7 +1,7 @@
 mig:
-	idle: aurora
-		Facings: 32
-	icon: auroraicon
+	idle:
+		Facings: 16
+	icon: migicon
 
 yak:
 	idle:
@@ -82,3 +82,9 @@ zep:
 scud_unit:
 	idle: v2
 		Facings: 32
+
+aurora:
+	idle:
+		Facings: 32
+	icon: auroraicon
+
