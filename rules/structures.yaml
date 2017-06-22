@@ -2436,9 +2436,6 @@ VEIN:
 mbk:
 	Inherits: ^Defense
 	-TransformOnCapture:
-	RenderSprites:
-		PlayerPalette: player-ra2
-		Scale: 0.375
 	Tooltip:
 		Name: McBurger Kong
 	Building:
