@@ -316,9 +316,9 @@ VolkovPPK:
 M60mg_smin:
 	Inherits: M60mg
 
-ChainGun.e7:
+ChainGun.e7.0:
 	Inherits: ^HeavyMG
-	ReloadDelay: 10
+	ReloadDelay: 30
 	Range: 5c0
 	Projectile: Bullet
 		Blockable: false
@@ -326,3 +326,11 @@ ChainGun.e7:
 		Damage: 40
 		Versus:
 			None: 120
+
+ChainGun.e7.1:
+	Inherits: ChainGun.e7.0
+	ReloadDelay: 20
+
+ChainGun.e7.2:
+	Inherits: ChainGun.e7.0
+	ReloadDelay: 10

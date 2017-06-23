@@ -335,9 +335,18 @@ E7:
 	Passenger:
 		PipType: Red
 		Voice: Move
-	Armament@PRIMARY:
-		Weapon: ChainGun.e7
-		RequiresCondition: !deployed
+	Armament@GAT1:
+		Weapon: ChainGun.e7.0
+		Name: secondary
+		RequiresCondition: !deployed && gattling == 0
+	Armament@GAT2:
+		Weapon: ChainGun.e7.1
+		Name: secondary
+		RequiresCondition: !deployed && gattling == 1
+	Armament@GAT3:
+		Weapon: ChainGun.e7.2
+		Name: secondary
+		RequiresCondition: !deployed && gattling == 2
 	Armament@SECONDARY:
 		Weapon: Flamer
 		LocalOffset: 700,0,500
@@ -383,6 +392,12 @@ E7:
 	# dog proof
 	Targetable:
 		TargetTypes: Ground, Infantry, Ant
+	GrantConditionOnFire:
+		Condition: gattling
+		Armament: secondary
+		RequiredShotsPerStack: 3, 6
+		MaxStacking: 2
+		UnstackDelay: 40
 
 MEDI:
 	Inherits: ^Soldier
