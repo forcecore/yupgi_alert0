@@ -315,3 +315,14 @@ VolkovPPK:
 
 M60mg_smin:
 	Inherits: M60mg
+
+ChainGun.e7:
+	Inherits: ^HeavyMG
+	ReloadDelay: 10
+	Range: 5c0
+	Projectile: Bullet
+		Blockable: false
+	Warhead@1Dam: SpreadDamage
+		Damage: 40
+		Versus:
+			None: 120

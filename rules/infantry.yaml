@@ -312,14 +312,16 @@ E7:
 		BuildLimit: 1
 		Description: Elite commando infantry. Armed with\ndual pistols and C4.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\n  Special Ability: Destroy Building with C4\nMaximum 1 can be trained.
 	Valued:
-		Cost: 1200
+		Cost: 2500
 	DeliversCash@GRINDABLE:
 		Payload: 600
 		Sounds: tandeth1.aud
 	Tooltip:
-		Name: Tanya
+		Name: Cyborg Ninja Pirate Mecha Death Tanya
 	Health:
-		HP: 100
+		HP: 2500
+	Armor:
+		Type: Light
 	Mobile:
 		Speed: 71
 		Voice: Move
@@ -327,16 +329,20 @@ E7:
 		Voice: Move
 	RevealsShroud:
 		Range: 6c0
-	Demolition:
-		DetonationDelay: 45
-		Voice: Demolish
+	#Demolition:
+		#DetonationDelay: 45
+		#Voice: Demolish
 	Passenger:
 		PipType: Red
 		Voice: Move
 	Armament@PRIMARY:
-		Weapon: Colt45
+		Weapon: ChainGun.e7
+		RequiresCondition: !deployed
 	Armament@SECONDARY:
-		Weapon: Colt45
+		Weapon: Flamer
+		LocalOffset: 700,0,500
+		FireDelay: 8
+		RequiresCondition: !deployed
 	Armament@GARRISONED:
 		Name: garrisoned
 		Weapon: Colt45
@@ -351,8 +357,25 @@ E7:
 		VoiceSet: TanyaVoice
 	ProducibleWithLevel:
 		Prerequisites: barracks.upgraded
-	PortableChrono:
-		ChargeDelay: 30
+	-Crushable:
+	GrantConditionOnDeploy:
+		DeployedCondition: deployed
+		CanDeployOnRamps: true
+	SpeedMultiplier:
+		Modifier: 150
+		RequiresCondition: deployed
+	Cloak:
+		InitialDelay: 1
+		CloakDelay: 1
+		UncloakOn: Demolish
+		CloakTypes: Cloak
+		CloakSound: appear1.aud
+		UncloakSound: appear1.aud
+		IsPlayerPalette: true
+		RequiresCondition: !cloak-force-disabled && deployed
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: cloak-force-disabled
+		ValidDamageStates: Critical
 
 MEDI:
 	Inherits: ^Soldier
