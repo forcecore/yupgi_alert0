@@ -300,6 +300,7 @@ VolkovPPK:
 			Wood: 75
 			Light: 60
 			Heavy: 25
+			Concrete: 25
 		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Crater
@@ -326,6 +327,10 @@ ChainGun.e7.0:
 		Damage: 40
 		Versus:
 			None: 120
+			Wood: 75
+			Light: 60
+			Heavy: 25
+			Concrete: 25
 
 ChainGun.e7.1:
 	Inherits: ChainGun.e7.0
