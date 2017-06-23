@@ -309,7 +309,7 @@ E7:
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 120
 		Prerequisites: ~tent, atek, ~techlevel.high
-		BuildLimit: 1
+		BuildLimit: 2
 		Description: Elite commando infantry. Armed with\ndual pistols and C4.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\n  Special Ability: Destroy Building with C4\nMaximum 1 can be trained.
 	Valued:
 		Cost: 2500
@@ -347,6 +347,9 @@ E7:
 		Name: garrisoned
 		Weapon: Colt45
 		MuzzleSequence: garrison-muzzle
+	Armament@AA:
+		Weapon: ZSU-23
+		LocalOffset: 520,100,450, 520,-150,450
 	AttackFrontal:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
@@ -358,6 +361,7 @@ E7:
 	ProducibleWithLevel:
 		Prerequisites: barracks.upgraded
 	-Crushable:
+	-Mindcontrollable:
 	GrantConditionOnDeploy:
 		DeployedCondition: deployed
 		CanDeployOnRamps: true
@@ -376,6 +380,9 @@ E7:
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: cloak-force-disabled
 		ValidDamageStates: Critical
+	# dog proof
+	Targetable:
+		TargetTypes: Ground, Infantry, Ant
 
 MEDI:
 	Inherits: ^Soldier
