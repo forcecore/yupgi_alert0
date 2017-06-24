@@ -25,6 +25,7 @@ The following are for modders.
   * Demo: https://www.youtube.com/watch?v=IHOe-uCPbh8
 * assets/shp/recolor.py : Script for replacing colors. e.g., testing house colors
 * assets/shp/vxl2shp.py : Script to convert vxl to shp.
+* https://github.com/forcecore/pylua : compiles lua/ai.py to lua/ai.lua (!!!)
 
 # Acknowledgements
 
