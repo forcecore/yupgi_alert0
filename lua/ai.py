@@ -295,8 +295,8 @@ TASKFORCES = {
     "2_e2": {
         "units": ["e2", "e2"],
     },
-    "4_dog": {
-        "units": ["dog", "dog", "dog", "dog"],
+    "1_deso": {
+        "units": ["deso"],
     },
     "2_e4": {
         "units": ["e4", "e4"],
@@ -306,6 +306,9 @@ TASKFORCES = {
     },
     "2_ftrk": {
         "units": ["ftrk", "ftrk"],
+    },
+    "1_qtnk": {
+        "units": ["qtnk_ai"],
     },
     "4_3tnk": {
         "units": ["3tnk", "3tnk", "3tnk", "3tnk"],
@@ -324,6 +327,9 @@ TASKFORCES = {
     },
     "2_yak": {
         "units": ["yak", "yak"],
+    },
+    "1_zep": {
+        "units": ["zep"],
     },
 
     # Mutant TFs
@@ -407,9 +413,9 @@ TEAMS = {
         "queue": "inf",
         "trigger": None
     },
-    "4_dog": {
+    "1_deso": {
         "faction": "soviet",
-        "tf": "4_dog",
+        "tf": "1_deso",
         "trigger": None
     },
     "2_e4": {
@@ -425,6 +431,11 @@ TEAMS = {
     "2_ftrk": {
         "faction": "soviet",
         "tf": "2_ftrk",
+        "trigger": None
+    },
+    "1_qtnk": {
+        "faction": "soviet",
+        "tf": "1_qtnk",
         "trigger": None
     },
     "4_3tnk": {
@@ -598,9 +609,23 @@ def AlliesBuildUnitTick(faction):
         if len(harvs) < 5 and PLAYER.HasPrerequisites(["gaweap", "proc", "fix"]):
             PLAYER.Build(['harv'], None)
         elif len(harvs) < 7 and PLAYER.HasPrerequisites(["gaweap", "proc", "atek"]):
-            PLAYER.Build(['harv'], None)
+            if Utils.RandomInteger(0, 4) == 0:
+                PLAYER.Build(['harv'], None)
         elif UTIL_Count("marv") < 2 and PLAYER.HasPrerequisites(["gaweap", "proc", "atek"]):
-            PLAYER.Build(['marv'], None)
+            if Utils.RandomInteger(0, 4) == 0:
+                PLAYER.Build(['marv'], None)
+
+        if UTIL_Count("wangchang") < 3 and PLAYER.HasPrerequisites(["gaweap", "atek"]):
+            if Utils.RandomInteger(0, 4) == 0:
+                PLAYER.Build(['wangchang'], None)
+
+        if UTIL_Count("e7") < 2 and PLAYER.HasPrerequisites(["gaweap", "tent", "atek"]):
+            if Utils.RandomInteger(0, 4) == 0:
+                PLAYER.Build(['e7'], None)
+
+        if UTIL_Count("tran") < 2 and PLAYER.HasPrerequisites(["hpad", "tent"]):
+            if Utils.RandomInteger(0, 4) == 0:
+                UTIL_BuildTeam("tran")
 
         enemy = UTIL_GetAnEnemyPlayer()
         defense_cnt = UTIL_CountUnits(enemy, STATIC_DEFENSES)
@@ -613,10 +638,102 @@ def AlliesBuildUnitTick(faction):
         UTIL_BuildRandomTeam(ALLIES_TEAMS_KEYS)
 
 
+def SovietBuildUnitTick(faction):
+    harvs = PLAYER.GetActorsByType('harv')
+
+    if not AUTO_BUILD:
+        e1s = PLAYER.GetActorsByType('e1')
+        if len(e1s) < 10 and PLAYER.HasPrerequisites(["barr"]):
+            PLAYER.Build(['e1'], None)
+
+        if UTIL_Count("dog") < 4 and PLAYER.HasPrerequisites(["kenn"]):
+            PLAYER.Build(['dog'], None)
+
+        if len(harvs) < 3 and PLAYER.HasPrerequisites(["naweap", "proc"]):
+            PLAYER.Build(['harv'], None)
+
+        if len(harvs) >= 3 and len(e1s) >= 10:
+            AUTO_BUILD = True
+
+    else:
+        if len(harvs) < 1 and PLAYER.HasPrerequisites(["naweap", "proc"]):
+            PLAYER.Build(['harv'], None)
+            return
+
+        if NeedToRebuildMCV(faction) and CanRebuildMCV(faction):
+            PLAYER.Build(['namcv'], None)
+            return
+
+        if len(harvs) < 3 and PLAYER.HasPrerequisites(["naweap", "proc"]):
+            PLAYER.Build(['harv'], None)
+            return
+
+        if UTIL_Count("dog") < 4 and PLAYER.HasPrerequisites(["kenn"]):
+            PLAYER.Build(['dog'], None)
+
+        if len(harvs) < 5 and PLAYER.HasPrerequisites(["naweap", "proc", "fix"]):
+            PLAYER.Build(['harv'], None)
+        elif len(harvs) < 7 and PLAYER.HasPrerequisites(["naweap", "proc", "stek"]):
+            if Utils.RandomInteger(0, 4) == 0:
+                PLAYER.Build(['harv'], None)
+        elif UTIL_Count("smin") < 2 and PLAYER.HasPrerequisites(["naweap", "proc", "stek"]):
+            if Utils.RandomInteger(0, 4) == 0:
+                PLAYER.Build(['smin'], None)
+
+        if UTIL_Count("5tnk") == 0 and PLAYER.HasPrerequisites(["naweap", "fix", "stek"]):
+            if Utils.RandomInteger(0, 4) == 0:
+                PLAYER.Build(['5tnk'], None)
+
+        if UTIL_Count("nmig") == 0 and PLAYER.HasPrerequisites(["afld", "stek", "mslo"]):
+            if Utils.RandomInteger(0, 2) == 0:
+                PLAYER.Build(['nmig'], None)
+
+        if UTIL_Count("volkov") == 0 and PLAYER.HasPrerequisites(["barr", "stek"]):
+            if Utils.RandomInteger(0, 2) == 0:
+                PLAYER.Build(['volkov'], None)
+        elif UTIL_Count("chitz") == 0 and PLAYER.HasPrerequisites(["kenn", "stek"]):
+            if Utils.RandomInteger(0, 4) == 0:
+                PLAYER.Build(['chitz'], None)
+
+        # Not that much need for V2RL, chitz, volkov are all good for killing def
+        #enemy = UTIL_GetAnEnemyPlayer()
+        #defense_cnt = UTIL_CountUnits(enemy, STATIC_DEFENSES)
+        #if defense_cnt >= 4:
+        #    if UTIL_Count("v2rl") < 4 and PLAYER.HasPrerequisites(["naweap", "dome"]):
+        #        PLAYER.Build(['v2rl'], None)
+
+        UTIL_BuildRandomTeam(SOVIET_TEAMS_KEYS)
+
+
+def MutantBuildUnitTick(faction):
+    dants = PLAYER.GetActorsByType('dant')
+
+    if not AUTO_BUILD:
+        if len(dants) < 10 and PLAYER.HasPrerequisites(["qnest"]):
+            PLAYER.Build(['dant'], None)
+        else:
+            AUTO_BUILD = True
+    else:
+        if len(dants) < 20 and PLAYER.HasPrerequisites(["vein"]):
+            PLAYER.Build(['dant'], None)
+
+        if NeedToRebuildMCV(faction) and CanRebuildMCV(faction):
+            PLAYER.Build(['qant'], None)
+            return
+
+        if len(dants) < 30 and PLAYER.HasPrerequisites(["evo"]):
+            PLAYER.Build(['dant'], None)
+
+        if UTIL_Count("sant") < 5 and PLAYER.HasPrerequisites(["evo", "qnest"]):
+            PLAYER.Build(['sant'], None)
+
+        UTIL_BuildRandomTeam(MUTANT_TEAMS_KEYS)
+
+
 def BuildUnitTick(faction):
     if faction == "allies":
         AlliesBuildUnitTick(faction)
-    elif faction == "soviets":
+    elif faction == "soviet":
         SovietBuildUnitTick(faction)
     elif faction == "mutants":
         MutantBuildUnitTick(faction)
@@ -877,6 +994,7 @@ def UTIL_RepairUnits():
             a.RepairAt(fix)
         elif a.Type in FIXABLE and a.Health == a.MaxHealth and a.HackyAIOccupied:
             a.HackyAIOccupied = False
+
 
 
 ###

@@ -31,8 +31,8 @@ BO_SOVIET_ECO = { name='soviet_eco', bo={ANYPOWER, 'kenn', 'barr', 'proc', 'proc
 BO_SOVIET_BOS = {BO_SOVIET_NORMAL, BO_SOVIET_ECO, BO_SOVIET_FAST_WEAP, BO_SOVIET_FAST_AIR}
 BO_MUTANT_NORMAL = { name='mutant_normal', bo={'qant', 'anthill', 'anthill', 'qant', 'tibtree', 'vein', 'qant', 'tibtree', 'anthill', 'evo'}, }
 BO_MUTANT_BOS = {BO_MUTANT_NORMAL}
-TASKFORCES = { ['6_heli']={ units={'heli', 'heli', 'heli', 'heli'}, }, ['2_hind']={ units={'hind', 'hind'}, }, ['5_e1']={ units={'e1', 'e1', 'e1', 'e1', 'e1'}, }, ['2_e3']={ units={'e3', 'e3'}, }, ['2_jeep']={ units={'jeep', 'jeep'}, }, ['4_1tnk']={ units={'1tnk', '1tnk', '1tnk', '1tnk'}, }, ['4_2tnk']={ units={'2tnk', '2tnk', '2tnk', '2tnk'}, }, arty={ units={'arty', 'arty', '2tnk', '2tnk'}, }, humvee={ units={'jeep', 'e1', 'e3', 'e3'}, }, tran={ units={'tran', 'e1', 'e1', 'e3', 'e3', 'e3'}, }, ['2_e2']={ units={'e2', 'e2'}, }, ['4_dog']={ units={'dog', 'dog', 'dog', 'dog'}, }, ['2_e4']={ units={'e4', 'e4'}, }, ['2_shok']={ units={'shok', 'shok'}, }, ['2_ftrk']={ units={'ftrk', 'ftrk'}, }, ['4_3tnk']={ units={'3tnk', '3tnk', '3tnk', '3tnk'}, }, ['2_4tnk']={ units={'4tnk', '4tnk'}, }, ttnk={ units={'ttnk'}, }, v2rl={ units={'v2rl', 'v2rl', '3tnk', '3tnk'}, }, ['4_mig']={ units={'mig', 'mig', 'mig', 'mig'}, }, ['2_yak']={ units={'yak', 'yak'}, }, ['2_want']={ units={'want', 'want'}, }, ['2_fant']={ units={'fant', 'fant'}, }, ['1_sant']={ units={'sant'}, }, ['1_hant']={ units={'hant'}, }, ['1_inft']={ units={'inft'}, }, ['3_doggie']={ units={'doggie', 'doggie', 'doggie'}, }, }
-TEAMS = { ['6_heli']={ faction='allies', tf='6_heli', trigger=nil, }, ['2_hind']={ faction='allies', tf='2_hind', trigger=nil, }, ['5_e1']={ faction='allies', tf='5_e1', trigger=nil, }, ['2_e3']={ faction='allies', tf='2_e3', trigger=nil, }, ['2_jeep']={ faction='allies', tf='2_jeep', trigger=nil, }, ['4_2tnk']={ faction='allies', tf='4_2tnk', trigger=nil, }, arty={ faction='allies', tf='arty', trigger=nil, }, humvee={ faction='allies', tf='humvee', trigger=LoadHumvee, }, tran={ faction='allies', tf='tran', trigger=LoadTran, }, ['2_e2']={ faction='soviet', tf='2_e2', queue='inf', trigger=nil, }, ['4_dog']={ faction='soviet', tf='4_dog', trigger=nil, }, ['2_e4']={ faction='soviet', tf='2_e4', trigger=nil, }, ['2_shok']={ faction='soviet', tf='2_shok', trigger=nil, }, ['2_ftrk']={ faction='soviet', tf='2_ftrk', trigger=nil, }, ['4_3tnk']={ faction='soviet', tf='4_3tnk', trigger=nil, }, ['2_4tnk']={ faction='soviet', tf='2_4tnk', trigger=nil, }, ttnk={ faction='soviet', tf='ttnk', trigger=nil, }, v2rl={ faction='soviet', tf='v2rl', trigger=nil, }, ['4_mig']={ faction='soviet', tf='4_mig', trigger=nil, }, ['2_yak']={ faction='soviet', tf='2_yak', trigger=nil, }, ['1_zep']={ faction='soviet', tf='1_zep', trigger=nil, }, ['2_want']={ faction='mutants', tf='2_want', trigger=nil, }, ['2_fant']={ faction='mutants', tf='2_fant', trigger=nil, }, ['1_sant']={ faction='mutants', tf='1_sant', trigger=nil, }, ['1_hant']={ faction='mutants', tf='1_hant', trigger=nil, }, ['1_inft']={ faction='mutants', tf='1_inft', trigger=nil, }, ['3_doggie']={ faction='mutants', tf='3_doggie', trigger=nil, }, }
+TASKFORCES = { ['6_heli']={ units={'heli', 'heli', 'heli', 'heli'}, }, ['2_hind']={ units={'hind', 'hind'}, }, ['5_e1']={ units={'e1', 'e1', 'e1', 'e1', 'e1'}, }, ['2_e3']={ units={'e3', 'e3'}, }, ['2_jeep']={ units={'jeep', 'jeep'}, }, ['4_1tnk']={ units={'1tnk', '1tnk', '1tnk', '1tnk'}, }, ['4_2tnk']={ units={'2tnk', '2tnk', '2tnk', '2tnk'}, }, arty={ units={'arty', 'arty', '2tnk', '2tnk'}, }, humvee={ units={'jeep', 'e1', 'e3', 'e3'}, }, tran={ units={'tran', 'e1', 'e1', 'e3', 'e3', 'e3'}, }, ['2_e2']={ units={'e2', 'e2'}, }, ['1_deso']={ units={'deso'}, }, ['2_e4']={ units={'e4', 'e4'}, }, ['2_shok']={ units={'shok', 'shok'}, }, ['2_ftrk']={ units={'ftrk', 'ftrk'}, }, ['1_qtnk']={ units={'qtnk_ai'}, }, ['4_3tnk']={ units={'3tnk', '3tnk', '3tnk', '3tnk'}, }, ['2_4tnk']={ units={'4tnk', '4tnk'}, }, ttnk={ units={'ttnk'}, }, v2rl={ units={'v2rl', 'v2rl', '3tnk', '3tnk'}, }, ['4_mig']={ units={'mig', 'mig', 'mig', 'mig'}, }, ['2_yak']={ units={'yak', 'yak'}, }, ['1_zep']={ units={'zep'}, }, ['2_want']={ units={'want', 'want'}, }, ['2_fant']={ units={'fant', 'fant'}, }, ['1_sant']={ units={'sant'}, }, ['1_hant']={ units={'hant'}, }, ['1_inft']={ units={'inft'}, }, ['3_doggie']={ units={'doggie', 'doggie', 'doggie'}, }, }
+TEAMS = { ['6_heli']={ faction='allies', tf='6_heli', trigger=nil, }, ['2_hind']={ faction='allies', tf='2_hind', trigger=nil, }, ['5_e1']={ faction='allies', tf='5_e1', trigger=nil, }, ['2_e3']={ faction='allies', tf='2_e3', trigger=nil, }, ['2_jeep']={ faction='allies', tf='2_jeep', trigger=nil, }, ['4_2tnk']={ faction='allies', tf='4_2tnk', trigger=nil, }, arty={ faction='allies', tf='arty', trigger=nil, }, humvee={ faction='allies', tf='humvee', trigger=LoadHumvee, }, tran={ faction='allies', tf='tran', trigger=LoadTran, }, ['2_e2']={ faction='soviet', tf='2_e2', queue='inf', trigger=nil, }, ['1_deso']={ faction='soviet', tf='1_deso', trigger=nil, }, ['2_e4']={ faction='soviet', tf='2_e4', trigger=nil, }, ['2_shok']={ faction='soviet', tf='2_shok', trigger=nil, }, ['2_ftrk']={ faction='soviet', tf='2_ftrk', trigger=nil, }, ['1_qtnk']={ faction='soviet', tf='1_qtnk', trigger=nil, }, ['4_3tnk']={ faction='soviet', tf='4_3tnk', trigger=nil, }, ['2_4tnk']={ faction='soviet', tf='2_4tnk', trigger=nil, }, ttnk={ faction='soviet', tf='ttnk', trigger=nil, }, v2rl={ faction='soviet', tf='v2rl', trigger=nil, }, ['4_mig']={ faction='soviet', tf='4_mig', trigger=nil, }, ['2_yak']={ faction='soviet', tf='2_yak', trigger=nil, }, ['1_zep']={ faction='soviet', tf='1_zep', trigger=nil, }, ['2_want']={ faction='mutants', tf='2_want', trigger=nil, }, ['2_fant']={ faction='mutants', tf='2_fant', trigger=nil, }, ['1_sant']={ faction='mutants', tf='1_sant', trigger=nil, }, ['1_hant']={ faction='mutants', tf='1_hant', trigger=nil, }, ['1_inft']={ faction='mutants', tf='1_inft', trigger=nil, }, ['3_doggie']={ faction='mutants', tf='3_doggie', trigger=nil, }, }
 ALLIES_TEAMS_KEYS = {}
 for key, team in pairs(TEAMS) do
   if team['faction']=='allies' then
@@ -130,9 +130,28 @@ AlliesBuildUnitTick = function(faction)
     if #harvs<5 and PLAYER.HasPrerequisites({'gaweap', 'proc', 'fix'}) then
       PLAYER.Build({'harv'}, nil)
     elseif #harvs<7 and PLAYER.HasPrerequisites({'gaweap', 'proc', 'atek'}) then
-      PLAYER.Build({'harv'}, nil)
+      if Utils.RandomInteger(0, 4)==0 then
+        PLAYER.Build({'harv'}, nil)
+      end
     elseif UTIL_Count('marv')<2 and PLAYER.HasPrerequisites({'gaweap', 'proc', 'atek'}) then
-      PLAYER.Build({'marv'}, nil)
+      if Utils.RandomInteger(0, 4)==0 then
+        PLAYER.Build({'marv'}, nil)
+      end
+    end
+    if UTIL_Count('wangchang')<3 and PLAYER.HasPrerequisites({'gaweap', 'atek'}) then
+      if Utils.RandomInteger(0, 4)==0 then
+        PLAYER.Build({'wangchang'}, nil)
+      end
+    end
+    if UTIL_Count('e7')<2 and PLAYER.HasPrerequisites({'gaweap', 'tent', 'atek'}) then
+      if Utils.RandomInteger(0, 4)==0 then
+        PLAYER.Build({'e7'}, nil)
+      end
+    end
+    if UTIL_Count('tran')<2 and PLAYER.HasPrerequisites({'hpad', 'tent'}) then
+      if Utils.RandomInteger(0, 4)==0 then
+        UTIL_BuildTeam('tran')
+      end
     end
     local enemy = UTIL_GetAnEnemyPlayer()
     local defense_cnt = UTIL_CountUnits(enemy, STATIC_DEFENSES)
@@ -148,10 +167,102 @@ AlliesBuildUnitTick = function(faction)
   end
 end
 
+SovietBuildUnitTick = function(faction)
+  local harvs = PLAYER.GetActorsByType('harv')
+  if  not AUTO_BUILD then
+    local e1s = PLAYER.GetActorsByType('e1')
+    if #e1s<10 and PLAYER.HasPrerequisites({'barr'}) then
+      PLAYER.Build({'e1'}, nil)
+    end
+    if UTIL_Count('dog')<4 and PLAYER.HasPrerequisites({'kenn'}) then
+      PLAYER.Build({'dog'}, nil)
+    end
+    if #harvs<3 and PLAYER.HasPrerequisites({'naweap', 'proc'}) then
+      PLAYER.Build({'harv'}, nil)
+    end
+    if #harvs>=3 and #e1s>=10 then
+      AUTO_BUILD = true
+    end
+  else
+    if #harvs<1 and PLAYER.HasPrerequisites({'naweap', 'proc'}) then
+      PLAYER.Build({'harv'}, nil)
+      return 
+    end
+    if NeedToRebuildMCV(faction) and CanRebuildMCV(faction) then
+      PLAYER.Build({'namcv'}, nil)
+      return 
+    end
+    if #harvs<3 and PLAYER.HasPrerequisites({'naweap', 'proc'}) then
+      PLAYER.Build({'harv'}, nil)
+      return 
+    end
+    if UTIL_Count('dog')<4 and PLAYER.HasPrerequisites({'kenn'}) then
+      PLAYER.Build({'dog'}, nil)
+    end
+    if #harvs<5 and PLAYER.HasPrerequisites({'naweap', 'proc', 'fix'}) then
+      PLAYER.Build({'harv'}, nil)
+    elseif #harvs<7 and PLAYER.HasPrerequisites({'naweap', 'proc', 'stek'}) then
+      if Utils.RandomInteger(0, 4)==0 then
+        PLAYER.Build({'harv'}, nil)
+      end
+    elseif UTIL_Count('smin')<2 and PLAYER.HasPrerequisites({'naweap', 'proc', 'stek'}) then
+      if Utils.RandomInteger(0, 4)==0 then
+        PLAYER.Build({'smin'}, nil)
+      end
+    end
+    if UTIL_Count('5tnk')==0 and PLAYER.HasPrerequisites({'naweap', 'fix', 'stek'}) then
+      if Utils.RandomInteger(0, 4)==0 then
+        PLAYER.Build({'5tnk'}, nil)
+      end
+    end
+    if UTIL_Count('nmig')==0 and PLAYER.HasPrerequisites({'afld', 'stek', 'mslo'}) then
+      if Utils.RandomInteger(0, 2)==0 then
+        PLAYER.Build({'nmig'}, nil)
+      end
+    end
+    if UTIL_Count('volkov')==0 and PLAYER.HasPrerequisites({'barr', 'stek'}) then
+      if Utils.RandomInteger(0, 2)==0 then
+        PLAYER.Build({'volkov'}, nil)
+      end
+    elseif UTIL_Count('chitz')==0 and PLAYER.HasPrerequisites({'kenn', 'stek'}) then
+      if Utils.RandomInteger(0, 4)==0 then
+        PLAYER.Build({'chitz'}, nil)
+      end
+    end
+    UTIL_BuildRandomTeam(SOVIET_TEAMS_KEYS)
+  end
+end
+
+MutantBuildUnitTick = function(faction)
+  local dants = PLAYER.GetActorsByType('dant')
+  if  not AUTO_BUILD then
+    if #dants<10 and PLAYER.HasPrerequisites({'qnest'}) then
+      PLAYER.Build({'dant'}, nil)
+    else
+      AUTO_BUILD = true
+    end
+  else
+    if #dants<20 and PLAYER.HasPrerequisites({'vein'}) then
+      PLAYER.Build({'dant'}, nil)
+    end
+    if NeedToRebuildMCV(faction) and CanRebuildMCV(faction) then
+      PLAYER.Build({'qant'}, nil)
+      return 
+    end
+    if #dants<30 and PLAYER.HasPrerequisites({'evo'}) then
+      PLAYER.Build({'dant'}, nil)
+    end
+    if UTIL_Count('sant')<5 and PLAYER.HasPrerequisites({'evo', 'qnest'}) then
+      PLAYER.Build({'sant'}, nil)
+    end
+    UTIL_BuildRandomTeam(MUTANT_TEAMS_KEYS)
+  end
+end
+
 BuildUnitTick = function(faction)
   if faction=='allies' then
     AlliesBuildUnitTick(faction)
-  elseif faction=='soviets' then
+  elseif faction=='soviet' then
     SovietBuildUnitTick(faction)
   elseif faction=='mutants' then
     MutantBuildUnitTick(faction)
