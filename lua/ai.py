@@ -251,6 +251,7 @@ BO_MUTANT_NORMAL = {
         "qant",
         "tibtree",
         "anthill",
+        "evo", # BUILD 2 to evolve want and fant
         "evo"
     ]
 }
@@ -333,23 +334,17 @@ TASKFORCES = {
     },
 
     # Mutant TFs
-    "2_want": {
-        "units": ["want", "want"],
+    "1_want": {
+        "units": ["want"],
     },
-    "2_fant": {
-        "units": ["fant", "fant"],
-    },
-    "1_sant": {
-        "units": ["sant"],
-    },
-    "1_hant": {
-        "units": ["hant"],
+    "1_fant": {
+        "units": ["fant"],
     },
     "1_inft": {
         "units": ["inft"],
     },
-    "3_doggie": {
-        "units": ["doggie", "doggie", "doggie"],
+    "1_doggie": {
+        "units": ["doggie"],
     }
 }
 
@@ -475,24 +470,14 @@ TEAMS = {
     },
 
     # Ant teams
-    "2_want": {
+    "1_want": {
         "faction": "mutants",
-        "tf": "2_want",
+        "tf": "1_want",
         "trigger": None
     },
-    "2_fant": {
+    "1_fant": {
         "faction": "mutants",
-        "tf": "2_fant",
-        "trigger": None
-    },
-    "1_sant": {
-        "faction": "mutants",
-        "tf": "1_sant",
-        "trigger": None
-    },
-    "1_hant": {
-        "faction": "mutants",
-        "tf": "1_hant",
+        "tf": "1_fant",
         "trigger": None
     },
     "1_inft": {
@@ -500,9 +485,9 @@ TEAMS = {
         "tf": "1_inft",
         "trigger": None
     },
-    "3_doggie": {
+    "1_doggie": {
         "faction": "mutants",
-        "tf": "3_doggie",
+        "tf": "1_doggie",
         "trigger": None
     }
 }
@@ -635,7 +620,8 @@ def AlliesBuildUnitTick(faction):
             if UTIL_Count("arty") < 4 and PLAYER.HasPrerequisites(["gaweap", "dome"]):
                 PLAYER.Build(['arty'], None)
 
-        UTIL_BuildRandomTeam(ALLIES_TEAMS_KEYS)
+        if PLAYER.Cash > 500:
+            UTIL_BuildRandomTeam(ALLIES_TEAMS_KEYS)
 
 
 def SovietBuildUnitTick(faction):
@@ -702,7 +688,24 @@ def SovietBuildUnitTick(faction):
         #    if UTIL_Count("v2rl") < 4 and PLAYER.HasPrerequisites(["naweap", "dome"]):
         #        PLAYER.Build(['v2rl'], None)
 
-        UTIL_BuildRandomTeam(SOVIET_TEAMS_KEYS)
+        if PLAYER.Cash > 500:
+            UTIL_BuildRandomTeam(SOVIET_TEAMS_KEYS)
+
+
+def Evolve(name, evoIndex):
+    evos = PLAYER.GetActorsByType('evo')
+    if len(evos) == 1 and evoIndex == 1:
+        return
+    # lua indexing convention.
+    evo = evos[evoIndex + 1]
+
+    victims = PLAYER.GetActorsByType(name)
+    for a in victims:
+        if a.IsIdle:
+            a.HackyAIOccupied = True
+            a.Move(evo.Location, 2)
+            a.CallFunc(lambda: UTIL_LoadPassengers(evo, [a], None, None))
+            return
 
 
 def MutantBuildUnitTick(faction):
@@ -724,19 +727,20 @@ def MutantBuildUnitTick(faction):
         if len(dants) < 30 and PLAYER.HasPrerequisites(["evo"]):
             PLAYER.Build(['dant'], None)
 
-        if UTIL_Count("sant") < 5 and PLAYER.HasPrerequisites(["evo", "qnest"]):
-            PLAYER.Build(['sant'], None)
+        # Evolve stuff
+        if PLAYER.HasPrerequisites(["evo"]):
+            if UTIL_Count("want") > 10:
+                Evolve("want", 0)
+            if UTIL_Count("fant") > 10:
+                Evolve("fant", 1)
 
-        UTIL_BuildRandomTeam(MUTANT_TEAMS_KEYS)
+        if PLAYER.Cash > 500:
+            UTIL_BuildRandomTeam(MUTANT_TEAMS_KEYS)
 
 
+BuildTickFunc = None # set by WorldLoaded
 def BuildUnitTick(faction):
-    if faction == "allies":
-        AlliesBuildUnitTick(faction)
-    elif faction == "soviet":
-        SovietBuildUnitTick(faction)
-    elif faction == "mutants":
-        MutantBuildUnitTick(faction)
+    BuildTickFunc(faction)
 
 
 
@@ -812,7 +816,7 @@ def UTIL_MoveTransportToPassengers(transport, passengers, afterLoadFunc, afterLo
         if guest.CanEnter(cell):
             transport.Wait(50)
             transport.Stop() # Make it stop wandering around, if heli
-            transport.Move(cell, 2048)
+            transport.Move(cell, 2)
             if HELI_TRANSPORT[transport.Type] == True:
                 transport.HeliLand(transport, True)
             transport.CallFunc(lambda:
@@ -824,8 +828,14 @@ def UTIL_LoadPassengers(transport, passengers, afterLoadFunc, afterLoadParams):
     '''
     Order just once, or else it will bug.
     '''
+    if transport.IsDead:
+        UTIL_SetOccupied(passengers, False)
+        return
+
     for a in passengers:
-        a.EnterTransport(transport)
+        if not a.IsDead:
+            a.EnterTransport(transport)
+
     UTIL_WaitLoad(transport, passengers, afterLoadFunc, afterLoadParams)
 
 
@@ -845,6 +855,7 @@ def UTIL_BuildRandomTeam(keys):
         return False
 
     key = Utils.Random(avail)
+    #Media.DisplayMessage(key)
     return UTIL_BuildTeam(key)
 
 
@@ -1054,6 +1065,13 @@ def ActivateAI(params):
     PLAYER_NAME = params[1] # internal name of the bot player. dont lower case this.
     PLAYER = Player.GetPlayer(PLAYER_NAME)
     BUILD_ORDER = ChooseBuildOrder(FACTION) # and its attached opener too.
+
+    if FACTION == "allies":
+        BuildTickFunc = AlliesBuildUnitTick
+    elif FACTION == "soviet":
+        BuildTickFunc = SovietBuildUnitTick
+    elif FACTION == "mutants":
+        BuildTickFunc = MutantBuildUnitTick
 
 
 def Tick():

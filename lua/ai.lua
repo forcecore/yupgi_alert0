@@ -29,10 +29,10 @@ BO_SOVIET_FAST_WEAP = { name='soviet_weap', bo={ANYPOWER, 'kenn', 'proc', 'nawea
 BO_SOVIET_FAST_AIR = { name='soviet_air', bo={ANYPOWER, 'barr', 'proc', 'proc', 'dome', 'afld', ANYPOWER, 'proc', 'naweap', 'stek', ANYPOWER, 'afld', 'afld', 'afld', 'fix'}, }
 BO_SOVIET_ECO = { name='soviet_eco', bo={ANYPOWER, 'kenn', 'barr', 'proc', 'proc', ANYPOWER, 'proc', 'naweap', 'fix', ANYPOWER, 'dome', ANYPOWER, 'stek'}, }
 BO_SOVIET_BOS = {BO_SOVIET_NORMAL, BO_SOVIET_ECO, BO_SOVIET_FAST_WEAP, BO_SOVIET_FAST_AIR}
-BO_MUTANT_NORMAL = { name='mutant_normal', bo={'qant', 'anthill', 'anthill', 'qant', 'tibtree', 'vein', 'qant', 'tibtree', 'anthill', 'evo'}, }
+BO_MUTANT_NORMAL = { name='mutant_normal', bo={'qant', 'anthill', 'anthill', 'qant', 'tibtree', 'vein', 'qant', 'tibtree', 'anthill', 'evo', 'evo'}, }
 BO_MUTANT_BOS = {BO_MUTANT_NORMAL}
-TASKFORCES = { ['6_heli']={ units={'heli', 'heli', 'heli', 'heli'}, }, ['2_hind']={ units={'hind', 'hind'}, }, ['5_e1']={ units={'e1', 'e1', 'e1', 'e1', 'e1'}, }, ['2_e3']={ units={'e3', 'e3'}, }, ['2_jeep']={ units={'jeep', 'jeep'}, }, ['4_1tnk']={ units={'1tnk', '1tnk', '1tnk', '1tnk'}, }, ['4_2tnk']={ units={'2tnk', '2tnk', '2tnk', '2tnk'}, }, arty={ units={'arty', 'arty', '2tnk', '2tnk'}, }, humvee={ units={'jeep', 'e1', 'e3', 'e3'}, }, tran={ units={'tran', 'e1', 'e1', 'e3', 'e3', 'e3'}, }, ['2_e2']={ units={'e2', 'e2'}, }, ['1_deso']={ units={'deso'}, }, ['2_e4']={ units={'e4', 'e4'}, }, ['2_shok']={ units={'shok', 'shok'}, }, ['2_ftrk']={ units={'ftrk', 'ftrk'}, }, ['1_qtnk']={ units={'qtnk_ai'}, }, ['4_3tnk']={ units={'3tnk', '3tnk', '3tnk', '3tnk'}, }, ['2_4tnk']={ units={'4tnk', '4tnk'}, }, ttnk={ units={'ttnk'}, }, v2rl={ units={'v2rl', 'v2rl', '3tnk', '3tnk'}, }, ['4_mig']={ units={'mig', 'mig', 'mig', 'mig'}, }, ['2_yak']={ units={'yak', 'yak'}, }, ['1_zep']={ units={'zep'}, }, ['2_want']={ units={'want', 'want'}, }, ['2_fant']={ units={'fant', 'fant'}, }, ['1_sant']={ units={'sant'}, }, ['1_hant']={ units={'hant'}, }, ['1_inft']={ units={'inft'}, }, ['3_doggie']={ units={'doggie', 'doggie', 'doggie'}, }, }
-TEAMS = { ['6_heli']={ faction='allies', tf='6_heli', trigger=nil, }, ['2_hind']={ faction='allies', tf='2_hind', trigger=nil, }, ['5_e1']={ faction='allies', tf='5_e1', trigger=nil, }, ['2_e3']={ faction='allies', tf='2_e3', trigger=nil, }, ['2_jeep']={ faction='allies', tf='2_jeep', trigger=nil, }, ['4_2tnk']={ faction='allies', tf='4_2tnk', trigger=nil, }, arty={ faction='allies', tf='arty', trigger=nil, }, humvee={ faction='allies', tf='humvee', trigger=LoadHumvee, }, tran={ faction='allies', tf='tran', trigger=LoadTran, }, ['2_e2']={ faction='soviet', tf='2_e2', queue='inf', trigger=nil, }, ['1_deso']={ faction='soviet', tf='1_deso', trigger=nil, }, ['2_e4']={ faction='soviet', tf='2_e4', trigger=nil, }, ['2_shok']={ faction='soviet', tf='2_shok', trigger=nil, }, ['2_ftrk']={ faction='soviet', tf='2_ftrk', trigger=nil, }, ['1_qtnk']={ faction='soviet', tf='1_qtnk', trigger=nil, }, ['4_3tnk']={ faction='soviet', tf='4_3tnk', trigger=nil, }, ['2_4tnk']={ faction='soviet', tf='2_4tnk', trigger=nil, }, ttnk={ faction='soviet', tf='ttnk', trigger=nil, }, v2rl={ faction='soviet', tf='v2rl', trigger=nil, }, ['4_mig']={ faction='soviet', tf='4_mig', trigger=nil, }, ['2_yak']={ faction='soviet', tf='2_yak', trigger=nil, }, ['1_zep']={ faction='soviet', tf='1_zep', trigger=nil, }, ['2_want']={ faction='mutants', tf='2_want', trigger=nil, }, ['2_fant']={ faction='mutants', tf='2_fant', trigger=nil, }, ['1_sant']={ faction='mutants', tf='1_sant', trigger=nil, }, ['1_hant']={ faction='mutants', tf='1_hant', trigger=nil, }, ['1_inft']={ faction='mutants', tf='1_inft', trigger=nil, }, ['3_doggie']={ faction='mutants', tf='3_doggie', trigger=nil, }, }
+TASKFORCES = { ['6_heli']={ units={'heli', 'heli', 'heli', 'heli'}, }, ['2_hind']={ units={'hind', 'hind'}, }, ['5_e1']={ units={'e1', 'e1', 'e1', 'e1', 'e1'}, }, ['2_e3']={ units={'e3', 'e3'}, }, ['2_jeep']={ units={'jeep', 'jeep'}, }, ['4_1tnk']={ units={'1tnk', '1tnk', '1tnk', '1tnk'}, }, ['4_2tnk']={ units={'2tnk', '2tnk', '2tnk', '2tnk'}, }, arty={ units={'arty', 'arty', '2tnk', '2tnk'}, }, humvee={ units={'jeep', 'e1', 'e3', 'e3'}, }, tran={ units={'tran', 'e1', 'e1', 'e3', 'e3', 'e3'}, }, ['2_e2']={ units={'e2', 'e2'}, }, ['1_deso']={ units={'deso'}, }, ['2_e4']={ units={'e4', 'e4'}, }, ['2_shok']={ units={'shok', 'shok'}, }, ['2_ftrk']={ units={'ftrk', 'ftrk'}, }, ['1_qtnk']={ units={'qtnk_ai'}, }, ['4_3tnk']={ units={'3tnk', '3tnk', '3tnk', '3tnk'}, }, ['2_4tnk']={ units={'4tnk', '4tnk'}, }, ttnk={ units={'ttnk'}, }, v2rl={ units={'v2rl', 'v2rl', '3tnk', '3tnk'}, }, ['4_mig']={ units={'mig', 'mig', 'mig', 'mig'}, }, ['2_yak']={ units={'yak', 'yak'}, }, ['1_zep']={ units={'zep'}, }, ['1_want']={ units={'want'}, }, ['1_fant']={ units={'fant'}, }, ['1_inft']={ units={'inft'}, }, ['1_doggie']={ units={'doggie'}, }, }
+TEAMS = { ['6_heli']={ faction='allies', tf='6_heli', trigger=nil, }, ['2_hind']={ faction='allies', tf='2_hind', trigger=nil, }, ['5_e1']={ faction='allies', tf='5_e1', trigger=nil, }, ['2_e3']={ faction='allies', tf='2_e3', trigger=nil, }, ['2_jeep']={ faction='allies', tf='2_jeep', trigger=nil, }, ['4_2tnk']={ faction='allies', tf='4_2tnk', trigger=nil, }, arty={ faction='allies', tf='arty', trigger=nil, }, humvee={ faction='allies', tf='humvee', trigger=LoadHumvee, }, tran={ faction='allies', tf='tran', trigger=LoadTran, }, ['2_e2']={ faction='soviet', tf='2_e2', queue='inf', trigger=nil, }, ['1_deso']={ faction='soviet', tf='1_deso', trigger=nil, }, ['2_e4']={ faction='soviet', tf='2_e4', trigger=nil, }, ['2_shok']={ faction='soviet', tf='2_shok', trigger=nil, }, ['2_ftrk']={ faction='soviet', tf='2_ftrk', trigger=nil, }, ['1_qtnk']={ faction='soviet', tf='1_qtnk', trigger=nil, }, ['4_3tnk']={ faction='soviet', tf='4_3tnk', trigger=nil, }, ['2_4tnk']={ faction='soviet', tf='2_4tnk', trigger=nil, }, ttnk={ faction='soviet', tf='ttnk', trigger=nil, }, v2rl={ faction='soviet', tf='v2rl', trigger=nil, }, ['4_mig']={ faction='soviet', tf='4_mig', trigger=nil, }, ['2_yak']={ faction='soviet', tf='2_yak', trigger=nil, }, ['1_zep']={ faction='soviet', tf='1_zep', trigger=nil, }, ['1_want']={ faction='mutants', tf='1_want', trigger=nil, }, ['1_fant']={ faction='mutants', tf='1_fant', trigger=nil, }, ['1_inft']={ faction='mutants', tf='1_inft', trigger=nil, }, ['1_doggie']={ faction='mutants', tf='1_doggie', trigger=nil, }, }
 ALLIES_TEAMS_KEYS = {}
 for key, team in pairs(TEAMS) do
   if team['faction']=='allies' then
@@ -163,7 +163,9 @@ AlliesBuildUnitTick = function(faction)
         PLAYER.Build({'arty'}, nil)
       end
     end
-    UTIL_BuildRandomTeam(ALLIES_TEAMS_KEYS)
+    if PLAYER.Cash>500 then
+      UTIL_BuildRandomTeam(ALLIES_TEAMS_KEYS)
+    end
   end
 end
 
@@ -229,7 +231,26 @@ SovietBuildUnitTick = function(faction)
         PLAYER.Build({'chitz'}, nil)
       end
     end
-    UTIL_BuildRandomTeam(SOVIET_TEAMS_KEYS)
+    if PLAYER.Cash>500 then
+      UTIL_BuildRandomTeam(SOVIET_TEAMS_KEYS)
+    end
+  end
+end
+
+Evolve = function(name, evoIndex)
+  local evos = PLAYER.GetActorsByType('evo')
+  if #evos==1 and evoIndex==1 then
+    return 
+  end
+  local evo = evos[evoIndex+1]
+  local victims = PLAYER.GetActorsByType(name)
+  for _, a in ipairs(victims) do
+    if a.IsIdle then
+      a.HackyAIOccupied = true
+      a.Move(evo.Location, 2)
+      a.CallFunc(function() return UTIL_LoadPassengers(evo, {a}, nil, nil) end)
+      return 
+    end
   end
 end
 
@@ -252,21 +273,23 @@ MutantBuildUnitTick = function(faction)
     if #dants<30 and PLAYER.HasPrerequisites({'evo'}) then
       PLAYER.Build({'dant'}, nil)
     end
-    if UTIL_Count('sant')<5 and PLAYER.HasPrerequisites({'evo', 'qnest'}) then
-      PLAYER.Build({'sant'}, nil)
+    if PLAYER.HasPrerequisites({'evo'}) then
+      if UTIL_Count('want')>10 then
+        Evolve('want', 0)
+      end
+      if UTIL_Count('fant')>10 then
+        Evolve('fant', 1)
+      end
     end
-    UTIL_BuildRandomTeam(MUTANT_TEAMS_KEYS)
+    if PLAYER.Cash>500 then
+      UTIL_BuildRandomTeam(MUTANT_TEAMS_KEYS)
+    end
   end
 end
+BuildTickFunc = nil
 
 BuildUnitTick = function(faction)
-  if faction=='allies' then
-    AlliesBuildUnitTick(faction)
-  elseif faction=='soviet' then
-    SovietBuildUnitTick(faction)
-  elseif faction=='mutants' then
-    MutantBuildUnitTick(faction)
-  end
+  BuildTickFunc(faction)
 end
 
 UTIL_CanQueue = function(tf)
@@ -333,7 +356,7 @@ UTIL_MoveTransportToPassengers = function(transport, passengers, afterLoadFunc, 
     if guest.CanEnter(cell) then
       transport.Wait(50)
       transport.Stop()
-      transport.Move(cell, 2048)
+      transport.Move(cell, 2)
       if HELI_TRANSPORT[transport.Type]==true then
         transport.HeliLand(transport, true)
       end
@@ -346,8 +369,14 @@ UTIL_LoadPassengers = function(transport, passengers, afterLoadFunc, afterLoadPa
   -- 
   --     Order just once, or else it will bug.
   --     
+  if transport.IsDead then
+    UTIL_SetOccupied(passengers, false)
+    return 
+  end
   for _, a in ipairs(passengers) do
-    a.EnterTransport(transport)
+    if  not a.IsDead then
+      a.EnterTransport(transport)
+    end
   end
   UTIL_WaitLoad(transport, passengers, afterLoadFunc, afterLoadParams)
 end
@@ -555,6 +584,13 @@ ActivateAI = function(params)
   PLAYER_NAME = params[2]
   PLAYER = Player.GetPlayer(PLAYER_NAME)
   BUILD_ORDER = ChooseBuildOrder(FACTION)
+  if FACTION=='allies' then
+    BuildTickFunc = AlliesBuildUnitTick
+  elseif FACTION=='soviet' then
+    BuildTickFunc = SovietBuildUnitTick
+  elseif FACTION=='mutants' then
+    BuildTickFunc = MutantBuildUnitTick
+  end
 end
 
 Tick = function()
