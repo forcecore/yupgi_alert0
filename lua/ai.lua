@@ -2,6 +2,8 @@ FACTION = nil
 PLAYER_NAME = nil
 PLAYER = nil
 BUILD_ORDER = nil
+MCVS = {'gamcv', 'namcv', 'qant'}
+COUNT_BUILDING_AS_MCV = { gafact='gamcv', nafact='namcv', qnest='qant', }
 ANYPOWER = 'ANYPOWER'
 BO_ALLIES_NORMAL = { name='allies_normal', bo={ANYPOWER, 'tent', 'proc', 'proc', ANYPOWER, 'gaweap', 'fix', 'dome', ANYPOWER, 'proc', 'hpad', 'hpad', 'atek', ANYPOWER}, }
 BO_ALLIES_FAST_WEAP = { name='allies_weap', bo={ANYPOWER, 'tent', 'proc', 'naweap', ANYPOWER, 'proc', 'fix', 'proc', 'dome', ANYPOWER, 'atek', ANYPOWER}, }
@@ -13,7 +15,7 @@ BO_SOVIET_FAST_WEAP = { name='soviet_weap', bo={ANYPOWER, 'kenn', 'proc', 'nawea
 BO_SOVIET_FAST_AIR = { name='soviet_air', bo={ANYPOWER, 'barr', 'proc', 'proc', 'dome', 'afld', ANYPOWER, 'proc', 'naweap', 'stek', ANYPOWER, 'afld', 'afld', 'afld', 'fix'}, }
 BO_SOVIET_ECO = { name='soviet_eco', bo={ANYPOWER, 'kenn', 'barr', 'proc', 'proc', ANYPOWER, 'proc', 'naweap', 'fix', ANYPOWER, 'dome', ANYPOWER, 'stek'}, }
 BO_SOVIET_BOS = {BO_SOVIET_NORMAL, BO_SOVIET_ECO, BO_SOVIET_FAST_WEAP, BO_SOVIET_FAST_AIR}
-BO_MUTANT_NORMAL = { name='mutant_normal', bo={'qnest', 'anthill', 'anthill', 'qnest', 'tibtree', 'vein', 'qnest', 'tibtree', 'anthill', 'evo'}, }
+BO_MUTANT_NORMAL = { name='mutant_normal', bo={'qant', 'anthill', 'anthill', 'qant', 'tibtree', 'vein', 'qant', 'tibtree', 'anthill', 'evo'}, }
 BO_MUTANT_BOS = {BO_MUTANT_NORMAL}
 
 MOD_is_anypower = function(name)
@@ -25,14 +27,20 @@ MOD_is_anypower = function(name)
   return false
 end
 
-UTIL_hist = function(stuff)
+UTIL_count_buildings = function(stuff)
   -- 
   --     Given a list of things that AI has, count it.
   --     
   local cnts = { }
+  for _, name in ipairs(MCVS) do
+    local actors = PLAYER.GetActorsByType(name)
+    cnts[name] = #actors
+  end
   for _, v in ipairs(stuff) do
     if MOD_is_anypower(v) then
       v = ANYPOWER
+    elseif COUNT_BUILDING_AS_MCV[v] ~= nil then
+      v = COUNT_BUILDING_AS_MCV[v]
     end
     if cnts[v] == nil then
       cnts[v] = 1
@@ -98,7 +106,7 @@ BB_choose_building_to_build = function(tab)
     return HACKY_FALLBACK
   end
   local tab = tab[1]
-  local building_count = UTIL_hist(tab['player_buildings'])
+  local building_count = UTIL_count_buildings(tab['player_buildings'])
   if tab['queue_type']=='defense' then
     return HACKY_FALLBACK
   end

@@ -20,6 +20,17 @@ BUILD_ORDER = None
 ### Mod constants
 ###
 
+# In build order, if you need to expand, write it as MCV.
+MCVS = ["gamcv", "namcv", "qant"]
+
+# And when we count buildings, we count them as MCVs to prevent
+# computer from producing multiple MCVs when it deploys.
+COUNT_BUILDING_AS_MCV = {
+    "gafact": "gamcv",
+    "nafact": "namcv",
+    "qnest": "qant"
+}
+
 ANYPOWER = "ANYPOWER"
 
 BO_ALLIES_NORMAL = {
@@ -189,13 +200,13 @@ BO_SOVIET_BOS = [
 BO_MUTANT_NORMAL = {
     "name": "mutant_normal",
     "bo": [
-        "qnest",
+        "qant",
         "anthill",
         "anthill",
-        "qnest",
+        "qant",
         "tibtree",
         "vein",
-        "qnest",
+        "qant",
         "tibtree",
         "anthill",
         "evo"
@@ -230,15 +241,23 @@ def MOD_is_anypower(name):
 # However, things that definitely need modding are prefixed mod_.
 # What can be recycled for other mods aren't.
 
-def UTIL_hist(stuff):
+def UTIL_count_buildings(stuff):
     '''
     Given a list of things that AI has, count it.
     '''
 
     cnts = {}
+
+    # Count MCVs first, because there's no need for "existence" check.
+    for name in MCVS:
+        actors = PLAYER.GetActorsByType(name)
+        cnts[name] = len(actors)
+
     for v in stuff:
         if MOD_is_anypower(v):
             v = ANYPOWER
+        elif v in COUNT_BUILDING_AS_MCV:
+            v = COUNT_BUILDING_AS_MCV[v]
 
         if v not in cnts:
             cnts[v] = 1
@@ -323,7 +342,7 @@ def BB_choose_building_to_build(tab):
         return HACKY_FALLBACK
 
     tab = tab[0] # Sandbox quirks
-    building_count = UTIL_hist(tab["player_buildings"])
+    building_count = UTIL_count_buildings(tab["player_buildings"])
 
     # Base defenses aren't current focus now.
     # Fall back to hacky behavior.
