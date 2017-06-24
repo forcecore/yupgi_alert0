@@ -28,6 +28,20 @@ AUTO_BUILD = False
 
 
 ###
+### Team actions (not constant but need to be here before team definition)
+### Team action can't take parameters so, we do this.
+###
+
+def LoadHumvee(actors):
+    UTIL_LoadOnto("jeep", actors, None, None)
+
+
+def LoadTran(actors):
+    UTIL_LoadOnto("tran", actors, None, None)
+
+
+
+###
 ### Mod constants
 ###
 
@@ -44,7 +58,19 @@ COUNT_BUILDING_AS_MCV = {
     "qnest": "qant"
 }
 
+# Lua supports list or dict so...
+HELI_TRANSPORT = {
+    "tran": True
+}
+
 AMMO_POOLED_AIRCRAFTS = ["nmig", "mig", "yak", "hind", "heli"]
+
+# Lua supports list or dict so...
+FIXABLE = {
+    "2tnk": True,
+    "3tnk": True,
+    "4tnk": True
+}
 
 # Ground static defense
 STATIC_DEFENSES = ["pbox", "hbox", "gun", "ftur", "tsla"]
@@ -236,115 +262,93 @@ TASKFORCES = {
     # These are basic units of production. They may be merged into a big team.
     "6_heli": {
         "units": ["heli", "heli", "heli", "heli"],
-        "queues": ["air"]
     },
     "2_hind": {
         "units": ["hind", "hind"],
-        "queues": ["air"]
     },
     "5_e1": {
         "units": ["e1","e1","e1","e1","e1"],
-        "queues": ["inf"]
     },
     "2_e3": {
         "units": ["e3", "e3"],
-        "queues": ["inf"]
     },
     "2_jeep": {
         "units": ["jeep", "jeep"],
-        "queues": ["weap"]
     },
     "4_1tnk": {
         "units": ["1tnk", "1tnk", "1tnk", "1tnk"],
-        "queues": ["weap"]
     },
     "4_2tnk": {
         "units": ["2tnk", "2tnk", "2tnk", "2tnk"],
-        "queues": ["weap"]
     },
     "arty": {
         "units": ["arty", "arty", "2tnk", "2tnk"],
-        "queues": ["weap"]
     },
     "humvee": {
         "units": ["jeep", "e1", "e3", "e3"],
-        "queues": ["weap", "inf"]
+    },
+    "tran": {
+        "units": ["tran", "e1", "e1", "e3", "e3", "e3"],
     },
 
     # Soviet taskforces
     "2_e2": {
         "units": ["e2", "e2"],
-        "queues": ["inf"]
     },
     "4_dog": {
         "units": ["dog", "dog", "dog", "dog"],
-        "queues": ["inf"]
     },
     "2_e4": {
         "units": ["e4", "e4"],
-        "queues": ["inf"]
     },
     "2_shok": {
         "units": ["shok", "shok"],
-        "queues": ["inf"]
     },
     "2_ftrk": {
         "units": ["ftrk", "ftrk"],
-        "queues": ["weap"]
     },
     "4_3tnk": {
         "units": ["3tnk", "3tnk", "3tnk", "3tnk"],
-        "queues": ["weap"]
     },
     "2_4tnk": {
         "units": ["4tnk", "4tnk"],
-        "queues": ["weap"]
     },
     "ttnk": {
         "units": ["ttnk"],
-        "queues": ["weap"]
     },
     "v2rl": {
         "units": ["v2rl", "v2rl", "3tnk", "3tnk"],
-        "queues": ["weap"]
     },
     "4_mig": {
         "units": ["mig", "mig", "mig", "mig"],
-        "queues": ["air"]
     },
     "2_yak": {
         "units": ["yak", "yak"],
-        "queues": ["air"]
     },
 
     # Mutant TFs
     "2_want": {
         "units": ["want", "want"],
-        "queues": ["weap"]
     },
     "2_fant": {
         "units": ["fant", "fant"],
-        "queues": ["weap"]
     },
     "1_sant": {
         "units": ["sant"],
-        "queues": ["weap"]
     },
     "1_hant": {
         "units": ["hant"],
-        "queues": ["weap"]
     },
     "1_inft": {
         "units": ["inft"],
-        "queues": ["inf"]
     },
     "3_doggie": {
         "units": ["doggie", "doggie", "doggie"],
-        "queues": ["inf"]
     }
 }
 
 TEAMS = {
+    # Allies Teams
     "6_heli": {
         "faction": "allies",
         "tf": "6_heli",
@@ -370,11 +374,11 @@ TEAMS = {
         "tf": "2_jeep",
         "trigger": None
     },
-    "4_1tnk": {
-        "faction": "allies",
-        "tf": "4_1tnk",
-        "trigger": None
-    },
+    #"4_1tnk": {
+    #    "faction": "allies",
+    #    "tf": "4_1tnk",
+    #    "trigger": None
+    #},
     "4_2tnk": {
         "faction": "allies",
         "tf": "4_2tnk",
@@ -388,8 +392,15 @@ TEAMS = {
     "humvee": {
         "faction": "allies",
         "tf": "humvee",
-        "trigger": None
+        "trigger": LoadHumvee
     },
+    "tran": {
+        "faction": "allies",
+        "tf": "tran",
+        "trigger": LoadTran
+    },
+
+    # Soviet Teams
     "2_e2": {
         "faction": "soviet",
         "tf": "2_e2",
@@ -451,6 +462,8 @@ TEAMS = {
         "tf": "1_zep",
         "trigger": None
     },
+
+    # Ant teams
     "2_want": {
         "faction": "mutants",
         "tf": "2_want",
@@ -570,8 +583,6 @@ def AlliesBuildUnitTick(faction):
             AUTO_BUILD = True
 
     else:
-        occupied = {}
-
         if len(harvs) < 1 and PLAYER.HasPrerequisites(["gaweap", "proc"]):
             PLAYER.Build(['harv'], None)
             return
@@ -596,14 +607,10 @@ def AlliesBuildUnitTick(faction):
         if defense_cnt >= 4:
             if UTIL_Count("msam") < 2 and PLAYER.HasPrerequisites(["gaweap", "atek"]):
                 PLAYER.Build(['msam'], None)
-                occupied["weap"] = True
             if UTIL_Count("arty") < 4 and PLAYER.HasPrerequisites(["gaweap", "dome"]):
                 PLAYER.Build(['arty'], None)
-                occupied["weap"] = True
 
-        # Try to run two production queues.
-        success, occupied = UTIL_BuildRandomTeam(ALLIES_TEAMS_KEYS, occupied)
-        success, occupied = UTIL_BuildRandomTeam(ALLIES_TEAMS_KEYS, occupied)
+        UTIL_BuildRandomTeam(ALLIES_TEAMS_KEYS)
 
 
 def BuildUnitTick(faction):
@@ -625,42 +632,109 @@ def BuildUnitTick(faction):
 # What can be recycled for other mods aren't.
 
 
-def CanQueue(tf, occupied):
-    for queue in tf["queues"]:
-        if queue in occupied:
+def UTIL_CanQueue(tf):
+    for name in tf["units"]:
+        if PLAYER.IsProducing(name):
             return False
     return True
 
 
-def UTIL_BuildRandomTeam(keys, occupied):
+def UTIL_LoadOnto(transportName, actors, afterLoadFunc, afterLoadParams):
+    UTIL_SetOccupied(actors, True)
+
+    tran = None
+    load = []
+    for a in actors:
+        if a.Type == transportName:
+            tran = a
+        else:
+            load.append(a)
+
+    UTIL_MoveTransportToPassengers(tran, load, afterLoadFunc, afterLoadParams)
+
+
+def UTIL_SetOccupied(actors, isOccupied):
+    for a in actors:
+        if not a.IsDead:
+            a.HackyAIOccupied = isOccupied
+
+
+def UTIL_CountAlive(actors):
+    cnt = 0
+    for a in actors:
+        if not a.IsDead:
+            cnt += 1
+    return cnt
+
+
+def UTIL_WaitLoad(transport, passengers, afterLoadFunc, afterLoadParams):
+    if transport.IsDead:
+        UTIL_SetOccupied(passengers, False)
+        return
+
+    if transport.PassengerCount >= UTIL_CountAlive(passengers):
+        if afterLoadFunc == None:
+            transport.HackyAIOccupied = False
+            UTIL_SetOccupied(passengers, False)
+        else:
+            afterLoadFunc(afterLoadParams)
+    else:
+        Trigger.AfterDelay(30, lambda:
+            # invoke self again to implement "wait load".
+            # If you use something else, game hangs haha
+            UTIL_WaitLoad(transport, passengers, afterLoadFunc, afterLoadParams)
+        )
+
+
+def UTIL_MoveTransportToPassengers(transport, passengers, afterLoadFunc, afterLoadParams):
+    # Find a suitable cell.
+    guest = passengers[0]
+
+    for cell in Map.FindTilesInAnnulus(guest.Location, 1, 4):
+        # Don't use transport.CanEnter. transport might not have mobile property.
+        if guest.CanEnter(cell):
+            transport.Wait(50)
+            transport.Stop() # Make it stop wandering around, if heli
+            transport.Move(cell, 2048)
+            if HELI_TRANSPORT[transport.Type] == True:
+                transport.HeliLand(transport, True)
+            transport.CallFunc(lambda:
+                    UTIL_LoadPassengers(transport, passengers,
+                        afterLoadFunc, afterLoadParams))
+
+
+def UTIL_LoadPassengers(transport, passengers, afterLoadFunc, afterLoadParams):
+    '''
+    Order just once, or else it will bug.
+    '''
+    for a in passengers:
+        a.EnterTransport(transport)
+    UTIL_WaitLoad(transport, passengers, afterLoadFunc, afterLoadParams)
+
+
+def UTIL_BuildRandomTeam(keys):
     '''
     Given teams, and its keys, build a random team and return success/fail
-    occupied: currently occupied queue
     '''
 
     # Get teams that can be built using unoccupied queue.
     avail = []
     for key in keys:
         tf = TASKFORCES[TEAMS[key]["tf"]]
-        if CanQueue(tf, occupied):
+        if UTIL_CanQueue(tf):
             avail.append(key)
 
     if len(avail) == 0:
-        return False, occupied
+        return False
 
     key = Utils.Random(avail)
-    return UTIL_BuildTeam(key, occupied)
+    return UTIL_BuildTeam(key)
 
 
-def UTIL_BuildTeam(key, occupied):
+def UTIL_BuildTeam(key):
     team = TEAMS[key]
     taskforce = TASKFORCES[team["tf"]]
-
-    # update occupied
-    for queue in taskforce["queues"]:
-        occupied[queue] = True
-
-    return PLAYER.Build(taskforce["units"], team["trigger"]), occupied
+    return PLAYER.Build(taskforce["units"], team["trigger"])
 
 
 def UTIL_CountBuildings(stuff):
@@ -789,6 +863,22 @@ def UTIL_ReloadAircraft(ammo_pooled_aircrafts):
                 unit.HackyAIOccupied = False
 
 
+def UTIL_RepairUnits():
+    if not PLAYER.HasPrerequisites(["fix"]):
+        return
+
+    fix = PLAYER.GetActorsByType("fix")[0]
+
+    actors = PLAYER.GetActors()
+    for a in actors:
+        if a.Type in FIXABLE and a.Health < a.MaxHealth / 10 and not a.HackyAIOccupied:
+            a.HackyAIOccupied = True
+            a.Stop() # Cancel whatever it was doing
+            a.RepairAt(fix)
+        elif a.Type in FIXABLE and a.Health == a.MaxHealth and a.HackyAIOccupied:
+            a.HackyAIOccupied = False
+
+
 ###
 ### C# to lua binding functions
 ###
@@ -862,3 +952,5 @@ def Tick():
         BuildUnitTick(FACTION)
     elif TICKS % 37 == 0:
         UTIL_ReloadAircraft(AMMO_POOLED_AIRCRAFTS)
+    elif TICKS % 127 == 0:
+        UTIL_RepairUnits()

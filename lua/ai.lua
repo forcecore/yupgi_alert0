@@ -4,10 +4,20 @@ PLAYER = nil
 BUILD_ORDER = nil
 TICKS = 0
 AUTO_BUILD = false
+
+LoadHumvee = function(actors)
+  UTIL_LoadOnto('jeep', actors, nil, nil)
+end
+
+LoadTran = function(actors)
+  UTIL_LoadOnto('tran', actors, nil, nil)
+end
 ANYPOWER = 'ANYPOWER'
 MCVS = {'gamcv', 'namcv', 'qant'}
 COUNT_BUILDING_AS_MCV = { gafact='gamcv', nafact='namcv', qnest='qant', }
+HELI_TRANSPORT = { tran=true, }
 AMMO_POOLED_AIRCRAFTS = {'nmig', 'mig', 'yak', 'hind', 'heli'}
+FIXABLE = { ['2tnk']=true, ['3tnk']=true, ['4tnk']=true, }
 STATIC_DEFENSES = {'pbox', 'hbox', 'gun', 'ftur', 'tsla'}
 BO_ALLIES_NORMAL = { name='allies_normal', bo={ANYPOWER, 'tent', 'proc', 'proc', ANYPOWER, 'gaweap', 'fix', 'dome', ANYPOWER, 'proc', 'hpad', 'hpad', 'atek', ANYPOWER}, }
 BO_ALLIES_FAST_WEAP = { name='allies_weap', bo={ANYPOWER, 'tent', 'proc', 'gaweap', ANYPOWER, 'proc', 'fix', 'proc', 'dome', ANYPOWER, 'atek', ANYPOWER}, }
@@ -21,8 +31,8 @@ BO_SOVIET_ECO = { name='soviet_eco', bo={ANYPOWER, 'kenn', 'barr', 'proc', 'proc
 BO_SOVIET_BOS = {BO_SOVIET_NORMAL, BO_SOVIET_ECO, BO_SOVIET_FAST_WEAP, BO_SOVIET_FAST_AIR}
 BO_MUTANT_NORMAL = { name='mutant_normal', bo={'qant', 'anthill', 'anthill', 'qant', 'tibtree', 'vein', 'qant', 'tibtree', 'anthill', 'evo'}, }
 BO_MUTANT_BOS = {BO_MUTANT_NORMAL}
-TASKFORCES = { ['6_heli']={ units={'heli', 'heli', 'heli', 'heli'}, queues={'air'}, }, ['2_hind']={ units={'hind', 'hind'}, queues={'air'}, }, ['5_e1']={ units={'e1', 'e1', 'e1', 'e1', 'e1'}, queues={'inf'}, }, ['2_e3']={ units={'e3', 'e3'}, queues={'inf'}, }, ['2_jeep']={ units={'jeep', 'jeep'}, queues={'weap'}, }, ['4_1tnk']={ units={'1tnk', '1tnk', '1tnk', '1tnk'}, queues={'weap'}, }, ['4_2tnk']={ units={'2tnk', '2tnk', '2tnk', '2tnk'}, queues={'weap'}, }, arty={ units={'arty', 'arty', '2tnk', '2tnk'}, queues={'weap'}, }, humvee={ units={'jeep', 'e1', 'e3', 'e3'}, queues={'weap', 'inf'}, }, ['2_e2']={ units={'e2', 'e2'}, queues={'inf'}, }, ['4_dog']={ units={'dog', 'dog', 'dog', 'dog'}, queues={'inf'}, }, ['2_e4']={ units={'e4', 'e4'}, queues={'inf'}, }, ['2_shok']={ units={'shok', 'shok'}, queues={'inf'}, }, ['2_ftrk']={ units={'ftrk', 'ftrk'}, queues={'weap'}, }, ['4_3tnk']={ units={'3tnk', '3tnk', '3tnk', '3tnk'}, queues={'weap'}, }, ['2_4tnk']={ units={'4tnk', '4tnk'}, queues={'weap'}, }, ttnk={ units={'ttnk'}, queues={'weap'}, }, v2rl={ units={'v2rl', 'v2rl', '3tnk', '3tnk'}, queues={'weap'}, }, ['4_mig']={ units={'mig', 'mig', 'mig', 'mig'}, queues={'air'}, }, ['2_yak']={ units={'yak', 'yak'}, queues={'air'}, }, ['2_want']={ units={'want', 'want'}, queues={'weap'}, }, ['2_fant']={ units={'fant', 'fant'}, queues={'weap'}, }, ['1_sant']={ units={'sant'}, queues={'weap'}, }, ['1_hant']={ units={'hant'}, queues={'weap'}, }, ['1_inft']={ units={'inft'}, queues={'inf'}, }, ['3_doggie']={ units={'doggie', 'doggie', 'doggie'}, queues={'inf'}, }, }
-TEAMS = { ['6_heli']={ faction='allies', tf='6_heli', trigger=nil, }, ['2_hind']={ faction='allies', tf='2_hind', trigger=nil, }, ['5_e1']={ faction='allies', tf='5_e1', trigger=nil, }, ['2_e3']={ faction='allies', tf='2_e3', trigger=nil, }, ['2_jeep']={ faction='allies', tf='2_jeep', trigger=nil, }, ['4_1tnk']={ faction='allies', tf='4_1tnk', trigger=nil, }, ['4_2tnk']={ faction='allies', tf='4_2tnk', trigger=nil, }, arty={ faction='allies', tf='arty', trigger=nil, }, humvee={ faction='allies', tf='humvee', trigger=nil, }, ['2_e2']={ faction='soviet', tf='2_e2', queue='inf', trigger=nil, }, ['4_dog']={ faction='soviet', tf='4_dog', trigger=nil, }, ['2_e4']={ faction='soviet', tf='2_e4', trigger=nil, }, ['2_shok']={ faction='soviet', tf='2_shok', trigger=nil, }, ['2_ftrk']={ faction='soviet', tf='2_ftrk', trigger=nil, }, ['4_3tnk']={ faction='soviet', tf='4_3tnk', trigger=nil, }, ['2_4tnk']={ faction='soviet', tf='2_4tnk', trigger=nil, }, ttnk={ faction='soviet', tf='ttnk', trigger=nil, }, v2rl={ faction='soviet', tf='v2rl', trigger=nil, }, ['4_mig']={ faction='soviet', tf='4_mig', trigger=nil, }, ['2_yak']={ faction='soviet', tf='2_yak', trigger=nil, }, ['1_zep']={ faction='soviet', tf='1_zep', trigger=nil, }, ['2_want']={ faction='mutants', tf='2_want', trigger=nil, }, ['2_fant']={ faction='mutants', tf='2_fant', trigger=nil, }, ['1_sant']={ faction='mutants', tf='1_sant', trigger=nil, }, ['1_hant']={ faction='mutants', tf='1_hant', trigger=nil, }, ['1_inft']={ faction='mutants', tf='1_inft', trigger=nil, }, ['3_doggie']={ faction='mutants', tf='3_doggie', trigger=nil, }, }
+TASKFORCES = { ['6_heli']={ units={'heli', 'heli', 'heli', 'heli'}, }, ['2_hind']={ units={'hind', 'hind'}, }, ['5_e1']={ units={'e1', 'e1', 'e1', 'e1', 'e1'}, }, ['2_e3']={ units={'e3', 'e3'}, }, ['2_jeep']={ units={'jeep', 'jeep'}, }, ['4_1tnk']={ units={'1tnk', '1tnk', '1tnk', '1tnk'}, }, ['4_2tnk']={ units={'2tnk', '2tnk', '2tnk', '2tnk'}, }, arty={ units={'arty', 'arty', '2tnk', '2tnk'}, }, humvee={ units={'jeep', 'e1', 'e3', 'e3'}, }, tran={ units={'tran', 'e1', 'e1', 'e3', 'e3', 'e3'}, }, ['2_e2']={ units={'e2', 'e2'}, }, ['4_dog']={ units={'dog', 'dog', 'dog', 'dog'}, }, ['2_e4']={ units={'e4', 'e4'}, }, ['2_shok']={ units={'shok', 'shok'}, }, ['2_ftrk']={ units={'ftrk', 'ftrk'}, }, ['4_3tnk']={ units={'3tnk', '3tnk', '3tnk', '3tnk'}, }, ['2_4tnk']={ units={'4tnk', '4tnk'}, }, ttnk={ units={'ttnk'}, }, v2rl={ units={'v2rl', 'v2rl', '3tnk', '3tnk'}, }, ['4_mig']={ units={'mig', 'mig', 'mig', 'mig'}, }, ['2_yak']={ units={'yak', 'yak'}, }, ['2_want']={ units={'want', 'want'}, }, ['2_fant']={ units={'fant', 'fant'}, }, ['1_sant']={ units={'sant'}, }, ['1_hant']={ units={'hant'}, }, ['1_inft']={ units={'inft'}, }, ['3_doggie']={ units={'doggie', 'doggie', 'doggie'}, }, }
+TEAMS = { ['6_heli']={ faction='allies', tf='6_heli', trigger=nil, }, ['2_hind']={ faction='allies', tf='2_hind', trigger=nil, }, ['5_e1']={ faction='allies', tf='5_e1', trigger=nil, }, ['2_e3']={ faction='allies', tf='2_e3', trigger=nil, }, ['2_jeep']={ faction='allies', tf='2_jeep', trigger=nil, }, ['4_2tnk']={ faction='allies', tf='4_2tnk', trigger=nil, }, arty={ faction='allies', tf='arty', trigger=nil, }, humvee={ faction='allies', tf='humvee', trigger=LoadHumvee, }, tran={ faction='allies', tf='tran', trigger=LoadTran, }, ['2_e2']={ faction='soviet', tf='2_e2', queue='inf', trigger=nil, }, ['4_dog']={ faction='soviet', tf='4_dog', trigger=nil, }, ['2_e4']={ faction='soviet', tf='2_e4', trigger=nil, }, ['2_shok']={ faction='soviet', tf='2_shok', trigger=nil, }, ['2_ftrk']={ faction='soviet', tf='2_ftrk', trigger=nil, }, ['4_3tnk']={ faction='soviet', tf='4_3tnk', trigger=nil, }, ['2_4tnk']={ faction='soviet', tf='2_4tnk', trigger=nil, }, ttnk={ faction='soviet', tf='ttnk', trigger=nil, }, v2rl={ faction='soviet', tf='v2rl', trigger=nil, }, ['4_mig']={ faction='soviet', tf='4_mig', trigger=nil, }, ['2_yak']={ faction='soviet', tf='2_yak', trigger=nil, }, ['1_zep']={ faction='soviet', tf='1_zep', trigger=nil, }, ['2_want']={ faction='mutants', tf='2_want', trigger=nil, }, ['2_fant']={ faction='mutants', tf='2_fant', trigger=nil, }, ['1_sant']={ faction='mutants', tf='1_sant', trigger=nil, }, ['1_hant']={ faction='mutants', tf='1_hant', trigger=nil, }, ['1_inft']={ faction='mutants', tf='1_inft', trigger=nil, }, ['3_doggie']={ faction='mutants', tf='3_doggie', trigger=nil, }, }
 ALLIES_TEAMS_KEYS = {}
 for key, team in pairs(TEAMS) do
   if team['faction']=='allies' then
@@ -105,7 +115,6 @@ AlliesBuildUnitTick = function(faction)
       AUTO_BUILD = true
     end
   else
-    local occupied = { }
     if #harvs<1 and PLAYER.HasPrerequisites({'gaweap', 'proc'}) then
       PLAYER.Build({'harv'}, nil)
       return 
@@ -130,16 +139,12 @@ AlliesBuildUnitTick = function(faction)
     if defense_cnt>=4 then
       if UTIL_Count('msam')<2 and PLAYER.HasPrerequisites({'gaweap', 'atek'}) then
         PLAYER.Build({'msam'}, nil)
-        occupied['weap'] = true
       end
       if UTIL_Count('arty')<4 and PLAYER.HasPrerequisites({'gaweap', 'dome'}) then
         PLAYER.Build({'arty'}, nil)
-        occupied['weap'] = true
       end
     end
-    local success
-    success, occupied = unpack(UTIL_BuildRandomTeam(ALLIES_TEAMS_KEYS, occupied))
-    success, occupied = unpack(UTIL_BuildRandomTeam(ALLIES_TEAMS_KEYS, occupied))
+    UTIL_BuildRandomTeam(ALLIES_TEAMS_KEYS)
   end
 end
 
@@ -153,41 +158,111 @@ BuildUnitTick = function(faction)
   end
 end
 
-CanQueue = function(tf, occupied)
-  for _, queue in ipairs(tf['queues']) do
-    if occupied[queue] ~= nil then
+UTIL_CanQueue = function(tf)
+  for _, name in ipairs(tf['units']) do
+    if PLAYER.IsProducing(name) then
       return false
     end
   end
   return true
 end
 
-UTIL_BuildRandomTeam = function(keys, occupied)
+UTIL_LoadOnto = function(transportName, actors, afterLoadFunc, afterLoadParams)
+  UTIL_SetOccupied(actors, true)
+  local tran = nil
+  local load = {}
+  for _, a in ipairs(actors) do
+    if a.Type==transportName then
+      tran = a
+    else
+      table.insert(load, a)
+    end
+  end
+  UTIL_MoveTransportToPassengers(tran, load, afterLoadFunc, afterLoadParams)
+end
+
+UTIL_SetOccupied = function(actors, isOccupied)
+  for _, a in ipairs(actors) do
+    if  not a.IsDead then
+      a.HackyAIOccupied = isOccupied
+    end
+  end
+end
+
+UTIL_CountAlive = function(actors)
+  local cnt = 0
+  for _, a in ipairs(actors) do
+    if  not a.IsDead then
+      cnt = cnt+1
+    end
+  end
+  return cnt
+end
+
+UTIL_WaitLoad = function(transport, passengers, afterLoadFunc, afterLoadParams)
+  if transport.IsDead then
+    UTIL_SetOccupied(passengers, false)
+    return 
+  end
+  if transport.PassengerCount>=UTIL_CountAlive(passengers) then
+    if afterLoadFunc==nil then
+      transport.HackyAIOccupied = false
+      UTIL_SetOccupied(passengers, false)
+    else
+      afterLoadFunc(afterLoadParams)
+    end
+  else
+    Trigger.AfterDelay(30, function() return UTIL_WaitLoad(transport, passengers, afterLoadFunc, afterLoadParams) end)
+  end
+end
+
+UTIL_MoveTransportToPassengers = function(transport, passengers, afterLoadFunc, afterLoadParams)
+  local guest = passengers[1]
+  for _, cell in ipairs(Map.FindTilesInAnnulus(guest.Location, 1, 4)) do
+    if guest.CanEnter(cell) then
+      transport.Wait(50)
+      transport.Stop()
+      transport.Move(cell, 2048)
+      if HELI_TRANSPORT[transport.Type]==true then
+        transport.HeliLand(transport, true)
+      end
+      transport.CallFunc(function() return UTIL_LoadPassengers(transport, passengers, afterLoadFunc, afterLoadParams) end)
+    end
+  end
+end
+
+UTIL_LoadPassengers = function(transport, passengers, afterLoadFunc, afterLoadParams)
+  -- 
+  --     Order just once, or else it will bug.
+  --     
+  for _, a in ipairs(passengers) do
+    a.EnterTransport(transport)
+  end
+  UTIL_WaitLoad(transport, passengers, afterLoadFunc, afterLoadParams)
+end
+
+UTIL_BuildRandomTeam = function(keys)
   -- 
   --     Given teams, and its keys, build a random team and return success/fail
-  --     occupied: currently occupied queue
   --     
   local avail = {}
   for _, key in ipairs(keys) do
     local tf = TASKFORCES[TEAMS[key]['tf']]
-    if CanQueue(tf, occupied) then
+    if UTIL_CanQueue(tf) then
       table.insert(avail, key)
     end
   end
   if #avail==0 then
-    return {false, occupied}
+    return false
   end
   local key = Utils.Random(avail)
-  return UTIL_BuildTeam(key, occupied)
+  return UTIL_BuildTeam(key)
 end
 
-UTIL_BuildTeam = function(key, occupied)
+UTIL_BuildTeam = function(key)
   local team = TEAMS[key]
   local taskforce = TASKFORCES[team['tf']]
-  for _, queue in ipairs(taskforce['queues']) do
-    occupied[queue] = true
-  end
-  return {PLAYER.Build(taskforce['units'], team['trigger']), occupied}
+  return PLAYER.Build(taskforce['units'], team['trigger'])
 end
 
 UTIL_CountBuildings = function(stuff)
@@ -311,6 +386,23 @@ UTIL_ReloadAircraft = function(ammo_pooled_aircrafts)
     end
   end
 end
+
+UTIL_RepairUnits = function()
+  if  not PLAYER.HasPrerequisites({'fix'}) then
+    return 
+  end
+  local fix = PLAYER.GetActorsByType('fix')[1]
+  local actors = PLAYER.GetActors()
+  for _, a in ipairs(actors) do
+    if FIXABLE[a.Type] ~= nil and a.Health<a.MaxHealth/10 and  not a.HackyAIOccupied then
+      a.HackyAIOccupied = true
+      a.Stop()
+      a.RepairAt(fix)
+    elseif FIXABLE[a.Type] ~= nil and a.Health==a.MaxHealth and a.HackyAIOccupied then
+      a.HackyAIOccupied = false
+    end
+  end
+end
 HACKY_FALLBACK = 'hacky_fallback'
 
 BB_choose_building_to_build = function(tab)
@@ -359,9 +451,11 @@ Tick = function()
   --     Tick the AI thinking. Called by Tick() in Scripted AI.
   --     
   TICKS = TICKS+1
-  if (TICKS % 31)==0 then
+  if (TICKS%31)==0 then
     BuildUnitTick(FACTION)
-  elseif (TICKS % 37)==0 then
+  elseif (TICKS%37)==0 then
     UTIL_ReloadAircraft(AMMO_POOLED_AIRCRAFTS)
+  elseif (TICKS%127)==0 then
+    UTIL_RepairUnits()
   end
 end
