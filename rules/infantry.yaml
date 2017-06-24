@@ -329,9 +329,9 @@ E7:
 		Voice: Move
 	RevealsShroud:
 		Range: 6c0
-	#Demolition:
-		#DetonationDelay: 45
-		#Voice: Demolish
+	Demolition:
+		DetonationDelay: 45
+		Voice: Demolish
 	Passenger:
 		PipType: Red
 		Voice: Move
@@ -395,7 +395,7 @@ E7:
 	GrantConditionOnFire:
 		Condition: gattling
 		Armament: secondary
-		RequiredShotsPerStack: 3, 6
+		RequiredShotsPerStack: 6, 12
 		MaxStacking: 2
 		UnstackDelay: 40
 
