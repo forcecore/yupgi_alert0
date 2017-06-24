@@ -1509,7 +1509,7 @@ JOSH:
 	SelectionDecorations:
 		VisualBounds: 30,30,0,-4
 	Health:
-		HP: 3000
+		HP: 900
 		Shape: Circle
 			Radius: 469
 	Armor:
