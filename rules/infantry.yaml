@@ -810,9 +810,9 @@ DANT:
 		VoiceSet: AntVoice
 	DockClient:
 	Harvester:
-		Capacity: 5
+		Capacity: 2
 		Resources: Ore,Gems,Tiberium
-		BaleUnloadDelay: 1
+		BaleUnloadDelay: 5
 		SearchFromProcRadius: 30
 		SearchFromOrderRadius: 15
 		DeliveryBuildings: proc, qnest, anthill
@@ -1070,6 +1070,9 @@ CHITZ:
 	Voiced:
 		VoiceSet: DogVoice
 	-TakeCover:
+	Targetable:
+		TargetTypes: Ground, Infantry, MCImmune, Ant
+	-Mindcontrollable:
 
 VOLKOV:
 	Inherits: ^Soldier
@@ -1120,6 +1123,9 @@ VOLKOV:
 		StandSequences: stand
 	ProducibleWithLevel:
 		Prerequisites: barracks.upgraded
+	Targetable:
+		TargetTypes: Ground, Infantry, MCImmune
+	-Mindcontrollable:
 
 SAIYAN:
 	Inherits: ^Soldier

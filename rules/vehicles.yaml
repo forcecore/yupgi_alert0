@@ -1274,6 +1274,9 @@ HANT:
 	Selectable:
 		Bounds: 44,38,0,-4
 	-EjectOnDeath:
+	Targetable:
+		TargetTypes: Ground, MCImmune, Repair, Vehicle
+	-Mindcontrollable:
 
 MSAM:
 	Inherits: ^Tank
@@ -1356,7 +1359,8 @@ WANGCHANG:
 	Armament:
 		Weapon: WangchangThump
 	Targetable:
-		TargetTypes: Ground, WangChang, Repair, Vehicle
+		TargetTypes: Ground, WangChang, Repair, Vehicle, MCImmune
+	-Mindcontrollable:
 	RenderSprites:
 		Scale: 1.25
 		Image: WANGCHANG
@@ -1534,7 +1538,8 @@ JOSH:
 	Armament:
 		Weapon: JoshPunch
 	Targetable:
-		TargetTypes: Ground, Vehicle, Ant
+		TargetTypes: Ground, Vehicle, Ant, MCImmune
+	-Mindcontrollable:
 	WithDeathAnimation:
 		UseDeathTypeSuffix: false
 	Voiced:
