@@ -11,6 +11,8 @@ Player:
 			Production: barr,tent,gaweap,naweap,afld,hpad,qnest
 			Silo: silo, anthill
 			StaticAntiAir: sam,agun
+			Defense: pbox, hbox, gun, agun, tsla, ftur, minihive
+			Fragile: atek,stek,afld,hpad,mslo,iron,pdox,silo
 		CoreDefinitions:
 			qnest: qant
 		UnitsCommonNames:
@@ -153,6 +155,8 @@ Player:
 			NavalProduction: spen,syrd
 			Silo: silo, anthill
 			StaticAntiAir: sam,agun
+			Defense: pbox, hbox, gun, agun, tsla, ftur, minihive
+			Fragile: atek,stek,afld,hpad,mslo,iron,pdox,silo
 		CoreDefinitions:
 			qnest: qant
 		UnitsCommonNames:
@@ -314,6 +318,8 @@ Player:
 			NavalProduction: spen,syrd
 			Silo: silo, anthill
 			StaticAntiAir: sam,agun
+			Defense: pbox, hbox, gun, agun, tsla, ftur, minihive
+			Fragile: atek,stek,afld,hpad,mslo,iron,pdox,silo
 		CoreDefinitions:
 			qnest: qant
 		UnitsCommonNames:
@@ -460,6 +466,8 @@ Player:
 				CheckRadius: 7c0
 	HackyAI@UnleashedAI:
 		Name: Unleashed AI
+		LuaScript: ai.lua
+		EnableLuaUnitProduction: true
 		MinimumExcessPower: 100
 		BuildingCommonNames:
 			ConstructionYard: gafact, nafact, qnest
@@ -470,6 +478,9 @@ Player:
 			Production: barr,tent,gaweap,naweap,afld,hpad,qnest
 			NavalProduction: spen,syrd
 			Silo: silo, anthill
+			StaticAntiAir: sam,agun
+			Defense: pbox, hbox, gun, agun, tsla, ftur, minihive
+			Fragile: atek,stek,afld,hpad,mslo,iron,pdox,silo,mbk
 		CoreDefinitions:
 			qnest: qant
 		UnitsCommonNames:

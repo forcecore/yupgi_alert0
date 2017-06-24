@@ -42,6 +42,7 @@ Packages:
 	yupgi_alert|bits/cameo
 	yupgi_alert|bits/etc
 	yupgi_alert|bits/shp
+	yupgi_alert|lua
 	yupgi_alert|uibits
 
 MapFolders:
