@@ -391,7 +391,7 @@ E7:
 		ValidDamageStates: Critical
 	# dog proof
 	Targetable:
-		TargetTypes: Ground, Infantry, Ant
+		TargetTypes: Ground, Infantry, Ant, MCImmune
 	GrantConditionOnFire:
 		Condition: gattling
 		Armament: secondary
