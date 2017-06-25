@@ -529,7 +529,7 @@ AirstrikeLaserPointer:
 		ValidTargets: Ground, Water
 
 AirstrikeSpawn:
-	ReloadDelay: 25
+	ReloadDelay: 5
 	Range: 15c0
 	ValidTargets: Ground, Water
 	Projectile: LaserZap
