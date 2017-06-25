@@ -673,5 +673,6 @@ U2.bomber:
 		Image: u2
 	Armament:
 		Weapon: TanyStrikeBomb
+		Name: secondary
 	AmmoPool:
 		Ammo: 1

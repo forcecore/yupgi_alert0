@@ -417,6 +417,7 @@ E7:
 		MaxStacking: 1
 		UnstackDelay: 9
 		PopAll: True
+		UnstackOnNewTarget: True
 		# Time needed for airstrike:
 		# 50 shots * 5 reload time = 250 ticks = 10 seconds
 	AirstrikePower@parabombs:
