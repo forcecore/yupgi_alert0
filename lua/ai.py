@@ -24,6 +24,8 @@ TICKS = 0
 ###
 
 AUTO_BUILD = False
+BUILD_TICK_FUNC = None
+BELONGS_TO_A_TEAM = {}
 
 
 
@@ -261,29 +263,29 @@ BO_MUTANT_BOS = [ BO_MUTANT_NORMAL ]
 TASKFORCES = {
     # Allied taskforces.
     # These are basic units of production. They may be merged into a big team.
-    "6_heli": {
-        "units": ["heli", "heli", "heli", "heli"],
+    "1_heli": {
+        "units": ["heli"],
     },
-    "2_hind": {
-        "units": ["hind", "hind"],
+    "1_hind": {
+        "units": ["hind"],
     },
-    "5_e1": {
-        "units": ["e1","e1","e1","e1","e1"],
+    "1_e1": {
+        "units": ["e1"],
     },
-    "2_e3": {
-        "units": ["e3", "e3"],
+    "1_e3": {
+        "units": ["e3"],
     },
-    "2_jeep": {
-        "units": ["jeep", "jeep"],
+    "1_jeep": {
+        "units": ["jeep"],
     },
-    "4_1tnk": {
-        "units": ["1tnk", "1tnk", "1tnk", "1tnk"],
+    "1_1tnk": {
+        "units": ["1tnk"],
     },
-    "4_2tnk": {
-        "units": ["2tnk", "2tnk", "2tnk", "2tnk"],
+    "1_2tnk": {
+        "units": ["2tnk"],
     },
     "arty": {
-        "units": ["arty", "arty", "2tnk", "2tnk"],
+        "units": ["arty"],
     },
     "humvee": {
         "units": ["jeep", "e1", "e3", "e3"],
@@ -293,41 +295,41 @@ TASKFORCES = {
     },
 
     # Soviet taskforces
-    "2_e2": {
-        "units": ["e2", "e2"],
+    "1_e2": {
+        "units": ["e2"],
     },
     "1_deso": {
         "units": ["deso"],
     },
-    "2_e4": {
-        "units": ["e4", "e4"],
+    "1_e4": {
+        "units": ["e4"],
     },
-    "2_shok": {
-        "units": ["shok", "shok"],
+    "1_shok": {
+        "units": ["shok"],
     },
-    "2_ftrk": {
-        "units": ["ftrk", "ftrk"],
+    "1_ftrk": {
+        "units": ["ftrk"],
     },
     "1_qtnk": {
         "units": ["qtnk_ai"],
     },
-    "4_3tnk": {
-        "units": ["3tnk", "3tnk", "3tnk", "3tnk"],
+    "1_3tnk": {
+        "units": ["3tnk"],
     },
-    "2_4tnk": {
-        "units": ["4tnk", "4tnk"],
+    "1_4tnk": {
+        "units": ["4tnk"],
     },
     "ttnk": {
         "units": ["ttnk"],
     },
     "v2rl": {
-        "units": ["v2rl", "v2rl", "3tnk", "3tnk"],
+        "units": ["v2rl"],
     },
-    "4_mig": {
-        "units": ["mig", "mig", "mig", "mig"],
+    "1_mig": {
+        "units": ["mig"],
     },
-    "2_yak": {
-        "units": ["yak", "yak"],
+    "1_yak": {
+        "units": ["yak"],
     },
     "1_zep": {
         "units": ["zep"],
@@ -350,39 +352,39 @@ TASKFORCES = {
 
 TEAMS = {
     # Allies Teams
-    "6_heli": {
+    "1_heli": {
         "faction": "allies",
-        "tf": "6_heli",
+        "tf": "1_heli",
         "trigger": None
     },
-    "2_hind": {
+    "1_hind": {
         "faction": "allies",
-        "tf": "2_hind",
+        "tf": "1_hind",
         "trigger": None
     },
-    "5_e1": {
+    "1_e1": {
         "faction": "allies",
-        "tf": "5_e1",
+        "tf": "1_e1",
         "trigger": None
     },
-    "2_e3": {
+    "1_e3": {
         "faction": "allies",
-        "tf": "2_e3",
+        "tf": "1_e3",
         "trigger": None
     },
-    "2_jeep": {
+    "1_jeep": {
         "faction": "allies",
-        "tf": "2_jeep",
+        "tf": "1_jeep",
         "trigger": None
     },
-    #"4_1tnk": {
+    #"1_1tnk": {
     #    "faction": "allies",
-    #    "tf": "4_1tnk",
+    #    "tf": "1_1tnk",
     #    "trigger": None
     #},
-    "4_2tnk": {
+    "1_2tnk": {
         "faction": "allies",
-        "tf": "4_2tnk",
+        "tf": "1_2tnk",
         "trigger": None
     },
     "arty": {
@@ -402,10 +404,9 @@ TEAMS = {
     },
 
     # Soviet Teams
-    "2_e2": {
+    "1_e2": {
         "faction": "soviet",
-        "tf": "2_e2",
-        "queue": "inf",
+        "tf": "1_e2",
         "trigger": None
     },
     "1_deso": {
@@ -413,19 +414,19 @@ TEAMS = {
         "tf": "1_deso",
         "trigger": None
     },
-    "2_e4": {
+    "1_e4": {
         "faction": "soviet",
-        "tf": "2_e4",
+        "tf": "1_e4",
         "trigger": None
     },
-    "2_shok": {
+    "1_shok": {
         "faction": "soviet",
-        "tf": "2_shok",
+        "tf": "1_shok",
         "trigger": None
     },
-    "2_ftrk": {
+    "1_ftrk": {
         "faction": "soviet",
-        "tf": "2_ftrk",
+        "tf": "1_ftrk",
         "trigger": None
     },
     "1_qtnk": {
@@ -433,14 +434,14 @@ TEAMS = {
         "tf": "1_qtnk",
         "trigger": None
     },
-    "4_3tnk": {
+    "1_3tnk": {
         "faction": "soviet",
-        "tf": "4_3tnk",
+        "tf": "1_3tnk",
         "trigger": None
     },
-    "2_4tnk": {
+    "1_4tnk": {
         "faction": "soviet",
-        "tf": "2_4tnk",
+        "tf": "1_4tnk",
         "trigger": None
     },
     "ttnk": {
@@ -453,14 +454,14 @@ TEAMS = {
         "tf": "v2rl",
         "trigger": None
     },
-    "4_mig": {
+    "1_mig": {
         "faction": "soviet",
-        "tf": "4_mig",
+        "tf": "1_mig",
         "trigger": None
     },
-    "2_yak": {
+    "1_yak": {
         "faction": "soviet",
-        "tf": "2_yak",
+        "tf": "1_yak",
         "trigger": None
     },
     "1_zep": {
@@ -608,7 +609,7 @@ def AlliesBuildUnitTick(faction):
             if Utils.RandomInteger(0, 4) == 0:
                 PLAYER.Build(['e7'], None)
 
-        if UTIL_Count("tran") < 2 and PLAYER.HasPrerequisites(["hpad", "tent"]):
+        if UTIL_Count("tran") < 4 and PLAYER.HasPrerequisites(["hpad", "tent"]):
             if Utils.RandomInteger(0, 4) == 0:
                 UTIL_BuildTeam("tran")
 
@@ -738,11 +739,6 @@ def MutantBuildUnitTick(faction):
             UTIL_BuildRandomTeam(MUTANT_TEAMS_KEYS)
 
 
-BuildTickFunc = None # set by WorldLoaded
-def BuildUnitTick(faction):
-    BuildTickFunc(faction)
-
-
 
 ###
 ### Util functions
@@ -855,14 +851,239 @@ def UTIL_BuildRandomTeam(keys):
         return False
 
     key = Utils.Random(avail)
-    #Media.DisplayMessage(key)
+    #key = 'humvee'
+    # Media.DisplayMessage(key)
+
+    # Let's filter out too many aircrafts.
+    names = TASKFORCES[TEAMS[key]["tf"]]["units"]
+    for name in names:
+        if name == "mig" or name == "yak":
+            if UTIL_Count("mig") + UTIL_Count("yak") > 4 * UTIL_Count("afld"):
+                return False
+        if name == "heli" or name == "hind":
+            if UTIL_Count("mig") + UTIL_Count("yak") > 4 * UTIL_Count("hpad"):
+                return False
+
     return UTIL_BuildTeam(key)
 
 
-def UTIL_BuildTeam(key):
-    team = TEAMS[key]
-    taskforce = TASKFORCES[team["tf"]]
-    return PLAYER.Build(taskforce["units"], team["trigger"])
+# teams_in_production[teamName] == TEAMS[teamName], that are in production.
+TEAMS_IN_PRODUCTION = {}
+
+# produced[teamName] == list of actors produced so far.
+PRODUCED = {}
+
+def QueueProduction(teamName):
+    TEAMS_IN_PRODUCTION[teamName] = TEAMS[teamName]
+    PRODUCED[teamName] = []
+
+def CheckLiveness(produced, checkList):
+    '''
+    Remove dead ones in produced list.
+    '''
+    result = {}
+    for teamName, actors in produced.items():
+        alive = []
+        for a in actors:
+            if not a.IsDead:
+                alive.append(a)
+                checkList[teamName][a.Type] -= 1
+        result[teamName] = alive
+    return result
+
+def CanBeBuiltInParallel(teams_in_production, teamName):
+    '''
+    Awww too complex, with C&C's mult-factory in mind.
+    Relatively easier with classic production queue but damn...
+    This is a TODO.
+    '''
+
+    # Already in production.
+    if teams_in_production[teamName] != None:
+        return False
+
+    # Setting the value to nil is the standard way to delete an entry of Lua table.
+    cnt = 0
+    for _, val in teams_in_production.items():
+        if val != None:
+            cnt += 1
+
+    return cnt <= 2
+
+def MakeCheckList(teams_in_production):
+    '''
+    Create a "histogram" so that we can subtract what is built and
+    able to see how many more units to build.
+    '''
+    checkList = {}
+    for teamName, team in teams_in_production.items():
+        if team != None:
+            checkList[teamName] = {}
+            names = TASKFORCES[team["tf"]]["units"]
+            for name in names:
+                if name not in checkList[teamName]:
+                    checkList[teamName][name] = 1
+                else:
+                    checkList[teamName][name] += 1
+
+    '''
+    for tn, cl in checkList.items():
+        Media.DisplayMessage("MakeCL: " + tn)
+        for typ, cnt in cl.items():
+            Media.DisplayMessage("MakeCL:   " + typ)
+            Media.DisplayMessage("MakeCL:   " + cnt)
+    '''
+
+    return checkList
+
+def IsRecruitable(a):
+    if not a.IsIdle or a.IsDead:
+        return False
+    if a.HackyAIOccupied:
+        return False
+    if BELONGS_TO_A_TEAM[a.ActorID] == True:
+        return False
+    return True
+
+def Recruit(produced, checkList):
+    '''
+    Go through the check list and see if we can recruit anyone.
+    INOUT: produced
+    INOUT: checkList
+    '''
+    for teamName, population in checkList.items():
+        for name, _ in population.items():
+            actors = PLAYER.GetActorsByType(name)
+            for a in actors:
+                if IsRecruitable(a):
+                    if population[name] == 0:
+                        break
+                    # Idle and not some other team. Recruit this guy.
+                    #Media.DisplayMessage("Recruiting:" + a.UID)
+                    produced[teamName].append(a)
+                    a.HackyAIOccupied = True
+                    population[name] -= 1
+
+def AllLEZero(population):
+    for _, cnt in population.items():
+        if cnt > 0:
+            return False
+    return True
+
+def CheckBuilt(checkList):
+    '''
+    Check produced list and return teamNames of the ones that are done.
+    INOUT: checkList. After checking, we have what we need to build more by
+           subtracting the number of this we have right now.
+    '''
+    complete = []
+    for teamName, population in checkList.items():
+        if AllLEZero(population):
+            complete.append(teamName)
+    return complete
+
+def ReleaseTeams(teamNames, disband):
+    for teamName in teamNames:
+        TEAMS_IN_PRODUCTION[teamName] = None
+        actors = PRODUCED[teamName]
+
+        if not disband:
+            for a in actors:
+                BELONGS_TO_A_TEAM[a.ActorID] = True
+
+        # Run the functions on the actors.
+        func = TEAMS[teamName]['trigger']
+        if not disband and func != None:
+            func(actors)
+        else:
+            # Let these be used freely by hacky AI.
+            UTIL_SetOccupied(actors, False)
+
+        PRODUCED[teamName] = None
+
+def BuildFromCheckList(checkList):
+    '''
+    Go through the check list. Build anything it first sees.
+    '''
+    for _, population in checkList.items():
+        for name, cnt in population.items():
+            if cnt > 0 and not PLAYER.IsProducing(name):
+                return PLAYER.Build([name], None)
+    # All done so not an assertion error.
+    #Media.DisplayMessage("BuildFromCheckList: Assertion failed haha")
+    #return False
+
+def RemoveNil(teams_in_production):
+    result = {}
+
+    for teamName, team in teams_in_production.items():
+        if team != None:
+            result[teamName] = team
+
+    return result
+
+def HasAllPrerequisites(types):
+    for ty in types:
+        if not PLAYER.HasPrerequisitesForActorType(ty):
+            return False
+    return True
+
+def RemoveUnableToBuild(teams_in_production):
+    result = {}
+
+    for teamName, team in teams_in_production.items():
+        tf = TASKFORCES[team["tf"]]["units"]
+        if HasAllPrerequisites(tf):
+            result[teamName] = team
+        else:
+            # Disband these guys.
+            ReleaseTeams([teamName], True)
+
+    return result
+
+def UTIL_BuildTeam(teamName):
+    '''
+    Alright, this will be very difficult.
+    Even if we get teamName to produce,
+    we ignore it and continue what we were doing if it can't be done in parallel.
+    We do need this function to be called from time to time otherwise
+    production will not work.
+    That's because we need to prerequisites check from time to time.
+
+    Generally I'm assuming teams aren't BIG. < 20 members per team.
+    Otherwise these will run slowly :)
+    '''
+    TEAMS_IN_PRODUCTION = RemoveUnableToBuild(TEAMS_IN_PRODUCTION)
+    TEAMS_IN_PRODUCTION = RemoveNil(TEAMS_IN_PRODUCTION)
+
+    if CanBeBuiltInParallel(TEAMS_IN_PRODUCTION, teamName):
+        QueueProduction(teamName)
+        #Media.DisplayMessage("Build start: " + teamName)
+
+    # checkList[teamName] = xxx
+    # xxx[actorType] == count of actorType, to completely build a taskforce of the team.
+    # e.g., to build a TF = [e1 e1 e3 e3 e3], then
+    # xxx = {e1: 2, e3: 3}.
+    checkList = MakeCheckList(TEAMS_IN_PRODUCTION)
+    PRODUCED = CheckLiveness(PRODUCED, checkList)
+    Recruit(PRODUCED, checkList)
+
+    '''
+    Media.DisplayMessage("--------------------------")
+    for tn, actorz in PRODUCED.items():
+        Media.DisplayMessage("PRO.teamname: " + tn)
+        for actr in actorz:
+            Media.DisplayMessage("PRO: " + actr.Type)
+    Media.DisplayMessage("            ")
+    '''
+
+    # Is any team complete?
+    # By now, checkList should have how many unit to build more.
+    completeTeams = CheckBuilt(checkList)
+    ReleaseTeams(completeTeams, False)
+
+    # Check list has what to build.
+    return BuildFromCheckList(checkList)
 
 
 def UTIL_CountBuildings(stuff):
@@ -1067,11 +1288,11 @@ def ActivateAI(params):
     BUILD_ORDER = ChooseBuildOrder(FACTION) # and its attached opener too.
 
     if FACTION == "allies":
-        BuildTickFunc = AlliesBuildUnitTick
+        BUILD_TICK_FUNC = AlliesBuildUnitTick
     elif FACTION == "soviet":
-        BuildTickFunc = SovietBuildUnitTick
+        BUILD_TICK_FUNC = SovietBuildUnitTick
     elif FACTION == "mutants":
-        BuildTickFunc = MutantBuildUnitTick
+        BUILD_TICK_FUNC = MutantBuildUnitTick
 
 
 def Tick():
@@ -1085,7 +1306,7 @@ def Tick():
 
     # In once a second or so,
     if TICKS % 31 == 0:
-        BuildUnitTick(FACTION)
+        BUILD_TICK_FUNC(FACTION)
     elif TICKS % 37 == 0:
         UTIL_ReloadAircraft(AMMO_POOLED_AIRCRAFTS)
     elif TICKS % 127 == 0:
