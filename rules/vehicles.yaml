@@ -429,7 +429,7 @@ JEEP:
 	DeliversCash@GRINDABLE:
 		Payload: 250
 	Tooltip:
-		Name: Ranger
+		Name: Humvee
 	Health:
 		HP: 150
 	Armor:

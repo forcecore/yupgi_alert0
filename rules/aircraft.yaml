@@ -666,3 +666,12 @@ TRAN_AI:
 		BuildPaletteOrder: 10
 		Prerequisites: ~hpad, ~techlevel.medium, ~aibuild
 		Description: Fast Infantry Transport Helicopter.\n  Infantries can fire their weapons from inside.\n  Has point defense laser that can\n  shoot down missiles.
+
+U2.bomber:
+	Inherits: U2
+	RenderSprites:
+		Image: u2
+	Armament:
+		Weapon: TanyStrikeBomb
+	AmmoPool:
+		Ammo: 1

@@ -332,6 +332,7 @@ E7:
 	Demolition:
 		DetonationDelay: 45
 		Voice: Demolish
+		RequiresCondition: !deployed
 	Passenger:
 		PipType: Red
 		Voice: Move
@@ -352,6 +353,16 @@ E7:
 		LocalOffset: 700,0,500
 		FireDelay: 8
 		RequiresCondition: !deployed
+	Armament@AIRSTRIKE:
+		Weapon: AirstrikeLaserPointer
+		LocalOffset: 700,0,500
+		RequiresCondition: deployed && airstrike == 0
+		Name: laser
+	Armament@AIRSTRIKE2:
+		Weapon: AirstrikeSpawn
+		LocalOffset: 700,0,500
+		RequiresCondition: deployed && airstrike == 1
+		Name: laserspawn
 	Armament@GARRISONED:
 		Name: garrisoned
 		Weapon: Colt45
@@ -360,6 +371,7 @@ E7:
 		Weapon: ZSU-23
 		LocalOffset: 520,100,450, 520,-150,450
 	AttackFrontal:
+		Armaments: primary, secondary, laser, laserspawn
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 		StandSequences: stand
@@ -392,12 +404,45 @@ E7:
 	# dog proof
 	Targetable:
 		TargetTypes: Ground, Infantry, Ant, MCImmune
-	GrantConditionOnFire:
+	GrantConditionOnFire@gattling:
 		Condition: gattling
 		Armament: secondary
 		RequiredShotsPerStack: 6, 12
 		MaxStacking: 2
 		UnstackDelay: 40
+	GrantConditionOnFire@airstrike:
+		Condition: airstrike
+		Armament: laser
+		RequiredShotsPerStack: 50
+		MaxStacking: 1
+		UnstackDelay: 9
+		PopAll: True
+		# Time needed for airstrike:
+		# 50 shots * 5 reload time = 250 ticks = 10 seconds
+	AirstrikePower@parabombs:
+		OrderName: TanyaParabombs
+		Prerequisites: unabletouse
+		Icon: parabombs
+		ChargeTime: 9999
+		Description: Parabombs
+		LongDesc: A squad of Badgers drops parachuted\nbombs on your target.
+		SelectTargetSpeechNotification: SelectTarget
+		#CameraActor: camera
+		#CameraRemoveDelay: 150
+		UnitType: u2.bomber
+		QuantizedFacings: 8
+		DisplayBeacon: false
+		#BeaconPoster: pbmbicon
+		SquadSize: 1
+		#SquadOffset: 1792,1792,0
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+	AirstrikeOnFire:
+		Armament: laserspawn
+		OrderName: TanyaParabombs
+	AutoTarget:
+		RequiresCondition: !deployed
 
 MEDI:
 	Inherits: ^Soldier

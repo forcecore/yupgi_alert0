@@ -512,3 +512,43 @@ AuroraBomb:
 	Warhead@3Eff: CreateEffect
 		Explosions: mininuke
 		ImpactSounds: firebl3.aud
+
+AirstrikeLaserPointer:
+	# Giving armament name something not primary or secondary will
+	# prevent this from automatically (or manually forced) fired.
+	ReloadDelay: 5
+	Range: 15c0
+	ValidTargets: Ground, Water
+	Projectile: LaserZap
+		Width: 85
+		Duration: 5
+		ZOffset: 2047
+		Color: FF0000
+	Warhead@1Dam: TargetDamage
+		Damage: 0
+		ValidTargets: Ground, Water
+
+AirstrikeSpawn:
+	ReloadDelay: 25
+	Range: 15c0
+	ValidTargets: Ground, Water
+	Projectile: LaserZap
+		Width: 85
+		Duration: 5
+		ZOffset: 2047
+		Color: FF0000
+	Warhead@1Dam: TargetDamage
+		Damage: 0
+		ValidTargets: Ground, Water
+
+TanyStrikeBomb:
+	Inherits: AuroraBomb
+	Warhead@1Dam: SpreadDamage
+		Spread: 3c0
+		Damage: 1500 # CY!
+		Versus:
+			None: 100
+			Wood: 100
+			Light: 100
+			Heavy: 100
+			Concrete: 100
