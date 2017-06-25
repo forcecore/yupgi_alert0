@@ -352,16 +352,6 @@ TASKFORCES = {
 
 TEAMS = {
     # Allies Teams
-    "1_heli": {
-        "faction": "allies",
-        "tf": "1_heli",
-        "trigger": None
-    },
-    "1_hind": {
-        "faction": "allies",
-        "tf": "1_hind",
-        "trigger": None
-    },
     "1_e1": {
         "faction": "allies",
         "tf": "1_e1",
@@ -452,16 +442,6 @@ TEAMS = {
     "v2rl": {
         "faction": "soviet",
         "tf": "v2rl",
-        "trigger": None
-    },
-    "1_mig": {
-        "faction": "soviet",
-        "tf": "1_mig",
-        "trigger": None
-    },
-    "1_yak": {
-        "faction": "soviet",
-        "tf": "1_yak",
         "trigger": None
     },
     "1_zep": {
@@ -612,6 +592,14 @@ def AlliesBuildUnitTick(faction):
         if UTIL_Count("tran") < 4 and PLAYER.HasPrerequisites(["hpad", "tent"]):
             if Utils.RandomInteger(0, 4) == 0:
                 UTIL_BuildTeam("tran")
+        elif UTIL_Count("heli") < 4 * UTIL_Count("hpad") and \
+                PLAYER.HasPrerequisites(["hpad", "atek"]):
+            if Utils.RandomInteger(0, 2) == 0:
+                PLAYER.Build(['heli'], None)
+        elif UTIL_Count("hind") < 4 * UTIL_Count("hpad") and \
+                PLAYER.HasPrerequisites(["hpad"]):
+            if Utils.RandomInteger(0, 4) == 0:
+                PLAYER.Build(['hind'], None)
 
         enemy = UTIL_GetAnEnemyPlayer()
         defense_cnt = UTIL_CountUnits(enemy, STATIC_DEFENSES)
@@ -674,6 +662,14 @@ def SovietBuildUnitTick(faction):
         if UTIL_Count("nmig") == 0 and PLAYER.HasPrerequisites(["afld", "stek", "mslo"]):
             if Utils.RandomInteger(0, 2) == 0:
                 PLAYER.Build(['nmig'], None)
+        elif UTIL_Count("mig") < 4 * UTIL_Count("afld") and \
+                PLAYER.HasPrerequisites(["afld", "stek"]):
+            if Utils.RandomInteger(0, 2) == 0:
+                PLAYER.Build(['mig'], None)
+        elif UTIL_Count("yak") < 4 * UTIL_Count("afld") and \
+                PLAYER.HasPrerequisites(["afld"]):
+            if Utils.RandomInteger(0, 4) == 0:
+                PLAYER.Build(['yak'], None)
 
         if UTIL_Count("volkov") == 0 and PLAYER.HasPrerequisites(["barr", "stek"]):
             if Utils.RandomInteger(0, 2) == 0:
@@ -818,6 +814,7 @@ def UTIL_MoveTransportToPassengers(transport, passengers, afterLoadFunc, afterLo
             transport.CallFunc(lambda:
                     UTIL_LoadPassengers(transport, passengers,
                         afterLoadFunc, afterLoadParams))
+            break
 
 
 def UTIL_LoadPassengers(transport, passengers, afterLoadFunc, afterLoadParams):
@@ -853,17 +850,6 @@ def UTIL_BuildRandomTeam(keys):
     key = Utils.Random(avail)
     #key = 'humvee'
     # Media.DisplayMessage(key)
-
-    # Let's filter out too many aircrafts.
-    names = TASKFORCES[TEAMS[key]["tf"]]["units"]
-    for name in names:
-        if name == "mig" or name == "yak":
-            if UTIL_Count("mig") + UTIL_Count("yak") > 4 * UTIL_Count("afld"):
-                return False
-        if name == "heli" or name == "hind":
-            if UTIL_Count("mig") + UTIL_Count("yak") > 4 * UTIL_Count("hpad"):
-                return False
-
     return UTIL_BuildTeam(key)
 
 
@@ -1199,17 +1185,22 @@ def UTIL_GetAnEnemyPlayer():
     return Utils.Random(enemies)
 
 
+RTB_TAB = {}
 def UTIL_ReloadAircraft(ammo_pooled_aircrafts):
     for name in ammo_pooled_aircrafts:
         units = PLAYER.GetActorsByType(name)
         for unit in units:
-            if unit.AmmoCount() == 0 and not unit.HackyAIOccupied:
+            if unit.AmmoCount() == 0 and not unit.HackyAIOccupied and \
+                    RTB_TAB[unit.ActorID] != True:
                 # Don't let this unit be recruited
                 unit.HackyAIOccupied = True
+                unit.ReturnToBase()
+                RTB_TAB[unit.ActorID] = True
             elif unit.AmmoCount() == unit.MaximumAmmoCount() and \
                     unit.Health == unit.MaxHealth and unit.HackyAIOccupied:
                 # Mark as recruitable
                 unit.HackyAIOccupied = False
+                RTB_TAB[unit.ActorID] = False
 
 
 def UTIL_RepairUnits():

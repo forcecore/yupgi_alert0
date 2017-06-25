@@ -34,7 +34,7 @@ BO_SOVIET_BOS = {BO_SOVIET_NORMAL, BO_SOVIET_ECO, BO_SOVIET_FAST_WEAP, BO_SOVIET
 BO_MUTANT_NORMAL = { name='mutant_normal', bo={'qant', 'anthill', 'anthill', 'qant', 'tibtree', 'vein', 'qant', 'tibtree', 'anthill', 'evo', 'evo'}, }
 BO_MUTANT_BOS = {BO_MUTANT_NORMAL}
 TASKFORCES = { ['1_heli']={ units={'heli'}, }, ['1_hind']={ units={'hind'}, }, ['1_e1']={ units={'e1'}, }, ['1_e3']={ units={'e3'}, }, ['1_jeep']={ units={'jeep'}, }, ['1_1tnk']={ units={'1tnk'}, }, ['1_2tnk']={ units={'2tnk'}, }, arty={ units={'arty'}, }, humvee={ units={'jeep', 'e1', 'e3', 'e3'}, }, tran={ units={'tran', 'e1', 'e1', 'e3', 'e3', 'e3'}, }, ['1_e2']={ units={'e2'}, }, ['1_deso']={ units={'deso'}, }, ['1_e4']={ units={'e4'}, }, ['1_shok']={ units={'shok'}, }, ['1_ftrk']={ units={'ftrk'}, }, ['1_qtnk']={ units={'qtnk_ai'}, }, ['1_3tnk']={ units={'3tnk'}, }, ['1_4tnk']={ units={'4tnk'}, }, ttnk={ units={'ttnk'}, }, v2rl={ units={'v2rl'}, }, ['1_mig']={ units={'mig'}, }, ['1_yak']={ units={'yak'}, }, ['1_zep']={ units={'zep'}, }, ['1_want']={ units={'want'}, }, ['1_fant']={ units={'fant'}, }, ['1_inft']={ units={'inft'}, }, ['1_doggie']={ units={'doggie'}, }, }
-TEAMS = { ['1_heli']={ faction='allies', tf='1_heli', trigger=nil, }, ['1_hind']={ faction='allies', tf='1_hind', trigger=nil, }, ['1_e1']={ faction='allies', tf='1_e1', trigger=nil, }, ['1_e3']={ faction='allies', tf='1_e3', trigger=nil, }, ['1_jeep']={ faction='allies', tf='1_jeep', trigger=nil, }, ['1_2tnk']={ faction='allies', tf='1_2tnk', trigger=nil, }, arty={ faction='allies', tf='arty', trigger=nil, }, humvee={ faction='allies', tf='humvee', trigger=LoadHumvee, }, tran={ faction='allies', tf='tran', trigger=LoadTran, }, ['1_e2']={ faction='soviet', tf='1_e2', trigger=nil, }, ['1_deso']={ faction='soviet', tf='1_deso', trigger=nil, }, ['1_e4']={ faction='soviet', tf='1_e4', trigger=nil, }, ['1_shok']={ faction='soviet', tf='1_shok', trigger=nil, }, ['1_ftrk']={ faction='soviet', tf='1_ftrk', trigger=nil, }, ['1_qtnk']={ faction='soviet', tf='1_qtnk', trigger=nil, }, ['1_3tnk']={ faction='soviet', tf='1_3tnk', trigger=nil, }, ['1_4tnk']={ faction='soviet', tf='1_4tnk', trigger=nil, }, ttnk={ faction='soviet', tf='ttnk', trigger=nil, }, v2rl={ faction='soviet', tf='v2rl', trigger=nil, }, ['1_mig']={ faction='soviet', tf='1_mig', trigger=nil, }, ['1_yak']={ faction='soviet', tf='1_yak', trigger=nil, }, ['1_zep']={ faction='soviet', tf='1_zep', trigger=nil, }, ['1_want']={ faction='mutants', tf='1_want', trigger=nil, }, ['1_fant']={ faction='mutants', tf='1_fant', trigger=nil, }, ['1_inft']={ faction='mutants', tf='1_inft', trigger=nil, }, ['1_doggie']={ faction='mutants', tf='1_doggie', trigger=nil, }, }
+TEAMS = { ['1_e1']={ faction='allies', tf='1_e1', trigger=nil, }, ['1_e3']={ faction='allies', tf='1_e3', trigger=nil, }, ['1_jeep']={ faction='allies', tf='1_jeep', trigger=nil, }, ['1_2tnk']={ faction='allies', tf='1_2tnk', trigger=nil, }, arty={ faction='allies', tf='arty', trigger=nil, }, humvee={ faction='allies', tf='humvee', trigger=LoadHumvee, }, tran={ faction='allies', tf='tran', trigger=LoadTran, }, ['1_e2']={ faction='soviet', tf='1_e2', trigger=nil, }, ['1_deso']={ faction='soviet', tf='1_deso', trigger=nil, }, ['1_e4']={ faction='soviet', tf='1_e4', trigger=nil, }, ['1_shok']={ faction='soviet', tf='1_shok', trigger=nil, }, ['1_ftrk']={ faction='soviet', tf='1_ftrk', trigger=nil, }, ['1_qtnk']={ faction='soviet', tf='1_qtnk', trigger=nil, }, ['1_3tnk']={ faction='soviet', tf='1_3tnk', trigger=nil, }, ['1_4tnk']={ faction='soviet', tf='1_4tnk', trigger=nil, }, ttnk={ faction='soviet', tf='ttnk', trigger=nil, }, v2rl={ faction='soviet', tf='v2rl', trigger=nil, }, ['1_zep']={ faction='soviet', tf='1_zep', trigger=nil, }, ['1_want']={ faction='mutants', tf='1_want', trigger=nil, }, ['1_fant']={ faction='mutants', tf='1_fant', trigger=nil, }, ['1_inft']={ faction='mutants', tf='1_inft', trigger=nil, }, ['1_doggie']={ faction='mutants', tf='1_doggie', trigger=nil, }, }
 ALLIES_TEAMS_KEYS = {}
 for key, team in pairs(TEAMS) do
   if team['faction']=='allies' then
@@ -154,6 +154,14 @@ AlliesBuildUnitTick = function(faction)
       if Utils.RandomInteger(0, 4)==0 then
         UTIL_BuildTeam('tran')
       end
+    elseif UTIL_Count('heli')<4*UTIL_Count('hpad') and PLAYER.HasPrerequisites({'hpad', 'atek'}) then
+      if Utils.RandomInteger(0, 2)==0 then
+        PLAYER.Build({'heli'}, nil)
+      end
+    elseif UTIL_Count('hind')<4*UTIL_Count('hpad') and PLAYER.HasPrerequisites({'hpad'}) then
+      if Utils.RandomInteger(0, 4)==0 then
+        PLAYER.Build({'hind'}, nil)
+      end
     end
     local enemy = UTIL_GetAnEnemyPlayer()
     local defense_cnt = UTIL_CountUnits(enemy, STATIC_DEFENSES)
@@ -222,6 +230,14 @@ SovietBuildUnitTick = function(faction)
     if UTIL_Count('nmig')==0 and PLAYER.HasPrerequisites({'afld', 'stek', 'mslo'}) then
       if Utils.RandomInteger(0, 2)==0 then
         PLAYER.Build({'nmig'}, nil)
+      end
+    elseif UTIL_Count('mig')<4*UTIL_Count('afld') and PLAYER.HasPrerequisites({'afld', 'stek'}) then
+      if Utils.RandomInteger(0, 2)==0 then
+        PLAYER.Build({'mig'}, nil)
+      end
+    elseif UTIL_Count('yak')<4*UTIL_Count('afld') and PLAYER.HasPrerequisites({'afld'}) then
+      if Utils.RandomInteger(0, 4)==0 then
+        PLAYER.Build({'yak'}, nil)
       end
     end
     if UTIL_Count('volkov')==0 and PLAYER.HasPrerequisites({'barr', 'stek'}) then
@@ -358,6 +374,7 @@ UTIL_MoveTransportToPassengers = function(transport, passengers, afterLoadFunc, 
         transport.HeliLand(transport, true)
       end
       transport.CallFunc(function() return UTIL_LoadPassengers(transport, passengers, afterLoadFunc, afterLoadParams) end)
+      break
     end
   end
 end
@@ -393,19 +410,6 @@ UTIL_BuildRandomTeam = function(keys)
     return false
   end
   local key = Utils.Random(avail)
-  local names = TASKFORCES[TEAMS[key]['tf']]['units']
-  for _, name in ipairs(names) do
-    if name=='mig' or name=='yak' then
-      if UTIL_Count('mig')+UTIL_Count('yak')>4*UTIL_Count('afld') then
-        return false
-      end
-    end
-    if name=='heli' or name=='hind' then
-      if UTIL_Count('mig')+UTIL_Count('yak')>4*UTIL_Count('hpad') then
-        return false
-      end
-    end
-  end
   return UTIL_BuildTeam(key)
 end
 TEAMS_IN_PRODUCTION = { }
@@ -746,15 +750,19 @@ UTIL_GetAnEnemyPlayer = function()
   end
   return Utils.Random(enemies)
 end
+RTB_TAB = { }
 
 UTIL_ReloadAircraft = function(ammo_pooled_aircrafts)
   for _, name in ipairs(ammo_pooled_aircrafts) do
     local units = PLAYER.GetActorsByType(name)
     for _, unit in ipairs(units) do
-      if unit.AmmoCount()==0 and  not unit.HackyAIOccupied then
+      if unit.AmmoCount()==0 and  not unit.HackyAIOccupied and RTB_TAB[unit.ActorID]~=true then
         unit.HackyAIOccupied = true
+        unit.ReturnToBase()
+        RTB_TAB[unit.ActorID] = true
       elseif unit.AmmoCount()==unit.MaximumAmmoCount() and unit.Health==unit.MaxHealth and unit.HackyAIOccupied then
         unit.HackyAIOccupied = false
+        RTB_TAB[unit.ActorID] = false
       end
     end
   end
