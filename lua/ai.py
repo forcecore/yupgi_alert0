@@ -65,8 +65,6 @@ HELI_TRANSPORT = {
     "tran": True
 }
 
-AMMO_POOLED_AIRCRAFTS = ["nmig", "mig", "yak", "hind", "heli"]
-
 # Lua supports list or dict so...
 FIXABLE = {
     "2tnk": True,
@@ -342,9 +340,6 @@ TASKFORCES = {
     "1_fant": {
         "units": ["fant"],
     },
-    "1_inft": {
-        "units": ["inft"],
-    },
     "1_doggie": {
         "units": ["doggie"],
     }
@@ -459,11 +454,6 @@ TEAMS = {
     "1_fant": {
         "faction": "mutants",
         "tf": "1_fant",
-        "trigger": None
-    },
-    "1_inft": {
-        "faction": "mutants",
-        "tf": "1_inft",
         "trigger": None
     },
     "1_doggie": {
@@ -726,6 +716,8 @@ def MutantBuildUnitTick(faction):
 
         # Evolve stuff
         if PLAYER.HasPrerequisites(["evo"]):
+            if UTIL_Count("inft") < 6:
+                PLAYER.Build(['inft'], None)
             if UTIL_Count("want") > 10:
                 Evolve("want", 0)
             if UTIL_Count("fant") > 10:
@@ -849,7 +841,7 @@ def UTIL_BuildRandomTeam(keys):
 
     key = Utils.Random(avail)
     #key = 'humvee'
-    # Media.DisplayMessage(key)
+    #Media.DisplayMessage(key)
     return UTIL_BuildTeam(key)
 
 
@@ -1039,6 +1031,10 @@ def UTIL_BuildTeam(teamName):
     Generally I'm assuming teams aren't BIG. < 20 members per team.
     Otherwise these will run slowly :)
     '''
+
+    if not HasAllPrerequisites(TASKFORCES[TEAMS[teamName]["tf"]]["units"]):
+        return False
+
     TEAMS_IN_PRODUCTION = RemoveUnableToBuild(TEAMS_IN_PRODUCTION)
     TEAMS_IN_PRODUCTION = RemoveNil(TEAMS_IN_PRODUCTION)
 
@@ -1185,24 +1181,6 @@ def UTIL_GetAnEnemyPlayer():
     return Utils.Random(enemies)
 
 
-RTB_TAB = {}
-def UTIL_ReloadAircraft(ammo_pooled_aircrafts):
-    for name in ammo_pooled_aircrafts:
-        units = PLAYER.GetActorsByType(name)
-        for unit in units:
-            if unit.AmmoCount() == 0 and not unit.HackyAIOccupied and \
-                    RTB_TAB[unit.ActorID] != True:
-                # Don't let this unit be recruited
-                unit.HackyAIOccupied = True
-                unit.ReturnToBase()
-                RTB_TAB[unit.ActorID] = True
-            elif unit.AmmoCount() == unit.MaximumAmmoCount() and \
-                    unit.Health == unit.MaxHealth and unit.HackyAIOccupied:
-                # Mark as recruitable
-                unit.HackyAIOccupied = False
-                RTB_TAB[unit.ActorID] = False
-
-
 def UTIL_RepairUnits():
     if not PLAYER.HasPrerequisites(["fix"]):
         return
@@ -1211,11 +1189,11 @@ def UTIL_RepairUnits():
 
     actors = PLAYER.GetActors()
     for a in actors:
-        if a.Type in FIXABLE and a.Health < a.MaxHealth / 10 and not a.HackyAIOccupied:
+        if FIXABLE[a.Type] == True and a.Health < a.MaxHealth / 10 and not a.HackyAIOccupied:
             a.HackyAIOccupied = True
             a.Stop() # Cancel whatever it was doing
             a.RepairAt(fix)
-        elif a.Type in FIXABLE and a.Health == a.MaxHealth and a.HackyAIOccupied:
+        elif FIXABLE[a.Type] == True and a.Health >= 0.8 * a.MaxHealth and a.HackyAIOccupied:
             a.HackyAIOccupied = False
 
 
@@ -1298,7 +1276,5 @@ def Tick():
     # In once a second or so,
     if TICKS % 31 == 0:
         BUILD_TICK_FUNC(FACTION)
-    elif TICKS % 37 == 0:
-        UTIL_ReloadAircraft(AMMO_POOLED_AIRCRAFTS)
     elif TICKS % 127 == 0:
         UTIL_RepairUnits()
