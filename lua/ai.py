@@ -65,6 +65,8 @@ HELI_TRANSPORT = {
     "tran": True
 }
 
+AMMO_POOLED_AIRCRAFTS = ["nmig", "mig", "yak", "hind", "heli"]
+
 # Lua supports list or dict so...
 FIXABLE = {
     "2tnk": True,
@@ -334,14 +336,14 @@ TASKFORCES = {
     },
 
     # Mutant TFs
-    "1_want": {
-        "units": ["want"],
+    "5_want": {
+        "units": ["want", "want", "want", "want", "want"],
     },
-    "1_fant": {
-        "units": ["fant"],
+    "4_fant": {
+        "units": ["fant", "fant", "fant", "fant"],
     },
-    "1_doggie": {
-        "units": ["doggie"],
+    "2_doggie": {
+        "units": ["doggie", "doggie"],
     }
 }
 
@@ -446,19 +448,19 @@ TEAMS = {
     },
 
     # Ant teams
-    "1_want": {
+    "5_want": {
         "faction": "mutants",
-        "tf": "1_want",
+        "tf": "5_want",
         "trigger": None
     },
-    "1_fant": {
+    "2_fant": {
         "faction": "mutants",
-        "tf": "1_fant",
+        "tf": "4_fant",
         "trigger": None
     },
-    "1_doggie": {
+    "2_doggie": {
         "faction": "mutants",
-        "tf": "1_doggie",
+        "tf": "2_doggie",
         "trigger": None
     }
 }
@@ -1181,6 +1183,18 @@ def UTIL_GetAnEnemyPlayer():
     return Utils.Random(enemies)
 
 
+def UTIL_ReloadAircraft(ammo_pooled_aircrafts):
+    for name in ammo_pooled_aircrafts:
+        units = PLAYER.GetActorsByType(name)
+        for unit in units:
+            if unit.AmmoCount() == 0 and not unit.HackyAIOccupied:
+                # Don't let this unit be recruited
+                unit.HackyAIOccupied = True
+            elif unit.AmmoCount() == unit.MaximumAmmoCount():
+                # Mark as recruitable
+                unit.HackyAIOccupied = False
+
+
 def UTIL_RepairUnits():
     if not PLAYER.HasPrerequisites(["fix"]):
         return
@@ -1276,5 +1290,7 @@ def Tick():
     # In once a second or so,
     if TICKS % 31 == 0:
         BUILD_TICK_FUNC(FACTION)
+    elif TICKS % 37 == 0:
+        UTIL_ReloadAircraft(AMMO_POOLED_AIRCRAFTS)
     elif TICKS % 127 == 0:
         UTIL_RepairUnits()
