@@ -267,14 +267,15 @@ BO_MUTANT_BOS = [ BO_MUTANT_NORMAL ]
 ### Teams and actions
 ###
 
-def ACT_AttackPower(actors):
+def ACT_AttackTypes(actors, types):
     # Find a powerplant.
     enemy = UTIL_GetAnEnemyPlayer()
-    targets = enemy.GetActorsByType('apwr')
-    if len(targets) == 0:
-        targets = enemy.GetActorsByType('powr')
-    if len(targets) == 0:
-        targets = enemy.GetActorsByType('anthill')
+    targets = None
+    for ty in types:
+        tmp = enemy.GetActorsByType(ty)
+        if len(tmp) > 0:
+            targets = tmp
+            break
 
     UTIL_SetOccupied(actors, True)
 
@@ -282,11 +283,14 @@ def ACT_AttackPower(actors):
         for a in actors:
             a.Hunt()
     else:
-        target = Utils.Random(targets)
         for a in actors:
-            a.Attack(target)
+            for t in targets:
+                a.Attack(t)
             a.Hunt()
 
+
+def ACT_AttackPower(actors):
+    ACT_AttackTypes(actors, ['apwr', 'powr', 'anthill'])
 
 
 TEAMS = {
