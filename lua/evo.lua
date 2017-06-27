@@ -20,7 +20,7 @@ COUNT_BUILDING_AS_MCV = { gafact='gamcv', nafact='namcv', qnest='qant', }
 HELI_TRANSPORT = { tran=true, }
 AMMO_POOLED_AIRCRAFTS = {'nmig', 'mig', 'yak', 'hind', 'heli'}
 FIXABLE = { ['2tnk']=true, ['3tnk']=true, ['4tnk']=true, }
-STATIC_DEFENSES = {'pbox', 'hbox', 'gun', 'ftur', 'tsla'}
+STATIC_DEFENSES = {'pbox', 'hbox', 'gun', 'ftur', 'tsla', 'agun', 'sam', 'minihive'}
 BO_ALLIES_NORMAL = { name='allies_normal', bo={ANYPOWER, 'tent', 'proc', 'proc', ANYPOWER, 'gaweap', 'fix', 'dome', ANYPOWER, 'proc', 'hpad', 'hpad', 'atek', ANYPOWER}, }
 BO_ALLIES_FAST_WEAP = { name='allies_weap', bo={ANYPOWER, 'tent', 'proc', 'gaweap', ANYPOWER, 'proc', 'fix', 'proc', 'dome', ANYPOWER, 'atek', ANYPOWER}, }
 BO_ALLIES_FAST_AIR = { name='allies_air', bo={ANYPOWER, 'tent', 'proc', 'proc', 'dome', 'hpad', ANYPOWER, 'proc', 'gaweap', 'atek', ANYPOWER, 'hpad', 'hpad', 'hpad', 'proc', 'fix'}, }
@@ -34,27 +34,56 @@ BO_SOVIET_BOS = {BO_SOVIET_NORMAL, BO_SOVIET_ECO, BO_SOVIET_FAST_WEAP, BO_SOVIET
 BO_MUTANT_NORMAL = { name='mutant_normal', bo={'qant', 'anthill', 'anthill', 'qant', 'tibtree', 'vein', 'qant', 'tibtree', 'anthill', 'evo', 'evo'}, }
 BO_MUTANT_BOS = {BO_MUTANT_NORMAL}
 
-ACT_AttackPower = function(actors)
+ACT_AttackTypes = function(actors, types)
   local enemy = UTIL_GetAnEnemyPlayer()
-  local targets = enemy.GetActorsByType('apwr')
-  if #targets==0 then
-    targets = enemy.GetActorsByType('powr')
-  end
-  if #targets==0 then
-    targets = enemy.GetActorsByType('anthill')
+  local targets = {}
+  for _, ty in ipairs(types) do
+    local tmp = enemy.GetActorsByType(ty)
+    if #tmp>0 then
+      for _, t in ipairs(tmp) do
+        table.insert(targets, t)
+      end
+    end
   end
   UTIL_SetOccupied(actors, true)
-  if #targets==0 then
-    for _, a in ipairs(actors) do
-      a.Hunt()
+  Utils.Shuffle(targets)
+  for _, a in ipairs(actors) do
+    for _, t in ipairs(targets) do
+      a.Attack(t)
+      break
     end
-  else
-    local target = Utils.Random(targets)
-    for _, a in ipairs(actors) do
-      a.Attack(target)
-      a.Hunt()
-    end
+    a.Hunt()
   end
+end
+
+ACT_AttackPower = function(actors)
+  ACT_AttackTypes(actors, {'apwr', 'powr', 'anthill'})
+end
+
+ACT_AttackRef = function(actors)
+  ACT_AttackTypes(actors, {'proc', 'anthill'})
+end
+
+ACT_AttackFactory = function(actors)
+  ACT_AttackTypes(actors, {'gaweap', 'naweap', 'evo', 'qnest'})
+end
+
+ACT_AttackBarracks = function(actors)
+  ACT_AttackTypes(actors, {'tent', 'barr', 'qnest'})
+end
+
+ACT_AttackCY = function(actors)
+  ACT_AttackTypes(actors, {'gafact', 'nafact', 'qnest'})
+end
+
+ACT_Hunt = function(actors)
+  for _, a in ipairs(actors) do
+    a.Hunt()
+  end
+end
+
+ACT_AttackStaticDefenses = function(actors)
+  ACT_AttackTypes(actors, STATIC_DEFENSES)
 end
 TEAMS = { ['1_e1']={ faction='allies', tf='1_e1', trigger=nil, }, ['1_e3']={ faction='allies', tf='1_e3', trigger=nil, }, ['1_jeep']={ faction='allies', tf='1_jeep', trigger=nil, }, ['1_2tnk']={ faction='allies', tf='1_2tnk', trigger=nil, }, arty={ faction='allies', tf='arty', trigger=nil, }, humvee={ faction='allies', units={'jeep', 'e1', 'e3'}, cnts={2, 2, 4}, trigger=LoadHumvee, }, tran={ faction='allies', units={'tran', 'e1', 'e3'}, cnts={1, 2, 3}, trigger=LoadTran, }, ['1_e2']={ faction='soviet', tf='1_e2', trigger=nil, }, ['1_deso']={ faction='soviet', tf='1_deso', trigger=nil, }, ['1_e4']={ faction='soviet', tf='1_e4', trigger=nil, }, ['1_shok']={ faction='soviet', tf='1_shok', trigger=nil, }, ['1_ftrk']={ faction='soviet', tf='1_ftrk', trigger=nil, }, ['1_qtnk']={ faction='soviet', tf='1_qtnk', trigger=nil, }, ['1_3tnk']={ faction='soviet', tf='1_3tnk', trigger=nil, }, ['1_4tnk']={ faction='soviet', tf='1_4tnk', trigger=nil, }, ttnk={ faction='soviet', tf='ttnk', trigger=nil, }, v2rl={ faction='soviet', tf='v2rl', trigger=nil, }, ['1_zep']={ faction='soviet', tf='1_zep', trigger=nil, }, ['5_want']={ faction='mutants', tf='5_want', trigger=nil, }, ['2_fant']={ faction='mutants', tf='4_fant', trigger=nil, }, ['2_doggie']={ faction='mutants', tf='2_doggie', trigger=nil, }, }
 ALLIES_TEAMS_KEYS = {}
@@ -588,10 +617,19 @@ BuildFromCheckList = function(checkList)
   -- 
   --     Go through the check list. Build anything it first sees.
   --     
-  for _, population in pairs(checkList) do
+  local teamName = nil
+
+  JoinTeam = function(actors)
+    UTIL_SetOccupied(actors, true)
+    for _, a in ipairs(actors) do
+      table.insert(PRODUCED[teamName], a)
+    end
+  end
+  for tn, population in pairs(checkList) do
     for name, cnt in pairs(population) do
       if cnt>0 and  not PLAYER.IsProducing(name) then
-        return PLAYER.Build({name}, nil)
+        teamName = tn
+        return PLAYER.Build({name}, JoinTeam)
       end
     end
   end

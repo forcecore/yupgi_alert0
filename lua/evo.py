@@ -76,7 +76,7 @@ FIXABLE = {
 }
 
 # Ground static defense
-STATIC_DEFENSES = ["pbox", "hbox", "gun", "ftur", "tsla"]
+STATIC_DEFENSES = ["pbox", "hbox", "gun", "ftur", "tsla", "agun", "sam", "minihive"]
 
 BO_ALLIES_NORMAL = {
     "name": "allies_normal",
@@ -270,27 +270,45 @@ BO_MUTANT_BOS = [ BO_MUTANT_NORMAL ]
 def ACT_AttackTypes(actors, types):
     # Find a powerplant.
     enemy = UTIL_GetAnEnemyPlayer()
-    targets = None
+    targets = []
     for ty in types:
         tmp = enemy.GetActorsByType(ty)
         if len(tmp) > 0:
-            targets = tmp
-            break
+            for t in tmp:
+                targets.append(t)
 
     UTIL_SetOccupied(actors, True)
+    Utils.Shuffle(targets)
 
-    if len(targets) == 0:
-        for a in actors:
-            a.Hunt()
-    else:
-        for a in actors:
-            for t in targets:
-                a.Attack(t)
-            a.Hunt()
-
+    for a in actors:
+        for t in targets:
+            a.Attack(t)
+            # Just attack one target. Others won't be so close mostly.
+            break
+        a.Hunt()
 
 def ACT_AttackPower(actors):
     ACT_AttackTypes(actors, ['apwr', 'powr', 'anthill'])
+
+def ACT_AttackRef(actors):
+    ACT_AttackTypes(actors, ['proc', 'anthill'])
+
+def ACT_AttackFactory(actors):
+    ACT_AttackTypes(actors, ['gaweap', 'naweap', 'evo', 'qnest'])
+
+def ACT_AttackBarracks(actors):
+    ACT_AttackTypes(actors, ['tent', 'barr', 'qnest'])
+
+def ACT_AttackCY(actors):
+    ACT_AttackTypes(actors, ['gafact', 'nafact', 'qnest'])
+
+def ACT_Hunt(actors):
+    UTIL_SetOccupied(actors, True)
+    for a in actors:
+        a.Hunt()
+
+def ACT_AttackStaticDefenses(actors):
+    ACT_AttackTypes(actors, STATIC_DEFENSES)
 
 
 TEAMS = {
@@ -941,10 +959,17 @@ def BuildFromCheckList(checkList):
     '''
     Go through the check list. Build anything it first sees.
     '''
-    for _, population in checkList.items():
+    teamName = None
+    def JoinTeam(actors):
+        UTIL_SetOccupied(actors, True)
+        for a in actors:
+            PRODUCED[teamName].append(a)
+
+    for tn, population in checkList.items():
         for name, cnt in population.items():
             if cnt > 0 and not PLAYER.IsProducing(name):
-                return PLAYER.Build([name], None)
+                teamName = tn
+                return PLAYER.Build([name], JoinTeam)
     # All done so not an assertion error.
     #Media.DisplayMessage("BuildFromCheckList: Assertion failed haha")
     #return False
