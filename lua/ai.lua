@@ -266,6 +266,9 @@ Evolve = function(name, evoIndex)
     if a.IsIdle then
       a.HackyAIOccupied = true
       a.Move(evo.Location, 2)
+      if evo.PassengerCount==5 then
+        evo.UnloadPassengers()
+      end
       a.CallFunc(function() return UTIL_LoadPassengers(evo, {a}, nil, nil) end)
       return 
     end

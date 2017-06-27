@@ -693,6 +693,9 @@ def Evolve(name, evoIndex):
         if a.IsIdle:
             a.HackyAIOccupied = True
             a.Move(evo.Location, 2)
+            # When full, tell them to get out.
+            if evo.PassengerCount == 5:
+                evo.UnloadPassengers()
             a.CallFunc(lambda: UTIL_LoadPassengers(evo, [a], None, None))
             return
 
