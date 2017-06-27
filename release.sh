@@ -32,6 +32,9 @@ cp OpenRA.Mods.yupgi_alert.dll $PREFIX/oramod
 cp ../common/OpenRA.Mods.Common.dll $PREFIX/oramod/OpenRA.Mods.Uncommon.dll
 cp LICENSE README.md ART_CREDITS.txt $PREFIX
 cp ../../OpenRA.Game.exe $PREFIX/OpenRA.yupgi_alert.exe
+cp -r ../../lua $PREFIX/lua
+rm $PREFIX/lua/nojail.lua
+cp -r ../../lua.bak $PREFIX/lua.bak
 cp ../../OpenRA.Mods.yupgi_alert/{LICENSE.AS,AUTHORS.AS} $PREFIX
 
 # patch mod.yaml
