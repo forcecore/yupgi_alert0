@@ -466,7 +466,7 @@ Player:
 				CheckRadius: 7c0
 	HackyAI@UnleashedAI:
 		Name: Unleashed AI
-		LuaScript: ai.lua
+		LuaScript: evo.lua
 		EnableLuaUnitProduction: true
 		MinimumExcessPower: 100
 		BuildingCommonNames:
