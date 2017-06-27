@@ -288,7 +288,7 @@ TASKFORCES = {
         "units": ["arty"],
     },
     "humvee": {
-        "units": ["jeep", "e1", "e3", "e3"],
+        "units": ["jeep", "jeep", "e1", "e1", "e3", "e3", "e3", "e3"],
     },
     "tran": {
         "units": ["tran", "e1", "e1", "e3", "e3", "e3"],
@@ -752,15 +752,15 @@ def UTIL_CanQueue(tf):
 def UTIL_LoadOnto(transportName, actors, afterLoadFunc, afterLoadParams):
     UTIL_SetOccupied(actors, True)
 
-    tran = None
+    tran = []
     load = []
     for a in actors:
         if a.Type == transportName:
-            tran = a
+            tran.append(a)
         else:
             load.append(a)
 
-    UTIL_MoveTransportToPassengers(tran, load, afterLoadFunc, afterLoadParams)
+    UTIL_LoadTransports(tran, load, afterLoadFunc, afterLoadParams)
 
 
 def UTIL_SetOccupied(actors, isOccupied):
@@ -794,6 +794,21 @@ def UTIL_WaitLoad(transport, passengers, afterLoadFunc, afterLoadParams):
             # If you use something else, game hangs haha
             UTIL_WaitLoad(transport, passengers, afterLoadFunc, afterLoadParams)
         )
+
+
+def UTIL_LoadTransports(transports, passengers, afterLoadFunc, afterLoadParams):
+    passengerss = []
+
+    for i, p in enumerate(passengers):
+        index = i % len(transports) + 1 # +1 for lua convention.
+        if passengerss[index] == None:
+            passengerss[index] = [p]
+        else:
+            passengerss[index].append(p)
+
+    for i, ps in enumerate(passengerss):
+        UTIL_MoveTransportToPassengers(transports[i], passengerss[i],
+                afterLoadFunc, afterLoadParams)
 
 
 def UTIL_MoveTransportToPassengers(transport, passengers, afterLoadFunc, afterLoadParams):
