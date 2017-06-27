@@ -8,7 +8,7 @@ BUILD_TICK_FUNC = nil
 BELONGS_TO_A_TEAM = { }
 
 LoadHumvee = function(actors)
-  UTIL_LoadOnto('jeep', actors, nil, nil)
+  UTIL_LoadOnto('jeep', actors, ACT_AttackPower, actors)
 end
 
 LoadTran = function(actors)
@@ -33,8 +33,30 @@ BO_SOVIET_ECO = { name='soviet_eco', bo={ANYPOWER, 'kenn', 'barr', 'proc', 'proc
 BO_SOVIET_BOS = {BO_SOVIET_NORMAL, BO_SOVIET_ECO, BO_SOVIET_FAST_WEAP, BO_SOVIET_FAST_AIR}
 BO_MUTANT_NORMAL = { name='mutant_normal', bo={'qant', 'anthill', 'anthill', 'qant', 'tibtree', 'vein', 'qant', 'tibtree', 'anthill', 'evo', 'evo'}, }
 BO_MUTANT_BOS = {BO_MUTANT_NORMAL}
-TASKFORCES = { ['1_heli']={ units={'heli'}, }, ['1_hind']={ units={'hind'}, }, ['1_e1']={ units={'e1'}, }, ['1_e3']={ units={'e3'}, }, ['1_jeep']={ units={'jeep'}, }, ['1_1tnk']={ units={'1tnk'}, }, ['1_2tnk']={ units={'2tnk'}, }, arty={ units={'arty'}, }, humvee={ units={'jeep', 'jeep', 'e1', 'e1', 'e3', 'e3', 'e3', 'e3'}, }, tran={ units={'tran', 'e1', 'e1', 'e3', 'e3', 'e3'}, }, ['1_e2']={ units={'e2'}, }, ['1_deso']={ units={'deso'}, }, ['1_e4']={ units={'e4'}, }, ['1_shok']={ units={'shok'}, }, ['1_ftrk']={ units={'ftrk'}, }, ['1_qtnk']={ units={'qtnk_ai'}, }, ['1_3tnk']={ units={'3tnk'}, }, ['1_4tnk']={ units={'4tnk'}, }, ttnk={ units={'ttnk'}, }, v2rl={ units={'v2rl'}, }, ['1_mig']={ units={'mig'}, }, ['1_yak']={ units={'yak'}, }, ['1_zep']={ units={'zep'}, }, ['5_want']={ units={'want', 'want', 'want', 'want', 'want'}, }, ['4_fant']={ units={'fant', 'fant', 'fant', 'fant'}, }, ['2_doggie']={ units={'doggie', 'doggie'}, }, }
-TEAMS = { ['1_e1']={ faction='allies', tf='1_e1', trigger=nil, }, ['1_e3']={ faction='allies', tf='1_e3', trigger=nil, }, ['1_jeep']={ faction='allies', tf='1_jeep', trigger=nil, }, ['1_2tnk']={ faction='allies', tf='1_2tnk', trigger=nil, }, arty={ faction='allies', tf='arty', trigger=nil, }, humvee={ faction='allies', tf='humvee', trigger=LoadHumvee, }, tran={ faction='allies', tf='tran', trigger=LoadTran, }, ['1_e2']={ faction='soviet', tf='1_e2', trigger=nil, }, ['1_deso']={ faction='soviet', tf='1_deso', trigger=nil, }, ['1_e4']={ faction='soviet', tf='1_e4', trigger=nil, }, ['1_shok']={ faction='soviet', tf='1_shok', trigger=nil, }, ['1_ftrk']={ faction='soviet', tf='1_ftrk', trigger=nil, }, ['1_qtnk']={ faction='soviet', tf='1_qtnk', trigger=nil, }, ['1_3tnk']={ faction='soviet', tf='1_3tnk', trigger=nil, }, ['1_4tnk']={ faction='soviet', tf='1_4tnk', trigger=nil, }, ttnk={ faction='soviet', tf='ttnk', trigger=nil, }, v2rl={ faction='soviet', tf='v2rl', trigger=nil, }, ['1_zep']={ faction='soviet', tf='1_zep', trigger=nil, }, ['5_want']={ faction='mutants', tf='5_want', trigger=nil, }, ['2_fant']={ faction='mutants', tf='4_fant', trigger=nil, }, ['2_doggie']={ faction='mutants', tf='2_doggie', trigger=nil, }, }
+
+ACT_AttackPower = function(actors)
+  local enemy = UTIL_GetAnEnemyPlayer()
+  local targets = enemy.GetActorsByType('apwr')
+  if #targets==0 then
+    targets = enemy.GetActorsByType('powr')
+  end
+  if #targets==0 then
+    targets = enemy.GetActorsByType('anthill')
+  end
+  UTIL_SetOccupied(actors, true)
+  if #targets==0 then
+    for _, a in ipairs(actors) do
+      a.Hunt()
+    end
+  else
+    local target = Utils.Random(targets)
+    for _, a in ipairs(actors) do
+      a.Attack(target)
+      a.Hunt()
+    end
+  end
+end
+TEAMS = { ['1_e1']={ faction='allies', tf='1_e1', trigger=nil, }, ['1_e3']={ faction='allies', tf='1_e3', trigger=nil, }, ['1_jeep']={ faction='allies', tf='1_jeep', trigger=nil, }, ['1_2tnk']={ faction='allies', tf='1_2tnk', trigger=nil, }, arty={ faction='allies', tf='arty', trigger=nil, }, humvee={ faction='allies', units={'jeep', 'e1', 'e3'}, cnts={2, 2, 4}, trigger=LoadHumvee, }, tran={ faction='allies', units={'tran', 'e1', 'e3'}, cnts={1, 2, 3}, trigger=LoadTran, }, ['1_e2']={ faction='soviet', tf='1_e2', trigger=nil, }, ['1_deso']={ faction='soviet', tf='1_deso', trigger=nil, }, ['1_e4']={ faction='soviet', tf='1_e4', trigger=nil, }, ['1_shok']={ faction='soviet', tf='1_shok', trigger=nil, }, ['1_ftrk']={ faction='soviet', tf='1_ftrk', trigger=nil, }, ['1_qtnk']={ faction='soviet', tf='1_qtnk', trigger=nil, }, ['1_3tnk']={ faction='soviet', tf='1_3tnk', trigger=nil, }, ['1_4tnk']={ faction='soviet', tf='1_4tnk', trigger=nil, }, ttnk={ faction='soviet', tf='ttnk', trigger=nil, }, v2rl={ faction='soviet', tf='v2rl', trigger=nil, }, ['1_zep']={ faction='soviet', tf='1_zep', trigger=nil, }, ['5_want']={ faction='mutants', tf='5_want', trigger=nil, }, ['2_fant']={ faction='mutants', tf='4_fant', trigger=nil, }, ['2_doggie']={ faction='mutants', tf='2_doggie', trigger=nil, }, }
 ALLIES_TEAMS_KEYS = {}
 for key, team in pairs(TEAMS) do
   if team['faction']=='allies' then
@@ -380,7 +402,7 @@ UTIL_LoadTransports = function(transports, passengers, afterLoadFunc, afterLoadP
     end
   end
   for i, ps in ipairs(passengerss) do
-    UTIL_MoveTransportToPassengers(transports[i], passengerss[i], afterLoadFunc, afterLoadParams)
+    UTIL_MoveTransportToPassengers(transports[i], ps, afterLoadFunc, afterLoadParams)
   end
 end
 
@@ -420,18 +442,7 @@ UTIL_BuildRandomTeam = function(keys)
   -- 
   --     Given teams, and its keys, build a random team and return success/fail
   --     
-  local avail = {}
-  for _, key in ipairs(keys) do
-    local tf = TASKFORCES[TEAMS[key]['tf']]
-    if UTIL_CanQueue(tf) then
-      table.insert(avail, key)
-    end
-  end
-  if #avail==0 then
-    return false
-  end
-  local key = Utils.Random(avail)
-  key = 'humvee'
+  local key = 'humvee'
   return UTIL_BuildTeam(key)
 end
 TEAMS_IN_PRODUCTION = { }
@@ -487,13 +498,9 @@ MakeCheckList = function(teams_in_production)
   for teamName, team in pairs(teams_in_production) do
     if team~=nil then
       checkList[teamName] = { }
-      local names = TASKFORCES[team['tf']]['units']
-      for _, name in ipairs(names) do
-        if checkList[teamName][name] == nil then
-          checkList[teamName][name] = 1
-        else
-          checkList[teamName][name] = checkList[teamName][name]+1
-        end
+      local names = team['units']
+      for i, name in ipairs(names) do
+        checkList[teamName][name] = team['cnts'][i]
       end
     end
   end
@@ -543,15 +550,6 @@ Recruit = function(produced, checkList)
   end
 end
 
-AllLEZero = function(population)
-  for _, cnt in pairs(population) do
-    if cnt>0 then
-      return false
-    end
-  end
-  return true
-end
-
 CheckBuilt = function(checkList)
   -- 
   --     Check produced list and return teamNames of the ones that are done.
@@ -560,7 +558,7 @@ CheckBuilt = function(checkList)
   --     
   local complete = {}
   for teamName, population in pairs(checkList) do
-    if AllLEZero(population) then
+    if Utils.All(population, function(p) return p==0 end) then
       table.insert(complete, teamName)
     end
   end
@@ -621,8 +619,7 @@ end
 RemoveUnableToBuild = function(teams_in_production)
   local result = { }
   for teamName, team in pairs(teams_in_production) do
-    local tf = TASKFORCES[team['tf']]['units']
-    if HasAllPrerequisites(tf) then
+    if HasAllPrerequisites(team['units']) then
       result[teamName] = team
     else
       ReleaseTeams({teamName}, true)
@@ -643,7 +640,7 @@ UTIL_BuildTeam = function(teamName)
   --     Generally I'm assuming teams aren't BIG. < 20 members per team.
   --     Otherwise these will run slowly :)
   --     
-  if  not HasAllPrerequisites(TASKFORCES[TEAMS[teamName]['tf']]['units']) then
+  if  not HasAllPrerequisites(TEAMS[teamName]['units']) then
     return false
   end
   TEAMS_IN_PRODUCTION = RemoveUnableToBuild(TEAMS_IN_PRODUCTION)

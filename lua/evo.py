@@ -35,7 +35,8 @@ BELONGS_TO_A_TEAM = {}
 ###
 
 def LoadHumvee(actors):
-    UTIL_LoadOnto("jeep", actors, None, None)
+    #UTIL_LoadOnto("jeep", actors, None, None)
+    UTIL_LoadOnto("jeep", actors, ACT_AttackPower, actors)
 
 
 def LoadTran(actors):
@@ -260,92 +261,33 @@ BO_MUTANT_NORMAL = {
 
 BO_MUTANT_BOS = [ BO_MUTANT_NORMAL ]
 
-TASKFORCES = {
-    # Allied taskforces.
-    # These are basic units of production. They may be merged into a big team.
-    "1_heli": {
-        "units": ["heli"],
-    },
-    "1_hind": {
-        "units": ["hind"],
-    },
-    "1_e1": {
-        "units": ["e1"],
-    },
-    "1_e3": {
-        "units": ["e3"],
-    },
-    "1_jeep": {
-        "units": ["jeep"],
-    },
-    "1_1tnk": {
-        "units": ["1tnk"],
-    },
-    "1_2tnk": {
-        "units": ["2tnk"],
-    },
-    "arty": {
-        "units": ["arty"],
-    },
-    "humvee": {
-        "units": ["jeep", "jeep", "e1", "e1", "e3", "e3", "e3", "e3"],
-    },
-    "tran": {
-        "units": ["tran", "e1", "e1", "e3", "e3", "e3"],
-    },
 
-    # Soviet taskforces
-    "1_e2": {
-        "units": ["e2"],
-    },
-    "1_deso": {
-        "units": ["deso"],
-    },
-    "1_e4": {
-        "units": ["e4"],
-    },
-    "1_shok": {
-        "units": ["shok"],
-    },
-    "1_ftrk": {
-        "units": ["ftrk"],
-    },
-    "1_qtnk": {
-        "units": ["qtnk_ai"],
-    },
-    "1_3tnk": {
-        "units": ["3tnk"],
-    },
-    "1_4tnk": {
-        "units": ["4tnk"],
-    },
-    "ttnk": {
-        "units": ["ttnk"],
-    },
-    "v2rl": {
-        "units": ["v2rl"],
-    },
-    "1_mig": {
-        "units": ["mig"],
-    },
-    "1_yak": {
-        "units": ["yak"],
-    },
-    "1_zep": {
-        "units": ["zep"],
-    },
 
-    # Mutant TFs
-    "5_want": {
-        "units": ["want", "want", "want", "want", "want"],
-    },
-    "4_fant": {
-        "units": ["fant", "fant", "fant", "fant"],
-    },
-    "2_doggie": {
-        "units": ["doggie", "doggie"],
-    }
-}
+###
+### Teams and actions
+###
+
+def ACT_AttackPower(actors):
+    # Find a powerplant.
+    enemy = UTIL_GetAnEnemyPlayer()
+    targets = enemy.GetActorsByType('apwr')
+    if len(targets) == 0:
+        targets = enemy.GetActorsByType('powr')
+    if len(targets) == 0:
+        targets = enemy.GetActorsByType('anthill')
+
+    UTIL_SetOccupied(actors, True)
+
+    if len(targets) == 0:
+        for a in actors:
+            a.Hunt()
+    else:
+        target = Utils.Random(targets)
+        for a in actors:
+            a.Attack(target)
+            a.Hunt()
+
+
 
 TEAMS = {
     # Allies Teams
@@ -381,12 +323,14 @@ TEAMS = {
     },
     "humvee": {
         "faction": "allies",
-        "tf": "humvee",
+        "units": ["jeep", "e1", "e3"],
+        "cnts" : [2, 2, 4],
         "trigger": LoadHumvee
     },
     "tran": {
         "faction": "allies",
-        "tf": "tran",
+        "units": ["tran", "e1", "e3"],
+        "cnts" : [1, 2, 3],
         "trigger": LoadTran
     },
 
@@ -807,8 +751,7 @@ def UTIL_LoadTransports(transports, passengers, afterLoadFunc, afterLoadParams):
             passengerss[index].append(p)
 
     for i, ps in enumerate(passengerss):
-        UTIL_MoveTransportToPassengers(transports[i], passengerss[i],
-                afterLoadFunc, afterLoadParams)
+        UTIL_MoveTransportToPassengers(transports[i], ps, afterLoadFunc, afterLoadParams)
 
 
 def UTIL_MoveTransportToPassengers(transport, passengers, afterLoadFunc, afterLoadParams):
@@ -850,16 +793,16 @@ def UTIL_BuildRandomTeam(keys):
     '''
 
     # Get teams that can be built using unoccupied queue.
-    avail = []
-    for key in keys:
-        tf = TASKFORCES[TEAMS[key]["tf"]]
-        if UTIL_CanQueue(tf):
-            avail.append(key)
+    #avail = []
+    #for key in keys:
+    #    tf = TASKFORCES[TEAMS[key]["tf"]]
+    #    if UTIL_CanQueue(tf):
+    #        avail.append(key)
 
-    if len(avail) == 0:
-        return False
+    #if len(avail) == 0:
+    #    return False
 
-    key = Utils.Random(avail)
+    #key = Utils.Random(avail)
     key = 'humvee'
     #Media.DisplayMessage(key)
     return UTIL_BuildTeam(key)
@@ -917,12 +860,9 @@ def MakeCheckList(teams_in_production):
     for teamName, team in teams_in_production.items():
         if team != None:
             checkList[teamName] = {}
-            names = TASKFORCES[team["tf"]]["units"]
-            for name in names:
-                if name not in checkList[teamName]:
-                    checkList[teamName][name] = 1
-                else:
-                    checkList[teamName][name] += 1
+            names = team["units"]
+            for i, name in enumerate(names):
+                checkList[teamName][name] = team["cnts"][i]
 
     '''
     for tn, cl in checkList.items():
@@ -962,12 +902,6 @@ def Recruit(produced, checkList):
                     a.HackyAIOccupied = True
                     population[name] -= 1
 
-def AllLEZero(population):
-    for _, cnt in population.items():
-        if cnt > 0:
-            return False
-    return True
-
 def CheckBuilt(checkList):
     '''
     Check produced list and return teamNames of the ones that are done.
@@ -976,7 +910,7 @@ def CheckBuilt(checkList):
     '''
     complete = []
     for teamName, population in checkList.items():
-        if AllLEZero(population):
+        if Utils.All(population, lambda p: p == 0):
             complete.append(teamName)
     return complete
 
@@ -1030,8 +964,7 @@ def RemoveUnableToBuild(teams_in_production):
     result = {}
 
     for teamName, team in teams_in_production.items():
-        tf = TASKFORCES[team["tf"]]["units"]
-        if HasAllPrerequisites(tf):
+        if HasAllPrerequisites(team["units"]):
             result[teamName] = team
         else:
             # Disband these guys.
@@ -1052,7 +985,7 @@ def UTIL_BuildTeam(teamName):
     Otherwise these will run slowly :)
     '''
 
-    if not HasAllPrerequisites(TASKFORCES[TEAMS[teamName]["tf"]]["units"]):
+    if not HasAllPrerequisites(TEAMS[teamName]["units"]):
         return False
 
     TEAMS_IN_PRODUCTION = RemoveUnableToBuild(TEAMS_IN_PRODUCTION)
