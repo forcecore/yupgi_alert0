@@ -95,31 +95,31 @@ def make_hero(teams, cnt, pool, action_pool):
 ### main
 ###
 
-actions = ["ACT_AttackPower", "ACT_AttackRef", "ACT_AttackFactory", "ACT_AttackBarracks", "ACT_AttackCY", "ACT_Hunt", "ACT_AttackStaticDefenses", "ACT_AttackHarv"]
+#actions = ["ACT_AttackPower", "ACT_AttackRef", "ACT_AttackFactory", "ACT_AttackBarracks", "ACT_AttackCY", "ACT_AttackStaticDefenses", "ACT_AttackHarv"]
+# I find scripting actions too hard. FUCK!!
+actions = [None]
 # None is queued by 50%, not listed here.
+hero_actions = ["ACT_DemolishFactory", "ACT_DemolishCY", "ACT_DemolishStaticDefenses"]
 
-airs = ['hind', 'heli']
-
-heros = ['e7']
+airs = ['hind', 'heli', 'tran_ai']
 
 transports = [
     ('tran', 6, ['e1', 'e3']),
     ('jeep', 3, ['e1', 'e3'])
 ]
 
-grounds = [
-    'jeep', '1tnk', 'arty', 'msam',
-    '2tnk', 'stnk', 'wangchang', 'e1', 'e3'
-]
+vehs = ['arty', 'msam', '2tnk', 'wangchang', 'jeep_ai']
+infs = ['e1', 'e3']
 
 teams = {}
-make_combis(teams, 12, airs, actions)
-make_combis(teams, 48, grounds, actions)
-make_trans(teams, 12, transports, actions)
+make_combis(teams, 6, airs, actions)
+make_combis(teams, 36, vehs, actions)
+make_combis(teams, 6, infs, actions)
+#make_trans(teams, 12, transports, actions)
 
 # make hero is almost useless and duplicate but
 # this determines the frequency of heros being built.
-make_hero(teams, 12, heros, actions)
+make_hero(teams, 12, ['e7'], hero_actions)
 
 #pp = pprint.PrettyPrinter(indent=4)
 #pp.pprint(teams)

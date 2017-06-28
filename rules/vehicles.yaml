@@ -1549,3 +1549,14 @@ JOSH:
 	-DamagedByRadioactivity:
 	-Crushable:
 	Spawned:
+
+JEEP_AI:
+	Inherits: JEEP
+	Buildable:
+		Prerequisites: ~gaweap, ~aibuild, ~techlevel.low
+	Cargo:
+		Types: Infantry
+		MaxWeight: 3
+		PipCount: 3
+		LoadingCondition: notmobile
+		InitialUnits: e1,e3,e3

@@ -35,6 +35,12 @@ BELONGS_TO_A_TEAM = {}
 
 ANYPOWER = "ANYPOWER"
 
+BUILD_LIMITS = {
+    "e7": 2,
+    "volkov": 1,
+    "chitzkoi": 1
+}
+
 # In build order, if you need to expand, write it as MCV.
 MCVS = ["gamcv", "namcv", "qant"]
 
@@ -258,6 +264,12 @@ BO_MUTANT_BOS = [ BO_MUTANT_NORMAL ]
 ###
 
 def ACT_AttackTypes(actors, types):
+    def ReturnFire(a, attacker):
+        for x in actors:
+            if x.IsInWorld:
+                x.Hunt()
+                x.HackyAIOccupied = False
+
     # Find a powerplant.
     enemy = UTIL_GetAnEnemyPlayer()
     targets = []
@@ -276,7 +288,37 @@ def ACT_AttackTypes(actors, types):
             # Just attack one target. Others won't be so close mostly.
             break
         a.CallFunc(lambda: UTIL_SetOccupied([a], False)) # hunt is bugged
-        a.Hunt()
+        #Trigger.OnDamaged(a, ReturnFire)
+
+def ACT_DemolishTypes(actors, types):
+    # Find a match
+    enemy = UTIL_GetAnEnemyPlayer()
+    targets = []
+    for ty in types:
+        tmp = enemy.GetActorsByType(ty)
+        if len(tmp) > 0:
+            for t in tmp:
+                targets.append(t)
+
+    UTIL_SetOccupied(actors, True)
+    Utils.Shuffle(targets)
+
+    for a in actors:
+        for t in targets:
+            a.Demolish(t)
+            # Just attack one target. Others won't be so close mostly.
+            break
+        a.CallFunc(lambda: UTIL_SetOccupied([a], False)) # hunt is bugged
+        #Trigger.OnDamaged(a, ReturnFire)
+
+def ACT_DemolishFactory(actors):
+    ACT_DemolishTypes(actors, ['gaweap', 'naweap', 'evo', 'qnest'])
+
+def ACT_DemolishCY(actors):
+    ACT_DemolishTypes(actors, ['gafact', 'nafact', 'qnest'])
+
+def ACT_DemolishStaticDefenses(actors):
+    ACT_DemolishTypes(actors, STATIC_DEFENSES)
 
 def ACT_AttackPower(actors):
     ACT_AttackTypes(actors, ['apwr', 'powr', 'anthill'])
@@ -294,15 +336,10 @@ def ACT_AttackCY(actors):
     ACT_AttackTypes(actors, ['gafact', 'nafact', 'qnest'])
 
 def ACT_AttackHarv(actors):
-    ACT_AttackTypes(actors, ['harv', 'cmin', 'marv', 'smin', 'dant'])
+    ACT_AttackTypes(actors, ['harv', 'marv', 'smin', 'dant'])
 
 def ACT_AttackStaticDefenses(actors):
     ACT_AttackTypes(actors, STATIC_DEFENSES)
-
-def ACT_Hunt(actors):
-    UTIL_SetOccupied(actors, True)
-    for a in actors:
-        a.Hunt()
 
 def ACT_LoadAttackPower(actors):
     UTIL_LoadTransports(actors, ACT_AttackPower, actors)
@@ -431,16 +468,16 @@ def AlliesBuildUnitTick(faction):
             return
 
         if len(harvs) < 5 and PLAYER.HasPrerequisites(["gaweap", "proc", "fix"]):
-            PLAYER.Build(['harv'], None)
+            if Utils.RandomInteger(0, 9) == 0:
+                PLAYER.Build(['harv'], None)
         elif len(harvs) < 7 and PLAYER.HasPrerequisites(["gaweap", "proc", "atek"]):
-            if Utils.RandomInteger(0, 4) == 0:
+            if Utils.RandomInteger(0, 9) == 0:
                 PLAYER.Build(['harv'], None)
         elif UTIL_Count("marv") < 2 and PLAYER.HasPrerequisites(["gaweap", "proc", "atek"]):
-            if Utils.RandomInteger(0, 4) == 0:
+            if Utils.RandomInteger(0, 9) == 0:
                 PLAYER.Build(['marv'], None)
 
-        if PLAYER.Cash > 500:
-            UTIL_BuildRandomTeam(ALLIES_TEAMS_KEYS)
+        UTIL_BuildRandomTeam(ALLIES_TEAMS_KEYS)
 
 
 def SovietBuildUnitTick(faction):
@@ -583,22 +620,11 @@ def MutantBuildUnitTick(faction):
 def UTIL_CanQueue(units):
     for name in units:
         if PLAYER.IsProducing(name):
+            #Media.DisplayMessage("Cant queue " + name)
+            return False
+        if BUILD_LIMITS[name] != None and UTIL_Count(name) >= BUILD_LIMITS[name]:
             return False
     return True
-
-
-def UTIL_LoadTransports(actors, afterLoadFunc, afterLoadParams):
-    UTIL_SetOccupied(actors, True)
-
-    tran = []
-    load = []
-    for a in actors:
-        if TRANSPORTS[a.Type] == True:
-            tran.append(a)
-        else:
-            load.append(a)
-
-    UTIL_LoadTransports(tran, load, afterLoadFunc, afterLoadParams)
 
 
 def UTIL_SetOccupied(actors, isOccupied):
@@ -635,7 +661,7 @@ def UTIL_WaitLoad(transport, passengers, afterLoadFunc, afterLoadParams):
 
 
 def UTIL_LoadTransports(transports, passengers, afterLoadFunc, afterLoadParams):
-    passengerss = []
+    passengerss = {}
 
     for i, p in enumerate(passengers):
         index = i % len(transports) + 1 # +1 for lua convention.
@@ -822,7 +848,7 @@ def ReleaseTeams(teamNames, disband):
             # Let these be used freely by hacky AI.
             UTIL_SetOccupied(actors, False)
 
-        PRODUCED[teamName] = None
+        PRODUCED[teamName] = []
 
 def BuildFromCheckList(checkList):
     '''
@@ -837,8 +863,10 @@ def BuildFromCheckList(checkList):
     for tn, population in checkList.items():
         for name, cnt in population.items():
             if cnt > 0 and not PLAYER.IsProducing(name):
+                Media.DisplayMessage("Can queue " + name)
                 teamName = tn
-                return PLAYER.Build([name], JoinTeam)
+                #return PLAYER.Build([name], JoinTeam)
+                return PLAYER.Build([name], None)
     # All done so not an assertion error.
     #Media.DisplayMessage("BuildFromCheckList: Assertion failed haha")
     #return False
@@ -885,6 +913,13 @@ def UTIL_BuildTeam(teamName):
 
     if not HasAllPrerequisites(TEAMS[teamName]["units"]):
         return False
+
+    # check build limits
+    # Must check... If queued then the AI will get stuck trying to build what
+    # is unable to be built
+    for name in TEAMS[teamName]["units"]:
+        if BUILD_LIMITS[name] != None and UTIL_Count(name) >= BUILD_LIMITS[name]:
+            return False
 
     TEAMS_IN_PRODUCTION = RemoveUnableToBuild(TEAMS_IN_PRODUCTION)
     TEAMS_IN_PRODUCTION = RemoveNil(TEAMS_IN_PRODUCTION)
