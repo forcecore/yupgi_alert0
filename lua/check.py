@@ -1,4 +1,4 @@
-from ai import TASKFORCES, TEAMS
+from evo import TEAMS
 
 for team in TEAMS.values():
     assert "trigger" in team
@@ -6,5 +6,6 @@ for team in TEAMS.values():
     assert team["faction"] == "allies" or \
            team["faction"] == "soviet" or team["faction"] == "mutants"
 
-    tf = TASKFORCES[team["tf"]]
-    assert len(tf["units"]) > 0
+    assert len(team["units"]) > 0
+    assert len(team["cnts"]) > 0
+    assert len(team["cnts"]) == len(team["units"])

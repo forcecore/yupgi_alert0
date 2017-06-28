@@ -312,6 +312,7 @@ def ACT_AttackStaticDefenses(actors):
 
 
 TEAMS = {
+#INCLUDE ALLY0.TXT
 }
 
 ALLIES_TEAMS_KEYS = []

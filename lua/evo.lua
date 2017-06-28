@@ -8,7 +8,7 @@ BUILD_TICK_FUNC = nil
 BELONGS_TO_A_TEAM = { }
 
 LoadHumvee = function(actors)
-  UTIL_LoadOnto('jeep', actors, ACT_AttackPower, actors)
+  UTIL_LoadOnto('jeep', actors, nil, nil)
 end
 
 LoadTran = function(actors)
@@ -77,6 +77,7 @@ ACT_AttackCY = function(actors)
 end
 
 ACT_Hunt = function(actors)
+  UTIL_SetOccupied(actors, true)
   for _, a in ipairs(actors) do
     a.Hunt()
   end
@@ -85,7 +86,7 @@ end
 ACT_AttackStaticDefenses = function(actors)
   ACT_AttackTypes(actors, STATIC_DEFENSES)
 end
-TEAMS = { ['1_e1']={ faction='allies', tf='1_e1', trigger=nil, }, ['1_e3']={ faction='allies', tf='1_e3', trigger=nil, }, ['1_jeep']={ faction='allies', tf='1_jeep', trigger=nil, }, ['1_2tnk']={ faction='allies', tf='1_2tnk', trigger=nil, }, arty={ faction='allies', tf='arty', trigger=nil, }, humvee={ faction='allies', units={'jeep', 'e1', 'e3'}, cnts={2, 2, 4}, trigger=LoadHumvee, }, tran={ faction='allies', units={'tran', 'e1', 'e3'}, cnts={1, 2, 3}, trigger=LoadTran, }, ['1_e2']={ faction='soviet', tf='1_e2', trigger=nil, }, ['1_deso']={ faction='soviet', tf='1_deso', trigger=nil, }, ['1_e4']={ faction='soviet', tf='1_e4', trigger=nil, }, ['1_shok']={ faction='soviet', tf='1_shok', trigger=nil, }, ['1_ftrk']={ faction='soviet', tf='1_ftrk', trigger=nil, }, ['1_qtnk']={ faction='soviet', tf='1_qtnk', trigger=nil, }, ['1_3tnk']={ faction='soviet', tf='1_3tnk', trigger=nil, }, ['1_4tnk']={ faction='soviet', tf='1_4tnk', trigger=nil, }, ttnk={ faction='soviet', tf='ttnk', trigger=nil, }, v2rl={ faction='soviet', tf='v2rl', trigger=nil, }, ['1_zep']={ faction='soviet', tf='1_zep', trigger=nil, }, ['5_want']={ faction='mutants', tf='5_want', trigger=nil, }, ['2_fant']={ faction='mutants', tf='4_fant', trigger=nil, }, ['2_doggie']={ faction='mutants', tf='2_doggie', trigger=nil, }, }
+TEAMS = { }
 ALLIES_TEAMS_KEYS = {}
 for key, team in pairs(TEAMS) do
   if team['faction']=='allies' then
@@ -158,13 +159,13 @@ AlliesBuildUnitTick = function(faction)
   local harvs = PLAYER.GetActorsByType('harv')
   if  not AUTO_BUILD then
     local e1s = PLAYER.GetActorsByType('e1')
-    if #e1s<10 and PLAYER.HasPrerequisites({'tent'}) then
+    if #e1s<6 and PLAYER.HasPrerequisites({'tent'}) then
       PLAYER.Build({'e1'}, nil)
     end
     if #harvs<3 and PLAYER.HasPrerequisites({'gaweap', 'proc'}) then
       PLAYER.Build({'harv'}, nil)
     end
-    if #harvs>=3 and #e1s>=10 then
+    if #harvs>=3 and #e1s>=6 then
       AUTO_BUILD = true
     end
   else
@@ -189,39 +190,6 @@ AlliesBuildUnitTick = function(faction)
     elseif UTIL_Count('marv')<2 and PLAYER.HasPrerequisites({'gaweap', 'proc', 'atek'}) then
       if Utils.RandomInteger(0, 4)==0 then
         PLAYER.Build({'marv'}, nil)
-      end
-    end
-    if UTIL_Count('wangchang')<3 and PLAYER.HasPrerequisites({'gaweap', 'atek'}) then
-      if Utils.RandomInteger(0, 4)==0 then
-        PLAYER.Build({'wangchang'}, nil)
-      end
-    end
-    if UTIL_Count('e7')<2 and PLAYER.HasPrerequisites({'gaweap', 'tent', 'atek'}) then
-      if Utils.RandomInteger(0, 4)==0 then
-        PLAYER.Build({'e7'}, nil)
-      end
-    end
-    if UTIL_Count('tran')<4 and PLAYER.HasPrerequisites({'hpad', 'tent'}) then
-      if Utils.RandomInteger(0, 4)==0 then
-        UTIL_BuildTeam('tran')
-      end
-    elseif UTIL_Count('heli')<4*UTIL_Count('hpad') and PLAYER.HasPrerequisites({'hpad', 'atek'}) then
-      if Utils.RandomInteger(0, 2)==0 then
-        PLAYER.Build({'heli'}, nil)
-      end
-    elseif UTIL_Count('hind')<4*UTIL_Count('hpad') and PLAYER.HasPrerequisites({'hpad'}) then
-      if Utils.RandomInteger(0, 4)==0 then
-        PLAYER.Build({'hind'}, nil)
-      end
-    end
-    local enemy = UTIL_GetAnEnemyPlayer()
-    local defense_cnt = UTIL_CountUnits(enemy, STATIC_DEFENSES)
-    if defense_cnt>=4 then
-      if UTIL_Count('msam')<2 and PLAYER.HasPrerequisites({'gaweap', 'atek'}) then
-        PLAYER.Build({'msam'}, nil)
-      end
-      if UTIL_Count('arty')<4 and PLAYER.HasPrerequisites({'gaweap', 'dome'}) then
-        PLAYER.Build({'arty'}, nil)
       end
     end
     if PLAYER.Cash>500 then
@@ -362,8 +330,8 @@ MutantBuildUnitTick = function(faction)
   end
 end
 
-UTIL_CanQueue = function(tf)
-  for _, name in ipairs(tf['units']) do
+UTIL_CanQueue = function(units)
+  for _, name in ipairs(units) do
     if PLAYER.IsProducing(name) then
       return false
     end
@@ -408,7 +376,7 @@ UTIL_WaitLoad = function(transport, passengers, afterLoadFunc, afterLoadParams)
     UTIL_SetOccupied(passengers, false)
     return 
   end
-  if transport.PassengerCount>=UTIL_CountAlive(passengers) then
+  if Utils.All(passengers, function(p) return  not p.IsInWorld end) then
     if afterLoadFunc==nil then
       transport.HackyAIOccupied = false
       UTIL_SetOccupied(passengers, false)
@@ -471,7 +439,16 @@ UTIL_BuildRandomTeam = function(keys)
   -- 
   --     Given teams, and its keys, build a random team and return success/fail
   --     
-  local key = 'humvee'
+  local avail = {}
+  for _, key in ipairs(keys) do
+    if UTIL_CanQueue(TEAMS[key]['units']) then
+      table.insert(avail, key)
+    end
+  end
+  if #avail==0 then
+    return false
+  end
+  local key = Utils.Random(avail)
   return UTIL_BuildTeam(key)
 end
 TEAMS_IN_PRODUCTION = { }
