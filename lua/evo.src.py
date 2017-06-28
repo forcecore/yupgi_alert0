@@ -30,21 +30,6 @@ BELONGS_TO_A_TEAM = {}
 
 
 ###
-### Team actions (not constant but need to be here before team definition)
-### Team action can't take parameters so, we do this.
-###
-
-def LoadHumvee(actors):
-    #UTIL_LoadOnto("jeep", actors, None, None)
-    UTIL_LoadOnto("jeep", actors, None, None)
-
-
-def LoadTran(actors):
-    UTIL_LoadOnto("tran", actors, None, None)
-
-
-
-###
 ### Mod constants
 ###
 
@@ -62,6 +47,11 @@ COUNT_BUILDING_AS_MCV = {
 }
 
 # Lua supports list or dict so...
+TRANSPORTS = {
+    "jeep": True,
+    "tran": True,
+}
+
 HELI_TRANSPORT = {
     "tran": True
 }
@@ -285,6 +275,7 @@ def ACT_AttackTypes(actors, types):
             a.Attack(t)
             # Just attack one target. Others won't be so close mostly.
             break
+        a.CallFunc(lambda: UTIL_SetOccupied([a], False)) # hunt is bugged
         a.Hunt()
 
 def ACT_AttackPower(actors):
@@ -302,13 +293,38 @@ def ACT_AttackBarracks(actors):
 def ACT_AttackCY(actors):
     ACT_AttackTypes(actors, ['gafact', 'nafact', 'qnest'])
 
+def ACT_AttackHarv(actors):
+    ACT_AttackTypes(actors, ['harv', 'cmin', 'marv', 'smin', 'dant'])
+
+def ACT_AttackStaticDefenses(actors):
+    ACT_AttackTypes(actors, STATIC_DEFENSES)
+
 def ACT_Hunt(actors):
     UTIL_SetOccupied(actors, True)
     for a in actors:
         a.Hunt()
 
-def ACT_AttackStaticDefenses(actors):
-    ACT_AttackTypes(actors, STATIC_DEFENSES)
+def ACT_LoadAttackPower(actors):
+    UTIL_LoadTransports(actors, ACT_AttackPower, actors)
+
+def ACT_LoadAttackRef(actors):
+    UTIL_LoadTransports(actors, ACT_AttackRef, actors)
+
+def ACT_LoadAttackFactory(actors):
+    UTIL_LoadTransports(actors, ACT_AttackFactory, actors)
+
+def ACT_LoadAttackBarracks(actors):
+    UTIL_LoadTransports(actors, ACT_AttackBarracks, actors)
+
+def ACT_LoadAttackCY(actors):
+    UTIL_LoadTransports(actors, ACT_AttackCY, actors)
+
+def ACT_LoadAttackHarv(actors):
+    UTIL_LoadTransports(actors, ACT_AttackHarv, actors)
+
+def ACT_LoadAttackStaticDefenses(actors):
+    UTIL_LoadTransports(actors, ACT_AttackStaticDefenses, actors)
+
 
 
 TEAMS = {
@@ -571,13 +587,13 @@ def UTIL_CanQueue(units):
     return True
 
 
-def UTIL_LoadOnto(transportName, actors, afterLoadFunc, afterLoadParams):
+def UTIL_LoadTransports(actors, afterLoadFunc, afterLoadParams):
     UTIL_SetOccupied(actors, True)
 
     tran = []
     load = []
     for a in actors:
-        if a.Type == transportName:
+        if TRANSPORTS[a.Type] == True:
             tran.append(a)
         else:
             load.append(a)
