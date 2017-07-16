@@ -1411,7 +1411,8 @@ AFLD:
 		ChargeTime: 360
 		Description: Paratroopers
 		LongDesc: A Badger drops a squad of infantry\nanywhere on the map.
-		DropItems: E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3
+		#DropItems: E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3
+		DropItems: E1, E1, E1, E3, E3 # Nerfed temporarily for AI development.
 		SelectTargetSpeechNotification: SelectTarget
 		AllowImpassableCells: false
 		QuantizedFacings: 8
@@ -2306,53 +2307,53 @@ GULAG:
 	TransformOnCapture:
 		IntoActor: GULAG_INFESTED
 
-MINIHIVE:
-	Inherits: ^Defense
-	-TransformOnCapture:
-	Tooltip:
-		Name: Buzzer Hive
-	Building:
-	Buildable:
-		Queue: Defense
-		BuildPaletteOrder: 40
-		Prerequisites: anthill, ~qnest, ~techlevel.low
-		Description: Anti-infantry defense.\nCan detect cloaked units.\n  Strong vs Infantry,\n  Weak vs Vehicles, Aircraft
-	Valued:
-		Cost: 400
-	Health:
-		HP: 400
-	Armor:
-		Type: Heavy
-	RevealsShroud:
-		Range: 6c0
-	Turreted:
-		TurnSpeed: 255
-	WithDeathAnimation:
-		DeathSequence: dead
-		UseDeathTypeSuffix: false
-	AttackTurreted:
-	Armament@PRIMARY:
-		Weapon: MiniHiveSpawnTargeter
-		LocalOffset: 512,0,171
-	-QuantizeFacingsFromSequence:
-	BodyOrientation:
-		QuantizedFacings: 8
-	-EmitInfantryOnSell:
-	RenderRangeCircle:
-		FallbackRange: 6c0
-	DetectCloaked:
-		Range: 6c0
-		RevealGeneratedShroud: False
-	RevealsShroud@GAPGEN:
-		Range: 5c0
-	Spawner:
-		Count: 4
-		SpawnUnit: buzzer
-		RespawnTicks: 5
-		RearmTicks: 5
-		InstaRepair: true
-		SpawnIsGroundUnit: true
-	-Sellable:
+#MINIHIVE:
+#	Inherits: ^Defense
+#	-TransformOnCapture:
+#	Tooltip:
+#		Name: Buzzer Hive
+#	Building:
+#	#Buildable:
+#		#Queue: Defense
+#		#BuildPaletteOrder: 40
+#		#Prerequisites: anthill, ~qnest, ~techlevel.low
+#		#Description: Anti-infantry defense.\nCan detect cloaked units.\n  Strong vs Infantry,\n  Weak vs Vehicles, Aircraft
+#	Valued:
+#		Cost: 400
+#	Health:
+#		HP: 400
+#	Armor:
+#		Type: Heavy
+#	RevealsShroud:
+#		Range: 6c0
+#	Turreted:
+#		TurnSpeed: 255
+#	WithDeathAnimation:
+#		DeathSequence: dead
+#		UseDeathTypeSuffix: false
+#	AttackTurreted:
+#	Armament@PRIMARY:
+#		Weapon: MiniHiveSpawnTargeter
+#		LocalOffset: 512,0,171
+#	-QuantizeFacingsFromSequence:
+#	BodyOrientation:
+#		QuantizedFacings: 8
+#	-EmitInfantryOnSell:
+#	RenderRangeCircle:
+#		FallbackRange: 6c0
+#	DetectCloaked:
+#		Range: 6c0
+#		RevealGeneratedShroud: False
+#	RevealsShroud@GAPGEN:
+#		Range: 5c0
+#	Spawner:
+#		Count: 4
+#		SpawnUnit: buzzer
+#		RespawnTicks: 5
+#		RearmTicks: 5
+#		InstaRepair: true
+#		SpawnIsGroundUnit: true
+#	-Sellable:
 
 ANTHILL:
 	Inherits: ^Building
@@ -2481,3 +2482,91 @@ mbk:
 	RallyPoint:
 		Offset: 1,4
 	FireWeaponAtSelf:
+
+ANTAA:
+	Inherits: ^Defense
+	RenderSprites:
+		Image: agun
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 90
+		Prerequisites: vein, ~qnest, ~techlevel.medium
+		Description: Anti-Air base defense.\nCan detect cloaked units.\n  Strong vs Aircraft\n  Weak vs Ground units
+	Valued:
+		Cost: 950
+	Tooltip:
+		Name: Ant AA Tower (place holder)
+	Selectable:
+		Bounds: 24,24
+	SelectionDecorations:
+		VisualBounds: 24,32,0,-4
+	DisabledOverlay:
+	Health:
+		HP: 400
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 6c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 5c0
+	Bib:
+		HasMinibib: Yes
+	Turreted:
+		TurnSpeed: 15
+		InitialFacing: 224
+	-WithSpriteBody:
+	WithTurretedSpriteBody:
+	Armament:
+		Weapon: ZSU-23
+		LocalOffset: 520,100,450, 520,-150,450
+		MuzzleSequence: muzzle
+	AttackTurreted:
+	WithMuzzleOverlay:
+	RenderRangeCircle:
+		RangeCircleType: aa
+	DetectCloaked:
+		Range: 6c0
+	BodyOrientation:
+		UseClassicFacingFudge: True
+
+FIREVENT:
+	Inherits: ^Defense
+	RenderSprites:
+		Image: tsla
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 40
+		Prerequisites: anthill, ~qnest, ~techlevel.low
+		Description: Advanced base defense.\nCan detect cloaked units.\n  Strong vs Vehicles, Infantry\n  Weak vs Aircraft
+	Valued:
+		Cost: 750
+	Tooltip:
+		Name: Fire Vent
+	Selectable:
+		Bounds: 24,24
+	SelectionDecorations:
+		VisualBounds: 24,40,0,-8
+	DisabledOverlay:
+	Health:
+		HP: 400
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 8c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 6c0
+	Bib:
+		HasMinibib: Yes
+	WithTeslaChargeAnimation:
+	Armament:
+		Weapon: FireVentWeapon
+		LocalOffset: 0,0,896
+	AttackTesla:
+		ChargeAudio: tslachg2.aud
+		MaxCharges: 10
+		ReloadDelay: 120
+	DetectCloaked:
+		Range: 8c0
+	-Sellable:

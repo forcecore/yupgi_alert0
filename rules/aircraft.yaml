@@ -634,7 +634,7 @@ SCUD_UNIT:
 	Tooltip:
 		Name: Scud
 	Health:
-		HP: 75
+		HP: 150
 	Armor:
 		Type: Light
 	ShootableBallisticMissile:

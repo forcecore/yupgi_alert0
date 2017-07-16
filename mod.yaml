@@ -242,11 +242,11 @@ GameSpeeds:
 	double:
 		Name: 4x
 		Timestep: 5
-		OrderLatency: 6
+		OrderLatency: 12
 	ludicrous:
 		Name: Ludicrous
 		Timestep: 1
-		OrderLatency: 6
+		OrderLatency: 12
 
 ColorValidator:
 

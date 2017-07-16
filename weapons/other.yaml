@@ -329,7 +329,7 @@ AntFireballLauncher:
 CarrierSpawnTargeter:
 	ReloadDelay: 30
 	Range: 10c0
-	MinRange: 1c0 # for now.Issue #13307 of OpenRA engine
+	#MinRange: 1c0 # for now.Issue #13307 of OpenRA engine
 	ValidTargets: Ground, Water, Air
 	Projectile: Bullet
 		Speed: 10c0
@@ -388,6 +388,8 @@ SuperMandible:
 
 HantZap:
 	Inherits: TTankZap
+	Burst: 2
+	BurstDelay: 5
 
 ChitzkoiJaw:
 	Inherits: DogJaw
@@ -397,11 +399,13 @@ Laser:
 	ReloadDelay: 40
 	Range: 7c512
 	Report: obelray1.aud
+	ValidTargets: Ground, Water, Air
 	Projectile: LaserZap
 		Width: 85
 		ZOffset: 2047
 		Color: FFFF00
 	Warhead@1Dam: SpreadDamage
+		ValidTargets: Air, Ground, Water
 		Spread: 42
 		Damage: 360
 		Versus:
@@ -414,7 +418,7 @@ Laser:
 PDLaser:
 	# Giving armament name something not primary or secondary will
 	# prevent this from automatically (or manually forced) fired.
-	ReloadDelay: 15
+	ReloadDelay: 25
 	Range: 4c0
 	Report: vpalwe2d.aud
 	Projectile: LaserZap
@@ -498,14 +502,14 @@ AuroraBomb:
 	ValidTargets: Ground, Trees, Water, Underwater
 	Warhead@1Dam: SpreadDamage
 		Spread: 1c0
-		# 420 = 70 * 2 * 3
-		Damage: 420
+		# 375 * 4 = 1500 == HP of FACT
+		Damage: 375
 		Versus:
 			None: 100
 			Wood: 100
-			Light: 70
-			Heavy: 50
-			Concrete: 50
+			Light: 100
+			Heavy: 100
+			Concrete: 100
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: Scorch
 		InvalidTargets: Structure, Wall
@@ -552,3 +556,13 @@ TanyStrikeBomb:
 			Light: 100
 			Heavy: 100
 			Concrete: 100
+
+FireVentWeapon:
+	Inherits: ^FireWeapon
+	ReloadDelay: 3
+	Range: 5c0
+	Projectile: Bullet
+		Speed: 1c682
+	Warhead@1Dam: SpreadDamage
+		Spread: 42
+		Damage: 30

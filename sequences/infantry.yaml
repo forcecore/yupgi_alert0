@@ -1728,4 +1728,12 @@ inft:
 		Start: 226
 		Length: 25
 		ShadowStart: 477
+	die-crushed: corpse1
+		Length: *
+		Tick: 1600
+		ZOffset: -511
+		UseTilesetExtension: true
+		TilesetOverrides:
+			DESERT: TEMPERAT
+			INTERIOR: TEMPERAT
 	icon: infticon

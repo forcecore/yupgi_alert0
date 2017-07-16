@@ -307,7 +307,7 @@ HARV:
 		SearchFromProcRadius: 30
 		SearchFromOrderRadius: 15
 		DeliveryBuildings: proc, qnest, anthill
-		MaxUnloadQueue: 5
+		MaxUnloadQueue: 3
 	Health:
 		HP: 600
 	Armor:
@@ -903,7 +903,7 @@ QANT:
 		BuildDurationModifier: 40
 		Description: Deploys into Queen's Nest.\n  Unarmed
 	Valued:
-		Cost: 2000
+		Cost: 2500
 	DeliversCash@GRINDABLE:
 		Payload: 1000
 		Sounds: antdie.aud
@@ -1411,7 +1411,9 @@ QTNK_AI:
 	AIDeployHelper:
 		DeployOn: Attack, Damage
 		DeployChance: 100
-		DeployOnEnemy: true
+		DeployOnEnemy: false
+		DeployNotInMyBase: true
+		ActorScanRadius: 5
 
 SMIN:
 	Inherits: ^Vehicle

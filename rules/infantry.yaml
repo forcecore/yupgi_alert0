@@ -738,7 +738,7 @@ Zombie:
 	Valued:
 		Cost: 100
 	DeliversCash@GRINDABLE:
-		Payload: 50
+		Payload: 200
 		Sounds: antdie.aud
 	Tooltip:
 		Name: Zombie
@@ -1191,7 +1191,7 @@ SAIYAN:
 	DeliversCash@GRINDABLE:
 		Payload: 600
 	RevealsShroud:
-		Range: 6c0
+		Range: 8c0
 	AttackFrontal:
 	-TakeCover:
 	WithIdleOverlay:
@@ -1258,8 +1258,45 @@ SLAVE:
 		# Dying with master doesn't have damage type so we specify fallback.
 		FallbackSequence: die3
 
+INFT2:
+	Inherits: E6
+	RenderSprites:
+		Image: INFT
+		Scale: 0.5
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: SmallAnt
+		BuildPaletteOrder: 60
+		Prerequisites: ~qnest, anthill, ~techlevel.infonly
+		Description: Can infest neutal/enemy structures
+	Tooltip:
+		Name: Infester
+	Selectable:
+		Bounds: 20,20,0,0
+	SelectionDecorations:
+		VisualBounds: 20,20,0,0
+	Voiced:
+		VoiceSet: ReaperVoice
+	Targetable:
+		TargetTypes: Ground, Infantry, Ant
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		StandSequences: stand
+		IdleSequences: idle1,idle2
+	WithDeathAnimation:
+		UseDeathTypeSuffix: false
+	ExternalCaptures:
+		CaptureTypes: building, infestable
+		PlayerExperience: 25
+	-EngineerRepair:
+	-RepairsBridges:
+	-DamagedByTerrain@tib:
+	-DamagedByRadioactivity:
+
 INFT:
 	Inherits: ^Soldier
+	RenderSprites:
+		Image: INFT
 	-Crushable:
 	Buildable:
 		Queue: Infantry
@@ -1268,11 +1305,11 @@ INFT:
 		Prerequisites: ~qnest, evo, ~techlevel.high
 		Description: Uses toxin to manipulate enemy units\n Can infest neutal/enemy structures
 	Valued:
-		Cost: 1000
+		Cost: 2000
 	DeliversCash@GRINDABLE:
 		Payload: 500
 	Tooltip:
-		Name: Infester
+		Name: Mind Bender
 	Selectable:
 		Bounds: 40,40,0,0
 	SelectionDecorations:
@@ -1296,7 +1333,7 @@ INFT:
 		Weapon: MindController
 		#RequiresCondition: slaving < 1
 	Targetable:
-		TargetTypes: Ground, Infantry, Ant
+		TargetTypes: Ground, Infantry, Ant, MCImmune
 	AttackFrontal:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
@@ -1313,9 +1350,5 @@ INFT:
 		GiveCondition: mindcontrolled
 		ControllingCondition: slaving
 		Policy: DiscardOldest
-	ExternalCaptures:
-		CaptureTypes: building, infestable
-		TransformTypes: infestable
-		PlayerExperience: 25
 	-DamagedByTerrain@tib:
 	-DamagedByRadioactivity:

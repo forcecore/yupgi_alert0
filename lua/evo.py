@@ -74,7 +74,7 @@ FIXABLE = {
 # Ground static defense
 STATIC_DEFENSES = ["pbox", "hbox", "gun", "ftur", "tsla", "agun", "sam", "minihive"]
 
-BO_ALLIES_NORMAL = {
+BO_ALLIES_MORE_RANDOM = {
     "name": "allies_normal",
     "bo": [
         ANYPOWER,
@@ -83,159 +83,141 @@ BO_ALLIES_NORMAL = {
         "proc",
         ANYPOWER,
         "gaweap",
+        "proc"
+    ]
+}
+
+BO_ALLIES_FIX1ST = {
+    "name": "allies_normal",
+    "bo": [
+        ANYPOWER,
+        "proc",
+        "proc",
+        ANYPOWER,
+        "gaweap",
+        "proc",
+        "tent",
         "fix",
         "dome",
         ANYPOWER,
-        "proc",
-        "hpad",
         "hpad",
         "atek",
         ANYPOWER
     ]
 }
 
-BO_ALLIES_FAST_WEAP = {
-    "name": "allies_weap",
+BO_ALLIES_DOME1ST = {
+    "name": "allies_normal",
     "bo": [
         ANYPOWER,
-        "tent",
         "proc",
-        "gaweap",
+        "proc",
         ANYPOWER,
-        "proc",
-        "fix",
+        "gaweap",
+        "tent",
         "proc",
         "dome",
         ANYPOWER,
+        "fix",
+        "hpad",
         "atek",
         ANYPOWER
     ]
 }
 
-BO_ALLIES_FAST_AIR = {
-    "name": "allies_air",
-    "bo": [
-        ANYPOWER,
-        "tent",
-        "proc",
-        "proc",
-        "dome",
-        "hpad",
-        ANYPOWER,
-        "proc",
-        "gaweap",
-        "atek",
-        ANYPOWER,
-        "hpad",
-        "hpad",
-        "hpad",
-        "proc",
-        "fix"
-    ]
-}
-
-BO_ALLIES_ECO = {
+BO_ALLIES_TECH1ST = {
     "name": "allies_eco",
     "bo": [
         ANYPOWER,
-        "tent",
         "proc",
         "proc",
         ANYPOWER,
         "proc",
         "gaweap",
-        "fix",
         ANYPOWER,
         "dome",
+        "tent",
         ANYPOWER,
-        "atek"
+        "atek",
+        "fix",
+        "hpad"
     ]
 }
 
-BO_ALLIES_BOS = [BO_ALLIES_NORMAL, BO_ALLIES_ECO, BO_ALLIES_FAST_WEAP, BO_ALLIES_FAST_AIR]
+BO_ALLIES_BOS = [BO_ALLIES_MORE_RANDOM, BO_ALLIES_FIX1ST, BO_ALLIES_DOME1ST, BO_ALLIES_TECH1ST]
 
-BO_SOVIET_NORMAL = {
+BO_SOVIET_MORE_RANDOM = {
     "name": "soviet_normal",
     "bo": [
         ANYPOWER,
         "barr",
-        "kenn",
         "proc",
         "proc",
         ANYPOWER,
         "naweap",
+        "proc"
+    ]
+}
+
+BO_SOVIET_FIX1ST = {
+    "name": "soviet_normal",
+    "bo": [
+        ANYPOWER,
+        "proc",
+        "proc",
+        ANYPOWER,
+        "naweap",
+        "proc",
+        "barr",
         "fix",
         "dome",
         ANYPOWER,
-        "proc",
-        "afld",
         "afld",
         "stek",
         ANYPOWER
     ]
 }
 
-BO_SOVIET_FAST_WEAP = {
-    "name": "soviet_weap",
+BO_SOVIET_DOME1ST = {
+    "name": "soviet_normal",
     "bo": [
         ANYPOWER,
-        "kenn",
         "proc",
-        "naweap",
+        "proc",
         ANYPOWER,
+        "naweap",
         "barr",
-        "proc",
-        "fix",
         "proc",
         "dome",
         ANYPOWER,
+        "fix",
+        "afld",
         "stek",
         ANYPOWER
     ]
 }
 
-BO_SOVIET_FAST_AIR = {
-    "name": "soviet_air",
-    "bo": [
-        ANYPOWER,
-        "barr",
-        "proc",
-        "proc",
-        "dome",
-        "afld",
-        ANYPOWER,
-        "proc",
-        "naweap",
-        "stek",
-        ANYPOWER,
-        "afld",
-        "afld",
-        "afld",
-        "fix"
-    ]
-}
-
-BO_SOVIET_ECO = {
+BO_SOVIET_TECH1ST = {
     "name": "soviet_eco",
     "bo": [
         ANYPOWER,
-        "kenn",
-        "barr",
         "proc",
         "proc",
         ANYPOWER,
         "proc",
         "naweap",
-        "fix",
         ANYPOWER,
         "dome",
+        "barr",
         ANYPOWER,
-        "stek"
+        "stek",
+        "fix",
+        "afld"
     ]
 }
 
 BO_SOVIET_BOS = [
-    BO_SOVIET_NORMAL, BO_SOVIET_ECO, BO_SOVIET_FAST_WEAP, BO_SOVIET_FAST_AIR
+    BO_SOVIET_MORE_RANDOM, BO_SOVIET_FIX1ST, BO_SOVIET_DOME1ST, BO_SOVIET_TECH1ST
 ]
 
 BO_MUTANT_NORMAL = {

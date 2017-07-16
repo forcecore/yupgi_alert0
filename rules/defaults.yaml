@@ -151,9 +151,9 @@
 	RallyPoint:
 	Exit:
 	PeriodicFreeActor:
-		Actor: want
+		Actor: Zombie
 		Facing: 128
-		Period: 750
+		Period: 1500
 
 ^Capturable:
 	ExternalCapturable:
