@@ -522,7 +522,7 @@ dialog5: dialog.png
 	corner-bl: 579,446,1,1
 	corner-br: 643,446,1,1
 
-lobby-bits: buttons_op.png
+lobby-bits: buttons.png
 	spawn-unclaimed: 159,5,23,22
 	spawn-claimed: 127,5,23,22
 	admin: 187,5,7,5
@@ -531,7 +531,7 @@ lobby-bits: buttons_op.png
 	protected: 202,0,10,13
 	protected-disabled: 213,0,10,13
 
-strategic: buttons_op.png
+strategic: buttons.png
 	unowned: 127,5,23,22
 	critical_unowned: 127,27,23,22
 	enemy_owned: 159,27,23,22
@@ -558,7 +558,7 @@ flags: buttons_op.png
 
 	creepies: 60,157,30,15
 
-music: buttons_op.png
+music: buttons.png
 	pause: 0,193,25,25
 	stop: 25,193,25,25
 	play: 55,193,25,25
@@ -644,7 +644,7 @@ button-disabled: dialog.png
 	corner-tr: 639,256,1,1
 	corner-bl: 512,383,1,1
 	corner-br: 639,383,1,1  
-    
+
 # 10% darker than a normal button - Used in Settings when you select Display Audio Input or Advanced
 button-highlighted: dialog.png
 	background: 769,129,126,126
@@ -726,7 +726,7 @@ newsbutton-highlighted: dialog.png
 	corner-tr: 895,0,1,1
 	corner-bl: 768,127,1,1
 	corner-br: 895,127,1,1
-    
+
 newsbutton-highlighted-hover: dialog.png
 	background: 769,1,126,126
 	border-r: 895,1,1,126
@@ -944,7 +944,7 @@ checkbox: dialog.png
 	corner-bl: 640,127,1,1
 	corner-br: 767,127,1,1
 
-checkbox-bits: buttons_op.png
+checkbox-bits: buttons.png
 	checked: 100,157,16,16
 	checked-disabled: 100,173,16,16
 	crossed: 116,157,16,16
@@ -1035,5 +1035,5 @@ mainmenu-border: dialog.png
 	corner-br: 728,467,40,40
 
 dropdown: dialog.png
-    separator: 512,1,1,19
-    observer-separator: 768,256,1,19
+	separator: 512,1,1,19
+	observer-separator: 768,256,1,19

@@ -90,6 +90,7 @@ Cursors:
 
 Chrome:
 	yupgi_alert|chrome.yaml
+	yupgi_alert|ant-chrome.yaml
 
 Assemblies:
 	common|OpenRA.Mods.Common.dll

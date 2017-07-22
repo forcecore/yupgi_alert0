@@ -1,0 +1,120 @@
+# Emitted by _ant_chrome.py, don't edit by hand :)
+
+sidebar-creepies: chrome.png
+	background-top: 274,167,238,290
+	background-iconrow: 274,457,238,47
+	background-bottom: 274,504,238,8
+	background-supportoverlay: 64,75,64,48
+
+sidebar-button-creepies: chrome.png
+	background: 3,31,22,22
+	border-r: 25,31,3,22
+	border-l: 0,31,3,22
+	border-b: 3,53,22,3
+	border-t: 3,28,22,3
+	corner-tl: 0,28,3,3
+	corner-tr: 25,28,3,3
+	corner-bl: 0,53,3,3
+	corner-br: 25,53,3,3
+
+sidebar-button-creepies-hover: chrome.png
+	background: 3,3,22,22
+	border-r: 25,3,3,22
+	border-l: 0,3,3,22
+	border-b: 3,25,22,3
+	border-t: 3,0,22,3
+	corner-tl: 0,0,3,3
+	corner-tr: 25,0,3,3
+	corner-bl: 0,25,3,3
+	corner-br: 25,25,3,3
+
+sidebar-button-creepies-pressed: chrome.png
+	background: 3,31,22,22
+	border-r: 25,31,3,22
+	border-l: 0,31,3,22
+	border-b: 3,53,22,3
+	border-t: 3,28,22,3
+	corner-tl: 0,28,3,3
+	corner-tr: 25,28,3,3
+	corner-bl: 0,53,3,3
+	corner-br: 25,53,3,3
+
+sidebar-button-creepies-highlighted: chrome.png
+	background: 31,31,22,22
+	border-r: 53,31,3,22
+	border-l: 28,31,3,22
+	border-b: 31,53,22,3
+	border-t: 31,28,22,3
+	corner-tl: 28,28,3,3
+	corner-tr: 53,28,3,3
+	corner-bl: 28,53,3,3
+	corner-br: 53,53,3,3
+
+sidebar-button-creepies-highlighted-hover: chrome.png
+	background: 31,3,22,22
+	border-r: 53,3,3,22
+	border-l: 28,3,3,22
+	border-b: 31,25,22,3
+	border-t: 31,0,22,3
+	corner-tl: 28,0,3,3
+	corner-tr: 53,0,3,3
+	corner-bl: 28,25,3,3
+	corner-br: 53,25,3,3
+
+sidebar-button-creepies-highlighted-pressed: chrome.png
+	background: 31,31,22,22
+	border-r: 53,31,3,22
+	border-l: 28,31,3,22
+	border-b: 31,53,22,3
+	border-t: 31,28,22,3
+	corner-tl: 28,28,3,3
+	corner-tr: 53,28,3,3
+	corner-bl: 28,53,3,3
+	corner-br: 53,53,3,3
+
+sidebar-button-creepies-disabled: chrome.png
+	background: 171,3,22,22
+	border-r: 193,3,3,22
+	border-l: 168,3,3,22
+	border-b: 171,25,22,3
+	border-t: 171,0,22,3
+	corner-tl: 168,0,3,3
+	corner-tr: 193,0,3,3
+	corner-bl: 168,25,3,3
+	corner-br: 193,25,3,3
+
+sidebar-button-creepies-highlighted-disabled: chrome.png
+	background: 171,3,22,22
+	border-r: 193,3,3,22
+	border-l: 168,3,3,22
+	border-b: 171,25,22,3
+	border-t: 171,0,22,3
+	corner-tl: 168,0,3,3
+	corner-tr: 193,0,3,3
+	corner-bl: 168,25,3,3
+	corner-br: 193,25,3,3
+
+command-button-creepies: chrome.png
+	background: 3,31,22,22
+
+command-button-creepies-hover: chrome.png
+	background: 3,3,22,22
+
+command-button-creepies-pressed: chrome.png
+	background: 3,31,22,22
+
+command-button-creepies-highlighted: chrome.png
+	background: 31,31,22,22
+
+command-button-creepies-highlighted-hover: chrome.png
+	background: 31,3,22,22
+
+command-button-creepies-highlighted-pressed: chrome.png
+	background: 31,31,22,22
+
+command-button-creepies-disabled: chrome.png
+	background: 3,31,22,22
+
+command-button-creepies-highlighted-disabled: chrome.png
+	background: 31,31,22,22
+
