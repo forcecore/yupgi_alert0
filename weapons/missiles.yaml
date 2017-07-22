@@ -379,7 +379,7 @@ SteelRainCluster:
 
 SteelRain:
 	Inherits: SubMissile
-	ReloadDelay: 12
+	ReloadDelay: 13
 	Range: 10c0
 	MinRange: 3c0
 	Report: rocket1.aud
