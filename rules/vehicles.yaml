@@ -755,6 +755,8 @@ DTRK:
 		Weapon: MiniNuke
 		EmptyWeapon: MiniNuke
 	AttackSuicides:
+	ProducibleWithLevel:
+		Prerequisites: vehicles.upgraded
 
 CTNK:
 	Inherits: ^Vehicle
@@ -946,6 +948,7 @@ QANT:
 
 WANT:
 	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
 	Valued:
 		Cost: 1000
 	DeliversCash@GRINDABLE:
@@ -999,9 +1002,12 @@ WANT:
 	-EjectOnDeath:
 	-Capturable:
 	-Repairable:
+	ProducibleWithLevel:
+		Prerequisites: vehicles.upgraded
 
 FANT:
 	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
 	Valued:
 		Cost: 1500
 	DeliversCash@GRINDABLE:
@@ -1037,7 +1043,6 @@ FANT:
 		RequiresCondition: !deployed
 	RevealsShroud:
 		Range: 5c0
-	AutoTarget:
 	WithInfantryBody:
 		DefaultAttackSequence: bite
 		RequiresCondition: !deployed
@@ -1098,9 +1103,12 @@ FANT:
 		DeployOn: Attack, Damage
 		DeployChance: 100
 		DeployTicks: 150
+	ProducibleWithLevel:
+		Prerequisites: vehicles.upgraded
 
 SANT:
 	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
 	Valued:
 		Cost: 5000
 	DeliversCash@GRINDABLE:
@@ -1152,9 +1160,12 @@ SANT:
 	-EjectOnDeath:
 	-Capturable:
 	-Repairable:
+	ProducibleWithLevel:
+		Prerequisites: vehicles.upgraded
 
 HANT:
 	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
 	Valued:
 		Cost: 6000
 	DeliversCash@GRINDABLE:
@@ -1185,7 +1196,6 @@ HANT:
 		Crushes: wall, mine, crate
 	RevealsShroud:
 		Range: 7c0
-	AutoTarget:
 	WithInfantryBody:
 		DefaultAttackSequence: bite
 	-WithDamageOverlay:
@@ -1209,12 +1219,15 @@ HANT:
 	-Repairable:
 	AttackFrontal:
 		Voice: Attack
+	ProducibleWithLevel:
+		Prerequisites: vehicles.upgraded
 
 5TNK:
+	Inherits: ^Tank
+	Inherits@AUTOTARGET: ^AutoTargetAll
 	RenderSprites:
 		Image: 5TNK
 		PlayerPalette: player-cc1
-	Inherits: ^Tank
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 220
@@ -1273,9 +1286,12 @@ HANT:
 	Targetable:
 		TargetTypes: Ground, MCImmune, Repair, Vehicle
 	-Mindcontrollable:
+	ProducibleWithLevel:
+		Prerequisites: vehicles.upgraded
 
 MSAM:
 	Inherits: ^Tank
+	Inherits@AUTOTARGET: ^AutoTargetAll
 	RenderSprites:
 		PlayerPalette: player-cc1
 	Valued:
@@ -1315,9 +1331,12 @@ MSAM:
 	AegisAutoTarget:
 	SpawnActorOnDeath:
 		Actor: MSAM.Husk
+	ProducibleWithLevel:
+		Prerequisites: vehicles.upgraded
 
 WANGCHANG:
 	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 210
@@ -1360,6 +1379,8 @@ WANGCHANG:
 	RenderSprites:
 		Scale: 1.25
 		Image: WANGCHANG
+	ProducibleWithLevel:
+		Prerequisites: vehicles.upgraded
 
 MARV:
 	Inherits: HARV
@@ -1413,6 +1434,7 @@ QTNK_AI:
 
 SMIN:
 	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 12
@@ -1492,9 +1514,12 @@ SMIN:
 	SpawnerHarvester:
 		SpawnUnit: slave
 		Resources: Ore,Gems,Tiberium
+	ProducibleWithLevel:
+		Prerequisites: vehicles.upgraded
 
 JOSH:
 	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGround
 	RenderSprites:
 		PlayerPalette: player-ra2
 		Scale: 2.0

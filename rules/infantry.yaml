@@ -820,9 +820,13 @@ Ant:
 		UseDeathTypeSuffix: false
 	Voiced:
 		VoiceSet: AntVoice
+	HitShape:
+		Type: Circle
 
 DANT:
 	Inherits: ^Infantry
+	AutoTargetPriority@DEFAULT:
+		Types: Infantry
 	RenderSprites:
 		Image: tinyant
 	Valued:
@@ -861,13 +865,13 @@ DANT:
 		DefaultAttackSequence: bite
 	WithSpriteBody:
 	Armament:
-		Weapon: ScoutMandible
+		Weapon: BuzzerMandible
 	Targetable:
 		TargetTypes: Ground, Infantry, Ant
 	WithDeathAnimation:
 		UseDeathTypeSuffix: false
 	Voiced:
-		VoiceSet: AntVoice
+		VoiceSet: BuzzerVoice
 	DockClient:
 	Harvester:
 		Capacity: 2
@@ -881,50 +885,9 @@ DANT:
 	-DamagedByTerrain@tib:
 	-DamagedByRadioactivity:
 
-BUZZER:
-	Inherits: ^Infantry
-	RenderSprites:
-		Image: tinyant
-	Valued:
-		Cost: 10
-	DeliversCash@GRINDABLE:
-		Payload: 5
-		Sounds: buzzdie.aud
-	Tooltip:
-		Name: Drone Ant
-		Description: Irradiated insect that grew oversize.\nCollects ore.
-		GenericName: Ant
-	SelectionDecorations:
-		VisualBounds: 15,15,0,-2
-	Health:
-		HP: 50
-		Shape: Circle
-			Radius: 469
-	Mobile:
-		Speed: 99
-		TurnSpeed: 12
-		SharesCell: true
-	Crushable:
-	AttackFrontal:
-	WithInfantryBody:
-		DefaultAttackSequence: bite
-	Targetable:
-		TargetTypes: Ground, Infantry, Ant
-	WithDeathAnimation:
-		UseDeathTypeSuffix: false
-	Voiced:
-		VoiceSet: BuzzerVoice
-	-DamagedByTerrain@tib:
-	-DamagedByRadioactivity:
-	-ActorLostNotification:
-	Spawned:
-	Armament:
-		Weapon: BuzzerMandible
-	-Selectable:
-	-GainsExperience:
-
 DESO:
 	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGround
 	RenderSprites:
 		PlayerPalette: player-ra2
 		Scale: 0.50
@@ -997,6 +960,7 @@ DESO:
 
 DOGGIE:
 	Inherits@1: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetAll
 	RenderSprites:
 		PlayerPalette: player-cc2
 		Scale: 0.75
@@ -1049,6 +1013,7 @@ DOGGIE:
 
 CHITZ:
 	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGround
 	-Crushable:
 	RenderSprites:
 		Image: doge
@@ -1089,10 +1054,6 @@ CHITZ:
 		Voice: Attack
 	AttackMove:
 		Voice: Move
-	AutoTarget:
-		InitialStance: AttackAnything
-	Targetable:
-		TargetTypes: Ground, Infantry
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 		StandSequences: stand
@@ -1108,6 +1069,7 @@ CHITZ:
 
 VOLKOV:
 	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGround
 	-Crushable:
 	RenderSprites:
 		Image: gnrl
@@ -1161,6 +1123,7 @@ VOLKOV:
 
 SAIYAN:
 	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGround
 	Tooltip:
 		Name: Super Saiyan Technician
 	Mobile:
@@ -1191,6 +1154,7 @@ SAIYAN:
 SLAVE:
 	Inherits: ^Infantry
 	Inherits@2: ^ArmedCivilian
+	Inherits@AUTOTARGET: ^AutoTargetGround
 	Armament:
 		Weapon: Pistol
 		RequiresCondition: freed
@@ -1212,7 +1176,6 @@ SLAVE:
 		TurnSpeed: 12
 		SharesCell: true
 	Crushable:
-	AutoTarget:
 		ScanRadius: 5
 	WithSpriteBody:
 	Voiced:
@@ -1281,6 +1244,7 @@ INFT2:
 
 INFT:
 	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGround
 	RenderSprites:
 		Image: INFT
 	-Crushable:

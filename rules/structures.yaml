@@ -2627,6 +2627,7 @@ mbk:
 
 ANTAA:
 	Inherits: ^Defense
+	Inherits@AUTOTARGET: ^AutoTargetAir
 	Inherits@IDISABLE: ^DisabledOverlay
 	RenderSprites:
 		Image: agun
@@ -2674,6 +2675,7 @@ ANTAA:
 
 FIREVENT:
 	Inherits: ^Defense
+	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@IDISABLE: ^DisabledOverlay
 	RenderSprites:
 		Image: tsla

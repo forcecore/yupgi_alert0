@@ -19,8 +19,11 @@ AFLD_INFESTED:
 	Armor:
 		Type: Wood
 	RevealsShroud:
-		RevealGeneratedShroud: False
 		Range: 7c0
+		RevealGeneratedShroud: False
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 420,0,0, 420,-1024,0, 420,1024,0, -777,0,0, -777,-1024,0, -777,1024,0
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	-EmitInfantryOnSell:
@@ -38,8 +41,9 @@ APWR_INFESTED:
 	Tooltip:
 		Name: Infested Advanced Power Plant
 	Building:
-		Footprint: xxx xxx
-		Dimensions: 3,2
+		Footprint: xxx Xxx ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
 	WithBuildingBib:
 	Health:
 		HP: 700
@@ -47,6 +51,8 @@ APWR_INFESTED:
 		Type: Wood
 	RevealsShroud:
 		Range: 4c0
+	HitShape:
+		TargetableOffsets: -355,-1024,0
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	-EmitInfantryOnSell:
@@ -64,16 +70,17 @@ ATEK_INFESTED:
 	Tooltip:
 		Name: Infested Allied Tech Center
 	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
 	WithBuildingBib:
 	Health:
 		HP: 600
 	Armor:
 		Type: Wood
 	RevealsShroud:
-		RevealGeneratedShroud: False
 		Range: 10c0
+		RevealGeneratedShroud: False
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	-EmitInfantryOnSell:
@@ -91,16 +98,20 @@ BARR_INFESTED:
 	Tooltip:
 		Name: Infested Soviet Barracks
 	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
 	WithBuildingBib:
 	Health:
 		HP: 600
 	Armor:
 		Type: Wood
 	RevealsShroud:
-		RevealGeneratedShroud: False
 		Range: 5c0
+		RevealGeneratedShroud: False
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 490,-470,0, 355,512,0, -355,-512,0, -630,512,0
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	-EmitInfantryOnSell:
@@ -118,16 +129,21 @@ DOME_INFESTED:
 	Tooltip:
 		Name: Infested Radar Dome
 	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
 	WithBuildingBib:
 	Health:
 		HP: 1000
 	Armor:
 		Type: Wood
 	RevealsShroud:
-		RevealGeneratedShroud: False
 		Range: 10c0
+		RequiresCondition: !disabled
+		RevealGeneratedShroud: False
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 630,-384,0, 630,384,0, -700,-512,0, -700,512,0
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	-EmitInfantryOnSell:
@@ -145,16 +161,22 @@ FACT_INFESTED:
 	Tooltip:
 		Name: Infested Construction Yard
 	Building:
-		Footprint: xxx xxx xxx
-		Dimensions: 3,3
+		Footprint: xxX xxx XxX ===
+		Dimensions: 3,4
+		LocalCenterOffset: 0,-512,0
 	WithBuildingBib:
 	Health:
 		HP: 1500
 	Armor:
 		Type: Wood
 	RevealsShroud:
-		RevealGeneratedShroud: False
 		Range: 5c0
+		RevealGeneratedShroud: False
+	HitShape:
+		TargetableOffsets: 1273,939,0, -980,-640,0, -980,640,0
+		Type: Rectangle
+			TopLeft: -1536, -1536
+			BottomRight: 1536, 1536
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	-EmitInfantryOnSell:
@@ -172,7 +194,7 @@ FIX_INFESTED:
 	Tooltip:
 		Name: Infested Service Depot
 	Building:
-		Footprint: _x_ xxx _x_
+		Footprint: _=_ xxx _=_
 		Dimensions: 3,3
 	WithBuildingBib:
 		HasMinibib: Yes
@@ -181,8 +203,17 @@ FIX_INFESTED:
 	Armor:
 		Type: Wood
 	RevealsShroud:
-		RevealGeneratedShroud: False
 		Range: 5c0
+		RevealGeneratedShroud: False
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1536, -683
+			BottomRight: 1536, 853
+	HitShape@TOPANDBOTTOM:
+		TargetableOffsets: 840,0,0, -1060,0,0
+		Type: Rectangle
+			TopLeft: -640, -768
+			BottomRight: 640, 1024
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	-EmitInfantryOnSell:
@@ -226,16 +257,20 @@ HPAD_INFESTED:
 	Tooltip:
 		Name: Infested Helipad
 	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
 	WithBuildingBib:
 	Health:
 		HP: 800
 	Armor:
 		Type: Wood
 	RevealsShroud:
-		RevealGeneratedShroud: False
 		Range: 5c0
+		RevealGeneratedShroud: False
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 768,-512,0, 768,512,0, -281,-512,0, -630,512,0
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	-EmitInfantryOnSell:
@@ -262,8 +297,9 @@ IRON_INFESTED:
 	Armor:
 		Type: Wood
 	RevealsShroud:
+		Range: 6c0
+		RequiresCondition: !disabled
 		RevealGeneratedShroud: False
-		Range: 10c0
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	-EmitInfantryOnSell:
@@ -288,7 +324,9 @@ MSLO_INFESTED:
 	Armor:
 		Type: Wood
 	RevealsShroud:
-		Range: 5c0
+		Range: 6c0
+		RequiresCondition: !disabled
+		RevealGeneratedShroud: False
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	-EmitInfantryOnSell:
@@ -315,8 +353,9 @@ PDOX_INFESTED:
 	Armor:
 		Type: Wood
 	RevealsShroud:
+		Range: 6c0
+		RequiresCondition: !disabled
 		RevealGeneratedShroud: False
-		Range: 10c0
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	-EmitInfantryOnSell:
@@ -334,8 +373,9 @@ POWR_INFESTED:
 	Tooltip:
 		Name: Infested Power Plant
 	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
 	WithBuildingBib:
 	Health:
 		HP: 400
@@ -343,6 +383,9 @@ POWR_INFESTED:
 		Type: Wood
 	RevealsShroud:
 		Range: 4c0
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 640,-384,0, 640,512,0, -710,-512,0, -710,512,0
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	-EmitInfantryOnSell:
@@ -360,16 +403,31 @@ PROC_INFESTED:
 	Tooltip:
 		Name: Infested Ore Refinery
 	Building:
-		Footprint: _x_ xxx x==
-		Dimensions: 3,3
+		Footprint: _X_ xxx X== ===
+		Dimensions: 3,4
+		LocalCenterOffset: 0,-512,0
 	WithBuildingBib:
 	Health:
 		HP: 900
 	Armor:
 		Type: Wood
 	RevealsShroud:
-		RevealGeneratedShroud: False
 		Range: 6c0
+		RevealGeneratedShroud: False
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1536, -512
+			BottomRight: 1536, 598
+	HitShape@TOP:
+		TargetableOffsets: 1680,0,0
+		Type: Rectangle
+			TopLeft: -512, -1536
+			BottomRight: 512, -512
+	HitShape@BOTTOMLEFT:
+		TargetableOffsets: -1260,-1024,0
+		Type: Rectangle
+			TopLeft: -1536, 598
+			BottomRight: -512, 1280
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	-EmitInfantryOnSell:
@@ -387,15 +445,18 @@ STEK_INFESTED:
 	Tooltip:
 		Name: Infested Soviet Tech Center
 	Building:
-		Footprint: xxx xxx
-		Dimensions: 3,2
+		Footprint: XxX XxX ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
 	WithBuildingBib:
 	Health:
 		HP: 600
 	Armor:
 		Type: Wood
 	RevealsShroud:
-		Range: 4c0
+		Range: 5c0
+	HitShape:
+		TargetableOffsets: 420,-768,0, 420,768,0, -770,-768,0, -770,768,0
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	-EmitInfantryOnSell:
@@ -413,16 +474,20 @@ TENT_INFESTED:
 	Tooltip:
 		Name: Infested Allied Barracks
 	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
 	WithBuildingBib:
 	Health:
 		HP: 600
 	Armor:
 		Type: Wood
 	RevealsShroud:
-		RevealGeneratedShroud: False
 		Range: 5c0
+		RevealGeneratedShroud: False
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 630,-512,0, 355,512,0, -281,-512,0, -630,512,0
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	-EmitInfantryOnSell:
@@ -440,15 +505,16 @@ WEAP_INFESTED:
 	Tooltip:
 		Name: Infested War Factory
 	Building:
-		Footprint: xxx xxx
-		Dimensions: 3,2
+		Footprint: xxx xxx ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
 	WithBuildingBib:
 	Health:
 		HP: 1500
 	Armor:
 		Type: Wood
 	RevealsShroud:
-		Range: 4c0
+		Range: 5c0
 	WithProductionDoorOverlay:
 		Sequence: build-top
 	MustBeDestroyed:
@@ -468,8 +534,9 @@ ATEF_INFESTED:
 	Tooltip:
 		Name: Infested Fake Allied Tech Center
 	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
 	WithBuildingBib:
 	Health:
 		HP: 400
@@ -494,8 +561,9 @@ DOMF_INFESTED:
 	Tooltip:
 		Name: Infested Fake Radar Dome
 	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
 	WithBuildingBib:
 	Health:
 		HP: 1000
@@ -503,6 +571,9 @@ DOMF_INFESTED:
 		Type: Wood
 	RevealsShroud:
 		Range: 4c0
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 630,-384,0, 630,384,0, -700,-512,0, -700,512,0
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	-EmitInfantryOnSell:
@@ -520,8 +591,9 @@ FACF_INFESTED:
 	Tooltip:
 		Name: Infested Fake Construction Yard
 	Building:
-		Footprint: xxx xxx xxx
-		Dimensions: 3,3
+		Footprint: xxX xxx XxX ===
+		Dimensions: 3,4
+		LocalCenterOffset: 0,-512,0
 	WithBuildingBib:
 	Health:
 		HP: 1500
@@ -529,6 +601,11 @@ FACF_INFESTED:
 		Type: Wood
 	RevealsShroud:
 		Range: 4c0
+	HitShape:
+		TargetableOffsets: 1273,939,0, -980,-640,0, -980,640,0
+		Type: Rectangle
+			TopLeft: -1536, -1536
+			BottomRight: 1536, 1536
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	-EmitInfantryOnSell:
@@ -546,8 +623,9 @@ FAPW_INFESTED:
 	Tooltip:
 		Name: Infested Fake Advanced Power Plant
 	Building:
-		Footprint: xxx xxx
-		Dimensions: 3,2
+		Footprint: xxx Xxx ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
 	WithBuildingBib:
 	Health:
 		HP: 700
@@ -555,6 +633,8 @@ FAPW_INFESTED:
 		Type: Wood
 	RevealsShroud:
 		Range: 4c0
+	HitShape:
+		TargetableOffsets: -355,-1024,0
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	-EmitInfantryOnSell:
@@ -572,7 +652,7 @@ FIXF_INFESTED:
 	Tooltip:
 		Name: Infested Fake Service Depot
 	Building:
-		Footprint: _x_ xxx _x_
+		Footprint: _X_ xxx _X_
 		Dimensions: 3,3
 	WithBuildingBib:
 		HasMinibib: Yes
@@ -582,6 +662,15 @@ FIXF_INFESTED:
 		Type: Wood
 	RevealsShroud:
 		Range: 4c0
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1536, -683
+			BottomRight: 1536, 853
+	HitShape@TOPANDBOTTOM:
+		TargetableOffsets: 840,0,0, -1060,0,0
+		Type: Rectangle
+			TopLeft: -640, -768
+			BottomRight: 640, 1024
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	-EmitInfantryOnSell:
@@ -599,8 +688,9 @@ FPWR_INFESTED:
 	Tooltip:
 		Name: Infested Fake Power Plant
 	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
 	WithBuildingBib:
 	Health:
 		HP: 400
@@ -608,6 +698,9 @@ FPWR_INFESTED:
 		Type: Wood
 	RevealsShroud:
 		Range: 4c0
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 640,-384,0, 640,512,0, -710,-512,0, -710,512,0
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	-EmitInfantryOnSell:
@@ -681,7 +774,7 @@ SPEF_INFESTED:
 	Tooltip:
 		Name: Infested Fake Sub Pen
 	Building:
-		Footprint: xxx xxx xxx
+		Footprint: XXX xxx XXX
 		Dimensions: 3,3
 		Adjacent: 8
 		TerrainTypes: Water
@@ -691,6 +784,15 @@ SPEF_INFESTED:
 		Type: Light
 	RevealsShroud:
 		Range: 4c0
+	HitShape:
+		Type: Rectangle
+			TopLeft: -1536, -598
+			BottomRight: 1536, 598
+	HitShape@TOPANDBOTTOM:
+		TargetableOffsets: 811,0,0, -811,0,0
+		Type: Rectangle
+			TopLeft: -555, -1110
+			BottomRight: 555, 1110
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	-EmitInfantryOnSell:
@@ -708,7 +810,7 @@ SYRF_INFESTED:
 	Tooltip:
 		Name: Infested Fake Shipyard
 	Building:
-		Footprint: xxx xxx xxx
+		Footprint: XXX xxx XXX
 		Dimensions: 3,3
 		Adjacent: 8
 		TerrainTypes: Water
@@ -718,6 +820,16 @@ SYRF_INFESTED:
 		Type: Light
 	RevealsShroud:
 		Range: 4c0
+	HitShape:
+		TargetableOffsets: 768,0,0, 768,-1024,0, 768,1024,0
+		Type: Rectangle
+			TopLeft: -1536, -1152
+			BottomRight: 1536, 598
+	HitShape@BOTTOM:
+		TargetableOffsets: -768,0,0
+		Type: Rectangle
+			TopLeft: -512, 598
+			BottomRight: 512, 1110
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	-EmitInfantryOnSell:
@@ -735,8 +847,9 @@ WEAF_INFESTED:
 	Tooltip:
 		Name: Infested Fake War Factory
 	Building:
-		Footprint: xxx xxx
-		Dimensions: 3,2
+		Footprint: xxx xxx ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
 	WithBuildingBib:
 	Health:
 		HP: 1500
@@ -786,8 +899,9 @@ FCOM_INFESTED:
 	Tooltip:
 		Name: Infested Forward Command
 	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
 	WithBuildingBib:
 	Health:
 		HP: 400
@@ -815,11 +929,11 @@ HOSP_INFESTED:
 	WithBuildingBib:
 		HasMinibib: Yes
 	Health:
-		HP: 1000
+		HP: 800
 	Armor:
 		Type: Wood
 	RevealsShroud:
-		Range: 3c0
+		Range: 4c0
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	-EmitInfantryOnSell:
@@ -837,8 +951,9 @@ MISS_INFESTED:
 	Tooltip:
 		Name: Infested Technology Center
 	Building:
-		Footprint: xxx xxx
-		Dimensions: 3,2
+		Footprint: xxx xxx ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
 	WithBuildingBib:
 	Health:
 		HP: 400
@@ -846,6 +961,9 @@ MISS_INFESTED:
 		Type: Wood
 	RevealsShroud:
 		Range: 3c0
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 840,0,0, 840,-1024,0, 420,768,0, -840,0,0, -840,-1024,0, -840,1024,0
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	-EmitInfantryOnSell:
@@ -864,13 +982,16 @@ OILB_INFESTED:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Health:
-		HP: 1000
+		HP: 800
 	Armor:
 		Type: Wood
 	RevealsShroud:
-		Range: 3c0
+		Range: 4c0
 	Explodes:
 		Weapon: BarrelExplode
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 630,-300,0, 420,512,0, -420,-512,0, -630,300,0
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	-EmitInfantryOnSell:
@@ -894,6 +1015,12 @@ V01_INFESTED:
 		Type: Wood
 	RevealsShroud:
 		Range: 10c0
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: -490,-384,0, 0,0,0, 0,470,0
+		Type: Rectangle
+			TopLeft: -768, -597
+			BottomRight: 896, 683
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	-EmitInfantryOnSell:
@@ -917,6 +1044,12 @@ V02_INFESTED:
 		Type: Wood
 	RevealsShroud:
 		Range: 4c0
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: -490,-512,0, 0,0,0, 0,512,0
+		Type: Rectangle
+			TopLeft: -1024, -512
+			BottomRight: 1024, 597
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	-EmitInfantryOnSell:
@@ -940,6 +1073,12 @@ V03_INFESTED:
 		Type: Wood
 	RevealsShroud:
 		Range: 4c0
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: -490,-512,0, 0,0,0, 421,512,0, -210,512,0
+		Type: Rectangle
+			TopLeft: -1024, -597
+			BottomRight: 1024, 597
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	-EmitInfantryOnSell:
@@ -963,6 +1102,12 @@ V04_INFESTED:
 		Type: Wood
 	RevealsShroud:
 		Range: 4c0
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, -421,-256,0, -421,256,0
+		Type: Rectangle
+			TopLeft: -683, -432
+			BottomRight: 683, 683
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	-EmitInfantryOnSell:
@@ -1055,6 +1200,12 @@ V20_INFESTED:
 		Type: Wood
 	RevealsShroud:
 		Range: 4c0
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: -840,-512,0, 0,0,0, -840,512,0
+		Type: Rectangle
+			TopLeft: -1024, -512
+			BottomRight: 1024, 896
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	-EmitInfantryOnSell:
@@ -1078,6 +1229,17 @@ V21_INFESTED:
 		Type: Wood
 	RevealsShroud:
 		Range: 4c0
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 840,-512,0, 420,0,0, 840,512,0
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 0
+	HitShape@WELL:
+		TargetableOffsets: -770,512,0
+		Type: Rectangle
+			TopLeft: 0, 0
+			BottomRight: 1024, 598
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	-EmitInfantryOnSell:
@@ -1124,6 +1286,12 @@ V25_INFESTED:
 		Type: Wood
 	RevealsShroud:
 		Range: 10c0
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,-128,0, 420,512,0
+		Type: Rectangle
+			TopLeft: -683, -683
+			BottomRight: 1024, 512
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	-EmitInfantryOnSell:
@@ -1262,6 +1430,12 @@ V37_INFESTED:
 		Type: Wood
 	RevealsShroud:
 		Range: 4c0
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 0,1024,0
+		Type: Rectangle
+			TopLeft: -512, -597
+			BottomRight: 1536, 597
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	-EmitInfantryOnSell:
