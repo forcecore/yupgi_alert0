@@ -778,6 +778,8 @@ GUN:
 		Range: 6c0
 	BodyOrientation:
 		UseClassicFacingFudge: True
+	StructureChrono:
+		ChargeDelay: 300
 
 FTUR:
 	Inherits: ^Defense
@@ -1281,7 +1283,7 @@ PROC:
 			TopLeft: -1536, 598
 			BottomRight: -512, 1280
 	TransformOnCapture:
-		IntoActor: PROC_INFESTEDK
+		IntoActor: PROC_INFESTED
 
 SILO:
 	Inherits: ^Building
