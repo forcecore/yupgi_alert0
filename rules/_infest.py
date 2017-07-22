@@ -1,32 +1,13 @@
 #!/usr/bin/python3
 import pprint
-import poyo
-
-
-
-def emit(key, config, level):
-    val = config[key]
-
-    if type(val) is dict:
-        print("{}{}:".format("\t" * level, key))
-        for k in val.keys():
-            emit(k, val, level + 1)
-    else:
-        print("{}{}: {}".format("\t" * level, key, val))
+import yaml
 
 
 
 def process(fname):
-    with open(fname) as f:
-        slurp = f.read()
-        slurp = slurp.replace("\t", "    ")
+    config = yaml.load_from_file(fname)
 
-    config = poyo.parse_string(slurp)
-
-    #pp = pprint.PrettyPrinter(indent=4)
-    #pp.pprint(config)
-
-    names = list(config.keys())
+    names = list(config.children.keys())
     names.sort()
 
     for name in names:
@@ -40,52 +21,56 @@ def process(fname):
         print("\tInherits@2: ^Infested")
 
         if "RenderSprites" in item:
-            emit("RenderSprites", item, 1)
+            item["RenderSprites"].print()
         else:
             print("\tRenderSprites:")
             print("\t\tImage: " + name.upper())
 
         if "Valued" in item:
-            emit("Valued", item, 1)
+            item["Valued"].print()
 
         print("\tSelectable:")
         print("\t\tClass: infested_building")
 
         if "Tooltip" in item:
             print("\tTooltip:")
-            print("\t\tName:", "Infested " + item["Tooltip"]["Name"])
+            print("\t\tName:", "Infested " + item["Tooltip"]["Name"].value)
         else:
             print("\tTooltip:")
             print("\t\tName:", "Infested Civilian Building")
 
-        emit("Building", item, 1)
+        item["Building"].print()
 
         if "WithBuildingBib" in item:
-            emit("WithBuildingBib", item, 1)
+            item["WithBuildingBib"].print()
 
         if "Health" in item:
-            emit("Health", item, 1)
+            item["Health"].print()
         else:
             print("\tHealth:")
             print("\t\tHP: 400")
 
         if "Armor" in item:
-            emit("Armor", item, 1)
+            item["Armor"].print()
         else:
             print("\tArmor:")
             print("\t\tType: Wood")
 
         if "RevealsShroud" in item:
-            emit("RevealsShroud", item, 1)
+            item["RevealsShroud"].print()
         else:
             print("\tRevealsShroud:")
             print("\t\tRange: 4c0")
 
         if "Explodes" in item:
-            emit("Explodes", item, 1)
+            item["Explodes"].print()
+
+        for key in item.children.keys():
+            if key.startswith("HitShape"):
+                item[key].print()
 
         if "WithProductionDoorOverlay" in item:
-            emit("WithProductionDoorOverlay", item, 1)
+            item["WithProductionDoorOverlay"].print()
 
         print("\tMustBeDestroyed:")
         print("\t\tRequiredForShortGame: true")
