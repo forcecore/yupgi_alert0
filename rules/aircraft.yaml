@@ -81,6 +81,7 @@ BADR.Bomber:
 
 MIG:
 	Inherits: ^Plane
+	Inherits@AUTOTARGET: ^AutoTargetGround
 	RenderSprites:
 		Image: aurora
 	Buildable:
@@ -153,6 +154,7 @@ MIG:
 
 YAK:
 	Inherits: ^Plane
+	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
@@ -217,6 +219,7 @@ YAK:
 
 TRAN:
 	Inherits: ^Helicopter
+	Inherits@AUTOTARGET: ^AutoTargetAll
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Helicopter
@@ -285,6 +288,7 @@ TRAN:
 
 HELI:
 	Inherits: ^Helicopter
+	Inherits@AUTOTARGET: ^AutoTargetAll
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Helicopter
@@ -320,8 +324,6 @@ HELI:
 		InitialFacing: 224
 		TurnSpeed: 4
 		Speed: 149
-		Repulsable: true
-		RepulsionSpeed: 15
 	AutoTarget:
 		InitialStance: HoldFire
 		InitialStanceAI: HoldFire
@@ -346,6 +348,7 @@ HELI:
 
 HIND:
 	Inherits: ^Helicopter
+	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Helicopter
@@ -384,8 +387,6 @@ HIND:
 		InitialFacing: 224
 		TurnSpeed: 4
 		Speed: 112
-		Repulsable: true
-		RepulsionSpeed: 15
 	AutoTarget:
 		InitialStance: HoldFire
 		InitialStanceAI: HoldFire
@@ -496,6 +497,7 @@ MIG2:
 
 ZEP:
 	Inherits: ^Helicopter
+	Inherits@AUTOTARGET: ^AutoTargetAll
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
@@ -591,10 +593,6 @@ NMIG:
 		RepulsionSpeed: 40
 		MaximumPitch: 56
 		RearmBuildings: mslo
-	AutoTarget:
-		TargetWhenIdle: false
-		TargetWhenDamaged: false
-		EnableStances: false
 	AmmoPool:
 		Ammo: 1
 	ReturnOnIdle:

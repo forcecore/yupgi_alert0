@@ -60,8 +60,8 @@ def process(fname):
 
         emit("Building", item, 1)
 
-        if "Bib" in item:
-            emit("Bib", item, 1)
+        if "WithBuildingBib" in item:
+            emit("WithBuildingBib", item, 1)
 
         if "Health" in item:
             emit("Health", item, 1)

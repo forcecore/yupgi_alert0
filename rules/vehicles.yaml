@@ -1,5 +1,6 @@
 V2RL:
 	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 80
@@ -27,7 +28,6 @@ V2RL:
 	AttackFrontal:
 	SelectionDecorations:
 		VisualBounds: 28,28
-	AutoTarget:
 	Explodes:
 		Weapon: V2Explode
 	WithAttackAnimation:
@@ -44,6 +44,7 @@ V2RL:
 
 1TNK:
 	Inherits: ^Tank
+	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 50
@@ -51,8 +52,6 @@ V2RL:
 		Description: Light Tank, good for scouting.\n  Strong vs Light armor\n  Weak vs Infantry, Tanks, Aircraft
 	Valued:
 		Cost: 700
-	DeliversCash@GRINDABLE:
-		Payload: 450
 	Tooltip:
 		Name: Light Tank
 	Health:
@@ -80,7 +79,6 @@ V2RL:
 	AttackTurreted:
 	WithMuzzleOverlay:
 	WithSpriteTurret:
-	AutoTarget:
 	SpawnActorOnDeath:
 		Actor: 1TNK.Husk
 	ProducibleWithLevel:
@@ -88,6 +86,7 @@ V2RL:
 
 2TNK:
 	Inherits: ^Tank
+	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 110
@@ -107,7 +106,7 @@ V2RL:
 		Speed: 85
 		Crushes: wall, mine, crate, infantry
 	RevealsShroud:
-		Range: 5c0
+		Range: 6c0
 		RevealGeneratedShroud: False
 	RevealsShroud@GAPGEN:
 		Range: 4c0
@@ -122,7 +121,6 @@ V2RL:
 	AttackTurreted:
 	WithMuzzleOverlay:
 	WithSpriteTurret:
-	AutoTarget:
 	SpawnActorOnDeath:
 		Actor: 2TNK.Husk
 	SelectionDecorations:
@@ -132,6 +130,7 @@ V2RL:
 
 3TNK:
 	Inherits: ^Tank
+	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 120
@@ -151,7 +150,7 @@ V2RL:
 		Speed: 71
 		Crushes: wall, mine, crate, infantry
 	RevealsShroud:
-		Range: 5c0
+		Range: 6c0
 		RevealGeneratedShroud: False
 	RevealsShroud@GAPGEN:
 		Range: 4c0
@@ -166,7 +165,6 @@ V2RL:
 	AttackTurreted:
 	WithMuzzleOverlay:
 	WithSpriteTurret:
-	AutoTarget:
 	SpawnActorOnDeath:
 		Actor: 3TNK.Husk
 	SelectionDecorations:
@@ -186,6 +184,7 @@ V2RL:
 
 4TNK:
 	Inherits: ^Tank
+	Inherits@AUTOTARGET: ^AutoTargetAll
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 180
@@ -195,8 +194,6 @@ V2RL:
 		Description: Big and slow tank, with anti-air capability.\n  Strong vs Vehicles, Infantry, Aircraft\n  Weak vs Nothing
 	Valued:
 		Cost: 2000
-	DeliversCash@GRINDABLE:
-		Payload: 1000
 	Tooltip:
 		Name: Mammoth Tank
 	Health:
@@ -207,7 +204,7 @@ V2RL:
 		Speed: 50
 		Crushes: wall, mine, crate, infantry, heavywall
 	RevealsShroud:
-		Range: 6c0
+		Range: 7c0
 		RevealGeneratedShroud: False
 	RevealsShroud@GAPGEN:
 		Range: 4c0
@@ -229,7 +226,6 @@ V2RL:
 	AttackTurreted:
 	WithMuzzleOverlay:
 	WithSpriteTurret:
-	AutoTarget:
 	SpawnActorOnDeath:
 		Actor: 4TNK.Husk
 	SelfHealing:
@@ -244,6 +240,7 @@ V2RL:
 
 ARTY:
 	Inherits: ^Tank
+	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 70
@@ -251,8 +248,6 @@ ARTY:
 		Description: Long-range artillery.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
 	Valued:
 		Cost: 800
-	DeliversCash@GRINDABLE:
-		Payload: 400
 	Tooltip:
 		Name: Artillery
 	Health:
@@ -277,7 +272,6 @@ ARTY:
 		Weapon: ArtilleryExplode
 		EmptyWeapon: UnitExplodeSmall
 		LoadedChance: 75
-	AutoTarget:
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
 
@@ -305,9 +299,8 @@ HARV:
 		Resources: Ore,Gems,Tiberium
 		BaleUnloadDelay: 1
 		SearchFromProcRadius: 30
-		SearchFromOrderRadius: 15
+		SearchFromOrderRadius: 11
 		DeliveryBuildings: proc, qnest, anthill
-		MaxUnloadQueue: 3
 	Health:
 		HP: 600
 	Armor:
@@ -416,6 +409,7 @@ GAMCV:
 
 JEEP:
 	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
 	RenderSprites:
 		Image: humm
 		PlayerPalette: player-cc1
@@ -452,7 +446,6 @@ JEEP:
 	AttackTurreted:
 	WithMuzzleOverlay:
 	WithSpriteTurret:
-	AutoTarget:
 	Cargo:
 		Types: Infantry
 		MaxWeight: 3
@@ -468,6 +461,7 @@ JEEP:
 
 APC:
 	Inherits: ^Tank
+	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 40
@@ -498,7 +492,6 @@ APC:
 		MuzzleSequence: muzzle
 	AttackFrontal:
 	WithMuzzleOverlay:
-	AutoTarget:
 	Cargo:
 		Types: Infantry
 		MaxWeight: 5
@@ -558,6 +551,8 @@ TRUK:
 		Cost: 500
 	Tooltip:
 		Name: Supply Truck
+	Selectable:
+		Priority: 6
 	Health:
 		HP: 110
 	Armor:
@@ -652,6 +647,7 @@ MRJ:
 
 TTNK:
 	Inherits: ^Tank
+	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 170
@@ -684,12 +680,12 @@ TTNK:
 		Sequence: spinner
 	SelectionDecorations:
 		VisualBounds: 30,30
-	AutoTarget:
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
 
 FTRK:
 	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetAll
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 60
@@ -729,7 +725,6 @@ FTRK:
 	AttackTurreted:
 	WithMuzzleOverlay:
 	WithSpriteTurret:
-	AutoTarget:
 	SelectionDecorations:
 		VisualBounds: 28,28
 	ProducibleWithLevel:
@@ -763,6 +758,7 @@ DTRK:
 
 CTNK:
 	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 200
@@ -788,7 +784,6 @@ CTNK:
 		RevealGeneratedShroud: False
 	RevealsShroud@GAPGEN:
 		Range: 4c0
-	AutoTarget:
 	Armament@PRIMARY:
 		Weapon: APTusk
 		LocalOffset: -160,-276,232
@@ -838,6 +833,7 @@ QTNK:
 
 STNK:
 	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 130

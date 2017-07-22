@@ -1,6 +1,8 @@
 Player:
-	ExpertAI@UnleashedAI:
+	#ExpertAI@UnleashedAI:
+	HackyAI@UnleashedAI:
 		Name: Unleashed AI
+		Type: unleashed
 		LuaScript: evo.lua
 		#EnableLuaUnitProduction: false
 		NNProduction: true
@@ -202,6 +204,7 @@ Player:
 				CheckRadius: 7c0
 	HackyAI@BaselineAI:
 		Name: Baseline AI
+		Type: baseline
 		LuaScript: evo.lua
 		EnableLuaUnitProduction: false
 		MinimumExcessPower: 100
@@ -390,6 +393,7 @@ Player:
 				CheckRadius: 7c0
 	HackyAI@RushAI:
 		Name: Rush AI
+		Type: rush
 		MinimumExcessPower: 40
 		BuildingCommonNames:
 			ConstructionYard: gafact,nafact,qnest

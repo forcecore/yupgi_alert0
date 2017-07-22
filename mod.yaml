@@ -2,12 +2,9 @@
 
 Metadata:
 	Title: Over Powered Mod
-	Description: Crazy modifications to Red Alert by Boolbada
-	Version: DEV-Release-20170527
-	Author: BoolBada
+	Version: DEV-Playtest-20170722
 
-RequiresMods:
-	modchooser: {DEV_VERSION}
+PackageFormats: Mix
 
 Packages:
 	~^Content/ra/v2/
@@ -48,7 +45,7 @@ Packages:
 MapFolders:
 	ra|maps: System
 	yupgi_alert|maps: System
-	~^maps/ra/release-20170527: User
+	~^maps/ra/playtest-20170722: User
 
 Rules:
 	yupgi_alert|rules/misc.yaml
@@ -60,13 +57,13 @@ Rules:
 	yupgi_alert|rules/vehicles.yaml
 	yupgi_alert|rules/husks.yaml
 	yupgi_alert|rules/structures.yaml
-	yupgi_alert|rules/infested.yaml
 	yupgi_alert|rules/infantry.yaml
 	yupgi_alert|rules/civilian.yaml
 	yupgi_alert|rules/decoration.yaml
 	yupgi_alert|rules/aircraft.yaml
 	yupgi_alert|rules/ships.yaml
 	yupgi_alert|rules/fakes.yaml
+	yupgi_alert|rules/infested.yaml
 
 Sequences:
 	yupgi_alert|sequences/ships.yaml
@@ -77,7 +74,7 @@ Sequences:
 	yupgi_alert|sequences/misc.yaml
 	yupgi_alert|sequences/decorations.yaml
 
-VoxelSequences:
+ModelSequences:
 	yupgi_alert|sequences/voxels.yaml
 
 TileSets:
@@ -111,7 +108,7 @@ ChromeLayout:
 	common|chrome/ingame-menu.yaml
 	ra|chrome/ingame-observer.yaml
 	common|chrome/ingame-observerstats.yaml
-	common|chrome/ingame-player.yaml
+	ra|chrome/ingame-player.yaml
 	common|chrome/ingame-perf.yaml
 	common|chrome/ingame-debug.yaml
 	common|chrome/mainmenu.yaml
@@ -221,6 +218,8 @@ SpriteSequenceFormat: TilesetSpecificSpriteSequence
 		INTERIOR: .int
 		DESERT: .des
 		DEBUGTERRAIN: .tem
+
+ModelSequenceFormat: VoxelModelSequence
 
 GameSpeeds:
 	slower:

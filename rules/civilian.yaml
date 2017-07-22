@@ -1,7 +1,6 @@
 C1:
 	Inherits@1: ^CivInfantry
 	Inherits@2: ^ArmedCivilian
-	AutoTarget:
 
 C2:
 	Inherits: ^CivInfantry
@@ -33,7 +32,6 @@ C6:
 C7:
 	Inherits@1: ^CivInfantry
 	Inherits@2: ^ArmedCivilian
-	AutoTarget:
 	RenderSprites:
 		Image: C1
 
@@ -59,7 +57,6 @@ C10:
 TECN:
 	Inherits@1: ^CivInfantry
 	Inherits@2: ^ArmedCivilian
-	AutoTarget:
 	Tooltip:
 		Name: Technician
 	RenderSprites:
@@ -67,12 +64,14 @@ TECN:
 
 FCOM:
 	Inherits: ^TechBuilding
+	Inherits@shape: ^2x2Shape
 	Inherits: ^Infestable
 	TransformOnCapture:
 		IntoActor: fcom_infested
 	Building:
-		Footprint: xx xx
-		Dimensions: 2,2
+		Footprint: xx xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
 	Valued:
 		Cost: 2000
 	Health:
@@ -83,13 +82,14 @@ FCOM:
 		Name: Forward Command
 	RevealsShroud:
 		Range: 10c0
-	Bib:
+	WithBuildingBib:
 	Power:
 		Amount: -200
 	ProvidesPrerequisite@buildingname:
 
 HOSP:
 	Inherits: ^TechBuilding
+	Inherits@shape: ^2x2Shape
 	Inherits: ^Infestable
 	TransformOnCapture:
 		IntoActor: hosp_infested
@@ -99,15 +99,15 @@ HOSP:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Health:
-		HP: 1000
+		HP: 800
 	ExternalCapturable:
 	ExternalCapturableBar:
 	EngineerRepairable:
 	Tooltip:
 		Name: Hospital
 	RevealsShroud:
-		Range: 3c0
-	Bib:
+		Range: 4c0
+	WithBuildingBib:
 		HasMinibib: Yes
 	WithDeathAnimation:
 		DeathSequence: dead
@@ -117,7 +117,7 @@ HOSP:
 		String: Hospital
 
 V01:
-	Inherits@1: ^CivBuilding
+	Inherits: ^CivBuilding
 	Inherits@2: ^Infestable
 	TransformOnCapture:
 		IntoActor: v01_infested
@@ -130,9 +130,15 @@ V01:
 		Range: 10c0
 	EditorTilesetFilter:
 		ExcludeTilesets: DESERT, INTERIOR
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: -490,-384,0, 0,0,0, 0,470,0
+		Type: Rectangle
+			TopLeft: -768, -597
+			BottomRight: 896, 683
 
 V02:
-	Inherits@1: ^CivBuilding
+	Inherits: ^CivBuilding
 	Inherits@2: ^Infestable
 	TransformOnCapture:
 		IntoActor: v02_infested
@@ -141,9 +147,15 @@ V02:
 		Dimensions: 2,2
 	EditorTilesetFilter:
 		ExcludeTilesets: DESERT, INTERIOR
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: -490,-512,0, 0,0,0, 0,512,0
+		Type: Rectangle
+			TopLeft: -1024, -512
+			BottomRight: 1024, 597
 
 V03:
-	Inherits@1: ^CivBuilding
+	Inherits: ^CivBuilding
 	Inherits@2: ^Infestable
 	TransformOnCapture:
 		IntoActor: v03_infested
@@ -152,9 +164,15 @@ V03:
 		Dimensions: 2,2
 	EditorTilesetFilter:
 		ExcludeTilesets: DESERT, INTERIOR
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: -490,-512,0, 0,0,0, 421,512,0, -210,512,0
+		Type: Rectangle
+			TopLeft: -1024, -597
+			BottomRight: 1024, 597
 
 V04:
-	Inherits@1: ^CivBuilding
+	Inherits: ^CivBuilding
 	Inherits@2: ^Infestable
 	TransformOnCapture:
 		IntoActor: v04_infested
@@ -163,9 +181,16 @@ V04:
 		Dimensions: 2,2
 	EditorTilesetFilter:
 		ExcludeTilesets: DESERT, INTERIOR
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, -421,-256,0, -421,256,0
+		Type: Rectangle
+			TopLeft: -683, -432
+			BottomRight: 683, 683
 
 V05:
-	Inherits@1: ^CivBuilding
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x1Shape
 	Inherits@2: ^Infestable
 	TransformOnCapture:
 		IntoActor: v05_infested
@@ -176,7 +201,8 @@ V05:
 		ExcludeTilesets: DESERT, INTERIOR
 
 V06:
-	Inherits@1: ^CivBuilding
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x1Shape
 	Inherits@2: ^Infestable
 	TransformOnCapture:
 		IntoActor: v06_infested
@@ -187,7 +213,8 @@ V06:
 		ExcludeTilesets: DESERT, INTERIOR
 
 V07:
-	Inherits@1: ^CivBuilding
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x1Shape
 	Inherits@2: ^Infestable
 	TransformOnCapture:
 		IntoActor: v07_infested
@@ -263,7 +290,8 @@ V19:
 	-SpawnActorOnDeath@3:
 	SpawnActorOnDeath:
 		Actor: V19.Husk
-	AutoTargetIgnore:
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, NoAutoTarget
 
 V19.Husk:
 	Inherits: ^CivBuilding
@@ -296,14 +324,15 @@ BARL:
 	Tooltip:
 		Name: Explosive Barrel
 		ShowOwnerRow: False
-	AutoTargetIgnore:
 	Armor:
 		Type: None
 	Targetable:
-		TargetTypes: Ground, DemoTruck, Barrel
+		TargetTypes: Ground, DemoTruck, Barrel, NoAutoTarget
 	-ShakeOnDeath:
 	-SoundOnDamageTransition:
 	-Demolishable:
+	EditorTilesetFilter:
+		Categories: Decoration
 
 BRL3:
 	Inherits: ^TechBuilding
@@ -319,14 +348,15 @@ BRL3:
 	Tooltip:
 		Name: Explosive Barrel
 		ShowOwnerRow: False
-	AutoTargetIgnore:
 	Armor:
 		Type: None
 	Targetable:
-		TargetTypes: Ground, DemoTruck, Barrel
+		TargetTypes: Ground, DemoTruck, Barrel, NoAutoTarget
 	-ShakeOnDeath:
 	-SoundOnDamageTransition:
 	-Demolishable:
+	EditorTilesetFilter:
+		Categories: Decoration
 
 AMMOBOX1:
 	Inherits: ^AmmoBox
@@ -338,15 +368,20 @@ AMMOBOX3:
 	Inherits: ^AmmoBox
 
 MISS:
-	Inherits@1: ^TechBuilding
+	Inherits: ^TechBuilding
+	Inherits@shape: ^3x2Shape
 	Inherits@2: ^Infestable
 	TransformOnCapture:
 		IntoActor: miss_infested
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 840,0,0, 840,-1024,0, 420,768,0, -840,0,0, -840,-1024,0, -840,1024,0
 	Selectable:
 		Priority: 0
 	Building:
-		Footprint: xxx xxx
-		Dimensions: 3,2
+		Footprint: xxx xxx ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
 	Valued:
 		Cost: 2000
 	Health:
@@ -357,14 +392,15 @@ MISS:
 		Type: Wood
 	Tooltip:
 		Name: Technology Center
-	Bib:
+	WithBuildingBib:
 	WithDeathAnimation:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
 	ProvidesPrerequisite@buildingname:
 
 BIO:
-	Inherits@1: ^TechBuilding
+	Inherits: ^TechBuilding
+	Inherits@shape: ^2x2Shape
 	Inherits@2: ^Infestable
 	TransformOnCapture:
 		IntoActor: bio_infested
@@ -386,19 +422,23 @@ BIO:
 		String: Biohazard
 
 OILB:
-	Inherits@1: ^TechBuilding
+	Inherits: ^TechBuilding
+	Inherits@shape: ^2x2Shape
 	Inherits@2: ^Infestable
 	TransformOnCapture:
 		IntoActor: oilb_infested
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 630,-300,0, 420,512,0, -420,-512,0, -630,300,0
 	Selectable:
 		Priority: 0
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Health:
-		HP: 1000
+		HP: 800
 	RevealsShroud:
-		Range: 3c0
+		Range: 4c0
 	ExternalCapturable:
 		Type: building
 	ExternalCapturableBar:
@@ -574,25 +614,42 @@ BRIDGEHUT.small:
 		TargetTypes: BridgeHut, C4
 
 V20:
-	Inherits@1: ^DesertCivBuilding
+	Inherits: ^DesertCivBuilding
 	Inherits@2: ^Infestable
 	TransformOnCapture:
 		IntoActor: v20_infested
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: -840,-512,0, 0,0,0, -840,512,0
+		Type: Rectangle
+			TopLeft: -1024, -512
+			BottomRight: 1024, 896
 
 V21:
-	Inherits@1: ^DesertCivBuilding
+	Inherits: ^DesertCivBuilding
 	Inherits@2: ^Infestable
 	TransformOnCapture:
 		IntoActor: v21_infested
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 840,-512,0, 420,0,0, 840,512,0
+		Type: Rectangle
+			TopLeft: -1024, -1024
+			BottomRight: 1024, 0
+	HitShape@WELL:
+		TargetableOffsets: -770,512,0
+		Type: Rectangle
+			TopLeft: 0, 0
+			BottomRight: 1024, 598
 
 V22:
-	Inherits@1: ^DesertCivBuilding
+	Inherits: ^DesertCivBuilding
 	Inherits@2: ^Infestable
 	TransformOnCapture:
 		IntoActor: v22_infested
@@ -608,9 +665,15 @@ V24:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: -630,-512,0, 0,0,0, -630,256,0, 420,-512,0
+		Type: Rectangle
+			TopLeft: -1024, -683
+			BottomRight: 640, 853
 
 V25:
-	Inherits@1: ^DesertCivBuilding
+	Inherits: ^DesertCivBuilding
 	Inherits@2: ^Infestable
 	TransformOnCapture:
 		IntoActor: v25_infested
@@ -621,10 +684,17 @@ V25:
 		Name: Church
 	RevealsShroud:
 		Range: 10c0
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,-128,0, 420,512,0
+		Type: Rectangle
+			TopLeft: -683, -683
+			BottomRight: 1024, 512
 
 V26:
 	Inherits: ^DesertCivBuilding
-	Inherits: ^Infestable
+	Inherits@shape: ^2x1Shape
+	Inherits@2: ^Infestable
 	TransformOnCapture:
 		IntoActor: v26_infested
 	Building:
@@ -641,7 +711,8 @@ V29:
 	Inherits: ^DesertCivBuilding
 
 V30:
-	Inherits@1: ^DesertCivBuilding
+	Inherits: ^DesertCivBuilding
+	Inherits@shape: ^2x1Shape
 	Inherits@2: ^Infestable
 	TransformOnCapture:
 		IntoActor: v30_infested
@@ -650,7 +721,8 @@ V30:
 		Dimensions: 2,1
 
 V31:
-	Inherits@1: ^DesertCivBuilding
+	Inherits: ^DesertCivBuilding
+	Inherits@shape: ^2x1Shape
 	Inherits@2: ^Infestable
 	TransformOnCapture:
 		IntoActor: v31_infested
@@ -659,7 +731,8 @@ V31:
 		Dimensions: 2,1
 
 V32:
-	Inherits@1: ^DesertCivBuilding
+	Inherits: ^DesertCivBuilding
+	Inherits@shape: ^2x1Shape
 	Inherits@2: ^Infestable
 	TransformOnCapture:
 		IntoActor: v32_infested
@@ -668,7 +741,8 @@ V32:
 		Dimensions: 2,1
 
 V33:
-	Inherits@1: ^DesertCivBuilding
+	Inherits: ^DesertCivBuilding
+	Inherits@shape: ^2x1Shape
 	Inherits@2: ^Infestable
 	TransformOnCapture:
 		IntoActor: v33_infested
@@ -686,13 +760,19 @@ V36:
 	Inherits: ^DesertCivBuilding
 
 V37:
-	Inherits@1: ^DesertCivBuilding
+	Inherits: ^DesertCivBuilding
 	Inherits@2: ^Infestable
 	TransformOnCapture:
 		IntoActor: v37_infested
 	Building:
 		Footprint: __xx_ ___xx
 		Dimensions: 5,2
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,0,0, 0,1024,0
+		Type: Rectangle
+			TopLeft: -512, -597
+			BottomRight: 1536, 597
 
 RICE:
 	Inherits: ^CivField
@@ -706,6 +786,8 @@ RUSHOUSE:
 	Building:
 		Footprint: x x
 		Dimensions: 1,2
+	HitShape:
+		UseTargetableCellsOffsets: false
 
 ASIANHUT:
 	Inherits: ^CivBuilding
@@ -721,6 +803,8 @@ SNOWHUT:
 		Dimensions: 1,2
 	RenderSprites:
 		Scale: 0.7
+	HitShape:
+		UseTargetableCellsOffsets: false
 
 LHUS:
 	Inherits: ^CivBuilding

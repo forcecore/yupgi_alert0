@@ -40,7 +40,7 @@ APWR_INFESTED:
 	Building:
 		Footprint: xxx xxx
 		Dimensions: 3,2
-	Bib:
+	WithBuildingBib:
 	Health:
 		HP: 700
 	Armor:
@@ -66,7 +66,7 @@ ATEK_INFESTED:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-	Bib:
+	WithBuildingBib:
 	Health:
 		HP: 600
 	Armor:
@@ -93,7 +93,7 @@ BARR_INFESTED:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-	Bib:
+	WithBuildingBib:
 	Health:
 		HP: 600
 	Armor:
@@ -120,7 +120,7 @@ DOME_INFESTED:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-	Bib:
+	WithBuildingBib:
 	Health:
 		HP: 1000
 	Armor:
@@ -147,7 +147,7 @@ FACT_INFESTED:
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3,3
-	Bib:
+	WithBuildingBib:
 	Health:
 		HP: 1500
 	Armor:
@@ -174,7 +174,7 @@ FIX_INFESTED:
 	Building:
 		Footprint: _x_ xxx _x_
 		Dimensions: 3,3
-	Bib:
+	WithBuildingBib:
 		HasMinibib: Yes
 	Health:
 		HP: 800
@@ -202,7 +202,7 @@ GULAG_INFESTED:
 	Building:
 		Footprint: xxx xxx
 		Dimensions: 3,2
-	Bib:
+	WithBuildingBib:
 	Health:
 		HP: 600
 	Armor:
@@ -228,7 +228,7 @@ HPAD_INFESTED:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-	Bib:
+	WithBuildingBib:
 	Health:
 		HP: 800
 	Armor:
@@ -255,7 +255,7 @@ IRON_INFESTED:
 	Building:
 		Footprint: xx
 		Dimensions: 2,1
-	Bib:
+	WithBuildingBib:
 		HasMinibib: Yes
 	Health:
 		HP: 1000
@@ -308,7 +308,7 @@ PDOX_INFESTED:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-	Bib:
+	WithBuildingBib:
 		HasMinibib: Yes
 	Health:
 		HP: 1000
@@ -336,7 +336,7 @@ POWR_INFESTED:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-	Bib:
+	WithBuildingBib:
 	Health:
 		HP: 400
 	Armor:
@@ -362,7 +362,7 @@ PROC_INFESTED:
 	Building:
 		Footprint: _x_ xxx x==
 		Dimensions: 3,3
-	Bib:
+	WithBuildingBib:
 	Health:
 		HP: 900
 	Armor:
@@ -389,7 +389,7 @@ STEK_INFESTED:
 	Building:
 		Footprint: xxx xxx
 		Dimensions: 3,2
-	Bib:
+	WithBuildingBib:
 	Health:
 		HP: 600
 	Armor:
@@ -415,7 +415,7 @@ TENT_INFESTED:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-	Bib:
+	WithBuildingBib:
 	Health:
 		HP: 600
 	Armor:
@@ -442,7 +442,7 @@ WEAP_INFESTED:
 	Building:
 		Footprint: xxx xxx
 		Dimensions: 3,2
-	Bib:
+	WithBuildingBib:
 	Health:
 		HP: 1500
 	Armor:
@@ -470,7 +470,7 @@ ATEF_INFESTED:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-	Bib:
+	WithBuildingBib:
 	Health:
 		HP: 400
 	Armor:
@@ -496,7 +496,7 @@ DOMF_INFESTED:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-	Bib:
+	WithBuildingBib:
 	Health:
 		HP: 1000
 	Armor:
@@ -522,7 +522,7 @@ FACF_INFESTED:
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3,3
-	Bib:
+	WithBuildingBib:
 	Health:
 		HP: 1500
 	Armor:
@@ -548,7 +548,7 @@ FAPW_INFESTED:
 	Building:
 		Footprint: xxx xxx
 		Dimensions: 3,2
-	Bib:
+	WithBuildingBib:
 	Health:
 		HP: 700
 	Armor:
@@ -574,7 +574,7 @@ FIXF_INFESTED:
 	Building:
 		Footprint: _x_ xxx _x_
 		Dimensions: 3,3
-	Bib:
+	WithBuildingBib:
 		HasMinibib: Yes
 	Health:
 		HP: 800
@@ -601,7 +601,7 @@ FPWR_INFESTED:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-	Bib:
+	WithBuildingBib:
 	Health:
 		HP: 400
 	Armor:
@@ -654,7 +654,7 @@ PDOF_INFESTED:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-	Bib:
+	WithBuildingBib:
 		HasMinibib: Yes
 	Health:
 		HP: 1000
@@ -737,7 +737,7 @@ WEAF_INFESTED:
 	Building:
 		Footprint: xxx xxx
 		Dimensions: 3,2
-	Bib:
+	WithBuildingBib:
 	Health:
 		HP: 1500
 	Armor:
@@ -788,7 +788,7 @@ FCOM_INFESTED:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-	Bib:
+	WithBuildingBib:
 	Health:
 		HP: 400
 	Armor:
@@ -812,7 +812,7 @@ HOSP_INFESTED:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-	Bib:
+	WithBuildingBib:
 		HasMinibib: Yes
 	Health:
 		HP: 1000
@@ -839,7 +839,7 @@ MISS_INFESTED:
 	Building:
 		Footprint: xxx xxx
 		Dimensions: 3,2
-	Bib:
+	WithBuildingBib:
 	Health:
 		HP: 400
 	Armor:
