@@ -1010,6 +1010,8 @@ DOGGIE:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 		StandSequences: stand
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
 
 CHITZ:
 	Inherits: ^Soldier
@@ -1066,6 +1068,8 @@ CHITZ:
 	Targetable:
 		TargetTypes: Ground, Infantry, MCImmune, Ant
 	-Mindcontrollable:
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
 
 VOLKOV:
 	Inherits: ^Soldier
@@ -1291,8 +1295,6 @@ INFT:
 		IdleSequences: idle1,idle2
 	WithDeathAnimation:
 		UseDeathTypeSuffix: false
-	ProducibleWithLevel:
-		Prerequisites: barracks.upgraded
 	-Mindcontrollable:
 	Mindcontroller:
 		Capacity: 1
