@@ -411,20 +411,20 @@ E7:
 	# dog proof
 	Targetable:
 		TargetTypes: Ground, Infantry, Ant, MCImmune
-	GrantConditionOnFire@gattling:
+	GrantStackableConditionOnFire@gattling:
 		Condition: gattling
-		Armament: secondary
+		ArmamentName: secondary
 		RequiredShotsPerStack: 6, 12
-		MaxStacking: 2
-		UnstackDelay: 40
-	GrantConditionOnFire@airstrike:
+		MaximumInstances: 2
+		RevokeDelay: 40
+	GrantStackableConditionOnFire@airstrike:
 		Condition: airstrike
-		Armament: laser
+		ArmamentName: laser
 		RequiredShotsPerStack: 50
-		MaxStacking: 1
-		UnstackDelay: 9
-		PopAll: True
-		UnstackOnNewTarget: True
+		MaximumInstances: 1
+		RevokeDelay: 9
+		RevokeAll: True
+		RevokeOnNewTarget: True
 		# Time needed for airstrike:
 		# 50 shots * 5 reload time = 250 ticks = 10 seconds
 	AirstrikePower@parabombs:
