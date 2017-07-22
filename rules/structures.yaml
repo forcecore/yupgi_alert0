@@ -943,11 +943,11 @@ ATEK:
 WEAP:
 	Inherits: ^Building
 	Inherits@shape: ^3x2Shape
-	Buildable:
-		Queue: Building
-		BuildPaletteOrder: 80
-		Prerequisites: proc, ~techlevel.low
-		Description: Produces vehicles.
+	#Buildable:
+	#	Queue: Building
+	#	BuildPaletteOrder: 80
+	#	Prerequisites: proc, ~techlevel.low
+	#	Description: Produces vehicles.
 	Valued:
 		Cost: 2000
 	Tooltip:
