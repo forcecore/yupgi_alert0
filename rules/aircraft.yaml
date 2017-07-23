@@ -476,6 +476,7 @@ MIG2:
 		RepulsionSpeed: 40
 		MaximumPitch: 56
 		RearmBuildings: carrier
+		LandAltitude: 2c256
 	AmmoPool:
 		Ammo: 8
 	RejectsOrders:
