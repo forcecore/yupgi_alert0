@@ -1074,6 +1074,8 @@ FANT:
 		DeployAnimation: dig
 		DeploySound: subdril1.aud
 		UndeploySound: subdril1.aud
+	WithMakeAnimation:
+		Sequence: dig
 	Targetable:
 		TargetTypes: Ground, Vehicle, Ant
 	WithDeathAnimation:
@@ -1496,6 +1498,8 @@ SMIN:
 		AllowedTerrainTypes: Clear, Road, DirtRoad, Rough
 		DeployAnimation: dock
 		Facing: 64
+	WithMakeAnimation:
+		Sequence: dock
 	StoresResources:
 		PipCount: 10
 		Capacity: 2000

@@ -910,14 +910,14 @@ DESO:
 		HP: 150
 	Mobile:
 		Speed: 71
-		RequiresCondition: !deployed
+		RequiresCondition: undeployed
 	RevealsShroud:
 		Range: 6c0
 	Passenger:
 		PipType: Red
 	Armament@primary:
 		Weapon: RadBeamWeapon
-		RequiresCondition: !deployed
+		RequiresCondition: undeployed
 		LocalOffset: 400,40,444
 	Armament@eruption:
 		Name: Eruption
@@ -926,11 +926,16 @@ DESO:
 		Voice: Attack
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-		RequiresCondition: !deployed
+		RequiresCondition: undeployed
 	WithInfantryBody@deployed:
 		DefaultAttackSequence: deploy-shoot
 		StandSequences: deploy-stand
 		RequiresCondition: deployed
+	WithSpriteBody:
+		RequiresCondition: !deployed && !undeployed
+		Sequence: deploy # dummy. I don't want to put "idle" sequence.
+	WithMakeAnimation:
+		Sequence: deploy
 	Voiced:
 		VoiceSet: DesolatorVoice
 	ProducibleWithLevel:
@@ -941,6 +946,7 @@ DESO:
 		Voice: Move
 	GrantConditionOnDeploy:
 		DeployedCondition: deployed
+		UndeployedCondition: undeployed
 		CanDeployOnRamps: true
 		DeployAnimation: deploy
 	-Crushable:
