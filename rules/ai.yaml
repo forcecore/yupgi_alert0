@@ -1,451 +1,44 @@
 Player:
-	#ExpertAI@UnleashedAI:
-	HackyAI@UnleashedAI:
-		Name: Unleashed AI
-		Type: unleashed
-		LuaScript: evo.lua
-		#EnableLuaUnitProduction: false
-		NNProduction: true
-		NNBuildingPlacer: false
-		NNTroopPositioning: false
-		# Terrains that are enterable by ground units
-		NNBuildingPlacerTerrainTypes: Clear,Rough,Road,Bridge,Ore,Gems,Tiberium,Beach
-		MinimumExcessPower: 100
-		BuildingCommonNames:
-			ConstructionYard: gafact,nafact,qnest
-			Refinery: proc,qnest
-			Power: powr,apwr,tibtree
-			Barracks: barr,tent,qnest
-			VehiclesFactory: gaweap,naweap,qnest
-			Production: barr,tent,gaweap,naweap,afld,hpad,qnest
-			NavalProduction: spen,syrd
-			Silo: silo,anthill
-			StaticAntiAir: sam,agun,antaa
-			Defense: pbox,hbox,gun,agun,tsla,ftur,minihive,firevent,antaa
-			Fragile: atek,stek,afld,hpad,mslo,iron,pdox,silo,mbk
-			NNTech: fix,dome,vein
-			NNTier3Tech: atek,stek,evo
-			SuperWeapon: iron,pdox,mslo,mbk
-		CoreDefinitions:
-			qnest: qant
-		UnitsCommonNames:
-			Mcv: gamcv,namcv,qant
-			Seige: v2,arty,msam
-			# Exclude from any kind of AI control
-			ExcludeFromSquads: mig2,scud_unit,smin,slave
-			# Can be controlled but don't use for attacks
-			ExcludeFromAttackSquads: e6
-			DemoUnits: dtrk
-			NavalUnits: ss,msub,dd,ca,pt,lst
-			Healer: medi,mech
-		CapturingActorTypes: inft2,e6
-		CapturableActorTypes: oilb,hosp,bio
-		CheckCaptureTargetsForVisibility: false
-		BuildingLimits:
-			# unleashed
-			proc: 3
-			qnest: 6
-			barr: 1
-			tent: 1
-			kenn: 1
-			dome: 1
-			evo: 2
-			vein: 1
-			gaweap: 1
-			naweap: 1
-			spen: 1
-			syrd: 1
-			hpad: 4
-			afld: 4
-			atek: 1
-			stek: 1
-			fix: 1
-			tibtree: 12
-			anthill: 15
-			mbk: 1
-		BuildingFractions:
-			# unleashed
-			qnest: 40%
-			mbk: 100%
-			tibtree: 30%
-			anthill: 30%
-			proc: 30%
-			powr: 1%
-			apwr: 20%
-			tent: 20%
-			barr: 20%
-			kenn: 0.5%
-			gaweap: 3%
-			naweap: 3%
-			hpad: 0.5%
-			afld: 0.5%
-			#spen: 1%
-			#syrd: 1%
-			pbox: 10%
-			gun: 10%
-			ftur: 10%
-			minihive: 10%
-			tsla: 7%
-			firevent: 7%
-			fix: 2%
-			dome: 1%
-			evo: 1%
-			vein: 10%
-			agun: 5%
-			antaa: 5%
-			sam: 5%
-			atek: 1%
-			stek: 1%
-			mslo: 1%
-		UnitsToBuild: # unleashed difficulty (the list is too long)...
-			e1: 65%
-			e2: 25%
-			e3: 40%
-			e4: 15%
-			deso: 15%
-			#volkov: 15%
-			#e7: 100%
-			inft: 5%
-			#chitz: 15%
-			dog: 15%
-			shok: 15%
-			harv: 50%
-			smin: 50%
-			marv: 10%
-			apc: 15%
-			jeep_ai: 15%
-			arty: 15%
-			msam: 40%
-			v2rl: 40%
-			ftrk: 50%
-			1tnk: 15%
-			2tnk: 50%
-			3tnk: 50%
-			4tnk: 20%
-			#5tnk: 20%
-			qtnk_ai: 5%
-			ttnk: 20%
-			wangchang: 15%
-			heli: 30%
-			hind: 30%
-			tran_ai: 30%
-			mig: 30%
-			#nmig: 30%
-			#yak: 30%
-			zep: 30%
-			ss: 10%
-			msub: 10%
-			dd: 10%
-			ca: 10%
-			pt: 10%
-			dant: 100%
-			want: 25%
-			doggie: 5%
-			fant: 5%
-			sant: 5%
-			hant: 5%
-		UnitLimits:
-			# unleashed
-			dog: 4
-			harv: 6
-			marv: 4
-			5tnk: 1
-			dant: 40
-			smin: 6
-			tran_ai: 6
-		SquadSize: 35
-		SupportPowerDecision@spyplane:
-			OrderName: SovietSpyPlane
-			MinimumAttractiveness: 1
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 5c0
-		SupportPowerDecision@paratroopers:
-			OrderName: SovietParatroopers
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@parabombs:
-			OrderName: UkraineParabombs
-			MinimumAttractiveness: 1
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 5c0
-		SupportPowerDecision@nukepower:
-			OrderName: NukePowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Air,Ground,Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
-	HackyAI@BaselineAI:
-		Name: Baseline AI
-		Type: baseline
-		LuaScript: evo.lua
-		EnableLuaUnitProduction: false
-		MinimumExcessPower: 100
-		BuildingCommonNames:
-			ConstructionYard: gafact,nafact,qnest
-			Refinery: proc,qnest
-			Power: powr,apwr,tibtree
-			Barracks: barr,tent,qnest
-			VehiclesFactory: gaweap,naweap,qnest
-			Production: barr,tent,gaweap,naweap,afld,hpad,qnest
-			NavalProduction: spen,syrd
-			Silo: silo,anthill
-			StaticAntiAir: sam,agun,antaa
-			Defense: pbox,hbox,gun,agun,tsla,ftur,minihive,firevent,antaa
-			Fragile: atek,stek,afld,hpad,mslo,iron,pdox,silo,mbk
-		CoreDefinitions:
-			qnest: qant
-		UnitsCommonNames:
-			Mcv: gamcv,namcv,qant
-			Seige: v2,arty,msam
-			ExcludeFromSquads: mig2,scud_unit,smin,slave
-			ExcludeFromAttackSquads: e6
-			DemoUnits: dtrk
-		CapturingActorTypes: inft2,e6
-		CapturableActorTypes: oilb,hosp,bio
-		CheckCaptureTargetsForVisibility: false
-		BuildingLimits:
-			# unleashed
-			proc: 4
-			qnest: 6
-			barr: 1
-			tent: 1
-			kenn: 1
-			dome: 1
-			evo: 2
-			vein: 1
-			gaweap: 1
-			naweap: 1
-			spen: 1
-			syrd: 1
-			hpad: 4
-			afld: 4
-			atek: 1
-			stek: 1
-			fix: 1
-			tibtree: 12
-			anthill: 15
-			mbk: 1
-		BuildingFractions:
-			# unleashed
-			qnest: 40%
-			mbk: 100%
-			tibtree: 30%
-			anthill: 30%
-			proc: 30%
-			powr: 1%
-			apwr: 20%
-			tent: 20%
-			barr: 20%
-			kenn: 0.5%
-			gaweap: 3%
-			naweap: 3%
-			hpad: 0.5%
-			afld: 0.5%
-			#spen: 1%
-			#syrd: 1%
-			pbox: 10%
-			gun: 10%
-			ftur: 10%
-			minihive: 10%
-			tsla: 7%
-			firevent: 7%
-			fix: 2%
-			dome: 1%
-			evo: 1%
-			vein: 10%
-			agun: 5%
-			antaa: 5%
-			sam: 5%
-			atek: 1%
-			stek: 1%
-			mslo: 1%
-		UnitsToBuild: # unleashed difficulty (the list is too long)...
-			e1: 65%
-			e2: 25%
-			e3: 40%
-			e4: 15%
-			deso: 15%
-			#volkov: 15%
-			#e7: 100%
-			inft: 5%
-			#chitz: 15%
-			dog: 15%
-			shok: 15%
-			harv: 50%
-			smin: 50%
-			marv: 10%
-			apc: 15%
-			jeep_ai: 15%
-			arty: 15%
-			msam: 40%
-			v2rl: 40%
-			ftrk: 50%
-			1tnk: 15%
-			2tnk: 50%
-			3tnk: 50%
-			4tnk: 20%
-			#5tnk: 20%
-			qtnk_ai: 5%
-			ttnk: 20%
-			wangchang: 15%
-			heli: 30%
-			hind: 30%
-			tran_ai: 30%
-			mig: 30%
-			#nmig: 30%
-			#yak: 30%
-			zep: 30%
-			ss: 10%
-			msub: 10%
-			dd: 10%
-			ca: 10%
-			pt: 10%
-			dant: 100%
-			want: 25%
-			doggie: 5%
-			fant: 5%
-			sant: 5%
-			hant: 5%
-		UnitLimits:
-			dog: 4
-			harv: 6
-			marv: 4
-			5tnk: 1
-			dant: 40
-			smin: 6
-			tran_ai: 6
-		SquadSize: 35
-		SupportPowerDecision@spyplane:
-			OrderName: SovietSpyPlane
-			MinimumAttractiveness: 1
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 5c0
-		SupportPowerDecision@paratroopers:
-			OrderName: SovietParatroopers
-			MinimumAttractiveness: 5
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 8c0
-			Consideration@2:
-				Against: Enemy
-				Types: Water
-				Attractiveness: -5
-				TargetMetric: None
-				CheckRadius: 8c0
-		SupportPowerDecision@parabombs:
-			OrderName: UkraineParabombs
-			MinimumAttractiveness: 1
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: None
-				CheckRadius: 5c0
-		SupportPowerDecision@nukepower:
-			OrderName: NukePowerInfoOrder
-			MinimumAttractiveness: 3000
-			Consideration@1:
-				Against: Enemy
-				Types: Structure
-				Attractiveness: 1
-				TargetMetric: Value
-				CheckRadius: 5c0
-			Consideration@2:
-				Against: Ally
-				Types: Air,Ground,Water
-				Attractiveness: -10
-				TargetMetric: Value
-				CheckRadius: 7c0
 	HackyAI@RushAI:
 		Name: Rush AI
 		Type: rush
 		MinimumExcessPower: 40
 		BuildingCommonNames:
-			ConstructionYard: gafact,nafact,qnest
-			Refinery: proc,qnest
-			Power: powr,apwr,tibtree
+			ConstructionYard: gafact, nafact, qnest
+			Refinery: proc, anthill, qnest
+			Power: powr,apwr, tibtree
 			Barracks: barr,tent,qnest
 			VehiclesFactory: gaweap,naweap,qnest
 			Production: barr,tent,gaweap,naweap,afld,hpad,qnest
-			NavalProduction: spen,syrd
-			Silo: silo,anthill
+			Silo: silo, anthill
 			StaticAntiAir: sam,agun,antaa
-			Defense: pbox,hbox,gun,agun,tsla,ftur,minihive,firevent,antaa
-			Fragile: atek,stek,afld,hpad,mslo,iron,pdox,silo,mbk
-		UnitsCommonNames:
-			Mcv: gamcv,namcv,qant
-			Seige: v2,arty,msam
-			# Exclude from any kind of AI control
-			ExcludeFromSquads: mig2,scud_unit,smin,slave
-			# Can be controlled but don't use for attacks
-			ExcludeFromAttackSquads: e6
-			DemoUnits: dtrk
-			NavalUnits: ss,msub,dd,ca,pt,lst
+			Defense: pbox, hbox, gun, agun, tsla, ftur, firevent
+			Fragile: atek,stek,afld,hpad,mslo,iron,pdox,silo
 		CoreDefinitions:
 			qnest: qant
+		UnitsCommonNames:
+			Mcv: gamcv, namcv, qant
+			Seige: v2, arty, msam
 		BuildingLimits:
-			# rush
 			proc: 4
 			qnest: 6
 			barr: 1
 			tent: 1
 			kenn: 1
 			dome: 1
-			evo: 2
-			vein: 1
+			evo: 1
 			gaweap: 1
 			naweap: 1
-			spen: 1
-			syrd: 1
 			hpad: 4
 			afld: 4
 			atek: 1
 			stek: 1
 			fix: 1
-			tibtree: 12
+			tibtree: 6
 			anthill: 15
+			vein: 1
 			mbk: 1
 		BuildingFractions:
-			# rush
-			qnest: 40%
-			mbk: 100%
-			tibtree: 30%
-			anthill: 30%
 			proc: 30%
 			powr: 15%
 			apwr: 20%
@@ -465,12 +58,15 @@ Player:
 			stek: 1%
 			fix: 0.1%
 			dome: 10%
-			minihive: 10%
-			firevent: 7%
+			# ants
+			firevent: 10%
+			mbk: 100%
+			tibtree: 30%
+			anthill: 30%
+			qnest: 40%
 			evo: 1%
 			vein: 10%
 			antaa: 5%
-			mslo: 1%
 		UnitsToBuild:
 			e1: 65%
 			e2: 25%
@@ -478,23 +74,351 @@ Player:
 			e4: 15%
 			dog: 15%
 			shok: 15%
-			harv: 10%
-			smin: 10%
+			harv: 50%
 			apc: 30%
-			jeep_ai: 40%
+			jeep: 40%
 			arty: 15%
-			msam: 15%
-			wangchang: 15%
 			v2rl: 40%
 			ftrk: 50%
 			1tnk: 70%
 			2tnk: 25%
-			marv: 10%
 			3tnk: 50%
 			4tnk: 10%
 			ttnk: 10%
 			stnk: 5%
-			dant: 100%
+			# ants
+			dant: 50%
+			want: 25%
+			doggie: 5%
+			fant: 5%
+			sant: 5%
+			hant: 5%
+		UnitLimits:
+			dog: 4
+			harv: 8
+			ant: 40
+		SquadSize: 20
+		SupportPowerDecision@spyplane:
+			OrderName: SovietSpyPlane
+			MinimumAttractiveness: 1
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 5c0
+		SupportPowerDecision@paratroopers:
+			OrderName: SovietParatroopers
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@parabombs:
+			OrderName: UkraineParabombs
+			MinimumAttractiveness: 1
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 5c0
+		SupportPowerDecision@nukepower:
+			OrderName: NukePowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
+	HackyAI@NormalAI:
+		Name: Normal AI
+		Type: normal
+		MinimumExcessPower: 60
+		BuildingCommonNames:
+			ConstructionYard: gafact, nafact, qnest
+			Refinery: proc, qnest
+			Power: powr,apwr,tibtree
+			Barracks: barr,tent,qnest
+			VehiclesFactory: gaweap,naweap,qnest
+			Production: barr,tent,gaweap,naweap,afld,hpad,qnest
+			NavalProduction: spen,syrd
+			Silo: silo, anthill
+			StaticAntiAir: sam,agun,antaa
+			Defense: pbox, hbox, gun, agun, tsla, ftur, firevent
+			Fragile: atek,stek,afld,hpad,mslo,iron,pdox,silo
+		CoreDefinitions:
+			qnest: qant
+		UnitsCommonNames:
+			Mcv: gamcv, namcv, qant
+			Seige: v2, arty, msam
+		BuildingLimits:
+			# normal
+			proc: 4
+			qnest: 6
+			barr: 1
+			tent: 1
+			dome: 1
+			evo: 1
+			vein: 1
+			naweap: 1
+			gaweap: 1
+			spen: 1
+			syrd: 1
+			hpad: 3
+			afld: 3
+			atek: 1
+			stek: 1
+			fix: 1
+			tibtree: 6
+			anthill: 15
+			mbk: 1
+		BuildingFractions:
+			# normal
+			proc: 10%
+			powr: 1%
+			apwr: 30%
+			tent: 1%
+			barr: 1%
+			kenn: 0.5%
+			dome: 1%
+			gaweap: 6%
+			naweap: 6%
+			hpad: 100%
+			spen: 1%
+			syrd: 1%
+			afld: 100%
+			pbox: 7%
+			gun: 7%
+			ftur: 10%
+			tsla: 5%
+			gap: 2%
+			fix: 1%
+			agun: 5%
+			sam: 1%
+			atek: 1%
+			stek: 1%
+			mslo: 1%
+			# ants
+			antaa: 1%
+			qnest: 40%
+			mbk: 100%
+			tibtree: 30%
+			anthill: 30%
+			evo: 1%
+			vein: 1%
+			firevent: 10%
+		UnitsToBuild:
+			# normal
+			e1: 65%
+			e2: 25%
+			e3: 40%
+			e4: 15%
+			dog: 15%
+			shok: 15%
+			harv: 50%
+			apc: 30%
+			jeep: 40%
+			arty: 15%
+			v2rl: 40%
+			ftrk: 50%
+			1tnk: 70%
+			2tnk: 25%
+			3tnk: 50%
+			4tnk: 15%
+			ttnk: 15%
+			stnk: 10%
+			heli: 100%
+			hind: 100%
+			mig: 100%
+			yak: 100%
+			ss: 10%
+			msub: 10%
+			dd: 10%
+			ca: 10%
+			pt: 10%
+			# ants
+			dant: 50%
+			want: 25%
+			doggie: 5%
+			fant: 5%
+			sant: 5%
+			hant: 5%
+		UnitLimits:
+			# normal
+			dog: 4
+			harv: 8
+			dant: 40
+		SquadSize: 40
+		SupportPowerDecision@spyplane:
+			OrderName: SovietSpyPlane
+			MinimumAttractiveness: 1
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 5c0
+		SupportPowerDecision@paratroopers:
+			OrderName: SovietParatroopers
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@parabombs:
+			OrderName: UkraineParabombs
+			MinimumAttractiveness: 1
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 5c0
+		SupportPowerDecision@nukepower:
+			OrderName: NukePowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
+	HackyAI@TurtleAI:
+		Name: Turtle AI
+		Type: turtle
+		MinimumExcessPower: 100
+		BuildingCommonNames:
+			ConstructionYard: gafact, nafact, qnest
+			Refinery: proc, qnest
+			Power: powr,apwr, tibtree
+			Barracks: barr,tent,qnest
+			VehiclesFactory: gaweap,naweap,qnest
+			Production: barr,tent,gaweap,naweap,afld,hpad,qnest
+			NavalProduction: spen,syrd
+			Silo: silo, anthill
+			StaticAntiAir: sam,agun,antaa
+			Defense: pbox, hbox, gun, agun, tsla, ftur, firevent
+			Fragile: atek,stek,afld,hpad,mslo,iron,pdox,silo
+		CoreDefinitions:
+			qnest: qant
+		UnitsCommonNames:
+			Mcv: gamcv, namcv, qant
+			Seige: v2, arty, msam
+		BuildingLimits:
+			proc: 4
+			barr: 1
+			tent: 1
+			kenn: 1
+			dome: 1
+			gaweap: 1
+			naweap: 1
+			spen: 1
+			syrd: 1
+			hpad: 4
+			afld: 4
+			atek: 1
+			stek: 1
+			fix: 1
+			# ants
+			vein: 1
+			evo: 1
+			qnest: 6
+			tibtree: 6
+			anthill: 15
+			mbk: 1
+		BuildingFractions:
+			proc: 30%
+			powr: 1%
+			apwr: 20%
+			tent: 1%
+			barr: 1%
+			kenn: 0.5%
+			gaweap: 3%
+			naweap: 3%
+			hpad: 2%
+			spen: 1%
+			syrd: 1%
+			pbox: 10%
+			gun: 10%
+			ftur: 10%
+			tsla: 7%
+			gap: 3%
+			fix: 0.1%
+			dome: 10%
+			agun: 5%
+			sam: 5%
+			atek: 1%
+			stek: 1%
+			mslo: 1%
+			# ants
+			antaa: 5%
+			qnest: 40%
+			mbk: 100%
+			tibtree: 30%
+			anthill: 30%
+			firevent: 10%
+			evo: 1%
+			vein: 10%
+		UnitsToBuild:
+			e1: 65%
+			e2: 25%
+			e3: 40%
+			e4: 15%
+			dog: 15%
+			shok: 15%
+			harv: 50%
+			apc: 30%
+			jeep: 40%
+			arty: 15%
+			v2rl: 40%
+			ftrk: 50%
+			1tnk: 70%
+			2tnk: 25%
+			3tnk: 50%
+			4tnk: 20%
+			ttnk: 20%
+			stnk: 15%
+			heli: 30%
+			hind: 30%
+			mig: 30%
+			yak: 30%
+			ss: 10%
+			msub: 10%
+			dd: 10%
+			ca: 10%
+			pt: 10%
+			# ants
+			dant: 50%
 			want: 25%
 			doggie: 5%
 			fant: 5%
@@ -504,7 +428,328 @@ Player:
 			dog: 4
 			harv: 8
 			dant: 40
-		SquadSize: 30
+		SquadSize: 10
+		SupportPowerDecision@spyplane:
+			OrderName: SovietSpyPlane
+			MinimumAttractiveness: 1
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 5c0
+		SupportPowerDecision@paratroopers:
+			OrderName: SovietParatroopers
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@parabombs:
+			OrderName: UkraineParabombs
+			MinimumAttractiveness: 1
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 5c0
+		SupportPowerDecision@nukepower:
+			OrderName: NukePowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
+	HackyAI@UnleashedAI:
+		Name: Unleashed AI
+		Type: unleashed
+		LuaScript: ai.lua
+		EnableLuaUnitProduction: true
+		MinimumExcessPower: 100
+		BuildingCommonNames:
+			ConstructionYard: gafact, nafact, qnest
+			Refinery: proc, qnest
+			Power: powr,apwr, tibtree
+			Barracks: barr,tent,qnest
+			VehiclesFactory: gaweap,naweap,qnest
+			Production: barr,tent,gaweap,naweap,afld,hpad,qnest
+			NavalProduction: spen,syrd
+			Silo: silo, anthill
+			StaticAntiAir: sam,agun,antaa
+			Defense: pbox, hbox, gun, agun, tsla, ftur, firevent
+			Fragile: atek,stek,afld,hpad,mslo,iron,pdox,silo,mbk
+		CoreDefinitions:
+			qnest: qant
+		UnitsCommonNames:
+			Mcv: gamcv, namcv, qant
+			Seige: v2, arty, msam
+			ExcludeFromSquads: mig2,scud_unit,smin,slave
+		CapturingActorTypes: inft
+		CapturableActorTypes: oilb,hosp,bio
+		BuildingLimits:
+			# unleashed
+			proc: 4
+			qnest: 6
+			barr: 1
+			tent: 1
+			kenn: 1
+			dome: 1
+			gaweap: 1
+			naweap: 1
+			spen: 1
+			syrd: 1
+			hpad: 4
+			afld: 4
+			atek: 1
+			stek: 1
+			fix: 1
+			# ants
+			tibtree: 6
+			anthill: 15
+			mbk: 1
+			evo: 1
+			vein: 1
+		BuildingFractions:
+			# unleashed
+			proc: 30%
+			powr: 1%
+			apwr: 20%
+			tent: 20%
+			barr: 20%
+			kenn: 0.5%
+			gaweap: 3%
+			naweap: 3%
+			hpad: 0.5%
+			afld: 0.5%
+			spen: 1%
+			syrd: 1%
+			pbox: 10%
+			gun: 10%
+			ftur: 10%
+			tsla: 7%
+			fix: 2%
+			dome: 1%
+			agun: 5%
+			sam: 5%
+			atek: 1%
+			stek: 1%
+			mslo: 1%
+			# ants
+			antaa: 5%
+			qnest: 40%
+			mbk: 100%
+			tibtree: 30%
+			anthill: 30%
+			firevent: 10%
+			evo: 1%
+			vein: 10%
+		UnitsToBuild: # unleashed difficulty (the list is too long)...
+			e1: 65%
+			e2: 25%
+			e3: 40%
+			e4: 15%
+			deso: 15%
+			volkov: 15%
+			e7: 100%
+			inft: 5%
+			chitz: 15%
+			dog: 15%
+			shok: 15%
+			harv: 50%
+			smin: 50%
+			marv: 10%
+			apc: 15%
+			jeep: 15%
+			arty: 15%
+			msam: 40%
+			v2rl: 40%
+			ftrk: 50%
+			1tnk: 15%
+			2tnk: 50%
+			3tnk: 50%
+			4tnk: 20%
+			5tnk: 20%
+			qtnk_ai: 5%
+			ttnk: 20%
+			wangchang: 15%
+			heli: 30%
+			hind: 30%
+			tran_ai: 30%
+			mig: 30%
+			nmig: 30%
+			yak: 30%
+			zep: 30%
+			ss: 10%
+			msub: 10%
+			dd: 10%
+			ca: 10%
+			pt: 10%
+			# ants
+			dant: 50%
+			want: 50%
+			doggie: 50%
+			fant: 50%
+			sant: 50%
+			hant: 50%
+		UnitLimits:
+			dog: 4
+			harv: 8
+			marv: 4
+			5tnk: 1
+			dant: 40
+			smin: 6
+			tran_ai: 12
+		SquadSize: 40
+		SupportPowerDecision@spyplane:
+			OrderName: SovietSpyPlane
+			MinimumAttractiveness: 1
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 5c0
+		SupportPowerDecision@paratroopers:
+			OrderName: SovietParatroopers
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 8c0
+			Consideration@2:
+				Against: Enemy
+				Types: Water
+				Attractiveness: -5
+				TargetMetric: None
+				CheckRadius: 8c0
+		SupportPowerDecision@parabombs:
+			OrderName: UkraineParabombs
+			MinimumAttractiveness: 1
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 5c0
+		SupportPowerDecision@nukepower:
+			OrderName: NukePowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
+	HackyAI@NavalAI:
+		Name: Naval AI
+		Type: naval
+		BuildingCommonNames:
+			ConstructionYard: gafact, nafact, qnest
+			Refinery: proc, qnest
+			Power: powr,apwr, tibtree
+			Barracks: barr,tent,qnest
+			VehiclesFactory: gaweap,naweap,qnest
+			Production: barr,tent,gaweap,naweap,afld,hpad,qnest
+			NavalProduction: spen,syrd
+			Silo: silo, anthill
+		CoreDefinitions:
+			qnest: qant
+		UnitsCommonNames:
+			Mcv: gamcv, namcv, qant
+			Seige: v2, arty, msam
+		BuildingLimits:
+			proc: 4
+			qnest: 6
+			dome: 1
+			barr: 1
+			tent: 1
+			evo: 1
+			vein: 1
+			spen: 1
+			syrd: 1
+			hpad: 8
+			afld: 8
+			gaweap: 1
+			naweap: 1
+			atek: 1
+			stek: 1
+			tibtree: 6
+			anthill: 15
+			mbk: 1
+		BuildingFractions:
+			qnest: 40%
+			mbk: 100%
+			tibtree: 30%
+			anthill: 30%
+			proc: 29%
+			powr: 1%
+			apwr: 24%
+			dome: 1%
+			evo: 1%
+			vein: 1%
+			gaweap: 1%
+			naweap: 1%
+			hpad: 20%
+			afld: 20%
+			atek: 1%
+			stek: 1%
+			spen: 1%
+			syrd: 1%
+			fix: 0.1%
+			pbox: 12%
+			gun: 12%
+			ftur: 12%
+			firevent: 12%
+			tsla: 12%
+			agun: 5%
+			sam: 5%
+			mslo: 1%
+		UnitsToBuild:
+			harv: 50%
+			heli: 30%
+			hind: 30%
+			mig: 30%
+			yak: 30%
+			ss: 10%
+			msub: 30%
+			dd: 30%
+			ca: 20%
+			pt: 10%
+			dant: 50%
+			want: 25%
+			doggie: 5%
+			fant: 5%
+			sant: 5%
+			hant: 5%
+		UnitLimits:
+			harv: 8
+			dant: 40
+		SquadSize: 1
 		SupportPowerDecision@spyplane:
 			OrderName: SovietSpyPlane
 			MinimumAttractiveness: 1
