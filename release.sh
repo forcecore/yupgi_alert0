@@ -1,5 +1,5 @@
 # Script to release the mod into a zip file.
-# Assumes BABUN on windows or something like that on Linux (duh)
+# Assumes NSIS installer in the new Open RA Mod SDK
 
 # Stop on error.
 set -e
@@ -11,41 +11,35 @@ fi
 
 REL=$1
 OFNAME=yupgi_alert_r${REL}.zip
-PREFIX=`pwd`/tmp/yupgi_alert
+ORA_PATH=$HOME/mod/OpenRA
+YUPGI_ALERT_DLL=$ORA_PATH/mods/yupgi_alert/OpenRA.Mods.yupgi_alert.dll
+PREFIX=$HOME/mod/SDK/mods/yupgi_alert
 
-rm -rf tmp
-rm -f $OFNAME.zip
+echo Cleaning $PREFIX
+rm -rf $PREFIX
 mkdir -p $PREFIX
 
 echo "Copying mod files"
-git clone . $PREFIX/oramod
+git clone . $PREFIX
 
 # Remove development files
-rm -rf $PREFIX/oramod/{.git,assets,.gitattributes}
-rm -f $PREFIX/oramod/{.gitignore,release.sh}
-rm -f $PREFIX/oramod/rules/_buildpal_order.py
-rm -f $PREFIX/oramod/rules/_infest.py
+rm -rf $PREFIX/{.git,assets,.gitattributes}
+rm -f $PREFIX/{.gitignore,release.sh}
+rm -f $PREFIX/rules/*.py
+rm -f $PREFIX/*.py
 
 # copy the DLL file and the license.
 echo "Copying DLL files and license info"
-cp OpenRA.Mods.yupgi_alert.dll $PREFIX/oramod
-cp ../common/OpenRA.Mods.Common.dll $PREFIX/oramod/OpenRA.Mods.Uncommon.dll
+cp $YUPGI_ALERT_DLL $PREFIX/
 cp LICENSE README.md ART_CREDITS.txt $PREFIX
-cp ../../OpenRA.Game.exe $PREFIX/OpenRA.yupgi_alert.exe
-cp -r ../../lua $PREFIX/lua
-rm $PREFIX/lua/nojail.lua
-cp -r ../../lua.bak $PREFIX/lua.bak
-cp ../../OpenRA.Mods.yupgi_alert/{LICENSE.AS,AUTHORS.AS} $PREFIX
+cp $ORA_PATH/OpenRA.Mods.yupgi_alert/{LICENSE.AS,AUTHORS.AS} $PREFIX
+
+# Convert license to dos line ending. (Notepad is so bad and Linux is more forgiving.)
+for f in $PREFIX/{LICENSE,README.md,ART_CREDITS.txt,LICENSE.AS,AUTHORS.AS} ; do
+    unix2dos $f
+done
 
 # patch mod.yaml
-python3 make_mod_yaml.py mod.yaml $REL > $PREFIX/oramod/mod.yaml
+python3 make_mod_yaml.py mod.yaml $REL > $PREFIX/mod.yaml
 
-# now in tmp dir,
-echo "Archiving into $OFNAME"
-cd $PREFIX/oramod
-zip ../yupgi_alert.oramod -m -r *
-cd $PREFIX/..
-rmdir $PREFIX/oramod
-zip ../$OFNAME -r yupgi_alert/
-
-echo "Done: $OFNAME"
+echo Done. Things are at $PREFIX
