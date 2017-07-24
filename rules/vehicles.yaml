@@ -1521,20 +1521,15 @@ SMIN:
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
 
-JOSH:
+HYDRA:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGround
-	RenderSprites:
-		PlayerPalette: player-ra2
-		Scale: 2.0
-	WithDeathAnimation:
-		DeathSequencePalette: player-ra2
 	Valued:
 		Cost: 1000
 	-DeliversCash@GRINDABLE:
 		# If grinded, it doesn't come back because griding has no death notification.
 	Tooltip:
-		Name: Kong
+		Name: Hydra
 	Selectable:
 		Bounds: 24,24,0,-10
 	SelectionDecorations:
@@ -1557,13 +1552,11 @@ JOSH:
 	AutoTarget:
 		ScanRadius: 10
 	WithInfantryBody:
-		IdleSequences: idle1,idle2
-		DefaultAttackSequence: punch
+		IdleSequences: idle
+		DefaultAttackSequence: shoot
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	AttackFrontal:
-	Armament:
-		Weapon: JoshPunch
 	Targetable:
 		TargetTypes: Ground, Vehicle, Ant, MCImmune
 	-Mindcontrollable:
@@ -1576,6 +1569,41 @@ JOSH:
 	-DamagedByRadioactivity:
 	-Crushable:
 	Spawned:
+	# Gattling laser stuff
+	Armament@GAT0:
+		Weapon: GattLaser0
+		# LocalOffset: 768,0,90 this is the center of rotation.
+		# I'll rotate (0, 50, 0) then add to center.
+		LocalOffset: 768,100,90
+		RequiresCondition: gattling == 0
+	Armament@GAT1:
+		Weapon: GattLaser1
+		LocalOffset: 768,30,185
+		RequiresCondition: gattling == 1
+	Armament@GAT2:
+		Weapon: GattLaser2
+		LocalOffset: 768,-80,148
+		RequiresCondition: gattling == 2
+	Armament@GAT3:
+		Weapon: GattLaser3
+		LocalOffset: 768,-80,31
+		RequiresCondition: gattling == 3
+	Armament@GAT4:
+		Weapon: GattLaser4
+		LocalOffset: 768,30,-5
+		RequiresCondition: gattling == 4
+	GrantStackableConditionOnFire@gattling:
+		Condition: gattling
+		ArmamentName: primary
+		RequiredShotsPerStack: 1
+		MaximumInstances: 4
+		RevokeDelay: 90
+		IsCyclic: true
+	AmmoPool:
+		Ammo: 1
+		PipCount: 0 # no visible pips
+		SelfReloads: true
+		SelfReloadDelay: 5
 
 JEEP_AI:
 	Inherits: JEEP

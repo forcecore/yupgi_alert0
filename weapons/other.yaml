@@ -461,29 +461,6 @@ FireballLauncherHighPower:
 		TrailImage: fb2
 		Image: FB1
 
-JoshPunch:
-	Inherits: Claw
-	ReloadDelay: 25
-	Report: grenade1.aud
-	Projectile: Bullet
-		Speed: 250
-	Warhead@1Dam: SpreadDamage
-		Damage: 100
-		Spread: 512
-		Versus:
-			None: 200
-			Wood: 50
-			Light: 100
-			Heavy: 100
-			Concrete: 50
-	Warhead@2Dam: HealthPercentageDamage
-		Spread: 512
-		Damage: 5
-		InvalidTargets: WangChang
-	Warhead@3Eff: CreateEffect
-		Explosions: med_explosion
-		ImpactSounds: kaboom30.aud
-
 MindController:
 	ReloadDelay: 125
 	Range: 6c0
@@ -568,3 +545,52 @@ FireVentWeapon:
 	Warhead@1Dam: SpreadDamage
 		Spread: 42
 		Damage: 30
+
+GattLaser0:
+	ReloadDelay: 5
+	Range: 3c512
+	Report: obelray1.aud
+	Projectile: LaserZap
+		ZOffset: 2047
+		Width: 85
+		Color: 000000FF # black
+		SecondaryBeamWidth: 170
+		SecondaryBeam: true
+		SecondaryBeamColor: 00000080 # black
+	Warhead@1Dam: SpreadDamage
+		Spread: 42
+		Damage: 20
+		Versus:
+			Wood: 100
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees, Creep
+	Warhead@2Dam: HealthPercentageDamage
+		Spread: 15
+		Damage: 5
+
+GattLaser1:
+	Inherits: GattLaser0
+	Projectile: LaserZap
+		Color: FFFFFFFF # white
+		SecondaryBeamColor: FFFFFF80 # white
+
+GattLaser2:
+	Inherits: GattLaser0
+	Projectile: LaserZap
+		Color: 0000FFFF # blue
+		SecondaryBeamColor: 0000FF80 # blue
+
+GattLaser3:
+	Inherits: GattLaser0
+	ValidTargets: Ground, Water, Air
+	Projectile: LaserZap
+		Color: FF0000FF # red
+		SecondaryBeamColor: FF000080 # red
+
+GattLaser4:
+	Inherits: GattLaser0
+	Projectile: LaserZap
+		Color: FFFF00FF # yellow
+		SecondaryBeamColor: FFFF0080 # yellow
