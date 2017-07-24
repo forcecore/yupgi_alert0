@@ -481,7 +481,7 @@ Player:
 		Name: Unleashed AI
 		Type: unleashed
 		LuaScript: ai.lua
-		EnableLuaUnitProduction: true
+		EnableLuaUnitProduction: false
 		MinimumExcessPower: 100
 		BuildingCommonNames:
 			ConstructionYard: gafact, nafact, qnest
@@ -501,7 +501,7 @@ Player:
 			Mcv: gamcv, namcv, qant
 			Seige: v2, arty, msam
 			ExcludeFromSquads: mig2,scud_unit,smin,slave
-		CapturingActorTypes: inft
+		CapturingActorTypes: inft2
 		CapturableActorTypes: oilb,hosp,bio
 		BuildingLimits:
 			# unleashed
@@ -524,7 +524,7 @@ Player:
 			tibtree: 6
 			anthill: 15
 			mbk: 1
-			evo: 1
+			evo: 2
 			vein: 1
 		BuildingFractions:
 			# unleashed
@@ -568,7 +568,6 @@ Player:
 			deso: 15%
 			volkov: 15%
 			e7: 100%
-			inft: 5%
 			chitz: 15%
 			dog: 15%
 			shok: 15%
@@ -602,7 +601,8 @@ Player:
 			ca: 10%
 			pt: 10%
 			# ants
-			dant: 50%
+			inft: 5%
+			dant: 20%
 			want: 50%
 			doggie: 50%
 			fant: 50%
