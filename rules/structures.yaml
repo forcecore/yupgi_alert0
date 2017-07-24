@@ -2288,6 +2288,11 @@ QNEST:
 	StoresResources:
 		PipCount: 17
 		Capacity: 2000
+	HitShape:
+		TargetableOffsets: 1273,939,0, -980,-640,0, -980,640,0
+		Type: Rectangle
+			TopLeft: -1536, -1536
+			BottomRight: 1536, 1536
 
 TIBTREE:
 	Inherits: ^Building
@@ -2333,6 +2338,7 @@ TIBTREE:
 
 TUNNELNETWORK:
 	Inherits: ^Building
+	Inherits: ^2x2Shape
 	-TransformOnCapture:
 	RenderSprites:
 		Scale: 0.5
@@ -2415,9 +2421,15 @@ EVO:
 			sant: want, want, want, want, want
 			hant: fant, fant, fant, fant
 	RallyPoint:
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			TopLeft: -1536, -512
+			BottomRight: 1536, 512
 
 GULAG:
 	Inherits: ^ScienceBuilding
+	Inherits: ^3x2Shape
 	Valued:
 		Cost: 1000
 	Tooltip:
@@ -2545,6 +2557,7 @@ ANTHILL:
 
 VEIN:
 	Inherits: ^Building
+	Inherits: ^3x2Shape
 	-TransformOnCapture:
 	Buildable:
 		Queue: Building
@@ -2584,6 +2597,7 @@ VEIN:
 
 mbk:
 	Inherits: ^Defense
+	Inherits: ^3x2Shape
 	-TransformOnCapture:
 	Tooltip:
 		Name: McBurger Kong
@@ -2617,7 +2631,7 @@ mbk:
 		Range: 5c0
 	Spawner:
 		Count: 1
-		SpawnUnit: josh
+		SpawnUnit: hydra
 		RespawnTicks: 5
 		RearmTicks: 5
 		InstaRepair: true
