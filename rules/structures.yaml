@@ -2595,12 +2595,12 @@ VEIN:
 	WithAcceptDeliveredCashAnimation:
 	AcceptCashRallyPointAcceptor:
 
-mbk:
+MBK:
 	Inherits: ^Defense
 	Inherits: ^3x2Shape
 	-TransformOnCapture:
 	Tooltip:
-		Name: McBurger Kong
+		Name: Church of Hydra
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3,3
@@ -2610,7 +2610,7 @@ mbk:
 		BuildLimit: 1
 		BuildPaletteOrder: 130
 		Prerequisites: evo, ~qnest, ~techlevel.low
-		Description: Ant superweapon. Constantly respawns Kong whenever one dies.
+		Description: Ant superweapon. Constantly respawns Hydra whenever one dies.
 	Valued:
 		Cost: 2500
 	Health:
