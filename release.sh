@@ -10,7 +10,6 @@ if [ $# -eq 0 ] ; then
 fi
 
 REL=$1
-OFNAME=yupgi_alert_r${REL}.zip
 ORA_PATH=$HOME/mod/OpenRA
 YUPGI_ALERT_DLL=$ORA_PATH/mods/yupgi_alert/OpenRA.Mods.yupgi_alert.dll
 PREFIX=$HOME/mod/SDK/mods/yupgi_alert
