@@ -44,10 +44,18 @@ CRATE:
 		MaxAmount: 5
 		MinAmount: 1
 		MaxDuplicateValue: 1500
-	GiveMcvCrateAction:
+	GiveMcvCrateAction@gamcv:
 		SelectionShares: 0
 		NoBaseSelectionShares: 100
-		Units: mcv
+		Units: gamcv
+	GiveMcvCrateAction@namcv:
+		SelectionShares: 0
+		NoBaseSelectionShares: 100
+		Units: namcv
+	GiveMcvCrateAction@qant:
+		SelectionShares: 0
+		NoBaseSelectionShares: 100
+		Units: qant
 	GiveUnitCrateAction@jeep:
 		SelectionShares: 7
 		Units: jeep
