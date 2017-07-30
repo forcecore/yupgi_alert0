@@ -1370,7 +1370,6 @@ HPAD:
 	Dock@3:
 		DockOffset: 1,1
 		DockAngle: 160
-	#Reservable:
 	ProductionBar:
 	PrimaryBuilding:
 		PrimaryCondition: primary
@@ -2734,3 +2733,62 @@ FIREVENT:
 	DetectCloaked:
 		Range: 8c0
 	-Sellable:
+
+TMHILL:
+	Inherits: ^ScienceBuilding
+	Inherits@IDISABLE: ^DisabledOverlay
+	Inherits@shape: ^2x1Shape
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Termite Hill
+	Buildable:
+		Queue: Defense
+		BuildPaletteOrder: 140
+		Prerequisites: ~qnest, evo, ~techlevel.unrestricted
+		BuildLimit: 1
+		Description: Provides a superweapon that destroys enemy structures.\n Special Ability: Termite Infestation\nMaximum 1 can be built.
+	Building:
+		Footprint: __ xx
+		Dimensions: 2,2
+	Health:
+		HP: 1000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 6c0
+		RequiresCondition: !disabled
+		RevealGeneratedShroud: False
+	RevealsShroud@Offline:
+		Range: 5c0
+		RequiresCondition: disabled
+	RevealsShroud@GAPGEN:
+		Range: 5c0
+		RequiresCondition: !disabled
+	SupportPowerChargeBar:
+	MustBeDestroyed:
+		RequiredForShortGame: false
+	# Infest superweapon stuff
+	AttackOmni:
+	Armament:
+		Weapon: TermiteInfestation
+	AttackOrderPower:
+		PauseOnCondition: disabled
+		Cursor: biohazzard
+		Icon: tmstrike
+		ChargeTime: 540
+		Description: Termite Infestation
+		LongDesc: Infests enemy structures with termites that\nslowly destroys them.
+		BeginChargeSpeechNotification: AbombPrepping
+		EndChargeSpeechNotification: AbombReady
+		SelectTargetSpeechNotification: SelectTarget
+		InsufficientPowerSpeechNotification: InsufficientPower
+		IncomingSpeechNotification: AbombLaunchDetected
+		DisplayTimerStances: Ally, Neutral, Enemy
+		DisplayBeacon: True
+		DisplayRadarPing: True
+		BeaconPoster: atomicon
+		CameraRange: 10c0
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles

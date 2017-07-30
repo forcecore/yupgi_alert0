@@ -677,6 +677,17 @@
 	EditorTilesetFilter:
 		Categories: Building
 	CommandBarBlacklist:
+	SelfHealing@termited:
+		# Since repair step = 7, I want this to slowly kill buildings even on repair.
+		Step: -8
+		Delay: 25
+		HealIfBelow: 200 # 100 doesn't work.
+		RequiresCondition: termited
+	ExternalCondition@termited:
+		Condition: termited
+	WithColoredOverlay@termite:
+		RequiresCondition: termited
+		Palette: termite
 
 ^Building:
 	Inherits: ^BasicBuilding

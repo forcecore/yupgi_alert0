@@ -163,3 +163,22 @@ NukeParaBomb:
 		Velocity: 0, 0, -86
 		Acceleration: 0, 0, 0
 	ValidTargets: Ground, Trees, Water, Underwater
+
+TermiteInfestation:
+	Range: 1024c0
+	ReloadDelay: 100
+	Projectile: Bullet
+		Speed: 425
+		Blockable: false
+		Shadow: true
+		LaunchAngle: 62
+		Image: termitebomb
+	Report: chute1.aud
+	Warhead@1Eff: CreateEffect
+		Explosions: nuke
+		ImpactSounds: kaboom1.aud
+		VictimScanRadius: 0
+	Warhead@emp: GrantExternalCondition
+		Range: 15c0
+		Condition: termited
+		ValidTargets: Structure

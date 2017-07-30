@@ -86,7 +86,7 @@ TileSets:
 	yupgi_alert|tilesets/debugterrain.yaml
 
 Cursors:
-	ra|cursors.yaml
+	yupgi_alert|cursors.yaml
 
 Chrome:
 	yupgi_alert|chrome.yaml

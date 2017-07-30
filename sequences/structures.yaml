@@ -871,4 +871,13 @@ mbk:
 		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
-	icon: mbkicon
+			SPACE: TEMPERAT
+	icon: hydraicon
+
+tmhill:
+	idle:
+	damaged-idle:
+		Start: 1
+	make: tmhillmake
+		Length: *
+	icon: tmhillicon

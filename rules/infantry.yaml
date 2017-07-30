@@ -229,6 +229,7 @@ E6:
 	Passenger:
 		PipType: Yellow
 	EngineerRepair:
+		RevokeExternalConditions: termited
 	RepairsBridges:
 	ExternalCaptures:
 		CaptureTypes: building
@@ -1247,8 +1248,6 @@ INFT2:
 	ExternalCaptures:
 		CaptureTypes: building, infestable
 		PlayerExperience: 25
-	-EngineerRepair:
-	-RepairsBridges:
 	-DamagedByTerrain@tib:
 	-DamagedByRadioactivity:
 
