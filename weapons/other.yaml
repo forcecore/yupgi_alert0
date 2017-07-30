@@ -428,9 +428,6 @@ PDLaser:
 		Versus:
 			Wood: 50
 		DamageTypes: Prone50Percent, TriggerProne, FireDeath
-	Warhead@2Smu: LeaveSmudge
-		SmudgeType: Scorch
-		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees, Creep
 
 ScudSpawnTargeter:
 	ReloadDelay: 240
