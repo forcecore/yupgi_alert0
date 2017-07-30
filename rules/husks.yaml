@@ -159,7 +159,7 @@ MIG.Husk:
 		Range: 11c0
 		Type: GroundPosition
 	RenderSprites:
-		Image: mig
+		Image: aurora
 
 YAK.Husk:
 	Inherits: ^PlaneHusk
