@@ -292,11 +292,11 @@ FiendShard-AA:
 		ValidImpactTypes: Water
 
 FiendShard-AG:
+	Inherits: ^HeavyMG
 	ReloadDelay: 30
 	Burst: 3
 	Range: 5c0
 	Report: fiend2.aud
-	ValidTargets: Ground, Water
 	Projectile: Bullet
 		Speed: 213
 		Image: BOMB
@@ -316,11 +316,6 @@ FiendShard-AG:
 			Heavy: 10
 			Concrete: 10
 		DamageTypes: Prone100Percent, TriggerProne, BulletDeath
-		ValidTargets: Air, Ground, Water
-	Warhead@3EffWater: CreateEffect
-		Explosions: small_splash
-		ImpactSounds: splash9.aud
-		ValidImpactTypes: Water
 
 AntFlamer:
 	Inherits: Flamer
