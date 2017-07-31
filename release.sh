@@ -10,9 +10,8 @@ if [ $# -eq 0 ] ; then
 fi
 
 REL=$1
-ORA_PATH=$HOME/mod/OpenRA
-YUPGI_ALERT_DLL=$ORA_PATH/mods/yupgi_alert/OpenRA.Mods.yupgi_alert.dll
-PREFIX=$HOME/mod/SDK/mods/yupgi_alert
+ORA_PATH=/sdk/engine
+PREFIX=/sdk/mods/yupgi_alert
 
 echo Cleaning $PREFIX
 rm -rf $PREFIX
@@ -28,14 +27,13 @@ rm -f $PREFIX/rules/*.py
 rm -f $PREFIX/*.py
 
 # copy the DLL file and the license.
-echo "Copying DLL files and license info"
-cp $YUPGI_ALERT_DLL $PREFIX/
+echo "Copying license info"
 cp LICENSE README.md ART_CREDITS.txt $PREFIX
 cp $ORA_PATH/OpenRA.Mods.yupgi_alert/{LICENSE.AS,AUTHORS.AS} $PREFIX
 
 # Convert license to dos line ending. (Notepad is so bad and Linux is more forgiving.)
 for f in $PREFIX/{LICENSE,README.md,ART_CREDITS.txt,LICENSE.AS,AUTHORS.AS} ; do
-    unix2dos $f
+    todos $f
 done
 
 # patch mod.yaml

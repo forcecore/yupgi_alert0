@@ -95,7 +95,7 @@ Chrome:
 Assemblies:
 	common|OpenRA.Mods.Common.dll
 	common|OpenRA.Mods.Cnc.dll
-	yupgi_alert|OpenRA.Mods.yupgi_alert.dll
+	common|OpenRA.Mods.yupgi_alert.dll
 
 ChromeLayout:
 	common|chrome/ingame.yaml
