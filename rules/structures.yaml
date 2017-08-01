@@ -2769,26 +2769,30 @@ TMHILL:
 	MustBeDestroyed:
 		RequiredForShortGame: false
 	# Infest superweapon stuff
-	AttackOmni:
-	Armament:
-		Weapon: TermiteInfestation
-	AttackOrderPower:
+	NukePower:
 		PauseOnCondition: disabled
 		Cursor: biohazzard
 		Icon: tmstrike
 		ChargeTime: 540
-		Description: Termite Infestation
+		Description: Termite Strike
 		LongDesc: Infests enemy structures with termites that\nslowly destroys them.
 		BeginChargeSpeechNotification: AbombPrepping
 		EndChargeSpeechNotification: AbombReady
 		SelectTargetSpeechNotification: SelectTarget
 		InsufficientPowerSpeechNotification: InsufficientPower
 		IncomingSpeechNotification: AbombLaunchDetected
+		MissileWeapon: TermiteInfestation # sequences/termiteinfestation required
+		MissileUp: idle
+		MissileDown: idle
+		ActivationSequence: idle
+		OrderName: TermiteStrike
+		SpawnOffset: 0,427,0
 		DisplayTimerStances: Ally, Neutral, Enemy
 		DisplayBeacon: True
 		DisplayRadarPing: True
-		BeaconPoster: atomicon
-		CameraRange: 10c0
+		BeaconPoster: tmstrike # in sequences/misc.yaml beacon
+		FlashType:
+		CameraRange: 15c0
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles

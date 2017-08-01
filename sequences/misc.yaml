@@ -164,6 +164,9 @@ beacon:
 	clock: beaconclock
 		Length: *
 		Offset: 0,-42
+	tmstrike: tmstrike_loicon
+		Length: *
+		Offset: 0,-42
 
 smoke_m:
 	idle:
@@ -637,7 +640,7 @@ ctflag:
 		Length: *
 		UseTilesetExtension: true
 
-termitebomb:
+termiteinfestation:
 	idle: hant
 		Start: 0
 		Length: 8
