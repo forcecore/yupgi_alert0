@@ -221,3 +221,6 @@ Cursors:
 		biohazzard:
 			Start: 0
 			Length: 10
+		biohazzard-blocked:
+			Start: 0
+			Length: 10
