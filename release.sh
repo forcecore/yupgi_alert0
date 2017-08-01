@@ -4,12 +4,6 @@
 # Stop on error.
 set -e
 
-if [ $# -eq 0 ] ; then
-    echo "Provide release number"
-    exit 1
-fi
-
-REL=$1
 ORA_PATH=/sdk/engine
 PREFIX=/sdk/mods/yupgi_alert
 
