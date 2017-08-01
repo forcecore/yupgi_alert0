@@ -36,7 +36,4 @@ for f in $PREFIX/{LICENSE,README.md,ART_CREDITS.txt,LICENSE.AS,AUTHORS.AS} ; do
     todos $f
 done
 
-# patch mod.yaml
-python3 make_mod_yaml.py mod.yaml $REL > $PREFIX/mod.yaml
-
 echo Done. Things are at $PREFIX
