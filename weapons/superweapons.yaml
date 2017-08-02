@@ -178,7 +178,28 @@ TermiteInfestation:
 		Explosions: nuke
 		ImpactSounds: kaboom1.aud
 		VictimScanRadius: 0
-	Warhead@emp: GrantExternalCondition
+	Warhead@termite: GrantExternalCondition
 		Range: 15c0
 		Condition: termited
 		ValidTargets: Structure
+
+AdrenalinExplosion:
+	Range: 1024c0
+	ReloadDelay: 100
+	Projectile: Bullet
+		Speed: 425
+		Blockable: false
+		Shadow: true
+		LaunchAngle: 62
+		Image: adrenalinbomb
+	Report: chute1.aud
+	Warhead@1Eff: CreateEffect
+		Explosions: nuke
+		ImpactSounds: kaboom1.aud
+		VictimScanRadius: 0
+	Warhead@enrage: GrantExternalCondition
+		Range: 10c0
+		Condition: enraged
+		Duration: 250
+		ValidTargets: Ground, Water, Underwater, Air
+		ValidStances: Neutral, Enemy

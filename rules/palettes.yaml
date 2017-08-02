@@ -107,6 +107,12 @@
 	TermitePaletteEffect:
 		PaletteName: termite
 		Period: 8
+	PaletteFromRGBA@enraged:
+		Name: enraged
+		R: 255
+		G: 0
+		B: 128
+		A: 128
 	PaletteFromRGBA@disabled:
 		Name: disabled
 		R: 0

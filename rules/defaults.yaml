@@ -161,6 +161,17 @@
 	ExternalCondition@INVULNERABILITY:
 		Condition: invulnerability
 
+^Enrageable:
+	WithColoredOverlay@enraged:
+		RequiresCondition: enraged
+		Palette: enraged
+	TimedConditionBar:
+		Condition: enraged
+	ExternalCondition@enraged:
+		Condition: enraged
+	RageSusceptible:
+		RequiresCondition: enraged
+
 ^AutoTargetGround:
 	AutoTarget:
 		AttackAnythingCondition: stance-attackanything
@@ -208,10 +219,13 @@
 		IsPlayerPalette: true
 	RallyPoint:
 	Exit:
-	PeriodicFreeActor:
-		Actor: Zombie
-		Facing: 128
-		Period: 1500
+	PeriodicProducer:
+		Actors: Zombie
+		Type: Infantry
+		ChargeDuration: 1500
+		ShowSelectionBar: true
+	Production:
+		Produces: Infantry
 
 ^Capturable:
 	ExternalCapturable:
@@ -233,6 +247,7 @@
 	Inherits@3: ^IronCurtainable
 	Inherits@4: ^SpriteActor
 	Inherits@5: ^MindControllable
+	Inherits@6: ^Enrageable
 	Huntable:
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
@@ -354,6 +369,7 @@
 	Inherits@2: ^GainsExperience
 	Inherits@3: ^SpriteActor
 	Inherits@4: ^MindControllable
+	Inherits@5: ^Enrageable
 	Huntable:
 	DrawLineToTarget:
 	Health:
@@ -719,6 +735,7 @@
 
 ^Defense:
 	Inherits: ^Building
+	Inherits@1: ^Enrageable
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, Defense
 	MustBeDestroyed:
