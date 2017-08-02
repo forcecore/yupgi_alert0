@@ -499,6 +499,7 @@ icon:
 	parabombs: pbmbicon
 	sonar: sonricon
 	tmstrike: tmstrikeicon
+	aexplosion: aexplosion
 
 quee:
 	idle:
@@ -647,7 +648,7 @@ termiteinfestation:
 		ZOffset: 1023
 		Tick: 200
 
-adrenalinbomb:
+adrenalinebomb:
 	idle: hant
 		Start: 0
 		Length: 8

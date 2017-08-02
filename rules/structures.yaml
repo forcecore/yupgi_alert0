@@ -2801,18 +2801,16 @@ RAGEGEN:
 	Inherits: ^ScienceBuilding
 	Inherits@IDISABLE: ^DisabledOverlay
 	Inherits@shape: ^2x1Shape
-	RenderSprites:
-		Image: iron
 	Valued:
 		Cost: 2000
 	Tooltip:
-		Name: Adrenalin Colony
+		Name: Adrenaline Colony
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 130
 		Prerequisites: ~qnest, evo, ~techlevel.unrestricted
 		BuildLimit: 1
-		Description: Enrages enemy units.\n Special Ability: Adrenalin Explosion\nMaximum 1 can be built.
+		Description: Enrages enemy units.\n Special Ability: Adrenaline Explosion\nMaximum 1 can be built.
 	Building:
 		Footprint: xx
 		Dimensions: 2,1
@@ -2833,16 +2831,16 @@ RAGEGEN:
 	SupportPowerChargeBar:
 	MustBeDestroyed:
 		RequiredForShortGame: false
-	# Adrenalin Explosion stuff
+	# Adrenaline Explosion stuff
 	AttackOmni:
 	Armament:
-		Weapon: AdrenalinExplosion
+		Weapon: AdrenalineExplosion
 	AttackOrderPower:
 		PauseOnCondition: disabled
 		Cursor: biohazzard
-		Icon: tmstrike
+		Icon: aexplosion
 		ChargeTime: 120
-		Description: Adrenalin Explosion
+		Description: Adrenaline Explosion
 		LongDesc: Enrages enemy units so that they will attack anything in sight.
 		EndChargeSpeechNotification: AbombReady
 		SelectTargetSpeechNotification: SelectTarget

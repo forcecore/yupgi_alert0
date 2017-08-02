@@ -68,3 +68,7 @@ Termite Infestation icon:
 Termite Hill icon:
     https://commons.wikimedia.org/wiki/File:Termite_hill_NT.jpg
     Adapted for icon
+
+Adrenaline Colony / Adrenaline Explosion icon:
+    Fire background: https://pixabay.com/ko/%ED%99%94%EC%9E%AC-%EC%9E%A5%EC%9E%91%EB%B6%88-%EB%B6%88%EA%BD%83-%ED%99%94%EC%83%81-%EC%83%81%ED%91%9C-171230/
+    Adrenaline: https://commons.wikimedia.org/wiki/File:Adrenaline.svg

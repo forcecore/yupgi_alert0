@@ -171,6 +171,8 @@
 		Condition: enraged
 	RageSusceptible:
 		RequiresCondition: enraged
+	RejectsOrders:
+		RequiresCondition: enraged
 
 ^AutoTargetGround:
 	AutoTarget:

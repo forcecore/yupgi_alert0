@@ -881,3 +881,14 @@ tmhill:
 	make: tmhillmake
 		Length: *
 	icon: tmhillicon
+
+ragegen:
+	idle: iron
+		Offset: 0,-12
+	damaged-idle: iron
+		Start: 11
+		Offset: 0,-12
+	make: ironmake
+		Length: *
+		Offset: 0,-12
+	icon: acolony

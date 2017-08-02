@@ -183,7 +183,7 @@ TermiteInfestation:
 		Condition: termited
 		ValidTargets: Structure
 
-AdrenalinExplosion:
+AdrenalineExplosion:
 	Range: 1024c0
 	ReloadDelay: 100
 	Projectile: Bullet
@@ -191,7 +191,7 @@ AdrenalinExplosion:
 		Blockable: false
 		Shadow: true
 		LaunchAngle: 62
-		Image: adrenalinbomb
+		Image: adrenalinebomb
 	Report: chute1.aud
 	Warhead@1Eff: CreateEffect
 		Explosions: nuke
@@ -202,4 +202,4 @@ AdrenalinExplosion:
 		Condition: enraged
 		Duration: 250
 		ValidTargets: Ground, Water, Underwater, Air
-		ValidStances: Neutral, Enemy
+		#ValidStances: Neutral, Enemy
