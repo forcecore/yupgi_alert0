@@ -883,12 +883,12 @@ tmhill:
 	icon: tmhillicon
 
 ragegen:
-	idle: iron
-		Offset: 0,-12
-	damaged-idle: iron
-		Start: 11
-		Offset: 0,-12
-	make: ironmake
+	idle:
+		Offset: 16,-8
+	damaged-idle:
+		Start: 1
+		Offset: 16,-8
+	make: ragegenmake
 		Length: *
-		Offset: 0,-12
+		Offset: 16,-8
 	icon: acolony

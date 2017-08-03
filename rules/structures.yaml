@@ -2796,13 +2796,15 @@ TMHILL:
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CircleSequence: circles
+	-EmitInfantryOnSell:
+	-Sellable:
 
 RAGEGEN:
 	Inherits: ^ScienceBuilding
 	Inherits@IDISABLE: ^DisabledOverlay
 	Inherits@shape: ^2x1Shape
 	Valued:
-		Cost: 2000
+		Cost: 1900
 	Tooltip:
 		Name: Adrenaline Colony
 	Buildable:
@@ -2811,9 +2813,6 @@ RAGEGEN:
 		Prerequisites: ~qnest, evo, ~techlevel.unrestricted
 		BuildLimit: 1
 		Description: Enrages enemy units.\n Special Ability: Adrenaline Explosion\nMaximum 1 can be built.
-	Building:
-		Footprint: xx
-		Dimensions: 2,1
 	Health:
 		HP: 1000
 	Armor:
@@ -2835,6 +2834,7 @@ RAGEGEN:
 	AttackOmni:
 	Armament:
 		Weapon: AdrenalineExplosion
+		LocalOffset: 0,0,896
 	AttackOrderPower:
 		PauseOnCondition: disabled
 		Cursor: biohazzard
@@ -2844,3 +2844,9 @@ RAGEGEN:
 		LongDesc: Enrages enemy units so that they will attack anything in sight.
 		EndChargeSpeechNotification: AbombReady
 		SelectTargetSpeechNotification: SelectTarget
+	-EmitInfantryOnSell:
+	-Sellable:
+	Selectable:
+		Bounds: 24,24
+	SelectionDecorations:
+		VisualBounds: 24,45,0,-8

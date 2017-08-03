@@ -194,7 +194,7 @@ AdrenalineExplosion:
 		Image: adrenalinebomb
 	Report: chute1.aud
 	Warhead@1Eff: CreateEffect
-		Explosions: nuke
+		Explosions: adreimpact
 		ImpactSounds: kaboom1.aud
 		VictimScanRadius: 0
 	Warhead@enrage: GrantExternalCondition
@@ -202,4 +202,4 @@ AdrenalineExplosion:
 		Condition: enraged
 		Duration: 250
 		ValidTargets: Ground, Water, Underwater, Air
-		#ValidStances: Neutral, Enemy
+		ValidStances: Neutral, Enemy
