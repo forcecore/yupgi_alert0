@@ -2837,6 +2837,7 @@ RAGEGEN:
 		LocalOffset: 0,0,896
 	AttackOrderPower:
 		PauseOnCondition: disabled
+		OrderName: AdrenalineExpOrder
 		Cursor: biohazzard
 		Icon: aexplosion
 		ChargeTime: 120

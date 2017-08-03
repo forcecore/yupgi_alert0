@@ -13,7 +13,7 @@ Player:
 			Silo: silo, anthill
 			StaticAntiAir: sam,agun,antaa
 			Defense: pbox, hbox, gun, agun, tsla, ftur, firevent
-			Fragile: atek,stek,afld,hpad,mslo,iron,pdox,silo
+			Fragile: atek,stek,afld,hpad,mslo,iron,pdox,silo,ragegen,tmhill
 		CoreDefinitions:
 			qnest: qant
 		UnitsCommonNames:
@@ -146,6 +146,24 @@ Player:
 				Attractiveness: -10
 				TargetMetric: Value
 				CheckRadius: 7c0
+		SupportPowerDecision@termite:
+			OrderName: TermiteStrike
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+		SupportPowerDecision@rage:
+			OrderName: AdrenalineExpOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Air, Ground, Water
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
 	HackyAI@NormalAI:
 		Name: Normal AI
 		Type: normal
@@ -161,7 +179,7 @@ Player:
 			Silo: silo, anthill
 			StaticAntiAir: sam,agun,antaa
 			Defense: pbox, hbox, gun, agun, tsla, ftur, firevent
-			Fragile: atek,stek,afld,hpad,mslo,iron,pdox,silo
+			Fragile: atek,stek,afld,hpad,mslo,iron,pdox,silo,ragegen,tmhill
 		CoreDefinitions:
 			qnest: qant
 		UnitsCommonNames:
@@ -223,6 +241,8 @@ Player:
 			evo: 1%
 			vein: 1%
 			firevent: 10%
+			tmhill: 1%
+			ragegen: 1%
 		UnitsToBuild:
 			# normal
 			e1: 65%
@@ -313,6 +333,24 @@ Player:
 				Attractiveness: -10
 				TargetMetric: Value
 				CheckRadius: 7c0
+		SupportPowerDecision@termite:
+			OrderName: TermiteStrike
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+		SupportPowerDecision@rage:
+			OrderName: AdrenalineExpOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Air, Ground, Water
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
 	HackyAI@TurtleAI:
 		Name: Turtle AI
 		Type: turtle
@@ -328,7 +366,7 @@ Player:
 			Silo: silo, anthill
 			StaticAntiAir: sam,agun,antaa
 			Defense: pbox, hbox, gun, agun, tsla, ftur, firevent
-			Fragile: atek,stek,afld,hpad,mslo,iron,pdox,silo
+			Fragile: atek,stek,afld,hpad,mslo,iron,pdox,silo,ragegen,tmhill
 		CoreDefinitions:
 			qnest: qant
 		UnitsCommonNames:
@@ -389,6 +427,8 @@ Player:
 			firevent: 10%
 			evo: 1%
 			vein: 10%
+			tmhill: 1%
+			ragegen: 1%
 		UnitsToBuild:
 			e1: 65%
 			e2: 25%
@@ -477,6 +517,24 @@ Player:
 				Attractiveness: -10
 				TargetMetric: Value
 				CheckRadius: 7c0
+		SupportPowerDecision@termite:
+			OrderName: TermiteStrike
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+		SupportPowerDecision@rage:
+			OrderName: AdrenalineExpOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Air, Ground, Water
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
 	HackyAI@UnleashedAI:
 		Name: Unleashed AI
 		Type: unleashed
@@ -560,6 +618,8 @@ Player:
 			firevent: 10%
 			evo: 1%
 			vein: 10%
+			tmhill: 1%
+			ragegen: 1%
 		UnitsToBuild: # unleashed difficulty (the list is too long)...
 			e1: 65%
 			e2: 25%
@@ -665,6 +725,24 @@ Player:
 				Attractiveness: -10
 				TargetMetric: Value
 				CheckRadius: 7c0
+		SupportPowerDecision@termite:
+			OrderName: TermiteStrike
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+		SupportPowerDecision@rage:
+			OrderName: AdrenalineExpOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Air, Ground, Water
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
 	HackyAI@NavalAI:
 		Name: Naval AI
 		Type: naval
@@ -729,6 +807,8 @@ Player:
 			agun: 5%
 			sam: 5%
 			mslo: 1%
+			tmhill: 1%
+			ragegen: 1%
 		UnitsToBuild:
 			harv: 50%
 			heli: 30%
@@ -798,3 +878,21 @@ Player:
 				Attractiveness: -10
 				TargetMetric: Value
 				CheckRadius: 7c0
+		SupportPowerDecision@termite:
+			OrderName: TermiteStrike
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+		SupportPowerDecision@rage:
+			OrderName: AdrenalineExpOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Air, Ground, Water
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
