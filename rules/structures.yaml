@@ -2695,22 +2695,19 @@ ANTAA:
 FIREVENT:
 	Inherits: ^Defense
 	Inherits@AUTOTARGET: ^AutoTargetGround
-	Inherits@IDISABLE: ^DisabledOverlay
-	RenderSprites:
-		Image: tsla
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 40
 		Prerequisites: anthill, ~qnest, ~techlevel.low
-		Description: Advanced base defense.\nCan detect cloaked units.\n  Strong vs Vehicles, Infantry\n  Weak vs Aircraft
+		Description: Basic base defense.\nCan detect cloaked units.\n  Strong vs Vehicles, Infantry\n  Weak vs Aircraft
 	Valued:
-		Cost: 750
+		Cost: 700
 	Tooltip:
 		Name: Fire Vent
 	Selectable:
 		Bounds: 24,24
-	SelectionDecorations:
-		VisualBounds: 24,40,0,-8
+	#SelectionDecorations:
+		#VisualBounds: 24,40,0,-8
 	Health:
 		HP: 400
 	Armor:
@@ -2720,19 +2717,20 @@ FIREVENT:
 		RevealGeneratedShroud: False
 	RevealsShroud@GAPGEN:
 		Range: 6c0
-	WithBuildingBib:
-		HasMinibib: Yes
 	WithTeslaChargeAnimation:
 	Armament:
 		Weapon: FireVentWeapon
 		LocalOffset: 0,0,896
 	AttackTesla:
-		ChargeAudio: tslachg2.aud
+		ChargeAudio: invul2.aud
 		MaxCharges: 10
 		ReloadDelay: 120
 	DetectCloaked:
-		Range: 8c0
+		Range: 6c0
 	-Sellable:
+	WithIdleOverlay@burn:
+		Sequence: burn
+		Offset: 0,-256,512
 
 TMHILL:
 	Inherits: ^ScienceBuilding

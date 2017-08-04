@@ -537,6 +537,10 @@ FireVentWeapon:
 	Warhead@1Dam: SpreadDamage
 		Spread: 42
 		Damage: 30
+	Warhead@3Eff: CreateEffect
+		Explosions: fsgrnd
+		ImpactSounds: firebl3.aud
+		VictimScanRadius: 0
 
 GattLaser0:
 	ReloadDelay: 5

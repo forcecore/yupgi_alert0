@@ -45,8 +45,6 @@ explosion:
 		Offset: -2,0
 	small_napalm: napalm1
 	large_napalm: napalm3
-	mininuke: mininuke
-	adreimpact: adreimpact
 	corpse: corpse1
 		ZOffset: -512
 		Tick: 1600
@@ -54,6 +52,10 @@ explosion:
 		TilesetOverrides:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
+	fsgrnd: fsgrnd
+		Offset: 0,-23
+	mininuke: mininuke
+	adreimpact: adreimpact
 
 burn-l:
 	idle:

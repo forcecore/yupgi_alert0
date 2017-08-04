@@ -892,3 +892,23 @@ ragegen:
 		Length: *
 		Offset: 16,-8
 	icon: acolony
+
+firevent:
+	Defaults:
+		Offset: 9,0
+	idle:
+	damaged-idle:
+		Start: 1
+	active:
+		Length: 1
+	damaged-active:
+		Start: 1
+		Length: 1
+	make: fireventmake
+		Length: *
+	burn: burn-s
+		Start: 10
+		Length: 45
+		ZOffset: 1
+	icon: fireventicon
+		Offset: 0,0
