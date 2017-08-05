@@ -1405,16 +1405,18 @@ MARV:
 		Actor: MARV.EmptyHusk
 	DockClient:
 	Harvester:
-		OreTeleporter: true
+		OreTeleporter: false
 		Capacity: 20
 		Resources: Ore,Gems,Tiberium
-		BaleUnloadDelay: 10
+		BaleUnloadDelay: 1
 		SearchFromProcRadius: 30
 		SearchFromOrderRadius: 15
+		DeliveryBuildings: proc, qnest, anthill
 	-HarvesterHuskModifier:
 	-Explodes:
 	PortableChrono:
 		ChargeDelay: 300
+	ChronoHarvester:
 
 QTNK_AI:
 	Inherits: QTNK
