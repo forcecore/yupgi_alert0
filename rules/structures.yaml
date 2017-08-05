@@ -2730,7 +2730,7 @@ FIREVENT:
 	-Sellable:
 	WithIdleOverlay@burn:
 		Sequence: burn
-		Offset: 0,-256,512
+		Offset: 0,-321,512
 
 TMHILL:
 	Inherits: ^ScienceBuilding
