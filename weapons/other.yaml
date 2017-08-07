@@ -336,13 +336,9 @@ CarrierSpawnTargeter:
 		ValidTargets: Air, Ground, Water
 
 MiniHiveSpawnTargeter:
-	ReloadDelay: 30
-	Range: 10c0
-	Projectile: Bullet
-		Speed: 10c0
+	Inherits: CarrierSpawnTargeter
+	ValidTargets: Ground, Water
 	Warhead@1Dam: SpreadDamage
-		Spread: 1
-		Damage: 0
 		InvalidTargets: Structure, Wall
 
 WantMandible:
@@ -590,3 +586,7 @@ GattLaser4:
 	Projectile: LaserZap
 		Color: FFFF00FF # yellow
 		SecondaryBeamColor: FFFF0080 # yellow
+
+E1NexusTargeter:
+	Inherits: CarrierSpawnTargeter
+	Range: 5c0 # Doesn't matter too much, I think.
