@@ -163,16 +163,16 @@
 
 ^Enrageable:
 	WithColoredOverlay@enraged:
-		RequiresCondition: enraged
+		RequiresCondition: enraged && !invulnerability
 		Palette: enraged
 	TimedConditionBar:
 		Condition: enraged
 	ExternalCondition@enraged:
 		Condition: enraged
 	RageSusceptible:
-		RequiresCondition: enraged
+		RequiresCondition: enraged && !invulnerability
 	RejectsOrders:
-		RequiresCondition: enraged
+		RequiresCondition: enraged && !invulnerability
 
 ^AutoTargetGround:
 	AutoTarget:
@@ -241,6 +241,7 @@
 ^MindControllable:
 	WithMindcontrolArc:
 	Mindcontrollable:
+		RequiresCondition: !invulnerability
 		UnmindcontrolSound: bleep5.aud
 
 ^Vehicle:

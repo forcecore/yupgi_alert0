@@ -1737,3 +1737,7 @@ inft:
 			DESERT: TEMPERAT
 			INTERIOR: TEMPERAT
 	icon: infticon
+
+e1nexus:
+	idle: invis
+	icon: e6icon

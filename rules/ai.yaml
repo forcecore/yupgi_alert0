@@ -69,6 +69,7 @@ Player:
 			antaa: 5%
 		UnitsToBuild:
 			e1: 65%
+			e1nexus: 65%
 			e2: 25%
 			e3: 40%
 			e4: 15%
@@ -246,6 +247,7 @@ Player:
 		UnitsToBuild:
 			# normal
 			e1: 65%
+			e1nexus: 65%
 			e2: 25%
 			e3: 40%
 			e4: 15%
@@ -431,6 +433,7 @@ Player:
 			ragegen: 1%
 		UnitsToBuild:
 			e1: 65%
+			e1nexus: 65%
 			e2: 25%
 			e3: 40%
 			e4: 15%
@@ -622,6 +625,7 @@ Player:
 			ragegen: 1%
 		UnitsToBuild: # unleashed difficulty (the list is too long)...
 			e1: 65%
+			e1nexus: 65%
 			e2: 25%
 			e3: 40%
 			e4: 15%

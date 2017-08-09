@@ -58,7 +58,7 @@ E1:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 10
-		Prerequisites: ~barracks, ~techlevel.infonly
+		Prerequisites: ~tent, ~techlevel.infonly
 		Description: General-purpose infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Selectable:
 		Class: E1
@@ -1309,3 +1309,77 @@ INFT:
 		Policy: DiscardOldest
 	-DamagedByTerrain@tib:
 	-DamagedByRadioactivity:
+
+E1CONS:
+	Inherits: E1
+	RenderSprites:
+		Image: E1
+	Health:
+		HP: 30
+	-Buildable:
+	-SelectionDecorations: # No HP bar
+	RejectsOrders@slaved:
+	MobMemberSlave:
+	Selectable:
+		Class: e1cons
+
+E1NEXUS:
+	Inherits@1: ^ExistsInWorld
+	Inherits@4: ^SpriteActor
+	Inherits@6: ^Enrageable
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	-AppearsOnRadar:
+	Tooltip:
+		Name: Conscript
+		GenericName: Soldier
+	Valued:
+		Cost: 200
+	MobSpawner:
+		Actors: e1cons, e1cons, e1cons, e1cons, e1cons
+		#InitialActorCount: # 0 or default == sames as Actors
+		SpawnReplaceDelay: 750 # 30 seconds
+		ExitByBudding: true
+		OneShot: false
+		AggregateHealth: true
+		#SlavesHaveFreeWill: false
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~barr, ~techlevel.infonly
+		Description: General-purpose infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Health:
+		HP: 100
+	AttackOmni:
+	Armament@PRIMARY:
+		Weapon: E1NexusTargeter
+	Mobile:
+		Speed: 56
+		Crushes: mine, crate
+		SharesCell: true
+		OccupySpace: false
+		TerrainSpeeds:
+			Clear: 90
+			Rough: 80
+			Road: 100
+			Bridge: 100
+			Ore: 80
+			Gems: 80
+			Tiberium: 80
+			Beach: 80
+	Voiced:
+		VoiceSet: GenericVoice
+	SelectionDecorations:
+	Selectable:
+		Bounds: 24, 24
+	AttackMove:
+	HiddenUnderFog:
+	# Guard: Not supported yet
+	BodyOrientation:
+		UseClassicFacingFudge: True
+	HitShape:
+	EditorTilesetFilter:
+		Categories: Infantry
+	# Always invincible (preven nuke from killing this)
+	DamageMultiplier@invincible:
+		Modifier: 0
