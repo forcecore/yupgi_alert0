@@ -2643,6 +2643,15 @@ MBK:
 		ExitCell: 1,3
 	RallyPoint:
 		Offset: 1,4
+	# Repairs Hydra
+	DockManager:
+	Dock:
+	RepairsUnits:
+		#FinishRepairingNotification: UnitRepaired
+		StartRepairingNotification:
+		PlayerExperience: 15
+		ValuePercentage: 0
+		HpPerStep: 1000
 
 ANTAA:
 	Inherits: ^Defense
