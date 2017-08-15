@@ -1524,7 +1524,8 @@ SMIN:
 		Prerequisites: vehicles.upgraded
 
 HYDRA:
-	Inherits: ^Soldier
+	Inherits@1: ^Soldier
+	Inherits@2: ^IronCurtainable
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Valued:
 		Cost: 1000
@@ -1606,6 +1607,9 @@ HYDRA:
 		PipCount: 0 # no visible pips
 		SelfReloads: true
 		SelfReloadDelay: 5
+	RepairableNear:
+		CloseEnough: 2048
+		Buildings: mbk
 
 JEEP_AI:
 	Inherits: JEEP
