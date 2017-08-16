@@ -18,7 +18,7 @@ powerdown:
 explosion:
 	Defaults:
 		Length: *
-		ZOffset: 511
+		ZOffset: 2047
 	piff: piff
 	piffs: piffpiff
 	water_piff: wpiff
