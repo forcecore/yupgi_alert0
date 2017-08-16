@@ -644,8 +644,8 @@ SCUD_UNIT:
 	Spawned:
 	SpawnedExplodes:
 		# Same as explodes but the kill XP goes to the spawner.
-		Weapon: SCUD
-		EmptyWeapon: SCUD
+		Weapon: V2Explode
+		EmptyWeapon: V2Explode
 	RejectsOrders:
 
 TRAN_AI:

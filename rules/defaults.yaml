@@ -1167,6 +1167,9 @@
 		LaunchAngle: 128
 		Speed: 170
 		AirborneCondition: airborne
+	Targetable@GROUND:
+		TargetTypes: Ground, Repair, Vehicle
+		RequiresCondition: !airborne
 	Targetable@AIRBORNE:
 		TargetTypes: Air
 		RequiresCondition: airborne
