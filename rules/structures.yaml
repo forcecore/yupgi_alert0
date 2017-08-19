@@ -387,6 +387,7 @@ IRON:
 		RequiredForShortGame: false
 	ProximityExternalCondition:
 		Condition: invulnerability
+		RequiresCondition: !disabled
 		Range: 10c0
 		Duration: 25
 	WithRangeCircle:
