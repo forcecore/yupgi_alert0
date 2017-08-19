@@ -1218,17 +1218,16 @@ SLAVE:
 		# Dying with master doesn't have damage type so we specify fallback.
 		FallbackSequence: die3
 
-INFT2:
+CRAB:
 	Inherits: E6
-	RenderSprites:
-		Image: INFT
-		Scale: 0.5
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: SmallAnt
 		BuildPaletteOrder: 60
 		Prerequisites: ~qnest, anthill, ~techlevel.infonly
 		Description: Can infest neutal/enemy structures
+	Mobile:
+		SharesCell: false
 	Tooltip:
 		Name: Infester
 	Selectable:
@@ -1254,8 +1253,6 @@ INFT2:
 INFT:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGround
-	RenderSprites:
-		Image: INFT
 	-Crushable:
 	Buildable:
 		Queue: Infantry

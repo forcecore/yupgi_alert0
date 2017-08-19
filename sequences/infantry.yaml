@@ -1742,3 +1742,35 @@ inft:
 e1nexus:
 	idle: invis
 	icon: consicon
+
+crab:
+	stand:
+		Facings: -8
+		ShadowStart: 156
+	die:
+		Start: 150
+		Length: 6
+		ShadowStart: 306
+	run:
+		Start: 8
+		Length: 8
+		Facings: -8
+		ShadowStart: 164
+	idle1:
+		Start: 73
+		Length: 12
+		ShadowStart: 229
+	idle2:
+		Start: 85
+		Length: 18
+		ShadowStart: 241
+	infest:
+		Start: 103
+		Length: 5
+		Facings: -8
+		ShadowStart: 259
+	die-crushed:
+		Start: 143
+		Length: 7
+		ZOffset: -511
+	icon: crabicon

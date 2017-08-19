@@ -3,7 +3,7 @@ See
 https://help.naver.com/support/contents/contents.nhn?serviceNo=1074&categoryNo=3497
 for full license info.
 
-Infester:
+Infester, Super Sonic Bomber, Mind Bender, Infester, Hydra
     Nolt, of Nomad Galaxy mod (http://www.moddb.com/mods/nomad-galaxy)
 
 Fire ant unit shp is by me, made from Westwood's ant.
@@ -72,3 +72,7 @@ Termite Hill icon:
 Adrenaline Colony / Adrenaline Explosion icon:
     Fire background: https://pixabay.com/ko/%ED%99%94%EC%9E%AC-%EC%9E%A5%EC%9E%91%EB%B6%88-%EB%B6%88%EA%BD%83-%ED%99%94%EC%83%81-%EC%83%81%ED%91%9C-171230/
     Adrenaline: https://commons.wikimedia.org/wiki/File:Adrenaline.svg
+
+Infester icon:
+    https://en.wikipedia.org/wiki/File:Yellow_mite_(Tydeidae)_Lorryia_formosa_2_edit.jpg
+    Adapted for icon
