@@ -248,6 +248,16 @@ dome:
 		Tick: 400
 	icon: domeicon
 	fake-icon: domficon
+	idle-high: gap
+		Length: 32
+		Offset: -2,-32
+	damaged-idle-high: gap
+		Start: 32
+		Length: 32
+		Offset: -2,-32
+	make-high: gapmake
+		Length: *
+		Offset: -2,-32
 
 atek:
 	idle:

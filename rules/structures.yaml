@@ -623,9 +623,11 @@ DOME:
 	ExternalCondition@JAMMED:
 		Condition: jammed
 	GrantConditionOnDeploy:
+		UndeployedCondition: undeployed
 		DeployedCondition: deployed
 		DeploySound: bleep9.aud
 		UndeploySound: bleep5.aud
+		MakeAnimationBodyNames: highbody
 	RevealsShroud@HIGHPOWER:
 		Range: 20c0
 		RequiresCondition: deployed && !disabled
@@ -635,6 +637,14 @@ DOME:
 		RequiresCondition: deployed
 	TransformOnCapture:
 		IntoActor: DOME_INFESTED
+	WithMakeAnimation@high:
+		Sequence: make-high
+		BodyNames: highbody
+	WithSpriteBody@high:
+		Sequence: idle-high
+		PauseAnimationWhenDisabled: true
+		RequiresCondition: !undeployed
+		Name: highbody
 
 PBOX:
 	Inherits: ^Defense
