@@ -1626,6 +1626,8 @@ JEEP_AI:
 
 3TNK.matr:
 	Inherits: 3TNK
+	RenderSprites:
+		Image: 3tnk
 	-Buildable:
 	Selectable:
 		Class: 3TNK
@@ -1634,6 +1636,16 @@ JEEP_AI:
 
 2TNK.matr:
 	Inherits: 2TNK
+	RenderSprites:
+		Image: 2tnk
 	-Buildable:
 	Armament:
 		Weapon: 90mm
+	SpawnActorOnDeath:
+		Actor: 1TNK.matr
+
+1TNK.matr:
+	Inherits: 1TNK
+	RenderSprites:
+		Image: 1tnk
+	-Buildable:
