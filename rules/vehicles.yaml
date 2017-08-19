@@ -136,6 +136,8 @@ V2RL:
 		BuildPaletteOrder: 120
 		Prerequisites: fix, ~naweap, ~techlevel.medium
 		Description: Soviet Main Battle Tank, with dual cannons\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
+	Selectable:
+		Class: 3TNK
 	Valued:
 		Cost: 1150
 	DeliversCash@GRINDABLE:
@@ -195,7 +197,7 @@ V2RL:
 	Valued:
 		Cost: 2000
 	Tooltip:
-		Name: Mammoth Tank
+		Name: Mammoth Matryoshka
 	Health:
 		HP: 900
 	Armor:
@@ -227,7 +229,7 @@ V2RL:
 	WithMuzzleOverlay:
 	WithSpriteTurret:
 	SpawnActorOnDeath:
-		Actor: 4TNK.Husk
+		Actor: 3TNK.matr
 	SelfHealing:
 		Step: 1
 		Delay: 3
@@ -1621,3 +1623,17 @@ JEEP_AI:
 		PipCount: 3
 		LoadingCondition: notmobile
 		InitialUnits: e1,e3,e3
+
+3TNK.matr:
+	Inherits: 3TNK
+	-Buildable:
+	Selectable:
+		Class: 3TNK
+	SpawnActorOnDeath:
+		Actor: 2TNK.matr
+
+2TNK.matr:
+	Inherits: 2TNK
+	-Buildable:
+	Armament:
+		Weapon: 90mm

@@ -145,7 +145,7 @@ hhusk2:
 		UseClassicFacingFudge: True
 	muzzle: gunfire2
 		Length: 5
-	icon: 4tnkicon
+	icon: matricon
 
 4tnk.destroyed:
 	idle: 4tnk
@@ -583,3 +583,25 @@ humm:
 		Length: 6
 		Facings: 8
 	icon: hummicon
+
+2tnk.matr:
+	idle: 2tnk
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret: 2tnk
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	muzzle: gunfire2
+		Length: 5
+
+3tnk.matr:
+	idle: 3tnk
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret: 3tnk
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	muzzle: gunfire2
+		Length: 5
