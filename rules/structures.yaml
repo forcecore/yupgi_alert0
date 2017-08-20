@@ -2640,9 +2640,9 @@ MBK:
 	# You don't need a dummy armament but
 	# you do need an attack base because MobSpawner requires one.
 	AttackOmni:
-	MobSpawner:
+	MobSpawnerMaster:
 		Actors: hydra
-		SpawnReplaceDelay: 5
+		RespawnTicks: 5
 		ExitByBudding: false
 		SlavesHaveFreeWill: true
 		AggregateHealth: false

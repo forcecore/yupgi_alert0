@@ -325,8 +325,7 @@ AntFireballLauncher:
 
 CarrierSpawnTargeter:
 	ReloadDelay: 30
-	Range: 10c0
-	#MinRange: 1c0 # for now.Issue #13307 of OpenRA engine
+	Range: 12c0
 	ValidTargets: Ground, Water, Air
 	Projectile: Bullet
 		Speed: 10c0

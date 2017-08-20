@@ -476,7 +476,6 @@ MIG2:
 		RepulsionSpeed: 40
 		MaximumPitch: 56
 		RearmBuildings: carrier
-		LandAltitude: 2c256
 	AmmoPool:
 		Ammo: 8
 	RejectsOrders:
@@ -490,11 +489,28 @@ MIG2:
 		Interval: 2
 	ProducibleWithLevel:
 		Prerequisites: aircraft.upgraded
-	Spawned:
+	CarrierSlave:
 		LandingDistance: 1c0
 	Contrail@1:
 		Offset: -432,0,0
-	DockClient:
+
+YAK2:
+	Inherits: YAK
+	RenderSprites:
+		Image: yak
+		Scale: 0.5
+	Valued:
+		Cost: 300
+	RejectsOrders:
+	-Selectable:
+	-ActorLostNotification:
+	-EjectOnDeath:
+	Aircraft:
+		# Some invalid entry to make it return to ZEP.
+		RearmBuildings: carrier
+		TurnSpeed: 16
+	CarrierSlave:
+		LandingDistance: 1c0
 
 ZEP:
 	Inherits: ^Helicopter
@@ -532,11 +548,12 @@ ZEP:
 	WithDamageOverlay:
 	ProducibleWithLevel:
 		Prerequisites: aircraft.upgraded
-	Spawner:
-		Count: 5
-		SpawnUnit: mig2
+	CarrierMaster:
+		Actors: mig2, yak2, mig2, yak2, mig2
 		RespawnTicks: 300
 		InstaRepair: true
+		SlaveDisposalOnKill: KillSlaves
+		SpawnAllAtOnce: false
 	Exit@0:
 		SpawnOffset: 0,0,0
 		Facing: 0
@@ -633,7 +650,7 @@ SCUD_UNIT:
 	Tooltip:
 		Name: Scud
 	Health:
-		HP: 150
+		HP: 90
 	Armor:
 		Type: Light
 	ShootableBallisticMissile:
@@ -641,12 +658,21 @@ SCUD_UNIT:
 		Speed: 170
 	Contrail:
 		Offset: -598,0,0
-	Spawned:
+	MissileSpawnerSlave:
 	SpawnedExplodes:
 		# Same as explodes but the kill XP goes to the spawner.
 		Weapon: V2Explode
 		EmptyWeapon: V2Explode
 	RejectsOrders:
+
+SCUD_UNIT_ELITE:
+	Inherits: SCUD_UNIT
+	RenderSprites:
+		Image: scud_unit
+	SpawnedExplodes:
+		# Same as explodes but the kill XP goes to the spawner.
+		Weapon: V2ExplodeE
+		EmptyWeapon: V2ExplodeE
 
 TRAN_AI:
 	Inherits: TRAN

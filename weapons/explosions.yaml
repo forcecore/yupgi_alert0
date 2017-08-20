@@ -321,3 +321,22 @@ BlossomTreeExplosion:
 		Level: 128
 		Falloff: 100, 90, 50, 0
 		MaxLevel: 140
+
+V2ExplodeE:
+	Inherits: SCUD
+	-Report:
+	Warhead@1Dam: SpreadDamage
+		Spread: 2c0
+		Damage: 100
+		Falloff: 1000, 368, 135, 50, 18, 7, 0
+		ValidTargets: Ground, Water, Trees
+		Versus:
+			None: 90
+			Light: 70
+			Heavy: 40
+			Concrete: 100
+		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath, Incendiary
+	Warhead@3Eff: CreateEffect
+		Explosions: mininuke
+	Warhead@4EffWater: CreateEffect
+		Explosions: mininuke

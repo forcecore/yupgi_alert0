@@ -1316,7 +1316,7 @@ E1CONS:
 	-Buildable:
 	-SelectionDecorations: # No HP bar
 	RejectsOrders@slaved:
-	MobMemberSlave:
+	MobSpawnerSlave:
 	Selectable:
 		Class: e1cons
 
@@ -1331,12 +1331,11 @@ E1NEXUS:
 		GenericName: Soldier
 	Valued:
 		Cost: 200
-	MobSpawner:
+	MobSpawnerMaster:
 		Actors: e1cons, e1cons, e1cons, e1cons, e1cons
 		#InitialActorCount: # 0 or default == sames as Actors
-		SpawnReplaceDelay: 750 # 30 seconds
+		RespawnTicks: 750 # 30 seconds
 		ExitByBudding: true
-		OneShot: false
 		AggregateHealth: true
 		#SlavesHaveFreeWill: false
 	Buildable:

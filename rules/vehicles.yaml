@@ -35,12 +35,20 @@ V2RL:
 		ReloadPrefix: empty-
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
-	Spawner:
-		Count: 2
-		SpawnUnit: SCUD_UNIT
+	MissileSpawnerMaster@normal:
+		Actors: scud_unit, scud_unit
 		SpawnIsMissile: true
 		# Make it shorter than any RoF buffs!
 		RespawnTicks: 120
+		SpawnAllAtOnce: true
+		RequiresCondition: rank-veteran < 4
+	MissileSpawnerMaster@elite:
+		Actors: scud_unit_elite
+		SpawnIsMissile: true
+		# Make it shorter than any RoF buffs!
+		RespawnTicks: 120
+		SpawnAllAtOnce: true
+		RequiresCondition: rank-veteran >= 4
 
 1TNK:
 	Inherits: ^Tank
@@ -1573,7 +1581,7 @@ HYDRA:
 	-DamagedByTerrain@tib:
 	-DamagedByRadioactivity:
 	-Crushable:
-	MobMemberSlave:
+	MobSpawnerSlave:
 	# Gattling laser stuff
 	Armament@GAT0:
 		Weapon: GattLaser0
