@@ -342,12 +342,22 @@ MiniHiveSpawnTargeter:
 		InvalidTargets: Structure, Wall
 
 WantMandible:
-	Inherits: Claw
 	ReloadDelay: 10
+	Range: 1c512
 	Report: antbite.aud
+	TargetActorCenter: true
 	Projectile: InstantHit
 	Warhead@1Dam: TargetDamage
 		Damage: 60
+		Spread: 213
+		ValidTargets: Ground, Water, Trees
+		Versus:
+			None: 90
+			Wood: 10
+			Light: 30
+			Heavy: 10
+			Concrete: 10
+		DamageTypes: Prone50Percent, TriggerProne, DefaultDeath
 
 ScoutMandible:
 	Inherits: WantMandible
