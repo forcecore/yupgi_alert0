@@ -577,3 +577,9 @@ SMIN.Husk:
 		IntoActor: smin
 	RenderSprites:
 		Image: smin.destroyed
+
+YAK2.Husk:
+	Inherits: YAK.Husk
+	RenderSprites:
+		Image: yak
+		Scale: 0.5

@@ -510,6 +510,8 @@ YAK2:
 		# Some invalid entry to make it return to ZEP.
 		RearmBuildings: carrier
 		TurnSpeed: 16
+	SpawnActorOnDeath:
+		Actor: YAK2.Husk
 	CarrierSlave:
 		LandingDistance: 1c0
 
