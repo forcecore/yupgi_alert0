@@ -1527,9 +1527,10 @@ SMIN:
 		DeadlockDetectionEnabled: false
 		DockNextToActor: true
 	Dock:
-	SpawnerHarvester:
-		SpawnUnit: slave
+	SpawnerHarvesterMaster:
+		Actors: slave, slave, slave, slave, slave
 		Resources: Ore,Gems,Tiberium
+		SpawnerSlaveDisposal: GiveSlavesToAttacker
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
 

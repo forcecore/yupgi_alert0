@@ -1192,7 +1192,7 @@ SLAVE:
 	Voiced:
 		VoiceSet: CivilianMaleVoice
 	DockClient:
-	SpawnedHarvester:
+	SpawnerHarvesterSlave:
 		FreedCondition: freed
 	Harvester:
 		Capacity: 1

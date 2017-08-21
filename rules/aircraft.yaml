@@ -499,6 +499,7 @@ YAK2:
 	RenderSprites:
 		Image: yak
 		Scale: 0.5
+	-Buildable:
 	Valued:
 		Cost: 300
 	RejectsOrders:
