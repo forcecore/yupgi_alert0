@@ -99,8 +99,9 @@ DogJaw:
 	ReloadDelay: 10
 	Range: 3c0
 	Report: dogg5p.aud
-	Warhead@1Dam: SpreadDamage
-		Spread: 213
+	Projectile: InstantHit
+	Warhead@1Dam: TargetDamage
+		Spread: 0
 		Damage: 100
 		ValidTargets: Infantry
 		InvalidTargets: Ant
@@ -589,3 +590,9 @@ GattLaser4:
 E1NexusTargeter:
 	Inherits: CarrierSpawnTargeter
 	Range: 5c0 # Doesn't matter too much, I think.
+
+DogLordTargeter:
+	Inherits: CarrierSpawnTargeter
+	Range: 6c0
+	ReloadDelay: 7
+	ValidTargets: Infantry

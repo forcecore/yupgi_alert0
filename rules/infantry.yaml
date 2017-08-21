@@ -1,11 +1,11 @@
 DOG:
 	Inherits: ^Soldier
-	Buildable:
-		Queue: Infantry
-		BuildAtProductionType: Dog
-		BuildPaletteOrder: 50
-		Prerequisites: ~kenn, ~techlevel.infonly
-		Description: Anti-infantry unit.\nCan detect cloaked units and spies.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	#Buildable:
+	#	Queue: Infantry
+	#	BuildAtProductionType: Dog
+	#	BuildPaletteOrder: 50
+	#	Prerequisites: ~kenn, ~techlevel.infonly
+	#	Description: Anti-infantry unit.\nCan detect cloaked units and spies.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Valued:
 		Cost: 200
 	DeliversCash@GRINDABLE:
@@ -1379,3 +1379,37 @@ E1NEXUS:
 	# Always invincible (preven nuke from killing this)
 	DamageMultiplier@invincible:
 		Modifier: 0
+
+DOGSLAVE:
+	Inherits: DOG
+	RenderSprites:
+		Image: DOG
+	MobSpawnerSlave:
+	-SelectionDecorations: # No HP bar
+	RejectsOrders@slaved:
+
+DOGELORD:
+	Inherits: E2
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Dog
+		BuildPaletteOrder: 50
+		Prerequisites: ~kenn, ~techlevel.infonly
+		Description: Anti-infantry unit.\nCan detect cloaked units and spies.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Doge Lord
+	IgnoresDisguise:
+	Armament@PRIMARY:
+		Weapon: DogLordTargeter
+	-Armament@GARRISONED:
+	MobSpawnerMaster:
+		ExitByBudding: false
+		SlavesHaveFreeWill: false
+		AggregateHealth: false
+		Actors: dogslave, dogslave, dogslave, dogslave
+		SlaveDisposalOnKill: DoNothing
+		SpawnAllAtOnce: true
+		RespawnTicks: 250
+		SpawnIsGroundUnit: true
