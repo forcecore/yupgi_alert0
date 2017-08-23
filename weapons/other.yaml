@@ -10,6 +10,7 @@
 			None: 90
 			Wood: 50
 			Light: 60
+			AntLight: 60
 			Heavy: 25
 			Concrete: 20
 		DamageTypes: Prone50Percent, TriggerProne, FireDeath, Incendiary
@@ -155,6 +156,7 @@ Claw:
 			None: 90
 			Wood: 10
 			Light: 30
+			AntLight: 30
 			Heavy: 10
 			Concrete: 10
 		DamageTypes: Prone50Percent, TriggerProne, DefaultDeath
@@ -203,6 +205,7 @@ WangchangThump:
 		Versus:
 			None: 100
 			Light: 60
+			AntLight: 60
 			Heavy: 25
 			Concrete: 50
 		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
@@ -226,6 +229,7 @@ RadBeamWeapon:
 		Versus:
 			None: 100
 			Light: 20
+			AntLight: 20
 			Heavy: 10
 			Wood: 0
 			Concrete: 0
@@ -283,6 +287,7 @@ FiendShard-AA:
 		Spread: 213
 		Versus:
 			Light: 60
+			AntLight: 60
 			Heavy: 40
 			Concrete: 20
 		DamageTypes: Prone100Percent, TriggerProne, BulletDeath
@@ -314,6 +319,7 @@ FiendShard-AG:
 		Versus:
 			Wood: 25
 			Light: 30
+			AntLight: 30
 			Heavy: 10
 			Concrete: 10
 		DamageTypes: Prone100Percent, TriggerProne, BulletDeath
@@ -355,6 +361,7 @@ WantMandible:
 			None: 90
 			Wood: 10
 			Light: 30
+			AntLight: 30
 			Heavy: 10
 			Concrete: 10
 		DamageTypes: Prone50Percent, TriggerProne, DefaultDeath
@@ -374,6 +381,7 @@ BuzzerMandible:
 			None: 100
 			Wood: 1
 			Light: 1
+			AntLight: 1
 			Heavy: 1
 			Concrete: 1
 
@@ -386,6 +394,7 @@ SuperMandible:
 			None: 90
 			Wood: 50
 			Light: 90
+			AntLight: 90
 			Heavy: 50
 			Concrete: 50
 
@@ -485,6 +494,7 @@ AuroraBomb:
 			None: 100
 			Wood: 100
 			Light: 100
+			AntLight: 100
 			Heavy: 100
 			Concrete: 100
 	Warhead@2Smu: LeaveSmudge
@@ -531,6 +541,7 @@ TanyStrikeBomb:
 			None: 100
 			Wood: 100
 			Light: 100
+			AntLight: 100
 			Heavy: 100
 			Concrete: 100
 
@@ -606,3 +617,44 @@ DogLordTargeter:
 	Range: 6c0
 	ReloadDelay: 7
 	ValidTargets: Infantry
+
+PesticideEruptionWeapon:
+	Inherits: RadEruptionWeapon
+	Warhead@1Radio: CreateRadioactivity
+		RadioactivityLayerName: pesticide
+		Range: 4, 6, 8
+		Level: 250
+		Falloff: 100, 50, 0
+		MaxLevel: 500
+
+Pesticide:
+	ValidTargets: Ground, Water, Trees
+	ReloadDelay: 50
+	Range: 5c0
+	Report: h2obomb2.aud
+	Burst: 15
+	BurstDelay: 1
+	Projectile: Bullet
+		Speed: 256
+		Blockable: true
+		LaunchAngle: 45
+		ContrailLength: 30
+		ContrailColor: FF00FF80
+		ContrailFadeColor: FF00FF00
+		Inaccuracy: 853
+	Warhead@1Dam: SpreadDamage
+		Spread: 341
+		Damage: 8
+		ValidTargets: Ground, Water
+		Versus:
+			None: 100
+			Wood: 10
+			Light: 60
+			AntLight: 100
+			Heavy: 5
+			Concrete: 5
+		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
+	Warhead@3Eff: CreateEffect
+		Explosions: small_splash
+		ImpactSounds: splash9.aud
+		ValidTargets: Ground, Water, Trees

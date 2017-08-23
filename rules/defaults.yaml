@@ -161,6 +161,13 @@
 	ExternalCondition@INVULNERABILITY:
 		Condition: invulnerability
 
+^PesticideSusceptible:
+	DamagedByRadioactivity@pesticide:
+		DamageCoeff: 80
+		DamageInterval: 16
+		DamageTypes: SmallExplosionDeath
+		RadioactivityLayerName: pesticide
+
 ^Enrageable:
 	WithColoredOverlay@enraged:
 		RequiresCondition: enraged && !invulnerability
@@ -373,6 +380,7 @@
 	Inherits@3: ^SpriteActor
 	Inherits@4: ^MindControllable
 	Inherits@5: ^Enrageable
+	Inherits@6: ^PesticideSusceptible
 	Huntable:
 	DrawLineToTarget:
 	Health:

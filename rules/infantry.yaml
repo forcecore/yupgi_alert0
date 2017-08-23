@@ -989,7 +989,7 @@ DOGGIE:
 		Payload: 500
 		Sounds: fiend1.aud
 	Armor:
-		Type: Light
+		Type: AntLight
 	RevealsShroud:
 		Range: 8c0
 	Mobile:
@@ -1413,3 +1413,60 @@ DOGELORD:
 		SpawnAllAtOnce: true
 		RespawnTicks: 250
 		SpawnIsGroundUnit: true
+
+E5:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 70
+		Prerequisites: ~tent, dome, ~techlevel.low
+		Description: Advanced anti-ant unit.\nTheir pesticide works well on humans, too.\n  Strong vs Infantry\n  Useless vs Vehicles, Aircraft
+	Valued:
+		Cost: 300
+	DeliversCash@GRINDABLE:
+		Payload: 150
+	Tooltip:
+		Name: Pest Control
+	Health:
+		HP: 40
+	Mobile:
+		RequiresCondition: !deployed
+	Armament@PRIMARY:
+		Weapon: Pesticide
+		LocalOffset: 350,0,500
+		FireDelay: 8
+		RequiresCondition: !deployed
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: Pesticide
+	Armament@eruption:
+		Name: Eruption
+		Weapon: PesticideEruptionWeapon
+	TakeCover:
+		ProneOffset: 160,0,-288
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		RequiresCondition: !deployed
+	WithSpriteBody@deployed:
+		Sequence: deploy-shoot
+		RequiresCondition: deployed
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+	# These are dirty warfare ready
+	-DamagedByRadioactivity:
+	-DamagedByRadioactivity@pesticide:
+	GrantConditionOnDeploy:
+		DeployedCondition: deployed
+		CanDeployOnRamps: true
+	FireWeaponAtSelf:
+		Name: Eruption
+		RequiresCondition: deployed
+	AIDeployHelper:
+		DeployOn: Attack, Damage
+		DeployChance: 100
+		DeployOnEnemy: true
+		UndeployTicks: 30 # undeploy quickly
+		DeployTicks: 300 # once in 20 secs

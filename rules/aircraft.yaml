@@ -556,7 +556,7 @@ ZEP:
 		RespawnTicks: 300
 		InstaRepair: true
 		SlaveDisposalOnKill: KillSlaves
-		SpawnAllAtOnce: false
+		SpawnAllAtOnce: true
 	Exit@0:
 		SpawnOffset: 0,0,0
 		Facing: 0

@@ -147,6 +147,10 @@ World:
 	WarheadDebugOverlay:
 	RadioactivityLayer:
 		Color: 00FF00
+	RadioactivityLayer@pesticide:
+		Color: FF00FF
+		Color2: FF7FFF
+		Name: pesticide
 	SpawnMapActors:
 	MapBuildRadius:
 	MapOptions:

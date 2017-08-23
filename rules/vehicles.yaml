@@ -903,6 +903,7 @@ STNK:
 
 QANT:
 	Inherits: ^Vehicle
+	Inherits@2: ^PesticideSusceptible
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 67
@@ -958,6 +959,7 @@ QANT:
 
 WANT:
 	Inherits: ^Vehicle
+	Inherits@2: ^PesticideSusceptible
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Valued:
 		Cost: 1000
@@ -982,7 +984,7 @@ WANT:
 		Shape: Circle
 			Radius: 469
 	Armor:
-		Type: Light
+		Type: AntLight
 	Mobile:
 		Speed: 99
 		TurnSpeed: 12
@@ -1017,6 +1019,7 @@ WANT:
 
 FANT:
 	Inherits: ^Vehicle
+	Inherits@2: ^PesticideSusceptible
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Valued:
 		Cost: 1500
@@ -1041,7 +1044,7 @@ FANT:
 		Shape: Circle
 			Radius: 469
 	Armor@undeployed:
-		Type: Light
+		Type: AntLight
 		RequiresCondition: !deployed
 	Armor@deployed:
 		Type: Concrete
@@ -1120,6 +1123,7 @@ FANT:
 
 SANT:
 	Inherits: ^Vehicle
+	Inherits@2: ^PesticideSusceptible
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Valued:
 		Cost: 5000
@@ -1177,6 +1181,7 @@ SANT:
 
 HANT:
 	Inherits: ^Vehicle
+	Inherits@2: ^PesticideSusceptible
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Valued:
 		Cost: 6000
@@ -1537,6 +1542,7 @@ SMIN:
 HYDRA:
 	Inherits@1: ^Soldier
 	Inherits@2: ^IronCurtainable
+	Inherits@3: ^PesticideSusceptible
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Valued:
 		Cost: 1000
