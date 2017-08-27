@@ -1054,11 +1054,12 @@ FANT:
 		TurnSpeed: 12
 		Crushes: wall, mine, crate
 		RequiresCondition: !deployed
+	TurnsWhileImmobile:
+		RequiresCondition: deployed
 	RevealsShroud:
 		Range: 5c0
 	WithInfantryBody:
 		DefaultAttackSequence: bite
-		RequiresCondition: !deployed
 	-WithDamageOverlay:
 	-WithFacingSpriteBody:
 	QuantizeFacingsFromSequence:
@@ -1100,20 +1101,8 @@ FANT:
 	-EjectOnDeath:
 	-Capturable:
 	-Repairable:
-	WithSpriteTurret:
-		Sequence: stand
-		Recoils: False
-		RequiresCondition: deployed
-		Turret: deployed
-	Turreted:
-		Turret: deployed
-		TurnSpeed: 12
-	AttackTurreted@deployed:
-		Voice: Attack
-		RequiresCondition: deployed
 	AttackFrontal:
 		Voice: Attack
-		RequiresCondition: !deployed
 	AIDeployHelper:
 		DeployOn: Attack, Damage
 		DeployChance: 100
