@@ -1637,7 +1637,7 @@ JEEP_AI:
 		MaxWeight: 3
 		PipCount: 3
 		LoadingCondition: notmobile
-		InitialUnits: e1,e3,e3
+		InitialUnits: gi,e3,e3
 
 3TNK.matr:
 	Inherits: 3TNK

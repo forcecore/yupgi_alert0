@@ -68,7 +68,7 @@ Player:
 			vein: 10%
 			antaa: 5%
 		UnitsToBuild:
-			e1: 65%
+			gi: 65%
 			e1nexus: 65%
 			e2: 25%
 			e3: 40%
@@ -247,7 +247,7 @@ Player:
 			ragegen: 1%
 		UnitsToBuild:
 			# normal
-			e1: 65%
+			gi: 65%
 			e1nexus: 65%
 			e2: 25%
 			e3: 40%
@@ -434,7 +434,7 @@ Player:
 			tmhill: 1%
 			ragegen: 1%
 		UnitsToBuild:
-			e1: 65%
+			gi: 65%
 			e1nexus: 65%
 			e2: 25%
 			e3: 40%
@@ -627,7 +627,7 @@ Player:
 			tmhill: 1%
 			ragegen: 1%
 		UnitsToBuild: # unleashed difficulty (the list is too long)...
-			e1: 65%
+			gi: 65%
 			e1nexus: 65%
 			e2: 25%
 			e3: 40%

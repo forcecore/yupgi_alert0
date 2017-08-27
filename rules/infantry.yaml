@@ -54,12 +54,12 @@ DOG:
 E1:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGround
-	Buildable:
-		Queue: Infantry
-		BuildAtProductionType: Soldier
-		BuildPaletteOrder: 10
-		Prerequisites: ~tent, ~techlevel.infonly
-		Description: General-purpose infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	#Buildable:
+	#	Queue: Infantry
+	#	BuildAtProductionType: Soldier
+	#	BuildPaletteOrder: 10
+	#	Prerequisites: ~tent, ~techlevel.infonly
+	#	Description: General-purpose infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Selectable:
 		Class: E1
 	Valued:
@@ -89,7 +89,7 @@ E1R1:
 	ProducibleWithLevel:
 		Prerequisites: techlevel.infonly
 		InitialLevels: 1
-	-Buildable:
+	#-Buildable:
 
 E2:
 	Inherits: ^Soldier
@@ -1313,7 +1313,7 @@ E1CONS:
 		Image: E1
 	Health:
 		HP: 30
-	-Buildable:
+	#-Buildable:
 	-SelectionDecorations: # No HP bar
 	RejectsOrders@slaved:
 	MobSpawnerSlave:
@@ -1470,3 +1470,64 @@ E5:
 		DeployOnEnemy: true
 		UndeployTicks: 30 # undeploy quickly
 		DeployTicks: 300 # once in 20 secs
+
+GI:
+	Inherits: ^Soldier
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	RenderSprites:
+		PlayerPalette: player-ra2
+		Scale: 0.50
+	Buildable:
+		Queue: Infantry
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 10
+		Prerequisites: ~tent, ~techlevel.infonly
+		Description: General-purpose infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Valued:
+		Cost: 200
+	DeliversCash@GRINDABLE:
+		Payload: 100
+	Tooltip:
+		Name: GI
+	Health:
+		HP: 50
+	Mobile:
+		RequiresCondition: undeployed
+	TurnsWhileImmobile:
+		RequiresCondition: deployed
+	ProducibleWithLevel:
+		Prerequisites: barracks.upgraded
+	GrantConditionOnDeploy:
+		DeployedCondition: deployed
+		UndeployedCondition: undeployed
+		CanDeployOnRamps: true
+		DeployAnimation: deploy
+	Armament@PRIMARY:
+		Weapon: M1Carbine
+		RequiresCondition: undeployed
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: Vulcan
+		MuzzleSequence: garrison-muzzle
+	Armament@DEPLOYED:
+		Weapon: GIVulcan
+		MuzzleSequence: garrison-muzzle
+		RequiresCondition: deployed
+	AttackFrontal:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		RequiresCondition: undeployed
+	WithInfantryBody@deployed:
+		StandSequences: deployed
+		DefaultAttackSequence: shoot-deployed
+		RequiresCondition: deployed
+		IdleSequences: # empty sequence.
+	WithSpriteBody:
+		RequiresCondition: !deployed && !undeployed
+		Sequence: deploy # dummy. I don't want to put "idle" sequence.
+	WithMakeAnimation:
+		Sequence: deploy
+	AIDeployHelper:
+		DeployOn: Attack, Damage
+		DeployChance: 100
+		DeployTicks: 150

@@ -344,3 +344,19 @@ ChainGun.e7.2:
 	Inherits: ChainGun.e7.0
 	Report: vgatlo8a.aud, vgatlo8b.aud
 	ReloadDelay: 5
+
+# Same as m1 carbine but
+# - sounds different
+# +1c0 range
+# - Better VS damages
+GIVulcan:
+	Inherits: M1Carbine
+	Range: 6c0
+	Report: gun13.aud
+	Warhead@1Dam: SpreadDamage
+		Versus:
+			None: 100
+			Wood: 50
+			Light: 60
+			Heavy: 25
+			Concrete: 25
