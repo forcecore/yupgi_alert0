@@ -627,7 +627,7 @@ DOME:
 		DeployedCondition: deployed
 		DeploySound: bleep9.aud
 		UndeploySound: bleep5.aud
-		MakeAnimationBodyNames: highbody
+		MakeAnimationDeployTypes: high-deploy
 	RevealsShroud@HIGHPOWER:
 		Range: 20c0
 		RequiresCondition: deployed && !disabled
@@ -639,6 +639,7 @@ DOME:
 		IntoActor: DOME_INFESTED
 	WithMakeAnimation@high:
 		Sequence: make-high
+		DeployType: high-deploy
 		BodyNames: highbody
 	WithSpriteBody@high:
 		Sequence: idle-high
