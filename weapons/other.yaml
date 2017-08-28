@@ -248,9 +248,9 @@ RadEruptionWeapon:
 	Projectile: InstantHit
 		Blockable: false
 	Warhead@1Radio: CreateRadioactivity
-		Range: 4, 6, 8, 10
+		Range: 4, 6, 8
 		Level: 250
-		Falloff: 100, 90, 50, 0
+		Falloff: 100, 90, 50
 		MaxLevel: 500
 
 FiendShard-AA-FX:
@@ -622,10 +622,10 @@ PesticideEruptionWeapon:
 	Inherits: RadEruptionWeapon
 	Warhead@1Radio: CreateRadioactivity
 		RadioactivityLayerName: pesticide
-		Range: 4, 6, 8
+		Range: 2, 4, 6
 		Level: 250
-		Falloff: 100, 50, 0
-		MaxLevel: 500
+		Falloff: 100, 50, 25
+		MaxLevel: 250
 
 Pesticide:
 	ValidTargets: Ground, Water, Trees
