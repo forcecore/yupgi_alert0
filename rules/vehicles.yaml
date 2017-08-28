@@ -1054,8 +1054,7 @@ FANT:
 		TurnSpeed: 12
 		Crushes: wall, mine, crate
 		RequiresCondition: !deployed
-	TurnsWhileImmobile:
-		RequiresCondition: deployed
+		TurnWhileDisabledCondition: deployed
 	RevealsShroud:
 		Range: 5c0
 	WithInfantryBody:

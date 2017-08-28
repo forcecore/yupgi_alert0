@@ -1493,8 +1493,7 @@ GI:
 		HP: 50
 	Mobile:
 		RequiresCondition: undeployed
-	TurnsWhileImmobile:
-		RequiresCondition: deployed
+		TurnWhileDisabledCondition: deployed
 	ProducibleWithLevel:
 		Prerequisites: barracks.upgraded
 	GrantConditionOnDeploy:

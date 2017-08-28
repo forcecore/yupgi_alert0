@@ -352,7 +352,7 @@ ChainGun.e7.2:
 GIVulcan:
 	Inherits: M1Carbine
 	Range: 6c0
-	Report: gun13.aud
+	Report: pillbox1.aud
 	Warhead@1Dam: SpreadDamage
 		Versus:
 			None: 100
