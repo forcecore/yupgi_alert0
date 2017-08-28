@@ -172,13 +172,13 @@
 	WithColoredOverlay@enraged:
 		RequiresCondition: enraged && !invulnerability
 		Palette: enraged
-	TimedConditionBar:
+	TimedConditionBar@enraged:
 		Condition: enraged
 	ExternalCondition@enraged:
 		Condition: enraged
 	RageSusceptible:
 		RequiresCondition: enraged && !invulnerability
-	RejectsOrders:
+	RejectsOrders@enraged:
 		RequiresCondition: enraged && !invulnerability
 
 ^AutoTargetGround:
@@ -251,6 +251,18 @@
 		RequiresCondition: !invulnerability
 		UnmindcontrolSound: bleep5.aud
 
+^Tractable:
+	Tractable:
+		TractingCondition: tracting
+		AirborneCondition: airborne
+		MinAirborneAltitude: 128
+		RequiresCondition: !invulnerability
+	RejectsOrders@tracting:
+		RequiresCondition: tracting
+	Targetable@AIRBORNE:
+		TargetTypes: Air, Tractable
+		RequiresCondition: airborne
+
 ^Vehicle:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^GainsExperience
@@ -258,6 +270,7 @@
 	Inherits@4: ^SpriteActor
 	Inherits@5: ^MindControllable
 	Inherits@6: ^Enrageable
+	Inherits@7: ^Tractable
 	Huntable:
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
@@ -278,8 +291,8 @@
 	Selectable:
 		Bounds: 24, 24
 	Targetable:
-		TargetTypes: Ground, Repair, Vehicle
-		RequiresCondition: !parachute
+		TargetTypes: Ground, Repair, Vehicle, Tractable
+		RequiresCondition: !parachute && !airborne
 	DockClient:
 	Repairable:
 	Chronoshiftable:
@@ -368,7 +381,7 @@
 			Tiberium: 70
 			Beach: 70
 	Targetable:
-		TargetTypes: Ground, C4, Repair, Tank
+		TargetTypes: Ground, C4, Repair, Tank, Tractable
 	ProximityCaptor:
 		Types: Tank
 	Tooltip:
@@ -547,6 +560,7 @@
 	Inherits@3: ^IronCurtainable
 	Inherits@4: ^SpriteActor
 	Inherits@5: ^MindControllable
+	Inherits@6: ^Tractable
 	Huntable:
 	DrawLineToTarget:
 	UpdatesPlayerStatistics:
@@ -559,7 +573,7 @@
 	Selectable:
 		Bounds: 24,24
 	Targetable:
-		TargetTypes: Ground, Water, Ship, Repair
+		TargetTypes: Ground, Water, Ship, Repair, Tractable
 	HiddenUnderFog:
 	AttackMove:
 	ActorLostNotification:
@@ -1004,7 +1018,7 @@
 	WithColoredOverlay@IDISABLE:
 		Palette: disabled
 	Targetable:
-		TargetTypes: Ground, Husk, NoAutoTarget
+		TargetTypes: Ground, Husk, NoAutoTarget, Tractable
 		RequiresForceFire: true
 	Chronoshiftable:
 	Tooltip:

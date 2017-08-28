@@ -658,3 +658,30 @@ Pesticide:
 		Explosions: small_splash
 		ImpactSounds: splash9.aud
 		ValidTargets: Ground, Water, Trees
+
+MagnetronZap:
+	ReloadDelay: 15
+	Range: 10c0
+	Report: tslachg2.aud
+	ValidTargets: Tractable
+	Projectile: AreaBeam
+		Speed: 0c128
+		Duration: 15
+		DamageInterval: 5 # Roughly 18 impacts.
+		Width: 384
+		Shape: Flat
+		ZOffset: 2047
+		BeyondTargetRange: 0c256
+		Blockable: true
+		TrackTarget: true
+		Color: F500F550
+	Warhead@1Dam: SpreadDamage
+		Range: 0, 32
+		Falloff: 100, 100
+		Damage: 0
+		AffectsParent: false
+		Versus:
+			Heavy: 80
+			Concrete: 60
+		DamageTypes: SmallExplosionDeath
+		ValidTargets: Tractable

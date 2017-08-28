@@ -1652,3 +1652,48 @@ JEEP_AI:
 	RenderSprites:
 		Image: 1tnk
 	-Buildable:
+
+MAGNET:
+	Inherits: ^Tank
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	RenderSprites:
+		Image: 2tnk
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 110
+		Prerequisites: fix, ~gaweap, ~techlevel.medium
+		Description: Lifts and tracts enemies.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
+	Valued:
+		Cost: 850
+	DeliversCash@GRINDABLE:
+		Payload: 425
+	Tooltip:
+		Name: Magnetron
+	Health:
+		HP: 450
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 85
+		Crushes: wall, mine, crate, infantry
+	RevealsShroud:
+		Range: 6c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 4c0
+	Turreted:
+		TurnSpeed: 5
+	Armament:
+		Weapon: MagnetronZap
+		LocalOffset: 720,0,80
+		MuzzleSequence: muzzle
+	AttackTurreted:
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+	SpawnActorOnDeath:
+		Actor: 2TNK.Husk
+	SelectionDecorations:
+		VisualBounds: 28,28
+	ProducibleWithLevel:
+		Prerequisites: vehicles.upgraded
+	Tractor:
