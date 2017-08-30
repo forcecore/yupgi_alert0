@@ -659,7 +659,7 @@ Pesticide:
 		ImpactSounds: splash9.aud
 		ValidTargets: Ground, Water, Trees
 
-MagnetronZap:
+MagnetronZapEffect:
 	ReloadDelay: 15
 	Range: 10c0
 	Report: tslachg2.aud
@@ -667,7 +667,7 @@ MagnetronZap:
 	Projectile: AreaBeam
 		Speed: 0c128
 		Duration: 15
-		DamageInterval: 5 # Roughly 18 impacts.
+		DamageInterval: 25
 		Width: 384
 		Shape: Flat
 		ZOffset: 2047
@@ -680,8 +680,27 @@ MagnetronZap:
 		Falloff: 100, 100
 		Damage: 0
 		AffectsParent: false
-		Versus:
-			Heavy: 80
-			Concrete: 60
 		DamageTypes: SmallExplosionDeath
 		ValidTargets: Tractable
+
+MagnetronTract:
+	ReloadDelay: 15
+	Range: 10c0
+	ValidTargets: Tractable
+	TargetActorCenter: true
+	Projectile: InstantHit
+	Warhead@1Tract: Tractor
+		Spread: 0
+		ValidTargets: Tractable
+		CruiseSpeedMultiplier: 1
+		DamageTypes: DefaultDeath
+
+MagnetronLift:
+	Inherits: MagnetronTract
+	Warhead@1Tract: Tractor
+		CruiseSpeedMultiplier: 0
+
+MagnetronRepel:
+	Inherits: MagnetronTract
+	Warhead@1Tract: Tractor
+		CruiseSpeedMultiplier: -1

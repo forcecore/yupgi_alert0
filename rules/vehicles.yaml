@@ -1653,22 +1653,20 @@ JEEP_AI:
 		Image: 1tnk
 	-Buildable:
 
-MAGNET:
+MAG:
 	Inherits: ^Tank
 	Inherits@AUTOTARGET: ^AutoTargetGround
-	RenderSprites:
-		Image: 2tnk
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 110
-		Prerequisites: fix, ~gaweap, ~techlevel.medium
+		Prerequisites: atek, ~gaweap, ~techlevel.medium
 		Description: Lifts and tracts enemies.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
 	Valued:
 		Cost: 850
 	DeliversCash@GRINDABLE:
 		Payload: 425
 	Tooltip:
-		Name: Magnetron
+		Name: Magnetroll
 	Health:
 		HP: 450
 	Armor:
@@ -1683,12 +1681,25 @@ MAGNET:
 		Range: 4c0
 	Turreted:
 		TurnSpeed: 5
-	Armament:
-		Weapon: MagnetronZap
+	Armament@effect:
+		Weapon: MagnetronZapEffect
 		LocalOffset: 720,0,80
-		MuzzleSequence: muzzle
+	# Default stance = pull
+	Armament@tract:
+		Weapon: MagnetronTract
+		LocalOffset: 720,0,80
+		RequiresCondition: stance-defend
+	# Hold fire = push (Magnetron chases the pushed away target so hold fire makes sense)
+	Armament@repel:
+		Weapon: MagnetronRepel
+		LocalOffset: 720,0,80
+		RequiresCondition: stance-holdfire
+	# Anything else is just lifting up.
+	Armament@lift:
+		Weapon: MagnetronLift
+		LocalOffset: 720,0,80
+		RequiresCondition: !stance-defend && !stance-holdfire
 	AttackTurreted:
-	WithMuzzleOverlay:
 	WithSpriteTurret:
 	SpawnActorOnDeath:
 		Actor: 2TNK.Husk
@@ -1696,4 +1707,6 @@ MAGNET:
 		VisualBounds: 28,28
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
-	Tractor:
+	AutoTarget:
+		DefendCondition: stance-defend
+		HoldFireCondition: stance-holdfire
