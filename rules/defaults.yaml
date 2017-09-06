@@ -262,6 +262,10 @@
 	Targetable@AIRBORNE:
 		TargetTypes: Air, Tractable
 		RequiresCondition: airborne
+	WithTractionShadow:
+		Offset: 43, 128, 0
+		ZOffset: -129
+		RequiresCondition: tracting
 
 ^Vehicle:
 	Inherits@1: ^ExistsInWorld
