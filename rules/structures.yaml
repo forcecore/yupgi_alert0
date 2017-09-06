@@ -613,6 +613,7 @@ DOME:
 	InfiltrateForExploration:
 	DetectCloaked:
 		Range: 10c0
+		RequiresCondition: !disabled
 	RenderDetectionCircle:
 	Power:
 		Amount: -40
@@ -639,7 +640,7 @@ DOME:
 		IntoActor: DOME_INFESTED
 	WithMakeAnimation@high:
 		Sequence: make-high
-		DeployType: high-deploy
+		DeployTypes: high-deploy
 		BodyNames: highbody
 	WithSpriteBody@high:
 		Sequence: idle-high
