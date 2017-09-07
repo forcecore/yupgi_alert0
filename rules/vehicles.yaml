@@ -89,6 +89,7 @@ V2RL:
 	WithSpriteTurret:
 	SpawnActorOnDeath:
 		Actor: 1TNK.Husk
+		RequiresCondition: !airborne
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
 
@@ -131,6 +132,7 @@ V2RL:
 	WithSpriteTurret:
 	SpawnActorOnDeath:
 		Actor: 2TNK.Husk
+		RequiresCondition: !airborne
 	SelectionDecorations:
 		VisualBounds: 28,28
 	ProducibleWithLevel:
@@ -177,6 +179,7 @@ V2RL:
 	WithSpriteTurret:
 	SpawnActorOnDeath:
 		Actor: 3TNK.Husk
+		RequiresCondition: !airborne
 	SelectionDecorations:
 		VisualBounds: 28,28
 	ProducibleWithLevel:
@@ -327,6 +330,7 @@ HARV:
 		String: Harvester
 	SpawnActorOnDeath:
 		Actor: HARV.EmptyHusk
+		RequiresCondition: !airborne
 	HarvesterHuskModifier:
 		FullActor: HARV.FullHusk
 		FullnessThreshold: 50
@@ -372,6 +376,7 @@ MCV:
 	BaseBuilding:
 	SpawnActorOnDeath:
 		Actor: MCV.Husk
+		RequiresCondition: !airborne
 
 NAMCV:
 	Inherits: MCV
@@ -392,6 +397,7 @@ NAMCV:
 		NoTransformNotification: BuildingCannotPlaceAudio
 	SpawnActorOnDeath:
 		Actor: NAMCV.Husk
+		RequiresCondition: !airborne
 	RenderSprites:
 		Image: MCV
 
@@ -414,6 +420,7 @@ GAMCV:
 		NoTransformNotification: BuildingCannotPlaceAudio
 	SpawnActorOnDeath:
 		Actor: GAMCV.Husk
+		RequiresCondition: !airborne
 	RenderSprites:
 		Image: MCV
 
@@ -578,6 +585,7 @@ TRUK:
 		Type: Supply
 	SpawnActorOnDeath:
 		Actor: moneycrate
+		RequiresCondition: !airborne
 
 MGG:
 	Inherits: ^Vehicle
@@ -613,6 +621,7 @@ MGG:
 	RenderShroudCircle:
 	SpawnActorOnDeath:
 		Actor: MGG.Husk
+		RequiresCondition: !airborne
 
 MRJ:
 	Inherits: ^Vehicle
@@ -1280,6 +1289,7 @@ HANT:
 		EmptyWeapon: MiniNuke
 	SpawnActorOnDeath:
 		Actor: 5TNK.Husk
+		RequiresCondition: !airborne
 	SelfHealing:
 		Step: 1
 		Delay: 1
@@ -1336,6 +1346,7 @@ MSAM:
 	AegisAutoTarget:
 	SpawnActorOnDeath:
 		Actor: MSAM.Husk
+		RequiresCondition: !airborne
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
 
@@ -1366,6 +1377,7 @@ WANGCHANG:
 		Range: 10c0
 	SpawnActorOnDeath:
 		Actor: WANGCHANG.Husk
+		RequiresCondition: !airborne
 	SelfHealing:
 		Step: 1
 		Delay: 25
@@ -1406,6 +1418,7 @@ MARV:
 		GenericName: Harvester
 	SpawnActorOnDeath:
 		Actor: MARV.EmptyHusk
+		RequiresCondition: !airborne
 	DockClient:
 	Harvester:
 		OreTeleporter: false
@@ -1474,6 +1487,7 @@ SMIN:
 		String: Harvester
 	SpawnActorOnDeath:
 		Actor: SMIN.Husk
+		RequiresCondition: !airborne
 	SelfHealing:
 		Step: 1
 		Delay: 25
@@ -1703,6 +1717,7 @@ MAG:
 	WithSpriteTurret:
 	SpawnActorOnDeath:
 		Actor: MAG.Husk
+		RequiresCondition: !airborne
 	SelectionDecorations:
 		VisualBounds: 28,28
 	ProducibleWithLevel:
