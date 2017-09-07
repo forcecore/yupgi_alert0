@@ -1702,7 +1702,7 @@ MAG:
 	AttackTurreted:
 	WithSpriteTurret:
 	SpawnActorOnDeath:
-		Actor: 2TNK.Husk
+		Actor: MAG.Husk
 	SelectionDecorations:
 		VisualBounds: 28,28
 	ProducibleWithLevel:

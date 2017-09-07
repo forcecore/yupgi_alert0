@@ -593,3 +593,14 @@ mag:
 		Facings: -32
 		UseClassicFacingFudge: True
 	icon: magicon
+
+mag.destroyed:
+	idle: mag
+		Facings: -32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+	turret: mag
+		Start: 32
+		Facings: -32
+		UseClassicFacingFudge: True
+		ZOffset: -512

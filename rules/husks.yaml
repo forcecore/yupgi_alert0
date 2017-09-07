@@ -583,3 +583,14 @@ YAK2.Husk:
 	RenderSprites:
 		Image: yak
 		Scale: 0.5
+
+MAG.Husk:
+	Inherits: ^Husk
+	Tooltip:
+		Name: Husk (Magnetroll)
+	ThrowsParticle@turret:
+		Anim: turret
+	TransformOnCapture:
+		IntoActor: mag
+	RenderSprites:
+		Image: mag.destroyed
