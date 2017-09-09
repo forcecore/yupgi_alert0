@@ -80,6 +80,7 @@ Player:
 			apc: 30%
 			jeep: 40%
 			arty: 15%
+			mag: 40%
 			v2rl: 40%
 			ftrk: 50%
 			1tnk: 70%
@@ -259,6 +260,7 @@ Player:
 			apc: 30%
 			jeep: 40%
 			arty: 15%
+			mag: 40%
 			v2rl: 40%
 			ftrk: 50%
 			1tnk: 70%
@@ -446,6 +448,7 @@ Player:
 			apc: 30%
 			jeep: 40%
 			arty: 15%
+			mag: 40%
 			v2rl: 40%
 			ftrk: 50%
 			1tnk: 70%
@@ -645,6 +648,7 @@ Player:
 			apc: 15%
 			jeep: 15%
 			arty: 15%
+			mag: 40%
 			msam: 40%
 			v2rl: 40%
 			ftrk: 50%
