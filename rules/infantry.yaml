@@ -373,8 +373,11 @@ E7:
 		Name: laserspawn
 	Armament@GARRISONED:
 		Name: garrisoned
-		Weapon: Colt45
+		Weapon: ChainGun.e7.2
 		MuzzleSequence: garrison-muzzle
+	Armament@GARRISONEDFLAMER:
+		Name: garrisoned
+		Weapon: Flamer
 	Armament@AA:
 		Weapon: ZSU-23
 		LocalOffset: 520,100,450, 520,-150,450
