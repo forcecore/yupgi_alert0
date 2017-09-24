@@ -893,7 +893,7 @@ DANT:
 
 DESO:
 	Inherits: ^Soldier
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	RenderSprites:
 		PlayerPalette: player-ra2
 		Scale: 0.50
@@ -972,7 +972,7 @@ DESO:
 
 DOGGIE:
 	Inherits@1: ^Soldier
-	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	RenderSprites:
 		PlayerPalette: player-cc2
 		Scale: 0.75
@@ -1027,7 +1027,7 @@ DOGGIE:
 
 CHITZ:
 	Inherits: ^Soldier
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	-Crushable:
 	RenderSprites:
 		Image: doge
@@ -1085,7 +1085,7 @@ CHITZ:
 
 VOLKOV:
 	Inherits: ^Soldier
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	-Crushable:
 	RenderSprites:
 		Image: gnrl
@@ -1139,7 +1139,7 @@ VOLKOV:
 
 SAIYAN:
 	Inherits: ^Soldier
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Tooltip:
 		Name: Super Saiyan Technician
 	Mobile:
@@ -1170,7 +1170,7 @@ SAIYAN:
 SLAVE:
 	Inherits: ^Infantry
 	Inherits@2: ^ArmedCivilian
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Armament:
 		Weapon: Pistol
 		RequiresCondition: freed
@@ -1257,7 +1257,7 @@ CRAB:
 
 INFT:
 	Inherits: ^Soldier
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	-Crushable:
 	Buildable:
 		Queue: Infantry
@@ -1329,7 +1329,7 @@ E1NEXUS:
 	Inherits@1: ^ExistsInWorld
 	Inherits@4: ^SpriteActor
 	Inherits@6: ^Enrageable
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	-AppearsOnRadar:
 	Tooltip:
 		Name: Conscript
@@ -1421,7 +1421,7 @@ DOGELORD:
 
 E5:
 	Inherits: ^Soldier
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
@@ -1478,7 +1478,7 @@ E5:
 
 GI:
 	Inherits: ^Soldier
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	RenderSprites:
 		PlayerPalette: player-ra2
 		Scale: 0.50

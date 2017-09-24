@@ -81,7 +81,7 @@ BADR.Bomber:
 
 MIG:
 	Inherits: ^Plane
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	RenderSprites:
 		Image: aurora
 	Buildable:
@@ -218,7 +218,7 @@ YAK:
 
 TRAN:
 	Inherits: ^Helicopter
-	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Helicopter
@@ -517,7 +517,7 @@ YAK2:
 
 ZEP:
 	Inherits: ^Helicopter
-	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Plane

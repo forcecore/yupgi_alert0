@@ -973,7 +973,7 @@ QANT:
 WANT:
 	Inherits: ^Vehicle
 	Inherits@2: ^PesticideSusceptible
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
 		Cost: 1000
 	DeliversCash@GRINDABLE:
@@ -1033,7 +1033,7 @@ WANT:
 FANT:
 	Inherits: ^Vehicle
 	Inherits@2: ^PesticideSusceptible
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
 		Cost: 1500
 	DeliversCash@GRINDABLE:
@@ -1125,7 +1125,7 @@ FANT:
 SANT:
 	Inherits: ^Vehicle
 	Inherits@2: ^PesticideSusceptible
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
 		Cost: 5000
 	DeliversCash@GRINDABLE:
@@ -1183,7 +1183,7 @@ SANT:
 HANT:
 	Inherits: ^Vehicle
 	Inherits@2: ^PesticideSusceptible
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
 		Cost: 6000
 	DeliversCash@GRINDABLE:
@@ -1242,7 +1242,7 @@ HANT:
 
 5TNK:
 	Inherits: ^Tank
-	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	RenderSprites:
 		Image: 5TNK
 		PlayerPalette: player-cc1
@@ -1310,7 +1310,7 @@ HANT:
 
 MSAM:
 	Inherits: ^Tank
-	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	RenderSprites:
 		PlayerPalette: player-cc1
 	Valued:
@@ -1356,7 +1356,7 @@ MSAM:
 
 WANGCHANG:
 	Inherits: ^Vehicle
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 210
@@ -1458,7 +1458,7 @@ QTNK_AI:
 
 SMIN:
 	Inherits: ^Vehicle
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 12
@@ -1549,7 +1549,7 @@ HYDRA:
 	Inherits@1: ^Soldier
 	Inherits@2: ^IronCurtainable
 	Inherits@3: ^PesticideSusceptible
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
 		Cost: 1000
 	-DeliversCash@GRINDABLE:
@@ -1673,7 +1673,7 @@ JEEP_AI:
 
 MAG:
 	Inherits: ^Tank
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 110
