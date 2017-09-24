@@ -167,6 +167,9 @@ SPEN:
 		Type: Wood
 	RevealsShroud:
 		Range: 5c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 4c0
 	Exit@1:
 		SpawnOffset: 0,-213,0
 		Facing: 96
@@ -197,6 +200,30 @@ SPEN:
 	ProductionBar:
 	Power:
 		Amount: -30
+	ProvidesPrerequisite@soviet:
+		Factions: soviet, russia, ukraine
+		Prerequisite: ships.soviet
+	ProvidesPrerequisite@sovietvanilla:
+		Factions: soviet
+		Prerequisite: ships.sovietvanilla
+	ProvidesPrerequisite@russia:
+		Factions: russia
+		Prerequisite: ships.russia
+	ProvidesPrerequisite@ukraine:
+		Factions: ukraine
+		Prerequisite: ships.ukraine
+	ProvidesPrerequisite@sovietstructure:
+		RequiresPrerequisites: structures.soviet
+		Prerequisite: ships.soviet
+	ProvidesPrerequisite@sovietvanillastructure:
+		RequiresPrerequisites: structures.sovietvanilla
+		Prerequisite: ships.sovietvanilla
+	ProvidesPrerequisite@russianstructure:
+		RequiresPrerequisites: structures.russia
+		Prerequisite: ships.russia
+	ProvidesPrerequisite@ukrainianstructure:
+		RequiresPrerequisites: structures.ukraine
+		Prerequisite: ships.ukraine
 	ProvidesPrerequisite@buildingname:
 	EditorTilesetFilter:
 		ExcludeTilesets: INTERIOR
@@ -244,6 +271,9 @@ SYRD:
 		Type: Wood
 	RevealsShroud:
 		Range: 5c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 4c0
 	Exit@1:
 		SpawnOffset: -1024,1024,0
 		Facing: 160
@@ -707,11 +737,11 @@ HBOX:
 		Prerequisites: tent, ~gafact, ~techlevel.medium
 		Description: Camouflaged static defense with a fireport\nfor a garrisoned soldier.\nCan detect cloaked units.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft
 	Valued:
-		Cost: 800
+		Cost: 700
 	CustomSellValue:
-		Value: 600
+		Value: 500
 	Health:
-		HP: 450
+		HP: 400
 	Armor:
 		Type: Heavy
 	RevealsShroud:
@@ -863,15 +893,19 @@ FTUR:
 SAM:
 	Inherits: ^Defense
 	Inherits@IDISABLE: ^DisabledOverlay
-	Inherits@shape: ^2x1Shape
 	Inherits@AUTOTARGET: ^AutoTargetAir
+	Inherits@shape: ^2x1Shape
+	HitShape:
+		Type: Rectangle
+			TopLeft: -768,-512
+			BottomRight: 768,512
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 100
 		Prerequisites: dome, ~nafact, ~techlevel.medium
 		Description: Anti-Air base defense.\nRequires power to operate.\nCan detect cloaked units.\n  Strong vs Aircraft\n  Weak vs Ground units
 	Valued:
-		Cost: 750
+		Cost: 700
 	Tooltip:
 		Name: SAM Site
 	Building:
@@ -886,6 +920,9 @@ SAM:
 	Armor:
 		Type: Heavy
 	RevealsShroud:
+		Range: 6c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
 		Range: 5c0
 	WithBuildingBib:
 		HasMinibib: Yes
@@ -896,6 +933,7 @@ SAM:
 	WithTurretedSpriteBody:
 	Armament:
 		Weapon: Nike
+		LocalOffset: 0,0,320
 		MuzzleSequence: muzzle
 	AttackTurreted:
 	WithMuzzleOverlay:
@@ -903,8 +941,6 @@ SAM:
 		RangeCircleType: aa
 	Power:
 		Amount: -40
-	DetectCloaked:
-		Range: 6c0
 	BodyOrientation:
 		UseClassicFacingFudge: True
 
@@ -1230,7 +1266,7 @@ PROC:
 	Armor:
 		Type: Wood
 	RevealsShroud:
-		Range: 6c0
+		Range: 5c0
 		RevealGeneratedShroud: False
 	RevealsShroud@GAPGEN:
 		Range: 4c0
@@ -1313,7 +1349,7 @@ SILO:
 	Tooltip:
 		Name: Silo
 	Building:
-		Adjacent: 4
+		Adjacent: 2
 	-GivesBuildableArea:
 	Health:
 		HP: 300
@@ -1508,7 +1544,7 @@ AFLD:
 		OrderName: SovietSpyPlane
 		Prerequisites: aircraft.soviet
 		Icon: spyplane
-		ChargeTime: 180
+		ChargeTime: 150
 		Description: Spy Plane
 		LongDesc: Reveals an area of the map\nand cloaked enemy units.
 		SelectTargetSpeechNotification: SelectTarget
@@ -1526,7 +1562,7 @@ AFLD:
 		OrderName: SovietParatroopers
 		Prerequisites: aircraft.soviet
 		Icon: paratroopers
-		ChargeTime: 360
+		ChargeTime: 300
 		Description: Paratroopers
 		LongDesc: A Badger drops a squad of infantry\nanywhere on the map.
 		DropItems: E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3, E1, E1, E1, E1, E3
@@ -1546,7 +1582,7 @@ AFLD:
 		OrderName: UkraineParabombs
 		Prerequisites: aircraft.soviet
 		Icon: parabombs
-		ChargeTime: 360
+		ChargeTime: 300
 		Description: Parabombs
 		LongDesc: A squad of Badgers drops parachuted\nbombs on your target.
 		SelectTargetSpeechNotification: SelectTarget
@@ -1705,11 +1741,14 @@ STEK:
 		Dimensions: 3,3
 		LocalCenterOffset: 0,-512,0
 	Health:
-		HP: 600
+		HP: 800
 	Armor:
 		Type: Wood
 	RevealsShroud:
 		Range: 5c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 4c0
 	WithBuildingBib:
 	Power:
 		Amount: -100
@@ -1729,7 +1768,7 @@ BARR:
 		Prerequisites: anypower, ~nafact, ~techlevel.infonly
 		Description: Trains infantry.
 	Valued:
-		Cost: 400
+		Cost: 500
 	Tooltip:
 		Name: Soviet Barracks
 	Building:
@@ -1813,7 +1852,7 @@ KENN:
 	Tooltip:
 		Name: Kennel
 	Building:
-		Adjacent: 4
+		Adjacent: 2
 	-GivesBuildableArea:
 	Health:
 		HP: 300
@@ -1860,7 +1899,7 @@ TENT:
 		Prerequisites: anypower, ~gafact, ~techlevel.infonly
 		Description: Trains infantry.
 	Valued:
-		Cost: 400
+		Cost: 500
 	Tooltip:
 		Name: Allied Barracks
 	Building:
@@ -2043,7 +2082,7 @@ SBAG:
 	Tooltip:
 		Name: Sandbag Wall
 	Health:
-		HP: 300
+		HP: 150
 	Armor:
 		Type: Wood
 	LineBuild:
@@ -2068,7 +2107,7 @@ FENC:
 	Tooltip:
 		Name: Wire Fence
 	Health:
-		HP: 300
+		HP: 150
 	Armor:
 		Type: Wood
 	LineBuild:
@@ -2096,7 +2135,7 @@ BRIK:
 		DamagedSounds: crmble2.aud
 		DestroyedSounds: kaboom30.aud
 	Health:
-		HP: 500
+		HP: 400
 	Armor:
 		Type: Concrete
 	Crushable:

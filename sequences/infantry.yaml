@@ -853,16 +853,16 @@ gnrl:
 		Facings: 8
 	run:
 		Start: 8
-		Length: 6
+		Length: 5
 		Facings: 8
-		Tick: 100
+		Tick: 80
 	shoot:
 		Start: 56
 		Length: 4
 		Facings: 8
 	prone-stand:
-		Start: 104
-		Stride: 4
+		Start: 88
+		Stride: 2
 		Facings: 8
 	prone-run:
 		Start: 104

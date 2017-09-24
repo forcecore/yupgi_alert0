@@ -217,6 +217,12 @@ Cursors:
 		attackmove-minimap:
 			Start: 4
 			Length: 4
+		assaultmove:
+			Start: 8
+			Length: 4
+		assaultmove-minimap:
+			Start: 12
+			Length: 4
 	biohazzard.shp: cursor
 		biohazzard:
 			Start: 0

@@ -53,7 +53,7 @@ DOG:
 
 E1:
 	Inherits: ^Soldier
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	#Buildable:
 	#	Queue: Infantry
 	#	BuildAtProductionType: Soldier
@@ -93,7 +93,7 @@ E1R1:
 
 E2:
 	Inherits: ^Soldier
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
@@ -131,7 +131,7 @@ E2:
 
 E3:
 	Inherits: ^Soldier
-	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
@@ -182,7 +182,7 @@ E3R1:
 
 E4:
 	Inherits: ^Soldier
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
@@ -241,7 +241,7 @@ E6:
 
 SPY:
 	Inherits: ^Soldier
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
@@ -311,7 +311,7 @@ SPY.England:
 
 E7:
 	Inherits: ^Soldier
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
@@ -388,6 +388,8 @@ E7:
 		StandSequences: stand
 	AnnounceOnBuild:
 	AnnounceOnKill:
+	DetectCloaked:
+		CloakTypes: Cloak, Hijacker
 	Voiced:
 		VoiceSet: TanyaVoice
 	ProducibleWithLevel:
@@ -471,7 +473,7 @@ MEDI:
 	Tooltip:
 		Name: Medic
 	Health:
-		HP: 80
+		HP: 60
 	RevealsShroud:
 		Range: 3c0
 	Passenger:
@@ -657,7 +659,7 @@ HIJACKER:
 
 SHOK:
 	Inherits: ^Soldier
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
@@ -665,13 +667,13 @@ SHOK:
 		Prerequisites: ~barr, stek, tsla, ~techlevel.high
 		Description: Elite infantry with portable tesla coils.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
 	Valued:
-		Cost: 400
+		Cost: 300
 	DeliversCash@GRINDABLE:
 		Payload: 200
 	Tooltip:
 		Name: Shock Trooper
 	Health:
-		HP: 60
+		HP: 50
 	Mobile:
 		Voice: Move
 	RevealsShroud:
@@ -753,7 +755,7 @@ SNIPER:
 
 Zombie:
 	Inherits: ^Soldier
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
 		Cost: 100
 	DeliversCash@GRINDABLE:
@@ -785,7 +787,7 @@ Zombie:
 
 Ant:
 	Inherits: ^Infantry
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
 		Cost: 300
 	DeliversCash@GRINDABLE:

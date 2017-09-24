@@ -1,6 +1,6 @@
 V2RL:
 	Inherits: ^Vehicle
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 80
@@ -52,7 +52,7 @@ V2RL:
 
 1TNK:
 	Inherits: ^Tank
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 50
@@ -95,7 +95,7 @@ V2RL:
 
 2TNK:
 	Inherits: ^Tank
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 110
@@ -140,7 +140,7 @@ V2RL:
 
 3TNK:
 	Inherits: ^Tank
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 120
@@ -155,7 +155,7 @@ V2RL:
 	Tooltip:
 		Name: Heavy Tank
 	Health:
-		HP: 550
+		HP: 600
 	Armor:
 		Type: Heavy
 	Mobile:
@@ -197,7 +197,7 @@ V2RL:
 
 4TNK:
 	Inherits: ^Tank
-	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 180
@@ -250,10 +250,12 @@ V2RL:
 		VisualBounds: 44,38,0,-4
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+	DetectCloaked:
+		Range: 6c0
 
 ARTY:
 	Inherits: ^Tank
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 70
@@ -361,7 +363,7 @@ MCV:
 	Armor:
 		Type: Light
 	Mobile:
-		Speed: 85
+		Speed: 71
 		Crushes: wall, mine, crate, infantry
 	RevealsShroud:
 		Range: 4c0
@@ -426,7 +428,7 @@ GAMCV:
 
 JEEP:
 	Inherits: ^Vehicle
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	RenderSprites:
 		Image: humm
 		PlayerPalette: player-cc1
@@ -478,7 +480,7 @@ JEEP:
 
 APC:
 	Inherits: ^Tank
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 40
@@ -505,7 +507,7 @@ APC:
 		Range: 4c0
 	Armament:
 		Weapon: M60mg
-		LocalOffset: 0,0,171
+		LocalOffset: 85,0,171
 		MuzzleSequence: muzzle
 	AttackFrontal:
 	WithMuzzleOverlay:
@@ -607,7 +609,7 @@ MGG:
 	Armor:
 		Type: Heavy
 	Mobile:
-		Speed: 85
+		Speed: 99
 	WithIdleOverlay@SPINNER:
 		Offset: -299,0,171
 		Sequence: spinner
@@ -643,7 +645,7 @@ MRJ:
 	Armor:
 		Type: Heavy
 	Mobile:
-		Speed: 85
+		Speed: 99
 	RevealsShroud:
 		Range: 7c0
 	WithIdleOverlay@SPINNER:
@@ -662,15 +664,16 @@ MRJ:
 		DeflectionStances: Neutral, Enemy
 	RenderJammerCircle:
 	DetectCloaked:
-		Range: 7c0
+		Range: 6c0
 
 TTNK:
 	Inherits: ^Tank
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 170
 		Prerequisites: tsla, stek, ~naweap, ~techlevel.high
+		BuildDuration: 1166
 		Description: Tank with mounted tesla coil.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft
 	Valued:
 		Cost: 1350
@@ -679,7 +682,7 @@ TTNK:
 	Tooltip:
 		Name: Tesla Tank
 	Health:
-		HP: 400
+		HP: 450
 	Armor:
 		Type: Light
 	Mobile:
@@ -704,7 +707,7 @@ TTNK:
 
 FTRK:
 	Inherits: ^Vehicle
-	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 60
@@ -779,11 +782,12 @@ DTRK:
 
 CTNK:
 	Inherits: ^Vehicle
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 200
 		Prerequisites: atek, ~gaweap, ~techlevel.high
+		BuildDuration: 1166
 		Description: Chrono Tank, teleports to areas within range.\n  Strong vs Vehicles, Buildings\n  Weak vs Infantry, Aircraft\n  Special ability: Can teleport
 	Valued:
 		Cost: 1350
@@ -794,7 +798,7 @@ CTNK:
 	SelectionDecorations:
 		VisualBounds: 30,30
 	Health:
-		HP: 400
+		HP: 450
 	Armor:
 		Type: Light
 	Mobile:
@@ -854,7 +858,7 @@ QTNK:
 
 STNK:
 	Inherits: ^Vehicle
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 130

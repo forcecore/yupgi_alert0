@@ -89,6 +89,7 @@ MIG:
 		BuildAtProductionType: Plane
 		BuildPaletteOrder: 50
 		Prerequisites: ~afld, stek, ~techlevel.high
+		BuildDuration: 2000
 		Description: Fast Ground-Attack Plane.\n  Strong vs Buildings, Tanks\n  Weak vs Infantry, Light armor, Aircraft
 	Valued:
 		Cost: 2500
@@ -129,9 +130,8 @@ MIG:
 		RequiresCondition: supersonic
 		Modifier: 0
 	AutoTarget:
-		TargetWhenIdle: false
-		TargetWhenDamaged: false
-		EnableStances: false
+		InitialStance: HoldFire
+		InitialStanceAI: HoldFire
 	AmmoPool:
 		Ammo: 1
 		ReloadDelay: 250
@@ -154,7 +154,7 @@ MIG:
 
 YAK:
 	Inherits: ^Plane
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Plane
@@ -196,9 +196,8 @@ YAK:
 		RepulsionSpeed: 40
 		MaximumPitch: 56
 	AutoTarget:
-		TargetWhenIdle: false
-		TargetWhenDamaged: false
-		EnableStances: false
+		InitialStance: HoldFire
+		InitialStanceAI: HoldFire
 	AmmoPool:
 		Ammo: 18
 		PipCount: 6
@@ -231,22 +230,22 @@ TRAN:
 	Tooltip:
 		Name: Combat Chinook
 	Health:
-		HP: 120
+		HP: 140
 	Armor:
 		Type: Light
 	RevealsShroud:
-		Range: 10c0
+		Range: 8c0
 		Type: GroundPosition
 		RevealGeneratedShroud: False
 	RevealsShroud@GAPGEN:
-		Range: 8c0
+		Range: 6c0
 		Type: GroundPosition
 	Aircraft:
 		InitialFacing: 224
 		TurnSpeed: 5
-		Speed: 112
+		Speed: 128
 		LandableTerrainTypes: Clear,Rough,Road,Ore,Beach,Gems
-		AltitudeVelocity: 0c100
+		AltitudeVelocity: 0c58
 	WithIdleOverlay@ROTOR1AIR:
 		Offset: 597,0,213
 		Sequence: rotor
@@ -288,12 +287,13 @@ TRAN:
 
 HELI:
 	Inherits: ^Helicopter
-	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Helicopter
 		BuildPaletteOrder: 40
 		Prerequisites: ~hpad, atek, ~techlevel.high
+		BuildDuration: 1750
 		Description: Helicopter gunship armed\nwith multi-purpose missiles.\n  Strong vs Tanks, Aircraft\n  Weak vs Infantry
 	Valued:
 		Cost: 2000
@@ -348,7 +348,7 @@ HELI:
 
 HIND:
 	Inherits: ^Helicopter
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Aircraft
 		BuildAtProductionType: Helicopter
