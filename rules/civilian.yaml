@@ -66,7 +66,7 @@ FCOM:
 	Inherits: ^TechBuilding
 	Inherits@shape: ^2x2Shape
 	Inherits: ^Infestable
-	TransformOnCapture:
+	TransformOnCapture@infestable:
 		IntoActor: fcom_infested
 	Building:
 		Footprint: xx xx ==
@@ -99,7 +99,7 @@ HOSP:
 	Inherits: ^TechBuilding
 	Inherits@shape: ^2x2Shape
 	Inherits: ^Infestable
-	TransformOnCapture:
+	TransformOnCapture@infestable:
 		IntoActor: hosp_infested
 	Selectable:
 		Priority: 0
@@ -127,7 +127,7 @@ HOSP:
 V01:
 	Inherits: ^CivBuilding
 	Inherits@2: ^Infestable
-	TransformOnCapture:
+	TransformOnCapture@infestable:
 		IntoActor: v01_infested
 	Building:
 		Footprint: xx xx
@@ -148,7 +148,7 @@ V01:
 V02:
 	Inherits: ^CivBuilding
 	Inherits@2: ^Infestable
-	TransformOnCapture:
+	TransformOnCapture@infestable:
 		IntoActor: v02_infested
 	Building:
 		Footprint: xx xx
@@ -165,7 +165,7 @@ V02:
 V03:
 	Inherits: ^CivBuilding
 	Inherits@2: ^Infestable
-	TransformOnCapture:
+	TransformOnCapture@infestable:
 		IntoActor: v03_infested
 	Building:
 		Footprint: xx xx
@@ -182,7 +182,7 @@ V03:
 V04:
 	Inherits: ^CivBuilding
 	Inherits@2: ^Infestable
-	TransformOnCapture:
+	TransformOnCapture@infestable:
 		IntoActor: v04_infested
 	Building:
 		Footprint: xx xx
@@ -200,7 +200,7 @@ V05:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^2x1Shape
 	Inherits@2: ^Infestable
-	TransformOnCapture:
+	TransformOnCapture@infestable:
 		IntoActor: v05_infested
 	Building:
 		Footprint: xx
@@ -212,7 +212,7 @@ V06:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^2x1Shape
 	Inherits@2: ^Infestable
-	TransformOnCapture:
+	TransformOnCapture@infestable:
 		IntoActor: v06_infested
 	Building:
 		Footprint: xx
@@ -224,7 +224,7 @@ V07:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^2x1Shape
 	Inherits@2: ^Infestable
-	TransformOnCapture:
+	TransformOnCapture@infestable:
 		IntoActor: v07_infested
 	Building:
 		Footprint: xx
@@ -382,7 +382,7 @@ MISS:
 	Inherits: ^TechBuilding
 	Inherits@shape: ^3x2Shape
 	Inherits@2: ^Infestable
-	TransformOnCapture:
+	TransformOnCapture@Infestable:
 		IntoActor: miss_infested
 	HitShape:
 		UseTargetableCellsOffsets: false
@@ -417,7 +417,7 @@ BIO:
 	Inherits: ^TechBuilding
 	Inherits@shape: ^2x2Shape
 	Inherits@2: ^Infestable
-	TransformOnCapture:
+	TransformOnCapture@infestable:
 		IntoActor: bio_infested
 	Building:
 		Footprint: xx xx
@@ -440,7 +440,7 @@ OILB:
 	Inherits: ^TechBuilding
 	Inherits@shape: ^2x2Shape
 	Inherits@2: ^Infestable
-	TransformOnCapture:
+	TransformOnCapture@infestable:
 		IntoActor: oilb_infested
 	HitShape:
 		UseTargetableCellsOffsets: false
@@ -631,7 +631,7 @@ BRIDGEHUT.small:
 V20:
 	Inherits: ^DesertCivBuilding
 	Inherits@2: ^Infestable
-	TransformOnCapture:
+	TransformOnCapture@infestable:
 		IntoActor: v20_infested
 	Building:
 		Footprint: xx xx
@@ -646,7 +646,7 @@ V20:
 V21:
 	Inherits: ^DesertCivBuilding
 	Inherits@2: ^Infestable
-	TransformOnCapture:
+	TransformOnCapture@infestable:
 		IntoActor: v21_infested
 	Building:
 		Footprint: xx xx
@@ -667,7 +667,7 @@ V22:
 	Inherits: ^DesertCivBuilding
 	Inherits@shape: ^2x1Shape
 	Inherits@2: ^Infestable
-	TransformOnCapture:
+	TransformOnCapture@infestable:
 		IntoActor: v22_infested
 	Building:
 		Footprint: xx
@@ -691,7 +691,7 @@ V24:
 V25:
 	Inherits: ^DesertCivBuilding
 	Inherits@2: ^Infestable
-	TransformOnCapture:
+	TransformOnCapture@infestable:
 		IntoActor: v25_infested
 	Building:
 		Footprint: xx xx
@@ -711,7 +711,7 @@ V26:
 	Inherits: ^DesertCivBuilding
 	Inherits@shape: ^2x1Shape
 	Inherits@2: ^Infestable
-	TransformOnCapture:
+	TransformOnCapture@infestable:
 		IntoActor: v26_infested
 	Building:
 		Footprint: xx
@@ -730,7 +730,7 @@ V30:
 	Inherits: ^DesertCivBuilding
 	Inherits@shape: ^2x1Shape
 	Inherits@2: ^Infestable
-	TransformOnCapture:
+	TransformOnCapture@infestable:
 		IntoActor: v30_infested
 	Building:
 		Footprint: xx
@@ -740,7 +740,7 @@ V31:
 	Inherits: ^DesertCivBuilding
 	Inherits@shape: ^2x1Shape
 	Inherits@2: ^Infestable
-	TransformOnCapture:
+	TransformOnCapture@infestable:
 		IntoActor: v31_infested
 	Building:
 		Footprint: xx
@@ -750,7 +750,7 @@ V32:
 	Inherits: ^DesertCivBuilding
 	Inherits@shape: ^2x1Shape
 	Inherits@2: ^Infestable
-	TransformOnCapture:
+	TransformOnCapture@infestable:
 		IntoActor: v32_infested
 	Building:
 		Footprint: xx
@@ -760,7 +760,7 @@ V33:
 	Inherits: ^DesertCivBuilding
 	Inherits@shape: ^2x1Shape
 	Inherits@2: ^Infestable
-	TransformOnCapture:
+	TransformOnCapture@infestable:
 		IntoActor: v33_infested
 	Building:
 		Footprint: xx
@@ -778,7 +778,7 @@ V36:
 V37:
 	Inherits: ^DesertCivBuilding
 	Inherits@2: ^Infestable
-	TransformOnCapture:
+	TransformOnCapture@infestable:
 		IntoActor: v37_infested
 	Building:
 		Footprint: __xx_ ___xx

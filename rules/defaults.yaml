@@ -234,7 +234,7 @@
 		Type: infestable
 		RequiresCondition: !mindcontrolled
 	ExternalCapturableBar:
-	TransformOnCapture:
+	TransformOnCapture@infestable:
 		Type: infestable
 		IntoActor: want # dummy
 		ForceHealthPercentage: 100
@@ -258,7 +258,7 @@
 	ExternalCapturable:
 		RequiresCondition: !mindcontrolled
 	ExternalCapturableBar:
-	TransformOnCapture:
+	TransformOnCapture@infestable: # need to ensure transform only happens by infestable.
 		Type: infestable
 		IntoActor: want # dummy
 		ForceHealthPercentage: 100

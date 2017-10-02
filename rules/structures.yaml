@@ -89,7 +89,7 @@ MSLO:
 		DeadlockDetectionEnabled: false
 	Dock@0:
 		DockOffset: 0,0
-	TransformOnCapture:
+	TransformOnCapture@infested:
 		IntoActor: MSLO_INFESTED
 
 GAP:
@@ -435,7 +435,7 @@ IRON:
 	WithIdleOverlay@topdmg:
 		Sequence: damaged-active
 		RequiresCondition: damage-heavy && !disabled
-	TransformOnCapture:
+	TransformOnCapture@infested:
 		IntoActor: IRON_INFESTED
 
 PDOX:
@@ -496,7 +496,7 @@ PDOX:
 	MustBeDestroyed:
 		RequiredForShortGame: false
 	ProvidesPrerequisite@buildingname:
-	TransformOnCapture:
+	TransformOnCapture@infested:
 		IntoActor: PDOX_INFESTED
 
 TSLA:
@@ -666,7 +666,7 @@ DOME:
 	Power@HIGHPOWER:
 		Amount: -440
 		RequiresCondition: deployed
-	TransformOnCapture:
+	TransformOnCapture@infested:
 		IntoActor: DOME_INFESTED
 	WithMakeAnimation@high:
 		Sequence: make-high
@@ -988,7 +988,7 @@ ATEK:
 	Power:
 		Amount: -200
 	ProvidesPrerequisite@buildingname:
-	TransformOnCapture:
+	TransformOnCapture@infested:
 		IntoActor: ATEK_INFESTED
 
 WEAP:
@@ -1098,7 +1098,7 @@ WEAP:
 		RequiresCondition: primary
 	ProvidesPrerequisite:
 		Prerequisite: anyweap
-	TransformOnCapture:
+	TransformOnCapture@infested:
 		IntoActor: WEAP_INFESTED
 
 GAWEAP:
@@ -1205,7 +1205,7 @@ FACT:
 	ProvidesPrerequisite:
 		Prerequisite: anyfact
 	ProvidesRadar:
-	TransformOnCapture:
+	TransformOnCapture@infested:
 		IntoActor: FACT_INFESTED
 
 NAFACT:
@@ -1334,7 +1334,7 @@ PROC:
 		Type: Rectangle
 			TopLeft: -1536, 598
 			BottomRight: -512, 1280
-	TransformOnCapture:
+	TransformOnCapture@infested:
 		IntoActor: PROC_INFESTED
 
 SILO:
@@ -1477,7 +1477,7 @@ HPAD:
 		Interval: 10
 		FinishRepairingNotification: UnitRepaired
 		PlayerExperience: 15
-	TransformOnCapture:
+	TransformOnCapture@infested:
 		IntoActor: HPAD_INFESTED
 
 AFLD:
@@ -1632,7 +1632,7 @@ AFLD:
 		DockOffset: 0,1
 	Dock@3:
 		DockOffset: 1,1
-	TransformOnCapture:
+	TransformOnCapture@infested:
 		IntoActor: AFLD_INFESTED
 
 POWR:
@@ -1673,7 +1673,7 @@ POWR:
 	WithDeathAnimation:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
-	TransformOnCapture:
+	TransformOnCapture@infested:
 		IntoActor: POWR_INFESTED
 
 APWR:
@@ -1717,7 +1717,7 @@ APWR:
 	WithDeathAnimation:
 		DeathSequence: dead
 		UseDeathTypeSuffix: false
-	TransformOnCapture:
+	TransformOnCapture@infested:
 		IntoActor: APWR_INFESTED
 
 STEK:
@@ -1753,7 +1753,7 @@ STEK:
 	Power:
 		Amount: -100
 	ProvidesPrerequisite@buildingname:
-	TransformOnCapture:
+	TransformOnCapture@infested:
 		IntoActor: STEK_INFESTED
 
 BARR:
@@ -1837,7 +1837,7 @@ BARR:
 		ReferencePoint: Top
 		ZOffset: 256
 		RequiresCondition: primary
-	TransformOnCapture:
+	TransformOnCapture@infested:
 		IntoActor: BARR_INFESTED
 
 KENN:
@@ -1974,7 +1974,7 @@ TENT:
 		ReferencePoint: Top
 		ZOffset: 256
 		RequiresCondition: primary
-	TransformOnCapture:
+	TransformOnCapture@infested:
 		IntoActor: TENT_INFESTED
 
 FIX:
@@ -2065,7 +2065,7 @@ FIX:
 		Type: Rectangle
 			TopLeft: -640, -768
 			BottomRight: 640, 1024
-	TransformOnCapture:
+	TransformOnCapture@infested:
 		IntoActor: FIX_INFESTED
 
 SBAG:
@@ -2255,7 +2255,8 @@ ANYPOWER:
 
 QNEST:
 	Inherits: ^Building
-	-TransformOnCapture:
+	-TransformOnCapture@infestable:
+	#-ExternalCapturableBar@infestable:
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3,3
@@ -2350,7 +2351,8 @@ QNEST:
 
 TIBTREE:
 	Inherits: ^Building
-	-TransformOnCapture:
+	-TransformOnCapture@infestable:
+	#-ExternalCapturableBar@infestable:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 50
@@ -2393,7 +2395,8 @@ TIBTREE:
 TUNNELNETWORK:
 	Inherits: ^Building
 	Inherits: ^2x2Shape
-	-TransformOnCapture:
+	-TransformOnCapture@infestable:
+	#-ExternalCapturableBar@infestable:
 	RenderSprites:
 		Scale: 0.5
 	Buildable:
@@ -2438,7 +2441,8 @@ TUNNELNETWORK:
 
 EVO:
 	Inherits: ^Building
-	-TransformOnCapture:
+	-TransformOnCapture@infestable:
+	#-ExternalCapturableBar@infestable:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 150
@@ -2518,12 +2522,13 @@ GULAG:
 		Period: 375
 		AmountPerLoad: 50
 	-EmitInfantryOnSell:
-	TransformOnCapture:
+	TransformOnCapture@infested:
 		IntoActor: GULAG_INFESTED
 
 #MINIHIVE:
 #	Inherits: ^Defense
-#	-TransformOnCapture:
+#	-TransformOnCapture@infestable:
+#	-ExternalCapturableBar@infestable:
 #	Tooltip:
 #		Name: Buzzer Hive
 #	Building:
@@ -2571,7 +2576,8 @@ GULAG:
 
 ANTHILL:
 	Inherits: ^Building
-	-TransformOnCapture:
+	-TransformOnCapture@infestable:
+	#-ExternalCapturableBar@infestable:
 	RenderSprites:
 		Scale: 0.33
 	Buildable:
@@ -2612,7 +2618,8 @@ ANTHILL:
 VEIN:
 	Inherits: ^Building
 	Inherits: ^3x2Shape
-	-TransformOnCapture:
+	-TransformOnCapture@infestable:
+	#-ExternalCapturableBar@infestable:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 90
@@ -2653,7 +2660,8 @@ VEIN:
 MBK:
 	Inherits: ^Defense
 	Inherits: ^3x2Shape
-	-TransformOnCapture:
+	-TransformOnCapture@infestable:
+	#-ExternalCapturableBar@infestable:
 	Tooltip:
 		Name: Church of Hydra
 	Building:
