@@ -225,3 +225,17 @@ SuperTankPrimary:
 	Report: bigggun1.aud
 	Warhead@1Dam: SpreadDamage
 		Damage: 60
+
+HorseAARail:
+	Inherits: RedEye
+	-Projectile:
+	Projectile: Railgun
+		ZOffset: 1024
+	Report: bigggun1.aud
+
+HorseAGRail:
+	Inherits: Dragon
+	-Projectile:
+	Projectile: Railgun
+		ZOffset: 1024
+	Report: bigggun1.aud

@@ -72,6 +72,7 @@ Player:
 			e1nexus: 65%
 			e2: 25%
 			e3: 40%
+			horse: 40%
 			e4: 15%
 			e5: 15%
 			dogelord: 15%
@@ -252,6 +253,7 @@ Player:
 			e1nexus: 65%
 			e2: 25%
 			e3: 40%
+			horse: 40%
 			e4: 15%
 			e5: 15%
 			dogelord: 15%
@@ -440,6 +442,7 @@ Player:
 			e1nexus: 65%
 			e2: 25%
 			e3: 40%
+			horse: 40%
 			e4: 15%
 			e5: 15%
 			dogelord: 15%
@@ -634,6 +637,7 @@ Player:
 			e1nexus: 65%
 			e2: 25%
 			e3: 40%
+			horse: 40%
 			e4: 15%
 			e5: 15%
 			deso: 15%

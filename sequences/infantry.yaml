@@ -2000,3 +2000,45 @@ gi:
 		Length: 6
 		Facings: 8
 	icon: giicon
+
+horse:
+	idle:
+		Facings: 8
+	stand:
+		Facings: 8
+	run:
+		Start: 72
+		Length: 8
+		Facings: 8
+	shoot:
+		Start: 136
+		Length: 5
+		Facings: 8
+	idle1:
+		Start: 240
+		Length: 12
+	idle2:
+		Start: 252
+		Length: 18
+	die1:
+		Start: 269
+		Length: 6
+	die2:
+		Start: 269
+		Length: 6
+	die3:
+		Start: 269
+		Length: 6
+	die4:
+		Start: 269
+		Length: 6
+	die5:
+		Start: 269
+		Length: 6
+	die6:
+		Start: 269
+		Length: 6
+	muzzle: minigun
+		Length: 6
+		Facings: 8
+	icon: jeepicon
