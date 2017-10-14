@@ -685,7 +685,7 @@ TRAN_AI:
 		Types: Infantry
 		MaxWeight: 8
 		PipCount: 8
-		InitialUnits: e1,e1,e1,e3,e3
+		InitialUnits: e1,e1,e1,horse,horse
 	Valued:
 		Cost: 2400
 	Buildable:

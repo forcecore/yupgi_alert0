@@ -1556,7 +1556,7 @@ HORSE:
 	DeliversCash@GRINDABLE:
 		Payload: 150
 	Tooltip:
-		Name: Railgun Rider
+		Name: Highwayman
 	Health:
 		HP: 50
 	Armament@PRIMARY:

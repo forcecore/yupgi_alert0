@@ -3,7 +3,8 @@ See
 https://help.naver.com/support/contents/contents.nhn?serviceNo=1074&categoryNo=3497
 for full license info.
 
-Infester, Super Sonic Bomber, Mind Bender, Infester, Hydra, Magnetroll
+Infester, Super Sonic Bomber, Mind Bender, Infester, Hydra, Magnetroll,
+    Highwayman
     Nolt, of Nomad Galaxy mod (http://www.moddb.com/mods/nomad-galaxy)
 
 Fire ant unit shp is by me, made from Westwood's ant.
@@ -75,4 +76,8 @@ Adrenaline Colony / Adrenaline Explosion icon:
 
 Infester icon:
     https://en.wikipedia.org/wiki/File:Yellow_mite_(Tydeidae)_Lorryia_formosa_2_edit.jpg
+    Adapted for icon
+
+Highwayman icon:
+    http://www.publicdomainpictures.net/view-image.php?image=121002&picture=black-horse
     Adapted for icon
