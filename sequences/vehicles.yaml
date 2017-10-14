@@ -587,6 +587,7 @@ humm:
 mag:
 	idle:
 		Facings: -32
+		ShadowStart: 63
 		UseClassicFacingFudge: True
 	turret:
 		Start: 32
@@ -597,6 +598,7 @@ mag:
 mag.destroyed:
 	idle: mag
 		Facings: -32
+		ShadowStart: 63
 		UseClassicFacingFudge: True
 		ZOffset: -512
 	turret: mag
