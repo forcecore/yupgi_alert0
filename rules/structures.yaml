@@ -154,7 +154,7 @@ SPEN:
 		Prerequisites: anypower, ~nafact, ~techlevel.low
 		Description: Produces and repairs\nsubmarines and transports.
 	Targetable:
-		TargetTypes: Ground, Water, Structure, C4, DetonateAttack, SpyInfiltrate
+		TargetTypes: Ground, Water, Structure, WaterStructure, C4, DetonateAttack, SpyInfiltrate
 	Building:
 		Footprint: XXX xxx XXX
 		Dimensions: 3,3
@@ -672,6 +672,7 @@ DOME:
 		Sequence: make-high
 		DeployTypes: high-deploy
 		BodyNames: highbody
+		RequiresCondition: !undeployed
 	WithSpriteBody@high:
 		Sequence: idle-high
 		PauseAnimationWhenDisabled: true
