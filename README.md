@@ -1,5 +1,12 @@
 # Over Powered Mod (엽기얼럿 제로)
 
+## Moving on to new engine
+
+* https://github.com/forcecore/OpenRA/tree/yupgi-20171014 : This branch contains my old modules
+* https://github.com/forcecore/OpenRA/tree/yupgi-20210321 : This is the newest branch, I decided to start over
+
+## Some old notes:
+
 * This mod is currently for OpenRA release-20170421
 * To run the mod...
   * put yupgi\_alert.oramod in mods folder, such as
